@@ -2,7 +2,7 @@ name: Test and Build 🎮
 
 on:
   pull_request: {}
-  push: { branches: [main] }
+  push: { branches: [main, release, develop] }
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
