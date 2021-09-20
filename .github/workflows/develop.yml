@@ -1,12 +1,21 @@
-name: Test and Build 🎮
+name: Test 🎮
 
 on:
-  push: { branches: [release] }
+  pull_request: {}
+  push: { branches: [develop] }
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
 
 jobs:
+  checkLicense:
+    name: Check for the Unity license ☑️
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail - No license ☠️
+        if: ${{ !startsWith(env.UNITY_LICENSE, '<') }}
+        run: exit 1
+
   testRunner:
     needs: checkLicense
     name: Test all modes 📝
@@ -51,54 +60,9 @@ jobs:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
 
-  buildWindows:
-    needs: testRunner
-    name: Build for Windows 🖥️
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Create LFS file list
-        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
-
-      - name: Restore LFS cache
-        uses: actions/cache@v2
-        id: lfs-cache
-        with:
-          path: .git/lfs
-          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
-
-      - name: Git LFS Pull
-        run: |
-          git lfs pull
-          git add .
-          git reset --hard
-
-      - name: Restore Library cache
-        uses: actions/cache@v2
-        with:
-          path: Library
-          key: Library-build-StandaloneWindows64
-          restore-keys: |
-            Library-build-
-            Library-
-
-      - uses: game-ci/unity-builder@v2
-        with:
-          targetPlatform: StandaloneWindows64
-          versioning: Semantic
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: RushTheMusic
-          path: build/StandaloneWindows64
-
-#  buildLinux:
+#  buildWindows:
 #    needs: testRunner
-#    name: Build for Linux 🐧
+#    name: Build for Windows 🖥️
 #    runs-on: ubuntu-latest
 #    strategy:
 #      fail-fast: false
@@ -110,6 +74,51 @@ jobs:
 #        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
 #
 #      - name: Restore LFS cache
+#        uses: actions/cache@v2
+#        id: lfs-cache
+#        with:
+#          path: .git/lfs
+#          key: ${{ runner.os }}-lfs-${{ hashFiles('.lfs-assets-id') }}
+#
+#      - name: Git LFS Pull
+#        run: |
+#          git lfs pull
+#          git add .
+#          git reset --hard
+#
+#      - name: Restore Library cache
+#        uses: actions/cache@v2
+#        with:
+#          path: Library
+#          key: Library-build-StandaloneWindows64
+#          restore-keys: |
+#            Library-build-
+#            Library-
+#
+#      - uses: game-ci/unity-builder@v2
+#        with:
+#          targetPlatform: StandaloneWindows64
+#          versioning: Semantic
+#
+#      - uses: actions/upload-artifact@v2
+#        with:
+#          name: RushTheMusic
+#          path: build/StandaloneWindows64
+#
+##  buildLinux:
+##    needs: testRunner
+##    name: Build for Linux 🐧
+##    runs-on: ubuntu-latest
+##    strategy:
+##      fail-fast: false
+##    steps:
+##      - name: Checkout code
+##        uses: actions/checkout@v2
+##
+##      - name: Create LFS file list
+##        run: git lfs ls-files -l | cut -d' ' -f1 | sort > .lfs-assets-id
+##
+##      - name: Restore LFS cache
 #        uses: actions/cache@v2
 #        id: lfs-cache
 #        with:
