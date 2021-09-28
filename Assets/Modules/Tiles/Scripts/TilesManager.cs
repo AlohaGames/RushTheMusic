@@ -6,7 +6,7 @@ namespace Aloha
 {
     public class TilesManager : Singleton<TilesManager>
     {
-        [SerializeField] private GameObject[] tilePrebabs;
+        [SerializeField] private GameObject[] tilePrefabs;
         [SerializeField] private int numberOfTiles;
         public float tileSpeed = 10;
         public float tileSize = 5;
@@ -21,7 +21,7 @@ namespace Aloha
 
             for (int position = 0; position < numberOfTiles; position++)
             {
-                SpawnTileAt(Random.Range(0, tilePrebabs.Length), position);
+                SpawnTileAt(Random.Range(0, tilePrefabs.Length), position);
             }
         }
 
@@ -31,19 +31,19 @@ namespace Aloha
             if ( activeTiles.Count != 0 && activeTiles[0].transform.position.z + tileSize < 0)
             {
                 DeleteFirstTile();
-                SpawnTileToQueue(Random.Range(0, tilePrebabs.Length));
+                SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
             }
         }
 
         public void SpawnTileToQueue(int tileIndex)
         {
-            GameObject tile = Instantiate(tilePrebabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + tileSize), transform.rotation, tilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + tileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
         }
 
         public void SpawnTileAt(int tileIndex, int position)
         {
-            GameObject tile = Instantiate(tilePrebabs[tileIndex], transform.forward * (tileSize * position), transform.rotation, tilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (tileSize * position), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
         }
 

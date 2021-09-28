@@ -13,19 +13,21 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator TileMoveForward()
         {
-            /*GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            TilesManager tilesManager = manager.GetComponentInChildren<TilesManager>();
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            TilesManager tilesManager = TilesManager.Instance;
+
+            yield return null;
+
             tilesManager.SpawnTileAt(0, 0);
             GameObject tile = tilesManager.activeTiles[0];
 
             float initialZPos = tile.transform.position.z;
-            
+
             yield return null;
 
             Assert.Less(tile.transform.position.z, initialZPos);
 
-            Object.Destroy(tile);*/
-            yield return null;
+            Object.Destroy(tile);
 
         }
 
