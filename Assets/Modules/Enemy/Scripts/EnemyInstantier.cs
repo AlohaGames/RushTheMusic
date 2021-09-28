@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aloha
 {
-    public class EnemyInstantier : MonoBehaviour
+    public class EnemyInstantier : Singleton<EnemyInstantier>
     {
         [SerializeField] private List<GameObject> EnemyPrefabs;
 

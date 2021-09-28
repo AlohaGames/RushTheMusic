@@ -36,7 +36,7 @@ namespace Aloha.Test
         public IEnumerator EnemyInstancierTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            Enemy enemy = manager.GetComponentInChildren<EnemyInstantier>()
+            Enemy enemy = EnemyInstantier.Instance
                 .InstantiateEnemy(EnemyType.generic, 10)
                 .GetComponent<Enemy>();
 
