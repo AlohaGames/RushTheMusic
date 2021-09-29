@@ -128,22 +128,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
-      propertyPath: tilePrefabs.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
-      propertyPath: tilePrefabs.Array.data[0]
-      value: 
-      objectReference: {fileID: 7879650728313143345, guid: b6c6031e52d175c4f9501291b5573ffb, type: 3}
-    - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
-      propertyPath: tilePrefabs.Array.data[1]
-      value: 
-      objectReference: {fileID: 7812419412414472052, guid: baabf2616203bb94cb74aa3ddcf5ffa7, type: 3}
-    - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
-      propertyPath: tilePrefabs.Array.data[2]
-      value: 
-      objectReference: {fileID: 686639437003167491, guid: bd301d7578680e44cb6d19cc12ba1d1c, type: 3}
     - target: {fileID: 6015154607925918886, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
       propertyPath: m_Name
       value: TilesManager
