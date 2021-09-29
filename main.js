@@ -224,12 +224,13 @@ var assemblies = [
   {
     "name": "Aloha",
     "classes": [
-      { "name": "Aloha.Enemy", "rp": "Aloha_Enemy.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 38, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "09/27/2021 - 16:16:59", "cl": 0, "ucl": 16, "cal": 16, "tl": 38, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "09/27/2021 - 16:17:15", "cl": 16, "ucl": 0, "cal": 16, "tl": 38, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
-      { "name": "Aloha.EnemyInstantier", "rp": "Aloha_EnemyInstantier.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "09/27/2021 - 16:16:59", "cl": 0, "ucl": 8, "cal": 8, "tl": 30, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "09/27/2021 - 16:17:15", "cl": 8, "ucl": 0, "cal": 8, "tl": 30, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "Aloha.Enemy", "rp": "Aloha_Enemy.html", "cl": 16, "ucl": 0, "cal": 16, "tl": 38, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "09/29/2021 - 00:16:10", "cl": 0, "ucl": 16, "cal": 16, "tl": 38, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "09/29/2021 - 00:16:33", "cl": 16, "ucl": 0, "cal": 16, "tl": 38, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "Aloha.EnemyInstantier", "rp": "Aloha_EnemyInstantier.html", "cl": 8, "ucl": 0, "cal": 8, "tl": 30, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,100], "bch": [], "hc": [{ "et": "09/29/2021 - 00:16:10", "cl": 0, "ucl": 8, "cal": 8, "tl": 30, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "09/29/2021 - 00:16:33", "cl": 8, "ucl": 0, "cal": 8, "tl": 30, "lcq": 100, "cb": 0, "tb": 0, "bcq": 0 }] },
+      { "name": "Singleton[T]", "rp": "Aloha_Singleton_T_.html", "cl": 11, "ucl": 5, "cal": 16, "tl": 44, "ct": "LineCoverage", "mc": "-", "cb": 0, "tb": 0, "lch": [0,68.7], "bch": [], "hc": [{ "et": "09/29/2021 - 00:16:10", "cl": 0, "ucl": 16, "cal": 16, "tl": 44, "lcq": 0, "cb": 0, "tb": 0, "bcq": 0 }, { "et": "09/29/2021 - 00:16:33", "cl": 11, "ucl": 5, "cal": 16, "tl": 44, "lcq": 68.7, "cb": 0, "tb": 0, "bcq": 0 }] },
     ]},
 ];
 
-var historicCoverageExecutionTimes = ["09/27/2021 - 16:16:59"];
+var historicCoverageExecutionTimes = ["09/29/2021 - 00:16:10"];
 
 var riskHotspotMetrics = [
 ];
