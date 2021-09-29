@@ -54,7 +54,7 @@ jobs:
         with:
           testMode: all
           githubToken: ${{ secrets.GITHUB_TOKEN }}
-          customParameters: -debugCodeOptimization -enableCodeCoverage -coverageResultsPath ./coverage-results -coverageHistoryPath ./coverage-results-history -coverageOptions "generateAdditionalMetrics;generateHtmlReport;generateHtmlReportHistory;generateBadgeReport;assemblyFilters:+Aloha.*"
+          customParameters: -debugCodeOptimization -enableCodeCoverage -coverageResultsPath ./coverage-results -coverageHistoryPath ./coverage-results-history -coverageOptions "generateAdditionalMetrics;generateHtmlReport;generateHtmlReportHistory;generateBadgeReport;assemblyFilters:+Aloha,+Test.*"
 
       - uses: actions/upload-artifact@v2
         with:
