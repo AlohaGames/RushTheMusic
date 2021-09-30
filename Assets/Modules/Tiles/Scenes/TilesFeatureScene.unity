@@ -449,7 +449,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
       propertyPath: tileSpeed
-      value: 10
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
+      propertyPath: numberOfTiles
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6015154607925918886, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
       propertyPath: m_Name
