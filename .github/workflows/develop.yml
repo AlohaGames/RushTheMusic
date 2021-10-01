@@ -2,7 +2,7 @@ name: Test 🎮
 
 on:
   pull_request: {}
-  push: { branches: [develop] }
+  push: { branches: [develop, CI-CD] }
 
 env:
   UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -54,11 +54,40 @@ jobs:
         with:
           testMode: all
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          customParameters: -debugCodeOptimization -enableCodeCoverage -coverageResultsPath ./coverage-results -coverageHistoryPath ./coverage-results-history -coverageOptions "generateAdditionalMetrics;generateHtmlReport;generateHtmlReportHistory;generateBadgeReport;assemblyFilters:+Aloha,+Test.*"
 
       - uses: actions/upload-artifact@v2
         with:
           name: Test results (all modes)
           path: ${{ steps.testRunner.outputs.artifactsPath }}
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Coverage Results
+          path: coverage-results/Report
+
+  deployPages:
+    needs: testRunner
+    name: 🚀 Deploy to Github Pages 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: Coverage Results
+          path: coverage-results
+
+      - name: Display structure of root files
+        run: ls -R
+        working-directory: coverage-results
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: coverage-results
 
 #  buildWindows:
 #    needs: testRunner
