@@ -43,7 +43,7 @@ namespace Aloha
             gameIsStarted = true;
             for (int position = 0; position < numberOfTiles; position++)
             {
-                SpawnTileAt(Random.Range(0, tilePrefabs.Length), position);
+                SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
             }
         }
 

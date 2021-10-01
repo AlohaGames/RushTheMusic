@@ -64,6 +64,14 @@ namespace Aloha.Test
             yield return null;
             Assert.IsTrue(tilesManager.gameIsStarted, "Is the game started ?");
 
+            tilesManager.StartGame();
+            yield return null;
+            Assert.IsTrue(tilesManager.gameIsStarted, "Is the game started ?");
+
+            tilesManager.StopGame();
+            yield return null;
+            Assert.IsFalse(tilesManager.gameIsStarted, "Is the game stopped ?");
+
             tilesManager.StopGame();
             yield return null;
             Assert.IsFalse(tilesManager.gameIsStarted, "Is the game stopped ?");
