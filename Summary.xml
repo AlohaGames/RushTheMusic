@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>09/30/2021 - 11:55:31</Generatedon>
+    <Generatedon>10/01/2021 - 14:52:58</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>5</Classes>
     <Files>5</Files>
-    <Coveredlines>89</Coveredlines>
-    <Uncoveredlines>16</Uncoveredlines>
-    <Coverablelines>105</Coverablelines>
-    <Totallines>241</Totallines>
-    <Linecoverage>84.7</Linecoverage>
+    <Coveredlines>94</Coveredlines>
+    <Uncoveredlines>5</Uncoveredlines>
+    <Coverablelines>99</Coverablelines>
+    <Totallines>234</Totallines>
+    <Linecoverage>94.9</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="5" coverage="84.7" coveredlines="89" coverablelines="105" totallines="241" branchcoverage="" coveredbranches="0" totalbranches="0">
-      <Class name="Aloha.BasicTile" coverage="100" coveredlines="8" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    <Assembly name="Aloha" classes="5" coverage="94.9" coveredlines="94" coverablelines="99" totallines="234" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Enemy" coverage="100" coveredlines="16" coverablelines="16" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.EnemyInstantier" coverage="100" coveredlines="8" coverablelines="8" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.TilesManager" coverage="80.7" coveredlines="46" coverablelines="57" totallines="102" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Singleton[T]" coverage="68.7" coveredlines="11" coverablelines="16" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.TilesManager" coverage="90.5" coveredlines="48" coverablelines="53" totallines="100" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Singleton[T]" coverage="100" coveredlines="16" coverablelines="16" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
     </Assembly>
   </Coverage>
 </CoverageReport>
