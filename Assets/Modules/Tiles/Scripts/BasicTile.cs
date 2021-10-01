@@ -16,12 +16,7 @@ namespace Aloha
         // Update is called once per frame
         void Update()
         {
-
-        }
-
-        private void FixedUpdate()
-        {
-            transform.position += new Vector3(0, 0, -1 * TilesManager.Instance.tileSpeed * Time.fixedDeltaTime);
+            transform.position += new Vector3(0, 0, -1 * TilesManager.Instance.tileSpeed * Time.deltaTime);
         }
     }
 }

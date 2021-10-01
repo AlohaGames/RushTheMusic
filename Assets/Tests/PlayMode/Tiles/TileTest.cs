@@ -14,22 +14,13 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator TileMoveForward()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            TilesManager tilesManager = TilesManager.Instance;
-            yield return null;
-
-            tilesManager.SpawnTileAt(0, 0);
-            yield return null;
-
-            GameObject tile = tilesManager.activeTiles[0];
+            GameObject tile = new GameObject();
+            tile.AddComponent<BasicTile>();
             float initialZPos = tile.transform.position.z;
-            yield return new WaitForFixedUpdate();
+            yield return null;
 
-            Assert.Less(tile.transform.position.z, initialZPos);
-
+            Assert.Less(tile.transform.position.z, initialZPos, "Does the tile move towards the player ?");
             Object.Destroy(tile);
-            Object.Destroy(tilesManager);
-            Object.Destroy(manager);
             yield return null;
         }
 
@@ -44,18 +35,18 @@ namespace Aloha.Test
             tilesManager.StartGame();
             yield return null;
 
-            GameObject firstTile = tilesManager.activeTiles[0];
-            GameObject lastTile = tilesManager.activeTiles[tilesManager.activeTiles.Count - 1];
-            yield return new WaitForSeconds( tilesManager.tileSize / tilesManager.tileSpeed );
+            GameObject firstTile = tilesManager.GetActiveTileById(0);
+            GameObject lastTile = tilesManager.GetActiveTileById(tilesManager.numberOfTiles - 1);
 
-            if (firstTile) Assert.IsFalse(true, "Is first tile deleted ?");
-            Assert.AreNotSame(lastTile, tilesManager.activeTiles[tilesManager.activeTiles.Count - 1], "Do tiles spawn ?");
+            float timeOfOneTile = (tilesManager.tileSize / tilesManager.tileSpeed);
+            yield return new WaitForSeconds(timeOfOneTile * 2 );
 
-            Object.Destroy(lastTile);
+            Assert.IsTrue(firstTile == null, "Is the first tile deleted when it's behind the player ?");
+            Assert.AreNotSame(lastTile, tilesManager.GetActiveTileById(tilesManager.numberOfTiles - 1), "Does a new tile appear ?");
+
             tilesManager.StopGame();
             yield return null;
 
-            Object.Destroy(tilesManager);
             Object.Destroy(manager);
             yield return null;
 
@@ -71,18 +62,14 @@ namespace Aloha.Test
 
             tilesManager.StartGame();
             yield return null;
-
-            Assert.IsTrue(tilesManager.gameIsStarted);
-            Assert.AreEqual(tilesManager.tilesContainer.transform.childCount, tilesManager.numberOfTiles);
+            Assert.IsTrue(tilesManager.gameIsStarted, "Is the game started ?");
 
             tilesManager.StopGame();
             yield return null;
+            Assert.IsFalse(tilesManager.gameIsStarted, "Is the game stopped ?");
 
-            Assert.IsFalse(tilesManager.gameIsStarted);
-            Assert.AreEqual(tilesManager.tilesContainer.transform.childCount, 0);
-
-            Object.Destroy(tilesManager);
             Object.Destroy(manager);
+            yield return null;
         }
 
 

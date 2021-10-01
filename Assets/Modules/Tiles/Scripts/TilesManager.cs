@@ -6,42 +6,29 @@ namespace Aloha
 {
     public class TilesManager : Singleton<TilesManager>
     {
-        [HideInInspector] public List<GameObject> activeTiles = new List<GameObject>();
-        [HideInInspector] public GameObject tilesContainer;
         [HideInInspector] public bool gameIsStarted;
         public int numberOfTiles = 20;
         public float tileSpeed = 10;
         public float tileSize = 5;
 
         [SerializeField] private GameObject[] tilePrefabs;
+        private List<GameObject> activeTiles = new List<GameObject>();
+        private GameObject tilesContainer;
 
         // Start is called before the first frame update
         void Start()
         {
             gameIsStarted = false;
-            tilesContainer = new GameObject("TilesContainer");
         }
 
         // Update is called once per frame
         void Update()
         {
-            // Start the game
-            if (!gameIsStarted && Input.GetKeyDown(KeyCode.Space) )
-            {
-                StartGame();
-            }
-
-            // Stop the game
-            if (gameIsStarted && Input.GetKeyDown(KeyCode.Escape))
-            {
-                StopGame();
-            }
-
             // Delete a tile and replace it by a new one
             if (gameIsStarted && activeTiles.Count != 0 && activeTiles[0].transform.position.z + tileSize < 0)
             {
                 DeleteFirstTile();
-                SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
+                SpawnTileToQueue(GetNextTileToSpawn());
             }
         }
 
@@ -50,6 +37,8 @@ namespace Aloha
         {
             if (gameIsStarted)
                 return;
+
+            tilesContainer = new GameObject("TilesContainer");
 
             gameIsStarted = true;
             for (int position = 0; position < numberOfTiles; position++)
@@ -65,10 +54,8 @@ namespace Aloha
                 return;
 
             gameIsStarted = false;
-            for (int i = 0; i < numberOfTiles; i++)
-            {
-                DeleteFirstTile();
-            }
+            activeTiles.Clear();
+            Destroy(tilesContainer);
         }
 
         // Create a tile at the end of the tile list
@@ -92,11 +79,22 @@ namespace Aloha
             activeTiles.Add(tile);
         }
 
+        // Return the id of the next tile to spawn
+        private int GetNextTileToSpawn()
+        {
+            return Random.Range(0, tilePrefabs.Length);
+        }
+
         // Delete the first tile of the list
         private void DeleteFirstTile()
         {
             Destroy(activeTiles[0]);
             activeTiles.RemoveAt(0);
+        }
+
+        public GameObject GetActiveTileById(int index)
+        {
+            return activeTiles[index];
         }
     }
 }
