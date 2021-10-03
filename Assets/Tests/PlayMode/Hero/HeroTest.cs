@@ -4,7 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Heros;
-using Aloha
+using Aloha;
 
 namespace Heros.Test
 {
