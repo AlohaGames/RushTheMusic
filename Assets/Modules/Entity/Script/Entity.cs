@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.Events;
+using EntityStats;
 
-namespace Aloha
+namespace Entities
 {
     public class Entity : MonoBehaviour
     {
@@ -10,14 +11,15 @@ namespace Aloha
     {
 
         public T stats;
-
-        public int health;        
-
+        public int health;
+        public int attack;
         public UnityEvent dieEvent;
 
-
-        public void Init(T stats){
+        public void Init(T stats)
+        {
             this.stats = stats;
+            this.health = stats.maxHealth;
+            this.attack = stats.attackPower;
         }
 
         public void Attack(Entity<Stats> entity)
@@ -27,7 +29,7 @@ namespace Aloha
 
         public void TakeDamage(int damage)
         {
-            int realDamage = (int) (damage / this.stats.defensePower); //A redéfinir selon comment est stocké la défense
+            int realDamage = (int)(damage);
             if (damage < 0)
             {
                 return;
@@ -39,7 +41,8 @@ namespace Aloha
             }
         }
 
-        private void Die(){
+        private void Die()
+        {
             dieEvent.Invoke();
         }
     }

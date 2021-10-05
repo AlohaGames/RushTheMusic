@@ -1,30 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Aloha;
+using EntityStats;
 
-namespace Aloha.Heros
+namespace Entities
 {
     public class Hero<T> : Entity<HeroStats> where T : HeroStats
     {
-        /*public void Init(int maxHealth, int attackAmount)
+        public int defense;
+        public void Init(T stats)
         {
-            this.maxHealth = maxHealth;
-            this.health = maxHealth;
-            this.xp = 0;
-            //this.maxSecondary = maxSecondary;
-            //this.secondary = maxSecondary;
-            this.attackAmount = attackAmount;
+            Init((HeroStats) stats);
+            this.defense = stats.defensePower;
         }
 
-        public void Attack(Enemy enemy)
+        public void LevelUp(int xp = 1)
         {
-            enemy.TakeDamage(this.attackAmount);
-            this.xp = xp + 1;
+            this.stats.xp += xp;
         }
-
-        public void TakeDamage(int damage)
+        
+        public override void TakeDamage(int damage)
         {
+            int realDamage = (int) (damage / this.stats.defensePower);
             if (damage < 0)
             {
                 return;
@@ -32,18 +29,8 @@ namespace Aloha.Heros
             health = health - damage;
             if (health <= 0)
             {
-                DestroyImmediate(this.gameObject);
+                Die();
             }
-        }*/
-        public void Init(T stats)
-        {
-            Init((HeroStats) stats);
-            this.health = stats.maxHealth;
-        }
-
-        public void LevelUp(int xp = 1)
-        {
-            this.stats.xp += xp;
         }
     }
 }

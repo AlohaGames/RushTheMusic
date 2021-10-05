@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aloha.Heros
+namespace Entities
 {
     public class HeroInstantier : Singleton<HeroInstantier>
     {
         [SerializeField] private List<GameObject> HeroPrefabs;
 
-        public GameObject InstantiateHero(int id, int hp, int attackAmount)
+        public GameObject InstantiateHero(int id)
         {
             GameObject instance = Instantiate(HeroPrefabs[id]);
-            //instance.GetComponent<Hero>().Init(hp, attackAmount);
             return instance;
         }
 
-        public GameObject InstantiateHero(HeroType type, int hp, int attackAmount)
+        public GameObject InstantiateHero(HeroType type)
         {
-            return InstantiateHero((int) type, hp, attackAmount);
+            return InstantiateHero((int) type);
         }
     }
     public enum HeroType

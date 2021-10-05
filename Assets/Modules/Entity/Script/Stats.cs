@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Aloha
+namespace EntityStats
 {
     public class Stats : ScriptableObject{
         public int maxHealth;
@@ -11,5 +11,6 @@ namespace Aloha
 
     public class HeroStats : Stats {
         public int xp;
+        public int maxSecondary;
     }
 }
