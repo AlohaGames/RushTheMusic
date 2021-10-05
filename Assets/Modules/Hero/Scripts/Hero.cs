@@ -7,7 +7,7 @@ namespace Entities
 {
     public class Hero<T> : Entity<HeroStats> where T : HeroStats
     {
-        public int defense;
+        public float defense;
         public void Init(T stats)
         {
             Init((HeroStats) stats);

@@ -27,7 +27,7 @@ namespace Entities
             entity.TakeDamage(this.stats.attackPower);
         }
 
-        public void TakeDamage(int damage)
+        public virtual void TakeDamage(int damage)
         {
             int realDamage = (int)(damage);
             if (damage < 0)
@@ -41,7 +41,7 @@ namespace Entities
             }
         }
 
-        private void Die()
+        public void Die()
         {
             dieEvent.Invoke();
         }
