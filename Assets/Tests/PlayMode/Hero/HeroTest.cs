@@ -26,23 +26,63 @@ namespace Aloha.Test
         }
 
         [UnityTest]
+        public IEnumerator HeroStatsTest()
+        {
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            Guerrier hero = HeroInstantier.Instance.InstantiateHero(HeroType.guerrier).GetComponent<Guerrier>();
+
+            Assert.IsTrue(hero != null);
+            Assert.IsTrue(hero is Guerrier);
+            Assert.IsTrue(hero.stats != null);
+            Assert.IsTrue(hero.stats is GuerrierStats);
+
+            GameObject.Destroy(hero);
+            GameObject.Destroy(manager);
+
+            yield return null;
+        }
+
+        [UnityTest]
         public IEnumerator HeroTestDamage()
         {
             GameObject guerrierGO = new GameObject();
             Guerrier guerrier = guerrierGO.AddComponent<Guerrier>();
-            GuerrierStats stats = (GuerrierStats) ScriptableObject.CreateInstance("GuerrierStats");
+            GuerrierStats stats = (GuerrierStats)ScriptableObject.CreateInstance("GuerrierStats");
             stats.maxFureur = 10;
             stats.maxHealth = 10;
             stats.attackPower = 10;
             stats.defensePower = 10;
             stats.xp = 10;
-            Debug.Log(stats);
             guerrier.Init(stats);
 
-            Debug.Log(guerrier.health);
             guerrier.TakeDamage(5);
-            Debug.Log(guerrier.health);
             Assert.AreEqual(5, guerrier.health);
+
+            guerrier.TakeDamage(-5);
+            Assert.AreEqual(5, guerrier.health);
+
+            yield return null;
+        }
+
+        [UnityTest]
+        public IEnumerator HeroTestAttack()
+        {
+            GameObject guerrierGO = new GameObject();
+            Guerrier guerrier = guerrierGO.AddComponent<Guerrier>();
+            GuerrierStats stats = (GuerrierStats)ScriptableObject.CreateInstance("GuerrierStats");
+            stats.maxFureur = 10;
+            stats.maxHealth = 10;
+            stats.attackPower = 10;
+            stats.defensePower = 10;
+            stats.xp = 10;
+            guerrier.Init(stats);
+
+            GameObject enemyGO = new GameObject();
+            Enemy enemy = enemyGO.AddComponent<Enemy>();
+            enemy.Init(10);
+
+            //guerrier.Attack(enemy);
+            Debug.Log(enemy.health);
 
             yield return null;
         }
