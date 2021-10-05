@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using EntityStats;
+using Aloha.EntityStats;
 
-namespace Entities
+namespace Aloha.Hero
 {
     public class Hero<T> : Entity<HeroStats> where T : HeroStats
     {
         public float defense;
-        public void Init(T stats)
+        public void Init(HeroStats stats)
         {
             base.Init(stats);
             this.defense = stats.defensePower;

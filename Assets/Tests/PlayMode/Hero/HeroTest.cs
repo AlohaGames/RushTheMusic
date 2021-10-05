@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Entities;
-using EntityStats;
+using Aloha.EntityStats;
+using Aloha.Hero;
 
-namespace Entity.Test
+namespace Aloha.Test
 {
     public class HeroTest
     {
@@ -30,8 +30,14 @@ namespace Entity.Test
         {
             GameObject guerrierGO = new GameObject();
             Guerrier guerrier = guerrierGO.AddComponent<Guerrier>();
-            guerrier.Init(guerrier.stats);
-            Debug.Log(guerrier.stats);
+            GuerrierStats stats = (GuerrierStats) ScriptableObject.CreateInstance("GuerrierStats");
+            stats.maxFureur = 10;
+            stats.maxHealth = 10;
+            stats.attackPower = 10;
+            stats.defensePower = 10;
+            stats.xp = 10;
+            Debug.Log(stats);
+            guerrier.Init(stats);
 
             Debug.Log(guerrier.health);
             guerrier.TakeDamage(5);

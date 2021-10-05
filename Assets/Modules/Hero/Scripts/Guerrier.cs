@@ -1,6 +1,6 @@
-using EntityStats;
+using Aloha.EntityStats;
 
-namespace Entities
+namespace Aloha.Hero
 {
     public class Guerrier : Hero<GuerrierStats>
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace EntityStats
+namespace Aloha.EntityStats
 {
     public class Stats : ScriptableObject{
         public int maxHealth;
