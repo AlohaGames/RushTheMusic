@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Heros
+namespace Aloha.Heros
 {
     public class HeroInstantier : Singleton<HeroInstantier>
     {
@@ -11,7 +11,7 @@ namespace Heros
         public GameObject InstantiateHero(int id, int hp, int attackAmount)
         {
             GameObject instance = Instantiate(HeroPrefabs[id]);
-            instance.GetComponent<Hero>().Init(hp, attackAmount);
+            //instance.GetComponent<Hero>().Init(hp, attackAmount);
             return instance;
         }
 

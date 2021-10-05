@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 6741310727430539036}
   - component: {fileID: 1351904505271129841}
   - component: {fileID: 3225529122268232902}
-  - component: {fileID: 1508083846592102650}
+  - component: {fileID: 5136324788189649375}
   m_Layer: 0
   m_Name: Generic
   m_TagString: Untagged
@@ -181,7 +181,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1508083846592102650
+--- !u!114 &5136324788189649375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,6 +190,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 8026248363647714394}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f6504c3be0c0dc4f845e9488b2d168c, type: 3}
+  m_Script: {fileID: 11500000, guid: f8d86d4861952030188ddd97b92fee3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: e37006a50aa16dab48da8a5458274446, type: 2}
+  health: 0
+  dieEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8026248363647714394}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

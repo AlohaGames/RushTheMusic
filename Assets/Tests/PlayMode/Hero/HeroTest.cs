@@ -9,7 +9,7 @@ using Aloha;
 namespace Heros.Test
 {
     public class HeroTest
-    {
+    { /*
         [UnityTest]
         public IEnumerator HeroInstancierTest(){
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
@@ -58,5 +58,6 @@ namespace Heros.Test
             yield return null;
 
         }
+        */
     }
 }

@@ -3,39 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Aloha;
 
-namespace Heros
+namespace Aloha.Heros
 {
-    public class Hero : MonoBehaviour
+    public class Hero<T> : Entity<HeroStats> where T : HeroStats
     {
-        [SerializeField]
-        public int health
-        {
-            get;
-            private set;
-        }
-
-        public int xp
-        {
-            get;
-            private set;
-        }
-
-        public int secondary
-        {
-            get;
-            private set;
-        }
-
-        public int attackAmount
-        {
-            get;
-            private set;
-        }
-
-        private int maxHealth;
-        private int maxSecondary;
-
-        public void Init(int maxHealth, int attackAmount)
+        /*public void Init(int maxHealth, int attackAmount)
         {
             this.maxHealth = maxHealth;
             this.health = maxHealth;
@@ -62,6 +34,16 @@ namespace Heros
             {
                 DestroyImmediate(this.gameObject);
             }
+        }*/
+        public void Init(T stats)
+        {
+            Init((HeroStats) stats);
+            this.health = stats.maxHealth;
+        }
+
+        public void LevelUp(int xp = 1)
+        {
+            this.stats.xp += xp;
         }
     }
 }
