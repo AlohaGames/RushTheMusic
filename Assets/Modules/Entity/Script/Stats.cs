@@ -11,6 +11,5 @@ namespace EntityStats
 
     public class HeroStats : Stats {
         public int xp;
-        public int maxSecondary;
     }
 }

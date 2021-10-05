@@ -17,7 +17,6 @@ namespace Entities
 
         public void Init(T stats)
         {
-            this.stats = stats;
             this.health = stats.maxHealth;
             this.attack = stats.attackPower;
         }

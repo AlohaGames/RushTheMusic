@@ -7,7 +7,7 @@ namespace Entities
         private int fureur;
         public void Init(GuerrierStats stats)
         {
-            Init((HeroStats)stats);
+            base.Init(stats);
             this.fureur = stats.maxFureur;
         }
     }

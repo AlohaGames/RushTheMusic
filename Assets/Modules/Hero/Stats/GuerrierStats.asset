@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bfd7c67cd30116a9b8198299da5e9ab, type: 3}
   m_Name: GuerrierStats
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  xp: 0
-  attackPower: 0
+  maxHealth: 10
+  attackPower: 5
   defensePower: 0
-  fureur: 0
+  level: 0
+  xp: 0
+  maxSecondary: 0
+  maxFureur: 0

@@ -10,7 +10,7 @@ namespace Entities
         public float defense;
         public void Init(T stats)
         {
-            Init((HeroStats) stats);
+            base.Init(stats);
             this.defense = stats.defensePower;
         }
 

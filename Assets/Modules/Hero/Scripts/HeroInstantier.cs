@@ -16,12 +16,13 @@ namespace Entities
 
         public GameObject InstantiateHero(HeroType type)
         {
-            return InstantiateHero((int) type);
+            return InstantiateHero((int)type);
         }
     }
     public enum HeroType
     {
-        generic = 0
+        generic = 0,
+        guerrier = 1
     }
 }
 
