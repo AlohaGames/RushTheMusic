@@ -4,6 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
+using Aloha.EntityStats;
 
 namespace Aloha.Test
 {
@@ -16,7 +17,9 @@ namespace Aloha.Test
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            enemy.Init(10);
+            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
+            stats.maxHealth = 10;
+            enemy.Init(stats);
 
             enemy.TakeDamage(5);
             Assert.AreEqual(5, enemy.health);
@@ -29,7 +32,9 @@ namespace Aloha.Test
             yield return null;
 
             enemy.TakeDamage(5);
-            Assert.IsTrue(enemy == null);
+            Assert.AreEqual(0, enemy.health);
+
+            GameObject.Destroy(enemy);
         }
 
         [UnityTest]
@@ -37,7 +42,7 @@ namespace Aloha.Test
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             Enemy enemy = EnemyInstantier.Instance
-                .InstantiateEnemy(EnemyType.generic, 10)
+                .InstantiateEnemy(EnemyType.generic)
                 .GetComponent<Enemy>();
 
             Assert.IsTrue(enemy != null);

@@ -4,27 +4,37 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Entity : MonoBehaviour
-    {
-    }
-    public class Entity<T> : MonoBehaviour where T : Stats
+    public class Entity : Entity<Stats> {
+        public override void Init() {
+            this.Init(this.stats);
+        }
+     }
+    public abstract class Entity<T> : MonoBehaviour where T : Stats
     {
 
         public T stats;
         public int health;
         public int attack;
-        public UnityEvent dieEvent;
+        public UnityEvent dieEvent = new UnityEvent();
 
         public void Init(Stats stats)
         {
-            this.stats = (T) stats;
+            this.stats = (T)stats;
             this.health = stats.maxHealth;
             this.attack = stats.attackPower;
         }
 
-        public void Attack(Entity<Stats> entity)
+        public abstract void Init();
+
+        public virtual void Attack(Entity entity)
         {
             entity.TakeDamage(this.stats.attackPower);
+        }
+
+        public virtual void Attack(Object entity) {
+            if(!(entity is Entity))
+                return;
+            Attack(entity as Entity);
         }
 
         public virtual void TakeDamage(int damage)

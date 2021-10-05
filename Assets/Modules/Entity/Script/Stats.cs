@@ -8,8 +8,4 @@ namespace Aloha.EntityStats
         public float defensePower;
         public int level;
     }
-
-    public class HeroStats : Stats {
-        public int xp;
-    }
 }

@@ -79,9 +79,11 @@ namespace Aloha.Test
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            enemy.Init(10);
+            EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
+            stats.maxHealth = 10;
+            enemy.Init(enemyStats);
 
-            //guerrier.Attack(enemy);
+            guerrier.Attack(enemy);
             Debug.Log(enemy.health);
 
             yield return null;
