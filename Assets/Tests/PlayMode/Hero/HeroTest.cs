@@ -10,8 +10,8 @@ namespace Aloha.Test
 {
     public class HeroTest
     {
-        [UnityTest]
-        public IEnumerator HeroInstantierTest()
+        [Test]
+        public void HeroInstantierTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             Guerrier hero = HeroInstantier.Instance.InstantiateHero(HeroType.guerrier).GetComponent<Guerrier>();
@@ -21,12 +21,10 @@ namespace Aloha.Test
 
             GameObject.Destroy(hero);
             GameObject.Destroy(manager);
-
-            yield return null;
         }
 
-        [UnityTest]
-        public IEnumerator HeroStatsTest()
+        [Test]
+        public void HeroStatsTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             Guerrier hero = HeroInstantier.Instance.InstantiateHero(HeroType.guerrier).GetComponent<Guerrier>();
@@ -38,8 +36,6 @@ namespace Aloha.Test
 
             GameObject.Destroy(hero);
             GameObject.Destroy(manager);
-
-            yield return null;
         }
 
         [UnityTest]
@@ -64,8 +60,8 @@ namespace Aloha.Test
             yield return null;
         }
 
-        [UnityTest]
-        public IEnumerator HeroTestAttack()
+        [Test]
+        public void HeroTestAttack()
         {
             GameObject guerrierGO = new GameObject();
             Guerrier guerrier = guerrierGO.AddComponent<Guerrier>();
@@ -85,8 +81,6 @@ namespace Aloha.Test
 
             guerrier.Attack(enemy);
             Debug.Log(enemy.health);
-
-            yield return null;
         }
     }
 }

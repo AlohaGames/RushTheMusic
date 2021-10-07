@@ -553,6 +553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Generic
       objectReference: {fileID: 0}
+    - target: {fileID: 1280670638334809903, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
+      propertyPath: dieEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
 --- !u!114 &825274033 stripped

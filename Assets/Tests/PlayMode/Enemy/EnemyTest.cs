@@ -17,7 +17,7 @@ namespace Aloha.Test
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
             stats.maxHealth = 10;
             enemy.Init(stats);
 
@@ -34,11 +34,15 @@ namespace Aloha.Test
             enemy.TakeDamage(5);
             Assert.AreEqual(0, enemy.health);
 
-            GameObject.Destroy(enemy);
+            yield return null;
+
+            Assert.IsTrue(enemy == null);
+
+            //GameObject.Destroy(enemy);
         }
 
-        [UnityTest]
-        public IEnumerator EnemyInstancierTest()
+        [Test]
+        public void EnemyInstancierTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             Enemy enemy = EnemyInstantier.Instance
@@ -50,8 +54,6 @@ namespace Aloha.Test
 
             GameObject.Destroy(enemy);
             GameObject.Destroy(manager);
-
-            yield return null;
         }
     }
 }

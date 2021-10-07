@@ -15,7 +15,7 @@ namespace Aloha
         public T stats;
         public int health;
         public int attack;
-        public UnityEvent dieEvent = new UnityEvent();
+        protected UnityEvent dieEvent = new UnityEvent();
 
         public void Init(Stats stats)
         {
