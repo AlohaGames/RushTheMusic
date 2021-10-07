@@ -1,41 +1,26 @@
 using UnityEngine;
 using UnityEngine.Events;
 using Aloha.EntityStats;
+using Aloha.Events;
 
 namespace Aloha
 {
-    public class Entity : Entity<Stats> {
-        public override void Init() {
-            this.Init(this.stats);
-        }
-     }
-    public abstract class Entity<T> : MonoBehaviour where T : Stats
+    public abstract class Entity : MonoBehaviour
     {
-
-        public T stats;
         public int health;
         public int attack;
         protected UnityEvent dieEvent = new UnityEvent();
 
-        public void Init(Stats stats)
-        {
-            this.stats = (T)stats;
-            this.health = stats.maxHealth;
-            this.attack = stats.attackPower;
-        }
-
         public abstract void Init();
 
-        public virtual void Attack(Entity entity)
-        {
-            entity.TakeDamage(this.stats.attackPower);
-        }
+        public abstract void Attack(Entity entity);
 
-        public virtual void Attack(Object entity) {
-            if(!(entity is Entity))
+        /*public virtual void Attack(Object entity)
+        {
+            if (!(entity is Entity))
                 return;
             Attack(entity as Entity);
-        }
+        }*/
 
         public virtual void TakeDamage(int damage)
         {
@@ -54,6 +39,27 @@ namespace Aloha
         public void Die()
         {
             dieEvent.Invoke();
+            GlobalEvent.EntityDied.Invoke(this);
+        }
+    }
+    public abstract class Entity<T> : Entity where T : Stats
+    {
+        public T stats;
+        public override void Attack(Entity entity)
+        {
+            entity.TakeDamage(this.stats.attackPower);
+        }
+
+        public override void Init()
+        {
+            this.Init(this.stats);
+        }
+
+        public virtual void Init(Stats stats)
+        {
+            this.stats = (T)stats;
+            this.health = stats.maxHealth;
+            this.attack = stats.attackPower;
         }
     }
 }

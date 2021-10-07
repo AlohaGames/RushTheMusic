@@ -10,7 +10,7 @@ namespace Aloha
     {
         public void Awake()
         {
-            this.dieEvent.AddListener(() => { Disappear();});
+            this.dieEvent.AddListener(Disappear);
         }
         public void Init(T stats)
         {
@@ -25,6 +25,10 @@ namespace Aloha
         public void Disappear()
         {
             Destroy(this.gameObject);
+        }
+
+        public void OnDestroy() {
+            this.dieEvent.RemoveListener(Disappear);
         }
     }
     public class Enemy : Enemy<EnemyStats> { }
