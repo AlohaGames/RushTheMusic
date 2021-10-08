@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bfd7c67cd30116a9b8198299da5e9ab, type: 3}
-  m_Name: GuerrierStats
+  m_Name: WarriorStats
   m_EditorClassIdentifier: 
   maxHealth: 10
   attackPower: 5

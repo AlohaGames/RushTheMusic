@@ -22,7 +22,7 @@ namespace Aloha.Hero
     public enum HeroType
     {
         Generic = 0,
-        Guerrier = 1
+        Warrior = 1
     }
 }
 

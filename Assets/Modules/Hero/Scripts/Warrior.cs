@@ -2,10 +2,10 @@ using Aloha.EntityStats;
 
 namespace Aloha.Hero
 {
-    public class Guerrier : Hero<GuerrierStats>
+    public class Warrior : Hero<WarriorStats>
     {
         private int currentRage;
-        public void Init(GuerrierStats stats)
+        public void Init(WarriorStats stats)
         {
             base.Init(stats);
             this.currentRage = stats.maxRage;
