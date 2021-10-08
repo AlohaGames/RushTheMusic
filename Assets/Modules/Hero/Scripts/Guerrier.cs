@@ -4,11 +4,11 @@ namespace Aloha.Hero
 {
     public class Guerrier : Hero<GuerrierStats>
     {
-        private int fureur;
+        private int currentRage;
         public void Init(GuerrierStats stats)
         {
             base.Init(stats);
-            this.fureur = stats.maxFureur;
+            this.currentRage = stats.maxRage;
         }
     }
 }

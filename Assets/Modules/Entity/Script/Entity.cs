@@ -4,38 +4,32 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Entity : MonoBehaviour
-    {
-    }
     public class Entity<T> : MonoBehaviour where T : Stats
     {
 
         public T stats;
-        public int health;
-        public int attack;
+        public int currentHealth;
         public UnityEvent dieEvent;
 
         public void Init(Stats stats)
         {
             this.stats = (T) stats;
-            this.health = stats.maxHealth;
-            this.attack = stats.attackPower;
+            this.currentHealth = stats.maxHealth;
         }
 
         public void Attack(Entity<Stats> entity)
         {
-            entity.TakeDamage(this.stats.attackPower);
+            entity.TakeDamage(this.stats.attack);
         }
 
         public virtual void TakeDamage(int damage)
         {
-            int realDamage = (int)(damage);
             if (damage < 0)
             {
                 return;
             }
-            health = health - damage;
-            if (health <= 0)
+            currentHealth = currentHealth - damage;
+            if (currentHealth <= 0)
             {
                 Die();
             }
