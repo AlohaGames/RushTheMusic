@@ -23,14 +23,13 @@ namespace Aloha {
             newPos = transform.position;
             speed = Mathf.Sqrt(Mathf.Pow((newPos.x - presPos.x),2) + Mathf.Pow((newPos.y - presPos.y),2) + Mathf.Pow((newPos.z - presPos.z),2))*100;
             presPos = newPos;
-            Debug.Log(speed);
             //Debug.Log(velocity);
         }
 
         // If the Sword touch an Object
         void OnTriggerEnter(Collider collider)
         {
-            Debug.Log("has collide");
+            Debug.Log("has collide with a speed of "+ speed);
             if (collider.tag == "Enemy" && speed> minimumSpeedToKill)
             {
                 //warrior.Attack(collider.GetComponent<Entity<EntityStats>>());
