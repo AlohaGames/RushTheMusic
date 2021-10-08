@@ -30,6 +30,7 @@ namespace Aloha
 
         public void Die(){
             dieEvent.Invoke();
+            GlobalEvent.EntityDied.Invoke(this);
         }
 
     }

@@ -12,15 +12,6 @@ namespace Aloha
         {
             this.dieEvent.AddListener(Disappear);
         }
-        public void Init(T stats)
-        {
-            base.Init(stats);
-        }
-
-        public override void Init()
-        {
-            this.Init(stats);
-        }
 
         public void Disappear()
         {
