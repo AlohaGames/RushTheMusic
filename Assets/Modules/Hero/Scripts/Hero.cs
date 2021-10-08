@@ -25,16 +25,14 @@ namespace Aloha.Hero
         
         public override void TakeDamage(int damage)
         {
-            int realDamage = (int) (damage / this.stats.defensePower);
-            if (damage < 0)
-            {
-                return;
-            }
-            health = health - damage;
-            if (health <= 0)
-            {
-                Die();
-            }
+            float damageReduction = CalculateDamageReduction();
+            int realDamage = (int) (damage * (1 - damageReduction));
+            base.TakeDamage(realDamage);
+        }
+
+        public float CalculateDamageReduction(){
+            float damageReduction;
+            return damageReduction = (this.stats.defense / (stats.defense + 20));
         }
     }
 }

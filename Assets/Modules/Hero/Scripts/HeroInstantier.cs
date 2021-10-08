@@ -21,8 +21,8 @@ namespace Aloha.Hero
     }
     public enum HeroType
     {
-        generic = 0,
-        guerrier = 1
+        Generic = 0,
+        Warrior = 1
     }
 }
 
