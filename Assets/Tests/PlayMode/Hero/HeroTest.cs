@@ -95,12 +95,12 @@ namespace Aloha.Test
         public void HeroTestAttack()
         {
             GameObject guerrierGO = new GameObject();
-            Guerrier guerrier = guerrierGO.AddComponent<Guerrier>();
-            GuerrierStats stats = (GuerrierStats)ScriptableObject.CreateInstance("GuerrierStats");
-            stats.maxFureur = 10;
+            Warrior guerrier = guerrierGO.AddComponent<Warrior>();
+            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            stats.maxRage = 10;
             stats.maxHealth = 10;
-            stats.attackPower = 10;
-            stats.defensePower = 10;
+            stats.attack = 10;
+            stats.defense = 10;
             stats.xp = 10;
             guerrier.Init(stats);
 
@@ -111,7 +111,7 @@ namespace Aloha.Test
             enemy.Init(enemyStats);
 
             guerrier.Attack(enemy);
-            Debug.Log(enemy.health);
+            Debug.Log(enemy.currentHealth);
         }
     }
 }

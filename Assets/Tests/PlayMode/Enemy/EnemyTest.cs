@@ -22,17 +22,17 @@ namespace Aloha.Test
             enemy.Init(stats);
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(5, enemy.health);
+            Assert.AreEqual(5, enemy.currentHealth);
 
             enemy.TakeDamage(-5);
-            Assert.AreEqual(5, enemy.health);
+            Assert.AreEqual(5, enemy.currentHealth);
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(0, enemy.health);
+            Assert.AreEqual(0, enemy.currentHealth);
 
             yield return null;
 

@@ -7,7 +7,7 @@ namespace Aloha
 {
     public abstract class Entity : MonoBehaviour
     {
-        public int health;
+        public int currentHealth;
         public int attack;
         protected UnityEvent dieEvent = new UnityEvent();
 
@@ -15,39 +15,30 @@ namespace Aloha
 
         public abstract void Attack(Entity entity);
 
-        /*public virtual void Attack(Object entity)
-        {
-            if (!(entity is Entity))
-                return;
-            Attack(entity as Entity);
-        }*/
-
         public virtual void TakeDamage(int damage)
         {
-            int realDamage = (int)(damage);
             if (damage < 0)
             {
                 return;
             }
-            health = health - damage;
-            if (health <= 0)
+            currentHealth = currentHealth - damage;
+            if (currentHealth <= 0)
             {
                 Die();
             }
         }
 
-        public void Die()
-        {
+        public void Die(){
             dieEvent.Invoke();
-            GlobalEvent.EntityDied.Invoke(this);
         }
+
     }
     public abstract class Entity<T> : Entity where T : Stats
     {
         public T stats;
         public override void Attack(Entity entity)
         {
-            entity.TakeDamage(this.stats.attackPower);
+            entity.TakeDamage(this.stats.attack);
         }
 
         public override void Init()
@@ -58,8 +49,8 @@ namespace Aloha
         public virtual void Init(Stats stats)
         {
             this.stats = (T)stats;
-            this.health = stats.maxHealth;
-            this.attack = stats.attackPower;
+            this.currentHealth = stats.maxHealth;
         }
+
     }
 }

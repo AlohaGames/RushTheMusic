@@ -5,17 +5,22 @@ using Aloha.EntityStats;
 
 namespace Aloha.Hero
 {
+    public class Hero : Hero<HeroStats> {}
     public class Hero<T> : Entity<T> where T : HeroStats
     {
-        public float defense;
         public void Init(T stats)
         {
             base.Init(stats);
-            this.defense = stats.defensePower;
         }
 
         public override void Init() {
             this.Init(stats);
+        }
+
+        public override void Init(Stats stats)
+        {
+            base.Init(stats);
+            currentHealth = stats.maxHealth;
         }
 
         public void LevelUp(int xp = 1)

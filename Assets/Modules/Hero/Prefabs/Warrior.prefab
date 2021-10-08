@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 8347539535947264394}
   - component: {fileID: 4366087439190777959}
   - component: {fileID: 186610474984720976}
-  - component: {fileID: 7571251048359046985}
+  - component: {fileID: 6137047574624049089}
   m_Layer: 0
   m_Name: Warrior
   m_TagString: Untagged
@@ -181,7 +181,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7571251048359046985
+--- !u!114 &6137047574624049089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,25 +190,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4699346524476617420}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8d86d4861952030188ddd97b92fee3f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a90952b9096ffffda6469fcb008b932, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: e37006a50aa16dab48da8a5458274446, type: 2}
-  health: 0
+  currentHealth: 0
   attack: 0
-  dieEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 4699346524476617420}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  defense: 0
+  stats: {fileID: 11400000, guid: cf1b5f95aec264d518eac902189e8ffd, type: 2}
