@@ -8,17 +8,18 @@ namespace Aloha
     {
         [SerializeField] private List<GameObject> EnemyPrefabs;
 
-        public GameObject InstantiateEnemy(int id, int hp)
+        public GameObject InstantiateEnemy(int id)
         {
             GameObject instance = Instantiate(EnemyPrefabs[id]);
-            instance.GetComponent<Enemy>().Init(hp);
+            Enemy enemy = instance.GetComponent<Enemy>();
+            enemy.Init();
             return instance;
         }
 
-        public GameObject InstantiateEnemy(EnemyType type, int hp)
+        public GameObject InstantiateEnemy(EnemyType type)
         {
 
-            return InstantiateEnemy((int) type, hp);
+            return InstantiateEnemy((int) type);
         }
 
 

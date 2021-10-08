@@ -90,5 +90,28 @@ namespace Aloha.Test
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.currentHealth);
         }
+
+        [Test]
+        public void HeroTestAttack()
+        {
+            GameObject guerrierGO = new GameObject();
+            Warrior guerrier = guerrierGO.AddComponent<Warrior>();
+            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            stats.maxRage = 10;
+            stats.maxHealth = 10;
+            stats.attack = 10;
+            stats.defense = 10;
+            stats.xp = 10;
+            guerrier.Init(stats);
+
+            GameObject enemyGO = new GameObject();
+            Enemy enemy = enemyGO.AddComponent<Enemy>();
+            EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
+            stats.maxHealth = 100;
+            enemy.Init(enemyStats);
+
+            guerrier.Attack(enemy);
+            Assert.IsTrue(enemy.currentHealth < enemy.stats.maxHealth);
+        }
     }
 }
