@@ -1,6 +1,6 @@
 using Aloha.EntityStats;
 
-namespace Aloha.Hero
+namespace Aloha.Heros
 {
     public class Warrior : Hero<WarriorStats>
     {
