@@ -10,8 +10,9 @@ namespace Aloha
 {
     public class LevelManager : Singleton<LevelManager>
     {
-        [SerializeField] private string Filename = "test-level.rtm";
+        [SerializeField] private string Filename;
         [SerializeField] public LevelMapping levelMapping;
+        [SerializeField] public bool IsLoaded = false;
 
         public void Init()
         {
@@ -59,6 +60,7 @@ namespace Aloha
             using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{Filename}", FileMode.Open))
             {
                 this.levelMapping = (LevelMapping)serializer.Deserialize(stream);
+                this.IsLoaded = true;
             }
 
             Debug.Log($"Load level finished : {this.levelMapping}");

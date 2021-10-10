@@ -71,7 +71,7 @@ namespace Aloha
 
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + tileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
-            GlobalEvent.TileCount.Invoke();
+            GlobalEvent.TileCount.Invoke(tile);
         }
 
         // Create a tile at the position the user wants

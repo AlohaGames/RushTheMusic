@@ -15,9 +15,6 @@ namespace Aloha.Example
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
             GlobalEvent.LevelStop.AddListener(ResetCount);
-
-            // TODO: Should be loaded via button !!!
-            LevelManager.Instance.Load();
         }
 
         public void ResetCount()
@@ -25,7 +22,8 @@ namespace Aloha.Example
             tilesCounter = 0;
             Debug.Log($"Reset tiles count to {tilesCounter}");
         }
-        public void CountTile()
+
+        public void CountTile(GameObject tile)
         {
             tilesCounter++;
             List<EnemyMapping> enemiesMapping = LevelManager.Instance.levelMapping.getEnnemies(tilesCounter);
@@ -36,8 +34,8 @@ namespace Aloha.Example
                 foreach (EnemyMapping enemyMapping in enemiesMapping)
                 {
                     GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.enemyType);
-                    Debug.Log(enemy.transform.position);
-                    enemy.transform.position = new Vector3(0, 1, 10);
+                    enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
+                    enemy.transform.SetParent(tile.transform);
                     Debug.Log(enemy.transform.position);
                 }
             }
