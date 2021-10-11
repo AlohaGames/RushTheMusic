@@ -4,6 +4,7 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
+using Aloha.EntityStats;
 
 namespace Aloha.Test
 {
@@ -16,28 +17,36 @@ namespace Aloha.Test
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            enemy.Init(10);
+            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            stats.maxHealth = 10;
+            enemy.Init(stats);
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(5, enemy.health);
+            Assert.AreEqual(5, enemy.currentHealth);
 
             enemy.TakeDamage(-5);
-            Assert.AreEqual(5, enemy.health);
+            Assert.AreEqual(5, enemy.currentHealth);
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
+            Assert.AreEqual(0, enemy.currentHealth);
+
+            yield return null;
+
             Assert.IsTrue(enemy == null);
+
+            //GameObject.Destroy(enemy);
         }
 
-        [UnityTest]
-        public IEnumerator EnemyInstancierTest()
+        [Test]
+        public void EnemyInstancierTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             Enemy enemy = EnemyInstantier.Instance
-                .InstantiateEnemy(EnemyType.generic, 10)
+                .InstantiateEnemy(EnemyType.generic)
                 .GetComponent<Enemy>();
 
             Assert.IsTrue(enemy != null);
@@ -45,8 +54,6 @@ namespace Aloha.Test
 
             GameObject.Destroy(enemy);
             GameObject.Destroy(manager);
-
-            yield return null;
         }
     }
 }
