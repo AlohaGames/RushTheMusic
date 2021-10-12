@@ -1,7 +1,7 @@
 using UnityEngine;
 using Aloha.Events;
 
-namespace Aloha
+namespace Aloha.Score
 {
     public class ScoreManager : Singleton<ScoreManager>
     {
@@ -19,6 +19,14 @@ namespace Aloha
         private int maxEnemy = 10;
         private int maxHit;
         private int maxTiles = 20;
+
+        public int GetTakeHit(){
+            return this.takeHit;
+        }
+
+        public int GetKillCount(){
+            return this.killCount;
+        }
 
         /// <summary>
         /// Awake is called when the script instance is being loaded.
@@ -57,12 +65,24 @@ namespace Aloha
         /// </summary>
         public int CalculateTotalScore()
         {
-            int killEnemy = Utils.InRangeInt(0, this.maxEnemy, this.killCount);
-            int heroTakeHit = Utils.InRangeInt(0, this.maxHit, this.takeHit);
-            float scoreDistance = 600f;
-            float scoreEnemyKilled = CalculateScore(this.maxScore, 30, (float) this.maxEnemy, killEnemy);
-            float scoreHit = CalculateScore(this.maxScore, 10, (float) this.maxHit, heroTakeHit);
+            float scoreDistance = ScoreDistance();
+            float scoreEnemyKilled = ScoreKill();
+            float scoreHit = ScoreHit();
             return this.totalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
+        }
+
+        public float ScoreHit(){
+            int heroTakeHit = Utils.InRangeInt(0, this.maxHit, this.takeHit);
+            return CalculateScore(this.maxScore, 10, (float) this.maxHit, heroTakeHit);
+        }
+
+        public float ScoreKill(){
+            int killEnemy = Utils.InRangeInt(0, this.maxEnemy, this.killCount);
+            return CalculateScore(this.maxScore, 30, (float) this.maxEnemy, killEnemy);
+        }
+
+        public float ScoreDistance(){
+            return 600f;
         }
 
         private float CalculateScore(int maxScore, int percent, float maxStat, int stat)
