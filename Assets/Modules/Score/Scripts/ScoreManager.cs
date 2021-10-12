@@ -71,20 +71,32 @@ namespace Aloha.Score
             return this.totalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
         }
 
+        /// <summary>
+        /// Calculate score of no hit
+        /// </summary>
         public float ScoreHit(){
             int heroTakeHit = Utils.InRangeInt(0, this.maxHit, this.takeHit);
             return CalculateScore(this.maxScore, 10, (float) this.maxHit, heroTakeHit);
         }
 
+        /// <summary>
+        /// Calculate score of killing entity
+        /// </summary>
         public float ScoreKill(){
             int killEnemy = Utils.InRangeInt(0, this.maxEnemy, this.killCount);
             return CalculateScore(this.maxScore, 30, (float) this.maxEnemy, killEnemy);
         }
 
+        /// <summary>
+        /// Calculate score of distance
+        /// </summary>
         public float ScoreDistance(){
             return 600f;
         }
 
+        /// <summary>
+        /// Calculate total score
+        /// </summary>
         private float CalculateScore(int maxScore, int percent, float maxStat, int stat)
         {
             float pourcentMaxScore = maxScore * (percent / 100f);
