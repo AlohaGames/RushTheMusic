@@ -6,7 +6,7 @@ using Aloha.Hero;
 namespace Aloha {
     public class Sword : MonoBehaviour
     {
-        Warrior warrior;
+        [SerializeField] Warrior warrior;
         private Vector3 presPos;
         private Vector3 newPos;
         private float speed;
@@ -21,9 +21,8 @@ namespace Aloha {
         private void Update()
         {
             newPos = transform.position;
-            speed = Mathf.Sqrt(Mathf.Pow((newPos.x - presPos.x),2) + Mathf.Pow((newPos.y - presPos.y),2) + Mathf.Pow((newPos.z - presPos.z),2))*100;
+            speed = (newPos - presPos).magnitude*100;
             presPos = newPos;
-            //Debug.Log(velocity);
         }
 
         // If the Sword touch an Object
@@ -34,7 +33,7 @@ namespace Aloha {
             {
                 //warrior.Attack(collider.GetComponent<Entity<EntityStats>>());
                 Debug.Log("Attack the Enemy");
-                Destroy(collider.gameObject);
+                warrior.Attack(collider.gameObject.GetComponent<Entity>());
             }
         }
     }
