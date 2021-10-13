@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610366951730eedb0857b0df6a724115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: 32
-  quit: 27
+  pause: 27
+  quit: 0
   attack: 323
   defense: 324
 --- !u!1001 &1317004801208864604

@@ -7,13 +7,12 @@ public class PauseScript : MonoBehaviour
 
     public static bool isGamePaused = false;
     public GameObject MenuPauseUI;
-    public KeyCode keyCode = KeyCode.Escape;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(keyCode))
+        if (Input.GetKeyDown(InputBinding.Instance.pause))
         {
             if (isGamePaused)
             {
