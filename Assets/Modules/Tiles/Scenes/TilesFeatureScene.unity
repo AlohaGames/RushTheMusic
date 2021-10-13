@@ -526,7 +526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1737480112520159588, guid: bec260f4393f841458355a0cd84c508b, type: 3}
       propertyPath: Filename
-      value: test-level-defaul-constructor.rtm
+      value: test-level.rtm
       objectReference: {fileID: 0}
     - target: {fileID: 2724938567570629760, guid: bec260f4393f841458355a0cd84c508b, type: 3}
       propertyPath: m_RootOrder

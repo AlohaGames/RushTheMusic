@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 namespace Aloha.Events
 {
-    public class TileCountEvent : UnityEvent<GameObject>
+    public class GameObjectEvent : UnityEvent<GameObject>
     {
 
     }

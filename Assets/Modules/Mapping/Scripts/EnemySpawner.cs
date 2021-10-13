@@ -9,8 +9,7 @@ namespace Aloha.Example
     {
         int tilesCounter = 0;
 
-
-        public void Start()
+        public void Awake()
         {
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
