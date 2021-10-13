@@ -6,43 +6,40 @@ using UnityEngine.UI;
 using Aloha.Score;
 using Aloha;
 
-namespace Aloha
+namespace Aloha.Score
 {
     public class UIManager : MonoBehaviour
     {
-        private Text scoreText;
+        private ScoreManager instanceScoreManager = ScoreManager.Instance;
+        public Text scoreText;
+        public GameObject canvasUILevel;
+
+        public void Awake()
+        {
+            canvasUILevel.SetActive(false);
+        }
 
         // Update is called once per frame
         void Update()
         {
-            scoreText.text = "Score total: " + ScoreManager.Instance.CalculateTotalScore().ToString();
-            if(!TilesManager.Instance.gameIsStarted){
-                InitScoreLevelCanvas();
+            scoreText.text = "Score: " + instanceScoreManager.CalculateTotalScore();
+            if (TilesManager.Instance.gameIsStarted)
+            {
+                Canvas_UI_Level();
             }
         }
 
-        public void InitScoreLevelCanvas(){
-            GameObject myGO;
-            GameObject myText;
-            Canvas Canvas_UI_Score_Level_Test;
-            Text totalScoreText;
+        public void Canvas_UI_Level()
+        {
+            GameObject text;
+            text totalScoreText;
 
-            //Canvas
-            myGO = new GameObject();
-            myGO.name = "Canvas_UI_Score_Level_Test";
-            myGO.AddComponent<Canvas>();
+            canvasUILevel.SetActive(true);
 
-            Canvas_UI_Score_Level_Test = myGO.GetComponent<Canvas>();
-            Canvas_UI_Score_Level_Test.renderMode = RenderMode.ScreenSpaceOverlay;
-            myGO.AddComponent<CanvasScaler>();
-            myGO.AddComponent<GraphicRaycaster>();
-
-            //Text score
-            myText = new GameObject();
-            myText.transform.parent = myGO.transform;
-            myText.name = "totalScoreText";
-            totalScoreText = myText.AddComponent<Text>();
-            totalScoreText.text = "Bite";
+            text = new GameObject();
+            text.transform.parent = canvasUILevel.transform;
+            text.name = "Total_Score_Text";
+            totalScoreText.text = "Score final: " + instanceScoreManager.CalculateTotalScore();
         }
     }
 }

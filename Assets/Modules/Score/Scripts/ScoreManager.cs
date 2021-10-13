@@ -97,7 +97,7 @@ namespace Aloha.Score
         /// <summary>
         /// Calculate total score
         /// </summary>
-        private float CalculateScore(int maxScore, int percent, float maxStat, int stat)
+        public float CalculateScore(int maxScore, int percent, float maxStat, int stat)
         {
             float pourcentMaxScore = maxScore * (percent / 100f);
             float scoreStat = 1f - ((maxStat - stat) / maxStat);
