@@ -32,14 +32,14 @@ namespace Aloha.Score
         public void Canvas_UI_Level()
         {
             GameObject text;
-            text totalScoreText;
+            //Text totalScoreText;
 
             canvasUILevel.SetActive(true);
 
             text = new GameObject();
             text.transform.parent = canvasUILevel.transform;
             text.name = "Total_Score_Text";
-            totalScoreText.text = "Score final: " + instanceScoreManager.CalculateTotalScore();
+            //totalScoreText.text = "Score final: " + instanceScoreManager.CalculateTotalScore();
         }
     }
 }
