@@ -10,12 +10,13 @@ namespace Aloha.Score
 {
     public class UIManager : MonoBehaviour
     {
-        private ScoreManager instanceScoreManager = ScoreManager.Instance;
+        private ScoreManager instanceScoreManager;
         public Text scoreText;
         public GameObject canvasUILevel;
 
         public void Awake()
         {
+            instanceScoreManager = ScoreManager.Instance;
             canvasUILevel.SetActive(false);
         }
 
@@ -31,8 +32,8 @@ namespace Aloha.Score
 
         public void Canvas_UI_Level()
         {
-            GameObject text;
-            text totalScoreText;
+            GameObject text = this.gameObject;
+            Text totalScoreText = text.GetComponent<Text>();
 
             canvasUILevel.SetActive(true);
 
