@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -327,6 +327,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_BestFit
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3523636344477425185, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: canvasUILevel
+      value: 
+      objectReference: {fileID: 693189518}
     - target: {fileID: 4696590084050929964, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_IgnoreReversedGraphics
       value: 1
@@ -417,6 +421,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb08a16a330fd58b99485317896e360, type: 3}
+--- !u!1 &693189518 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4455498127942056691, guid: beb08a16a330fd58b99485317896e360, type: 3}
+  m_PrefabInstance: {fileID: 693189517}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &704982280
 GameObject:
   m_ObjectHideFlags: 0
