@@ -8,16 +8,26 @@ namespace Aloha.Hero
     {
         [SerializeField] private List<GameObject> HeroPrefabs;
 
-        public GameObject InstantiateHero(int id)
+        private void Awake()
         {
-            GameObject instance = Instantiate(HeroPrefabs[id]);
-            return instance;
+            HeroInvokerButton.onInvokeEvent.AddListener((heroType) => {
+                InstantiateHero(heroType);
+                Debug.Log("J'ai fait un truc");
+            });
         }
 
         public GameObject InstantiateHero(HeroType type)
         {
             return InstantiateHero((int)type);
         }
+
+        private GameObject InstantiateHero(int id)
+        {
+            GameObject instance = Instantiate(HeroPrefabs[id]);
+            return instance;
+        }
+
+
     }
     public enum HeroType
     {

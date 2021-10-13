@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 using Aloha.EntityStats;
+using Aloha.Events;
 using UnityEngine;
 
 
@@ -13,6 +14,15 @@ namespace Aloha
         [SerializeField] private string Filename;
         [SerializeField] public LevelMapping levelMapping;
         [SerializeField] public bool IsLoaded = false;
+
+        public void Awake()
+        {
+            GlobalEvent.LoadLevel.AddListener((level) => { Load(level); });
+            LevelLoaderButton.onLoadEvent.AddListener((level, isTuto) =>
+            {
+                Load(level, isTuto);
+            });
+        }
 
         public void Init()
         {
@@ -50,21 +60,36 @@ namespace Aloha
             }
         }
 
-        public void Load()
-        {
 
-            Debug.Log($"Load level {Filename} in {this} of Id {this.GetInstanceID()}");
+        public void Load(string filename, bool isTuto = false)
+        {
+            Debug.Log($"Load level {filename} in {this} of Id {this.GetInstanceID()}");
 
             XmlSerializer serializer = new XmlSerializer(typeof(LevelMapping));
 
-            using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{Filename}", FileMode.Open))
+            if (!isTuto)
             {
-                this.levelMapping = (LevelMapping)serializer.Deserialize(stream);
-                this.IsLoaded = true;
+                using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{filename}", FileMode.Open))
+                {
+                    this.levelMapping = (LevelMapping)serializer.Deserialize(stream);
+                    this.IsLoaded = true;
+                }
             }
-
+            else
+            {
+                using (FileStream stream = new FileStream($"{Application.streamingAssetsPath}/Levels/{filename}", FileMode.Open))
+                {
+                    this.levelMapping = (LevelMapping)serializer.Deserialize(stream);
+                    this.IsLoaded = true;
+                }
+            }
             Debug.Log($"Load level finished : {this.levelMapping}");
             Debug.Log($"Number of ennemy on tile 10 : {this.levelMapping.getEnnemies(10).Count}");
+        }
+
+        public void Load(bool isTuto = false)
+        {
+            Load(Filename, isTuto);
         }
     }
 }

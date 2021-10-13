@@ -22,6 +22,10 @@ namespace Aloha
             gameIsStarted = false;
         }
 
+        void Awake() {
+            GlobalEvent.LevelStart.AddListener(StartGame);
+        }
+
         // Update is called once per frame
         void Update()
         {
