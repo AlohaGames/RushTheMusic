@@ -5,11 +5,13 @@ using Aloha.EntityStats;
 
 namespace Aloha.Hero
 {
-    public class Hero<T> : Entity<HeroStats> where T : HeroStats
+    public class Hero : Hero<HeroStats> {}
+    public class Hero<T> : Entity<T> where T : HeroStats
     {
-        public void Init(HeroStats stats)
+        public override void Init(Stats stats)
         {
             base.Init(stats);
+            currentHealth = stats.maxHealth;
         }
 
         public void LevelUp(int xp = 1)
@@ -26,7 +28,7 @@ namespace Aloha.Hero
 
         public float CalculateDamageReduction(){
             float damageReduction;
-            return damageReduction = (stats.defense / (stats.defense + 20));
+            return damageReduction = (this.stats.defense / (this.stats.defense + 20));
         }
     }
 }

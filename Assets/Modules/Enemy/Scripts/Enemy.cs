@@ -1,38 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Enemy : MonoBehaviour
+    public class Enemy<T> : Entity<T> where T : EnemyStats
     {
-        [SerializeField]
-        public int health
+        public void Awake()
         {
-            get;
-            private set;
-        }
-        [SerializeField]
-        private int maxHealth;
-
-        public void Init(int maxHealth)
-        {
-            this.maxHealth = maxHealth;
-            this.health = maxHealth;
+            this.dieEvent.AddListener(Disappear);
         }
 
-        public void TakeDamage(int damage)
+        public void Disappear()
         {
-            if (damage < 0)
-            {
-                return;
-            }
-            health = health - damage;
-            if (health <= 0)
-            {
-                DestroyImmediate(this.gameObject);
-            }
+            Destroy(this.gameObject);
         }
 
+        public void OnDestroy() {
+            this.dieEvent.RemoveListener(Disappear);
+        }
     }
+    public class Enemy : Enemy<EnemyStats> { }
 }
