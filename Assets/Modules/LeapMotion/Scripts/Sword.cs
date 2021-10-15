@@ -6,10 +6,10 @@ using Aloha.Hero;
 namespace Aloha {
     public class Sword : MonoBehaviour
     {
-        [SerializeField] Warrior warrior;
+        public Warrior warrior;
         private Vector3 presPos;
         private Vector3 newPos;
-        private float speed;
+        public float speed;
         [SerializeField] float minimumSpeedToKill = 1f;
 
         private void Start()
@@ -26,10 +26,11 @@ namespace Aloha {
         }
 
         // If the Sword touch an Object
-        void OnTriggerEnter(Collider collider)
+        public void OnTriggerEnter(Collider collider)
         {
             if (collider.tag == "Enemy" && speed> minimumSpeedToKill)
             {
+                Debug.Log(speed);
                 warrior.Attack(collider.gameObject.GetComponent<Entity>());
                 warrior.BumpEntity(collider.GetComponent<Entity>(), speed);
             }

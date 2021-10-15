@@ -7,10 +7,10 @@ namespace Aloha
 {
     public class Shield : MonoBehaviour
     {
-        [SerializeField] Warrior warrior;
+        public Warrior warrior;
         private Vector3 presPos;
         private Vector3 newPos;
-        private float speed;
+        public float speed;
 
         private void Start()
         {
@@ -26,7 +26,7 @@ namespace Aloha
         }
 
         // If the Shield touch an Object
-        void OnTriggerEnter(Collider collider)
+        public void OnTriggerEnter(Collider collider)
         {
             if (collider.tag == "Enemy")
             {
