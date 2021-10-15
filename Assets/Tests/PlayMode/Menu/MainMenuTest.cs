@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement;
 using Aloha;
 
 namespace Aloha.Test
@@ -24,9 +25,21 @@ namespace Aloha.Test
             GameObject menu = new GameObject();
             menu.AddComponent<MenuScript>();
 
+
+            SceneManager.LoadScene("MainMenu");
+
+            string currentName = SceneManager.GetActiveScene().name;
+
             menu.GetComponent<MenuScript>().Play();
 
-            menu.GetComponent<MenuScript>().Quit();
+            string lastName = SceneManager.GetActiveScene().name;
+
+
+
+            Assert.IsTrue(currentName != lastName);
+
+            //Ne pas test car cela pourrait faire bug en mode non editeur
+            //menu.GetComponent<MenuScript>().Quit();
 
             yield return null; 
         }
