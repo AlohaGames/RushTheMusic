@@ -28,10 +28,10 @@ namespace Aloha
         // If the Shield touch an Object
         void OnTriggerEnter(Collider collider)
         {
-            Debug.Log("has collide");
             if (collider.tag == "Enemy")
             {
-                Debug.Log("Block the enemy attack");
+                // Change minimum speed if actual speed is to low
+                if (speed < 1) speed = 1f;
                 warrior.BumpEntity(collider.GetComponent<Entity>(),speed);
             }
         }

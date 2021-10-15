@@ -33,13 +33,13 @@ namespace Aloha
         {
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit + direction*speed/4;
+            Vector3 posFinal = posInit + direction * speed;
 
             while (temps < 1f)
             {            
                 temps += speed * Time.deltaTime;
+                posFinal.y = posInit.y + Mathf.Sin(temps*Mathf.PI) * 0.25f;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                Debug.Log(temps);
                 yield return null;
             }
         }

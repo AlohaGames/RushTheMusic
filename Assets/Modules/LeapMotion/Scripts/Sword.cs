@@ -28,12 +28,10 @@ namespace Aloha {
         // If the Sword touch an Object
         void OnTriggerEnter(Collider collider)
         {
-            Debug.Log("has collide with a speed of "+ speed);
             if (collider.tag == "Enemy" && speed> minimumSpeedToKill)
             {
-                //warrior.Attack(collider.GetComponent<Entity<EntityStats>>());
-                Debug.Log("Attack the Enemy");
                 warrior.Attack(collider.gameObject.GetComponent<Entity>());
+                warrior.BumpEntity(collider.GetComponent<Entity>(), speed);
             }
         }
     }
