@@ -3,44 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Aloha.Score;
-using Aloha;
 
 namespace Aloha.Score
 {
     public class UIManager : MonoBehaviour
     {
         private ScoreManager instanceScoreManager;
+        private GameManager instanceGameManager;
+        public GameObject canvasUIScoreLevel;
         public Text scoreText;
-        public GameObject canvasUILevel;
+        public Text totalScoreText;
+        public Text distanceScore;
+        public Text killScore;
+        public Text hitScore;
 
         public void Awake()
         {
             instanceScoreManager = ScoreManager.Instance;
-            canvasUILevel.SetActive(false);
+            instanceGameManager = GameManager.Instance;
+            canvasUIScoreLevel.SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
             scoreText.text = "Score: " + instanceScoreManager.CalculateTotalScore();
-            if (TilesManager.Instance.gameIsStarted)
+            Debug.Log("Played? - " + instanceGameManager.isPlaying);
+            if (!instanceGameManager.isPlaying)
             {
-                Canvas_UI_Level();
+                Canvas_UI_Score_Level();
             }
         }
 
-        public void Canvas_UI_Level()
+        public void Canvas_UI_Score_Level()
         {
-            GameObject text;
-            //Text totalScoreText;
-
-            canvasUILevel.SetActive(true);
-
-            text = new GameObject();
-            text.transform.parent = canvasUILevel.transform;
-            text.name = "Total_Score_Text";
-            //totalScoreText.text = "Score final: " + instanceScoreManager.CalculateTotalScore();
+            scoreText.gameObject.SetActive(false);
+            canvasUIScoreLevel.SetActive(true);
+            distanceScore.text = "Distance" + "\t" + instanceScoreManager.ScoreDistance() + "\n\t\t" + "BITE";
+            killScore.text = "Kill" + "\t" + instanceScoreManager.ScoreKill();
+            hitScore.text = "Hit" + "\t" + instanceScoreManager.ScoreHit();
+            totalScoreText.text = "Score total: " + instanceScoreManager.CalculateTotalScore();
         }
     }
 }
