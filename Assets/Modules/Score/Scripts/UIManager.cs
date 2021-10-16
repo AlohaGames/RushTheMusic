@@ -39,7 +39,7 @@ namespace Aloha.Score
         {
             scoreText.gameObject.SetActive(false);
             canvasUIScoreLevel.SetActive(true);
-            distanceScore.text = "Distance" + "\t" + instanceScoreManager.ScoreDistance() + "\n\t\t" + "BITE";
+            distanceScore.text = "Distance" + "\t" + instanceScoreManager.ScoreDistance();
             killScore.text = "Kill" + "\t" + instanceScoreManager.ScoreKill();
             hitScore.text = "Hit" + "\t" + instanceScoreManager.ScoreHit();
             totalScoreText.text = "Score total: " + instanceScoreManager.CalculateTotalScore();
