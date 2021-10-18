@@ -31,8 +31,8 @@ namespace Aloha.Test
             sword.warrior = warrior;
             sword.speed = 30;
 
-            BoxCollider shieldBoxCollider = swordGO.AddComponent<BoxCollider>();
-            shieldBoxCollider.isTrigger = true;
+            BoxCollider swordBoxCollider = swordGO.AddComponent<BoxCollider>();
+            swordBoxCollider.isTrigger = true;
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
@@ -93,6 +93,10 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
+
+            GameObject.Destroy(warrior);
+            GameObject.Destroy(shieldGO);
+            GameObject.Destroy(enemyGO);
         }
     }
 }
