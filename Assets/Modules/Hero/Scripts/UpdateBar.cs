@@ -21,6 +21,5 @@ public class UpdateBar : MonoBehaviour
     public void test()
     {
         updateBar(50, 100);
-
     }
 }
