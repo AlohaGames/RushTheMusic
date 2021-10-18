@@ -31,7 +31,7 @@ namespace Aloha.Test
             sword.warrior = warrior;
             sword.speed = 30;
 
-            var shieldBoxCollider = swordGO.AddComponent<BoxCollider>();
+            BoxCollider shieldBoxCollider = swordGO.AddComponent<BoxCollider>();
             shieldBoxCollider.isTrigger = true;
 
             GameObject enemyGO = new GameObject();
@@ -41,7 +41,7 @@ namespace Aloha.Test
             eStats.maxHealth = 10;
             enemy.Init(eStats);
 
-            var enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();
+            BoxCollider enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();
             enemyBoxCollider.tag = "Enemy";
 
             sword.OnTriggerEnter(enemyBoxCollider);
@@ -71,7 +71,7 @@ namespace Aloha.Test
             shield.warrior = warrior;
             shield.speed = 30;
 
-            var shieldBoxCollider = shieldGO.AddComponent<BoxCollider>();
+            BoxCollider shieldBoxCollider = shieldGO.AddComponent<BoxCollider>();
             shieldBoxCollider.isTrigger = true;
 
             GameObject enemyGO = new GameObject();
@@ -81,7 +81,7 @@ namespace Aloha.Test
             eStats.maxHealth = 10;
             enemy.Init(eStats);
 
-            var enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();
+            BoxCollider enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();
             enemyBoxCollider.tag = "Enemy";
 
             shield.OnTriggerEnter(enemyBoxCollider);

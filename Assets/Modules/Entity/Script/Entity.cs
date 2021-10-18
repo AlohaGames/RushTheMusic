@@ -42,6 +42,8 @@ namespace Aloha
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
+
+            gameObject.transform.position = posFinal;
         }
 
         public void Die(){
@@ -56,7 +58,6 @@ namespace Aloha
         public override void Attack(Entity entity)
         {
             entity.TakeDamage(this.stats.attack);
-            Debug.Log(this.stats.attack);
         }
 
         public override void Init()
