@@ -12,7 +12,6 @@ namespace Aloha.Hero
         {
             HeroInvokerButton.onInvokeEvent.AddListener((heroType) => {
                 InstantiateHero(heroType);
-                Debug.Log("J'ai fait un truc");
             });
         }
 
