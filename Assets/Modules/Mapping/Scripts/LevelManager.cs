@@ -17,11 +17,7 @@ namespace Aloha
 
         public void Awake()
         {
-            GlobalEvent.LoadLevel.AddListener((level) => { Load(level); });
-            LevelLoaderButton.onLoadEvent.AddListener((level, isTuto) =>
-            {
-                Load(level, isTuto);
-            });
+            GlobalEvent.LoadLevel.AddListener((level, isTrue) => { Load(level, isTrue); });
         }
 
         public void Init()

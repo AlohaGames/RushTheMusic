@@ -10,13 +10,12 @@ namespace Aloha
     public class HeroInvokerButton : MonoBehaviour
     {
         public HeroType type;
-        public static HeroTypeEvent onInvokeEvent = new HeroTypeEvent();
 
         public void Awake() {
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
         public void OnClick() {
-            onInvokeEvent.Invoke(type);
+            GlobalEvent.LoadHero.Invoke(type);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha.Hero
 {
@@ -10,7 +11,7 @@ namespace Aloha.Hero
 
         private void Awake()
         {
-            HeroInvokerButton.onInvokeEvent.AddListener((heroType) => {
+            GlobalEvent.LoadHero.AddListener((heroType) => {
                 InstantiateHero(heroType);
             });
         }

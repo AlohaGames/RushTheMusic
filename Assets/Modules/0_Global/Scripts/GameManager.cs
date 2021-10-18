@@ -9,8 +9,8 @@ namespace Aloha {
     {
         [SerializeField]
         private string defaultLevel;
-        public void LoadLevel(string level){
-            GlobalEvent.LoadLevel.Invoke(level);
+        public void LoadLevel(string level, bool isTuto = false){
+            GlobalEvent.LoadLevel.Invoke(level, isTuto);
         }
 
         public void LoadLevel() {
