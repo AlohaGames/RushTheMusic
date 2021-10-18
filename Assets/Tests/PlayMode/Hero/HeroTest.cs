@@ -19,8 +19,8 @@ namespace Aloha.Test
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
-            GameObject.Destroy(hero);
-            GameObject.Destroy(manager);
+            GameObject.DestroyImmediate(hero.gameObject);
+            GameObject.DestroyImmediate(manager);
         }
 
         [Test]
@@ -34,7 +34,7 @@ namespace Aloha.Test
             Assert.IsTrue(hero.stats != null);
             Assert.IsTrue(hero.stats is WarriorStats);
 
-            GameObject.Destroy(hero);
+            GameObject.Destroy(hero.gameObject);
             GameObject.Destroy(manager);
         }
 
@@ -89,6 +89,8 @@ namespace Aloha.Test
             Debug.Log("Hero life: " + warrior.currentHealth);
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.currentHealth);
+
+            GameObject.Destroy(warriorGO);
         }
 
         [Test]
@@ -112,6 +114,9 @@ namespace Aloha.Test
 
             guerrier.Attack(enemy);
             Assert.IsTrue(enemy.currentHealth < enemy.stats.maxHealth);
+
+            GameObject.Destroy(guerrierGO);
+            GameObject.Destroy(enemyGO);
         }
     }
 }

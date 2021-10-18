@@ -103,5 +103,9 @@ namespace Aloha
         {
             return activeTiles[index];
         }
+
+        public void OnDestroy() {
+            GameObject.Destroy(tilesContainer);
+        }
     }
 }

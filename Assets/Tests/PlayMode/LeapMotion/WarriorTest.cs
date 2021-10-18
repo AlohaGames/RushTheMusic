@@ -50,6 +50,10 @@ namespace Aloha.Test
 
             Assert.Greater(enemy.transform.position.z, 3f);
             Assert.AreEqual(enemy.currentHealth, 5);
+
+            GameObject.Destroy(warrior);
+            GameObject.Destroy(swordGO);
+            GameObject.Destroy(enemyGO);
         }
 
         [UnityTest]

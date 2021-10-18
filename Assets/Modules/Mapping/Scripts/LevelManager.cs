@@ -12,39 +12,12 @@ namespace Aloha
     public class LevelManager : Singleton<LevelManager>
     {
         [SerializeField] private string Filename;
-        [SerializeField] public LevelMapping levelMapping;
+        [SerializeField] public LevelMapping levelMapping = new LevelMapping();
         [SerializeField] public bool IsLoaded = false;
 
         public void Awake()
         {
             GlobalEvent.LoadLevel.AddListener((level, isTrue) => { Load(level, isTrue); });
-        }
-
-        public void Init()
-        {
-            /*
-            Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.attack = 10;
-            enemyStats.defense = 10;
-            enemyStats.maxHealth = 10;
-            enemyStats.level = 2;
-
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPosition.BOT, HorizontalPosition.CENTER);
-
-            List<EnemyMapping> tile10Enemies = new List<EnemyMapping>();
-            tile10Enemies.Add(genericEnemy);
-
-            SerializeDictionary<int, List<EnemyMapping>> enemies = new SerializeDictionary<int, List<EnemyMapping>>();
-            enemies.Add(10, tile10Enemies);
-
-            levelMapping = new LevelMapping(enemies, 80);
-
-            // Save le level
-            Save();
-
-            // Reset
-            levelMapping = null;
-            */
         }
 
         public void Save()
@@ -55,7 +28,6 @@ namespace Aloha
                 serializer.Serialize(stream, levelMapping);
             }
         }
-
 
         public void Load(string filename, bool isTuto = false)
         {

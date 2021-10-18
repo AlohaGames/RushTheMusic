@@ -38,7 +38,10 @@ namespace Aloha.Test
 
             Assert.IsTrue(enemy == null);
 
-            //GameObject.Destroy(enemy);
+            if (enemyGO)
+            {
+                GameObject.Destroy(enemyGO);
+            }
         }
 
         [Test]
@@ -52,7 +55,7 @@ namespace Aloha.Test
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 
-            GameObject.Destroy(enemy);
+            GameObject.Destroy(enemy.gameObject);
             GameObject.Destroy(manager);
         }
     }
