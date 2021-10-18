@@ -53,7 +53,7 @@ PrefabInstance:
     - target: {fileID: 234615000511885780, guid: cab17fdbd3ff90f4887e6aba7a63663e, type: 3}
       propertyPath: warrior
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8435809019147580441}
     - target: {fileID: 234615000511885780, guid: cab17fdbd3ff90f4887e6aba7a63663e, type: 3}
       propertyPath: minimumSpeedToKill
       value: 0.7
@@ -1519,6 +1519,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2340732432551476948, guid: cab17fdbd3ff90f4887e6aba7a63663e, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2340732432551476948, guid: cab17fdbd3ff90f4887e6aba7a63663e, type: 3}
       propertyPath: ModelPool.Array.data[0].IsLeftToBeSpawned
       value: 1
       objectReference: {fileID: 0}
@@ -1709,7 +1713,7 @@ PrefabInstance:
     - target: {fileID: 6184039340897106565, guid: cab17fdbd3ff90f4887e6aba7a63663e, type: 3}
       propertyPath: warrior
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 8435809019147580441}
     - target: {fileID: 6617350437130677771, guid: cab17fdbd3ff90f4887e6aba7a63663e, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
