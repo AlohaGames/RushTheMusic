@@ -557,10 +557,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1168125429}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 622c54f3f647ddb4c88e3291b62695cc, type: 3}
+  m_Script: {fileID: 11500000, guid: 77b25a4c398d5084cb0ed4416e7af59e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1509201194
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,7 +644,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1168125433}
-        m_TargetAssemblyTypeName: UpdateBar, Aloha
+        m_TargetAssemblyTypeName: HealthBarHero, Aloha
         m_MethodName: test
         m_Mode: 1
         m_Arguments:
