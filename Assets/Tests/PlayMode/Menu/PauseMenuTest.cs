@@ -10,20 +10,13 @@ namespace Aloha.Test
 {
     public class PauseMenuTest
     {
-        // A Test behaves as an ordinary method
-        [Test]
-        public void PauseMenuTestSimplePasses()
-        {
-            // Use the Assert class to test conditions
-        }
-
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
         public IEnumerator PauseMenuTestWithEnumeratorPasses()
         {
             GameObject pause = new GameObject();
-            pause.AddComponent<PauseScript>();
+            pause.AddComponent<Pause>();
 
             GameObject child = new GameObject();
 
@@ -31,7 +24,7 @@ namespace Aloha.Test
 
             child.transform.SetParent(pause.transform);
 
-            pause.GetComponent<PauseScript>().MenuPauseUI = child;
+            pause.GetComponent<Pause>().MenuPauseUI = child;
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
@@ -39,7 +32,7 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale != 0f);
 
-            pause.GetComponent<PauseScript>().Pause();
+            pause.GetComponent<Pause>().PauseGame();
 
             // skip one frame
             yield return null;
@@ -48,13 +41,13 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(PauseScript.isGamePaused);
+            Assert.IsTrue(Pause.isGamePaused);
 
             yield return null;
             yield return null;
             yield return null;
 
-            pause.GetComponent<PauseScript>().Resume();
+            pause.GetComponent<Pause>().Resume();
 
             yield return null;
             yield return null;
@@ -62,7 +55,7 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(child.activeSelf);
-            Assert.IsFalse(PauseScript.isGamePaused);
+            Assert.IsFalse(Pause.isGamePaused);
 
             GameObject.Destroy(pause);
 
