@@ -11,8 +11,8 @@ namespace Aloha
     public class LevelManager : Singleton<LevelManager>
     {
         [SerializeField] private string Filename;
-        [SerializeField] public LevelMapping levelMapping;
-        [SerializeField] public bool IsLoaded = false;
+        public LevelMapping levelMapping;
+        public bool IsLoaded = false;
 
         public void Init()
         {

@@ -3,11 +3,11 @@ using Aloha;
 using Aloha.Events;
 using System.Collections.Generic;
 
-namespace Aloha.Example
+namespace Aloha
 {
     public class EnemySpawner : Singleton<EnemySpawner>
     {
-        int tilesCounter = 0;
+        public int tilesCounter = 0;
 
         public void Awake()
         {

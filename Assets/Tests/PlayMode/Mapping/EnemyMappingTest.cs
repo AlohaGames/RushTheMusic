@@ -44,7 +44,7 @@ namespace Aloha.Test
         }
 
         [Test]
-        public void EnemyMappingGetPosition()
+        public void EnemyMappingGetPositionTest()
         {
             EnemyMapping em0 = GetEnemiesMapping()[0];
             Assert.AreEqual(new Vector3(0, 1, 1), em0.GetPosition(1));
