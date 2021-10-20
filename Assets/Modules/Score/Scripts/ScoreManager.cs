@@ -1,7 +1,7 @@
 using UnityEngine;
 using Aloha.Events;
 
-namespace Aloha.Score
+namespace Aloha
 {
     public class ScoreManager : Singleton<ScoreManager>
     {

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
-using Aloha.Score;
+using Aloha;
 
 namespace Aloha.Test
 {
