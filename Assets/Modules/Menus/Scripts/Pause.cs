@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseScript : MonoBehaviour
+namespace Aloha
+{
+    public class Pause : MonoBehaviour
 {
 
     public static bool isGamePaused = false;
@@ -20,7 +22,7 @@ public class PauseScript : MonoBehaviour
             }
             else
             {
-                Pause();
+                PauseGame();
             }
 
         }
@@ -33,10 +35,11 @@ public class PauseScript : MonoBehaviour
         isGamePaused = false;
     }
 
-    public void Pause()
+    public void PauseGame()
     {
         MenuPauseUI.SetActive(true);
         Time.timeScale = 0f;
         isGamePaused = true;
     }
+}
 }

@@ -1,8 +1,9 @@
 using UnityEngine;
 
-namespace Aloha.EntityStats
+namespace Aloha
 {
-    public class Stats : ScriptableObject{
+    public class Stats : ScriptableObject
+    {
         public int maxHealth;
         public int attack;
         public float defense;

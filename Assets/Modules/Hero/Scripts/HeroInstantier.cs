@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aloha.Heros
+namespace Aloha
 {
     public class HeroInstantier : Singleton<HeroInstantier>
     {

@@ -2,7 +2,6 @@ using UnityEngine;
 using NUnit.Framework;
 using Aloha;
 using Aloha.Events;
-using Aloha.Heros;
 
 namespace Aloha.Test
 {

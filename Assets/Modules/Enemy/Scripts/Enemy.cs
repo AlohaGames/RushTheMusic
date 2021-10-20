@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.EntityStats;
 
 namespace Aloha
 {
@@ -18,7 +17,8 @@ namespace Aloha
             Destroy(this.gameObject);
         }
 
-        public void OnDestroy() {
+        public void OnDestroy()
+        {
             this.dieEvent.RemoveListener(Disappear);
         }
     }

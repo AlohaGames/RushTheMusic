@@ -5,7 +5,9 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuScript : MonoBehaviour
+namespace Aloha
+{
+    public class Menu : MonoBehaviour
 {
 
     public void Play()
@@ -17,4 +19,5 @@ public class MenuScript : MonoBehaviour
     {
         Application.Quit();
     }
+}
 }

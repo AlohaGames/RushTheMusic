@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Aloha.Heros;
-using Aloha.EntityStats;
+using Aloha;
 
 namespace Aloha.Test
 {

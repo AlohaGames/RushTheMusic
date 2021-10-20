@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Aloha.test
+namespace Aloha.Test
 {
     public class UtilsTest
     {

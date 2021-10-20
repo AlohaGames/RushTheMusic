@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.EntityStats;
 using Aloha.Events;
 
-namespace Aloha.Heros
+namespace Aloha
 {
     public class Hero : Hero<HeroStats>
     {

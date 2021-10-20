@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.EntityStats;
+using System.Collections;
 using Aloha.Events;
 
 namespace Aloha
@@ -28,7 +28,25 @@ namespace Aloha
             }
         }
 
-        public void Die(){
+        public IEnumerator GetBump(Vector3 direction, float speed = 2f)
+        {
+            float temps = 0;
+            Vector3 posInit = gameObject.transform.position;
+            Vector3 posFinal = posInit + direction * speed;
+
+            while (temps < 1f)
+            {
+                temps += speed * Time.deltaTime;
+                posFinal.y = posInit.y + Mathf.Sin(temps * Mathf.PI) * 0.25f;
+                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+                yield return null;
+            }
+
+            gameObject.transform.position = posFinal;
+        }
+
+        public void Die()
+        {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);
         }

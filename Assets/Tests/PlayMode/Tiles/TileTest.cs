@@ -39,7 +39,7 @@ namespace Aloha.Test
             GameObject lastTile = tilesManager.GetActiveTileById(tilesManager.numberOfTiles - 1);
 
             float timeOfOneTile = (tilesManager.tileSize / tilesManager.tileSpeed);
-            yield return new WaitForSeconds(timeOfOneTile * 2 );
+            yield return new WaitForSeconds(timeOfOneTile * 2);
 
             Assert.IsTrue(firstTile == null, "Is the first tile deleted when it's behind the player ?");
             Assert.AreNotSame(lastTile, tilesManager.GetActiveTileById(tilesManager.numberOfTiles - 1), "Does a new tile appear ?");

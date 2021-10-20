@@ -1,13 +1,11 @@
 using UnityEngine.Events;
 using UnityEngine;
-using Aloha.Heros;
+using Aloha;
 
 namespace Aloha.Events
 {
-
-
     public class HeroEvent : UnityEvent
     {
-        
+
     }
 }
