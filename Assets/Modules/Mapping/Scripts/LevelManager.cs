@@ -64,7 +64,6 @@ namespace Aloha
             }
 
             Debug.Log($"Load level finished : {this.levelMapping}");
-            Debug.Log($"Number of ennemy on tile 10 : {this.levelMapping.getEnnemies(10).Count}");
         }
     }
 }

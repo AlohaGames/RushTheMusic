@@ -8,7 +8,7 @@ namespace Aloha.Test
 {
     public class EnemyMappingTest
     {
-        public EnemyMapping[] GetEnemiesMapping()
+        EnemyMapping[] GetEnemiesMapping()
         {
             EnemyMapping em0 = new EnemyMapping();
 

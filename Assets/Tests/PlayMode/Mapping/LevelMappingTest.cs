@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {
     public class LevelMappingTest
     {
 
-        public LevelMapping[] GetLevelsMapping()
+        LevelMapping[] GetLevelsMapping()
         {
             LevelMapping lm0 = new LevelMapping();
             LevelMapping lm1 = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 180);

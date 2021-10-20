@@ -35,7 +35,6 @@ namespace Aloha
                     GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.enemyType);
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                     enemy.transform.SetParent(tile.transform);
-                    Debug.Log(enemy.transform.position);
                 }
             }
         }

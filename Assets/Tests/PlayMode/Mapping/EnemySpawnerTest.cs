@@ -44,11 +44,13 @@ namespace Aloha.Test
             tilesManager.StartGame();
             yield return null;
 
+            Assert.AreNotEqual(0, enemySpawner.tilesCounter);
+            yield return null;
+
             tilesManager.StopGame();
             yield return null;
 
             Assert.AreEqual(0, enemySpawner.tilesCounter);
-
             GameObject.Destroy(manager);
             yield return null;
         }
