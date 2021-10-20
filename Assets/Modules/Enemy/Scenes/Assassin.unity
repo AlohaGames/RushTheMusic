@@ -549,6 +549,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
+    - target: {fileID: 6137047574624049089, guid: 3f6d5934a7d408f42b9f4979aee669f5, type: 3}
+      propertyPath: currentHealth
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f6d5934a7d408f42b9f4979aee669f5, type: 3}
 --- !u!1 &1302445736

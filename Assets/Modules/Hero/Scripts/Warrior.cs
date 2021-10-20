@@ -1,7 +1,7 @@
 using Aloha.EntityStats;
 using UnityEngine;
 
-namespace Aloha.Hero
+namespace Aloha.Heros
 {
     public class Warrior : Hero<WarriorStats>
     {
