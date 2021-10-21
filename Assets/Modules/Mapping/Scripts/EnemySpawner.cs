@@ -3,14 +3,13 @@ using Aloha;
 using Aloha.Events;
 using System.Collections.Generic;
 
-namespace Aloha.Example
+namespace Aloha
 {
     public class EnemySpawner : Singleton<EnemySpawner>
     {
-        int tilesCounter = 0;
+        public int tilesCounter = 0;
 
-
-        public void Start()
+        public void Awake()
         {
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
@@ -36,7 +35,6 @@ namespace Aloha.Example
                     GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.enemyType);
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                     enemy.transform.SetParent(tile.transform);
-                    Debug.Log(enemy.transform.position);
                 }
             }
         }

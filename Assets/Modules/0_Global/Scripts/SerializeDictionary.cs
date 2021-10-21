@@ -30,10 +30,17 @@ namespace Aloha
         }
 
 
-        public void Add(TKey key, TValue value)
+        public void Add(TKey addKey, TValue addValue)
         {
-            this.dictionaryKey.Add(key);
-            this.dictionaryValue.Add(value);
+            int index = this.dictionaryKey.FindIndex(key => key.Equals(addKey));
+            // If value already exists
+            if (index >= 0)
+            {
+                this.dictionaryKey.RemoveAt(index);
+                this.dictionaryValue.RemoveAt(index);
+            }
+            this.dictionaryKey.Add(addKey);
+            this.dictionaryValue.Add(addValue);
         }
 
         public TValue GetValue(TKey searchKey)

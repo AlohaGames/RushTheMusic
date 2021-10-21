@@ -5,6 +5,6 @@ namespace Aloha.Events
 {
     public class GameObjectEvent : UnityEvent<GameObject>
     {
-        
+
     }
 }
