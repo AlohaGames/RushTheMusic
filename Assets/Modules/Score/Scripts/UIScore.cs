@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Aloha
 {
-    public class UIManager : MonoBehaviour
+    public class UIScore : MonoBehaviour
     {
         private ScoreManager instanceScoreManager;
         private GameManager instanceGameManager;

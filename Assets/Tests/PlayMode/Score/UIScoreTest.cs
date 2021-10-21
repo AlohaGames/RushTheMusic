@@ -16,10 +16,10 @@ namespace Aloha.Test
 
             Assert.IsTrue(scoreManager != null);
 
-            Debug.Log(scoreManager);
+            Debug.Log(scoreManager.GetComponent<UIScore>());
 
-            Assert.IsFalse(scoreManager.GetComponent<UIManager>().canvasUIScoreLevel.activeSelf);
-            Assert.IsTrue(scoreManager.GetComponent<UIManager>().scoreText.IsActive());
+            Assert.IsFalse(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
+            Assert.IsTrue(scoreManager.GetComponent<UIScore>().scoreText.IsActive());
 
             GameObject.DestroyImmediate(manager);
         }
@@ -43,12 +43,12 @@ namespace Aloha.Test
 
             yield return null;
 
-            Assert.IsTrue(scoreManager.GetComponent<UIManager>().canvasUIScoreLevel.activeSelf);
-            Assert.IsFalse(scoreManager.GetComponent<UIManager>().scoreText.IsActive());
+            Assert.IsTrue(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
+            Assert.IsFalse(scoreManager.GetComponent<UIScore>().scoreText.IsActive());
 
-            Debug.Log(scoreManager.GetComponent<UIManager>().canvasUIScoreLevel.activeSelf);
+            Debug.Log(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
 
-            GameObject.Destroy(manager);
+            GameObject.DestroyImmediate(manager);
 
             yield return null;
         }
