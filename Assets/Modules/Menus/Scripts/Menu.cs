@@ -5,7 +5,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuScript : MonoBehaviour
+public class Menu : MonoBehaviour
 {
 
     public void Play()
