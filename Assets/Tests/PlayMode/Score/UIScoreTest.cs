@@ -28,18 +28,13 @@ namespace Aloha.Test
         public IEnumerator UIScoreEndLevelTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject guerrierGO = new GameObject();
+            Warrior guerrier = guerrierGO.AddComponent<Warrior>();
             ScoreManager scoreManager = ScoreManager.Instance;
-            GameManager gameManager = GameManager.Instance;
 
             Assert.IsTrue(scoreManager != null);
 
-            yield return null;
-
-            Debug.Log(gameManager.isPlaying);
-
-            gameManager.StopGame();
-
-            Debug.Log(gameManager.isPlaying);
+            guerrier.Die();
 
             yield return null;
 
@@ -48,6 +43,7 @@ namespace Aloha.Test
 
             Debug.Log(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
 
+            GameObject.DestroyImmediate(guerrierGO);
             GameObject.DestroyImmediate(manager);
 
             yield return null;

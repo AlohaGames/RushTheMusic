@@ -6,13 +6,10 @@ namespace Aloha
     public class ScoreManager : Singleton<ScoreManager>
     {
         public int totalScore;
-
         [SerializeField]
         private int takeHit;
-
         [SerializeField]
         private int killCount;
-
         [SerializeField]
         private int countTiles;
         private int maxScore = 1000;
@@ -28,9 +25,6 @@ namespace Aloha
             return this.killCount;
         }
 
-        /// <summary>
-        /// Awake is called when the script instance is being loaded.
-        /// </summary>
         public void Awake()
         {
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
@@ -105,9 +99,6 @@ namespace Aloha
             return pourcentMaxScore * scoreStat;
         }
 
-        /// <summary>
-        /// Destroy the listeners
-        /// </summary>
         public void OnDestroy()
         {
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Aloha.Events;
 
 namespace Aloha
 {
     public class UIScore : MonoBehaviour
     {
         private ScoreManager instanceScoreManager;
-        private GameManager instanceGameManager;
         public GameObject canvasUIScoreLevel;
         public Text scoreText;
         public Text totalScoreText;
@@ -19,8 +19,8 @@ namespace Aloha
 
         public void Awake()
         {
+            GlobalEvent.HeroDie.AddListener(Canvas_UI_Score_Level);
             instanceScoreManager = ScoreManager.Instance;
-            instanceGameManager = GameManager.Instance;
             canvasUIScoreLevel.SetActive(false);
         }
 
@@ -28,11 +28,6 @@ namespace Aloha
         void Update()
         {
             scoreText.text = "Score: " + instanceScoreManager.CalculateTotalScore();
-            Debug.Log("Played? - " + instanceGameManager.isPlaying);
-            if (!instanceGameManager.isPlaying)
-            {
-                Canvas_UI_Score_Level();
-            }
         }
 
         public void Canvas_UI_Score_Level()
@@ -43,6 +38,11 @@ namespace Aloha
             killScore.text = "Kill" + "\t" + instanceScoreManager.ScoreKill();
             hitScore.text = "Hit" + "\t" + instanceScoreManager.ScoreHit();
             totalScoreText.text = "Score total: " + instanceScoreManager.CalculateTotalScore();
+        }
+
+        public void OnDestroy()
+        {
+            GlobalEvent.HeroDie.RemoveListener(Canvas_UI_Score_Level);
         }
     }
 }

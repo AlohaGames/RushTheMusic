@@ -45,7 +45,7 @@ namespace Aloha
             gameObject.transform.position = posFinal;
         }
 
-        public void Die()
+        public virtual void Die()
         {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);

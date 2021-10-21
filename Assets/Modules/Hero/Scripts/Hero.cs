@@ -35,5 +35,11 @@ namespace Aloha
             float damageReduction;
             return damageReduction = (this.stats.defense / (this.stats.defense + 20));
         }
+
+        public override void Die()
+        {
+            base.Die();
+            GlobalEvent.HeroDie.Invoke();
+        }
     }
 }

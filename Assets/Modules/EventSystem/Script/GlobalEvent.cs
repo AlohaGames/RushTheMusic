@@ -10,5 +10,7 @@ namespace Aloha.Events
     {
         public static EntityEvent EntityDied = new EntityEvent();
         public static HeroEvent HeroTakeDamage = new HeroEvent();
+        public static HeroEvent HeroDie = new HeroEvent();
+        public static EnemyEvent EnemyDie = new EnemyEvent();
     }
 }
