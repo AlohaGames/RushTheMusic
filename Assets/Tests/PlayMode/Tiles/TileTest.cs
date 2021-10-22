@@ -30,6 +30,8 @@ namespace Aloha.Test
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             TilesManager tilesManager = TilesManager.Instance;
+            LevelManager levelManager = LevelManager.Instance;
+            levelManager.levelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
@@ -58,6 +60,8 @@ namespace Aloha.Test
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
             TilesManager tilesManager = TilesManager.Instance;
+            LevelManager levelManager = LevelManager.Instance;
+            levelManager.levelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();

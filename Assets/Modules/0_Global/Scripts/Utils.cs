@@ -1,34 +1,42 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using System;
-public class Utils
+
+namespace Aloha
 {
-    public static bool EqualFloat(float a, float b, float epsilon = 0.01f)
+    public static class Utils
     {
-        return Math.Abs(a - b) <= epsilon;
-    }
 
-    public static int InRangeInt(int min, int max, int value)
-    {
-        if (value < min)
+        public static bool EqualFloat(float a, float b, float epsilon = 0.01f)
         {
-            return min;
+            return Math.Abs(a - b) <= epsilon;
         }
-        if (value > max)
-        {
-            return max;
-        }
-        return value;
-    }
 
-    public static float InRangeFloat(float min, float max, float value)
-    {
-        if (value < min)
+        public static int InRangeInt(int min, int max, int value)
         {
-            return min;
+            if (value < min)
+            {
+                return min;
+            }
+            if (value > max)
+            {
+                return max;
+            }
+            return value;
         }
-        if (value > max)
+
+        public static float InRangeFloat(float min, float max, float value)
         {
-            return max;
+            if (value < min)
+            {
+                return min;
+            }
+            if (value > max)
+            {
+                return max;
+            }
+            return value;
         }
-        return value;
     }
 }
