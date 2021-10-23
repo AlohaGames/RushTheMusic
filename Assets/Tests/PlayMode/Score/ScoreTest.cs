@@ -2,6 +2,7 @@ using UnityEngine;
 using NUnit.Framework;
 using Aloha;
 using Aloha.Events;
+using System.Collections.Generic;
 
 namespace Aloha.Test
 {
@@ -27,12 +28,25 @@ namespace Aloha.Test
             instanceScoreManager.CalculateTotalScore();
             Assert.AreEqual(500, instanceScoreManager.totalScore);
 
-            GameObject.DestroyImmediate(instanceScoreManager.gameObject);
+            //GameObject.DestroyImmediate(instanceScoreManager.gameObject);
         }
 
         [Test]
         public void ScoreKillCount()
         {
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            LevelManager instanceLevelManager = LevelManager.Instance;
+            //Create enemy list
+            EnemyMapping mappignEnemy = new EnemyMapping();
+            List<EnemyMapping> enemiesMapping = new List<EnemyMapping>();
+            enemiesMapping.Add(mappignEnemy);
+            List<int> keys = new List<int>();
+            keys.Add(10);
+            List<List<EnemyMapping>> enemies = new List<List<EnemyMapping>>();
+            enemies.Add(enemiesMapping);
+            instanceLevelManager.levelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(keys, enemies), 20); 
+
+
             ScoreManager instanceScoreManager = ScoreManager.Instance;
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
@@ -61,7 +75,37 @@ namespace Aloha.Test
 
             GameObject.DestroyImmediate(guerrierGO);
             GameObject.DestroyImmediate(enemyGO);
-            GameObject.DestroyImmediate(instanceScoreManager.gameObject);
+            //GameObject.DestroyImmediate(instanceScoreManager.gameObject);
+        }
+
+        [Test]
+        public void ScoreDistanceTest()
+        {
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            LevelManager instanceLevelManager = LevelManager.Instance;
+            instanceLevelManager.levelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 20);
+            ScoreManager instanceScoreManager = ScoreManager.Instance;
+            GameObject tile = new GameObject();
+
+            Assert.AreEqual(20, instanceLevelManager.levelMapping.tileCount);
+
+            instanceScoreManager.TilesCount(tile);
+            Assert.AreEqual(1, instanceScoreManager.GetTilesCount());
+
+            GlobalEvent.TileCount.Invoke(tile);
+            Assert.AreEqual(2, instanceScoreManager.GetTilesCount());
+            Assert.AreEqual(60, instanceScoreManager.ScoreDistance());
+
+            for (int i = 0; i < 20; i++)
+            {
+                GlobalEvent.TileCount.Invoke(tile);
+            }
+            Assert.AreEqual(600, instanceScoreManager.ScoreDistance());
+            instanceScoreManager.CalculateTotalScore();
+            Assert.AreEqual(600, instanceScoreManager.totalScore);
+
+            GameObject.Destroy(tile);
+            GameObject.Destroy(manager);
         }
     }
 }

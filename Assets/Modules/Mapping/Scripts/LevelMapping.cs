@@ -20,6 +20,7 @@ namespace Aloha
         {
             this.enemies = enemies;
             this.tileCount = tileCount;
+
         }
 
         public List<EnemyMapping> getEnnemies(int tileIndex)
@@ -33,6 +34,16 @@ namespace Aloha
             {
                 return new List<EnemyMapping>();
             }
+        }
+
+        public int GetEnemyNumber()
+        {
+            int enemiesnumber = 0;
+            foreach (List<EnemyMapping> enemy in enemies.dictionaryValue)
+            {
+                enemiesnumber = enemiesnumber + enemy.Count;
+            }
+            return enemiesnumber;
         }
     }
 }

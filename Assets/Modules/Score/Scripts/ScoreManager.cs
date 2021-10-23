@@ -5,32 +5,45 @@ namespace Aloha
 {
     public class ScoreManager : Singleton<ScoreManager>
     {
+        public const int DISTANCE_POINT = 60;
+        public const int KILL_POINT = 30;
+        public const int HIT_POINT = 10;
+        public const int MAX_SCORE = 1000;
         public int totalScore;
         [SerializeField]
-        private int takeHit;
+        private int takeHitCounter;
         [SerializeField]
-        private int killCount;
+        private int killCounter;
         [SerializeField]
-        private int countTiles;
-        private int maxScore = 1000;
-        private int maxEnemy = 10;
+        private int tilesCounter;
+        private int maxEnemy;
         private int maxHit;
-        private int maxTiles = 20;
+        private int maxTiles;
 
-        public int GetTakeHit(){
-            return this.takeHit;
+        public int GetTakeHit()
+        {
+            return this.takeHitCounter;
         }
 
-        public int GetKillCount(){
-            return this.killCount;
+        public int GetKillCount()
+        {
+            return this.killCounter;
+        }
+
+        public int GetTilesCount()
+        {
+            return this.tilesCounter;
         }
 
         public void Awake()
         {
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
+            GlobalEvent.TileCount.AddListener(TilesCount);
 
             this.maxHit = this.maxEnemy / 2;
+            this.maxTiles = LevelManager.Instance.levelMapping.tileCount;
+            this.maxEnemy = LevelManager.Instance.levelMapping.GetEnemyNumber();
         }
 
         /// <summary>
@@ -38,8 +51,8 @@ namespace Aloha
         /// </summary>
         public void CountHeroHit()
         {
-            takeHit++;
-            Debug.Log("Hero take " + takeHit + " hit");
+            takeHitCounter++;
+            Debug.Log("Hero take " + takeHitCounter + " hit");
         }
 
         /// <summary>
@@ -47,8 +60,14 @@ namespace Aloha
         /// </summary>
         public void DeathCount(Entity entity)
         {
-            killCount++;
-            Debug.Log("Kill: " + killCount);
+            killCounter++;
+            Debug.Log("Kill: " + killCounter);
+        }
+
+        public void TilesCount(GameObject tile)
+        {
+            tilesCounter++;
+            Debug.Log("Tiles number: " + tilesCounter);
         }
 
         /// <summary>
@@ -68,24 +87,28 @@ namespace Aloha
         /// <summary>
         /// Calculate score of no hit
         /// </summary>
-        public float ScoreHit(){
-            int heroTakeHit = Utils.InRangeInt(0, this.maxHit, this.takeHit);
-            return CalculateScore(this.maxScore, 10, (float) this.maxHit, heroTakeHit);
+        public float ScoreHit()
+        {
+            int heroTakeHit = Utils.InRangeInt(0, this.maxHit, this.takeHitCounter);
+            return CalculateScore(MAX_SCORE, HIT_POINT, (float)this.maxHit, heroTakeHit);
         }
 
         /// <summary>
         /// Calculate score of killing entity
         /// </summary>
-        public float ScoreKill(){
-            int killEnemy = Utils.InRangeInt(0, this.maxEnemy, this.killCount);
-            return CalculateScore(this.maxScore, 30, (float) this.maxEnemy, killEnemy);
+        public float ScoreKill()
+        {
+            int killEnemy = Utils.InRangeInt(0, this.maxEnemy, this.killCounter);
+            return CalculateScore(MAX_SCORE, KILL_POINT, (float)this.maxEnemy, killEnemy);
         }
 
         /// <summary>
         /// Calculate score of distance
         /// </summary>
-        public float ScoreDistance(){
-            return 600f;
+        public float ScoreDistance()
+        {
+            int tiles = Utils.InRangeInt(0, this.maxTiles, this.tilesCounter);
+            return CalculateScore(MAX_SCORE, DISTANCE_POINT, (float)this.maxTiles, tiles);
         }
 
         /// <summary>
@@ -95,6 +118,7 @@ namespace Aloha
         {
             float pourcentMaxScore = maxScore * (percent / 100f);
             float scoreStat = 1f - ((maxStat - stat) / maxStat);
+            Debug.Log("Pourcent score: " + pourcentMaxScore);
             Debug.Log("Score stat: " + scoreStat);
             return pourcentMaxScore * scoreStat;
         }
@@ -103,6 +127,7 @@ namespace Aloha
         {
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);
             GlobalEvent.EntityDied.RemoveListener(DeathCount);
+            GlobalEvent.TileCount.RemoveListener(TilesCount);
         }
     }
 }
