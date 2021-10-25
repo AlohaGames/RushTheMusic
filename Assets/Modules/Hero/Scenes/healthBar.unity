@@ -768,6 +768,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1168125433}
     - target: {fileID: 1713898091169836569, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: verticalBar
+      value: 
+      objectReference: {fileID: 2013561025}
+    - target: {fileID: 1713898091169836569, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: horizontalBar
+      value: 
+      objectReference: {fileID: 1168125433}
+    - target: {fileID: 1713898091169836569, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: verticalHealthBa
       value: 
       objectReference: {fileID: 2013561025}
@@ -778,6 +786,10 @@ PrefabInstance:
     - target: {fileID: 6368011761349853057, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_Name
       value: GlobalManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192616692128968223, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9157745368341289462, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_RootOrder
