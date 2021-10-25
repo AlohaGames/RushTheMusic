@@ -5,7 +5,8 @@ namespace Aloha.Hero
 {
     public class Warrior : Hero<WarriorStats>
     {
-        private int currentRage;
+        public int currentRage;
+        private int REGENERATION_POURCENT = 20;
         public void Init(WarriorStats stats)
         {
             base.Init(stats);
@@ -18,14 +19,18 @@ namespace Aloha.Hero
             StartCoroutine(entity.GetBump(direction,speed));
         }
 
+        //Regen 10% of maxRage per hit
         public override void TakeDamage(int damage){
             base.TakeDamage(damage);
-            currentRage = currentRage;
+            Debug.Log("coucou");
+            Debug.Log($"Current rage: {currentRage}");
+            Debug.Log($"Max rage: {stats.maxRage}");
+            currentRage = currentRage + (int)(stats.maxRage * (REGENERATION_POURCENT/100f));
         }
 
-        public override void Attack(Enemy enemy)
+        public override void Attack(Entity entity)
         {
-            base.Attack(enemy);
+            base.Attack(entity);
             currentRage = currentRage / 2;
         }
     }
