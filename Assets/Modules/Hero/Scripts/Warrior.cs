@@ -17,5 +17,16 @@ namespace Aloha.Hero
             Vector3 direction = new Vector3(0,0,2);
             StartCoroutine(entity.GetBump(direction,speed));
         }
+
+        public override void TakeDamage(int damage){
+            base.TakeDamage(damage);
+            currentRage = currentRage;
+        }
+
+        public override void Attack(Enemy enemy)
+        {
+            base.Attack(enemy);
+            currentRage = currentRage / 2;
+        }
     }
 }
