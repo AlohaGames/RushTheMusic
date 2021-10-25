@@ -5,6 +5,7 @@ namespace Aloha.Hero
 {
     public class Warrior : Hero<WarriorStats>
     {
+        //TODO: Ajouter une fonction de parade
         public int currentRage;
         private int REGENERATION_POURCENT = 20;
         public void Init(WarriorStats stats)
@@ -22,9 +23,6 @@ namespace Aloha.Hero
         //Regen 10% of maxRage per hit
         public override void TakeDamage(int damage){
             base.TakeDamage(damage);
-            Debug.Log("coucou");
-            Debug.Log($"Current rage: {currentRage}");
-            Debug.Log($"Max rage: {stats.maxRage}");
             currentRage = currentRage + (int)(stats.maxRage * (REGENERATION_POURCENT/100f));
         }
 
