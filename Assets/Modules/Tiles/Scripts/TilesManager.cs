@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -56,6 +57,7 @@ namespace Aloha
             gameIsStarted = false;
             activeTiles.Clear();
             Destroy(tilesContainer);
+            GlobalEvent.LevelStop.Invoke();
         }
 
         // Create a tile at the end of the tile list
@@ -69,6 +71,7 @@ namespace Aloha
 
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + tileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
+            GlobalEvent.TileCount.Invoke(tile);
         }
 
         // Create a tile at the position the user wants
