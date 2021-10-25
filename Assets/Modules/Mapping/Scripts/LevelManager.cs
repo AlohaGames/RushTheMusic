@@ -55,8 +55,8 @@ namespace Aloha
 
         public void Load()
         {
-            // TODO: Interdire de charger deux fois le même niveau ?!
-            // TODO: Ne pas utiliser un GUID aléatoire ?!
+            // TODO: Interdire de charger deux fois le mï¿½me niveau ?!
+            // TODO: Ne pas utiliser un GUID alï¿½atoire ?!
 
             Debug.Log($"Load level {Filename}");
 
@@ -93,9 +93,8 @@ namespace Aloha
 
         void FinishLoad()
         {
-            Debug.Log($"After LoadMusic : {this.levelMusic}");
             this.IsLoaded = true;
-            Debug.Log($"Load level finished : {this.levelMapping}");
+            Debug.Log($"Load level finished");
         }
 
         IEnumerator LoadMusic(string musicFileURI, Action cb)
@@ -115,4 +114,3 @@ namespace Aloha
         }
     }
 }
-    
