@@ -7,13 +7,13 @@ namespace Aloha
 {
     public class UIManager : Singleton<UIManager>
     {
-        public HorizontalBar healthBar;
-        public VerticalBar verticalHealthBa;
+        public HorizontalBar horizontalBar;
+        public VerticalBar verticalBar;
         // Start is called before the first frame update
         void Start()
         {
-            healthBar.Init(GlobalEvent.OnHealthUpdate);
-            verticalHealthBa.Init(GlobalEvent.OnHealthUpdate);
+            horizontalBar.Init(GlobalEvent.OnHealthUpdate);
+            verticalBar.Init(GlobalEvent.OnHealthUpdate2);
         }
     }
 }

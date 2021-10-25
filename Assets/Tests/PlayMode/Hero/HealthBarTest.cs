@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.TestTools;
 using Aloha.Heros;
 using Aloha.EntityStats;
+using Aloha.Events;
 
 namespace Aloha.Test
 {
@@ -23,6 +24,7 @@ namespace Aloha.Test
 
             // GameObject pour le hero
             GameObject heroObject = new GameObject();
+           
 
             // Panel enfant qui est la barre de vie et qui a pour parent le panel avec le script UpdateBar.cs
             GameObject healthBar = new GameObject();
@@ -31,6 +33,7 @@ namespace Aloha.Test
             // Panel qui a le script UpdateBar.cs
             GameObject updateBar = new GameObject();
             healthBar.transform.SetParent(updateBar.transform);
+
             updateBar.AddComponent<HorizontalBar>();
 
 
@@ -55,7 +58,10 @@ namespace Aloha.Test
 
 
             myHero.TakeDamage(damageGiven);
-            updateBar.GetComponent<HorizontalBar>().UpdateBar(myHero.currentHealth, myHero.stats.maxHealth);
+            HorizontalBar horizontalBar = updateBar.GetComponent<HorizontalBar>();
+            IntIntEvent monEvent = new IntIntEvent();
+            horizontalBar.Init(monEvent);
+            horizontalBar.UpdateBar(myHero.currentHealth, myHero.stats.maxHealth);
 
             
             float widthBarAfter = (float) healthBar.GetComponent<RectTransform>().sizeDelta.x;
