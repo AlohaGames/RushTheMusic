@@ -162,7 +162,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 30}
+  m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &73417858
 MonoBehaviour:
@@ -620,7 +620,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 5
-  m_Text: '  Load Other  '
+  m_Text: Load Other
 --- !u!222 &216674140
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -668,7 +668,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 120, y: 30}
+  m_SizeDelta: {x: 200, y: 40}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &361185203
 MonoBehaviour:
@@ -879,7 +879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 5
-  m_Text: '  Load Warrior'
+  m_Text: Load Warrior
 --- !u!222 &398603231
 CanvasRenderer:
   m_ObjectHideFlags: 0

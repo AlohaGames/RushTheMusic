@@ -23,5 +23,6 @@ namespace Aloha.Events
         /// <param name="isTuto">Is it a Tuto Level</param>
         public static StringBoolEvent LoadLevel = new StringBoolEvent();
         public static HeroTypeEvent LoadHero = new HeroTypeEvent();
+        public static UnityEvent QuitGame = new UnityEvent();
     }
 }
