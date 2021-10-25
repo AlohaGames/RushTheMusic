@@ -6,20 +6,19 @@
  * between Ultraleap and you, your company or other organization.             *
  ******************************************************************************/
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-namespace Leap.Unity.Examples
-{
+namespace Leap.Unity.Examples {
 
-    [AddComponentMenu("")]
-    public class SimpleScaleUtil : MonoBehaviour
-    {
+  [AddComponentMenu("")]
+  public class SimpleScaleUtil : MonoBehaviour {
 
-        public void SetLocalScale(float scale)
-        {
-            this.transform.localScale = Vector3.one * scale;
-        }
-
+    public void SetLocalScale(float scale) {
+      this.transform.localScale = Vector3.one * scale;
     }
+
+  }
 
 }

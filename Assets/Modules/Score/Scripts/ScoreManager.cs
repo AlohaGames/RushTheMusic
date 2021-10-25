@@ -41,6 +41,7 @@ namespace Aloha
         {
             _takeHitCounter++;
             Debug.Log("Hero take " + _takeHitCounter + " hit");
+            CalculateTotalScore();
         }
 
         /// <summary>
@@ -50,12 +51,14 @@ namespace Aloha
         {
             _killCounter++;
             Debug.Log("Kill: " + _killCounter);
+            CalculateTotalScore();
         }
 
         public void TilesCount(GameObject tile)
         {
             _tilesCounter++;
             Debug.Log("Tiles number: " + _tilesCounter);
+            CalculateTotalScore();
         }
 
         /// <summary>
@@ -64,13 +67,13 @@ namespace Aloha
         /// Enemy killed: 30%
         /// No hit: 10%
         /// </summary>
-        public int CalculateTotalScore()
+        public void CalculateTotalScore()
         {
             float scoreDistance = ScoreDistance();
             float scoreEnemyKilled = ScoreKill();
             float scoreHit = ScoreHit();
             Debug.Log("Distance : " + scoreDistance + "\nKill: " + scoreEnemyKilled + "\nHit: " + scoreHit);
-            return TotalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
+            TotalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
         }
 
         /// <summary>

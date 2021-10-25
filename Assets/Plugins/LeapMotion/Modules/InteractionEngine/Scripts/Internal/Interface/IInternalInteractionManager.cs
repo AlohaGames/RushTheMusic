@@ -6,47 +6,44 @@
  * between Ultraleap and you, your company or other organization.             *
  ******************************************************************************/
 
-namespace Leap.Unity.Interaction
-{
+using Leap.Unity.Interaction;
 
-    public interface IInternalInteractionManager
-    {
+namespace Leap.Unity.Interaction {
 
-        // Layers
+  public interface IInternalInteractionManager {
 
-        void NotifyIntObjAddedInteractionLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
-        void NotifyIntObjRemovedInteractionLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
+    // Layers
 
-        void NotifyIntObjAddedNoContactLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
-        void NotifyIntObjRemovedNoContactLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
+    void NotifyIntObjAddedInteractionLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
+    void NotifyIntObjRemovedInteractionLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
 
-        void RefreshLayersNow();
+    void NotifyIntObjAddedNoContactLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
+    void NotifyIntObjRemovedNoContactLayer(IInteractionBehaviour intObj, int layer, bool refreshImmediately = true);
 
+    void RefreshLayersNow();
+
+  }
+
+  public static class IInternalInteractionManagerExtensions {
+
+    public static void NotifyIntObjHasNewInteractionLayer(this IInternalInteractionManager manager,
+                                                          IInteractionBehaviour intObj,
+                                                          int oldInteractionLayer,
+                                                          int newInteractionLayer) {
+      manager.NotifyIntObjRemovedInteractionLayer(intObj, oldInteractionLayer, false);
+      manager.NotifyIntObjAddedInteractionLayer(intObj, newInteractionLayer, false);
+      manager.RefreshLayersNow();
     }
 
-    public static class IInternalInteractionManagerExtensions
-    {
-
-        public static void NotifyIntObjHasNewInteractionLayer(this IInternalInteractionManager manager,
-                                                              IInteractionBehaviour intObj,
-                                                              int oldInteractionLayer,
-                                                              int newInteractionLayer)
-        {
-            manager.NotifyIntObjRemovedInteractionLayer(intObj, oldInteractionLayer, false);
-            manager.NotifyIntObjAddedInteractionLayer(intObj, newInteractionLayer, false);
-            manager.RefreshLayersNow();
-        }
-
-        public static void NotifyIntObjHasNewNoContactLayer(this IInternalInteractionManager manager,
-                                                            IInteractionBehaviour intObj,
-                                                            int oldNoContactLayer,
-                                                            int newNoContactLayer)
-        {
-            manager.NotifyIntObjRemovedNoContactLayer(intObj, oldNoContactLayer, false);
-            manager.NotifyIntObjAddedNoContactLayer(intObj, newNoContactLayer, false);
-            manager.RefreshLayersNow();
-        }
-
+    public static void NotifyIntObjHasNewNoContactLayer(this IInternalInteractionManager manager,
+                                                        IInteractionBehaviour intObj,
+                                                        int oldNoContactLayer,
+                                                        int newNoContactLayer) {
+      manager.NotifyIntObjRemovedNoContactLayer(intObj, oldNoContactLayer, false);
+      manager.NotifyIntObjAddedNoContactLayer(intObj, newNoContactLayer, false);
+      manager.RefreshLayersNow();
     }
+
+  }
 
 }

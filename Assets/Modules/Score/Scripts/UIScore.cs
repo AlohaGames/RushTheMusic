@@ -6,7 +6,6 @@ namespace Aloha
 {
     public class UIScore : MonoBehaviour
     {
-        private ScoreManager instanceScoreManager;
         public GameObject canvasUIScoreLevel;
         public Text scoreText;
         public Text totalScoreText;
@@ -16,30 +15,29 @@ namespace Aloha
 
         public void Awake()
         {
-            GlobalEvent.HeroDie.AddListener(Canvas_UI_Score_Level);
-            instanceScoreManager = ScoreManager.Instance;
+            GlobalEvent.LevelStop.AddListener(Canvas_UI_Score_Level);
             canvasUIScoreLevel.SetActive(false);
         }
 
         // Update is called once per frame
         void Update()
         {
-            scoreText.text = "Score: " + instanceScoreManager.CalculateTotalScore();
+            scoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
         }
 
         public void Canvas_UI_Score_Level()
         {
             scoreText.gameObject.SetActive(false);
             canvasUIScoreLevel.SetActive(true);
-            distanceScore.text = "Distance" + "\t" + instanceScoreManager.ScoreDistance();
-            killScore.text = "Kill" + "\t" + instanceScoreManager.ScoreKill();
-            hitScore.text = "Hit" + "\t" + instanceScoreManager.ScoreHit();
-            totalScoreText.text = "Score total: " + instanceScoreManager.CalculateTotalScore();
+            distanceScore.text = "Distance" + "\t" + ScoreManager.Instance.ScoreDistance();
+            killScore.text = "Kill" + "\t" + ScoreManager.Instance.ScoreKill();
+            hitScore.text = "Hit" + "\t-" + ScoreManager.Instance.ScoreHit();
+            totalScoreText.text = "Score total: " + ScoreManager.Instance.TotalScore;
         }
 
         public void OnDestroy()
         {
-            GlobalEvent.HeroDie.RemoveListener(Canvas_UI_Score_Level);
+            GlobalEvent.LevelStop.RemoveListener(Canvas_UI_Score_Level);
         }
     }
 }

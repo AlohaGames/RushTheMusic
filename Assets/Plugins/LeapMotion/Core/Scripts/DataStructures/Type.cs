@@ -6,17 +6,18 @@
  * between Ultraleap and you, your company or other organization.             *
  ******************************************************************************/
 
-namespace Leap.Unity
-{
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-    public static class Type<T>
-    {
-        public static readonly bool isValueType;
+namespace Leap.Unity {
 
-        static Type()
-        {
-            isValueType = typeof(T).IsValueType;
-        }
+  public static class Type<T> {
+    public static readonly bool isValueType;
+
+    static Type() {
+      isValueType = typeof(T).IsValueType;
     }
+  }
 
 }

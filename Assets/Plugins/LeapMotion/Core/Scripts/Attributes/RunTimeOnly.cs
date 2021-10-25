@@ -10,17 +10,14 @@
 using UnityEditor;
 #endif
 
-namespace Leap.Unity.Attributes
-{
+namespace Leap.Unity.Attributes {
 
-    public class RunTimeOnlyAttribute : CombinablePropertyAttribute, IPropertyDisabler
-    {
+  public class RunTimeOnlyAttribute : CombinablePropertyAttribute, IPropertyDisabler {
 
 #if UNITY_EDITOR
-        public bool ShouldDisable(SerializedProperty property)
-        {
-            return !EditorApplication.isPlaying;
-        }
-#endif
+    public bool ShouldDisable(SerializedProperty property) {
+      return !EditorApplication.isPlaying;
     }
+#endif
+  }
 }

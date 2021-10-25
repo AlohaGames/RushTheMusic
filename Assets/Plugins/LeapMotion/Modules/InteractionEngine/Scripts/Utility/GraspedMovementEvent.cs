@@ -9,10 +9,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Leap.Unity.Interaction.Internal
-{
+namespace Leap.Unity.Interaction.Internal {
 
-    public delegate void GraspedMovementEvent(Vector3 oldPosition, Quaternion oldRotation,
+  public delegate void GraspedMovementEvent(Vector3 oldPosition, Quaternion oldRotation,
                                             Vector3 newPosition, Quaternion newRotation,
                                             List<InteractionController> graspingControllers);
 

@@ -6,25 +6,24 @@
  * between Ultraleap and you, your company or other organization.             *
  ******************************************************************************/
 
+using System.Collections;
+using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine;
 
-namespace Leap.Unity.Interaction
-{
+namespace Leap.Unity.Interaction {
 
-    [CustomEditor(typeof(ContactBoneParent))]
-    public class ContactBoneParentEditor : CustomEditorBase<ContactBoneParent>
-    {
+  [CustomEditor(typeof(ContactBoneParent))]
+  public class ContactBoneParentEditor : CustomEditorBase<ContactBoneParent> {
 
-        protected override void OnEnable()
-        {
-            base.OnEnable();
-        }
-
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-        }
-
+    protected override void OnEnable() {
+      base.OnEnable();
     }
+
+    public override void OnInspectorGUI() {
+      base.OnInspectorGUI();
+    }
+
+  }
 
 }

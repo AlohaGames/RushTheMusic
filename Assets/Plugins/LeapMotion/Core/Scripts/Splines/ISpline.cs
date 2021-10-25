@@ -6,21 +6,21 @@
  * between Ultraleap and you, your company or other organization.             *
  ******************************************************************************/
 
-namespace Leap.Unity.Animation
-{
+using UnityEngine;
 
-    public interface ISpline<XType, dXType>
-    {
+namespace Leap.Unity.Animation {
 
-        float minT { get; }
-        float maxT { get; }
+  public interface ISpline<XType, dXType> {
 
-        XType ValueAt(float t);
+    float minT { get; }
+    float maxT { get; }
 
-        dXType DerivativeAt(float t);
+    XType ValueAt(float t);
 
-        void ValueAndDerivativeAt(float t, out XType value, out dXType deltaValuePerT);
+    dXType DerivativeAt(float t);
 
-    }
+    void ValueAndDerivativeAt(float t, out XType value, out dXType deltaValuePerT);
+
+  }
 
 }
