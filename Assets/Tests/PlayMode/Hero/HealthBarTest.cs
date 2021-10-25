@@ -70,9 +70,6 @@ namespace Aloha.Test
             Assert.IsTrue(widthBarAfter < widthBarBefore);
 
             yield return null;
-
-
-        }
-    }
-
-}
+        } // IEnumerator
+    } // class
+} // namespace
