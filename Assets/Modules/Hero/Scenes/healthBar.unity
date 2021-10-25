@@ -214,7 +214,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &601123700
 GameObject:
@@ -311,7 +311,7 @@ RectTransform:
   - {fileID: 1509201195}
   - {fileID: 2013561022}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -566,9 +566,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49fadfe27249d09479ceeabe9a22afd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar: {fileID: 0}
   hero: {fileID: 672609235}
-  color: {r: 1, g: 0, b: 0.09153843, a: 0.39215687}
+  color: {r: 0, g: 0.1078887, b: 1, a: 0.39215687}
 --- !u!1001 &1435102450
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -638,6 +637,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1168125433}
     - target: {fileID: 1713898091169836569, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: verticalHealthBa
+      value: 
+      objectReference: {fileID: 2013561025}
+    - target: {fileID: 1713898091169836569, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: verticalHealthBar
       value: 
       objectReference: {fileID: 0}
@@ -647,7 +650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9157745368341289462, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9157745368341289462, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_LocalPosition.x
@@ -786,7 +789,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2013561025}
         m_TargetAssemblyTypeName: VerticalBar, Aloha
         m_MethodName: test
         m_Mode: 1
@@ -917,7 +920,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1775071625
 GameObject:
@@ -983,7 +986,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1804622558
 GameObject:
@@ -1146,9 +1149,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2013561021}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49fadfe27249d09479ceeabe9a22afd0, type: 3}
+  m_Script: {fileID: 11500000, guid: dcf0cc310c4b35d4998351025e73c124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bar: {fileID: 0}
   hero: {fileID: 672609235}
-  color: {r: 0.29868162, g: 1, b: 0, a: 0.39215687}
+  color: {r: 0.09392464, g: 1, b: 0, a: 0.39215687}

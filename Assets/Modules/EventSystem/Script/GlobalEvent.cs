@@ -10,5 +10,7 @@ namespace Aloha.Events
     {
         public static EntityEvent EntityDied = new EntityEvent();
         public static IntIntEvent OnHealthUpdate = new IntIntEvent();
+        public static GameObjectEvent TileCount = new GameObjectEvent();
+        public static UnityEvent LevelStop = new UnityEvent();
     }
 }

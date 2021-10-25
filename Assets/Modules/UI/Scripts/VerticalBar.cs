@@ -11,10 +11,6 @@ public class VerticalBar : Bar
     {
 
         RectTransform barTransform = bar.GetComponent<RectTransform>();
-        Debug.Log(barTransform.sizeDelta.x);
-        Debug.Log(barTransform.sizeDelta.y);
-        Debug.Log(barTransform.sizeDelta.x);
-        Debug.Log(barTransform.sizeDelta.y * ((float)current / (float)max));
         barTransform.sizeDelta = new Vector2(barTransform.sizeDelta.x, barTransform.sizeDelta.y * ((float)current / (float)max));
     }
 
