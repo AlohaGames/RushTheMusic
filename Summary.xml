@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>10/25/2021 - 15:10:44</Generatedon>
+    <Generatedon>10/25/2021 - 17:12:07</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>28</Classes>
     <Files>27</Files>
-    <Coveredlines>341</Coveredlines>
+    <Coveredlines>338</Coveredlines>
     <Uncoveredlines>83</Uncoveredlines>
-    <Coverablelines>424</Coverablelines>
-    <Totallines>1017</Totallines>
-    <Linecoverage>80.4</Linecoverage>
+    <Coverablelines>421</Coverablelines>
+    <Totallines>1013</Totallines>
+    <Linecoverage>80.2</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="28" coverage="80.4" coveredlines="341" coverablelines="424" totallines="1092" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="28" coverage="80.2" coveredlines="338" coverablelines="421" totallines="1088" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.Bar" coverage="66.6" coveredlines="6" coverablelines="9" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Enemy[T]" coverage="100" coveredlines="9" coverablelines="9" totallines="26" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -29,7 +29,7 @@
       <Class name="Aloha.Heros.Hero[T]" coverage="80" coveredlines="12" coverablelines="15" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Heros.HeroInstantier" coverage="100" coveredlines="7" coverablelines="7" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Heros.Warrior" coverage="100" coveredlines="8" coverablelines="8" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.HorizontalBar" coverage="100" coveredlines="7" coverablelines="7" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.HorizontalBar" coverage="100" coveredlines="4" coverablelines="4" totallines="18" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.LevelManager" coverage="5" coveredlines="1" coverablelines="20" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.LevelMapping" coverage="100" coveredlines="18" coverablelines="18" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.SerializeDictionary[TKey,TValue]" coverage="100" coveredlines="29" coverablelines="29" totallines="56" branchcoverage="" coveredbranches="0" totalbranches="0" />
