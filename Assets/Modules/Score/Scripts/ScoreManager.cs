@@ -1,5 +1,6 @@
-using UnityEngine;
 using Aloha.Events;
+using System;
+using UnityEngine;
 
 namespace Aloha
 {
@@ -9,30 +10,21 @@ namespace Aloha
         public const int KILL_POINT = 30;
         public const int HIT_POINT = 10;
         public const int MAX_SCORE = 1000;
-        public int totalScore;
-        [SerializeField]
-        private int takeHitCounter;
-        [SerializeField]
-        private int killCounter;
-        [SerializeField]
-        private int tilesCounter;
-        private int maxEnemy;
-        private int maxHit;
-        private int maxTiles;
-
-        public int GetTakeHit()
+        public int TotalScore;
+        private int _takeHitCounter;
+        private int _killCounter;
+        private int _tilesCounter;
+        public int TakeHitCounter
         {
-            return this.takeHitCounter;
+            get { return _takeHitCounter; }
         }
-
-        public int GetKillCount()
+        public int KillCounter
         {
-            return this.killCounter;
+            get { return _killCounter; }
         }
-
-        public int GetTilesCount()
+        public int TilesCounter
         {
-            return this.tilesCounter;
+            get { return _tilesCounter; }
         }
 
         public void Awake()
@@ -40,10 +32,6 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
             GlobalEvent.TileCount.AddListener(TilesCount);
-
-            this.maxHit = this.maxEnemy / 2;
-            this.maxTiles = LevelManager.Instance.levelMapping.tileCount;
-            this.maxEnemy = LevelManager.Instance.levelMapping.GetEnemyNumber();
         }
 
         /// <summary>
@@ -51,8 +39,8 @@ namespace Aloha
         /// </summary>
         public void CountHeroHit()
         {
-            takeHitCounter++;
-            Debug.Log("Hero take " + takeHitCounter + " hit");
+            _takeHitCounter++;
+            Debug.Log("Hero take " + _takeHitCounter + " hit");
         }
 
         /// <summary>
@@ -60,14 +48,14 @@ namespace Aloha
         /// </summary>
         public void DeathCount(Entity entity)
         {
-            killCounter++;
-            Debug.Log("Kill: " + killCounter);
+            _killCounter++;
+            Debug.Log("Kill: " + _killCounter);
         }
 
         public void TilesCount(GameObject tile)
         {
-            tilesCounter++;
-            Debug.Log("Tiles number: " + tilesCounter);
+            _tilesCounter++;
+            Debug.Log("Tiles number: " + _tilesCounter);
         }
 
         /// <summary>
@@ -81,7 +69,8 @@ namespace Aloha
             float scoreDistance = ScoreDistance();
             float scoreEnemyKilled = ScoreKill();
             float scoreHit = ScoreHit();
-            return this.totalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
+            Debug.Log("Distance : " + scoreDistance + "\nKill: " + scoreEnemyKilled + "\nHit: " + scoreHit);
+            return TotalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
         }
 
         /// <summary>
@@ -89,8 +78,22 @@ namespace Aloha
         /// </summary>
         public float ScoreHit()
         {
-            int heroTakeHit = Utils.InRangeInt(0, this.maxHit, this.takeHitCounter);
-            return CalculateScore(MAX_SCORE, HIT_POINT, (float)this.maxHit, heroTakeHit);
+            int maxHit = LevelManager.Instance.levelMapping.GetEnemyNumber() / 2;
+            Debug.Log("Hit: " + maxHit);
+            if (maxHit > 0)
+            {
+                int heroTakeHit = Utils.InRangeInt(0, maxHit, _takeHitCounter);
+                return CalculateScore(MAX_SCORE, HIT_POINT, (float)maxHit, heroTakeHit);
+            }
+            else if (maxHit == 0)
+            {
+                return 0f;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException($"{maxHit} cannot be under 0");
+            }
+
         }
 
         /// <summary>
@@ -98,8 +101,21 @@ namespace Aloha
         /// </summary>
         public float ScoreKill()
         {
-            int killEnemy = Utils.InRangeInt(0, this.maxEnemy, this.killCounter);
-            return CalculateScore(MAX_SCORE, KILL_POINT, (float)this.maxEnemy, killEnemy);
+            int maxEnemy = LevelManager.Instance.levelMapping.GetEnemyNumber();
+            Debug.Log("Enemy: " + maxEnemy);
+            if (maxEnemy > 0)
+            {
+                int killEnemy = Utils.InRangeInt(0, maxEnemy, _killCounter);
+                return CalculateScore(MAX_SCORE, KILL_POINT, (float)maxEnemy, killEnemy);
+            }
+            else if (maxEnemy == 0)
+            {
+                return 0f;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException($"{maxEnemy} cannot be under 0");
+            }
         }
 
         /// <summary>
@@ -107,8 +123,22 @@ namespace Aloha
         /// </summary>
         public float ScoreDistance()
         {
-            int tiles = Utils.InRangeInt(0, this.maxTiles, this.tilesCounter);
-            return CalculateScore(MAX_SCORE, DISTANCE_POINT, (float)this.maxTiles, tiles);
+            int maxTiles = LevelManager.Instance.levelMapping.tileCount;
+            Debug.Log("Tiles: " + maxTiles);
+            if (maxTiles > 0)
+            {
+                int tiles = Utils.InRangeInt(0, maxTiles, _tilesCounter);
+                return CalculateScore(MAX_SCORE, DISTANCE_POINT, (float)maxTiles, tiles);
+            }
+            else if (maxTiles == 0)
+            {
+                return 0f;
+            }
+            else
+            {
+                throw new IndexOutOfRangeException($"Max tiles: {maxTiles} cannot be under 0");
+            }
+
         }
 
         /// <summary>

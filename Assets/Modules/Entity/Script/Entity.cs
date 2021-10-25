@@ -1,7 +1,7 @@
+using Aloha.Events;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using System.Collections;
-using Aloha.Events;
 
 namespace Aloha
 {

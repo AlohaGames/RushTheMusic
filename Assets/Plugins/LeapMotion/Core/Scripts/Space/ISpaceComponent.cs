@@ -6,13 +6,11 @@
  * between Ultraleap and you, your company or other organization.             *
  ******************************************************************************/
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+namespace Leap.Unity.Space
+{
 
-namespace Leap.Unity.Space {
-
-  public interface ISpaceComponent {
-    LeapSpaceAnchor anchor { get; }
-  }
+    public interface ISpaceComponent
+    {
+        LeapSpaceAnchor anchor { get; }
+    }
 }

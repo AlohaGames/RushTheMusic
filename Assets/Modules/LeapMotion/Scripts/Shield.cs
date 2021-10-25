@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aloha
@@ -31,7 +29,7 @@ namespace Aloha
             {
                 // Change minimum speed if actual speed is to low
                 if (speed < 1) speed = 1f;
-                warrior.BumpEntity(collider.GetComponent<Entity>(),speed);
+                warrior.BumpEntity(collider.GetComponent<Entity>(), speed);
             }
         }
     }

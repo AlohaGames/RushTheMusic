@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 
 namespace Aloha
@@ -15,7 +12,7 @@ namespace Aloha
 
         public static int InRangeInt(int min, int max, int value)
         {
-            if (value < min)
+            if (value <= min)
             {
                 return min;
             }
@@ -28,7 +25,7 @@ namespace Aloha
 
         public static float InRangeFloat(float min, float max, float value)
         {
-            if (value < min)
+            if (value <= min)
             {
                 return min;
             }

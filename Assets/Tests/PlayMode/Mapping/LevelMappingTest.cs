@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace Aloha.Test
 {
