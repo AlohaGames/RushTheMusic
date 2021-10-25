@@ -55,16 +55,16 @@ namespace Aloha
 
         public void Load()
         {
-            // TODO: Interdire de charger deux fois le m�me niveau ?!
-            // TODO: Ne pas utiliser un GUID al�atoire ?!
-
             Debug.Log($"Load level {Filename}");
+
+            string basePath = Application.persistentDataPath;
+            string workingPath = Application.temporaryCachePath;
 
             // Extract zip file
             Guid g = Guid.NewGuid();
 
             Debug.Log($"Extract level to {g}");
-            ZipFile.ExtractToDirectory($"{Application.persistentDataPath}/{Filename}", $"{Application.persistentDataPath}/{g}");
+            ZipFile.ExtractToDirectory($"{basePath}/{Filename}", $"{workingPath}/{g}");
 
 
             // Read metadata file
@@ -72,7 +72,7 @@ namespace Aloha
             LevelMetadata metadata;
             XmlSerializer metadataSerializer = new XmlSerializer(typeof(LevelMetadata));
 
-            using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{g}/metadata.xml", FileMode.Open))
+            using (FileStream stream = new FileStream($"{workingPath}/{g}/metadata.xml", FileMode.Open))
             {
                 metadata = (LevelMetadata)metadataSerializer.Deserialize(stream);
             }
@@ -81,13 +81,13 @@ namespace Aloha
             Debug.Log($"Read {metadata.mappingFilePath}");
             XmlSerializer mappingSerializer = new XmlSerializer(typeof(LevelMapping));
 
-            using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{g}/{metadata.mappingFilePath}", FileMode.Open))
+            using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.mappingFilePath}", FileMode.Open))
             {
                 this.levelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
             }
 
             // Load AudioClip from mp3 file
-            string musicFilePath = $"file://{Application.persistentDataPath}/{g}/{metadata.musicFilePath}";
+            string musicFilePath = $"file://{workingPath}/{g}/{metadata.musicFilePath}";
             StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         }
 
