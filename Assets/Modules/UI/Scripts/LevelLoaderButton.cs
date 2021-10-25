@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Aloha.Events;
-using Aloha.Hero;
 
 namespace Aloha
 {
+    [RequireComponent(typeof(Button))]
     public class LevelLoaderButton : MonoBehaviour
     {
         [SerializeField]
@@ -20,7 +20,7 @@ namespace Aloha
 
         public void OnClick()
         {
-            GlobalEvent.LoadLevel.Invoke(level, isTuto);
+            GameManager.Instance.LoadLevel(level, isTuto);
         }
     }
 }

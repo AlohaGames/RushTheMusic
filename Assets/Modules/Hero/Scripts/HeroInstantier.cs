@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Aloha.Events;
 
-namespace Aloha.Hero
+namespace Aloha
 {
     public class HeroInstantier : Singleton<HeroInstantier>
     {
@@ -11,20 +11,23 @@ namespace Aloha.Hero
 
         private void Awake()
         {
-            GlobalEvent.LoadHero.AddListener((heroType) => {
-                InstantiateHero(heroType);
-            });
+            GlobalEvent.LoadHero.AddListener(InstantiateHero);
         }
 
-        public GameObject InstantiateHero(HeroType type)
+        public void InstantiateHero(HeroType type)
         {
-            return InstantiateHero((int)type);
+            Debug.Log("Instantiate : " + type);
+            GameManager.Instance.SetHero(InstantiateHeroID((int)type));
         }
 
-        private GameObject InstantiateHero(int id)
+        private Hero InstantiateHeroID(int id)
         {
-            GameObject instance = Instantiate(HeroPrefabs[id]);
+            Hero instance = (Hero) Instantiate(HeroPrefabs[id]).GetComponent<Entity>();
             return instance;
+        }
+
+        public void OnDestroy() {
+            GlobalEvent.LoadHero.RemoveListener(InstantiateHero);
         }
 
 

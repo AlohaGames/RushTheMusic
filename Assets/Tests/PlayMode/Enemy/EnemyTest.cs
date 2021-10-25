@@ -4,7 +4,6 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {
@@ -47,7 +46,7 @@ namespace Aloha.Test
         [Test]
         public void EnemyInstancierTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             Enemy enemy = EnemyInstantier.Instance
                 .InstantiateEnemy(EnemyType.generic)
                 .GetComponent<Enemy>();

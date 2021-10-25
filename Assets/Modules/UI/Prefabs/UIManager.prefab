@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7126572907331169774}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseScript, Aloha
         m_MethodName: Resume
         m_Mode: 1
@@ -142,9 +142,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8245536411765177073}
-  - component: {fileID: 7126572907331169774}
+  - component: {fileID: 6528296815274834488}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: UIManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -165,7 +165,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7126572907331169774
+--- !u!114 &6528296815274834488
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -174,9 +174,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3475678625191179969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4eceb6426c4e08f458a797895821e22c, type: 3}
+  m_Script: {fileID: 11500000, guid: ca212e64967da896187056d84409d1a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isGamePaused: 0
   MenuPauseUI: {fileID: 6342981964774901870}
 --- !u!1 &6342981964774901870
 GameObject:

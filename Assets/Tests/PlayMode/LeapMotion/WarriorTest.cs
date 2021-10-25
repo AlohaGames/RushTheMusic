@@ -5,8 +5,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.TestTools;
 using Aloha;
-using Aloha.Hero;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {

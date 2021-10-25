@@ -5,12 +5,12 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Menu : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
-
-    public void Play()
+    public int SceneIdToLoad = 1;
+    public void LoadGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene(SceneIdToLoad);
     }
 
     public void Quit()

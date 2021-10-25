@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Aloha.Events;
-using Aloha.Hero;
 
 namespace Aloha {
     public class GameManager : Singleton<GameManager>
     {
+        private Hero hero;
+
         [SerializeField]
         private string defaultLevel;
         public void LoadLevel(string level, bool isTuto = false){
@@ -22,11 +23,27 @@ namespace Aloha {
         }
 
         public void LoadHero(HeroType type) {
-            HeroInstantier.Instance.InstantiateHero(type);
+            GlobalEvent.LoadHero.Invoke(type);
         }
 
-        public void LoadGeneric(){
-            LoadHero(HeroType.Generic);
+        public void ResumeGame() {
+            GlobalEvent.Resume.Invoke();
+        }
+
+        public void PauseGame() {
+            GlobalEvent.Pause.Invoke();
+        }
+
+        public void SetHero(Hero hero){
+            if(this.hero != null) {
+                Destroy(this.hero.gameObject);
+            }
+            this.hero = hero;
+            Debug.Log(hero);
+        }
+
+        public Hero GetHero() {
+            return hero;
         }
     }
 }

@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.EntityStats;
 using Aloha.Events;
 using System.Collections;
 
@@ -10,11 +9,25 @@ namespace Aloha
     {
         public int currentHealth;
         public int attack;
+        [SerializeField]
+        protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
 
-        public abstract void Init();
+        public void Attack(Entity entity)
+        {
+            entity.TakeDamage(this.stats.attack);
+        }
 
-        public abstract void Attack(Entity entity);
+        public void Init()
+        {
+            this.Init(this.stats);
+        }
+
+        public virtual void Init(Stats stats)
+        {
+            this.stats = stats;
+            this.currentHealth = this.stats.maxHealth;
+        }
 
         public virtual void TakeDamage(int damage)
         {
@@ -36,9 +49,9 @@ namespace Aloha
             Vector3 posFinal = posInit + direction * speed;
 
             while (temps < 1f)
-            {            
+            {
                 temps += speed * Time.deltaTime;
-                posFinal.y = posInit.y + Mathf.Sin(temps*Mathf.PI) * 0.25f;
+                posFinal.y = posInit.y + Mathf.Sin(temps * Mathf.PI) * 0.25f;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
@@ -46,29 +59,10 @@ namespace Aloha
             gameObject.transform.position = posFinal;
         }
 
-        public void Die(){
+        public void Die()
+        {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);
-        }
-
-    }
-    public abstract class Entity<T> : Entity where T : Stats
-    {
-        public T stats;
-        public override void Attack(Entity entity)
-        {
-            entity.TakeDamage(this.stats.attack);
-        }
-
-        public override void Init()
-        {
-            this.Init(this.stats);
-        }
-
-        public virtual void Init(Stats stats)
-        {
-            this.stats = (T)stats;
-            this.currentHealth = stats.maxHealth;
         }
 
     }

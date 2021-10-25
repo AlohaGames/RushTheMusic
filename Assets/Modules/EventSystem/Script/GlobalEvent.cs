@@ -8,6 +8,9 @@ namespace Aloha.Events
 {
     public class GlobalEvent
     {
+
+        public static UnityEvent Resume = new UnityEvent();
+        public static UnityEvent Pause = new UnityEvent();
         public static EntityEvent EntityDied = new EntityEvent();
         public static GameObjectEvent TileCount = new GameObjectEvent();
         public static UnityEvent LevelStop = new UnityEvent();
