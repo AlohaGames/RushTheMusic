@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Aloha.Hero;
+using Aloha.Heros;
 
 namespace Aloha
 {

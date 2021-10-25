@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Aloha.EntityStats;
 
-namespace Aloha.Hero
+namespace Aloha.Heros
 {
     public class Hero : Hero<HeroStats> {}
     public class Hero<T> : Entity<T> where T : HeroStats

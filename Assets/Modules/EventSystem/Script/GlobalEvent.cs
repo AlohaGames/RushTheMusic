@@ -9,6 +9,6 @@ namespace Aloha.Events
     public class GlobalEvent
     {
         public static EntityEvent EntityDied = new EntityEvent();
-        public static HeroEvent HeroHealth = new HeroEvent();
+        public static IntIntEvent OnHealthUpdate = new IntIntEvent();
     }
 }

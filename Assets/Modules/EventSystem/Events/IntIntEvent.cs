@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.Hero;
+using Aloha.Heros;
 using Aloha.EntityStats;
 
 namespace Aloha.Events
 {
-    public class HeroEvent : UnityEvent<Hero<HeroStats>>
+    public class IntIntEvent : UnityEvent<int, int>
     {
 
 
