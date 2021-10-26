@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.EntityStats;
 using Aloha.Events;
 using System.Collections;
 
