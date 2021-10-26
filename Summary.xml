@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>10/26/2021 - 13:07:02</Generatedon>
+    <Generatedon>10/26/2021 - 13:15:20</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>30</Classes>
     <Files>29</Files>
-    <Coveredlines>351</Coveredlines>
-    <Uncoveredlines>153</Uncoveredlines>
-    <Coverablelines>504</Coverablelines>
-    <Totallines>1154</Totallines>
-    <Linecoverage>69.6</Linecoverage>
+    <Coveredlines>359</Coveredlines>
+    <Uncoveredlines>156</Uncoveredlines>
+    <Coverablelines>515</Coverablelines>
+    <Totallines>1170</Totallines>
+    <Linecoverage>69.7</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="30" coverage="69.6" coveredlines="351" coverablelines="504" totallines="1228" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="30" coverage="69.7" coveredlines="359" coverablelines="515" totallines="1244" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.AudioManager" coverage="0" coveredlines="0" coverablelines="26" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Bar" coverage="100" coveredlines="9" coverablelines="9" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -24,7 +24,7 @@
       <Class name="Aloha.EnemyMapping" coverage="90" coveredlines="36" coverablelines="40" totallines="83" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.EnemySpawner" coverage="68.9" coveredlines="20" coverablelines="29" totallines="48" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Entity" coverage="100" coveredlines="28" coverablelines="28" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Entity[T]" coverage="100" coveredlines="10" coverablelines="10" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Entity[T]" coverage="70" coveredlines="7" coverablelines="10" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Events.GlobalEvent" coverage="100" coveredlines="11" coverablelines="11" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Example.DebugDeadEntity" coverage="0" coveredlines="0" coverablelines="16" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Example.TestBar" coverage="0" coveredlines="0" coverablelines="10" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -41,7 +41,7 @@
       <Class name="Aloha.UIManager" coverage="100" coveredlines="4" coverablelines="4" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Utils" coverage="100" coveredlines="3" coverablelines="3" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.VerticalBar" coverage="100" coveredlines="4" coverablelines="4" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Warrior" coverage="100" coveredlines="8" coverablelines="8" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Warrior" coverage="100" coveredlines="19" coverablelines="19" totallines="36" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="InputBinding" coverage="100" coveredlines="4" coverablelines="4" totallines="11" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Menu" coverage="0" coveredlines="0" coverablelines="6" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Pause" coverage="60.8" coveredlines="14" coverablelines="23" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" />
