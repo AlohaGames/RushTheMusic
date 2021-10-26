@@ -16,7 +16,6 @@ namespace Aloha
 
         public void InstantiateHero(HeroType type)
         {
-            Debug.Log("Instantiate : " + type);
             GameManager.Instance.SetHero(InstantiateHeroID((int)type));
         }
 
