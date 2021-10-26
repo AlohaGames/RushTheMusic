@@ -12,7 +12,6 @@ namespace Aloha
         public override void Die()
         {
             base.Die();
-            GlobalEvent.EntityDied.Invoke(this);
         }
 
         public void Disappear()

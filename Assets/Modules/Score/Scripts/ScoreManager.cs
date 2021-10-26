@@ -104,7 +104,9 @@ namespace Aloha
         /// </summary>
         public float ScoreKill()
         {
-            int maxEnemy = LevelManager.Instance.levelMapping.GetEnemyNumber();
+            //int maxEnemy = LevelManager.Instance.levelMapping.GetEnemyNumber();
+            int? nullableEnemiesNumber = LevelManager.Instance.levelMapping?.GetEnemyNumber();
+            int maxEnemy = nullableEnemiesNumber != null ? nullableEnemiesNumber : 0;
             Debug.Log("Enemy: " + maxEnemy);
             if (maxEnemy > 0)
             {
