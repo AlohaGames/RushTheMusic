@@ -33,7 +33,7 @@ namespace Aloha
         {
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit + direction * speed;
+            Vector3 posFinal = posInit + direction;
 
             while (temps < 1f)
             {            

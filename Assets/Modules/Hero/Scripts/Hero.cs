@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Aloha.EntityStats;
+using System;
 
-namespace Aloha.Hero
+namespace Aloha.Heros
 {
-    public class Hero : Hero<HeroStats> {}
-    public class Hero<T> : Entity<T> where T : HeroStats
+    public class Hero : Entity<HeroStats> { }
+    public class Hero<T> : Hero
     {
         public override void Init(Stats stats)
         {

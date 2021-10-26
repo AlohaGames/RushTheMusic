@@ -1,7 +1,7 @@
 using Aloha.EntityStats;
 using UnityEngine;
 
-namespace Aloha.Hero
+namespace Aloha.Heros
 {
     public class Warrior : Hero<WarriorStats>
     {
@@ -14,8 +14,8 @@ namespace Aloha.Hero
 
         public void BumpEntity(Entity entity, float speed)
         {
-            Vector3 direction = new Vector3(0,0,2);
-            StartCoroutine(entity.GetBump(direction,speed));
+            Vector3 direction = new Vector3(0,0,2*speed);
+            StartCoroutine(entity.GetBump(direction, 2f));
         }
     }
 }
