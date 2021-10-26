@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NUnit.Framework;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {

@@ -4,7 +4,6 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {

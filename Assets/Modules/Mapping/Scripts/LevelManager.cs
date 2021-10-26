@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
 using System.IO.Compression;
-using Aloha.EntityStats;
 using UnityEngine;
 using UnityEngine.Networking;
 
