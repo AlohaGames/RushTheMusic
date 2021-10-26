@@ -81,7 +81,7 @@ namespace Aloha
         /// </summary>
         public float ScoreHit()
         {
-            int maxHit = LevelManager.Instance.levelMapping.GetEnemyNumber() / 2;
+            int maxHit = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.GetEnemyNumber() / 2 : 0;
             Debug.Log("Hit: " + maxHit);
             if (maxHit > 0)
             {
@@ -104,9 +104,7 @@ namespace Aloha
         /// </summary>
         public float ScoreKill()
         {
-            //int maxEnemy = LevelManager.Instance.levelMapping.GetEnemyNumber();
-            int? nullableEnemiesNumber = LevelManager.Instance.levelMapping?.GetEnemyNumber();
-            int maxEnemy = nullableEnemiesNumber != null ? nullableEnemiesNumber : 0;
+            int maxEnemy = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.GetEnemyNumber() : 0;
             Debug.Log("Enemy: " + maxEnemy);
             if (maxEnemy > 0)
             {
@@ -128,7 +126,7 @@ namespace Aloha
         /// </summary>
         public float ScoreDistance()
         {
-            int maxTiles = LevelManager.Instance.levelMapping.tileCount;
+            int maxTiles = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.tileCount : 0;
             Debug.Log("Tiles: " + maxTiles);
             if (maxTiles > 0)
             {
