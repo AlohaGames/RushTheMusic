@@ -44,27 +44,32 @@ namespace Aloha
             */
         }
 
-        public void Save()
+        public void Save(LevelMapping level, string filename, bool isTuto = false)
         {
             XmlSerializer serializer = new XmlSerializer(typeof(LevelMapping));
-            using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{Filename}", FileMode.Create))
+            using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{filename}", FileMode.Create))
             {
-                serializer.Serialize(stream, levelMapping);
+                serializer.Serialize(stream, level);
             }
         }
 
-        public void Load()
+        public void Save()
         {
-            Debug.Log($"Load level {Filename}");
+            this.Save(this.levelMapping, this.Filename);
+        }
 
-            string basePath = Application.persistentDataPath;
+        public void Load(string filename, bool isTuto = false)
+        {
+            Debug.Log($"Load level {filename}");
+
+            string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
             string workingPath = Application.temporaryCachePath;
 
             // Extract zip file
             Guid g = Guid.NewGuid();
 
             Debug.Log($"Extract level to {g}");
-            ZipFile.ExtractToDirectory($"{basePath}/{Filename}", $"{workingPath}/{g}");
+            ZipFile.ExtractToDirectory($"{basePath}/{filename}", $"{workingPath}/{g}");
 
 
             // Read metadata file
@@ -89,6 +94,11 @@ namespace Aloha
             // Load AudioClip from mp3 file
             string musicFilePath = $"file://{workingPath}/{g}/{metadata.musicFilePath}";
             StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
+        }
+
+        public void Load()
+        {
+            Load(this.Filename);
         }
 
         void FinishLoad()
