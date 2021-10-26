@@ -29,7 +29,7 @@ namespace Aloha.Hero
 
         public override void Attack(Entity entity)
         {
-            int damage = this.stats.attack * ATTACK_BONUS;
+            int damage = (int) (this.stats.attack * ATTACK_BONUS);
             entity.TakeDamage(damage);
             currentRage = currentRage / 2;
         }

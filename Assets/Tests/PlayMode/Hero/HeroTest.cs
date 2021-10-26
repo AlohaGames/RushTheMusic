@@ -159,11 +159,14 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
-            stats.maxHealth = 100;
+            enemyStats.maxHealth = 100;
             enemy.Init(enemyStats);
+
+            Assert.AreEqual(100, enemy.currentHealth);
 
             warrior.Attack(enemy);
             Assert.AreEqual(5, warrior.currentRage);
+            Assert.AreEqual(88, enemy.currentHealth);
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);

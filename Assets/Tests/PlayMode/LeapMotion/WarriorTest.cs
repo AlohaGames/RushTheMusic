@@ -49,7 +49,7 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
-            Assert.AreEqual(enemy.currentHealth, 5);
+            Assert.AreEqual(4, enemy.currentHealth);
         }
 
         [UnityTest]
