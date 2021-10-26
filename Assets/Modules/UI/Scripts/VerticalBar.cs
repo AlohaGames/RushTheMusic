@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Aloha.Heros;
-using Aloha.EntityStats;
 
 
 namespace Aloha

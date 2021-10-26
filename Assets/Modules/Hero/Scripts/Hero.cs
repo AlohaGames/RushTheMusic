@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Aloha.EntityStats;
 
-namespace Aloha.Heros
+namespace Aloha
 {
     public class Hero : Hero<HeroStats> {}
     public class Hero<T> : Entity<T> where T : HeroStats

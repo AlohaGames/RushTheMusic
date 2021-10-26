@@ -13,7 +13,7 @@ namespace Aloha
         void Start()
         {
             horizontalBar.Init(GlobalEvent.OnHealthUpdate);
-            verticalBar.Init(GlobalEvent.OnHealthUpdate2);
+            verticalBar.Init(GlobalEvent.OnSecondaryUpdate);
         }
     }
 }

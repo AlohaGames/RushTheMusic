@@ -791,6 +791,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8255961184770556069, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9157745368341289462, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -922,7 +926,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 601123705}
         m_TargetAssemblyTypeName: Aloha.TestBar, Aloha
-        m_MethodName: test
+        m_MethodName: BarUsageExample
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

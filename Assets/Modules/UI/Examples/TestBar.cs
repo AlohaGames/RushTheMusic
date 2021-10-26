@@ -1,10 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Aloha.EntityStats;
-using Aloha.Heros;
 
-namespace Aloha
+namespace Aloha.Example
 {
 
     public class TestBar : MonoBehaviour
@@ -14,7 +12,7 @@ namespace Aloha
         public Bar V_Bar;
         public Hero hero;
 
-        public void test()
+        public void BarUsageExample()
         {
             // C'est juste parce qu'il faut un hero stats
             HeroStats heroStats = ScriptableObject.CreateInstance<HeroStats>();

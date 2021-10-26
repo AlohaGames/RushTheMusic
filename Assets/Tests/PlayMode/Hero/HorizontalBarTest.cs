@@ -4,20 +4,18 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.TestTools;
-using Aloha.Heros;
-using Aloha.EntityStats;
 using Aloha.Events;
 
 namespace Aloha.Test
 {
 
-    public class HealthBarTest
+    public class HorizontalBarTest
     {
 
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator HealthBarTestWithEnumeratorPasses()
+        [Test]
+        public void HorizonalBarTestSimplePasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
@@ -69,7 +67,10 @@ namespace Aloha.Test
             Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, widthBarAfter));
             Assert.IsTrue(widthBarAfter < widthBarBefore);
 
-            yield return null;
+            Object.Destroy(updateBar);
+            Object.Destroy(healthBar);
+            Object.Destroy(heroObject);
+
         } // IEnumerator
     } // class
 } // namespace
