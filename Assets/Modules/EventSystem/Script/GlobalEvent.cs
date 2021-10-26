@@ -12,6 +12,8 @@ namespace Aloha.Events
         public static UnityEvent Resume = new UnityEvent();
         public static UnityEvent Pause = new UnityEvent();
         public static EntityEvent EntityDied = new EntityEvent();
+        public static IntIntEvent OnHealthUpdate = new IntIntEvent();
+        public static IntIntEvent OnSecondaryUpdate = new IntIntEvent();
         public static GameObjectEvent TileCount = new GameObjectEvent();
         public static UnityEvent LevelStop = new UnityEvent();
         public static UnityEvent LevelStart = new UnityEvent();

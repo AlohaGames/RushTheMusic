@@ -22,5 +22,9 @@ namespace Aloha
         {
             GameManager.Instance.LoadLevel(level, isTuto);
         }
+
+        public void OnDestroy() {
+            GetComponent<Button>().onClick.RemoveListener(OnClick);
+        }
     }
 }

@@ -18,7 +18,7 @@ namespace Aloha
             entity.TakeDamage(this.stats.attack);
         }
 
-        public void Init()
+        public virtual void Init()
         {
             this.Init(this.stats);
         }

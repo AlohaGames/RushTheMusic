@@ -22,6 +22,7 @@ namespace Aloha
         private Hero InstantiateHeroID(int id)
         {
             Hero instance = (Hero) Instantiate(HeroPrefabs[id]).GetComponent<Entity>();
+            instance.Init();
             return instance;
         }
 

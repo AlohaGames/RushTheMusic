@@ -68,7 +68,6 @@ namespace Aloha
                 Destroy(this.hero.gameObject);
             }
             this.hero = hero;
-            Debug.Log(hero);
         }
 
         public Hero GetHero()
