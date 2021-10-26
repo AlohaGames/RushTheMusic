@@ -11,11 +11,13 @@ namespace Aloha
         protected GameObject bar;
         public Color color;
 
-        public void Start()
+        public void Awake()
         {
             bar = transform.GetChild(0).gameObject;
             bar.GetComponent<Image>().color = color;
         }
+
+        
 
         public abstract void UpdateBar(int current, int max);
     }

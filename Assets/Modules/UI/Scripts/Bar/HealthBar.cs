@@ -7,8 +7,9 @@ namespace Aloha
 {
     public class HealthBar : HorizontalBar
     {
-        public void Awake()
+        public new void Awake()
         {
+            base.Awake();
             GlobalEvent.OnHealthUpdate.AddListener(UpdateBar);
         }
 
