@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.Hero;
 
 namespace Aloha.Events
 {
