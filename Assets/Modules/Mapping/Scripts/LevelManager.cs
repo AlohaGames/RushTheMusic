@@ -46,8 +46,10 @@ namespace Aloha
 
         public void Save(LevelMapping level, string filename, bool isTuto = false)
         {
+            string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
+
             XmlSerializer serializer = new XmlSerializer(typeof(LevelMapping));
-            using (FileStream stream = new FileStream($"{Application.persistentDataPath}/{filename}", FileMode.Create))
+            using (FileStream stream = new FileStream($"{basePath}/{filename}", FileMode.Create))
             {
                 serializer.Serialize(stream, level);
             }
