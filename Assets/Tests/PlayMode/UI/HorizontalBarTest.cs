@@ -6,21 +6,23 @@ using UnityEngine.UI;
 using UnityEngine.TestTools;
 using Aloha.Events;
 
-
 namespace Aloha.Test
 {
-    public class VerticalBarTest
+
+    public class HorizontalBarTest
     {
-        // A Test behaves as an ordinary method
+        /*
+        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
+        // `yield return null;` to skip a frame.
         [Test]
-        public void VerticalBarTestSimplePasses()
+        public void HorizonalBarTestSimplePasses()
         {
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
 
             // GameObject pour le hero
             GameObject heroObject = new GameObject();
-
+           
 
             // Panel enfant qui est la barre de vie et qui a pour parent le panel avec le script UpdateBar.cs
             GameObject healthBar = new GameObject();
@@ -30,7 +32,7 @@ namespace Aloha.Test
             GameObject updateBar = new GameObject();
             healthBar.transform.SetParent(updateBar.transform);
 
-            updateBar.AddComponent<VerticalBar>();
+            updateBar.AddComponent<HorizontalBar>();
 
 
 
@@ -48,27 +50,28 @@ namespace Aloha.Test
 
             int damageGiven = 75;
 
-            float heightBarExpected = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
+            float widthBarBefore = (float) healthBar.GetComponent<RectTransform>().sizeDelta.x;
 
-            float expectedBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y * ((float)(myHero.currentHealth - damageGiven) / (float)myHero.GetStats().maxHealth);
+            float expectedBarAfter = (float) healthBar.GetComponent<RectTransform>().sizeDelta.x * ((float) (myHero.currentHealth - damageGiven) / (float) myHero.GetStats().maxHealth);
 
 
             myHero.TakeDamage(damageGiven);
-            VerticalBar verticalBar = updateBar.GetComponent<VerticalBar>();
+            HorizontalBar horizontalBar = updateBar.GetComponent<HorizontalBar>();
             IntIntEvent monEvent = new IntIntEvent();
-            // verticalBar.Init(monEvent);
-            verticalBar.UpdateBar(myHero.currentHealth, myHero.GetStats().maxHealth);
+            // horizontalBar.Init(monEvent);
+            horizontalBar.UpdateBar(myHero.currentHealth, myHero.GetStats().maxHealth);
 
+            
+            float widthBarAfter = (float) healthBar.GetComponent<RectTransform>().sizeDelta.x;
 
-            float heightBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
-
-            Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, heightBarAfter));
-            Assert.IsTrue(heightBarAfter < heightBarExpected);
+            Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, widthBarAfter));
+            Assert.IsTrue(widthBarAfter < widthBarBefore);
 
             Object.Destroy(updateBar);
             Object.Destroy(healthBar);
             Object.Destroy(heroObject);
-        }
 
-    }
-}
+        } // IEnumerator
+        */
+    } // class
+} // namespace
