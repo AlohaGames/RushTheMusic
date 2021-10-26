@@ -7,7 +7,8 @@ namespace Aloha.Hero
     {
         //TODO: Ajouter une fonction de parade
         public int currentRage;
-        private int REGENERATION_POURCENT = 20;
+        private float REGENERATION_POURCENT = 0.2f;
+        private float ATTACK_BONUS = 1.2f;
         public void Init(WarriorStats stats)
         {
             base.Init(stats);
@@ -23,12 +24,13 @@ namespace Aloha.Hero
         //Regen 10% of maxRage per hit
         public override void TakeDamage(int damage){
             base.TakeDamage(damage);
-            currentRage = currentRage + (int)(stats.maxRage * (REGENERATION_POURCENT/100f));
+            currentRage = currentRage + (int)(stats.maxRage * REGENERATION_POURCENT);
         }
 
         public override void Attack(Entity entity)
         {
-            base.Attack(entity);
+            int damage = this.stats.attack * ATTACK_BONUS;
+            entity.TakeDamage(damage);
             currentRage = currentRage / 2;
         }
     }
