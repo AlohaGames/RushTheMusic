@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {
@@ -12,7 +11,7 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator EnemySpawnerCountTileTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
@@ -34,7 +33,7 @@ namespace Aloha.Test
           [UnityTest]
         public IEnumerator EnemySpawnerRestCountTileTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
