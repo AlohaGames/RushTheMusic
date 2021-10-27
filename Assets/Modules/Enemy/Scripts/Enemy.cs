@@ -22,6 +22,7 @@ namespace Aloha
     }
     public class Enemy : Entity
     {
+        [SerializeField] private bool NoAI = false;
         protected bool AIActivated = false;
 
         private EnemyStats enemyStats {
@@ -53,8 +54,11 @@ namespace Aloha
 
         public void SetAI(bool value)
         {
-            AIActivated = value;
-            if (AIActivated) StartCoroutine(AI());
+            if (!NoAI)
+            {
+                AIActivated = value;
+                if (AIActivated) StartCoroutine(AI());
+            }
         }
 
         protected virtual IEnumerator AI()
