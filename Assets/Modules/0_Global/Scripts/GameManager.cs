@@ -103,10 +103,5 @@ namespace Aloha
             }
         }
         #endregion
-        /*
-                public KeyCode pause = KeyCode.Escape;
-            public KeyCode quit = KeyCode.F12;
-            public KeyCode attack = KeyCode.Mouse0;
-            public KeyCode defense = KeyCode.Mouse1;*/
     }
 }
