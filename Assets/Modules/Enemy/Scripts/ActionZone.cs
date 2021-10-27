@@ -12,11 +12,9 @@ namespace Aloha
         {
             if (!wasTriggered && other.tag == "Player")
             {
-                //TODO
-                //Enemy father = transform.parent.GetComponent<Enemy>();
                 wasTriggered = true;
-                transform.parent.GetComponent<Lancer>().DetachFromParent();
-                transform.parent.GetComponent<Lancer>().SetAI(true);
+                transform.parent.GetComponent<Enemy>().DetachFromParent();
+                transform.parent.GetComponent<Enemy>().SetAI(true);
             }
         }
     }
