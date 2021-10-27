@@ -21,7 +21,7 @@ namespace Aloha.Hero
             StartCoroutine(entity.GetBump(direction,speed));
         }
 
-        //Regen 10% of maxRage per hit
+        //Regen x% of maxRage per hit
         public override void TakeDamage(int damage){
             base.TakeDamage(damage);
             currentRage = currentRage + (int)(stats.maxRage * REGENERATION_POURCENT);
@@ -29,9 +29,18 @@ namespace Aloha.Hero
 
         public override void Attack(Entity entity)
         {
-            int damage = (int) (this.stats.attack * ATTACK_BONUS);
-            entity.TakeDamage(damage);
-            currentRage = currentRage / 2;
+            int damage;
+            if(this.currentRage == stats.maxRage){
+                damage = entity.stats.maxHealth;
+                entity.TakeDamage(damage);
+                //OU ??
+                //entity.Die();
+                currentRage = 0;
+            }else{
+                damage = this.stats.attack;
+                entity.TakeDamage(damage);
+                currentRage = currentRage + (int)(stats.maxRage * REGENERATION_POURCENT);
+            }
         }
     }
 }
