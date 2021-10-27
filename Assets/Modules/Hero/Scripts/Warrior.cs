@@ -32,8 +32,6 @@ namespace Aloha
             if(this.currentRage == stats.maxRage){
                 damage = entity.stats.maxHealth;
                 entity.TakeDamage(damage);
-                //OU ??
-                //entity.Die();
                 currentRage = 0;
             }else{
                 damage = this.stats.attack;
