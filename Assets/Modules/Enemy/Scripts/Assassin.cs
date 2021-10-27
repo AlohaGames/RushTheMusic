@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Aloha.EntityStats;
-using Aloha.Heros;
 
 namespace Aloha
 {
@@ -13,8 +12,7 @@ namespace Aloha
 
         private void Start()
         {
-            // TODO Change this by the hero in HeroManager
-            hero = (Hero) FindObjectOfType<Warrior>();
+            hero = GameManager.Instance.GetHero();
         }
 
         private void Update()
@@ -25,6 +23,10 @@ namespace Aloha
                 this.Disappear();
                 Debug.Log(hero.currentHealth);
             }
+        }
+        protected override IEnumerator AI()
+        {
+            return base.AI();
         }
     }
 }
