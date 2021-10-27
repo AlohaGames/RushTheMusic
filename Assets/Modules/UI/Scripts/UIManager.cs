@@ -15,12 +15,6 @@ namespace Aloha
             GlobalEvent.LevelStart.AddListener(ShowUIElements);
         }
 
-        // Start is called before the firsst frame update
-        void Start()
-        {
-
-        }
-
         void ShowUIElements() {
             HealthBar.gameObject.SetActive(true);
             SecondaryBar.gameObject.SetActive(true);

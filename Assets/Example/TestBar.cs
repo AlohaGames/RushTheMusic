@@ -23,6 +23,7 @@ namespace Aloha.Example
             Hero myHero = hero.GetComponent<Hero>();
             myHero.Init(heroStats);
             myHero.TakeDamage(75);
+            // TODO Repair @Wilfried
             // H_Bar.updateEvent.Invoke(myHero.currentHealth, myHero.GetStats().maxHealth);
             // V_Bar.updateEvent.Invoke(myHero.currentHealth, myHero.GetStats().maxHealth);
         }
