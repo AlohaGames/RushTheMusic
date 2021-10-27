@@ -2,14 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Enemy<T> : Entity<T> where T : EnemyStats
+    public class Enemy<T> : Enemy where T : EnemyStats
+    {
+        private T enemyStats
+        {
+            get
+            {
+                return this.stats as T;
+            }
+        }
+
+        public override EnemyStats GetStats()
+        {
+            return this.enemyStats;
+        }
+    }
+    public class Enemy : Entity
     {
         protected bool AIActivated = false;
 
+        private EnemyStats enemyStats {
+            get {
+                return this.stats as EnemyStats;
+            }
+        }
+        public virtual EnemyStats GetStats() {
+            return this.enemyStats;
+        }
         public void Awake()
         {
             this.dieEvent.AddListener(Disappear);
@@ -60,5 +82,4 @@ namespace Aloha
             gameObject.transform.position = posFinal;
         }
     }
-    public class Enemy : Enemy<EnemyStats> { }
 }

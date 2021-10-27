@@ -1,23 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha.Events;
 
-namespace Aloha.Heros
+namespace Aloha
 {
     public class HeroInstantier : Singleton<HeroInstantier>
     {
         [SerializeField] private List<GameObject> HeroPrefabs;
 
-        public GameObject InstantiateHero(int id)
+        private void Awake()
         {
-            GameObject instance = Instantiate(HeroPrefabs[id]);
+            GlobalEvent.LoadHero.AddListener(InstantiateHero);
+        }
+
+        public void InstantiateHero(HeroType type)
+        {
+            GameManager.Instance.SetHero(InstantiateHeroID((int)type));
+        }
+
+        private Hero InstantiateHeroID(int id)
+        {
+            Hero instance = (Hero) Instantiate(HeroPrefabs[id]).GetComponent<Entity>();
+            instance.Init();
             return instance;
         }
 
-        public GameObject InstantiateHero(HeroType type)
-        {
-            return InstantiateHero((int)type);
+        public void OnDestroy() {
+            GlobalEvent.LoadHero.RemoveListener(InstantiateHero);
         }
+
+
     }
     public enum HeroType
     {

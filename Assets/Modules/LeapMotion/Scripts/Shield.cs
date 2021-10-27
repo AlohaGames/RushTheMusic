@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Aloha.Heros;
 
 namespace Aloha
 {
@@ -14,6 +13,7 @@ namespace Aloha
 
         private void Start()
         {
+            warrior = GameManager.Instance.GetHero() as Warrior;
             presPos = transform.position;
             newPos = transform.position;
         }

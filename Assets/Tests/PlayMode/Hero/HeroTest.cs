@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Aloha.Heros;
-using Aloha.EntityStats;
 
 namespace Aloha.Test
 {
@@ -13,28 +11,30 @@ namespace Aloha.Test
         [Test]
         public void HeroInstantierTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            Warrior hero = HeroInstantier.Instance.InstantiateHero(HeroType.Warrior).GetComponent<Warrior>();
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
+            Hero hero = GameManager.Instance.GetHero();
 
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
-            GameObject.Destroy(hero);
-            GameObject.Destroy(manager);
+            GameObject.DestroyImmediate(hero.gameObject);
+            GameObject.DestroyImmediate(manager);
         }
 
         [Test]
         public void HeroStatsTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            Warrior hero = HeroInstantier.Instance.InstantiateHero(HeroType.Warrior).GetComponent<Warrior>();
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
+            Hero hero = GameManager.Instance.GetHero();
 
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
-            Assert.IsTrue(hero.stats != null);
-            Assert.IsTrue(hero.stats is WarriorStats);
+            Assert.IsTrue(hero.GetStats() != null);
+            Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            GameObject.Destroy(hero);
+            GameObject.Destroy(hero.gameObject);
             GameObject.Destroy(manager);
         }
 
@@ -89,6 +89,8 @@ namespace Aloha.Test
             Debug.Log("Hero life: " + warrior.currentHealth);
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.currentHealth);
+
+            GameObject.Destroy(warriorGO);
         }
 
         [Test]
@@ -111,7 +113,10 @@ namespace Aloha.Test
             enemy.Init(enemyStats);
 
             guerrier.Attack(enemy);
-            Assert.IsTrue(enemy.currentHealth < enemy.stats.maxHealth);
+            Assert.IsTrue(enemy.currentHealth < enemy.GetStats().maxHealth);
+
+            GameObject.Destroy(guerrierGO);
+            GameObject.Destroy(enemyGO);
         }
     }
 }

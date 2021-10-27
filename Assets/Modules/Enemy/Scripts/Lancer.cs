@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using Aloha.EntityStats;
-using Aloha.Heros;
 
 namespace Aloha
 {
