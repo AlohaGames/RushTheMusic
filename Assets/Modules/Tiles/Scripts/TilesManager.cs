@@ -22,6 +22,10 @@ namespace Aloha
             gameIsStarted = false;
         }
 
+        void Awake() {
+            GlobalEvent.LevelStart.AddListener(StartGame);
+        }
+
         // Update is called once per frame
         void Update()
         {
@@ -98,6 +102,10 @@ namespace Aloha
         public GameObject GetActiveTileById(int index)
         {
             return activeTiles[index];
+        }
+
+        public void OnDestroy() {
+            GameObject.Destroy(tilesContainer);
         }
     }
 }

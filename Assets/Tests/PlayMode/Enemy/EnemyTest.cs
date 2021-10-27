@@ -37,13 +37,16 @@ namespace Aloha.Test
 
             Assert.IsTrue(enemy == null);
 
-            //GameObject.Destroy(enemy);
+            if (enemyGO)
+            {
+                GameObject.Destroy(enemyGO);
+            }
         }
 
         [Test]
         public void EnemyInstancierTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             Enemy enemy = EnemyInstantier.Instance
                 .InstantiateEnemy(EnemyType.generic)
                 .GetComponent<Enemy>();
@@ -51,7 +54,7 @@ namespace Aloha.Test
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 
-            GameObject.Destroy(enemy);
+            GameObject.Destroy(enemy.gameObject);
             GameObject.Destroy(manager);
         }
     }

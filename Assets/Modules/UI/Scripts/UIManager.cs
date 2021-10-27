@@ -7,13 +7,24 @@ namespace Aloha
 {
     public class UIManager : Singleton<UIManager>
     {
-        public HorizontalBar horizontalBar;
-        public VerticalBar verticalBar;
-        // Start is called before the first frame update
-        void Start()
-        {
-            horizontalBar.Init(GlobalEvent.OnHealthUpdate);
-            verticalBar.Init(GlobalEvent.OnSecondaryUpdate);
+        public Bar HealthBar;
+        public Bar SecondaryBar;
+        public Bar LevelProgressBar;
+
+        public void Awake() {
+            GlobalEvent.LevelStart.AddListener(ShowUIElements);
+        }
+
+        void ShowUIElements() {
+            HealthBar.gameObject.SetActive(true);
+            SecondaryBar.gameObject.SetActive(true);
+            LevelProgressBar.gameObject.SetActive(true);
+
+            Hero hero = GameManager.Instance.GetHero();
+
+            GlobalEvent.OnHealthUpdate.Invoke(hero.currentHealth, hero.GetStats().maxHealth);
+            // TODO 
+            // GlobalEvent.OnSecondaryUpdate.Invoke();
         }
     }
 }

@@ -61,3 +61,5 @@ sysinfo.txt
 crashlytics-build.properties
 
 CodeCoverage/
+
+Assets/InitTestScene*.unity
