@@ -6,6 +6,7 @@ using System.IO;
 using System.IO.Compression;
 using UnityEngine;
 using UnityEngine.Networking;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -16,31 +17,8 @@ namespace Aloha
         public AudioClip levelMusic;
         public bool IsLoaded = false;
 
-        public void Init()
-        {
-            /*
-            Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.attack = 10;
-            enemyStats.defense = 10;
-            enemyStats.maxHealth = 10;
-            enemyStats.level = 2;
-
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPosition.BOT, HorizontalPosition.CENTER);
-
-            List<EnemyMapping> tile10Enemies = new List<EnemyMapping>();
-            tile10Enemies.Add(genericEnemy);
-
-            SerializeDictionary<int, List<EnemyMapping>> enemies = new SerializeDictionary<int, List<EnemyMapping>>();
-            enemies.Add(10, tile10Enemies);
-
-            levelMapping = new LevelMapping(enemies, 80);
-
-            // Save le level
-            Save();
-
-            // Reset
-            levelMapping = null;
-            */
+        public void Awake() {
+            GlobalEvent.LoadLevel.AddListener(Load);
         }
 
         public void Save(LevelMapping level, string filename, bool isTuto = false)
@@ -122,6 +100,10 @@ namespace Aloha
                 }
             }
             cb();
+        }
+
+        public void OnDestroy() {
+            GlobalEvent.LoadLevel.RemoveListener(Load);
         }
     }
 }
