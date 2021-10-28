@@ -1,3 +1,5 @@
+using UnityEngine;
+using UnityEngine.Events;
 using Aloha.Events;
 using System.Collections;
 using UnityEngine;
@@ -9,11 +11,25 @@ namespace Aloha
     {
         public int currentHealth;
         public int attack;
+        [SerializeField]
+        protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
 
-        public abstract void Init();
+        public void Attack(Entity entity)
+        {
+            entity.TakeDamage(this.stats.attack);
+        }
 
-        public abstract void Attack(Entity entity);
+        public virtual void Init()
+        {
+            this.Init(this.stats);
+        }
+
+        public virtual void Init(Stats stats)
+        {
+            this.stats = stats;
+            this.currentHealth = this.stats.maxHealth;
+        }
 
         public virtual void TakeDamage(int damage)
         {
@@ -49,26 +65,6 @@ namespace Aloha
         {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);
-        }
-
-    }
-    public abstract class Entity<T> : Entity where T : Stats
-    {
-        public T stats;
-        public override void Attack(Entity entity)
-        {
-            entity.TakeDamage(this.stats.attack);
-        }
-
-        public override void Init()
-        {
-            this.Init(this.stats);
-        }
-
-        public virtual void Init(Stats stats)
-        {
-            this.stats = (T)stats;
-            this.currentHealth = stats.maxHealth;
         }
 
     }

@@ -13,7 +13,7 @@ namespace Aloha.Test
         public IEnumerator PauseMenuTestWithEnumeratorPasses()
         {
             GameObject pause = new GameObject();
-            pause.AddComponent<Pause>();
+            pause.AddComponent<PauseMenu>();
 
             GameObject child = new GameObject();
 
@@ -21,7 +21,7 @@ namespace Aloha.Test
 
             child.transform.SetParent(pause.transform);
 
-            pause.GetComponent<Pause>().MenuPauseUI = child;
+            pause.GetComponent<PauseMenu>().MenuPauseUI = child;
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
@@ -29,7 +29,7 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale != 0f);
 
-            pause.GetComponent<Pause>().PauseGame();
+            pause.GetComponent<PauseMenu>().PauseGame();
 
             // skip one frame
             yield return null;
@@ -38,13 +38,13 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(Pause.isGamePaused);
+            Assert.IsTrue(pause.GetComponent<PauseMenu>().isGamePaused);
 
             yield return null;
             yield return null;
             yield return null;
 
-            pause.GetComponent<Pause>().Resume();
+            pause.GetComponent<PauseMenu>().Resume();
 
             yield return null;
             yield return null;
@@ -52,7 +52,7 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(child.activeSelf);
-            Assert.IsFalse(Pause.isGamePaused);
+            Assert.IsFalse(pause.GetComponent<PauseMenu>().isGamePaused);
 
             GameObject.Destroy(pause);
 

@@ -26,7 +26,7 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator TileAutomaticallyAppearsAndDestroyed()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             LevelManager levelManager = LevelManager.Instance;
             levelManager.levelMapping = new LevelMapping();
@@ -56,7 +56,7 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator GameStartAndStop()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             LevelManager levelManager = LevelManager.Instance;
             levelManager.levelMapping = new LevelMapping();

@@ -11,6 +11,7 @@ namespace Aloha
 
         private void Start()
         {
+            warrior = GameManager.Instance.GetHero() as Warrior;
             presPos = transform.position;
             newPos = transform.position;
         }
