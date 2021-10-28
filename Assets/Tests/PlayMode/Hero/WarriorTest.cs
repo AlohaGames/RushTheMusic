@@ -52,8 +52,8 @@ namespace Aloha.Test
             Assert.AreEqual(100, enemy.currentHealth);
 
             warrior.Attack(enemy);
-            Assert.AreEqual(5, warrior.currentRage);
-            Assert.AreEqual(88, enemy.currentHealth);
+            Assert.AreEqual(0, warrior.currentRage);
+            Assert.AreEqual(0, enemy.currentHealth);
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);
