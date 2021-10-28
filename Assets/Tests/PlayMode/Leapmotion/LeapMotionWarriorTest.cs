@@ -8,7 +8,7 @@ using Aloha;
 
 namespace Aloha.Test
 {
-    public class WarriorTest
+    public class LeapMotionWarriorTest
     {
         [UnityTest]
         public IEnumerator Test_SwordOnTriggerEnter()
@@ -16,7 +16,7 @@ namespace Aloha.Test
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            wStats.maxRage = 0;
+            wStats.maxRage = 100;
             wStats.maxHealth = 10;
             wStats.attack = 5;
             wStats.defense = 0;
@@ -47,11 +47,11 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
-            Assert.AreEqual(enemy.currentHealth, 5);
+            Assert.AreEqual(5, enemy.currentHealth);
 
-            GameObject.Destroy(warrior);
-            GameObject.Destroy(swordGO);
             GameObject.Destroy(enemyGO);
+            GameObject.Destroy(swordGO);
+            GameObject.Destroy(warriorGO);
         }
 
         [UnityTest]

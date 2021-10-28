@@ -36,7 +36,7 @@ namespace Aloha.Test
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
             stats.maxRage = 10;
             stats.maxHealth = 10;
-            stats.attack = 10;
+            stats.attack = 2;
             stats.defense = 10;
             stats.xp = 10;
             warrior.Init(stats);
@@ -46,14 +46,19 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
-            enemyStats.maxHealth = 100;
+            enemyStats.maxHealth = 20;
             enemy.Init(enemyStats);
 
-            Assert.AreEqual(100, enemy.currentHealth);
-
             warrior.Attack(enemy);
-            Assert.AreEqual(0, warrior.currentRage);
-            Assert.AreEqual(0, enemy.currentHealth);
+            Assert.AreEqual(2, warrior.currentRage);
+
+            for(int i = 0; i <= 5; i++){
+                if(enemy == null){
+                    Assert.LessOrEqual(warrior.currentRage, warrior.GetStats().maxRage);
+                    break;
+                }
+                warrior.Attack(enemy);
+            }
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);

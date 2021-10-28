@@ -21,7 +21,7 @@ namespace Aloha
         public void Init(WarriorStats stats)
         {
             base.Init(stats);
-            this.currentRage = stats.maxRage;
+            this.currentRage = 0;
         }
 
         public void BumpEntity(Entity entity, float speed)
