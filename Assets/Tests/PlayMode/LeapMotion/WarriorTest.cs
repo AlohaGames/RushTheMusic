@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
+using Aloha;
 
 namespace Aloha.Test
 {
@@ -26,8 +27,8 @@ namespace Aloha.Test
             sword.warrior = warrior;
             sword.speed = 30;
 
-            BoxCollider shieldBoxCollider = swordGO.AddComponent<BoxCollider>();
-            shieldBoxCollider.isTrigger = true;
+            BoxCollider swordBoxCollider = swordGO.AddComponent<BoxCollider>();
+            swordBoxCollider.isTrigger = true;
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
@@ -45,6 +46,10 @@ namespace Aloha.Test
 
             Assert.Greater(enemy.transform.position.z, 3f);
             Assert.AreEqual(enemy.currentHealth, 5);
+
+            GameObject.Destroy(warrior);
+            GameObject.Destroy(swordGO);
+            GameObject.Destroy(enemyGO);
         }
 
         [UnityTest]
@@ -84,6 +89,10 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
+
+            GameObject.Destroy(warrior);
+            GameObject.Destroy(shieldGO);
+            GameObject.Destroy(enemyGO);
         }
     }
 }
