@@ -13,7 +13,11 @@ namespace Aloha
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
 
-        public void Attack(Entity entity)
+        public Stats GetStats(){
+            return this.stats;
+        }
+
+        public virtual void Attack(Entity entity)
         {
             entity.TakeDamage(this.stats.attack);
         }

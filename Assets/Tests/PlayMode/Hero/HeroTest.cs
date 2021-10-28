@@ -113,7 +113,7 @@ namespace Aloha.Test
             enemy.Init(enemyStats);
 
             warrior.Attack(enemy);
-            Assert.IsTrue(enemy.currentHealth < enemy.stats.maxHealth);
+            Assert.IsTrue(enemy.currentHealth < enemy.GetStats().maxHealth);
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);
@@ -131,7 +131,7 @@ namespace Aloha.Test
             stats.xp = 10;
             warrior.Init(stats);
 
-            Assert.AreEqual(10, warrior.stats.maxRage);
+            Assert.AreEqual(10, warrior.GetStats().maxRage);
 
             warrior.currentRage = 5;
             Assert.AreEqual(5, warrior.currentRage);
@@ -154,7 +154,7 @@ namespace Aloha.Test
             stats.xp = 10;
             warrior.Init(stats);
 
-            Assert.AreEqual(10, warrior.stats.maxRage);
+            Assert.AreEqual(10, warrior.GetStats().maxRage);
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
