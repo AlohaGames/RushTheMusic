@@ -11,8 +11,7 @@ namespace Aloha
         public Bar HealthBar;
         public Bar SecondaryBar;
         public Bar LevelProgressBar;
-        public Text InGameScoreText;
-        public Text TotalScoreText;
+        public UIScore UIScore;
 
         public void Awake() {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
@@ -23,7 +22,7 @@ namespace Aloha
             HealthBar.gameObject.SetActive(true);
             SecondaryBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
-            InGameScoreText.gameObject.SetActive(true);
+            UIScore.ShowInGameUIScoreElements();
 
             Hero hero = GameManager.Instance.GetHero();
 
@@ -33,7 +32,7 @@ namespace Aloha
         }
 
         public void ShowEndGameUIElements(){
-            TotalScoreText.text = "Score total: " + ScoreManager.Instance.TotalScore;
+            UIScore.ShowEndGameUIScoreElements();
         }
     }
 }

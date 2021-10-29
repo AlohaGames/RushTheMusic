@@ -6,25 +6,28 @@ namespace Aloha
 {
     public class ScoreManager : Singleton<ScoreManager>
     {
-        public const int DISTANCE_POINT = 60;
-        public const int KILL_POINT = 30;
-        public const int HIT_POINT = 10;
+        public const int DISTANCE_PERCENT = 60;
+        public const int KILL_PERCENT = 30;
+        public const int HIT_PERCENT = 10;
         public const int MAX_SCORE = 1000;
         public int TotalScore;
-        private int _takeHitCounter;
-        private int _killCounter;
-        private int _tilesCounter;
+        public int DistanceScore;
+        public int EnemyKilledScore;
+        public int HitScore;
+        private int takeHitCounter;
+        private int killCounter;
+        private int tilesCounter;
         public int TakeHitCounter
         {
-            get { return _takeHitCounter; }
+            get { return takeHitCounter; }
         }
         public int KillCounter
         {
-            get { return _killCounter; }
+            get { return killCounter; }
         }
         public int TilesCounter
         {
-            get { return _tilesCounter; }
+            get { return tilesCounter; }
         }
 
         public void Awake()
@@ -32,6 +35,7 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
             GlobalEvent.TileCount.AddListener(TilesCount);
+            //GlobalEvent.OnInGameScoreUpdate.AddListener(CalculateTotalScore);
         }
 
         /// <summary>
@@ -39,9 +43,9 @@ namespace Aloha
         /// </summary>
         public void CountHeroHit()
         {
-            _takeHitCounter++;
-            Debug.Log("Hero take " + _takeHitCounter + " hit");
-            CalculateTotalScore();
+            takeHitCounter++;
+            Debug.Log("Hero take " + takeHitCounter + " hit");
+            ScoreHit();
         }
 
         /// <summary>
@@ -49,16 +53,16 @@ namespace Aloha
         /// </summary>
         public void DeathCount(Entity entity)
         {
-            _killCounter++;
-            Debug.Log("Kill: " + _killCounter);
-            CalculateTotalScore();
+            killCounter++;
+            Debug.Log("Kill: " + killCounter);
+            ScoreKill();
         }
 
         public void TilesCount(GameObject tile)
         {
-            _tilesCounter++;
-            Debug.Log("Tiles number: " + _tilesCounter);
-            CalculateTotalScore();
+            tilesCounter++;
+            Debug.Log("Tiles number: " + tilesCounter);
+            ScoreDistance();
         }
 
         /// <summary>
@@ -69,79 +73,68 @@ namespace Aloha
         /// </summary>
         public void CalculateTotalScore()
         {
-            float scoreDistance = ScoreDistance();
-            float scoreEnemyKilled = ScoreKill();
-            float scoreHit = ScoreHit();
-            Debug.Log("Distance : " + scoreDistance + "\nKill: " + scoreEnemyKilled + "\nHit: " + scoreHit);
-            TotalScore = (int)(scoreDistance + scoreEnemyKilled - scoreHit);
+            Debug.Log("Distance : " + DistanceScore + "\nKill: " + EnemyKilledScore + "\nHit: " + HitScore);
+            Debug.Log("Total score in CalculateTotalScore(): " + TotalScore);
+            TotalScore = (DistanceScore + EnemyKilledScore - HitScore);
+            //ScoreUI.ShowInGameUIScoreElements();
         }
 
         /// <summary>
         /// Calculate score of no hit
         /// </summary>
-        public float ScoreHit()
+        public void ScoreHit()
         {
             int maxHit = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.GetEnemyNumber() / 2 : 0;
-            Debug.Log("Hit: " + maxHit);
+            Debug.Log("Max hit: " + maxHit);
             if (maxHit > 0)
             {
-                int heroTakeHit = Utils.InRangeInt(0, maxHit, _takeHitCounter);
-                return CalculateScore(MAX_SCORE, HIT_POINT, (float)maxHit, heroTakeHit);
+                int heroTakeHit = Utils.InRangeInt(0, maxHit, takeHitCounter);
+                HitScore = (int) CalculateScore(MAX_SCORE, HIT_PERCENT, (float)maxHit, heroTakeHit);
             }
             else if (maxHit == 0)
             {
-                return 0f;
+                HitScore = 0;
             }
-            else
-            {
-                throw new IndexOutOfRangeException($"{maxHit} cannot be under 0");
-            }
+            CalculateTotalScore();
 
         }
 
         /// <summary>
         /// Calculate score of killing entity
         /// </summary>
-        public float ScoreKill()
+        public void ScoreKill()
         {
             int maxEnemy = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.GetEnemyNumber() : 0;
-            Debug.Log("Enemy: " + maxEnemy);
+            Debug.Log("Max enemy: " + maxEnemy);
             if (maxEnemy > 0)
             {
-                int killEnemy = Utils.InRangeInt(0, maxEnemy, _killCounter);
-                return CalculateScore(MAX_SCORE, KILL_POINT, (float)maxEnemy, killEnemy);
+                int killEnemy = Utils.InRangeInt(0, maxEnemy, killCounter);
+                EnemyKilledScore = (int) CalculateScore(MAX_SCORE, KILL_PERCENT, (float)maxEnemy, killEnemy);
             }
             else if (maxEnemy == 0)
             {
-                return 0f;
+                EnemyKilledScore = 0;
             }
-            else
-            {
-                throw new IndexOutOfRangeException($"{maxEnemy} cannot be under 0");
-            }
+            CalculateTotalScore();
         }
 
         /// <summary>
         /// Calculate score of distance
         /// </summary>
-        public float ScoreDistance()
+        public void ScoreDistance()
         {
             int maxTiles = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.tileCount : 0;
-            Debug.Log("Tiles: " + maxTiles);
+            Debug.Log("Max tiles: " + maxTiles);
             if (maxTiles > 0)
             {
-                int tiles = Utils.InRangeInt(0, maxTiles, _tilesCounter);
-                return CalculateScore(MAX_SCORE, DISTANCE_POINT, (float)maxTiles, tiles);
+                int tiles = Utils.InRangeInt(0, maxTiles, tilesCounter);
+                DistanceScore = (int) CalculateScore(MAX_SCORE, DISTANCE_PERCENT, (float)maxTiles, tiles);
             }
             else if (maxTiles == 0)
             {
-                return 0f;
+                DistanceScore = 0;
             }
-            else
-            {
-                throw new IndexOutOfRangeException($"Max tiles: {maxTiles} cannot be under 0");
-            }
-
+            CalculateTotalScore();
         }
 
         /// <summary>
@@ -151,8 +144,6 @@ namespace Aloha
         {
             float pourcentMaxScore = maxScore * (percent / 100f);
             float scoreStat = 1f - ((maxStat - stat) / maxStat);
-            Debug.Log("Pourcent score: " + pourcentMaxScore);
-            Debug.Log("Score stat: " + scoreStat);
             return pourcentMaxScore * scoreStat;
         }
 
@@ -161,6 +152,7 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);
             GlobalEvent.EntityDied.RemoveListener(DeathCount);
             GlobalEvent.TileCount.RemoveListener(TilesCount);
+            //GlobalEvent.OnInGameScoreUpdate.RemoveListener(CalculateTotalScore);
         }
     }
 }

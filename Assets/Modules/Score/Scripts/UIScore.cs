@@ -6,38 +6,28 @@ namespace Aloha
 {
     public class UIScore : MonoBehaviour
     {
-        public GameObject canvasUIScoreLevel;
-        public Text scoreText;
-        public Text totalScoreText;
-        public Text distanceScore;
-        public Text killScore;
-        public Text hitScore;
+        public GameObject EndGameScore;
+        public GameObject ScoreDetail;
+        public GameObject InGameScore;
+        public Text InGameScoreText;
+        public Text TotalScoreText;
+        public Text DistanceScoreText;
+        public Text KillScoreText;
+        public Text HitScoreText;
 
-        public void Awake()
+        public void ShowInGameUIScoreElements()
         {
-            GlobalEvent.LevelStop.AddListener(Canvas_UI_Score_Level);
-            canvasUIScoreLevel.SetActive(false);
+            InGameScore.SetActive(true);
+            InGameScoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void ShowEndGameUIScoreElements()
         {
-            scoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
-        }
-
-        public void Canvas_UI_Score_Level()
-        {
-            scoreText.gameObject.SetActive(false);
-            canvasUIScoreLevel.SetActive(true);
-            distanceScore.text = "Distance" + "\t" + ScoreManager.Instance.ScoreDistance();
-            killScore.text = "Kill" + "\t" + ScoreManager.Instance.ScoreKill();
-            hitScore.text = "Hit" + "\t-" + ScoreManager.Instance.ScoreHit();
-            totalScoreText.text = "Score total: " + ScoreManager.Instance.TotalScore;
-        }
-
-        public void OnDestroy()
-        {
-            GlobalEvent.LevelStop.RemoveListener(Canvas_UI_Score_Level);
+            EndGameScore.SetActive(true);
+            TotalScoreText.text = "Score total: " + ScoreManager.Instance.TotalScore;
+            DistanceScoreText.text = "Distance\t" + ScoreManager.Instance.DistanceScore;
+            KillScoreText.text = "Ennemis tués\t" + ScoreManager.Instance.EnemyKilledScore;
+            HitScoreText.text = "Coups reçus\t" + ScoreManager.Instance.HitScore;
         }
     }
 }
