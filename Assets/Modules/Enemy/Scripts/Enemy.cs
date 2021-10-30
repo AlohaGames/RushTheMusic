@@ -43,7 +43,8 @@ namespace Aloha
             Destroy(this.gameObject);
         }
 
-        public void OnDestroy() {
+        public void OnDestroy() 
+        {
             this.dieEvent.RemoveListener(Disappear);
         }
 
