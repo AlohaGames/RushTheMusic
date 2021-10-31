@@ -12,7 +12,8 @@ namespace Aloha
 {
     public class LevelManager : Singleton<LevelManager>
     {
-        [SerializeField] private string Filename;
+        [SerializeField]
+        private string Filename = "";
         public LevelMapping levelMapping;
         public AudioClip levelMusic;
         public bool IsLoaded = false;

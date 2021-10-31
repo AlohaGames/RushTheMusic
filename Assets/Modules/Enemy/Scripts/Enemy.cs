@@ -20,12 +20,18 @@ namespace Aloha
             this.dieEvent.AddListener(Disappear);
         }
 
+        public override void Die()
+        {
+            base.Die();
+        }
+
         public void Disappear()
         {
             Destroy(this.gameObject);
         }
 
-        public void OnDestroy() {
+        public void OnDestroy()
+        {
             this.dieEvent.RemoveListener(Disappear);
         }
     }

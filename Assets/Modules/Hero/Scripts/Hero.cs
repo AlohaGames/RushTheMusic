@@ -30,6 +30,7 @@ namespace Aloha
             float damageReduction = CalculateDamageReduction();
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);
+            GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
         }
 
@@ -37,6 +38,12 @@ namespace Aloha
         {
             float damageReduction;
             return damageReduction = (this.stats.defense / (this.stats.defense + 20));
+        }
+
+        public override void Die()
+        {
+            base.Die();
+            GlobalEvent.HeroDie.Invoke();
         }
     }
     public class Hero<T> : Hero where T : HeroStats

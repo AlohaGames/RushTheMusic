@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aloha {
+namespace Aloha
+{
     public class Sword : MonoBehaviour
     {
         public Warrior warrior;
@@ -21,14 +20,14 @@ namespace Aloha {
         private void Update()
         {
             newPos = transform.position;
-            speed = (newPos - presPos).magnitude*100;
+            speed = (newPos - presPos).magnitude * 100;
             presPos = newPos;
         }
 
         // If the Sword touch an Object
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy" && speed> minimumSpeedToKill)
+            if (collider.tag == "Enemy" && speed > minimumSpeedToKill)
             {
                 Debug.Log(speed);
                 warrior.Attack(collider.gameObject.GetComponent<Entity>());

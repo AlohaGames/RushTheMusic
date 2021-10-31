@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.TestTools;
 using Aloha;
 
@@ -79,7 +77,7 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             enemy.transform.position = new Vector3(0, 0, 3f);
-            EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats"); 
+            EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
             eStats.maxHealth = 10;
             enemy.Init(eStats);
 
