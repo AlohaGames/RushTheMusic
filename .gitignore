@@ -63,3 +63,4 @@ crashlytics-build.properties
 CodeCoverage/
 
 Assets/InitTestScene*.unity
+Assets/InitTestScene*.unity.meta

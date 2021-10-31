@@ -1,6 +1,5 @@
 using NUnit.Framework;
 using System.Collections.Generic;
-using Aloha;
 
 namespace Aloha.Test
 {

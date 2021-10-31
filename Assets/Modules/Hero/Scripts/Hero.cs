@@ -7,7 +7,7 @@ namespace Aloha
 {
     public class Hero : Entity
     {
-        public virtual HeroStats GetStats() {
+        public new virtual HeroStats GetStats() {
             return this.stats as HeroStats;
         }
         public override void Init()
@@ -30,6 +30,7 @@ namespace Aloha
             float damageReduction = CalculateDamageReduction();
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);
+            GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
         }
 
@@ -38,17 +39,24 @@ namespace Aloha
             float damageReduction;
             return damageReduction = (this.stats.defense / (this.stats.defense + 20));
         }
+
+        public override void Die()
+        {
+            base.Die();
+            GlobalEvent.HeroDie.Invoke();
+        }
     }
     public class Hero<T> : Hero where T : HeroStats
     {
-        private T heroStats
+        protected T heroStats
         {
             get
             {
                 return this.stats as T;
             }
         }
-        public override HeroStats GetStats()
+
+        public new T GetStats()
         {
             return heroStats;
         }

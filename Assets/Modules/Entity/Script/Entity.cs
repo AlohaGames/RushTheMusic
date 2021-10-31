@@ -1,7 +1,7 @@
+using System.Collections;
+using Aloha.Events;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.Events;
-using System.Collections;
 
 namespace Aloha
 {
@@ -13,7 +13,12 @@ namespace Aloha
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
 
-        public void Attack(Entity entity)
+        public Stats GetStats()
+        {
+            return this.stats;
+        }
+
+        public virtual void Attack(Entity entity)
         {
             entity.TakeDamage(this.stats.attack);
         }
@@ -59,7 +64,7 @@ namespace Aloha
             gameObject.transform.position = posFinal;
         }
 
-        public void Die()
+        public virtual void Die()
         {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);
