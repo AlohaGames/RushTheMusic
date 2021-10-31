@@ -5,43 +5,87 @@ using System.Collections;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public abstract class Entity : MonoBehaviour
     {
-        public int currentHealth;
-        public int attack;
-        [SerializeField]
-        protected Stats stats;
+        public int CurrentHealth;
         protected UnityEvent dieEvent = new UnityEvent();
 
+        [SerializeField]
+        protected Stats stats;
+        
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="entity"></param>
         public void Attack(Entity entity)
         {
-            entity.TakeDamage(this.stats.attack);
+            entity.TakeDamage(this.stats.Attack);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public virtual void Init()
         {
             this.Init(this.stats);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="stats"></param>
         public virtual void Init(Stats stats)
         {
             this.stats = stats;
-            this.currentHealth = this.stats.maxHealth;
+            this.CurrentHealth = this.stats.MaxHealth;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
         public virtual void TakeDamage(int damage)
         {
             if (damage < 0)
             {
                 return;
             }
-            currentHealth = currentHealth - damage;
-            if (currentHealth <= 0)
+            CurrentHealth = CurrentHealth - damage;
+            if (CurrentHealth <= 0)
             {
                 Die();
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <param name="speed"></param>
         public IEnumerator GetBump(Vector3 direction, float speed = 2f)
         {
             float temps = 0;
@@ -59,11 +103,17 @@ namespace Aloha
             gameObject.transform.position = posFinal;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Die()
         {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);
         }
-
     }
 }

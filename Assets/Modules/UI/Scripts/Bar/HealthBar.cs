@@ -5,14 +5,31 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class HealthBar : HorizontalBar
     {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public new void Awake()
         {
             base.Awake();
             GlobalEvent.OnHealthUpdate.AddListener(UpdateBar);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void OnDestroy()
         {
             GlobalEvent.OnHealthUpdate.RemoveListener(UpdateBar);

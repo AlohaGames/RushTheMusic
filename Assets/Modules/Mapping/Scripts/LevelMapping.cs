@@ -5,26 +5,56 @@ using System.Linq;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class LevelMapping
     {
-        [SerializeField] public SerializeDictionary<int, List<EnemyMapping>> enemies;
-        public int tileCount;
+        public SerializeDictionary<int, List<EnemyMapping>> Enemies;
+        public int TileCount;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public LevelMapping()
         {
-            this.enemies = new SerializeDictionary<int, List<EnemyMapping>>();
-            this.tileCount = 0;
+            this.Enemies = new SerializeDictionary<int, List<EnemyMapping>>();
+            this.TileCount = 0;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="enemies"></param>
+        /// <param name="tileCount"></param>
         public LevelMapping(SerializeDictionary<int, List<EnemyMapping>> enemies, int tileCount)
         {
-            this.enemies = enemies;
-            this.tileCount = tileCount;
+            this.Enemies = enemies;
+            this.TileCount = tileCount;
         }
 
-        public List<EnemyMapping> getEnnemies(int tileIndex)
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="tileIndex"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
+        public List<EnemyMapping> GetEnnemies(int tileIndex)
         {
-            List<EnemyMapping> tileEnnemies = enemies.GetValue(tileIndex);
+            List<EnemyMapping> tileEnnemies = Enemies.GetValue(tileIndex);
             if (tileEnnemies != null)
             {
                 return tileEnnemies;

@@ -5,10 +5,20 @@ using System.Collections.Generic;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class EnemySpawner : Singleton<EnemySpawner>
     {
-        public int tilesCounter = 0;
+        public int TilesCounter = 0;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Awake()
         {
             Debug.Log("Start listening to tiles creation");
@@ -16,20 +26,35 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(ResetCount);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ResetCount()
         {
-            tilesCounter = 0;
-            Debug.Log($"Reset tiles count to {tilesCounter}");
+            TilesCounter = 0;
+            Debug.Log($"Reset tiles count to {TilesCounter}");
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="tile"></param>
         public void CountTile(GameObject tile)
         {
-            tilesCounter++;
-            List<EnemyMapping> enemiesMapping = LevelManager.Instance.levelMapping.getEnnemies(tilesCounter);
+            TilesCounter++;
+            List<EnemyMapping> enemiesMapping = LevelManager.Instance.LevelMapping.GetEnnemies(TilesCounter);
             int enemyNumber = enemiesMapping.Count;
             if (enemyNumber > 0)
             {
-                Debug.Log($"{enemyNumber} enemiesMapping found on tile {tilesCounter}");
+                Debug.Log($"{enemyNumber} enemiesMapping found on tile {TilesCounter}");
                 foreach (EnemyMapping enemyMapping in enemiesMapping)
                 {
                     GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.enemyType);
@@ -39,6 +64,13 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);

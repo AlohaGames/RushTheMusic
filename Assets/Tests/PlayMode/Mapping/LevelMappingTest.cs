@@ -36,20 +36,20 @@ namespace Aloha.Test
         public void LevelMappingConstructorTest()
         {
             LevelMapping lm0 = GetLevelsMapping()[0];
-            Assert.AreEqual(0, lm0.tileCount);
+            Assert.AreEqual(0, lm0.TileCount);
 
             LevelMapping lm1 = GetLevelsMapping()[1];
-            Assert.AreEqual(180, lm1.tileCount);
+            Assert.AreEqual(180, lm1.TileCount);
         }
 
         [Test]
         public void LevelMappingGetEnemiesTest()
         {
             LevelMapping lm0 = GetLevelsMapping()[0];
-            Assert.AreEqual(0, lm0.getEnnemies(10).Count);
+            Assert.AreEqual(0, lm0.GetEnnemies(10).Count);
 
             LevelMapping lm2 = GetLevelsMapping()[2];
-            Assert.AreEqual(1, lm2.getEnnemies(10).Count);
+            Assert.AreEqual(1, lm2.GetEnnemies(10).Count);
         }
     }
 }

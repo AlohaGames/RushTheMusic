@@ -5,52 +5,95 @@ using System.Linq;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
+    /// <param name="TKey"></param>
+    /// <param name="TValue"></param>
     public class SerializeDictionary<TKey, TValue>
     {
-        [SerializeField]
-        public List<TKey> dictionaryKey;
+        public List<TKey> DictionaryKey;
+        public List<TValue> DictionaryValue;
 
-        [SerializeField]
-        public List<TValue> dictionaryValue;
-
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="keys"></param>
+        /// <param name="values"></param>
         public SerializeDictionary(List<TKey> keys, List<TValue> values)
         {
             Initialized(keys, values);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public SerializeDictionary()
         {
             Initialized(new List<TKey>(), new List<TValue>());
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="keys"></param>
+        /// <param name="values"></param>
         private void Initialized(List<TKey> keys, List<TValue> values)
         {
-            this.dictionaryKey = keys;
-            this.dictionaryValue = values;
+            this.DictionaryKey = keys;
+            this.DictionaryValue = values;
         }
 
-
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="addKey"></param>
+        /// <param name="addValue"></param>
         public void Add(TKey addKey, TValue addValue)
         {
-            int index = this.dictionaryKey.FindIndex(key => key.Equals(addKey));
+            int index = this.DictionaryKey.FindIndex(key => key.Equals(addKey));
             // If value already exists
             if (index >= 0)
             {
-                this.dictionaryKey.RemoveAt(index);
-                this.dictionaryValue.RemoveAt(index);
+                this.DictionaryKey.RemoveAt(index);
+                this.DictionaryValue.RemoveAt(index);
             }
-            this.dictionaryKey.Add(addKey);
-            this.dictionaryValue.Add(addValue);
+            this.DictionaryKey.Add(addKey);
+            this.DictionaryValue.Add(addValue);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="searchKey"></param>
         public TValue GetValue(TKey searchKey)
         {
-            int index = this.dictionaryKey.FindIndex(key => key.Equals(searchKey));
+            int index = this.DictionaryKey.FindIndex(key => key.Equals(searchKey));
             if (index < 0)
             {
                 return default(TValue);
             }
-            return this.dictionaryValue[index];
+            return this.DictionaryValue[index];
         }
     }
 }

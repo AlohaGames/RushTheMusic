@@ -5,27 +5,60 @@ using UnityEngine.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Enemy : Entity
     {
-        private EnemyStats enemyStats {
-            get {
-                return this.stats as EnemyStats;
-            }
+        private EnemyStats enemyStats
+        {
+            get{ return this.stats as EnemyStats; }
         }
-        public EnemyStats GetStats() {
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
+        public EnemyStats GetStats()
+        {
             return this.enemyStats;
         }
+
+        /// <summary>
+        /// TODO
+        /// </summary>
         public void Awake()
         {
             this.dieEvent.AddListener(Disappear);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Disappear()
         {
             Destroy(this.gameObject);
         }
 
-        public void OnDestroy() {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void OnDestroy()
+        {
             this.dieEvent.RemoveListener(Disappear);
         }
     }

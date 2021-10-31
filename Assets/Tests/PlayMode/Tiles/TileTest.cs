@@ -9,7 +9,6 @@ namespace Aloha.Test
 {
     public class TileTest
     {
-
         // This Test checks if tiles are moving on Z- axis
         [UnityTest]
         public IEnumerator TileMoveForward()
@@ -31,20 +30,20 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping();
+            levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
             yield return null;
 
             GameObject firstTile = tilesManager.GetActiveTileById(0);
-            GameObject lastTile = tilesManager.GetActiveTileById(tilesManager.numberOfTiles - 1);
+            GameObject lastTile = tilesManager.GetActiveTileById(tilesManager.NumberOfTiles - 1);
 
-            float timeOfOneTile = (tilesManager.tileSize / tilesManager.tileSpeed);
-            yield return new WaitForSeconds(timeOfOneTile * 2 );
+            float timeOfOneTile = (tilesManager.TileSize / tilesManager.TileSpeed);
+            yield return new WaitForSeconds(timeOfOneTile * 2);
 
             Assert.IsTrue(firstTile == null, "Is the first tile deleted when it's behind the player ?");
-            Assert.AreNotSame(lastTile, tilesManager.GetActiveTileById(tilesManager.numberOfTiles - 1), "Does a new tile appear ?");
+            Assert.AreNotSame(lastTile, tilesManager.GetActiveTileById(tilesManager.NumberOfTiles - 1), "Does a new tile appear ?");
 
             tilesManager.StopGame();
             yield return null;
@@ -61,30 +60,27 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping();
+            levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
             yield return null;
-            Assert.IsTrue(tilesManager.gameIsStarted, "Is the game started ?");
+            Assert.IsTrue(tilesManager.GameIsStarted, "Is the game started ?");
 
             tilesManager.StartGame();
             yield return null;
-            Assert.IsTrue(tilesManager.gameIsStarted, "Is the game started ?");
+            Assert.IsTrue(tilesManager.GameIsStarted, "Is the game started ?");
 
             tilesManager.StopGame();
             yield return null;
-            Assert.IsFalse(tilesManager.gameIsStarted, "Is the game stopped ?");
+            Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
             tilesManager.StopGame();
             yield return null;
-            Assert.IsFalse(tilesManager.gameIsStarted, "Is the game stopped ?");
+            Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
             Object.Destroy(manager);
             yield return null;
         }
-
-
     }
-
 }

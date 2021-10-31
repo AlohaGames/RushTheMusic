@@ -36,30 +36,22 @@ namespace Aloha.Test
 
             // skip one frame
             yield return null;
-            yield return null;
-            yield return null;
 
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.IsTrue(pause.GetComponent<PauseMenu>().IsGamePaused);
 
-            yield return null;
-            yield return null;
             yield return null;
 
             pause.GetComponent<PauseMenu>().Resume();
 
             yield return null;
-            yield return null;
-            yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(child.activeSelf);
-            Assert.IsFalse(pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.IsFalse(pause.GetComponent<PauseMenu>().IsGamePaused);
 
             GameObject.Destroy(pause);
-
-
         }
     }
 }

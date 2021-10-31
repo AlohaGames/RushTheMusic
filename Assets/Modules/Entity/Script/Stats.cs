@@ -2,10 +2,14 @@ using UnityEngine;
 
 namespace Aloha
 {
-    public class Stats : ScriptableObject{
-        public int maxHealth;
-        public int attack;
-        public float defense;
-        public int level;
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public class Stats : ScriptableObject
+    {
+        public int MaxHealth;
+        public int Attack;
+        public float Defense;
+        public int Level;
     }
 }

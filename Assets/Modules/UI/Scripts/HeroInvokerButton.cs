@@ -6,19 +6,47 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     [RequireComponent(typeof(Button))]
     public class HeroInvokerButton : MonoBehaviour
     {
-        public HeroType type;
+        public HeroType Type;
 
-        public void Awake() {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Awake()
+        {
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
-        public void OnClick() {
-            GlobalEvent.LoadHero.Invoke(type);
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void OnClick()
+        {
+            GlobalEvent.LoadHero.Invoke(Type);
         }
 
-        public void OnDestroy() {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void OnDestroy()
+        {
             GetComponent<Button>().onClick.RemoveListener(OnClick);
         }
     }

@@ -5,32 +5,64 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class PauseMenu : MonoBehaviour
     {
-        public bool isGamePaused = false;
+        public bool IsGamePaused = false;
         public GameObject MenuPauseUI;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Awake()
         {
             GlobalEvent.Resume.AddListener(Resume);
             GlobalEvent.Pause.AddListener(PauseGame);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Resume()
         {
             MenuPauseUI.SetActive(false);
             Time.timeScale = 1f;
-            isGamePaused = false;
+            IsGamePaused = false;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void PauseGame()
         {
             MenuPauseUI.SetActive(true);
             Time.timeScale = 0f;
-            isGamePaused = true;
+            IsGamePaused = true;
         }
 
-        public void OnDestroy() {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void OnDestroy()
+        {
             GlobalEvent.Resume.RemoveListener(Resume);
             GlobalEvent.Pause.RemoveListener(PauseGame);
         }

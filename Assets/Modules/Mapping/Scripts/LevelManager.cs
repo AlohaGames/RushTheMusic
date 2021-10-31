@@ -10,17 +10,40 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class LevelManager : Singleton<LevelManager>
     {
-        [SerializeField] private string Filename;
-        public LevelMapping levelMapping;
-        public AudioClip levelMusic;
+        public LevelMapping LevelMapping;
+        public AudioClip LevelMusic;
         public bool IsLoaded = false;
 
-        public void Awake() {
+        [SerializeField] 
+        private string Filename;
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Awake()
+        {
             GlobalEvent.LoadLevel.AddListener(Load);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="level"></param>
+        /// <param name="filename"></param>
+        /// <param name="isTuto"></param>
         public void Save(LevelMapping level, string filename, bool isTuto = false)
         {
             string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
@@ -32,11 +55,27 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Save()
         {
-            this.Save(this.levelMapping, this.Filename);
+            this.Save(this.LevelMapping, this.Filename);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="filename"></param>
+        /// <param name="isTutp"></param>
         public void Load(string filename, bool isTuto = false)
         {
             Debug.Log($"Load level {filename}");
@@ -62,30 +101,55 @@ namespace Aloha
             }
 
             // Read mapping file
-            Debug.Log($"Read {metadata.mappingFilePath}");
+            Debug.Log($"Read {metadata.MappingFilePath}");
             XmlSerializer mappingSerializer = new XmlSerializer(typeof(LevelMapping));
 
-            using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.mappingFilePath}", FileMode.Open))
+            using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Open))
             {
-                this.levelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
+                this.LevelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
             }
 
             // Load AudioClip from mp3 file
-            string musicFilePath = $"file://{workingPath}/{g}/{metadata.musicFilePath}";
+            string musicFilePath = $"file://{workingPath}/{g}/{metadata.MusicFilePath}";
             StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Load()
         {
             Load(this.Filename);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         void FinishLoad()
         {
             this.IsLoaded = true;
             Debug.Log($"Load level finished");
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name=""></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         IEnumerator LoadMusic(string musicFileURI, Action cb)
         {
             Debug.Log($"Loading music {musicFileURI}");
@@ -95,14 +159,22 @@ namespace Aloha
                 AudioClip clip = DownloadHandlerAudioClip.GetContent(web);
                 if (clip != null)
                 {
-                    this.levelMusic = clip;
+                    this.LevelMusic = clip;
                     Debug.Log("AudioClip loaded !");
                 }
             }
             cb();
         }
 
-        public void OnDestroy() {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void OnDestroy()
+        {
             GlobalEvent.LoadLevel.RemoveListener(Load);
         }
     }

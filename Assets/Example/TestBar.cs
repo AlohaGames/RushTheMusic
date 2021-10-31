@@ -16,8 +16,8 @@ namespace Aloha.Example
         {
             // C'est juste parce qu'il faut un hero stats
             HeroStats heroStats = ScriptableObject.CreateInstance<HeroStats>();
-            heroStats.xp = 100;
-            heroStats.maxHealth = 100;
+            heroStats.XP = 100;
+            heroStats.MaxHealth = 100;
 
             //declaration du hero
             Hero myHero = hero.GetComponent<Hero>();

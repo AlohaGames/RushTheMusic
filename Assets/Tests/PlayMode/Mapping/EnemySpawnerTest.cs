@@ -15,13 +15,13 @@ namespace Aloha.Test
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping();
+            levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
             yield return null;
 
-            Assert.AreEqual(19, enemySpawner.tilesCounter);
+            Assert.AreEqual(19, enemySpawner.TilesCounter);
 
             tilesManager.StopGame();
             yield return null;
@@ -30,26 +30,26 @@ namespace Aloha.Test
             yield return null;
         }
 
-          [UnityTest]
+        [UnityTest]
         public IEnumerator EnemySpawnerRestCountTileTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping();
+            levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
             yield return null;
 
-            Assert.AreNotEqual(0, enemySpawner.tilesCounter);
+            Assert.AreNotEqual(0, enemySpawner.TilesCounter);
             yield return null;
 
             tilesManager.StopGame();
             yield return null;
 
-            Assert.AreEqual(0, enemySpawner.tilesCounter);
+            Assert.AreEqual(0, enemySpawner.TilesCounter);
             GameObject.Destroy(manager);
             yield return null;
         }

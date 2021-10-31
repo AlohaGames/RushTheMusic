@@ -3,8 +3,20 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class VerticalBar : Bar
     {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="max"></param>
         override public void UpdateBar(int current, int max)
         {
             RectTransform barTransform = bar.GetComponent<RectTransform>();

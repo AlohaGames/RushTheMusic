@@ -17,21 +17,21 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            stats.maxHealth = 10;
+            stats.MaxHealth = 10;
             enemy.Init(stats);
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
             enemy.TakeDamage(-5);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(0, enemy.currentHealth);
+            Assert.AreEqual(0, enemy.CurrentHealth);
 
             yield return null;
 
