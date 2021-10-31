@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618582553c5a6a3eafa7fa516a8aac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  Type: 0
 --- !u!114 &73417859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,7 +761,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6618582553c5a6a3eafa7fa516a8aac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 1
+  Type: 0
 --- !u!114 &361185204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -984,7 +984,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5c1d9252df8b0892ab7953022c202e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0, g: 1, b: 0.004989147, a: 1}
+  Color: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &727289604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1486,8 +1486,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f62352e04758596b4a7cab0aa4b086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 
   isTuto: 1
-  level: blue.rtm
 --- !u!114 &1450717351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1931,8 +1931,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f62352e04758596b4a7cab0aa4b086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: 
   isTuto: 1
-  level: never-gonna.rtm
 --- !u!114 &1677797972
 MonoBehaviour:
   m_ObjectHideFlags: 0
