@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 6325064735918017600, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
       propertyPath: UIScore
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3739102699806178544}
     - target: {fileID: 8245536411765177073, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
       propertyPath: m_RootOrder
       value: 2

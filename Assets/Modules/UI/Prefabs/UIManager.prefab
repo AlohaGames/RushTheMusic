@@ -562,7 +562,7 @@ MonoBehaviour:
   HealthBar: {fileID: 7800869642686387623}
   SecondaryBar: {fileID: 783787921589555615}
   LevelProgressBar: {fileID: 1350035493766938758}
-  UIScore: {fileID: 0}
+  UIScore: {fileID: 2424351652857213868}
 --- !u!114 &6528296815274834488
 MonoBehaviour:
   m_ObjectHideFlags: 0

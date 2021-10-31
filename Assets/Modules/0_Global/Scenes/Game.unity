@@ -1347,10 +1347,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5008517623671391004, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: UIScore
-      value: 
-      objectReference: {fileID: 878448260}
-    - target: {fileID: 5008517623671391004, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: InGameScore
       value: 
       objectReference: {fileID: 0}
@@ -1855,17 +1851,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &878448260 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3739102699806178544, guid: beb08a16a330fd58b99485317896e360, type: 3}
-  m_PrefabInstance: {fileID: 727289604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f39be822df59bc9dab104f22fe8ebac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &895753672
 GameObject:
   m_ObjectHideFlags: 0
