@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -71,7 +70,7 @@ namespace Aloha.Test
             Debug.Log("Hero defense: " + stats.defense);
             warrior.TakeDamage(5);
             Assert.AreEqual(5, warrior.currentHealth);
-            
+
             Debug.Log("Hero life: " + warrior.currentHealth);
             warrior.TakeDamage(2);
             Assert.AreEqual(3, warrior.currentHealth);

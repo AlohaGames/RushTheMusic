@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Aloha.Events;
+using UnityEngine;
 
 namespace Aloha
 {
@@ -12,7 +11,7 @@ namespace Aloha
         public float tileSpeed = 10;
         public float tileSize = 5;
 
-        [SerializeField] private GameObject[] tilePrefabs;
+        [SerializeField] private GameObject[] tilePrefabs = new GameObject[] { };
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
 
@@ -22,7 +21,8 @@ namespace Aloha
             gameIsStarted = false;
         }
 
-        void Awake() {
+        void Awake()
+        {
             GlobalEvent.LevelStart.AddListener(StartGame);
         }
 
@@ -104,7 +104,8 @@ namespace Aloha
             return activeTiles[index];
         }
 
-        public void OnDestroy() {
+        public void OnDestroy()
+        {
             GameObject.Destroy(tilesContainer);
         }
     }

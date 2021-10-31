@@ -1,7 +1,6 @@
-using UnityEngine;
-using Aloha;
-using Aloha.Events;
 using System.Collections.Generic;
+using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -25,7 +24,7 @@ namespace Aloha
         public void CountTile(GameObject tile)
         {
             tilesCounter++;
-            List<EnemyMapping> enemiesMapping = LevelManager.Instance.levelMapping.getEnnemies(tilesCounter);
+            List<EnemyMapping> enemiesMapping = LevelManager.Instance.levelMapping.GetEnnemies(tilesCounter);
             int enemyNumber = enemiesMapping.Count;
             if (enemyNumber > 0)
             {
