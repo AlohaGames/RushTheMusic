@@ -17,10 +17,11 @@ namespace Aloha
     {
         public LevelMapping LevelMapping;
         public AudioClip LevelMusic;
+        
         public bool IsLoaded = false;
 
         [SerializeField] 
-        private string Filename;
+        private string Filename = "";
 
         /// <summary>
         /// TODO

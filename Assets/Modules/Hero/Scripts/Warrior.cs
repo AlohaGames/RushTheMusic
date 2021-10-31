@@ -37,8 +37,8 @@ namespace Aloha
         /// </returns>
         public void BumpEntity(Entity entity, float speed)
         {
-            Vector3 direction = new Vector3(0,0,2);
-            StartCoroutine(entity.GetBump(direction,speed));
+            Vector3 direction = new Vector3(0, 0, 2);
+            StartCoroutine(entity.GetBump(direction, speed));
         }
     }
 }

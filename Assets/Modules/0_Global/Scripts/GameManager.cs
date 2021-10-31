@@ -15,7 +15,7 @@ namespace Aloha
         private Hero hero;
 
         [SerializeField]
-        private string defaultLevel;
+        private string defaultLevel = "";
 
         #region Events
         /// <summary>

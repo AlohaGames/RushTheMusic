@@ -1,6 +1,5 @@
-using UnityEngine;
-using Aloha;
 using Aloha.Events;
+using UnityEngine;
 
 namespace Aloha.Example
 {

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Aloha.Events;
@@ -10,8 +9,8 @@ namespace Aloha
     /// </summary>
     public class HeroInstantier : Singleton<HeroInstantier>
     {
-        [SerializeField] 
-        private List<GameObject> heroPrefabs;
+        [SerializeField]
+        private List<GameObject> heroPrefabs = new List<GameObject>();
 
         /// <summary>
         /// TODO

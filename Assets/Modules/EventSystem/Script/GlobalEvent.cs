@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
-
 
 namespace Aloha.Events
 {
@@ -12,12 +8,12 @@ namespace Aloha.Events
     public class GlobalEvent
     {
         /// <summary>
-        /// TODO
+        /// Basic UnityEvent invoke when Resume the game is request
         /// </summary>
         public static UnityEvent Resume = new UnityEvent();
-
+        
         /// <summary>
-        /// TODO
+        /// Basic UnityEvent invoke when Pause the game is request
         /// </summary>
         public static UnityEvent Pause = new UnityEvent();
 
@@ -26,6 +22,21 @@ namespace Aloha.Events
         /// </summary>
         /// <param name="Entity"></param>
         public static EntityEvent EntityDied = new EntityEvent();
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        public static UnityEvent HeroTakeDamage = new UnityEvent();
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        public static UnityEvent HeroDie = new UnityEvent();
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        public static UnityEvent EnemyDie = new UnityEvent();
 
         /// <summary>
         /// TODO

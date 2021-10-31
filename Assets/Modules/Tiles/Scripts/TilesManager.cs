@@ -1,7 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Aloha.Events;
+using UnityEngine;
 
 namespace Aloha
 {
@@ -18,8 +17,9 @@ namespace Aloha
 
         [HideInInspector] 
         public bool GameIsStarted;
+
         [SerializeField] 
-        private GameObject[] tilePrefabs;
+        private GameObject[] tilePrefabs = new GameObject[] { };
         
 
         /// <summary>

@@ -1,7 +1,7 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using Aloha.Events;
-using System.Collections;
 
 namespace Aloha
 {
@@ -110,7 +110,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void Die()
+        public virtual void Die()
         {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);

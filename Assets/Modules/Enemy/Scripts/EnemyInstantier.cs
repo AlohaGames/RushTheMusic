@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +8,8 @@ namespace Aloha
     /// </summary>
     public class EnemyInstantier : Singleton<EnemyInstantier>
     {
-        [SerializeField] 
-        private List<GameObject> enemyPrefabs;
+        [SerializeField]
+        private List<GameObject> enemyPrefabs = new List<GameObject>();
 
         /// <summary>
         /// TODO

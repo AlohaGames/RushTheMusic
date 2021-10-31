@@ -20,7 +20,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        public virtual HeroStats GetStats()
+        public virtual HeroStats GetStats() 
         {
             return this.stats as HeroStats;
         }
@@ -77,6 +77,7 @@ namespace Aloha
             float damageReduction = CalculateDamageReduction();
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);
+            GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
         }
 
@@ -94,6 +95,19 @@ namespace Aloha
         {
             float damageReduction;
             return damageReduction = (this.stats.Defense / (this.stats.Defense + 20));
+        }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        public override void Die()
+        {
+            base.Die();
+            GlobalEvent.HeroDie.Invoke();
         }
     }
 

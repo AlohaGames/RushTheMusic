@@ -45,6 +45,18 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
+        public override void Die()
+        {
+            base.Die();
+        }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Disappear()
         {
             Destroy(this.gameObject);
