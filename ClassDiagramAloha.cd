@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aloha.GameManager" Collapsed="true">
+    <Position X="1.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQQAAgAAEAAAAAAAACAEAAEAAAAAAQEAAAAQAAEAQE=</HashCode>
+      <FileName>Assets\Modules\0_Global\Scripts\GameManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.SerializeDictionary&lt;TKey, TValue&gt;" Collapsed="true">
+    <Position X="26" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAEAAAIABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Assets\Modules\0_Global\Scripts\SerializeDictionary.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Utils" Collapsed="true">
+    <Position X="26" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAAEAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\0_Global\Scripts\Utils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Enemy" Collapsed="true">
+    <Position X="5.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAABgEA=</HashCode>
+      <FileName>Assets\Modules\Enemy\Scripts\Enemy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.EnemyInstantier" Collapsed="true">
+    <Position X="12.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Enemy\Scripts\EnemyInstantier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Entity" Collapsed="true">
+    <Position X="6.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAQAAAAAgAAAAAgAAAIAEAACAAAACgAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Entity\Script\Entity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Stats" Collapsed="true">
+    <Position X="11.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAEAAACAAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Modules\Entity\Script\Stats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.EnemyStats" Collapsed="true">
+    <Position X="10.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Entity\Script\SubStats\EnemyStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.HeroStats" Collapsed="true">
+    <Position X="12.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Assets\Modules\Entity\Script\SubStats\HeroStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.WarriorStats" Collapsed="true">
+    <Position X="12.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Entity\Script\SubStats\WarriorStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Hero" Collapsed="true">
+    <Position X="7.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAgAABAAAAAAAAAAACgAABAAA=</HashCode>
+      <FileName>Assets\Modules\Hero\Scripts\Hero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Hero&lt;T&gt;" Collapsed="true">
+    <Position X="7.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Assets\Modules\Hero\Scripts\Hero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.HeroInstantier" Collapsed="true">
+    <Position X="21.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAABAAAAAAAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\Hero\Scripts\HeroInstantier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Warrior" Collapsed="true">
+    <Position X="7.75" Y="11.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAIAAAACAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Hero\Scripts\Warrior.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Shield" Collapsed="true">
+    <Position X="27.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgACAAAAAAAAAABAAAAAAAAQAAQAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Modules\LeapMotion\Scripts\Shield.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Sword" Collapsed="true">
+    <Position X="29.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAgACAAAAAAAAEABAAAAAAAAQAAQAAAAQAAAAA=</HashCode>
+      <FileName>Assets\Modules\LeapMotion\Scripts\Sword.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.AudioManager" Collapsed="true">
+    <Position X="15" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAQAAAAAEAAAAAAAAIEAQEA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\AudioManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.EnemyMapping" Collapsed="true">
+    <Position X="26" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQACAABQRAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\EnemyMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.EnemySpawner" Collapsed="true">
+    <Position X="3.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAABAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAABAAEA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\EnemySpawner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.LevelManager" Collapsed="true">
+    <Position X="8.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABgIAAAAAAQAAIBAAgAAAAAAAAAAQQAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\LevelManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.LevelMapping" Collapsed="true">
+    <Position X="26" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAIAAAQAAAA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\LevelMapping.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.LevelMetadata" Collapsed="true">
+    <Position X="27.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\LevelMetadata.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.ScoreManager" Collapsed="true">
+    <Position X="19.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhADYAEICBQAAQCAAhACAIAAAAAgAAACAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\Score\Scripts\ScoreManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.UIScore" Collapsed="true">
+    <Position X="24.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQFAAAAAAAAAQAAAAAAAIAAAAAEQAAAIAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\Score\Scripts\UIScore.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.BasicTile" Collapsed="true">
+    <Position X="24.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Tiles\Scripts\BasicTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.TilesManager" Collapsed="true">
+    <Position X="6" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQBAAAACSAAAAAACAQQAABhAgAAAIAAAQAAAACAAEA=</HashCode>
+      <FileName>Assets\Modules\Tiles\Scripts\TilesManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Bar" Collapsed="true">
+    <Position X="1.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAAAAAAAAACAACAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\Bar\Bar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.HealthBar" Collapsed="true">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\Bar\HealthBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.HorizontalBar" Collapsed="true">
+    <Position X="0.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\Bar\HorizontalBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.VerticalBar" Collapsed="true">
+    <Position X="2.75" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\Bar\VerticalBar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.HeroInvokerButton" Collapsed="true">
+    <Position X="29.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAACAAABAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\HeroInvokerButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.LevelLoaderButton" Collapsed="true">
+    <Position X="24.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAACACEAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\LevelLoaderButton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.PauseMenu" Collapsed="true">
+    <Position X="24.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAgAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAgAAEA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\PauseMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.UIManager" Collapsed="true">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQIAAAAAgACAAAAAAAAAAAAgCAAAABAAAAAAAEA=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\UIManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Singleton&lt;T&gt;" Collapsed="true">
+    <Position X="11.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIUAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\0_Global\Scripts\Singleton.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputBinding" Collapsed="true">
+    <Position X="17.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAABAAAAIAI=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Script\InputBinding.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainMenu" Collapsed="true">
+    <Position X="29.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQE=</HashCode>
+      <FileName>Assets\Modules\UI\Scripts\MainMenu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.EntityEvent" Collapsed="true">
+    <Position X="10" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Events\EntityEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.GameObjectEvent" Collapsed="true">
+    <Position X="12.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Events\GameObjectEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.HeroTypeEvent" Collapsed="true">
+    <Position X="5.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Events\HeroTypeEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.IntIntEvent" Collapsed="true">
+    <Position X="3.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Events\IntIntEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.StringBoolEvent" Collapsed="true">
+    <Position X="1" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Events\StringBoolEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.StringEvent" Collapsed="true">
+    <Position X="7.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Events\StringEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aloha.Events.GlobalEvent" Collapsed="true">
+    <Position X="27.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAgAAAAAAgAEgAIAAAAAIAEBAQAAAgAAACAAAgAAAA=</HashCode>
+      <FileName>Assets\Modules\EventSystem\Script\GlobalEvent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UnityEngine.Events.UnityEvent&lt;T0&gt;" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Events.UnityEvent&lt;T0, T1&gt;" Collapsed="true">
+    <Position X="2" Y="4.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="UnityEngine.Events.UnityEventBase" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="Aloha.EnemyType" Collapsed="true">
+    <Position X="24.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Enemy\Scripts\EnemyInstantier.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aloha.HeroType" Collapsed="true">
+    <Position X="26" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Hero\Scripts\HeroInstantier.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aloha.VerticalPosition" Collapsed="true">
+    <Position X="29.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIIAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\EnemyMapping.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Aloha.HorizontalPosition" Collapsed="true">
+    <Position X="27.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAgAAAAAAAAIAA=</HashCode>
+      <FileName>Assets\Modules\Mapping\Scripts\EnemyMapping.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

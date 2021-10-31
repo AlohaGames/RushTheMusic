@@ -1,4 +1,3 @@
-using Aloha.Events;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +17,11 @@ namespace Aloha
         public void ShowInGameUIScoreElements()
         {
             InGameScore.SetActive(true);
+            UpdateUIText();
+        }
+
+        public void UpdateUIText()
+        {
             InGameScoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
         }
 
