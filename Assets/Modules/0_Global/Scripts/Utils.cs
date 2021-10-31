@@ -10,7 +10,7 @@ namespace Aloha
             return Math.Abs(a - b) <= epsilon;
         }
 
-        public static int InRangeInt(int min, int max, int value)
+        public static int InRange(this int value, int min, int max)
         {
             if (value <= min)
             {
@@ -23,7 +23,7 @@ namespace Aloha
             return value;
         }
 
-        public static float InRangeFloat(float min, float max, float value)
+        public static float InRange(this float value, float min, float max)
         {
             if (value <= min)
             {

@@ -1,6 +1,6 @@
-using Aloha.Events;
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha
 {

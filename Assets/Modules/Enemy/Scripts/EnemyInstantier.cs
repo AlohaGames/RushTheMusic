@@ -18,7 +18,7 @@ namespace Aloha
         public GameObject InstantiateEnemy(EnemyType type)
         {
 
-            return InstantiateEnemy((int)type);
+            return InstantiateEnemy((int) type);
         }
 
 

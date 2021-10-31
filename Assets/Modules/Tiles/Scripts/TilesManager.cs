@@ -1,5 +1,5 @@
-using Aloha.Events;
 using System.Collections.Generic;
+using Aloha.Events;
 using UnityEngine;
 
 namespace Aloha
@@ -21,7 +21,8 @@ namespace Aloha
             gameIsStarted = false;
         }
 
-        void Awake() {
+        void Awake()
+        {
             GlobalEvent.LevelStart.AddListener(StartGame);
         }
 
@@ -103,7 +104,8 @@ namespace Aloha
             return activeTiles[index];
         }
 
-        public void OnDestroy() {
+        public void OnDestroy()
+        {
             GameObject.Destroy(tilesContainer);
         }
     }

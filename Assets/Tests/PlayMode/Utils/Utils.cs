@@ -24,38 +24,38 @@ namespace Aloha.Test
         public void InRangeIntTest()
         {
             //True positive
-            Assert.AreEqual(0, Utils.InRangeInt(-10, 10, 0));
+            Assert.AreEqual(0, 0.InRange(-10, 10));
 
             //True max positive
-            Assert.AreEqual(10, Utils.InRangeInt(-10, 10, 10));
+            Assert.AreEqual(10, 10.InRange(-10, 10));
 
             //True min negative
-            Assert.AreEqual(-10, Utils.InRangeInt(-10, 10, -10));
+            Assert.AreEqual(-10, (-10).InRange(-10, 10));
 
             //False above min negative
-            Assert.AreEqual(-10, Utils.InRangeInt(-10, 10, -11));
+            Assert.AreEqual(-10, (-11).InRange(-10, 10));
 
             //False above max positive
-            Assert.AreEqual(10, Utils.InRangeInt(-10, 10, 11));
+            Assert.AreEqual(10, 11.InRange(-10, 10));
         }
 
         [Test]
         public void InRangeFloatTest()
         {
             //True positive
-            Assert.AreEqual(0f, Utils.InRangeFloat(-10f, 10f, 0f));
+            Assert.AreEqual(0f, 0f.InRange(-10f, 10f));
 
             //True max positive
-            Assert.AreEqual(10f, Utils.InRangeFloat(-10f, 10f, 10f));
+            Assert.AreEqual(10f, 10f.InRange(-10f, 10f));
 
             //True min negative
-            Assert.AreEqual(-10f, Utils.InRangeFloat(-10f, 10f, -10f));
+            Assert.AreEqual(-10f, (-10f).InRange(-10f, 10f));
 
             //False above min negative
-            Assert.AreEqual(-10f, Utils.InRangeFloat(-10f, 10f, -11f));
+            Assert.AreEqual(-10f, (-11f).InRange(-10f, 10f));
 
             //False above max positive
-            Assert.AreEqual(10f, Utils.InRangeFloat(-10f, 10f, 11f));
+            Assert.AreEqual(10f, 11f.InRange(-10f, 10f));
         }
     }
 

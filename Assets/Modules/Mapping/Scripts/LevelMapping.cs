@@ -18,7 +18,6 @@ namespace Aloha
         {
             this.enemies = enemies;
             this.tileCount = tileCount;
-
         }
 
         public List<EnemyMapping> getEnnemies(int tileIndex)
