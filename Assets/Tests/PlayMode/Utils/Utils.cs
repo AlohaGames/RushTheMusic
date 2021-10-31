@@ -3,7 +3,7 @@ using NUnit.Framework;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the utils class functions.
     /// </summary>
     public class UtilsTest
     {

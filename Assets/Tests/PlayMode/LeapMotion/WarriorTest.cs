@@ -7,7 +7,7 @@ using Aloha;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the LeapMotion scripts functions.
     /// </summary>
     public class WarriorTest
     {

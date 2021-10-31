@@ -54,6 +54,9 @@ namespace Aloha
             ScoreKill();
         }
 
+        /// <summary>
+        /// Count the tiles passed
+        /// </summary>
         public void TilesCount(GameObject tile)
         {
             TilesCounter++;
@@ -61,10 +64,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Total per level: 1000 points
-        /// Distance score: 60%
-        /// Enemy killed: 30%
-        /// No hit: 10%
+        /// This function calculate total score according to distance score (60%), enemy killed score (30%) and hit taken (10%).
+        /// <example> Example(s):
+        /// <code>
+        ///     CalculateTotalScore();
+        /// </code>
+        /// </example>
         /// </summary>
         public void CalculateTotalScore()
         {
@@ -73,7 +78,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Calculate score of no hit
+        /// This function calculate the hit score.
+        /// <example> Example(s):
+        /// <code>
+        ///     ScoreHit();
+        /// </code>
+        /// </example>
         /// </summary>
         public void ScoreHit()
         {
@@ -92,7 +102,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Calculate score of killing entity
+        /// This function calculate the kill score.
+        /// <example> Example(s):
+        /// <code>
+        ///     ScoreKill();
+        /// </code>
+        /// </example>
         /// </summary>
         public void ScoreKill()
         {
@@ -110,7 +125,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Calculate score of distance
+        /// This function calculate the distance score.
+        /// <example> Example(s):
+        /// <code>
+        ///     ScoreDistance();
+        /// </code>
+        /// </example>
         /// </summary>
         public void ScoreDistance()
         {
@@ -128,8 +148,20 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Calculate total score
+        /// This function calculate the score according to a maximum score, a percent, a maximum stat and a actual stat.
+        /// <example> Example(s):
+        /// <code>
+        ///     float a = CalculateScore();
+        /// </code>
+        /// </example>
         /// </summary>
+        /// <param name="maxScore"></param>
+        /// <param name="percent"></param>
+        /// <param name="maxStat"></param>
+        /// <param name="stats"></param>
+        /// <returns>
+        /// A score float.
+        /// </returns>
         public float CalculateScore(int maxScore, int percent, float maxStat, int stat)
         {
             float pourcentMaxScore = maxScore * (percent / 100f);
@@ -137,6 +169,9 @@ namespace Aloha
             return pourcentMaxScore * scoreStat;
         }
 
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
         public void OnDestroy()
         {
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);

@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the hero class functions.
     /// </summary>
     public class HeroTest
     {

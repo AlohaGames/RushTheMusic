@@ -25,7 +25,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function show the UI element in game.
         /// <example> Example(s):
         /// <code>
         /// TODO
@@ -46,14 +46,14 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function show the UI element at end game.
         /// <example> Example(s):
         /// <code>
         /// TODO
         /// </code>
         /// </example>
         /// </summary>
-        public void ShowEndGameUIElements(){
+        void ShowEndGameUIElements(){
             UIScore.ShowEndGameUIScoreElements();
         }
     }

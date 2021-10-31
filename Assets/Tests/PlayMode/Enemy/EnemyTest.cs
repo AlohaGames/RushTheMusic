@@ -7,7 +7,7 @@ using Aloha;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the enemy class functions.
     /// </summary>
     public class EnemyTest
     {

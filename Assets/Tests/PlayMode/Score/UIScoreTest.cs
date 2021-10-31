@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the UIScore class functions.
     /// </summary>
     public class UIScoreTest
     {

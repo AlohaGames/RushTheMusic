@@ -62,12 +62,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when a Scene or game ends.
         /// </summary>
         public void OnDestroy()
         {

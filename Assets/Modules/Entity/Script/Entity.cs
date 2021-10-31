@@ -18,10 +18,13 @@ namespace Aloha
         
 
         /// <summary>
-        /// TODO
+        /// This function is called when a entity attack another entity.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     anEntity.Attack(anotherEntity);
+        /// </code>
+        /// <code>
+        ///     warrior.Attack(assassin);
         /// </code>
         /// </example>
         /// </summary>
@@ -60,10 +63,13 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function is called when an entity taking damage amount.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.TakeDamage(5);
+        /// </code>
+        /// <code>
+        ///     spearman.TakeDamage(2);
         /// </code>
         /// </example>
         /// </summary>

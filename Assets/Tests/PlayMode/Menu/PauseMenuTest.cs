@@ -8,7 +8,7 @@ namespace Aloha.Test
     public class PauseMenuTest
     {
         /// <summary>
-        /// TODO
+        /// This class test the pause menu class functions.
         /// </summary>
         [UnityTest]
         public IEnumerator PauseMenuTestWithEnumeratorPasses()

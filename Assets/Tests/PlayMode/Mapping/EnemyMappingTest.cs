@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the enemy mapping class functions.
     /// </summary>
     public class EnemyMappingTest
     {

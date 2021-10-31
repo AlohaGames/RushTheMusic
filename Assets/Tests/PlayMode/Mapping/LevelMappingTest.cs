@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// This class test the level mapping class functions.
     /// </summary>
     public class LevelMappingTest
     {

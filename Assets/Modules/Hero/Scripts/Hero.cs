@@ -55,7 +55,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function is called when a hero level up.
         /// <example> Example(s):
         /// <code>
         /// TODO
@@ -69,10 +69,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function is called when a hero taking damage amount.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.TakeDamage(5);
         /// </code>
         /// </example>
         /// </summary>
@@ -87,15 +87,15 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function calculate damage reduction according to hero defense.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     float a = CalculateDamageReduction();
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        /// A damage reduction float.
         /// </returns>
         public float CalculateDamageReduction()
         {
@@ -129,10 +129,15 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function get the stats of hero
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.GetStats().MaxHealth;
+        ///     warrior.GetStats().MaxRage;
+        /// </code>
+        /// <code>
+        ///     wizard.GetStats().MaxHealth;
+        ///     wizard.GetStats().MaxMana;
         /// </code>
         /// </example>
         /// </summary>
