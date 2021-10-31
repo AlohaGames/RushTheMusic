@@ -11,7 +11,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the level
     /// </summary>
     public class LevelManager : Singleton<LevelManager>
     {
@@ -24,12 +24,7 @@ namespace Aloha
         private string Filename = "";
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake()
         {

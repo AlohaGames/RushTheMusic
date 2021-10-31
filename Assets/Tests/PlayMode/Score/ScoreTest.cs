@@ -14,6 +14,18 @@ namespace Aloha.Test
     public class ScoreTest
     {
         //TODO: refaire tous les tests
+        [Test]
+        public void ScoreHeroTest()
+        {
+            GameObject enemyGO = new GameObject();
+            Enemy enemy = enemyGO.AddComponent<Enemy>();
+            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            stats.MaxHealth = 10;
+            enemy.Init(stats);
+            Debug.Log("Stats: " + enemy.GetStats());
+            Debug.Log("Stats: " + enemy.GetStats().MaxHealth);
+            Debug.Log("Stats: " + enemy.GetStats().Attack);
+        }
         /*
         [UnityTest]
         public IEnumerator ScoreHeroHitTest()

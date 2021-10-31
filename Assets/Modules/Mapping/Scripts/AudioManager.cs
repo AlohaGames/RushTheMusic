@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the audio in game
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
@@ -15,12 +15,7 @@ namespace Aloha
         private AudioSource audioSource;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake()
         {

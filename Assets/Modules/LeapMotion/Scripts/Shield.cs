@@ -27,13 +27,9 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// </code>
-        /// </example>
+        /// Is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
-        private void Update()
+        void Update()
         {
             newPos = transform.position;
             Speed = (newPos - presPos).magnitude * 100;
@@ -41,9 +37,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Is called when a GameObject collides with another GameObject.
         /// <example> Example(s):
         /// <code>
+        ///     aGameObject.OnTriggerEnter(anotherGameObject);
         /// </code>
         /// </example>
         /// </summary>

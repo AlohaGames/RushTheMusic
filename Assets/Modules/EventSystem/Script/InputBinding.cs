@@ -1,7 +1,7 @@
 using UnityEngine;
 
 /// <summary>
-/// TODO
+/// Singleton that manage the input binding
 /// </summary>
 public class InputBinding : Singleton<InputBinding>
 {

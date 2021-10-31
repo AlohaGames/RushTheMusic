@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the tiles
     /// </summary>
     public class TilesManager : Singleton<TilesManager>
     {
@@ -36,12 +36,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         void Awake()
         {
@@ -49,12 +44,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
         void Update()
         {

@@ -5,19 +5,14 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the enemy spawner
     /// </summary>
     public class EnemySpawner : Singleton<EnemySpawner>
     {
         public int TilesCounter = 0;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake()
         {

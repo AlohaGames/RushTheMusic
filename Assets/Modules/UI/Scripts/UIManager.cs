@@ -7,7 +7,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the UI
     /// </summary>
     public class UIManager : Singleton<UIManager>
     {
@@ -17,12 +17,7 @@ namespace Aloha
         public UIScore UIScore;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake() {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);

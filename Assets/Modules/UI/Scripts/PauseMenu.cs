@@ -14,12 +14,7 @@ namespace Aloha
         public GameObject MenuPauseUI;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake()
         {

@@ -22,12 +22,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called after all Update functions have been called.
         /// </summary>
         void LateUpdate()
         {

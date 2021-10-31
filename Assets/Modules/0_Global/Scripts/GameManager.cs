@@ -172,7 +172,7 @@ namespace Aloha
         #region KeyEvents
 
         /// <summary>
-        /// Called each Update, called other method based on Key Input.
+        /// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
         /// </summary>
         public void Update()
         {

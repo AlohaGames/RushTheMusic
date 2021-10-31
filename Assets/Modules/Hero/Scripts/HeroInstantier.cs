@@ -5,7 +5,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the hero instantiation
     /// </summary>
     public class HeroInstantier : Singleton<HeroInstantier>
     {
@@ -13,14 +13,9 @@ namespace Aloha
         private List<GameObject> heroPrefabs = new List<GameObject>();
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
-        private void Awake()
+       void Awake()
         {
             GlobalEvent.LoadHero.AddListener(InstantiateHero);
         }

@@ -30,7 +30,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function clamp a int value between a min and a max. 
         /// <example> Example(s):
         /// <code>
         ///     int a = (-14).Clamp(0, 20);
@@ -44,7 +44,7 @@ namespace Aloha
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns>
-        /// TODO
+        /// A int value that is between min and max.
         /// </returns>
         public static int Clamp(this int value, int min, int max)
         {
@@ -60,7 +60,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function clamp a float value between a min and a max. 
         /// <example> Example(s):
         /// <code>
         ///     int a = (-14f).Clamp(0, 20);
@@ -74,7 +74,7 @@ namespace Aloha
         /// <param name="min"></param>
         /// <param name="max"></param>
         /// <returns>
-        /// TODO
+        /// A float value that is between min and max.
         /// </returns>
         public static float Clamp(this float value, float min, float max)
         {

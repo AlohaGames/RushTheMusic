@@ -16,14 +16,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// This function get the stats of enemy
+        /// This function get the stats of enemy.
         /// <example> Example(s):
         /// <code>
+        ///     enemy.GetStats().MaxHealth;
+        ///     enemy.GetStats().Attack;
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        /// A EnemyStats from enemy.
         /// </returns>
         public EnemyStats GetStats()
         {
@@ -31,7 +33,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake()
         {

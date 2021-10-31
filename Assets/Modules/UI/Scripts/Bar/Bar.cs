@@ -15,11 +15,7 @@ namespace Aloha
         protected GameObject bar;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public void Awake()
         {

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Singleton that manage the score
+    /// </summary>
     public class ScoreManager : Singleton<ScoreManager>
     {
         public const int DISTANCE_PERCENT = 60;
@@ -23,6 +26,9 @@ namespace Aloha
         public int TilesCounter;
         public UIScore ScoreUI;
 
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
         public void Awake()
         {
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
