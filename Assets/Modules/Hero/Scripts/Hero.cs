@@ -21,7 +21,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        public virtual HeroStats GetStats() 
+        public new virtual HeroStats GetStats() 
         {
             return this.stats as HeroStats;
         }
@@ -123,7 +123,7 @@ namespace Aloha
     /// </summary>
     public class Hero<T> : Hero where T : HeroStats
     {
-        private T heroStats
+        protected T heroStats
         {
             get { return this.stats as T; }
         }
@@ -144,7 +144,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        public override HeroStats GetStats()
+        public new T GetStats()
         {
             return heroStats;
         }

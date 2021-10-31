@@ -12,15 +12,15 @@ namespace Aloha
     [RequireComponent(typeof(Button))]
     public class LevelLoaderButton : MonoBehaviour
     {
-        public string Level;
-
         [SerializeField]
         private bool isTuto = false;
+
+        public string Level;   
 
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake()
+        void Awake()
         {
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
@@ -41,7 +41,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GetComponent<Button>().onClick.RemoveListener(OnClick);
         }

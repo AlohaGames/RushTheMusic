@@ -3,7 +3,7 @@ using System;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class that manage utils functions
     /// </summary>
     public static class Utils
     {

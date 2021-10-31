@@ -56,7 +56,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GlobalEvent.LoadHero.RemoveListener(InstantiateHero);
         }

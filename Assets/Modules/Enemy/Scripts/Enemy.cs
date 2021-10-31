@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
-
 namespace Aloha
 {
     /// <summary>
@@ -27,7 +22,7 @@ namespace Aloha
         /// <returns>
         /// A EnemyStats from enemy.
         /// </returns>
-        public EnemyStats GetStats()
+        public new EnemyStats GetStats()
         {
             return this.enemyStats;
         }
@@ -35,7 +30,7 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake()
+        void Awake()
         {
             this.dieEvent.AddListener(Disappear);
         }
@@ -69,7 +64,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             this.dieEvent.RemoveListener(Disappear);
         }

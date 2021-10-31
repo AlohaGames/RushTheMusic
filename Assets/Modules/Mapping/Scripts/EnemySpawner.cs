@@ -14,7 +14,7 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake()
+        void Awake()
         {
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
@@ -64,7 +64,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
             GlobalEvent.LevelStop.RemoveListener(ResetCount);

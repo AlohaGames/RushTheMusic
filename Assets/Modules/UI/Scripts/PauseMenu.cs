@@ -16,7 +16,7 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake()
+        void Awake()
         {
             GlobalEvent.Resume.AddListener(Resume);
             GlobalEvent.Pause.AddListener(PauseGame);

@@ -19,7 +19,7 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake() {
+        void Awake() {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
             GlobalEvent.LevelStop.AddListener(ShowEndGameUIElements);
         }

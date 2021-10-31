@@ -11,6 +11,10 @@ namespace Aloha
     {
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
+
+        [SerializeField] 
+        private GameObject[] tilePrefabs = new GameObject[] { };
+
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
@@ -18,8 +22,7 @@ namespace Aloha
         [HideInInspector] 
         public bool GameIsStarted;
 
-        [SerializeField] 
-        private GameObject[] tilePrefabs = new GameObject[] { };
+        
         
 
         /// <summary>
@@ -154,7 +157,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        private int GetNextTileToSpawn()
+        int GetNextTileToSpawn()
         {
             return Random.Range(0, tilePrefabs.Length);
         }
@@ -167,7 +170,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void DeleteFirstTile()
+        void DeleteFirstTile()
         {
             Destroy(activeTiles[0]);
             activeTiles.RemoveAt(0);
@@ -193,7 +196,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GameObject.Destroy(tilesContainer);
         }

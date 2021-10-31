@@ -17,7 +17,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public new void Awake()
+        new void Awake()
         {
             base.Awake();
             GlobalEvent.OnHealthUpdate.AddListener(UpdateBar);

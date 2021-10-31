@@ -7,13 +7,14 @@ namespace Aloha
     /// </summary>
     public class Sword : MonoBehaviour
     {
-        public Warrior Warrior;
-        public float Speed;
         private Vector3 presPos;
         private Vector3 newPos;
-        
+
         [SerializeField] 
         private float minimumSpeedToKill = 1f;
+        
+        public Warrior Warrior;
+        public float Speed;
 
         /// <summary>
         /// TODO
@@ -22,7 +23,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void Start()
+        void Start()
         {
             Warrior = GameManager.Instance.GetHero() as Warrior;
             presPos = transform.position;

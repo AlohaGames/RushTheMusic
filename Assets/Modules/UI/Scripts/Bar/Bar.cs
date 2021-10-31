@@ -11,13 +11,13 @@ namespace Aloha
     /// </summary>
     public abstract class Bar : MonoBehaviour
     {
-        public Color Color;
         protected GameObject bar;
+        public Color Color; 
 
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake()
+        protected void Awake()
         {
             bar = transform.GetChild(0).gameObject;
             bar.GetComponent<Image>().color = Color;

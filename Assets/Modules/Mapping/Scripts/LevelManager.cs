@@ -15,18 +15,18 @@ namespace Aloha
     /// </summary>
     public class LevelManager : Singleton<LevelManager>
     {
+        [SerializeField] 
+        private string Filename = "";
+
         public LevelMapping LevelMapping;
         public AudioClip LevelMusic;
         
         public bool IsLoaded = false;
 
-        [SerializeField] 
-        private string Filename = "";
-
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        public void Awake()
+        void Awake()
         {
             GlobalEvent.LoadLevel.AddListener(Load);
         }
@@ -172,7 +172,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GlobalEvent.LoadLevel.RemoveListener(Load);
         }

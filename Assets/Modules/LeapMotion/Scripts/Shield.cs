@@ -7,10 +7,10 @@ namespace Aloha
     /// </summary>
     public class Shield : MonoBehaviour
     {
-        public Warrior Warrior;
-        public float Speed;
         private Vector3 presPos;
         private Vector3 newPos;
+        public Warrior Warrior;
+        public float Speed;
 
         /// <summary>
         /// TODO
@@ -19,7 +19,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void Start()
+        void Start()
         {
             Warrior = GameManager.Instance.GetHero() as Warrior;
             presPos = transform.position;

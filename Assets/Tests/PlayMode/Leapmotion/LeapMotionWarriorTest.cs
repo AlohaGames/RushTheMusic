@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
+//TODO: explain your FUNCKING TEST (like youyou in 17-Add-Lancer-Prefab tests of lancer)
+
 namespace Aloha.Test
 {
     /// <summary>
     /// This class test the LeapMotion scripts functions.
     /// </summary>
-    public class WarriorTest
+    public class LeapMotionWarriorTest
     {
         /// <summary>
         /// TODO
@@ -20,7 +22,7 @@ namespace Aloha.Test
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            wStats.MaxRage = 0;
+            wStats.MaxRage = 100;
             wStats.MaxHealth = 10;
             wStats.Attack = 5;
             wStats.Defense = 0;
@@ -51,11 +53,11 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
-            Assert.AreEqual(enemy.CurrentHealth, 5);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
-            GameObject.Destroy(warrior);
-            GameObject.Destroy(swordGO);
             GameObject.Destroy(enemyGO);
+            GameObject.Destroy(swordGO);
+            GameObject.Destroy(warriorGO);
         }
 
         /// <summary>

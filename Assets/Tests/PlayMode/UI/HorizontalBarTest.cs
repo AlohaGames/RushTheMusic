@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.TestTools;
 using Aloha.Events;
 
+//TODO: explain your FUNCKING TEST (like youyou in 17-Add-Lancer-Prefab tests of lancer)
+
 namespace Aloha.Test
 {
     /// <summary>

@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+//TODO: explain your FUNCKING TEST (like youyou in 17-Add-Lancer-Prefab tests of lancer)
+
 namespace Aloha.Test
 {
     /// <summary>
@@ -110,27 +112,27 @@ namespace Aloha.Test
         [Test]
         public void HeroTestAttack()
         {
-            GameObject guerrierGO = new GameObject();
-            Warrior guerrier = guerrierGO.AddComponent<Warrior>();
+            GameObject warriorGO = new GameObject();
+            Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 10;
             stats.Defense = 10;
             stats.XP = 10;
-            guerrier.Init(stats);
+            warrior.Init(stats);
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
-            stats.MaxHealth = 100;
+            enemyStats.MaxHealth = 100;
             enemy.Init(enemyStats);
 
-            guerrier.Attack(enemy);
+            warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
-            GameObject.Destroy(guerrierGO);
             GameObject.Destroy(enemyGO);
+            GameObject.Destroy(warriorGO);
         }
     }
 }

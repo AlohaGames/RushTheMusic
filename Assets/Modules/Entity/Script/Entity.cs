@@ -1,7 +1,7 @@
 using System.Collections;
+using Aloha.Events;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.Events;
 
 namespace Aloha
 {
@@ -10,12 +10,28 @@ namespace Aloha
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
-        public int CurrentHealth;
         protected UnityEvent dieEvent = new UnityEvent();
 
         [SerializeField]
         protected Stats stats;
         
+        public int CurrentHealth;
+        
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <return>
+        /// TODO
+        /// </return>
+        public Stats GetStats()
+        {
+            return this.stats;
+        }
 
         /// <summary>
         /// This function is called when a entity attack another entity.
@@ -29,7 +45,7 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <param name="entity"></param>
-        public void Attack(Entity entity)
+        public virtual void Attack(Entity entity)
         {
             entity.TakeDamage(this.stats.Attack);
         }

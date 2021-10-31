@@ -174,7 +174,7 @@ namespace Aloha
         /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
         /// </summary>
-        public void Update()
+        void Update()
         {
             if (Input.GetKeyDown(InputBinding.Instance.Pause))
             {
