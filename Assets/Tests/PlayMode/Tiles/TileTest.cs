@@ -5,9 +5,14 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class TileTest
     {
-        // This Test checks if tiles are moving on Z- axis
+        /// <summary>
+        /// This Test checks if tiles are moving on Z- axis
+        /// </summary>
         [UnityTest]
         public IEnumerator TileMoveForward()
         {
@@ -21,7 +26,9 @@ namespace Aloha.Test
             yield return null;
         }
 
-        // This test checks that a new tile appears and the first one is destroy when tiles move
+        /// <summary>
+        /// This test checks that a new tile appears and the first one is destroy when tiles move
+        /// </summary>
         [UnityTest]
         public IEnumerator TileAutomaticallyAppearsAndDestroyed()
         {
@@ -51,7 +58,9 @@ namespace Aloha.Test
 
         }
 
-        // This Test checks if the game is correctly instanced and destroyed when it's start and stop
+        /// <summary>
+        /// This Test checks if the game is correctly instanced and destroyed when it's start and stop
+        /// </summary>
         [UnityTest]
         public IEnumerator GameStartAndStop()
         {

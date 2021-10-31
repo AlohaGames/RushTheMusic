@@ -8,7 +8,9 @@ using Aloha.Events;
 
 namespace Aloha.Test
 {
-
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class HorizontalBarTest
     {
         /*

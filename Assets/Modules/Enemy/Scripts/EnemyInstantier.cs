@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Singleton that manage the enemy instantiation
     /// </summary>
     public class EnemyInstantier : Singleton<EnemyInstantier>
     {
@@ -12,15 +12,16 @@ namespace Aloha
         private List<GameObject> enemyPrefabs = new List<GameObject>();
 
         /// <summary>
-        /// TODO
+        /// This function instantiate an enemy with an ID
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">The ID of enemy to instantiate</param>
         /// <returns>
-        /// TODO
+        /// A GameObject instance of enemy prefab
         /// </returns>
         public GameObject InstantiateEnemy(int id)
         {
@@ -43,7 +44,6 @@ namespace Aloha
         /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
-
             return InstantiateEnemy((int) type);
         }
 

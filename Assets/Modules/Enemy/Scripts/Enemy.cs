@@ -16,7 +16,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function get the stats of enemy
         /// <example> Example(s):
         /// <code>
         /// </code>
@@ -39,9 +39,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function is called when an enemy died. It inherite from entity class.
         /// <example> Example(s):
         /// <code>
+        ///     myEnemyType.Die();
         /// </code>
         /// </example>
         /// </summary>

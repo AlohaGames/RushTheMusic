@@ -51,6 +51,7 @@ namespace Aloha
         /// Will start the loaded level.
         /// <example> Example(s):
         /// <code>
+        ///     StartLevel();
         /// </code>
         /// </example>
         /// </summary>
@@ -64,6 +65,7 @@ namespace Aloha
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
+        ///     StopLevel();
         /// </code>
         /// </example>
         /// </summary>
@@ -77,6 +79,10 @@ namespace Aloha
         /// Will ask to load a specific Hero based on <paramref name="type"/>.
         /// <example> Example(s):
         /// <code>
+        ///     LoadHero(Warrior);
+        /// </code>
+        /// <code>
+        ///     LoadHero(Wizard);
         /// </code>
         /// </example>
         /// </summary>
@@ -90,6 +96,7 @@ namespace Aloha
         /// Will ask to Resume a paused Game (do nothing if already resumed).
         /// <example> Example(s):
         /// <code>
+        ///     ResumeGame();
         /// </code>
         /// </example>
         /// </summary>
@@ -103,6 +110,7 @@ namespace Aloha
         /// Will ask to Pause the game (do nothing if already paused).
         /// <example> Example(s):
         /// <code>
+        ///     PauseGame();
         /// </code>
         /// </example>
         /// </summary>
@@ -116,6 +124,7 @@ namespace Aloha
         /// Will ask to Quit the game.
         /// <example> Example(s):
         /// <code>
+        ///     Quit();
         /// </code>
         /// </example>
         /// </summary>
@@ -130,6 +139,7 @@ namespace Aloha
         /// Set the new current Hero and Destroy the old Hero if needed.
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -147,10 +157,13 @@ namespace Aloha
         /// Return the current playing Hero.
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>The current Hero</returns>
+        /// <returns>
+        /// The current Hero
+        /// </returns>
         public Hero GetHero()
         {
             return hero;
@@ -160,11 +173,6 @@ namespace Aloha
 
         /// <summary>
         /// Called each Update, called other method based on Key Input.
-        /// <example> Example(s):
-        /// <code>
-        /// </code>
-        /// </example>
-        /// </summary>
         /// </summary>
         public void Update()
         {

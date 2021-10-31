@@ -6,6 +6,9 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class UIManager : Singleton<UIManager>
     {
         public Bar HealthBar;
@@ -17,6 +20,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -29,6 +33,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -49,6 +54,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>

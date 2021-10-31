@@ -15,6 +15,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -28,6 +29,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -43,6 +45,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -63,6 +66,18 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="tileIndex"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         public int GetEnemyNumber()
         {
             int enemiesnumber = 0;

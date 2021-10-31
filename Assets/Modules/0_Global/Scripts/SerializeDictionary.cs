@@ -17,6 +17,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -31,6 +32,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -43,6 +45,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -58,6 +61,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -80,10 +84,14 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="searchKey"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         public TValue GetValue(TKey searchKey)
         {
             int index = this.DictionaryKey.FindIndex(key => key.Equals(searchKey));

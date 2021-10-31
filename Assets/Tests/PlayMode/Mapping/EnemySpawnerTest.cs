@@ -5,8 +5,14 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class EnemySpawnerTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemySpawnerCountTileTest()
         {
@@ -29,6 +35,9 @@ namespace Aloha.Test
             yield return null;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemySpawnerRestCountTileTest()
         {

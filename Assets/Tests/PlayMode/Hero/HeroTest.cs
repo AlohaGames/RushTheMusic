@@ -5,8 +5,14 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class HeroTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void HeroInstantierTest()
         {
@@ -21,6 +27,9 @@ namespace Aloha.Test
             GameObject.DestroyImmediate(manager);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void HeroStatsTest()
         {
@@ -37,6 +46,9 @@ namespace Aloha.Test
             GameObject.Destroy(manager);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator HeroTestDamage()
         {
@@ -92,6 +104,9 @@ namespace Aloha.Test
             GameObject.Destroy(warriorGO);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void HeroTestAttack()
         {

@@ -2,8 +2,14 @@ using NUnit.Framework;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class UtilsTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EqualFloatTest()
         {
@@ -20,6 +26,9 @@ namespace Aloha.Test
             Assert.IsTrue(Utils.IsEqualFloat(3.2139484548f, 3.21456226685f));
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void ClampIntTest()
         {
@@ -39,6 +48,9 @@ namespace Aloha.Test
             Assert.AreEqual(10, 11.Clamp(-10, 10));
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void ClampFloatTest()
         {
@@ -58,5 +70,4 @@ namespace Aloha.Test
             Assert.AreEqual(10f, 11f.Clamp(-10f, 10f));
         }
     }
-
 }

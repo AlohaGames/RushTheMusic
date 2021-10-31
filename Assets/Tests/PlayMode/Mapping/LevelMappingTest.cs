@@ -3,9 +3,15 @@ using System.Collections.Generic;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class LevelMappingTest
     {
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         LevelMapping[] GetLevelsMapping()
         {
             LevelMapping lm0 = new LevelMapping();
@@ -30,6 +36,9 @@ namespace Aloha.Test
             return lms;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void LevelMappingConstructorTest()
         {
@@ -40,6 +49,9 @@ namespace Aloha.Test
             Assert.AreEqual(180, lm1.TileCount);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void LevelMappingGetEnemiesTest()
         {

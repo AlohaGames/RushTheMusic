@@ -1,5 +1,8 @@
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class VerticalBarTest
     {/*
         // A Test behaves as an ordinary method

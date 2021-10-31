@@ -3,8 +3,14 @@ using System.Collections.Generic;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class SerialiazeDictionaryTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         public SerializeDictionary<int, string> GetHelloWorldDictionary()
         {
             List<int> keys = new List<int>();
@@ -21,6 +27,9 @@ namespace Aloha.Test
             return sd;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void SerialiazeDictionaryTestConstructor()
         {
@@ -33,6 +42,9 @@ namespace Aloha.Test
             Assert.AreEqual(2, sd1.DictionaryValue.Count);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void SerialiazeDictionaryTestGetValue()
         {
@@ -41,6 +53,9 @@ namespace Aloha.Test
             Assert.AreEqual("World", sd.GetValue(5));
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void SerialiazeDictionaryTestAdd()
         {

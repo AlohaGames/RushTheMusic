@@ -6,8 +6,14 @@ using Aloha;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class WarriorTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator Test_SwordOnTriggerEnter()
         {
@@ -52,6 +58,9 @@ namespace Aloha.Test
             GameObject.Destroy(enemyGO);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator Test_ShieldOnTriggerEnter()
         {

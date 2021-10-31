@@ -12,6 +12,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -24,6 +25,7 @@ namespace Aloha
         /// TODO
         /// <example> Example(s):
         /// <code>
+        /// TODO
         /// </code>
         /// </example>
         /// </summary>

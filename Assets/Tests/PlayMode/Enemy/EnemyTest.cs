@@ -6,10 +6,14 @@ using Aloha;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class EnemyTest
     {
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemyTestDamage()
         {
@@ -42,6 +46,9 @@ namespace Aloha.Test
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EnemyInstancierTest()
         {

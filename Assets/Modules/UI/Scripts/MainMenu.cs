@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     /// TODO
     /// <example> Example(s):
     /// <code>
+    /// TODO
     /// </code>
     /// </example>
     /// </summary>
@@ -28,6 +29,7 @@ public class MainMenu : MonoBehaviour
     /// TODO
     /// <example> Example(s):
     /// <code>
+    /// TODO
     /// </code>
     /// </example>
     /// </summary>

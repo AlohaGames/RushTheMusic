@@ -3,8 +3,14 @@ using UnityEngine;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class EnemyMappingTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         EnemyMapping[] GetEnemiesMapping()
         {
             EnemyMapping em0 = new EnemyMapping();
@@ -20,6 +26,9 @@ namespace Aloha.Test
             return ems;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EnemyMappingConstructorTest()
         {
@@ -40,6 +49,9 @@ namespace Aloha.Test
             Assert.AreEqual(HorizontalPosition.RIGHT, em1.horizontalPosition);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EnemyMappingGetPositionTest()
         {
