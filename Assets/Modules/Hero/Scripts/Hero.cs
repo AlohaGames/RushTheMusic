@@ -7,7 +7,7 @@ namespace Aloha
 {
     public class Hero : Entity
     {
-        public virtual HeroStats GetStats() {
+        public new virtual HeroStats GetStats() {
             return this.stats as HeroStats;
         }
         public override void Init()
@@ -48,14 +48,15 @@ namespace Aloha
     }
     public class Hero<T> : Hero where T : HeroStats
     {
-        private T heroStats
+        protected T heroStats
         {
             get
             {
                 return this.stats as T;
             }
         }
-        public override HeroStats GetStats()
+
+        public new T GetStats()
         {
             return heroStats;
         }

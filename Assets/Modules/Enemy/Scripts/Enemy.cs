@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
-
 namespace Aloha
 {
     public class Enemy : Entity
     {
-        private EnemyStats enemyStats {
-            get {
+        protected EnemyStats enemyStats
+        {
+            get
+            {
                 return this.stats as EnemyStats;
             }
         }
-        public EnemyStats GetStats() {
+        public new EnemyStats GetStats()
+        {
             return this.enemyStats;
         }
         public void Awake()
