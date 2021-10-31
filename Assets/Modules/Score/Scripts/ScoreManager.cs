@@ -75,7 +75,7 @@ namespace Aloha
             int maxHit = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.GetEnemyNumber() / 2 : 0;
             if (maxHit > 0)
             {
-                int heroTakeHit = TakeHitCounter.InRange(0, maxHit);
+                int heroTakeHit = TakeHitCounter.Clamp(0, maxHit);
                 HitScore = (int) CalculateScore(MAX_SCORE, HIT_PERCENT, (float)maxHit, heroTakeHit);
             }
             else if (maxHit == 0)
@@ -94,7 +94,7 @@ namespace Aloha
             int maxEnemy = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.GetEnemyNumber() : 0;
             if (maxEnemy > 0)
             {
-                int killEnemy = KillCounter.InRange(0, maxEnemy);
+                int killEnemy = KillCounter.Clamp(0, maxEnemy);
                 EnemyKilledScore = (int) CalculateScore(MAX_SCORE, KILL_PERCENT, (float)maxEnemy, killEnemy);
             }
             else if (maxEnemy == 0)
@@ -112,7 +112,7 @@ namespace Aloha
             int maxTiles = LevelManager.Instance.levelMapping != null ? LevelManager.Instance.levelMapping.tileCount : 0;
             if (maxTiles > 0)
             {
-                int tiles = TilesCounter.InRange(0, maxTiles);
+                int tiles = TilesCounter.Clamp(0, maxTiles);
                 DistanceScore = (int) CalculateScore(MAX_SCORE, DISTANCE_PERCENT, (float)maxTiles, tiles);
             }
             else if (maxTiles == 0)
