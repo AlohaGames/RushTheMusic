@@ -11,7 +11,7 @@ namespace Aloha
         public float tileSpeed = 10;
         public float tileSize = 5;
 
-        [SerializeField] private GameObject[] tilePrefabs;
+        [SerializeField] private GameObject[] tilePrefabs = new GameObject[] { };
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
 

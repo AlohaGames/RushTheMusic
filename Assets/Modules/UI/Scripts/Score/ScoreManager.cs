@@ -28,7 +28,6 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
             GlobalEvent.TileCount.AddListener(TilesCount);
-            //GlobalEvent.OnInGameScoreUpdate.AddListener(CalculateTotalScore);
         }
 
         /// <summary>
@@ -137,7 +136,6 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);
             GlobalEvent.EntityDied.RemoveListener(DeathCount);
             GlobalEvent.TileCount.RemoveListener(TilesCount);
-            //GlobalEvent.OnInGameScoreUpdate.RemoveListener(CalculateTotalScore);
         }
     }
 }

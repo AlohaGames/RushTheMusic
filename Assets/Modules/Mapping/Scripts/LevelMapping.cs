@@ -20,7 +20,7 @@ namespace Aloha
             this.tileCount = tileCount;
         }
 
-        public List<EnemyMapping> getEnnemies(int tileIndex)
+        public List<EnemyMapping> GetEnnemies(int tileIndex)
         {
             List<EnemyMapping> tileEnnemies = enemies.GetValue(tileIndex);
             if (tileEnnemies != null)

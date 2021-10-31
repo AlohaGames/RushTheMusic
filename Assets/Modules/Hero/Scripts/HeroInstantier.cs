@@ -6,7 +6,8 @@ namespace Aloha
 {
     public class HeroInstantier : Singleton<HeroInstantier>
     {
-        [SerializeField] private List<GameObject> HeroPrefabs;
+        [SerializeField]
+        private List<GameObject> HeroPrefabs = new List<GameObject>();
 
         private void Awake()
         {

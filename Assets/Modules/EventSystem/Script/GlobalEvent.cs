@@ -19,7 +19,6 @@ namespace Aloha.Events
         public static UnityEvent EnemyDie = new UnityEvent();
         public static IntIntEvent OnHealthUpdate = new IntIntEvent();
         public static IntIntEvent OnSecondaryUpdate = new IntIntEvent();
-        public static UnityEvent OnInGameScoreUpdate = new UnityEvent();
         public static GameObjectEvent TileCount = new GameObjectEvent();
         public static UnityEvent LevelStop = new UnityEvent();
         public static UnityEvent LevelStart = new UnityEvent();
