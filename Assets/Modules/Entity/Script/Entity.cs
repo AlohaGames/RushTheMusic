@@ -1,7 +1,7 @@
 using System.Collections;
+using Aloha.Events;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.Events;
 
 namespace Aloha
 {
@@ -13,7 +13,8 @@ namespace Aloha
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
 
-        public Stats GetStats(){
+        public Stats GetStats()
+        {
             return this.stats;
         }
 
