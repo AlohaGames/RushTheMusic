@@ -13,13 +13,11 @@ namespace Aloha.Test
         {
             // Instance enemy and manager
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
-            Enemy enemy = EnemyInstantier.Instance
-                .InstantiateEnemy(EnemyType.generic)
-                .GetComponent<Enemy>();
+            Enemy enemy = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.generic).GetComponent<Enemy>();
 
-            // Instance "player" gameObject
+            // Instance "Player" gameObject
             GameObject playerGO = new GameObject();
-            BoxCollider playerCollider = playerGO.AddComponent<BoxCollider>();
+            Collider playerCollider = playerGO.AddComponent<Collider>();
             playerGO.tag = "Player";
 
             // Intance parent to assign to enemy
@@ -29,7 +27,7 @@ namespace Aloha.Test
             // Check if enemy parent is parentGO
             Assert.IsTrue(enemy.transform.parent == parentGO.transform);
 
-            // Check if AI if activated
+            // Check if AI is activated
             enemy.GetComponentInChildren<ActionZone>().OnTriggerEnter(playerCollider);
             Assert.IsTrue(enemy.transform.parent == null);
             enemy.SetAI(false);

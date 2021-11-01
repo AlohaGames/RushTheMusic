@@ -24,7 +24,7 @@ namespace Aloha
         public static float RandomFloat(float min, float max)
         {
             double val = (random.NextDouble() * (max - min) + min);
-            return (float)val;
+            return (float) val;
         }
     }
 }

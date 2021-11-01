@@ -9,10 +9,7 @@ namespace Aloha
     {
         private T enemyStats
         {
-            get
-            {
-                return this.stats as T;
-            }
+            get { return this.stats as T; }
         }
 
         public override EnemyStats GetStats()
@@ -22,13 +19,11 @@ namespace Aloha
     }
     public class Enemy : Entity
     {
-        [SerializeField] private bool NoAI = false;
+        [SerializeField] private bool noAI = false;
         protected bool AIActivated = false;
 
         private EnemyStats enemyStats {
-            get {
-                return this.stats as EnemyStats;
-            }
+            get { return this.stats as EnemyStats; }
         }
         public virtual EnemyStats GetStats() {
             return this.enemyStats;
@@ -43,11 +38,6 @@ namespace Aloha
             Destroy(this.gameObject);
         }
 
-        public void OnDestroy() 
-        {
-            this.dieEvent.RemoveListener(Disappear);
-        }
-
         public void DetachFromParent()
         {
             transform.parent = null;
@@ -55,7 +45,7 @@ namespace Aloha
 
         public void SetAI(bool value)
         {
-            if (!NoAI)
+            if (!noAI)
             {
                 AIActivated = value;
                 if (AIActivated) StartCoroutine(AI());
@@ -85,6 +75,11 @@ namespace Aloha
             }
 
             gameObject.transform.position = posFinal;
+        }
+
+        public void OnDestroy()
+        {
+            this.dieEvent.RemoveListener(Disappear);
         }
     }
 }

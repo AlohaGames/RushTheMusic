@@ -38,7 +38,6 @@ namespace Aloha
 
             gameObject.transform.position = posFinal;
 
-            // TODO Change this by the hero in HeroManager
             Hero hero = GameManager.Instance.GetHero();
             Attack(hero);
             Debug.Log(hero.currentHealth);

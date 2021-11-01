@@ -40,10 +40,7 @@ namespace Aloha
     {
         private T heroStats
         {
-            get
-            {
-                return this.stats as T;
-            }
+            get { return this.stats as T; }
         }
         public override HeroStats GetStats()
         {
