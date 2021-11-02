@@ -1,8 +1,7 @@
+using NUnit.Framework;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.TestTools;
-using NUnit.Framework;
 
 namespace Aloha.Test
 {
@@ -30,7 +29,7 @@ namespace Aloha.Test
             yield return null;
         }
 
-          [UnityTest]
+        [UnityTest]
         public IEnumerator EnemySpawnerRestCountTileTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));

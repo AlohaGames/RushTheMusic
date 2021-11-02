@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
-
 namespace Aloha
 {
     public class Enemy<T> : Enemy where T : EnemyStats
@@ -21,16 +16,23 @@ namespace Aloha
     {
         [SerializeField] private bool noAI = false;
         protected bool AIActivated = false;
-
-        private EnemyStats enemyStats {
+        
+        private EnemyStats enemyStats
+        {
             get { return this.stats as EnemyStats; }
         }
-        public virtual EnemyStats GetStats() {
+        public new EnemyStats GetStats()
+        {
             return this.enemyStats;
         }
         public void Awake()
         {
             this.dieEvent.AddListener(Disappear);
+        }
+
+        public override void Die()
+        {
+            base.Die();
         }
 
         public void Disappear()
@@ -48,7 +50,10 @@ namespace Aloha
             if (!noAI)
             {
                 AIActivated = value;
-                if (AIActivated) StartCoroutine(AI());
+                if (AIActivated)
+                {
+                    StartCoroutine(AI());
+                }
             }
         }
 

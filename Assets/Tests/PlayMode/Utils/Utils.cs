@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using Aloha;
 
 namespace Aloha.Test
 {
@@ -22,39 +21,42 @@ namespace Aloha.Test
         }
 
         [Test]
-        public void RandomIntTest()
+        public void ClampIntTest()
         {
-            //True
-            int randomInt = Utils.RandomInt(0, 1);
+            //True positive
+            Assert.AreEqual(0, 0.Clamp(-10, 10));
 
-            // Test if random number is between min and max
-            Assert.GreaterOrEqual(randomInt, 0);
-            Assert.LessOrEqual(randomInt, 1);
+            //True max positive
+            Assert.AreEqual(10, 10.Clamp(-10, 10));
 
-            int randomInt2 = Utils.RandomInt(0, 1);
+            //True min negative
+            Assert.AreEqual(-10, (-10).Clamp(-10, 10));
 
-            // Test if the second random number is between min and max
-            Assert.GreaterOrEqual(randomInt2, 0);
-            Assert.LessOrEqual(randomInt2, 1);
+            //False above min negative
+            Assert.AreEqual(-10, (-11).Clamp(-10, 10));
 
+            //False above max positive
+            Assert.AreEqual(10, 11.Clamp(-10, 10));
         }
 
         [Test]
-        public void RandomFloatTest()
+        public void ClampFloatTest()
         {
-            //True
-            float randomFloat = Utils.RandomFloat(0, 1);
+            //True positive
+            Assert.AreEqual(0f, 0f.Clamp(-10f, 10f));
 
-            // Test if random number is between min and max
-            Assert.GreaterOrEqual(randomFloat, 0);
-            Assert.LessOrEqual(randomFloat, 1);
+            //True max positive
+            Assert.AreEqual(10f, 10f.Clamp(-10f, 10f));
 
-            float randomFloat2 = Utils.RandomFloat(0, 1);
+            //True min negative
+            Assert.AreEqual(-10f, (-10f).Clamp(-10f, 10f));
 
-            // Test if the second random number is between min and max
-            Assert.GreaterOrEqual(randomFloat2, 0);
-            Assert.LessOrEqual(randomFloat2, 1);
+            //False above min negative
+            Assert.AreEqual(-10f, (-11f).Clamp(-10f, 10f));
 
+            //False above max positive
+            Assert.AreEqual(10f, 11f.Clamp(-10f, 10f));
         }
     }
+
 }
