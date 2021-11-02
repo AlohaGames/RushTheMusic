@@ -1,3 +1,7 @@
+using System;
+using System.Collections;
+using UnityEngine;
+
 namespace Aloha
 {
     public class Enemy<T> : Enemy where T : EnemyStats
@@ -7,7 +11,7 @@ namespace Aloha
             get { return this.stats as T; }
         }
 
-        public override EnemyStats GetStats()
+        public new EnemyStats GetStats()
         {
             return this.enemyStats;
         }

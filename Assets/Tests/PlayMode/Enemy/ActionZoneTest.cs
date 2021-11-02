@@ -17,7 +17,7 @@ namespace Aloha.Test
 
             // Instance "Player" gameObject
             GameObject playerGO = new GameObject();
-            Collider playerCollider = playerGO.AddComponent<Collider>();
+            Collider playerCollider = playerGO.AddComponent<BoxCollider>();
             playerGO.tag = "Player";
 
             // Intance parent to assign to enemy
