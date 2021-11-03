@@ -16,8 +16,8 @@ namespace Aloha
 
         public void BumpEntity(Entity entity, float speed)
         {
-            Vector3 direction = new Vector3(0, 0, 2);
-            StartCoroutine(entity.GetBump(direction, speed));
+            Vector3 direction = new Vector3(0, 0, 2 * speed);
+            StartCoroutine(entity.GetBump(direction, 2f));
         }
 
         //Regen x% of maxRage per hit
