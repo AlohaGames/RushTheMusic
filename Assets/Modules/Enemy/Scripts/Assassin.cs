@@ -14,19 +14,56 @@ namespace Aloha
         {
             hero = GameManager.Instance.GetHero();
         }
-
-        private void Update()
-        {
-            if(transform.position.z < -1)
-            {
-                this.Attack(hero);
-                this.Disappear();
-                Debug.Log(hero.currentHealth);
-            }
-        }
         protected override IEnumerator AI()
         {
-            return base.AI();
+            yield return StartCoroutine(Concentration(15f));
+            yield return StartCoroutine(StealthJump(2f));
         }
+
+        protected IEnumerator StealthJump(float speed)
+        {
+
+            float temps = 0;
+            Vector3 posInit = gameObject.transform.position;
+            Vector3 posFinal = posInit * speed;
+
+            while (temps < 1f)
+            {
+                temps += speed * Time.deltaTime;
+                posFinal.y = posInit.y + 15;
+                posFinal.z = posInit.z - 7;
+                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+                yield return null;
+            }
+
+            gameObject.transform.position = posFinal;
+
+            Hero hero = GameManager.Instance.GetHero();
+            Attack(hero);
+            Debug.Log(hero.currentHealth);
+
+            Disappear();
+        }
+
+        protected IEnumerator Concentration(float speed)
+        {
+            yield return new WaitForSeconds(0.8f);
+            float temps = 0;
+            Vector3 posInit = gameObject.transform.position;
+            Vector3 posFinal = posInit;
+            posFinal.z = posFinal.z - 2.2f;
+            Debug.Log(posInit);
+            Debug.Log(posFinal);
+
+            while (temps < 1f)
+            {
+                temps += speed * Time.deltaTime;
+                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+                yield return null;
+            }
+            gameObject.transform.position = posFinal;
+            yield return new WaitForSeconds(0.15f);
+        }
+
     }
 }
