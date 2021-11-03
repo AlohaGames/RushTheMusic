@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/02/2021 - 13:41:00</Generatedon>
+    <Generatedon>11/03/2021 - 10:34:01</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
-    <Classes>37</Classes>
-    <Files>35</Files>
-    <Coveredlines>543</Coveredlines>
-    <Uncoveredlines>294</Uncoveredlines>
-    <Coverablelines>837</Coverablelines>
-    <Totallines>1749</Totallines>
-    <Linecoverage>64.8</Linecoverage>
+    <Classes>38</Classes>
+    <Files>36</Files>
+    <Coveredlines>546</Coveredlines>
+    <Uncoveredlines>309</Uncoveredlines>
+    <Coverablelines>855</Coverablelines>
+    <Totallines>1784</Totallines>
+    <Linecoverage>63.8</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="37" coverage="64.8" coveredlines="543" coverablelines="837" totallines="1907" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="38" coverage="63.8" coveredlines="546" coverablelines="855" totallines="1943" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="9" coverablelines="9" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="46.1" coveredlines="12" coverablelines="26" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Bar" coverage="100" coveredlines="4" coverablelines="4" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Bar" coverage="0" coveredlines="0" coverablelines="4" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Enemy" coverage="100" coveredlines="50" coverablelines="50" totallines="94" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Enemy[T]" coverage="0" coveredlines="0" coverablelines="4" totallines="94" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.EnemyInstantier" coverage="100" coveredlines="10" coverablelines="10" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.EnemyMapping" coverage="90" coveredlines="36" coverablelines="40" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.EnemySpawner" coverage="68.9" coveredlines="20" coverablelines="29" totallines="47" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Entity" coverage="92.6" coveredlines="38" coverablelines="41" totallines="74" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Entity" coverage="92.6" coveredlines="38" coverablelines="41" totallines="73" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Events.GlobalEvent" coverage="100" coveredlines="14" coverablelines="14" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.GameManager" coverage="25.8" coveredlines="16" coverablelines="62" totallines="156" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HealthBar" coverage="0" coveredlines="0" coverablelines="7" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Hero" coverage="74" coveredlines="20" coverablelines="27" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Hero[T]" coverage="100" coveredlines="6" coverablelines="6" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Hero" coverage="60.7" coveredlines="17" coverablelines="28" totallines="65" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Hero[T]" coverage="100" coveredlines="6" coverablelines="6" totallines="65" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HeroInstantier" coverage="100" coveredlines="15" coverablelines="15" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HeroInvokerButton" coverage="0" coveredlines="0" coverablelines="9" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HorizontalBar" coverage="0" coveredlines="0" coverablelines="5" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -41,6 +41,7 @@
       <Class name="Aloha.LevelMetadata" coverage="0" coveredlines="0" coverablelines="14" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.PauseMenu" coverage="100" coveredlines="19" coverablelines="19" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ScoreManager" coverage="37.5" coveredlines="27" coverablelines="72" totallines="141" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.SecondaryBar" coverage="0" coveredlines="0" coverablelines="7" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.SerializeDictionary[TKey,TValue]" coverage="100" coveredlines="29" coverablelines="29" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Shield" coverage="100" coveredlines="17" coverablelines="17" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Sword" coverage="100" coveredlines="19" coverablelines="19" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -49,7 +50,7 @@
       <Class name="Aloha.UIScore" coverage="71.4" coveredlines="10" coverablelines="14" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Utils" coverage="86.6" coveredlines="26" coverablelines="30" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.VerticalBar" coverage="0" coveredlines="0" coverablelines="5" totallines="15" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Warrior" coverage="100" coveredlines="25" coverablelines="25" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Warrior" coverage="100" coveredlines="35" coverablelines="35" totallines="58" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="InputBinding" coverage="100" coveredlines="4" coverablelines="4" totallines="9" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="MainMenu" coverage="0" coveredlines="0" coverablelines="7" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Singleton[T]" coverage="100" coveredlines="16" coverablelines="16" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
