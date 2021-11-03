@@ -10,10 +10,12 @@ namespace Aloha
         public new virtual HeroStats GetStats() {
             return this.stats as HeroStats;
         }
+
         public override void Init()
         {
             Init(this.stats);
         }
+
         public override void Init(Stats stats)
         {
             base.Init(stats);
