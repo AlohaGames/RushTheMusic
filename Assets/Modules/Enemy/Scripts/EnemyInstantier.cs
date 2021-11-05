@@ -32,7 +32,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function instantiate an enemy with an enemy type.
         /// <example> Example(s):
         /// <code>
         /// TODO

@@ -1,7 +1,7 @@
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class inherits from Entity. It manages the enemies.
     /// </summary>
     public class Enemy : Entity
     {
