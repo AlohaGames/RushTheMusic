@@ -6,6 +6,7 @@ namespace Aloha {
     public class Fireball : MonoBehaviour
     {
         public Wizard wizard;
+        public int power;
 
         public void Launch()
         {
@@ -19,8 +20,7 @@ namespace Aloha {
         {
             if (collider.tag == "Enemy")
             {
-                Debug.Log("Coucou");
-                wizard.Attack(collider.gameObject.GetComponent<Entity>());
+                collider.gameObject.GetComponent<Entity>().TakeDamage(this.power);
                 wizard.BumpEntity(collider.GetComponent<Entity>());
                 Destroy(gameObject);
             }

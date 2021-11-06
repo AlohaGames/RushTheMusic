@@ -40,12 +40,10 @@ namespace Aloha
         public void preparePortal()
         {
             preparingPortal = true;
-            Debug.Log("PreparePortal");
         }
 
         public void SpawnPortal()
         {
-            Debug.Log("SpawnPortal");
             if (preparingPortal && endPoint != null)
             {
                 Vector3 vortexPos = (Vector3)endPoint;

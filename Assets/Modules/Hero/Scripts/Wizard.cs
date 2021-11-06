@@ -6,7 +6,7 @@ namespace Aloha
 {
     public class Wizard : Hero<WarriorStats>
     {
-        private int currentMana;
+        public int currentMana;
         public void Init(WizardStats stats)
         {
             base.Init(stats);
@@ -18,5 +18,21 @@ namespace Aloha
             StartCoroutine(entity.GetBump(direction, 1));
         }
 
+        public int ChargeFireball()
+        {
+            int manaToUse = 200;
+            int power = 0;
+
+            if (this.currentMana >= manaToUse)
+            {
+                power = this.attack;
+                this.currentMana -= manaToUse;
+            } else
+            {
+                power = this.attack * this.currentMana / manaToUse;
+                this.currentMana = 0;
+            }
+            return power;
+        }
     }
 }

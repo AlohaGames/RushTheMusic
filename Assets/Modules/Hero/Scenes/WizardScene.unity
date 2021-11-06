@@ -583,6 +583,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100000, guid: 2f496b1b1bec86743b418551f859020c, type: 3}
     - target: {fileID: 1662072565279687759, guid: cf8fdbb38b8194a4f80b8dfd2422448f, type: 3}
+      propertyPath: attack
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662072565279687759, guid: cf8fdbb38b8194a4f80b8dfd2422448f, type: 3}
+      propertyPath: currentMana
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662072565279687759, guid: cf8fdbb38b8194a4f80b8dfd2422448f, type: 3}
+      propertyPath: currentHealth
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662072565279687759, guid: cf8fdbb38b8194a4f80b8dfd2422448f, type: 3}
       propertyPath: fireballPrefab
       value: 
       objectReference: {fileID: 5125899814957169845, guid: 90dbd56bdfe268946baf82b6b537370c, type: 3}
@@ -702,6 +714,10 @@ PrefabInstance:
     - target: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
       propertyPath: m_Name
       value: Generic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280670638334809903, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
+      propertyPath: noAI
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1280670638334809903, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
       propertyPath: currentHealth

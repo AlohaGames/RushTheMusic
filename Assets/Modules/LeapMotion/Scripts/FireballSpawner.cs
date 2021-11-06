@@ -21,13 +21,27 @@ namespace Aloha
         {
             if (!this.currentFireball)
             {
-                Vector3 fireballPos = transform.localPosition;
-                fireballPos.z -= 0.05f;
-                Fireball fireball = Instantiate(fireballPrefab, Vector3.zero, Quaternion.identity);
-                fireball.transform.parent = transform;
-                fireball.transform.localPosition = fireballPos;
-                fireball.wizard = this.wizard;
-                this.currentFireball = fireball;
+                int fireballPower = wizard.ChargeFireball();
+
+                if (fireballPower != 0)
+                {
+                    Vector3 fireballPos = transform.localPosition;
+                    fireballPos.z -= 0.05f;
+
+                    Fireball fireball = Instantiate(fireballPrefab, Vector3.zero, Quaternion.identity);
+
+                    fireball.transform.parent = transform;
+                    fireball.transform.localPosition = fireballPos;
+                    if (fireballPower != wizard.attack)
+                    {
+                        float size = (float) fireballPower / wizard.attack;
+                        Vector3 defaultScale = fireball.transform.localScale;
+                        fireball.transform.localScale = new Vector3(defaultScale.x * size, defaultScale.y * size, defaultScale.z * size);
+                    }
+                    fireball.wizard = this.wizard;
+                    fireball.power = fireballPower;
+                    this.currentFireball = fireball;
+                }
             }
         }
 
