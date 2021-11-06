@@ -511,6 +511,7 @@ Transform:
   m_LocalPosition: {x: 0.01261101, y: 0.00643952, z: 0.13872021}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 377159505004526458}
   - {fileID: 102707826545083903}
   m_Father: {fileID: 6880756756301694754}
   m_RootOrder: 0
@@ -849,7 +850,7 @@ Transform:
   m_LocalScale: {x: 0.091250055, y: -0.11997999, z: 0.07107999}
   m_Children: []
   m_Father: {fileID: 906849040326476062}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: -39.912, z: -45.049}
 --- !u!33 &1289950876203022968
 MeshFilter:
@@ -1037,6 +1038,8 @@ GameObject:
   m_Component:
   - component: {fileID: 959164062327164478}
   - component: {fileID: 2005937978574299469}
+  - component: {fileID: 819722407046504502}
+  - component: {fileID: 1476909397599079648}
   m_Layer: 0
   m_Name: WizardRightHand
   m_TagString: Untagged
@@ -2077,6 +2080,86 @@ MonoBehaviour:
       position: {x: 0.0014467783, y: 0.0011002009, z: 0.021367688}
       rotation: {x: 357.3353, y: 5.2953563, z: 0.3249535}
     reference: {fileID: 4136492204286064489}
+--- !u!114 &819722407046504502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030106156896497705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7179135580403107394}
+        m_TargetAssemblyTypeName: Aloha.FireballSpawner, Aloha
+        m_MethodName: SpawnFireball
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  Period: 0.1
+  HandModel: {fileID: 2005937978574299469}
+  Thumb: 1
+  Index: 1
+  Middle: 1
+  Ring: 1
+  Pinky: 1
+  MinimumExtendedCount: 0
+  MaximumExtendedCount: 0
+  ShowGizmos: 1
+--- !u!114 &1476909397599079648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4030106156896497705}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7179135580403107394}
+        m_TargetAssemblyTypeName: Aloha.FireballSpawner, Aloha
+        m_MethodName: SendFireball
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  Period: 0.1
+  HandModel: {fileID: 2005937978574299469}
+  Thumb: 0
+  Index: 0
+  Middle: 0
+  Ring: 0
+  Pinky: 0
+  MinimumExtendedCount: 5
+  MaximumExtendedCount: 5
+  ShowGizmos: 1
 --- !u!1 &4136492204286064489
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,3 +3870,80 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1001 &8656432634134415882
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 906849040326476062}
+    m_Modifications:
+    - target: {fileID: 330768267909512886, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_Name
+      value: FireballSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 1981788739871296584, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: fireballPrefab
+      value: 
+      objectReference: {fileID: 5125899814957169845, guid: 90dbd56bdfe268946baf82b6b537370c, type: 3}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0010156967
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.11646689
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.011506858
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08479629
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.033336043
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.99577403
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+--- !u!4 &377159505004526458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+  m_PrefabInstance: {fileID: 8656432634134415882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7179135580403107394 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1981788739871296584, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
+  m_PrefabInstance: {fileID: 8656432634134415882}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb1d87b210f2e76449daff1992cb29f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

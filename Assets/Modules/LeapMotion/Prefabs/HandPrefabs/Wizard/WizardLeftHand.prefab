@@ -576,7 +576,8 @@ Transform:
   m_LocalRotation: {x: -0.0024471565, y: -0.99998075, z: -0.0017989448, w: -0.005412865}
   m_LocalPosition: {x: -0.0009398854, y: -0.001322108, z: 0.0391967}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 958057153025462865}
   m_Father: {fileID: 2884566107621116818}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2587,6 +2588,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6216997960102609408}
   - component: {fileID: 4674193117212618099}
+  - component: {fileID: 1930204147644033282}
+  - component: {fileID: 1283693649154738653}
   m_Layer: 0
   m_Name: WizardLeftHand
   m_TagString: Untagged
@@ -2622,7 +2625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeapHand:
-    FrameId: 0
+    FrameId: 131572
     Id: 0
     Fingers:
     - bones:
@@ -3627,6 +3630,86 @@ MonoBehaviour:
       position: {x: 0.0014467783, y: 0.0011002009, z: 0.021367688}
       rotation: {x: 357.3353, y: 5.2953563, z: 0.3249535}
     reference: {fileID: 7092977723379743575}
+--- !u!114 &1930204147644033282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846752847801908247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4687723080601201322}
+        m_TargetAssemblyTypeName: Aloha.PortalSpawner, Aloha
+        m_MethodName: preparePortal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  Period: 0.1
+  HandModel: {fileID: 4674193117212618099}
+  Thumb: 1
+  Index: 1
+  Middle: 1
+  Ring: 1
+  Pinky: 1
+  MinimumExtendedCount: 0
+  MaximumExtendedCount: 0
+  ShowGizmos: 1
+--- !u!114 &1283693649154738653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7846752847801908247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e641d160144e87a3d33fcdb893a02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnActivate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4687723080601201322}
+        m_TargetAssemblyTypeName: Aloha.PortalSpawner, Aloha
+        m_MethodName: SpawnPortal
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  Period: 0.1
+  HandModel: {fileID: 4674193117212618099}
+  Thumb: 0
+  Index: 0
+  Middle: 0
+  Ring: 0
+  Pinky: 0
+  MinimumExtendedCount: 5
+  MaximumExtendedCount: 5
+  ShowGizmos: 1
 --- !u!1 &7854738557021348345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3787,3 +3870,80 @@ Transform:
   m_Father: {fileID: 2884566107621116818}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8093409332076503841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5142486693259550404}
+    m_Modifications:
+    - target: {fileID: 330768267909512886, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_Name
+      value: PortalSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3557759756273846667, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: vortexPrefab
+      value: 
+      objectReference: {fileID: 358301069254042723, guid: 836429e0df299824aacf8dd8744b4a2b, type: 3}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.006099992
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0008995748
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.022199452
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0263739
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.9995495
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.013651
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.0043455097
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+--- !u!4 &958057153025462865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+  m_PrefabInstance: {fileID: 8093409332076503841}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4687723080601201322 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3557759756273846667, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
+  m_PrefabInstance: {fileID: 8093409332076503841}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d0189b46e6a6e4f983a202a083ac83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

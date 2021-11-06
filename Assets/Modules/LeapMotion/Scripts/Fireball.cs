@@ -6,40 +6,25 @@ namespace Aloha {
     public class Fireball : MonoBehaviour
     {
         public Wizard wizard;
-        private bool isAutonomous = false;
-        
-        private void Start()
+
+        public void Launch()
         {
-            //warrior = GameManager.Instance.GetHero() as Wizard;
+            GetComponent<Rigidbody>().AddForce(transform.forward * 3, ForceMode.Impulse);
+            transform.parent = null;
+            Destroy(gameObject, 3f);
         }
 
-        private void Update()
+        // If the Sword touch an Object
+        public void OnTriggerEnter(Collider collider)
         {
-            if(isAutonomous)
+            if (collider.tag == "Enemy")
             {
-                transform.localPosition += new Vector3(0, 1 * Time.deltaTime, 0);
+                Debug.Log("Coucou");
+                wizard.Attack(collider.gameObject.GetComponent<Entity>());
+                wizard.BumpEntity(collider.GetComponent<Entity>());
+                Destroy(gameObject);
             }
         }
 
-        public void GoForward()
-        {
-            isAutonomous = true;
-            GameObject parent = transform.parent.gameObject;
-            //transform.parent = null;
-            //transform.rotation = parent.transform.rotation.eulerAngles;
-
-            //transform.position = parent.transform.position;
-            Vector3 rotation = transform.rotation.eulerAngles;
-            Debug.Log(rotation.x);
-            Debug.Log(transform.eulerAngles.y);
-            Debug.Log(rotation.z);
-            transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y+90, rotation.z);
-            Debug.Log("");
-            Vector3 velocity = transform.rotation * parent.transform.forward;
-            GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
-
-            transform.parent = null;
-            //GetComponent<Rigidbody>().AddForce(new Vector3(0, -1, 0));
-        }
     }
 }
