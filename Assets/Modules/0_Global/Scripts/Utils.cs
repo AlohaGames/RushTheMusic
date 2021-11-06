@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System;
 
 namespace Aloha
@@ -24,7 +21,33 @@ namespace Aloha
         public static float RandomFloat(float min, float max)
         {
             double val = (random.NextDouble() * (max - min) + min);
-            return (float)val;
+            return (float) val;
+        }
+      
+        public static int Clamp(this int value, int min, int max)
+        {
+            if (value <= min)
+            {
+                return min;
+            }
+            if (value > max)
+            {
+                return max;
+            }
+            return value;
+        }
+
+        public static float Clamp(this float value, float min, float max)
+        {
+            if (value <= min)
+            {
+                return min;
+            }
+            if (value > max)
+            {
+                return max;
+            }
+            return value;
         }
     }
 }

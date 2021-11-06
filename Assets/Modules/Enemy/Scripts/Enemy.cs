@@ -1,7 +1,6 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Aloha
 {
@@ -9,28 +8,26 @@ namespace Aloha
     {
         private T enemyStats
         {
-            get
-            {
-                return this.stats as T;
-            }
+            get { return this.stats as T; }
         }
 
-        public override EnemyStats GetStats()
+        public new EnemyStats GetStats()
         {
             return this.enemyStats;
         }
     }
+    
     public class Enemy : Entity
     {
-        [SerializeField] private bool NoAI = false;
+        [SerializeField] private bool noAI = false;
         protected bool AIActivated = false;
-
-        private EnemyStats enemyStats {
-            get {
-                return this.stats as EnemyStats;
-            }
+        
+        private EnemyStats enemyStats
+        {
+            get { return this.stats as EnemyStats; }
         }
-        public virtual EnemyStats GetStats() {
+        public new EnemyStats GetStats()
+        {
             return this.enemyStats;
         }
         public void Awake()
@@ -38,13 +35,14 @@ namespace Aloha
             this.dieEvent.AddListener(Disappear);
         }
 
+        public override void Die()
+        {
+            base.Die();
+        }
+
         public void Disappear()
         {
             Destroy(this.gameObject);
-        }
-
-        public void OnDestroy() {
-            this.dieEvent.RemoveListener(Disappear);
         }
 
         public void DetachFromParent()
@@ -54,10 +52,13 @@ namespace Aloha
 
         public void SetAI(bool value)
         {
-            if (!NoAI)
+            if (!noAI)
             {
                 AIActivated = value;
-                if (AIActivated) StartCoroutine(AI());
+                if (AIActivated)
+                {
+                    StartCoroutine(AI());
+                }
             }
         }
 
@@ -85,5 +86,11 @@ namespace Aloha
 
             gameObject.transform.position = posFinal;
         }
+
+        public void OnDestroy()
+        {
+            this.dieEvent.RemoveListener(Disappear);
+        }
+
     }
 }

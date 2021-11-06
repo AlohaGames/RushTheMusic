@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -71,7 +70,7 @@ namespace Aloha.Test
             Debug.Log("Hero defense: " + stats.defense);
             warrior.TakeDamage(5);
             Assert.AreEqual(5, warrior.currentHealth);
-            
+
             Debug.Log("Hero life: " + warrior.currentHealth);
             warrior.TakeDamage(2);
             Assert.AreEqual(3, warrior.currentHealth);
@@ -96,27 +95,27 @@ namespace Aloha.Test
         [Test]
         public void HeroTestAttack()
         {
-            GameObject guerrierGO = new GameObject();
-            Warrior guerrier = guerrierGO.AddComponent<Warrior>();
+            GameObject warriorGO = new GameObject();
+            Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
             stats.maxRage = 10;
             stats.maxHealth = 10;
             stats.attack = 10;
             stats.defense = 10;
             stats.xp = 10;
-            guerrier.Init(stats);
+            warrior.Init(stats);
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
-            stats.maxHealth = 100;
+            enemyStats.maxHealth = 100;
             enemy.Init(enemyStats);
 
-            guerrier.Attack(enemy);
+            warrior.Attack(enemy);
             Assert.IsTrue(enemy.currentHealth < enemy.GetStats().maxHealth);
 
-            GameObject.Destroy(guerrierGO);
             GameObject.Destroy(enemyGO);
+            GameObject.Destroy(warriorGO);
         }
     }
 }
