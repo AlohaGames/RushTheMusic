@@ -1,17 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
-
 
 namespace Aloha.Events
 {
     public class GlobalEvent
     {
-
+        /// <summary>
+        /// Basic UnityEvent invoke when Resume the game is request
+        /// </summary>
         public static UnityEvent Resume = new UnityEvent();
+        
+        /// <summary>
+        /// Basic UnityEvent invoke when Pause the game is request
+        /// </summary>
         public static UnityEvent Pause = new UnityEvent();
         public static EntityEvent EntityDied = new EntityEvent();
+        public static UnityEvent HeroTakeDamage = new UnityEvent();
+        public static UnityEvent HeroDie = new UnityEvent();
+        public static UnityEvent EnemyDie = new UnityEvent();
         public static IntIntEvent OnHealthUpdate = new IntIntEvent();
         public static IntIntEvent OnSecondaryUpdate = new IntIntEvent();
         public static GameObjectEvent TileCount = new GameObjectEvent();

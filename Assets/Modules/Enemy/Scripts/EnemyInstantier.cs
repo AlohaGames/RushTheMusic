@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,12 +5,13 @@ namespace Aloha
 {
     public class EnemyInstantier : Singleton<EnemyInstantier>
     {
-        [SerializeField] private List<GameObject> EnemyPrefabs;
+        [SerializeField]
+        private List<GameObject> EnemyPrefabs = new List<GameObject>();
 
         public GameObject InstantiateEnemy(int id)
         {
             GameObject instance = Instantiate(EnemyPrefabs[id]);
-            Enemy enemy = instance.GetComponent<Enemy>();
+            Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
             return instance;
         }
@@ -26,6 +26,7 @@ namespace Aloha
     }
     public enum EnemyType
     {
-        generic = 0
+        generic = 0,
+        lancer = 1
     }
 }

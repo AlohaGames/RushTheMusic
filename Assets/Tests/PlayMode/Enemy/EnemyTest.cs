@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
@@ -57,5 +56,6 @@ namespace Aloha.Test
             GameObject.Destroy(enemy.gameObject);
             GameObject.Destroy(manager);
         }
+
     }
 }
