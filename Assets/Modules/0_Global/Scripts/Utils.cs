@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Aloha
 {
@@ -18,12 +19,17 @@ namespace Aloha
             return val;
         }
 
+        public static float RandomFloat()
+        {
+            return RandomFloat(0f, 1f);
+        }
+
         public static float RandomFloat(float min, float max)
         {
             double val = (random.NextDouble() * (max - min) + min);
-            return (float) val;
+            return (float)val;
         }
-      
+
         public static int Clamp(this int value, int min, int max)
         {
             if (value <= min)
@@ -48,6 +54,11 @@ namespace Aloha
                 return max;
             }
             return value;
+        }
+
+        public static bool IsEmpty<T>(this List<T> list)
+        {
+            return (list.Count == 0);
         }
     }
 }

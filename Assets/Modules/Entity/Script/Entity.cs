@@ -12,6 +12,7 @@ namespace Aloha
         [SerializeField]
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
+        public UnityEvent TakeDamageEvent = new UnityEvent();
 
         public Stats GetStats()
         {
@@ -36,6 +37,7 @@ namespace Aloha
 
         public virtual void TakeDamage(int damage)
         {
+            TakeDamageEvent.Invoke();
             if (damage < 0)
             {
                 return;

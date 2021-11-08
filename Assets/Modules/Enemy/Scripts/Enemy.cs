@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using Aloha.AI;
 
 namespace Aloha
 {
@@ -56,14 +57,15 @@ namespace Aloha
                 AIActivated = value;
                 if (AIActivated)
                 {
-                    StartCoroutine(AI());
+                    //StartCoroutine(AI()); 
+                    GetComponent<StateGraph>().StartGraph();
                 }
             }
         }
 
         protected virtual IEnumerator AI()
         {
-            while(this.AIActivated)
+            while (this.AIActivated)
             {
                 yield return StartCoroutine(MoveXToAnimation(Utils.RandomFloat(-1.5f, 1.5f), 1));
             }
