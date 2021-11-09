@@ -12,7 +12,6 @@ namespace Aloha
         }
         public override void Init()
         {
-            Debug.Log("init hero");
             Init(this.stats);
         }
         public override void Init(Stats stats)
