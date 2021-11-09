@@ -14,7 +14,8 @@ namespace Aloha.Test
     public class ScoreTest
     {
         /// <summary>
-        /// This function creates level mappings
+        /// This function creates level mappings / 
+        /// Utilities method, it's not a test
         /// </summary>
         LevelMapping[] GetLevelMapping()
         {
