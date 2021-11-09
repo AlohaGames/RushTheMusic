@@ -4,15 +4,12 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
-    public class Move : GONode
+    public class GoToHero : GONode
     {
-        public bool IsLeft = false;
-        public float actionTime = 1.0f;
         public float speed = 2.0f;
-        public float distToMove = 0.5f;
 
-        public Move() : base() { }
-        public Move(StateGraph graph) : base(graph) { }
+        public GoToHero() : base() { }
+        public GoToHero(StateGraph graph) : base(graph) { }
 
         public override IEnumerator Action()
         {
@@ -20,13 +17,15 @@ namespace Aloha.AI
 
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.x = IsLeft ? posFinal.x + distToMove : posFinal.x - distToMove;
+            Vector3 posFinal = GameManager.Instance.GetHero().gameObject.transform.position;
 
-            while (time < actionTime)
+            float dist = Vector3.Distance(posInit, posFinal);
+            float totalTime = dist / speed;
+
+            while (time < totalTime)
             {
                 time += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time/actionTime);
+                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time/totalTime);
                 yield return null;
             }
 

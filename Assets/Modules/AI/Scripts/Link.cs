@@ -32,9 +32,9 @@ namespace Aloha.AI
             this.probability = probability;
         }
 
-        public bool TryLink()
+        public bool TryLink(float random)
         {
-            if (Utils.RandomFloat() <= probability)
+            if (random <= probability)
             {
                 PathToNext();
                 return true;

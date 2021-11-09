@@ -27,13 +27,18 @@ namespace Aloha.AI
 
         protected IEnumerator TryAllLink()
         {
-            Debug.Log("TryAllLink");
-            // TODO Améliorer je pense pas que ce soit vraiment ouf comme méthode
-            int i = 0;
             int count = AutomaticLinks.Count;
-            while (IsRunning && !AutomaticLinks[i].TryLink())
+            float random = Utils.RandomFloat();
+            foreach (AutomaticLink link in AutomaticLinks)
             {
-                i = (i + 1) % count;
+                if (link.TryLink(random))
+                {
+                    break;
+                }
+                else
+                {
+                    random = random - link.probability;
+                }
             }
             yield return null;
         }
@@ -55,7 +60,8 @@ namespace Aloha.AI
         }
 
         public Node() { }
-        public Node(StateGraph graph) { 
+        public Node(StateGraph graph)
+        {
             this.Graph = graph;
         }
 

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using Aloha.AI;
 
 namespace Aloha
@@ -21,6 +22,8 @@ namespace Aloha
     {
         [SerializeField] private bool noAI = false;
         protected bool AIActivated = false;
+
+        public UnityEvent NearHeroTrigger = new UnityEvent();
         
         private EnemyStats enemyStats
         {
