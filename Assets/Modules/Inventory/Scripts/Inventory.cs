@@ -7,12 +7,10 @@ namespace Aloha
     public class Inventory
     {
 
-        public Queue<Item> items;
-
+        private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
 
-
-        public void addItem(Item item)
+        public void AddItem(Item item)
         {
             if(this.items.Count < this.maxItem)
             {
@@ -20,17 +18,17 @@ namespace Aloha
             }
         }
 
-        public void useItem()
+        public void UseItem()
         {
             if(this.items.Count > 0)
             {
                 Item item = this.items.Dequeue();
-                item.effect();
+                item.Effect();
             }
 
         }
 
-        public Queue<Item> getItems()
+        public Queue<Item> GetItems()
         {
             return this.items;
         }

@@ -6,8 +6,7 @@ namespace Aloha
 {
     public abstract class Item
     {
-
-        public abstract void effect();
+        public abstract void Effect();
     }
 }
 

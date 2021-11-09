@@ -36,6 +36,15 @@ namespace Aloha
             GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
         }
 
+        public void Regeneration(int gain)
+        {
+            this.currentHealth += gain;
+            if (this.currentHealth > this.GetStats().maxHealth)
+            {
+                this.currentHealth = this.GetStats().maxHealth;
+            }
+        }
+
         public float CalculateDamageReduction()
         {
             float damageReduction;
