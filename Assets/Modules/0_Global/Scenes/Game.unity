@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -992,7 +992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: tilePrefabs.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: tilePrefabs.Array.data[0]
@@ -1001,11 +1001,15 @@ PrefabInstance:
     - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: tilePrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 6000502186478424822, guid: 8cf3ca6636331ec9a8f20f54f760d2fa, type: 3}
+      objectReference: {fileID: 5164540349839121724, guid: 7d84e34c2f1309248855fd9adec94fbe, type: 3}
     - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: tilePrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 7440160160923312903, guid: 214f39cfecabcaeecad7f8f9a8af12a8, type: 3}
+      objectReference: {fileID: 4598967498231466572, guid: ae89d91ed6fdd824fa43322ffa46f08e, type: 3}
+    - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: tilePrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 7968008124985375963, guid: 5e1ede5e43265ba4a9547e8bb75d53e9, type: 3}
     - target: {fileID: 426884401804605717, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_IsActive
       value: 0
