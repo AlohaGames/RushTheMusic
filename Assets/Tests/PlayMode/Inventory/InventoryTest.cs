@@ -21,12 +21,13 @@ namespace Aloha.Test
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
             Hero hero = GameManager.Instance.GetHero();
             hero.Init(stats);
+
+            //premier test pour voir si tout est bien initialisé
             Assert.AreEqual(100, hero.GetStats().maxHealth);
             hero.currentHealth = hero.GetStats().maxHealth;
             Assert.AreEqual(100, hero.currentHealth);
             hero.TakeDamage(20);
             Assert.AreEqual(80, hero.currentHealth);
-
 
             // Create 6 health potion
             int gain = 20;
@@ -36,7 +37,6 @@ namespace Aloha.Test
             HealPotion potion4 = new HealPotion(gain);
             HealPotion potion5 = new HealPotion(gain);
             HealPotion potion6 = new HealPotion(gain);
-
 
             // Creation de l'inventaire
             Inventory inventory = new Inventory();
@@ -54,7 +54,6 @@ namespace Aloha.Test
             //check if the queue if the same
             Assert.IsTrue(itemsFull == itemsFull2);
             Assert.AreEqual(5, inventory.GetItems().Count);
-
 
             // Use a potion
             inventory.UseItem();
