@@ -11,7 +11,7 @@ namespace Aloha
         public GameObject InstantiateEnemy(int id)
         {
             GameObject instance = Instantiate(EnemyPrefabs[id]);
-            Enemy enemy = instance.GetComponent<Enemy>();
+            Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
             return instance;
         }
@@ -26,6 +26,7 @@ namespace Aloha
     }
     public enum EnemyType
     {
-        generic = 0
+        generic = 0,
+        lancer = 1
     }
 }
