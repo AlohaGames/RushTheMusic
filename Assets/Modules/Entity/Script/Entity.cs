@@ -8,7 +8,6 @@ namespace Aloha
     public abstract class Entity : MonoBehaviour
     {
         public int currentHealth;
-        public int attack;
         [SerializeField]
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
