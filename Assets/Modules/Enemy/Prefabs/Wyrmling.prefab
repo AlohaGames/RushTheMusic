@@ -1127,6 +1127,7 @@ MonoBehaviour:
   currentHealth: 0
   stats: {fileID: 11400000, guid: 7a629563775aaa940871e0085073abfe, type: 2}
   noAI: 0
+  fireballPrefab: {fileID: 8358862569396939467, guid: 158e80fe48cf8904fa27a4c4ccb75023, type: 3}
 --- !u!1 &6167240626683155915
 GameObject:
   m_ObjectHideFlags: 0
