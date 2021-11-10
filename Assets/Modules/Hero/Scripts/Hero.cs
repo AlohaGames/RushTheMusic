@@ -10,10 +10,12 @@ namespace Aloha
         public new virtual HeroStats GetStats() {
             return this.stats as HeroStats;
         }
+
         public override void Init()
         {
             Init(this.stats);
         }
+
         public override void Init(Stats stats)
         {
             base.Init(stats);
@@ -32,6 +34,15 @@ namespace Aloha
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
+        }
+
+        public override void Regeneration(int gain)
+        {
+            this.currentHealth += gain;
+            if (this.currentHealth > this.GetStats().maxHealth)
+            {
+                this.currentHealth = this.GetStats().maxHealth;
+            }
         }
 
         public float CalculateDamageReduction()

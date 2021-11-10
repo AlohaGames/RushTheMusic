@@ -46,6 +46,15 @@ namespace Aloha
             }
         }
 
+        public virtual void Regeneration(int gain)
+        {
+            this.currentHealth += gain;
+            if (currentHealth > GetStats().maxHealth)
+            {
+                currentHealth = GetStats().maxHealth;
+            }
+        }
+
         public IEnumerator GetBump(Vector3 direction, float speed = 2f)
         {
             float temps = 0;
