@@ -11,18 +11,18 @@ namespace Aloha.Test
         [Test]
         public void InventaireTest()
         {
-
             // Declaration of a hero
             HeroStats stats = ScriptableObject.CreateInstance<HeroStats>();
             stats.attack = 100;
             stats.defense = 0;
             stats.maxHealth = 100;
+
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
             Hero hero = GameManager.Instance.GetHero();
             hero.Init(stats);
 
-            //premier test pour voir si tout est bien initialisé
+            //premier test pour voir si tout est bien initialisï¿½
             Assert.AreEqual(100, hero.GetStats().maxHealth);
             hero.currentHealth = hero.GetStats().maxHealth;
             Assert.AreEqual(100, hero.currentHealth);
@@ -63,6 +63,8 @@ namespace Aloha.Test
             inventory.UseItem();
             Assert.AreEqual(3, inventory.GetItems().Count);
             Assert.AreEqual(100, hero.currentHealth);
+
+            GameObject.Destroy(manager);
         }
     }
 }
