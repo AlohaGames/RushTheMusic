@@ -6,7 +6,7 @@ namespace Aloha
 {
     public class FireballSpawner : MonoBehaviour
     {
-        public Wizard wizard;
+        public Wizard Wizard;
         [SerializeField] private Fireball fireballPrefab;
         private Fireball currentFireball;
 
@@ -14,14 +14,14 @@ namespace Aloha
         {
             // TODO Change this
             //wizard = GameManager.Instance.GetHero() as Wizard;
-            wizard = FindObjectOfType<Wizard>();
+            Wizard = FindObjectOfType<Wizard>();
         }
 
         public void SpawnFireball()
         {
             if (!this.currentFireball)
             {
-                int fireballPower = wizard.ChargeFireball();
+                int fireballPower = Wizard.ChargeFireball();
 
                 if (fireballPower != 0)
                 {
@@ -32,14 +32,14 @@ namespace Aloha
 
                     fireball.transform.parent = transform;
                     fireball.transform.localPosition = fireballPos;
-                    if (fireballPower != wizard.attack)
+                    if (fireballPower != Wizard.attack)
                     {
-                        float size = (float) fireballPower / wizard.attack;
+                        float size = (float) fireballPower / Wizard.attack;
                         Vector3 defaultScale = fireball.transform.localScale;
                         fireball.transform.localScale = new Vector3(defaultScale.x * size, defaultScale.y * size, defaultScale.z * size);
                     }
-                    fireball.wizard = this.wizard;
-                    fireball.power = fireballPower;
+                    fireball.Wizard = this.Wizard;
+                    fireball.Power = fireballPower;
                     this.currentFireball = fireball;
                 }
             }

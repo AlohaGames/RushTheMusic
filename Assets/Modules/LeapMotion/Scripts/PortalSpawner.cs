@@ -6,7 +6,7 @@ namespace Aloha
 {
     public class PortalSpawner : MonoBehaviour
     {
-        public Wizard wizard;
+        public Wizard Wizard;
         [SerializeField] private Vortex vortexPrefab;
         [SerializeField] private Material raycastMaterial;
         private LineRenderer targetPreview;
@@ -19,7 +19,7 @@ namespace Aloha
         {
             // TODO Change this
             //wizard = GameManager.Instance.GetHero() as Wizard;
-            wizard = FindObjectOfType<Wizard>();
+            Wizard = FindObjectOfType<Wizard>();
 
             preparingPortal = false;
             targetPreview = this.gameObject.AddComponent<LineRenderer>();

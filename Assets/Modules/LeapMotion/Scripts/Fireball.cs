@@ -5,8 +5,8 @@ using UnityEngine;
 namespace Aloha {
     public class Fireball : MonoBehaviour
     {
-        public Wizard wizard;
-        public int power;
+        public Wizard Wizard;
+        public int Power;
 
         public void Launch()
         {
@@ -20,8 +20,8 @@ namespace Aloha {
         {
             if (collider.tag == "Enemy")
             {
-                collider.gameObject.GetComponent<Entity>().TakeDamage(this.power);
-                wizard.BumpEntity(collider.GetComponent<Entity>());
+                collider.gameObject.GetComponent<Entity>().TakeDamage(this.Power);
+                Wizard.BumpEntity(collider.GetComponent<Entity>());
                 Destroy(gameObject);
             }
         }
