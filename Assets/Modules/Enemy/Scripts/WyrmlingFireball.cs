@@ -13,7 +13,6 @@ namespace Aloha
             if (collider.tag == "Player")
             {
                 associatedEnemy.Attack(collider.gameObject.GetComponent<Entity>());
-                Debug.Log(collider.gameObject.GetComponent<Entity>().currentHealth);
                 Destroy(gameObject);
             }
         }
