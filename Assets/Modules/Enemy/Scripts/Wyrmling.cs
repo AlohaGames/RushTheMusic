@@ -58,9 +58,7 @@ namespace Aloha
             yield return new WaitForSeconds(1f);
 
             // Launch fireball to the hero
-            // TODO To change to this
-            //Hero hero = GameManager.Instance.GetHero();
-            Hero hero = FindObjectOfType<Warrior>();
+            Hero hero = GameManager.Instance.GetHero();
             Vector3 dir = hero.transform.position - fireball.transform.position;
             dir.Normalize();
             fireball.GetComponent<Rigidbody>().AddForce(dir * 3, ForceMode.Impulse);
