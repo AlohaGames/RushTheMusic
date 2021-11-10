@@ -3881,10 +3881,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireballSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 1981788739871296584, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
-      propertyPath: fireballPrefab
-      value: 
-      objectReference: {fileID: 5125899814957169845, guid: 90dbd56bdfe268946baf82b6b537370c, type: 3}
     - target: {fileID: 9014556154635399536, guid: b4e214f0af7800341be303cbcfa996d6, type: 3}
       propertyPath: m_RootOrder
       value: 0

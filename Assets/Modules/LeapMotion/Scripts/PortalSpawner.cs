@@ -8,6 +8,7 @@ namespace Aloha
     {
         public Wizard wizard;
         [SerializeField] private Vortex vortexPrefab;
+        [SerializeField] private Material raycastMaterial;
         private LineRenderer targetPreview;
         private Vector3 origin;
         private Vector3? endPoint;
@@ -22,8 +23,7 @@ namespace Aloha
 
             preparingPortal = false;
             targetPreview = this.gameObject.AddComponent<LineRenderer>();
-            //targetPreview.startColor = new Color(80, 35, 128);
-            //targetPreview.endColor = new Color(80, 35, 128);
+            targetPreview.material = raycastMaterial;
             targetPreview.startWidth = 0.02f;
             targetPreview.endWidth = 0.02f;
         }
@@ -73,6 +73,7 @@ namespace Aloha
                 // Set origin and end point of the laser
                 targetPreview.SetPosition(0, origin);
                 targetPreview.SetPosition(1, (Vector3)endPoint);
+
                 // Draw the laser
                 targetPreview.enabled = true;
             } else

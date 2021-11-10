@@ -2625,7 +2625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeapHand:
-    FrameId: 131572
+    FrameId: 0
     Id: 0
     Fingers:
     - bones:
@@ -3881,10 +3881,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PortalSpawner
       objectReference: {fileID: 0}
-    - target: {fileID: 3557759756273846667, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
-      propertyPath: vortexPrefab
-      value: 
-      objectReference: {fileID: 358301069254042723, guid: 836429e0df299824aacf8dd8744b4a2b, type: 3}
     - target: {fileID: 9014556154635399536, guid: 51fe69713d9c021458f910c069768c9e, type: 3}
       propertyPath: m_RootOrder
       value: 0

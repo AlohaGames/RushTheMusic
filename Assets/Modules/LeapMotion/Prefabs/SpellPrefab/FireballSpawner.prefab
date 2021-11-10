@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wizard: {fileID: 0}
-  fireballPrefab: {fileID: 0}
+  fireballPrefab: {fileID: 5125899814957169845, guid: 90dbd56bdfe268946baf82b6b537370c, type: 3}
 --- !u!1 &3790341814358843944
 GameObject:
   m_ObjectHideFlags: 0

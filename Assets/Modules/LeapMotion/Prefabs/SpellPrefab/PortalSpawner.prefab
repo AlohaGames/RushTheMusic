@@ -44,6 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65d0189b46e6a6e4f983a202a083ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wizard: {fileID: 0}
+  vortexPrefab: {fileID: 358301069254042723, guid: 836429e0df299824aacf8dd8744b4a2b, type: 3}
+  raycastMaterial: {fileID: 2100000, guid: 052394d9249191247b3aa5fffc4101fd, type: 2}
 --- !u!1 &3790341814358843944
 GameObject:
   m_ObjectHideFlags: 0
