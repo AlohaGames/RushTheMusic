@@ -6,7 +6,6 @@ namespace Aloha
 {
     public class Wyrmling : Enemy<WyrmlingStats>
     {
-
         protected override IEnumerator AI()
         {
             int rand = Utils.RandomInt(1, 4);

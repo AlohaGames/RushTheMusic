@@ -27,6 +27,7 @@ namespace Aloha
     public enum EnemyType
     {
         generic = 0,
-        lancer = 1
+        lancer = 1,
+        wyrmling = 2
     }
 }
