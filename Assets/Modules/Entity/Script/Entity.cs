@@ -10,6 +10,9 @@ namespace Aloha
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
+        [SerializeField]
+        protected Stats stats;
+
         protected UnityEvent dieEvent = new UnityEvent();
 
         [SerializeField]
@@ -111,13 +114,31 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
+        /// <param name="gain"></param>
+        public virtual void Regeneration(int gain)
+        {
+            this.currentHealth += gain;
+            if (currentHealth > GetStats().maxHealth)
+            {
+                currentHealth = GetStats().maxHealth;
+            }
+        }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         /// <param name="direction"></param>
         /// <param name="speed"></param>
         public IEnumerator GetBump(Vector3 direction, float speed = 2f)
         {
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit + direction * speed;
+            Vector3 posFinal = posInit + direction;
 
             while (temps < 1f)
             {

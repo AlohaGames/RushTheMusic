@@ -12,48 +12,53 @@ namespace Aloha.Test
     /// </summary>
     public class UIScoreTest
     {
-        //TODO: refaire tests
-        /*
+        /// <summary>
+        /// This function tests if UI in game elements is active
+        /// </summary>
         [Test]
-        public void UIScoreInGameTest()
+        public void UIScoreInGameElementsTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            ScoreManager scoreManager = ScoreManager.Instance;
+            //Create Manager instance and ScoreManager instance
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            UIManager instanceUIManager = UIManager.Instance;
 
-            Assert.IsTrue(scoreManager != null);
+            //Show UI in game elements
+            instanceUIManager.UIScore.ShowInGameUIScoreElements();
 
-            Debug.Log(scoreManager.GetComponent<UIScore>());
+            //Tests if UI in game elements are active
+            Assert.IsTrue(instanceUIManager.UIScore.InGameScore.activeSelf);
+            Assert.IsTrue(instanceUIManager.UIScore.InGameScoreText.IsActive());
 
-            Assert.IsFalse(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
-            Assert.IsTrue(scoreManager.GetComponent<UIScore>().scoreText.IsActive());
+            //Tests if UI end game elements are disable
+            Assert.IsFalse(instanceUIManager.UIScore.EndGameScore.activeSelf);
 
             GameObject.DestroyImmediate(manager);
         }
 
-        [UnityTest]
-        public IEnumerator UIScoreEndLevelTest()
+        /// <summary>
+        /// This function tests if UI end game elements is active
+        /// </summary>
+        [Test]
+        public void UIScoreEndGameElementsTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            GameObject guerrierGO = new GameObject();
-            Warrior guerrier = guerrierGO.AddComponent<Warrior>();
-            ScoreManager scoreManager = ScoreManager.Instance;
+            //Create Manager instance and ScoreManager instance
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            UIManager instanceUIManager = UIManager.Instance;
 
-            Assert.IsTrue(scoreManager != null);
+            //Show UI in game elements
+            instanceUIManager.UIScore.ShowEndGameUIScoreElements();
 
-            guerrier.Die();
+            //Tests if UI end game elements are active
+            Assert.IsTrue(instanceUIManager.UIScore.EndGameScore.activeSelf);
+            Assert.IsTrue(instanceUIManager.UIScore.TotalScoreText.IsActive());
+            Assert.IsTrue(instanceUIManager.UIScore.DistanceScoreText.IsActive());
+            Assert.IsTrue(instanceUIManager.UIScore.KillScoreText.IsActive());
+            Assert.IsTrue(instanceUIManager.UIScore.HitScoreText.IsActive());
 
-            yield return null;
+            //Tests if UI in game elements are disable
+            Assert.IsFalse(instanceUIManager.UIScore.InGameScore.activeSelf);
 
-            Assert.IsTrue(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
-            Assert.IsFalse(scoreManager.GetComponent<UIScore>().scoreText.IsActive());
-
-            Debug.Log(scoreManager.GetComponent<UIScore>().canvasUIScoreLevel.activeSelf);
-
-            GameObject.DestroyImmediate(guerrierGO);
             GameObject.DestroyImmediate(manager);
-
-            yield return null;
         }
-        */
     }
 }

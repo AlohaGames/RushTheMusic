@@ -7,6 +7,8 @@ namespace Aloha
     /// </summary>
     public static class Utils
     {
+        private static System.Random random = new System.Random();
+
         /// <summary>
         /// This function return if 2 floats are equal with precision: <paramref name="epsilon"/>.
         /// <example> Example(s):
@@ -24,11 +26,49 @@ namespace Aloha
         /// <returns>
         /// True if floats are Equals; otherwise, false.
         /// </returns>
-        public static bool IsEqualFloat(float a, float b, float epsilon = 0.01f)
+        public static bool EqualFloat(float a, float b, float epsilon = 0.01f)
         {
             return Math.Abs(a - b) <= epsilon;
         }
 
+        /// <summary>
+        /// TODO 
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns>
+        /// A random int value between min and max.
+        /// </returns>
+        public static int RandomInt(int min, int max)
+        {
+            int val = random.Next(min, max);
+            return val;
+        }
+
+        /// <summary>
+        /// TODO 
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="min"></param>
+        /// <param name="max"></param>
+        /// <returns>
+        /// A random float value between min and max.
+        /// </returns>
+        public static float RandomFloat(float min, float max)
+        {
+            double val = (random.NextDouble() * (max - min) + min);
+            return (float) val;
+        }
+      
         /// <summary>
         /// This function clamp a int value between a min and a max. 
         /// <example> Example(s):

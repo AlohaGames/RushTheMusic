@@ -11,129 +11,286 @@ using Aloha.Events;
 namespace Aloha.Test
 {
     /// <summary>
-    /// This class test the ScoreManager class functions.
+    /// This class tests the ScoreManager class functions.
     /// </summary>
     public class ScoreTest
     {
-        //TODO: refaire tous les tests
-        /*
-        [UnityTest]
-        public IEnumerator ScoreHeroHitTest()
+        /// <summary>
+        /// This function creates level mappings / 
+        /// Utilities method, it's not a test
+        /// </summary>
+        LevelMapping[] GetLevelMapping()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            LevelManager instanceLevelManager = LevelManager.Instance;
-            //Create enemies
+            //Create enemy stats for the enemy mapping
             Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.attack = 10;
-            enemyStats.defense = 10;
-            enemyStats.maxHealth = 10;
-            enemyStats.level = 2;
+            enemyStats.attack = 1;
+            enemyStats.defense = 0;
+            enemyStats.maxHealth = 1;
+            enemyStats.level = 1;
+            
+            //Create the level mapping 0 (with 4 enemies)
             EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPosition.BOT, HorizontalPosition.CENTER);
-            List<EnemyMapping> tile10Enemies = new List<EnemyMapping>();
-            tile10Enemies.Add(genericEnemy);
+            List<EnemyMapping> tile2enemies = new List<EnemyMapping>();
+            tile2enemies.Add(genericEnemy);
+            tile2enemies.Add(genericEnemy);
+            tile2enemies.Add(genericEnemy);
+            tile2enemies.Add(genericEnemy);
             SerializeDictionary<int, List<EnemyMapping>> enemies = new SerializeDictionary<int, List<EnemyMapping>>();
-            enemies.Add(10, tile10Enemies);
-            instanceLevelManager.levelMapping = new LevelMapping(enemies, 20);
+            enemies.Add(2, tile2enemies);
+            LevelMapping levelMapping0 = new LevelMapping(enemies, 10);
+
+            //Create the level mapping 1 (without enemies)
+            LevelMapping levelMapping1 = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 10);
+
+            LevelMapping[] lms = { levelMapping0, levelMapping1 };
+            return lms;
+        }
+
+        /// <summary>
+        /// This function tests the hit score calcul with enemies
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ScoreHeroHitEnemiesTest()
+        {
+            //Create instance of game manager and ScoreManager
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             ScoreManager instanceScoreManager = ScoreManager.Instance;
+
+            //Create the hero instance
+            GameObject warriorGO = new GameObject();
+            Warrior warrior = warriorGO.AddComponent<Warrior>();
+            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.maxRage = 10;
+            warriorStats.maxHealth = 10;
+            warriorStats.attack = 1;
+            warriorStats.defense = 0;
+            warriorStats.xp = 0;
+            warrior.Init(warriorStats);
+
+            //Create the level mapping with 4 enemies
+            LevelMapping levelMapping = GetLevelMapping()[0];
+            LevelManager.Instance.levelMapping = levelMapping;
+
+            yield return null;
+            
+            //Call the HeroTakeDamage event
+            warrior.TakeDamage(0);
+
+            //Test hit score and total score
+            Assert.AreEqual(50, instanceScoreManager.HitScore);
+            Assert.AreEqual(-50, instanceScoreManager.TotalScore);
 
             yield return null;
 
-            instanceScoreManager.CountHeroHit();
-            Assert.AreEqual(1, instanceScoreManager.TakeHitCounter);
-
-            GlobalEvent.HeroTakeDamage.Invoke();
-            Assert.AreEqual(2, instanceScoreManager.TakeHitCounter);
-            Assert.AreEqual(40, instanceScoreManager.ScoreHit());
-
-            for (int i = 0; i < 5; i++)
+            //Test hit score and total score
+            for(int i = 0; i < 6; i++)
             {
-                instanceScoreManager.CountHeroHit();
+                warrior.TakeDamage(0);
             }
-            Assert.AreEqual(100, instanceScoreManager.ScoreHit());
-            instanceScoreManager.CalculateTotalScore();
-            Assert.AreEqual(500, instanceScoreManager.TotalScore);
+            Assert.AreEqual(100, instanceScoreManager.HitScore);
+            Assert.AreEqual(-100, instanceScoreManager.TotalScore);
 
-            GameObject.DestroyImmediate(manager);
+            //Destroy GameObjects
+            GameObject.Destroy(warriorGO);
+            GameObject.Destroy(manager);
         }
 
-        [Test]
-        public void ScoreHeroHitThrowErrorTest()
+        /// <summary>
+        /// This function tests the hit score calcul without enemies
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ScoreHeroHitWithoutEnemiesTest()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
+            //Create instance of game manager and ScoreManager
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             ScoreManager instanceScoreManager = ScoreManager.Instance;
 
-            Assert.Catch<IndexOutOfRangeException>(() => instanceScoreManager.ScoreHit());
-            Assert.Catch<IndexOutOfRangeException>(() => instanceScoreManager.CalculateTotalScore());
+            //Create the hero instance
+            GameObject warriorGO = new GameObject();
+            Warrior warrior = warriorGO.AddComponent<Warrior>();
+            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.maxRage = 10;
+            warriorStats.maxHealth = 10;
+            warriorStats.attack = 1;
+            warriorStats.defense = 0;
+            warriorStats.xp = 0;
+            warrior.Init(warriorStats);
 
-            GameObject.DestroyImmediate(manager);
+            //Create the level mapping without enemies
+            LevelMapping levelMapping = GetLevelMapping()[1];
+            LevelManager.Instance.levelMapping = levelMapping;
+
+            yield return null;
+            
+            //Call the HeroTakeDamage event
+            warrior.TakeDamage(0);
+
+            //Test hit score and total score
+            Assert.AreEqual(0, instanceScoreManager.HitScore);
+            Assert.AreEqual(0, instanceScoreManager.TotalScore);
+
+            yield return null;
+
+            //Test hit score and total score
+            for(int i = 0; i < 6; i++)
+            {
+                warrior.TakeDamage(0);
+            }
+            Assert.AreEqual(0, instanceScoreManager.HitScore);
+            Assert.AreEqual(0, instanceScoreManager.TotalScore);
+
+            //Destroy GameObjects
+            GameObject.Destroy(warriorGO);
+            GameObject.Destroy(manager);
         }
 
-        [Test]
-        public void ScoreKillCount()
+        /// <summary>
+        /// This function tests the kill score calcul with 4 enemies
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ScoreKillEnemiesCount()
         {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            LevelManager instanceLevelManager = LevelManager.Instance;
-            //Create enemy list
-            Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.attack = 10;
-            enemyStats.defense = 10;
-            enemyStats.maxHealth = 10;
-            enemyStats.level = 2;
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPosition.BOT, HorizontalPosition.CENTER);
-            List<EnemyMapping> tile10Enemies = new List<EnemyMapping>();
-            tile10Enemies.Add(genericEnemy);
-            SerializeDictionary<int, List<EnemyMapping>> enemies = new SerializeDictionary<int, List<EnemyMapping>>();
-            enemies.Add(10, tile10Enemies);
-            instanceLevelManager.levelMapping = new LevelMapping(enemies, 20);
-
-            Debug.Log("Number of enemies: " + instanceLevelManager.levelMapping.GetEnemyNumber());
-
-            GameObject.DestroyImmediate(manager);
-        }
-
-        [Test]
-        public void ScoreDistanceTest()
-        {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            LevelManager instanceLevelManager = LevelManager.Instance;
-            instanceLevelManager.levelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 20);
+            //Create game instance and ScoreManager instance
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             ScoreManager instanceScoreManager = ScoreManager.Instance;
+
+            //Create the hero instance
+            GameObject warriorGO = new GameObject();
+            Warrior warrior = warriorGO.AddComponent<Warrior>();
+            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.maxRage = 10;
+            warriorStats.maxHealth = 10;
+            warriorStats.attack = 1;
+            warriorStats.defense = 0;
+            warriorStats.xp = 0;
+            warrior.Init(warriorStats);
+
+            //Create enemy instance
+            GameObject enemyGO = new GameObject();
+            Enemy enemy = enemyGO.AddComponent<Enemy>();
+            EnemyStats enemyStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            enemyStats.maxHealth = 1;
+            enemy.Init(enemyStats);
+
+            //Create the level mapping with 4 enemies
+            LevelMapping levelMapping = GetLevelMapping()[0];
+            LevelManager.Instance.levelMapping = levelMapping;
+
+            yield return null;
+
+            //Kill 1 enemy
+            instanceScoreManager.DeathCount(enemy);
+            Assert.AreEqual(75, instanceScoreManager.EnemyKilledScore);
+            Assert.AreEqual(75, instanceScoreManager.TotalScore);
+
+            yield return null;
+
+            //Kill many enemies
+            for(int i = 0; i < 6; i++)
+            {
+                instanceScoreManager.DeathCount(enemy);
+            }
+            Assert.AreEqual(300, instanceScoreManager.EnemyKilledScore);
+            Assert.AreEqual(300, instanceScoreManager.TotalScore);
+
+            //Destroy GameObjects
+            GameObject.Destroy(enemyGO);
+            GameObject.Destroy(warriorGO);
+            GameObject.Destroy(manager);
+        }
+
+        /// <summary>
+        /// This function tests the kill score calcul without enemies
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ScoreKillWithoutEnemiesCount()
+        {
+            //Create game instance and ScoreManager instance
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            ScoreManager instanceScoreManager = ScoreManager.Instance;
+
+            //Create the hero instance
+            GameObject warriorGO = new GameObject();
+            Warrior warrior = warriorGO.AddComponent<Warrior>();
+            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.maxRage = 10;
+            warriorStats.maxHealth = 10;
+            warriorStats.attack = 1;
+            warriorStats.defense = 0;
+            warriorStats.xp = 0;
+            warrior.Init(warriorStats);
+
+            //Create enemy instance
+            GameObject enemyGO = new GameObject();
+            Enemy enemy = enemyGO.AddComponent<Enemy>();
+            EnemyStats enemyStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            enemyStats.maxHealth = 1;
+            enemy.Init(enemyStats);
+
+            //Create the level mapping with 4 enemies
+            LevelMapping levelMapping = GetLevelMapping()[1];
+            LevelManager.Instance.levelMapping = levelMapping;
+
+            yield return null;
+
+            //Kill 1 enemy
+            instanceScoreManager.DeathCount(enemy);
+            Assert.AreEqual(0, instanceScoreManager.EnemyKilledScore);
+            Assert.AreEqual(0, instanceScoreManager.TotalScore);
+
+            yield return null;
+
+            //Kill many enemies
+            for(int i = 0; i < 6; i++)
+            {
+                instanceScoreManager.DeathCount(enemy);
+            }
+            Assert.AreEqual(0, instanceScoreManager.EnemyKilledScore);
+            Assert.AreEqual(0, instanceScoreManager.TotalScore);
+
+            //Destroy GameObjects
+            GameObject.Destroy(enemyGO);
+            GameObject.Destroy(warriorGO);
+            GameObject.Destroy(manager);
+        }
+
+        /// <summary>
+        /// This function tests the distance score calcul with tiles
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ScoreDistanceTest()
+        {
+            //Create game instance and ScoreManager instance
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            ScoreManager instanceScoreManager = ScoreManager.Instance;
+
+            //Create tile object
             GameObject tile = new GameObject();
 
-            Assert.AreEqual(20, instanceLevelManager.levelMapping.tileCount);
+            //Create the level mapping with 4 enemies
+            LevelMapping levelMapping = GetLevelMapping()[1];
+            LevelManager.Instance.levelMapping = levelMapping;
 
+            yield return null;
+
+            //Passing a tile
             instanceScoreManager.TilesCount(tile);
-            Assert.AreEqual(1, instanceScoreManager.TilesCounter);
+            Assert.AreEqual(60, instanceScoreManager.DistanceScore);
+            Assert.AreEqual(60, instanceScoreManager.TotalScore);
 
-            GlobalEvent.TileCount.Invoke(tile);
-            Assert.AreEqual(2, instanceScoreManager.TilesCounter);
-            Assert.AreEqual(60, instanceScoreManager.ScoreDistance());
+            yield return null;
 
-            for (int i = 0; i < 20; i++)
+            //Passing many tile
+            for(int i = 0; i < 11; i++)
             {
-                GlobalEvent.TileCount.Invoke(tile);
+                instanceScoreManager.TilesCount(tile);
             }
-            Assert.AreEqual(600, instanceScoreManager.ScoreDistance());
-            instanceScoreManager.CalculateTotalScore();
+            Assert.AreEqual(600, instanceScoreManager.DistanceScore);
             Assert.AreEqual(600, instanceScoreManager.TotalScore);
 
-            GameObject.DestroyImmediate(tile);
-            GameObject.DestroyImmediate(manager);
+            //Destroy GameObjects
+            GameObject.Destroy(tile);
+            GameObject.Destroy(manager);
         }
-
-        [Test]
-        public void ScoreDistanceThrowErrorTest()
-        {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GlobalManager"));
-            LevelManager instanceLevelManager = LevelManager.Instance;
-            instanceLevelManager.levelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), -1);
-            ScoreManager instanceScoreManager = ScoreManager.Instance;
-
-            Assert.Catch<IndexOutOfRangeException>(() => instanceScoreManager.ScoreDistance());
-            Assert.Catch<IndexOutOfRangeException>(() => instanceScoreManager.CalculateTotalScore());
-
-            GameObject.DestroyImmediate(manager);
-        }
-        */
     }
 }

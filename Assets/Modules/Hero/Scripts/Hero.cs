@@ -21,8 +21,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        public new virtual HeroStats GetStats() 
-        {
+        public new virtual HeroStats GetStats() {
             return this.stats as HeroStats;
         }
 
@@ -51,7 +50,7 @@ namespace Aloha
         public override void Init(Stats stats)
         {
             base.Init(stats);
-            GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, stats.MaxHealth);
+            GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, stats.maxHealth);
         }
 
         /// <summary>
@@ -65,7 +64,7 @@ namespace Aloha
         /// <param name="xp"></param>
         public void LevelUp(int xp = 1)
         {
-            this.GetStats().XP += xp;
+            this.GetStats().xp += xp;
         }
 
         /// <summary>
@@ -83,7 +82,27 @@ namespace Aloha
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
-            GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
+            GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
+        }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
+        public override void Regeneration(int gain)
+        {
+            this.currentHealth += gain;
+            if (this.currentHealth > this.GetStats().maxHealth)
+            {
+                this.currentHealth = this.GetStats().maxHealth;
+            }
         }
 
         /// <summary>
@@ -100,7 +119,7 @@ namespace Aloha
         public float CalculateDamageReduction()
         {
             float damageReduction;
-            return damageReduction = (this.stats.Defense / (this.stats.Defense + 20));
+            return damageReduction = (this.stats.defense / (this.stats.defense + 20));
         }
 
         /// <summary>
@@ -125,7 +144,10 @@ namespace Aloha
     {
         protected T heroStats
         {
-            get { return this.stats as T; }
+            get
+            {
+                return this.stats as T;
+            }
         }
 
         /// <summary>

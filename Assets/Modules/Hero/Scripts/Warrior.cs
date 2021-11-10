@@ -1,4 +1,5 @@
 using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -7,8 +8,14 @@ namespace Aloha
     /// </summary>
     public class Warrior : Hero<WarriorStats>
     {
+        //TODO: Ajouter une fonction de parade
         private const float REGENERATION_POURCENT = 0.2f;
         public int CurrentRage;
+
+        public override void Init()
+        {
+            this.Init(this.heroStats);
+        }
 
         /// <summary>
         /// TODO
@@ -18,11 +25,11 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="stats"></param>
         public void Init(WarriorStats stats)
         {
             base.Init(stats);
             this.CurrentRage = 0;
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
 
         /// <summary>
@@ -40,8 +47,8 @@ namespace Aloha
         /// </returns>
         public void BumpEntity(Entity entity, float speed)
         {
-            Vector3 direction = new Vector3(0, 0, 2);
-            StartCoroutine(entity.GetBump(direction, speed));
+            Vector3 direction = new Vector3(0, 0, 2 * speed);
+            StartCoroutine(entity.GetBump(direction, 2f));
         }
 
         /// <summary>
@@ -53,9 +60,11 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <param name="damage"></param>
-        public override void TakeDamage(int damage){
+        public override void TakeDamage(int damage)
+        {
             base.TakeDamage(damage);
             CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
 
         /// <summary>
@@ -75,10 +84,12 @@ namespace Aloha
                 damage = entityStats.MaxHealth;
                 entity.TakeDamage(damage);
                 CurrentRage = 0;
-            }else{
+            }else
+            {
                 damage = heroStats.Attack;
                 entity.TakeDamage(damage);
                 CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
+                GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
             }
         }
     }
