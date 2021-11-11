@@ -8,6 +8,13 @@ namespace Aloha
 {
     public class Lancer : Enemy<LancerStats> {
 
+        private Animator anim;
+
+        private void Start()
+        {
+            anim = GetComponent<Animator>();
+        }
+
         protected override IEnumerator AI()
         {
             int rand = Utils.RandomInt(1, 4);
@@ -20,6 +27,9 @@ namespace Aloha
 
         protected IEnumerator AttackAnimation(float speed)
         {
+            // Start animation
+            anim.SetBool("isAttacking", true);
+
             yield return StartCoroutine(GetBump(new Vector3(0, 0, 1f), 3f));
             yield return new WaitForSeconds(0.2f);
 

@@ -16,6 +16,7 @@ namespace Aloha
             return this.enemyStats;
         }
     }
+    
     public class Enemy : Entity
     {
         [SerializeField] private bool noAI = false;
@@ -90,5 +91,6 @@ namespace Aloha
         {
             this.dieEvent.RemoveListener(Disappear);
         }
+
     }
 }
