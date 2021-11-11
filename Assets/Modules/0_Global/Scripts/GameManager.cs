@@ -75,7 +75,7 @@ namespace Aloha
         /// Will return if the game is plaing or stopped
         /// </summary>
         /// <returns>The variable of isPlaying</returns>
-        public bool getIsPlaying()
+        public bool GetIsPlaying()
         {
             return this.isPlaying;
         }
@@ -84,7 +84,7 @@ namespace Aloha
         /// Will set if the game if playing or not (for the game over)
         /// </summary>
         /// <param bool="isPlaying">The new value of isPlaying</param>
-        public void setIsPlaying(bool isPlaying)
+        public void SetIsPlaying(bool isPlaying)
         {
             this.isPlaying = isPlaying;
         }
