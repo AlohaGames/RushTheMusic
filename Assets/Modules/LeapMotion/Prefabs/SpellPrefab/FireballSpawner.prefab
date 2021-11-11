@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb1d87b210f2e76449daff1992cb29f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wizard: {fileID: 0}
+  Wizard: {fileID: 0}
   fireballPrefab: {fileID: 5125899814957169845, guid: 90dbd56bdfe268946baf82b6b537370c, type: 3}
 --- !u!1 &3790341814358843944
 GameObject:
@@ -64,7 +64,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9135294534400280613
 Transform:
   m_ObjectHideFlags: 0

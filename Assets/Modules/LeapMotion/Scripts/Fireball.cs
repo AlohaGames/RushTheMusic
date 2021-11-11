@@ -10,7 +10,7 @@ namespace Aloha {
 
         public void Launch()
         {
-            GetComponent<Rigidbody>().AddForce(transform.forward * 3, ForceMode.Impulse);
+            GetComponent<Rigidbody>().AddForce(transform.forward * 5, ForceMode.Impulse);
             transform.parent = null;
             Destroy(gameObject, 3f);
         }

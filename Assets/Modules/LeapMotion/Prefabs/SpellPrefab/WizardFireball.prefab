@@ -9620,7 +9620,7 @@ GameObject:
   - component: {fileID: 5125899814957169845}
   - component: {fileID: 8719845446716601854}
   m_Layer: 0
-  m_Name: Fireball
+  m_Name: WizardFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

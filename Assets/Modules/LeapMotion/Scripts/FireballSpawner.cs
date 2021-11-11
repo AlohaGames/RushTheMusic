@@ -30,9 +30,9 @@ namespace Aloha
 
                     fireball.transform.parent = transform;
                     fireball.transform.localPosition = fireballPos;
-                    if (fireballPower != Wizard.attack)
+                    if (fireballPower != Wizard.GetStats().attack)
                     {
-                        float size = (float) fireballPower / Wizard.attack;
+                        float size = (float) fireballPower / Wizard.GetStats().attack;
                         Vector3 defaultScale = fireball.transform.localScale;
                         fireball.transform.localScale = new Vector3(defaultScale.x * size, defaultScale.y * size, defaultScale.z * size);
                     }

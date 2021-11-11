@@ -1,17 +1,27 @@
 using UnityEngine;
-using Leap;
-
+using System.Collections;
+using Aloha.Events;
 
 namespace Aloha
 {
-    public class Wizard : Hero<WarriorStats>
+    public class Wizard : Hero<WizardStats>
     {
         public int CurrentMana;
 
+        public override void Init()
+        {
+            this.Init(this.heroStats);
+        }
         public void Init(WizardStats stats)
         {
             base.Init(stats);
-            this.CurrentMana = stats.maxMana;
+            this.CurrentMana = this.heroStats.maxMana;
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.maxMana);
+        }
+
+        private void Start()
+        {
+            StartCoroutine(RegainManaOverTime());
         }
 
         public void BumpEntity(Entity entity)
@@ -27,14 +37,25 @@ namespace Aloha
 
             if (this.CurrentMana >= manaToUse)
             {
-                power = this.attack;
+                power = this.heroStats.attack;
                 this.CurrentMana -= manaToUse;
             } else
             {
-                power = this.attack * this.CurrentMana / manaToUse;
+                power = this.heroStats.attack * this.CurrentMana / manaToUse;
                 this.CurrentMana = 0;
             }
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.maxMana);
             return power;
+        }
+
+        private IEnumerator RegainManaOverTime()
+        {
+            while (true)
+            {
+                if (this.CurrentMana < this.heroStats.maxMana) this.CurrentMana += 10;
+                GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.maxMana);
+                yield return new WaitForSeconds(0.1f);
+            }
         }
     }
 }
