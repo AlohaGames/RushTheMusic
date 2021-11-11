@@ -12,6 +12,9 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator PauseMenuTestWithEnumeratorPasses()
         {
+
+            GameManager.Instance.setIsPlaying(true);
+
             GameObject pause = new GameObject();
             pause.AddComponent<PauseMenu>();
 
