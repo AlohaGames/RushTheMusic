@@ -16,11 +16,8 @@ namespace Aloha.Test
             pause.AddComponent<PauseMenu>();
 
             GameObject child = new GameObject();
-
             child.SetActive(false);
-
             child.transform.SetParent(pause.transform);
-
             pause.GetComponent<PauseMenu>().MenuPauseUI = child;
 
             // Use the Assert class to test conditions.
@@ -28,35 +25,27 @@ namespace Aloha.Test
             yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
-
             pause.GetComponent<PauseMenu>().PauseGame();
 
             // skip one frame
             yield return null;
-            yield return null;
-            yield return null;
 
-            Assert.IsTrue(Time.timeScale == 0f);
+            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.AreEqual(0f, Time.timeScale);
             Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(pause.GetComponent<PauseMenu>().isGamePaused);
-
-            yield return null;
-            yield return null;
+            
             yield return null;
 
             pause.GetComponent<PauseMenu>().Resume();
 
-            yield return null;
-            yield return null;
             yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(child.activeSelf);
             Assert.IsFalse(pause.GetComponent<PauseMenu>().isGamePaused);
 
+            GameObject.Destroy(child);
             GameObject.Destroy(pause);
-
-
         }
     }
 }

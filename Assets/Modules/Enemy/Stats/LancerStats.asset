@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: LancerStats
   m_EditorClassIdentifier: 
   maxHealth: 30
-  attack: 300
+  attack: 1500
   defense: 0
   level: 0
