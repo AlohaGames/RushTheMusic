@@ -8,7 +8,6 @@ namespace Aloha
     public abstract class Entity : MonoBehaviour
     {
         public int currentHealth;
-        public int attack;
         [SerializeField]
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
@@ -44,6 +43,15 @@ namespace Aloha
             if (currentHealth <= 0)
             {
                 Die();
+            }
+        }
+
+        public virtual void Regeneration(int gain)
+        {
+            this.currentHealth += gain;
+            if (currentHealth > GetStats().maxHealth)
+            {
+                currentHealth = GetStats().maxHealth;
             }
         }
 
