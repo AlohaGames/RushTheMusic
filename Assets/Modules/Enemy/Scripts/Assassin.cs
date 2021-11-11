@@ -9,10 +9,12 @@ namespace Aloha
     public class Assassin : Enemy<AssassinStats> 
     {
         private Hero hero;
+        private Animator anim;
 
         private void Start()
         {
             hero = GameManager.Instance.GetHero();
+            anim = GetComponent<Animator>();
         }
         protected override IEnumerator AI()
         {
@@ -47,6 +49,8 @@ namespace Aloha
 
         protected IEnumerator Concentration(float speed)
         {
+            anim.SetBool("isAttacking", true);
+
             yield return new WaitForSeconds(0.8f);
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;

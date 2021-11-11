@@ -8,6 +8,7 @@ namespace Aloha
         private Vector3 presPos;
         private Vector3 newPos;
         public float speed;
+        [SerializeField] float minimumSpeedToProtect = 0.1f;
 
         private void Start()
         {
@@ -26,7 +27,7 @@ namespace Aloha
         // If the Shield touch an Object
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy")
+            if (collider.tag == "Enemy" && speed > minimumSpeedToProtect)
             {
                 // Change minimum speed if actual speed is to low
                 if (speed < 1) speed = 1f;

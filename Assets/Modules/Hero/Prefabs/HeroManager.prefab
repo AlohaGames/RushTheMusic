@@ -46,3 +46,4 @@ MonoBehaviour:
   HeroPrefabs:
   - {fileID: 4699346524476617420, guid: 3f6d5934a7d408f42b9f4979aee669f5, type: 3}
   - {fileID: 233837242132810035, guid: 9e824f1f643a1fe3cbfce8c4ab54cb50, type: 3}
+  - {fileID: 7739070875613929284, guid: cf8fdbb38b8194a4f80b8dfd2422448f, type: 3}
