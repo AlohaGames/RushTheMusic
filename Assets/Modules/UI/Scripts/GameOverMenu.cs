@@ -19,7 +19,7 @@ namespace Aloha
             // Put the timeScale to 0, active my UI And stop the game
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
-            GameManager.Instance.setIsPlaying(false);
+            GameManager.Instance.SetIsPlaying(false);
         }
 
         public void OnDestroy()
