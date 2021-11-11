@@ -11,7 +11,7 @@ namespace Aloha
 
         public GameObject GameOverUI;
 
-        private void Awake()
+        void Awake()
         {
             GlobalEvent.GameOver.AddListener(ShowGameOverUI);
         }

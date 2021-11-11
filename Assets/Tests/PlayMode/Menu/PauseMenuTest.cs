@@ -13,7 +13,6 @@ namespace Aloha.Test
         public IEnumerator PauseMenuTestWithEnumeratorPasses()
         {
 
-            GameManager.Instance.setIsPlaying(true);
 
             GameObject pause = new GameObject();
             pause.AddComponent<PauseMenu>();
@@ -32,33 +31,31 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale != 0f);
 
+            
             pause.GetComponent<PauseMenu>().PauseGame();
 
             // skip one frame
             yield return null;
-            yield return null;
-            yield return null;
 
-            Assert.IsTrue(Time.timeScale == 0f);
+            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.AreEqual(0f, Time.timeScale);
             Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(pause.GetComponent<PauseMenu>().isGamePaused);
+            
 
             yield return null;
-            yield return null;
-            yield return null;
+
 
             pause.GetComponent<PauseMenu>().Resume();
 
-            yield return null;
-            yield return null;
             yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(child.activeSelf);
             Assert.IsFalse(pause.GetComponent<PauseMenu>().isGamePaused);
 
-            GameObject.Destroy(pause);
 
+            GameObject.Destroy(child);
+            GameObject.Destroy(pause);
 
         }
     }
