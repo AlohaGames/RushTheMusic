@@ -17,9 +17,7 @@ namespace Aloha
         // Start is called before the first frame update
         void Start()
         {
-            // TODO Change this
-            //wizard = GameManager.Instance.GetHero() as Wizard;
-            Wizard = FindObjectOfType<Wizard>();
+            Wizard = GameManager.Instance.GetHero() as Wizard;
 
             preparingPortal = false;
             targetPreview = this.gameObject.AddComponent<LineRenderer>();

@@ -12,9 +12,7 @@ namespace Aloha
 
         private void Start()
         {
-            // TODO Change this
-            //wizard = GameManager.Instance.GetHero() as Wizard;
-            Wizard = FindObjectOfType<Wizard>();
+            Wizard = GameManager.Instance.GetHero() as Wizard;
         }
 
         public void SpawnFireball()

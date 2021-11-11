@@ -15,7 +15,7 @@ namespace Aloha {
             Destroy(gameObject, 3f);
         }
 
-        // If the Sword touch an Object
+        // If the fireball touch an Object
         public void OnTriggerEnter(Collider collider)
         {
             if (collider.tag == "Enemy")
