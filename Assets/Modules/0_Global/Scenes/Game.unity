@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -990,6 +990,18 @@ PrefabInstance:
       propertyPath: color.r
       value: 0.12945181
       objectReference: {fileID: 0}
+    - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5173377384098035563, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
+    - target: {fileID: 358888285101375096, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6271879739019853481, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
     - target: {fileID: 426884401804605717, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1186,6 +1198,38 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: castleHill
+      value: 
+      objectReference: {fileID: 8218562279950525143, guid: acb766cbac451b9429394615accae5e5, type: 3}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.data[0]
+      value: 
+      objectReference: {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.data[1]
+      value: 
+      objectReference: {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.data[2]
+      value: 
+      objectReference: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.data[3]
+      value: 
+      objectReference: {fileID: 3956575534912789157, guid: 5b0f3c2a02f86f24d8e23927b72db722, type: 3}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.data[4]
+      value: 
+      objectReference: {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: sideEnvironmentPrefab.Array.data[5]
+      value: 
+      objectReference: {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
     - target: {fileID: 4170747103907095009, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_Color.b
       value: 1
