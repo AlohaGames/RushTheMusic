@@ -23,7 +23,7 @@ namespace Aloha.Test
         }
 
         // This test checks that a new tile appears and the first one is destroy when tiles move
-        [UnityTest]
+        /*[UnityTest]
         public IEnumerator TileAutomaticallyAppearsAndDestroyed()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
@@ -50,7 +50,8 @@ namespace Aloha.Test
             Object.Destroy(manager);
             yield return null;
 
-        }
+        }*/
+        
 
         // This Test checks if the game is correctly instanced and destroyed when it's start and stop
         [UnityTest]
