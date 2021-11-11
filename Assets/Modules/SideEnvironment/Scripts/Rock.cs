@@ -8,8 +8,7 @@ namespace Aloha
     {
         public override void Initialize()
         {
-            height = 1;
+            Height = 1;
         }
     }
-
 }

@@ -7,7 +7,7 @@ namespace Aloha
 
     public abstract class SideEnvironment : MonoBehaviour
     {
-        public float height;
+        public float Height;
 
         public abstract void Initialize();
     }
