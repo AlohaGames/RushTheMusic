@@ -6,6 +6,5 @@ namespace Aloha
     public class WarriorStats : HeroStats
     {
         public int maxRage;
-
     }
 }
