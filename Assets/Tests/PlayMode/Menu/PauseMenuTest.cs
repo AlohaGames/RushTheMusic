@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your FUNCKING TEST (like youyou in 17-Add-Lancer-Prefab tests of lancer)
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {

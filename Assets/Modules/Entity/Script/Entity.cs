@@ -10,9 +10,6 @@ namespace Aloha
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
-        [SerializeField]
-        protected Stats stats;
-
         protected UnityEvent dieEvent = new UnityEvent();
 
         [SerializeField]
@@ -117,10 +114,10 @@ namespace Aloha
         /// <param name="gain"></param>
         public virtual void Regeneration(int gain)
         {
-            this.currentHealth += gain;
-            if (currentHealth > GetStats().maxHealth)
+            this.CurrentHealth += gain;
+            if (CurrentHealth > GetStats().MaxHealth)
             {
-                currentHealth = GetStats().maxHealth;
+                CurrentHealth = GetStats().MaxHealth;
             }
         }
 
@@ -147,7 +144,6 @@ namespace Aloha
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
-
             gameObject.transform.position = posFinal;
         }
 

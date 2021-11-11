@@ -22,16 +22,8 @@ namespace Aloha
         [HideInInspector] 
         public bool GameIsStarted;
 
-        
-        
-
         /// <summary>
         /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
         /// </summary>
         void Start()
         {
@@ -124,7 +116,6 @@ namespace Aloha
                 SpawnTileAt(tileIndex, 0);
                 return;
             }
-
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);

@@ -18,7 +18,12 @@ namespace Aloha
         public Text HitScoreText;
 
         /// <summary>
-        /// This function shows the UI score elements in game.
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
         /// </summary>
         public void ShowInGameUIScoreElements()
         {
@@ -27,7 +32,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// This function updates UI score in game.
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
         /// </summary>
         public void UpdateUIText()
         {
@@ -35,7 +45,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// This function shows IU score elements at end game.
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
         /// </summary>
         public void ShowEndGameUIScoreElements()
         {

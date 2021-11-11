@@ -37,7 +37,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Counts the number of times the hero is hit
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
         /// </summary>
         public void CountHeroHit()
         {
@@ -46,7 +51,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Count the enemies killed
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
         /// </summary>
         public void DeathCount(Entity entity)
         {
@@ -55,7 +65,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Count the tiles passed
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
         /// </summary>
         public void TilesCount(GameObject tile)
         {
@@ -91,14 +106,13 @@ namespace Aloha
             if (maxHit > 0)
             {
                 int heroTakeHit = TakeHitCounter.Clamp(0, maxHit);
-                HitScore = (int) CalculateScore(MAX_SCORE, HIT_PERCENT, (float)maxHit, heroTakeHit);
+                HitScore = (int)CalculateScore(MAX_SCORE, HIT_PERCENT, (float)maxHit, heroTakeHit);
             }
             else if (maxHit == 0)
             {
                 HitScore = 0;
             }
             CalculateTotalScore();
-
         }
 
         /// <summary>
@@ -115,7 +129,7 @@ namespace Aloha
             if (maxEnemy > 0)
             {
                 int killEnemy = KillCounter.Clamp(0, maxEnemy);
-                EnemyKilledScore = (int) CalculateScore(MAX_SCORE, KILL_PERCENT, (float)maxEnemy, killEnemy);
+                EnemyKilledScore = (int)CalculateScore(MAX_SCORE, KILL_PERCENT, (float)maxEnemy, killEnemy);
             }
             else if (maxEnemy == 0)
             {
@@ -138,7 +152,7 @@ namespace Aloha
             if (maxTiles > 0)
             {
                 int tiles = TilesCounter.Clamp(0, maxTiles);
-                DistanceScore = (int) CalculateScore(MAX_SCORE, DISTANCE_PERCENT, (float)maxTiles, tiles);
+                DistanceScore = (int)CalculateScore(MAX_SCORE, DISTANCE_PERCENT, (float)maxTiles, tiles);
             }
             else if (maxTiles == 0)
             {

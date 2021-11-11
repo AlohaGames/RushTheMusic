@@ -16,7 +16,7 @@ namespace Aloha
     public class LevelManager : Singleton<LevelManager>
     {
         [SerializeField] 
-        private string Filename = "";
+        private string filename = "";
 
         public LevelMapping LevelMapping;
         public AudioClip LevelMusic;
@@ -63,7 +63,7 @@ namespace Aloha
         /// </summary>
         public void Save()
         {
-            this.Save(this.LevelMapping, this.Filename);
+            this.Save(this.LevelMapping, this.filename);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Aloha
         /// </summary>
         public void Load()
         {
-            Load(this.Filename);
+            Load(this.filename);
         }
 
         /// <summary>

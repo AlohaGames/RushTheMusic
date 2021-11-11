@@ -14,7 +14,7 @@ namespace Aloha
             enemyStats.MaxHealth = 10;
             enemyStats.Level = 2;
 
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPosition.BOT, HorizontalPosition.CENTER);
+            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
 
             List<EnemyMapping> tile10Enemies = new List<EnemyMapping>();
             tile10Enemies.Add(genericEnemy);

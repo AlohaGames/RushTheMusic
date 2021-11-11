@@ -47,9 +47,11 @@ namespace Aloha
         {
             return InstantiateEnemy((int) type);
         }
-
-
     }
+
+    /// <summary>
+    /// TODO
+    /// </summary>
     public enum EnemyType
     {
         generic = 0,

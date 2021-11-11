@@ -26,7 +26,7 @@ namespace Aloha
         /// <returns>
         /// True if floats are Equals; otherwise, false.
         /// </returns>
-        public static bool EqualFloat(float a, float b, float epsilon = 0.01f)
+        public static bool IsEqualFloat(float a, float b, float epsilon = 0.01f)
         {
             return Math.Abs(a - b) <= epsilon;
         }

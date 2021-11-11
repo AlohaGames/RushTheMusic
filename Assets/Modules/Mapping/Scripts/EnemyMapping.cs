@@ -7,10 +7,10 @@ namespace Aloha
     /// </summary>
     public class EnemyMapping
     {
-        public EnemyType enemyType;
-        public Stats stats;
-        public VerticalPosition verticalPosition;
-        public HorizontalPosition horizontalPosition;
+        public EnemyType EnemyType;
+        public Stats Stats;
+        public VerticalPositionEnum VerticalPosition;
+        public HorizontalPositionEnum HorizontalPosition;
 
         /// <summary>
         /// TODO
@@ -27,8 +27,8 @@ namespace Aloha
             stats.Defense = 0;
             stats.Level = 0;
             stats.MaxHealth = 0;
-            VerticalPosition vpos = VerticalPosition.BOT;
-            HorizontalPosition hpos = HorizontalPosition.CENTER;
+            VerticalPositionEnum vpos = VerticalPositionEnum.BOT;
+            HorizontalPositionEnum hpos = HorizontalPositionEnum.CENTER;
             Initialize(EnemyType.generic, stats, vpos, hpos);
         }
 
@@ -40,7 +40,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public EnemyMapping(EnemyType enemyType, Stats stats, VerticalPosition verticalPosition, HorizontalPosition horizontalPosition)
+        public EnemyMapping(EnemyType enemyType, Stats stats, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition)
         {
             Initialize(enemyType, stats, verticalPosition, horizontalPosition);
         }
@@ -53,12 +53,12 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void Initialize(EnemyType enemyType, Stats stats, VerticalPosition verticalPosition, HorizontalPosition horizontalPosition)
+        public void Initialize(EnemyType enemyType, Stats stats, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition)
         {
-            this.enemyType = enemyType;
-            this.verticalPosition = verticalPosition;
-            this.horizontalPosition = horizontalPosition;
-            this.stats = stats;
+            this.EnemyType = enemyType;
+            this.VerticalPosition = verticalPosition;
+            this.HorizontalPosition = horizontalPosition;
+            this.Stats = stats;
         }
 
         /// <summary>
@@ -78,28 +78,28 @@ namespace Aloha
             float x = 0;
             float y = 0;
 
-            switch (this.verticalPosition)
+            switch (this.VerticalPosition)
             {
-                case VerticalPosition.TOP:
+                case VerticalPositionEnum.TOP:
                     y = 2f;
                     break;
-                case VerticalPosition.MIDDLE:
+                case VerticalPositionEnum.MIDDLE:
                     y = 1f;
                     break;
-                case VerticalPosition.BOT:
+                case VerticalPositionEnum.BOT:
                     y = 0f;
                     break;
             }
 
-            switch (this.horizontalPosition)
+            switch (this.HorizontalPosition)
             {
-                case HorizontalPosition.LEFT:
+                case HorizontalPositionEnum.LEFT:
                     x = -1.5f;
                     break;
-                case HorizontalPosition.CENTER:
+                case HorizontalPositionEnum.CENTER:
                     x = 0f;
                     break;
-                case HorizontalPosition.RIGHT:
+                case HorizontalPositionEnum.RIGHT:
                     x = 1.5f;
                     break;
             }
@@ -108,12 +108,12 @@ namespace Aloha
         }
     }
 
-    public enum VerticalPosition
+    public enum VerticalPositionEnum
     {
         TOP = 0, MIDDLE = 1, BOT = 2
     }
 
-    public enum HorizontalPosition
+    public enum HorizontalPositionEnum
     {
         LEFT = 0, CENTER = 1, RIGHT = 2
     }

@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-//TODO: explain your FUNCKING TEST (like youyou in 17-Add-Lancer-Prefab tests of lancer)
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -22,7 +22,7 @@ namespace Aloha.Test
             stats.Defense = 6;
             stats.Level = 1;
             stats.MaxHealth = 150;
-            EnemyMapping em1 = new EnemyMapping(EnemyType.generic, stats, VerticalPosition.TOP, HorizontalPosition.RIGHT);
+            EnemyMapping em1 = new EnemyMapping(EnemyType.generic, stats, VerticalPositionEnum.TOP, HorizontalPositionEnum.RIGHT);
 
             EnemyMapping[] ems = { em0, em1 };
             return ems;
@@ -35,20 +35,20 @@ namespace Aloha.Test
         public void EnemyMappingConstructorTest()
         {
             EnemyMapping em0 = GetEnemiesMapping()[0];
-            Assert.AreEqual(0, em0.stats.Attack);
-            Assert.AreEqual(0, em0.stats.Defense);
-            Assert.AreEqual(0, em0.stats.Level);
-            Assert.AreEqual(0, em0.stats.MaxHealth);
-            Assert.AreEqual(VerticalPosition.BOT, em0.verticalPosition);
-            Assert.AreEqual(HorizontalPosition.CENTER, em0.horizontalPosition);
+            Assert.AreEqual(0, em0.Stats.Attack);
+            Assert.AreEqual(0, em0.Stats.Defense);
+            Assert.AreEqual(0, em0.Stats.Level);
+            Assert.AreEqual(0, em0.Stats.MaxHealth);
+            Assert.AreEqual(VerticalPositionEnum.BOT, em0.VerticalPosition);
+            Assert.AreEqual(HorizontalPositionEnum.CENTER, em0.HorizontalPosition);
 
             EnemyMapping em1 = GetEnemiesMapping()[1];
-            Assert.AreEqual(4, em1.stats.Attack);
-            Assert.AreEqual(6, em1.stats.Defense);
-            Assert.AreEqual(1, em1.stats.Level);
-            Assert.AreEqual(150, em1.stats.MaxHealth);
-            Assert.AreEqual(VerticalPosition.TOP, em1.verticalPosition);
-            Assert.AreEqual(HorizontalPosition.RIGHT, em1.horizontalPosition);
+            Assert.AreEqual(4, em1.Stats.Attack);
+            Assert.AreEqual(6, em1.Stats.Defense);
+            Assert.AreEqual(1, em1.Stats.Level);
+            Assert.AreEqual(150, em1.Stats.MaxHealth);
+            Assert.AreEqual(VerticalPositionEnum.TOP, em1.VerticalPosition);
+            Assert.AreEqual(HorizontalPositionEnum.RIGHT, em1.HorizontalPosition);
         }
 
         /// <summary>

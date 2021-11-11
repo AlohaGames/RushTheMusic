@@ -54,7 +54,7 @@ namespace Aloha
                 Debug.Log($"{enemyNumber} enemiesMapping found on tile {TilesCounter}");
                 foreach (EnemyMapping enemyMapping in enemiesMapping)
                 {
-                    GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.enemyType);
+                    GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.EnemyType);
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                     enemy.transform.SetParent(tile.transform);
                 }

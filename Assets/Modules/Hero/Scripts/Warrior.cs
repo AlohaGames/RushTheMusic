@@ -12,6 +12,14 @@ namespace Aloha
         private const float REGENERATION_POURCENT = 0.2f;
         public int CurrentRage;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public override void Init()
         {
             this.Init(this.heroStats);
@@ -25,6 +33,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
+        /// <param name="stats"></param>
         public void Init(WarriorStats stats)
         {
             base.Init(stats);

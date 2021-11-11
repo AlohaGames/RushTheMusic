@@ -61,6 +61,7 @@ namespace Aloha
             GlobalEvent.LoadHero.RemoveListener(InstantiateHero);
         }
     }
+
     public enum HeroType
     {
         Generic = 0,

@@ -2,14 +2,21 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 
-//TODO: explain your FUNCKING TEST (like youyou in 17-Add-Lancer-Prefab tests of lancer)
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class WarriorTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
-        public void WarriorRageTakeDamageRegenerationTest(){
+        public void WarriorRageTakeDamageRegenerationTest()
+        {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
@@ -31,8 +38,12 @@ namespace Aloha.Test
             GameObject.Destroy(warriorGO);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
-        public void WarriorRageAttackTest(){
+        public void WarriorRageAttackTest()
+        {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
@@ -54,8 +65,10 @@ namespace Aloha.Test
             warrior.Attack(enemy);
             Assert.AreEqual(2, warrior.CurrentRage);
 
-            for(int i = 0; i <= 5; i++){
-                if(enemy == null){
+            for (int i = 0; i <= 5; i++)
+            {
+                if (enemy == null)
+                {
                     Assert.LessOrEqual(warrior.CurrentRage, warrior.GetStats().MaxRage);
                     break;
                 }

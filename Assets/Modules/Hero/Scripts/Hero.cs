@@ -50,7 +50,7 @@ namespace Aloha
         public override void Init(Stats stats)
         {
             base.Init(stats);
-            GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, stats.maxHealth);
+            GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, stats.MaxHealth);
         }
 
         /// <summary>
@@ -64,7 +64,7 @@ namespace Aloha
         /// <param name="xp"></param>
         public void LevelUp(int xp = 1)
         {
-            this.GetStats().xp += xp;
+            this.GetStats().XP += xp;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Aloha
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
-            GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
+            GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
         }
 
         /// <summary>
@@ -98,10 +98,10 @@ namespace Aloha
         /// </returns>
         public override void Regeneration(int gain)
         {
-            this.currentHealth += gain;
-            if (this.currentHealth > this.GetStats().maxHealth)
+            this.CurrentHealth += gain;
+            if (this.CurrentHealth > this.GetStats().MaxHealth)
             {
-                this.currentHealth = this.GetStats().maxHealth;
+                this.CurrentHealth = this.GetStats().MaxHealth;
             }
         }
 
@@ -119,7 +119,7 @@ namespace Aloha
         public float CalculateDamageReduction()
         {
             float damageReduction;
-            return damageReduction = (this.stats.defense / (this.stats.defense + 20));
+            return damageReduction = (this.stats.Defense / (this.stats.Defense + 20));
         }
 
         /// <summary>

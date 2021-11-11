@@ -6,8 +6,22 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Lancer : Enemy<LancerStats> {
-
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public class Lancer : Enemy<LancerStats>
+    {
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
         protected override IEnumerator AI()
         {
             int rand = Utils.RandomInt(1, 4);
@@ -18,6 +32,18 @@ namespace Aloha
             yield return StartCoroutine(AttackAnimation(4f));
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="speed"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         protected IEnumerator AttackAnimation(float speed)
         {
             yield return StartCoroutine(GetBump(new Vector3(0, 0, 1f), 3f));
@@ -28,22 +54,16 @@ namespace Aloha
             Vector3 posFinal = posInit;
             posFinal.x = 0; posFinal.z = -1;
 
-
             while (temps < 1f)
             {
                 temps += speed * Time.deltaTime;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
-
             gameObject.transform.position = posFinal;
-
             Hero hero = GameManager.Instance.GetHero();
             Attack(hero);
-            Debug.Log(hero.currentHealth);
-
             Disappear();
         }
-
     }
 }

@@ -18,10 +18,6 @@ namespace Aloha
 
         /// <summary>
         /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// </code>
-        /// </example>
         /// </summary>
         void Start()
         {
