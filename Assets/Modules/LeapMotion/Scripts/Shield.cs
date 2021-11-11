@@ -27,7 +27,6 @@ namespace Aloha
         // If the Shield touch an Object
         public void OnTriggerEnter(Collider collider)
         {
-            Debug.Log(speed);
             if (collider.tag == "Enemy" && speed > minimumSpeedToProtect)
             {
                 // Change minimum speed if actual speed is to low
