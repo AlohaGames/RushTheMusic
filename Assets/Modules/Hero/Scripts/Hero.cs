@@ -34,6 +34,12 @@ namespace Aloha
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.currentHealth, this.stats.maxHealth);
+
+            if(this.currentHealth <= 0)
+            {
+                GlobalEvent.GameOver.Invoke();
+            }
+
         }
 
         public override void Regeneration(int gain)

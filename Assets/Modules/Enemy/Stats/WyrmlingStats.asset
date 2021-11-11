@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: WyrmlingStats
   m_EditorClassIdentifier: 
   maxHealth: 30
-  attack: 15
+  attack: 300
   defense: 0
   level: 0
