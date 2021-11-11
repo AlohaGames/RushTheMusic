@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1118,6 +1118,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -441
       objectReference: {fileID: 0}
+    - target: {fileID: 2300465376287878673, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: LevelMusic
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2350138964986754535, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_Name
       value: LevelProgressBar
@@ -2000,8 +2004,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f62352e04758596b4a7cab0aa4b086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 
   isTuto: 1
+  Level: 
 --- !u!114 &1450717351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2445,8 +2449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5f62352e04758596b4a7cab0aa4b086, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 
   isTuto: 1
+  Level: 
 --- !u!114 &1677797972
 MonoBehaviour:
   m_ObjectHideFlags: 0
