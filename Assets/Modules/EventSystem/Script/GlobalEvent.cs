@@ -22,6 +22,7 @@ namespace Aloha.Events
         public static GameObjectEvent TileCount = new GameObjectEvent();
         public static UnityEvent LevelStop = new UnityEvent();
         public static UnityEvent LevelStart = new UnityEvent();
+        public static UnityEvent GameOver = new UnityEvent();
 
         /// <summary>
         /// Invoke when load level is request and will pass the string <paramref name="level" /> and the bool <paramref name="isTuto" />

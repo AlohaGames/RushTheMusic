@@ -64,22 +64,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8828763847212667034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4727088933047157419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c238f4ea3d78ac241bed5ef56d33d08a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  stats: {fileID: 11400000, guid: 7a629563775aaa940871e0085073abfe, type: 2}
-  noAI: 0
-  fireballPrefab: {fileID: 8358862569396939467, guid: 158e80fe48cf8904fa27a4c4ccb75023, type: 3}
 --- !u!95 &8601980987735554397
 Animator:
   serializedVersion: 3
@@ -99,6 +83,22 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8828763847212667034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4727088933047157419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c238f4ea3d78ac241bed5ef56d33d08a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 0
+  stats: {fileID: 11400000, guid: 7a629563775aaa940871e0085073abfe, type: 2}
+  noAI: 0
+  fireballPrefab: {fileID: 1023215018960411582, guid: 495e712906aa2d044bdfe4cc2a17fef1, type: 3}
 --- !u!1001 &5790544452238759299
 PrefabInstance:
   m_ObjectHideFlags: 0
