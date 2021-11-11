@@ -20,7 +20,6 @@ namespace Aloha
 
         public LevelMapping LevelMapping;
         public AudioClip LevelMusic;
-        
         public bool IsLoaded = false;
 
         /// <summary>
