@@ -17,4 +17,4 @@ MonoBehaviour:
   defense: 0
   level: 0
   xp: 0
-  maxMana: 1000
+  MaxMana: 1000

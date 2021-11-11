@@ -35,7 +35,7 @@ namespace Aloha
             } else if (hero is Wizard)
             {
                 Wizard wizard = hero as Wizard;
-                GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().maxMana);
+                GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
             }
         }
 

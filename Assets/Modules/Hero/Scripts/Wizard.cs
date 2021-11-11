@@ -15,8 +15,8 @@ namespace Aloha
         public void Init(WizardStats stats)
         {
             base.Init(stats);
-            this.CurrentMana = this.heroStats.maxMana;
-            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.maxMana);
+            this.CurrentMana = this.heroStats.MaxMana;
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
         }
 
         private void Start()
@@ -44,7 +44,7 @@ namespace Aloha
                 power = this.heroStats.attack * this.CurrentMana / manaToUse;
                 this.CurrentMana = 0;
             }
-            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.maxMana);
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
             return power;
         }
 
@@ -52,8 +52,8 @@ namespace Aloha
         {
             while (true)
             {
-                if (this.CurrentMana < this.heroStats.maxMana) this.CurrentMana += 10;
-                GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.maxMana);
+                if (this.CurrentMana < this.heroStats.MaxMana) this.CurrentMana += 10;
+                GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
                 yield return new WaitForSeconds(0.1f);
             }
         }

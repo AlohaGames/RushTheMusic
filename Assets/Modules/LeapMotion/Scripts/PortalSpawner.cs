@@ -7,8 +7,10 @@ namespace Aloha
     public class PortalSpawner : MonoBehaviour
     {
         public Wizard Wizard;
-        [SerializeField] private Vortex vortexPrefab;
-        [SerializeField] private Material raycastMaterial;
+        [SerializeField] 
+        private Vortex vortexPrefab;
+        [SerializeField] 
+        private Material raycastMaterial;
         private LineRenderer targetPreview;
         private Vector3 origin;
         private Vector3? endPoint;

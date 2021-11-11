@@ -7,10 +7,11 @@ namespace Aloha
     public class FireballSpawner : MonoBehaviour
     {
         public Wizard Wizard;
-        [SerializeField] private Fireball fireballPrefab;
+        [SerializeField] 
+        private Fireball fireballPrefab;
         private Fireball currentFireball;
 
-        private void Start()
+        void Start()
         {
             Wizard = GameManager.Instance.GetHero() as Wizard;
         }
