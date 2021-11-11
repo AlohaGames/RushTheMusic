@@ -31,7 +31,7 @@ namespace Aloha
             generateSideEnv(Side.Righ, tile);
         }
 
-        private void SpawnCastle()
+        void SpawnCastle()
         {
             GameObject castleHillGo = Instantiate(castleHill);
             Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
@@ -40,7 +40,7 @@ namespace Aloha
             GlobalEvent.LevelStart.RemoveListener(SpawnCastle);
         }
 
-        private void generateSideEnv(Side side, GameObject tile)
+        void generateSideEnv(Side side, GameObject tile)
         {
             // Generate random index
             int index = Utils.RandomInt(0, sideEnvironmentPrefab.Length);
