@@ -30,7 +30,11 @@ namespace Aloha
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
-            currentRage = currentRage + (int)(heroStats.maxRage * REGENERATION_POURCENT);
+
+            // Add limit to increasing of rage
+            if (currentRage < this.heroStats.maxRage) currentRage = currentRage + (int)(heroStats.maxRage * REGENERATION_POURCENT);
+            if (currentRage > this.heroStats.maxRage) currentRage = this.heroStats.maxRage;
+            
             GlobalEvent.OnSecondaryUpdate.Invoke(this.currentRage, this.heroStats.maxRage);
         }
 
