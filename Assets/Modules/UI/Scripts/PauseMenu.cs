@@ -18,16 +18,24 @@ namespace Aloha
 
         public void Resume()
         {
-            MenuPauseUI.SetActive(false);
-            Time.timeScale = 1f;
-            isGamePaused = false;
+            if(GameManager.Instance.getIsPlaying() == true)
+            {
+                MenuPauseUI.SetActive(false);
+                Time.timeScale = 1f;
+                isGamePaused = false;
+            }
+
         }
 
         public void PauseGame()
         {
-            MenuPauseUI.SetActive(true);
-            Time.timeScale = 0f;
-            isGamePaused = true;
+            if(GameManager.Instance.getIsPlaying() == true)
+            {
+                MenuPauseUI.SetActive(true);
+                Time.timeScale = 0f;
+                isGamePaused = true;
+            }
+
         }
 
         public void OnDestroy() {

@@ -72,6 +72,22 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Will return if the game is plaing or stopped
+        /// </summary>
+        public bool getIsPlaying()
+        {
+            return this.isPlaying;
+        }
+
+        /// <summary>
+        /// Will set if the game if playing or not (for the game over)
+        /// </summary>
+        public void setIsPlaying(bool isPlaying)
+        {
+            this.isPlaying = isPlaying;
+        }
+
+        /// <summary>
         /// Will ask to Resume a paused Game (do nothing if already resumed)
         /// </summary>
         public void ResumeGame()

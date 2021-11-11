@@ -19,8 +19,15 @@ namespace Aloha
 
         public void ShowGameOverUI()
         {
+            //je met le temps du temps à 0, j'active le menu du game over et je met la variable isPlaying a false
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
+            GameManager.Instance.setIsPlaying(false);
+        }
+
+        public void OnDestroy()
+        {
+            GlobalEvent.GameOver.RemoveListener(ShowGameOverUI);
         }
     }
 }
