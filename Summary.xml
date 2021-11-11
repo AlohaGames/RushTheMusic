@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/11/2021 - 19:43:14</Generatedon>
+    <Generatedon>11/11/2021 - 19:44:09</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>51</Classes>
     <Files>49</Files>
     <Coveredlines>697</Coveredlines>
-    <Uncoveredlines>496</Uncoveredlines>
-    <Coverablelines>1193</Coverablelines>
-    <Totallines>2462</Totallines>
-    <Linecoverage>58.4</Linecoverage>
+    <Uncoveredlines>497</Uncoveredlines>
+    <Coverablelines>1194</Coverablelines>
+    <Totallines>2463</Totallines>
+    <Linecoverage>58.3</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="51" coverage="58.4" coveredlines="697" coverablelines="1193" totallines="2639" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="51" coverage="58.3" coveredlines="697" coverablelines="1194" totallines="2640" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="9" coverablelines="9" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="0" coveredlines="0" coverablelines="44" totallines="73" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="46.1" coveredlines="12" coverablelines="26" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -31,7 +31,7 @@
       <Class name="Aloha.Fireball" coverage="0" coveredlines="0" coverablelines="13" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.FireballSpawner" coverage="0" coveredlines="0" coverablelines="33" totallines="57" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.GameManager" coverage="23.5" coveredlines="16" coverablelines="68" totallines="174" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.GameOverMenu" coverage="0" coveredlines="0" coverablelines="11" totallines="31" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.GameOverMenu" coverage="0" coveredlines="0" coverablelines="12" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HealPotion" coverage="100" coveredlines="8" coverablelines="8" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HealthBar" coverage="0" coveredlines="0" coverablelines="7" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Hero" coverage="92.1" coveredlines="35" coverablelines="38" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" />
