@@ -14,7 +14,7 @@ namespace Aloha
     public class SideEnvironmentManager : Singleton<SideEnvironmentManager>
     {
         [SerializeField] private SideEnvironment[] sideEnvironmentPrefab = new SideEnvironment[] { };
-        [SerializeField] private GameObject castleHill = new GameObject { };
+        [SerializeField] private GameObject castleHill;
 
         public void Awake()
         {
@@ -53,7 +53,7 @@ namespace Aloha
             float tileWidth = tile.transform.localScale.x;
             float tileHeight = tile.transform.localScale.y;
 
-            sideEnvInstR.transform.position = new Vector3(tile.transform.position.x + (int)side * tileWidth / 2, sideEnvInstR.height + tileHeight, tile.transform.position.z);
+            sideEnvInstR.transform.position = new Vector3(tile.transform.position.x + (int)side * tileWidth / 2.5f, sideEnvInstR.height + tileHeight, tile.transform.position.z);
 
             // Attach to tile
             sideEnvInstR.transform.SetParent(tile.transform);
