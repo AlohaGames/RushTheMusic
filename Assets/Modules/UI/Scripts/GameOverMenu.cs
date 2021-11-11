@@ -20,6 +20,7 @@ namespace Aloha
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
             GameManager.Instance.SetIsPlaying(false);
+            AudioManager.Instance.StopMusic();
         }
 
         public void OnDestroy()
