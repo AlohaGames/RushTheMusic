@@ -1312,34 +1312,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: castleHill
-      value: 
-      objectReference: {fileID: 8218562279950525143, guid: acb766cbac451b9429394615accae5e5, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: sideEnvironmentPrefab.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: sideEnvironmentPrefab.Array.data[0]
-      value: 
-      objectReference: {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: sideEnvironmentPrefab.Array.data[1]
-      value: 
-      objectReference: {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: sideEnvironmentPrefab.Array.data[2]
-      value: 
-      objectReference: {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: sideEnvironmentPrefab.Array.data[3]
-      value: 
-      objectReference: {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: sideEnvironmentPrefab.Array.data[4]
-      value: 
-      objectReference: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: sideEnvironmentPrefab.Array.data[5]
       value: 
       objectReference: {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
