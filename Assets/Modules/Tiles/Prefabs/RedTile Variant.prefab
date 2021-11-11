@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 165006480df49e644835599b4d917113, type: 2}
     - target: {fileID: 4672000999976058457, guid: fe11f12abcffa79409e2fe9fb474271a, type: 3}
       propertyPath: m_Name
-      value: RedTile
+      value: RedTile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4914564627355941677, guid: fe11f12abcffa79409e2fe9fb474271a, type: 3}
       propertyPath: m_RootOrder

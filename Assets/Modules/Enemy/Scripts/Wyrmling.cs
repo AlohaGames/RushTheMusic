@@ -49,8 +49,7 @@ namespace Aloha
         {
             // Config fireball's spawning position
             Vector3 fireballPos = transform.position;
-            fireballPos.y += 0.3f;
-            fireballPos.z -= 1f;
+            fireballPos.x -= 0.5f;
 
             // Spawn fireball
             WyrmlingFireball fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);

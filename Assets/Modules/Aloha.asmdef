@@ -1,3 +1,17 @@
 {
-	"name": "Aloha"
+    "name": "Aloha",
+    "rootNamespace": "",
+    "references": [
+        "GUID:bfac32c1d0231784bb24b8c23d8d1298",
+        "GUID:2ee0542102ac1084e8d9a910885c1e81"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
