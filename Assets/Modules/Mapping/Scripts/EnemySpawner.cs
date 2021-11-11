@@ -40,6 +40,7 @@ namespace Aloha
                     stats.defense = enemyMapping.stats.defense;
                     stats.level = enemyMapping.stats.level;
                     stats.maxHealth = enemyMapping.stats.maxHealth;
+                    entity.currentHealth = enemyMapping.stats.maxHealth;
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                     enemy.transform.SetParent(tile.transform);
