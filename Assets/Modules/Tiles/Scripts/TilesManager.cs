@@ -64,6 +64,12 @@ namespace Aloha
             GlobalEvent.LevelStop.Invoke();
         }
 
+        // Return background position based on last tile
+        public Vector3 getEndTilesPosition()
+        {
+            return new Vector3(0, 0, tileSize * numberOfTiles);
+        }
+
         // Create a tile at the end of the tile list
         public void SpawnTileToQueue(int tileIndex)
         {
