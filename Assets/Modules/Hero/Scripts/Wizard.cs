@@ -19,7 +19,7 @@ namespace Aloha
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
         }
 
-        private void Start()
+        void Start()
         {
             StartCoroutine(RegainManaOverTime());
         }

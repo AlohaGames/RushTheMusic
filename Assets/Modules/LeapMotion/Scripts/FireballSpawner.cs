@@ -6,10 +6,10 @@ namespace Aloha
 {
     public class FireballSpawner : MonoBehaviour
     {
-        public Wizard Wizard;
         [SerializeField] 
         private Fireball fireballPrefab;
         private Fireball currentFireball;
+        public Wizard Wizard;
 
         void Start()
         {

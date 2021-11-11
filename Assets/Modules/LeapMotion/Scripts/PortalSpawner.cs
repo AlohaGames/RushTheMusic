@@ -6,7 +6,6 @@ namespace Aloha
 {
     public class PortalSpawner : MonoBehaviour
     {
-        public Wizard Wizard;
         [SerializeField] 
         private Vortex vortexPrefab;
         [SerializeField] 
@@ -15,6 +14,7 @@ namespace Aloha
         private Vector3 origin;
         private Vector3? endPoint;
         private bool preparingPortal;
+        public Wizard Wizard;
 
         // Start is called before the first frame update
         void Start()
