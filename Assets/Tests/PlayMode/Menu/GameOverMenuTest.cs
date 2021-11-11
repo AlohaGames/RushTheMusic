@@ -3,12 +3,10 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-
 namespace Aloha.Test
 {
     public class GameOverMenuTest
     {
-
       /*  // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
