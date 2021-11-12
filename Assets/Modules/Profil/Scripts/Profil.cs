@@ -8,6 +8,11 @@ namespace Aloha
     {
         public string name;
 
+        public Profil()
+        {
+            this.name = "default-profil";
+        }
+
         public Profil(string name)
         {
             this.name = name;

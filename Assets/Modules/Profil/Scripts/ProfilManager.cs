@@ -12,7 +12,8 @@ namespace Aloha
         private List<Profil> profils;
         private Profil currentProfil;
 
-        public ProfilManager() {
+        public ProfilManager()
+        {
             this.profils = new List<Profil>();
         }
 
@@ -24,23 +25,31 @@ namespace Aloha
         // Save current profil to disk
         public void SaveCurrentProfil()
         {
-            string profilFileName = $"{currentProfil.name}.xml";
+            SaveProfil(currentProfil);
+        }
+
+        // Save a profil to disk
+        public void SaveProfil(Profil profil)
+        {
+            string profilFileName = $"{profil.name}.xml";
             XmlSerializer serializer = new XmlSerializer(typeof(Profil));
             using (FileStream stream = new FileStream($"{getProfilDir()}/{profilFileName}", FileMode.Create))
             {
-                serializer.Serialize(stream, currentProfil);
+                serializer.Serialize(stream, profil);
             }
         }
 
-        // Load profile from xml file
-        public Profil LoadProfilFile(string filename)
+        // Load profile from disk
+        public Profil LoadProfilFile(string filepath)
         {
-
-            // TODO: Faire l'UI de la liste des profils chargés
-            // TODO: Read profil from actual file
-            
-            Debug.Log(filename);
-            return new Profil("TODO");
+            Profil profil;
+            XmlSerializer metadataSerializer = new XmlSerializer(typeof(Profil));
+            using (FileStream stream = new FileStream(filepath, FileMode.Open))
+            {
+                profil = (Profil)metadataSerializer.Deserialize(stream);
+            }
+            Debug.Log($"Profil {profil.name} loaded");
+            return profil;
         }
 
         // Load all profils from disk
