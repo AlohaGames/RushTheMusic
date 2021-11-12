@@ -51,7 +51,7 @@ namespace Aloha
                 Wizard wizard = hero as Wizard;
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
             }
-            GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.levelMapping.TileCount);
+            GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.LevelMapping.TileCount);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        void ShowEndGameUIElements(){
+        public void ShowEndGameUIElements(){
             UIScore.ShowEndGameUIScoreElements();
         }
     }

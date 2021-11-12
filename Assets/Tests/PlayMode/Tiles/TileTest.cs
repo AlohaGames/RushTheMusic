@@ -39,7 +39,7 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 50);
+            levelManager.LevelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 50);
             yield return null;
 
             tilesManager.StartGame();

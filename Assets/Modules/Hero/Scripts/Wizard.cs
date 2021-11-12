@@ -37,11 +37,11 @@ namespace Aloha
 
             if (this.CurrentMana >= manaToUse)
             {
-                power = this.heroStats.attack;
+                power = this.heroStats.Attack;
                 this.CurrentMana -= manaToUse;
             } else
             {
-                power = this.heroStats.attack * this.CurrentMana / manaToUse;
+                power = this.heroStats.Attack * this.CurrentMana / manaToUse;
                 this.CurrentMana = 0;
             }
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);

@@ -111,7 +111,7 @@ namespace Aloha
         /// </returns>
         public Vector3 getEndTilesPosition()
         {
-            return new Vector3(0, 0, tileSize * numberOfTiles);
+            return new Vector3(0, 0, TileSize * NumberOfTiles);
         }
 
         /// <summary>
@@ -135,9 +135,9 @@ namespace Aloha
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);
-            GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.tilesCounter - numberOfTiles, LevelManager.Instance.levelMapping.tileCount);
+            GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
 
-            if (EnemySpawner.Instance.tilesCounter - numberOfTiles >= LevelManager.Instance.levelMapping.tileCount)
+            if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount)
             {
                 Time.timeScale = 0f;
                 UIManager.Instance.ShowEndGameUIElements();

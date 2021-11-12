@@ -59,11 +59,11 @@ namespace Aloha
                     // Define enemy stats from mapping
                     Entity entity = enemy.GetComponent<Entity>();
                     EnemyStats stats = entity.GetStats() as EnemyStats;
-                    stats.Attack = enemyMapping.stats.Attack;
-                    stats.Defense = enemyMapping.stats.Defense;
-                    stats.Level = enemyMapping.stats.Level;
-                    stats.MaxHealth = enemyMapping.stats.MaxHealth;
-                    entity.CurrentHealth = enemyMapping.stats.MaxHealth;
+                    stats.Attack = enemyMapping.Stats.Attack;
+                    stats.Defense = enemyMapping.Stats.Defense;
+                    stats.Level = enemyMapping.Stats.Level;
+                    stats.MaxHealth = enemyMapping.Stats.MaxHealth;
+                    entity.CurrentHealth = enemyMapping.Stats.MaxHealth;
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                     enemy.transform.SetParent(tile.transform);

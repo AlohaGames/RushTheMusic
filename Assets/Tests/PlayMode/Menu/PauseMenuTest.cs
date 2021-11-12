@@ -31,7 +31,7 @@ namespace Aloha.Test
             // skip one frame
             yield return null;
 
-            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().IsGamePaused);
             Assert.AreEqual(0f, Time.timeScale);
             Assert.IsTrue(child.activeSelf);
             Assert.IsTrue(pause.GetComponent<PauseMenu>().IsGamePaused);
