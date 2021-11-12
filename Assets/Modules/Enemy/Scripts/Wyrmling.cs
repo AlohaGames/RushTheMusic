@@ -96,7 +96,7 @@ namespace Aloha
 
             // Spawn fireball
             WyrmlingFireball fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);
-            fireball.associatedEnemy = this;
+            fireball.AssociatedEnemy = this;
             yield return new WaitForSeconds(1f);
 
             // Launch fireball to the hero
