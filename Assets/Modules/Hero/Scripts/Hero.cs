@@ -150,10 +150,7 @@ namespace Aloha
     {
         protected T heroStats
         {
-            get
-            {
-                return this.stats as T;
-            }
+            get{ return this.stats as T; }
         }
 
         /// <summary>

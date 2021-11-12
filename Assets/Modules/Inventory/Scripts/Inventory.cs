@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace Aloha
 {
-
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Inventory
     {
-        /// <summary>
-        /// TODO
-        /// </summary>
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
 

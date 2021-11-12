@@ -16,7 +16,7 @@ namespace Aloha
         public float Speed;
 
         /// <summary>
-        /// TODO
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {

@@ -4,6 +4,13 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    public enum HeroType
+    {
+        Generic = 0,
+        Warrior = 1,
+        Wizard = 2
+    }
+
     /// <summary>
     /// Singleton that manage the hero instantiation
     /// </summary>
@@ -60,12 +67,5 @@ namespace Aloha
         {
             GlobalEvent.LoadHero.RemoveListener(InstantiateHero);
         }
-    }
-
-    public enum HeroType
-    {
-        Generic = 0,
-        Warrior = 1,
-        Wizard = 2
     }
 }

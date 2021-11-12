@@ -4,14 +4,35 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Wizard : Hero<WizardStats>
     {
         public int CurrentMana;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public override void Init()
         {
             this.Init(this.heroStats);
         }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="stats"></param>
         public void Init(WizardStats stats)
         {
             base.Init(stats);
@@ -19,17 +40,40 @@ namespace Aloha
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
         }
 
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             StartCoroutine(RegainManaOverTime());
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="entity"></param>
         public void BumpEntity(Entity entity)
         {
             Vector3 direction = new Vector3(0, 0, 2);
             StartCoroutine(entity.GetBump(direction, 1));
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
         public int ChargeFireball()
         {
             int manaToUse = 200;
@@ -48,7 +92,18 @@ namespace Aloha
             return power;
         }
 
-        private IEnumerator RegainManaOverTime()
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
+        IEnumerator RegainManaOverTime()
         {
             while (true)
             {

@@ -34,7 +34,6 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name=""></param>
         public override void Effect()
         {
             Hero hero = GameManager.Instance.GetHero();

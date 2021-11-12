@@ -176,7 +176,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             this.dieEvent.RemoveListener(Disappear);
         }

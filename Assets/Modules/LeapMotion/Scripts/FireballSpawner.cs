@@ -4,18 +4,33 @@ using UnityEngine;
 
 namespace Aloha 
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class FireballSpawner : MonoBehaviour
     {
         [SerializeField] 
         private Fireball fireballPrefab;
+
         private Fireball currentFireball;
         public Wizard Wizard;
 
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             Wizard = GameManager.Instance.GetHero() as Wizard;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SpawnFireball()
         {
             if (!this.currentFireball)
@@ -44,6 +59,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SendFireball()
         {
             if (this.currentFireball)
@@ -52,6 +75,5 @@ namespace Aloha
                 this.currentFireball = null;
             }
         }
-
     }
 }

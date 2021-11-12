@@ -10,11 +10,10 @@ namespace Aloha
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
-        protected UnityEvent dieEvent = new UnityEvent();
-
         [SerializeField]
         protected Stats stats;
-        
+
+        protected UnityEvent dieEvent = new UnityEvent();        
         public int CurrentHealth;
         
         /// <summary>

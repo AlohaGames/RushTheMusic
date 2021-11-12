@@ -11,7 +11,7 @@ namespace Aloha
     public class SecondaryBar : HorizontalBar
     {
         /// <summary>
-        /// TODO
+        /// Is called when the script instance is being loaded.
         /// </summary>
         public new void Awake()
         {
@@ -20,9 +20,9 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GlobalEvent.OnSecondaryUpdate.RemoveListener(UpdateBar);
         }

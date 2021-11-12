@@ -11,11 +11,7 @@ namespace Aloha
     public class HealthBar : HorizontalBar
     {
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// </code>
-        /// </example>
+        /// Is called when the script instance is being loaded.
         /// </summary>
         new void Awake()
         {
@@ -26,7 +22,7 @@ namespace Aloha
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
-        public void OnDestroy()
+        void OnDestroy()
         {
             GlobalEvent.OnHealthUpdate.RemoveListener(UpdateBar);
         }

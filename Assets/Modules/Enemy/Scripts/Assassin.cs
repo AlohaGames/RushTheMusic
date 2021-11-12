@@ -48,7 +48,6 @@ namespace Aloha
         /// <param name="speed"></param>
         protected IEnumerator StealthJump(float speed)
         {
-
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit * speed;

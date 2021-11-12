@@ -2,6 +2,16 @@ using UnityEngine;
 
 namespace Aloha
 {
+    public enum VerticalPositionEnum
+    {
+        TOP = 0, MIDDLE = 1, BOT = 2
+    }
+
+    public enum HorizontalPositionEnum
+    {
+        LEFT = 0, CENTER = 1, RIGHT = 2
+    }
+
     /// <summary>
     /// TODO
     /// </summary>
@@ -106,15 +116,5 @@ namespace Aloha
 
             return new Vector3(x, y + 1, z);
         }
-    }
-
-    public enum VerticalPositionEnum
-    {
-        TOP = 0, MIDDLE = 1, BOT = 2
-    }
-
-    public enum HorizontalPositionEnum
-    {
-        LEFT = 0, CENTER = 1, RIGHT = 2
     }
 }
