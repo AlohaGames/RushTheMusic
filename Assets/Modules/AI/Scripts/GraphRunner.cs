@@ -5,50 +5,53 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
-    public class StateGraph : MonoBehaviour
+    public class GraphRunner : MonoBehaviour
     {
+        public Graph BGraph;
         public IEnumerator currentCoroutine = null;
-        public List<Node> Nodes = new List<Node>();
 
-        public Graph BehaviorGraph;
-
-        public int EntryNode = 0;
         int currentNode;
 
         [SerializeField]
         private bool isRunning = false;
 
+        private void Start() {
+            BGraph = Instantiate(BGraph);
+            BGraph.Runner = this;
+            BGraph.Start();
+        }
+
         public void StartGraph()
         {
             isRunning = true;
-            Nodes[currentNode].IsRunning = isRunning;
+            BGraph.Nodes[BGraph.EntryNode].IsRunning = isRunning;
             StartNodeAction();
         }
 
         public void Pause()
         {
             isRunning = false;
-            Nodes[currentNode].IsRunning = isRunning;
+            BGraph.Nodes[currentNode].IsRunning = isRunning;
             StopCoroutine(currentCoroutine);
         }
 
         public void Resume()
         {
             isRunning = true;
-            Nodes[currentNode].IsRunning = isRunning;
+            BGraph.Nodes[currentNode].IsRunning = isRunning;
             StartCoroutine(currentCoroutine);
         }
 
         public void StopGraph()
         {
             isRunning = false;
-            Nodes[currentNode].IsRunning = isRunning;
+            BGraph.Nodes[currentNode].IsRunning = isRunning;
             StopCoroutine(currentCoroutine);
         }
 
         private void StartNodeAction()
         {
-            currentCoroutine = Nodes[currentNode].Action();
+            currentCoroutine = BGraph.Nodes[currentNode].Action();
             StartCoroutine(currentCoroutine);
         }
 
@@ -60,7 +63,7 @@ namespace Aloha.AI
         public void SetCurrentNode(Node node)
         {
             StopNodeAction();
-            this.currentNode = Nodes.IndexOf(node);
+            this.currentNode = BGraph.Nodes.IndexOf(node);
             StartNodeAction();
         }
     }

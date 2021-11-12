@@ -10,12 +10,12 @@ namespace Aloha.AI
 
         public GONode()
         {
-            gameObject = Graph.gameObject;
+            gameObject = Graph.Runner.gameObject;
         }
 
-        public GONode(StateGraph graph) : base(graph)
+        public GONode(Graph graph) : base(graph)
         {
-            gameObject = Graph.gameObject;
+            gameObject = Graph.Runner.gameObject;
         }
     }
 }

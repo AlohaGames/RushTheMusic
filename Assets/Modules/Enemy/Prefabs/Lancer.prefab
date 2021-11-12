@@ -448,7 +448,7 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &8028589411722511122
+--- !u!114 &7643377842605732737
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -457,11 +457,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7389218948549837581}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8dddf09498228edc28a7aaa179843441, type: 3}
+  m_Script: {fileID: 11500000, guid: 9260d02f81df6a3c88b0b3ead1bf878d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BehaviorGraph: {fileID: 0}
-  EntryNode: 0
+  BGraph: {fileID: 11400000, guid: e05a45874a361221b80de1b3c321d57f, type: 2}
   isRunning: 0
 --- !u!114 &7796639644930983404
 MonoBehaviour:
@@ -476,12 +475,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 0
-  attack: 0
   stats: {fileID: 11400000, guid: 2f385259489b9cf459facefb697dc964, type: 2}
   TakeDamageEvent:
     m_PersistentCalls:
       m_Calls: []
   noAI: 0
+  NearHeroTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &8596839881166951461
 PrefabInstance:
   m_ObjectHideFlags: 0

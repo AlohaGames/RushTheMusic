@@ -1689,30 +1689,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 9080577879669644027, guid: beb08a16a330fd58b99485317896e360, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: beb08a16a330fd58b99485317896e360, type: 3}
---- !u!1 &727289605 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6368011761349853057, guid: beb08a16a330fd58b99485317896e360, type: 3}
-  m_PrefabInstance: {fileID: 727289604}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &727289607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727289605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f62f49f6d5164cc48842a0dc763e8086, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TotalScore: 0
-  DistanceScore: 0
-  EnemyKilledScore: 0
-  HitScore: 0
-  KillCounter: 0
-  TilesCounter: 0
-  ScoreUI: {fileID: 0}
 --- !u!1 &774757092
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,7 +1917,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4034224953863319914, guid: beb08a16a330fd58b99485317896e360, type: 3}
   m_PrefabInstance: {fileID: 727289604}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 727289605}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e067358a06d4ca6eb88644b301808475, type: 3}

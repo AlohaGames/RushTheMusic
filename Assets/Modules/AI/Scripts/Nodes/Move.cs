@@ -12,7 +12,7 @@ namespace Aloha.AI
         public float distToMove = 0.5f;
 
         public Move() : base() { }
-        public Move(StateGraph graph) : base(graph) { }
+        public Move(Graph graph) : base(graph) { }
 
         public override IEnumerator Action()
         {
@@ -31,8 +31,7 @@ namespace Aloha.AI
             }
 
             gameObject.transform.position = posFinal;
-
-            Debug.Log("Finish : " + AutomaticLinks.Count);
+            
             yield return null;
             if (!AutomaticLinks.IsEmpty())
             {

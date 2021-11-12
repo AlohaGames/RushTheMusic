@@ -62,7 +62,7 @@ namespace Aloha
                 if (AIActivated)
                 {
                     //StartCoroutine(AI()); 
-                    GetComponent<StateGraph>().StartGraph();
+                    GetComponent<GraphRunner>()?.StartGraph();
                 }
             }
         }

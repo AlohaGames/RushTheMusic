@@ -7,9 +7,13 @@ namespace Aloha.AI
     public class GoToHero : GONode
     {
         public float speed = 2.0f;
+        public float proximity = 5.0f;
 
         public GoToHero() : base() { }
-        public GoToHero(StateGraph graph) : base(graph) { }
+        public GoToHero(Graph graph, float proximity = 5.0f) : base(graph)
+        {
+            this.proximity = proximity;
+        }
 
         public override IEnumerator Action()
         {
@@ -21,11 +25,14 @@ namespace Aloha.AI
 
             float dist = Vector3.Distance(posInit, posFinal);
             float totalTime = dist / speed;
+            float proxitmityTime = proximity / speed;
 
-            while (time < totalTime)
+            while (time < totalTime && dist > proximity)
             {
                 time += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time/totalTime);
+                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
+                dist = Vector3.Distance(posInit, posFinal);
+                Debug.Log(dist);
                 yield return null;
             }
 

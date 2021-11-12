@@ -6,13 +6,13 @@ namespace Aloha
 {
     public class ActionZone : MonoBehaviour
     {
-        private bool wasTriggered = false;
+        public bool WasTriggered = false;
 
         public void OnTriggerEnter(Collider other)
         {
-            if (!wasTriggered && other.tag == "Player")
+            if (!WasTriggered && other.tag == "Player")
             {
-                wasTriggered = true;
+                WasTriggered = true;
                 transform.parent.GetComponent<Enemy>().DetachFromParent();
                 transform.parent.GetComponent<Enemy>().SetAI(true);
                 transform.parent.GetComponent<Enemy>().NearHeroTrigger.Invoke();

@@ -12,7 +12,7 @@ namespace Aloha.AI
         public List<EventLink> EventLinks = new List<EventLink>();
         public List<AutomaticLink> AutomaticLinks = new List<AutomaticLink>();
 
-        public StateGraph Graph;
+        public Graph Graph;
 
         public virtual IEnumerator Action()
         {
@@ -60,7 +60,7 @@ namespace Aloha.AI
         }
 
         public Node() { }
-        public Node(StateGraph graph)
+        public Node(Graph graph)
         {
             this.Graph = graph;
         }

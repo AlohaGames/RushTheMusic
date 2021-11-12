@@ -72,6 +72,11 @@ namespace Aloha
             }
 
             gameObject.transform.position = posFinal;
+            ActionZone actionZone = GetComponentInChildren<ActionZone>();
+            if (actionZone != null)
+            {
+                actionZone.WasTriggered = false;
+            }
         }
 
         public virtual void Die()
