@@ -1,0 +1,124 @@
+using System.Collections;
+using System.Collections.Generic;
+using NUnit.Framework;
+using UnityEngine;
+using UnityEngine.TestTools;
+using UnityEngine.UI;
+
+namespace Aloha.Test
+{
+    public class InventoryUITest
+    {
+
+
+        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
+        // `yield return null;` to skip a frame.
+        [UnityTest]
+        public IEnumerator InventoryUIWithEnumeratorPasses()
+        {
+            // Declaration of a hero
+            HeroStats InventoryUiTestherostats = ScriptableObject.CreateInstance<HeroStats>();
+            InventoryUiTestherostats.attack = 100;
+            InventoryUiTestherostats.defense = 0;
+            InventoryUiTestherostats.maxHealth = 100;
+
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
+            Hero InventoryUiTesthero = GameManager.Instance.GetHero();
+            InventoryUiTesthero.Init(InventoryUiTestherostats);
+            // The hero take 20 damage that will be heal after
+            InventoryUiTesthero.TakeDamage(20);
+            Assert.AreEqual(80, InventoryUiTesthero.currentHealth);
+
+            GameObject Inventory = new GameObject();
+            Inventory.AddComponent<Inventory>();
+
+            GameObject InventoryUI = new GameObject();
+            InventoryUI.AddComponent<UIInventory>();
+
+            // The three following code groups are simulating my canvas 
+            //Firstitem
+            GameObject firstItem = new GameObject();
+            firstItem.AddComponent<Image>();
+            firstItem.transform.SetParent(InventoryUI.transform);
+
+            //HorizontalLayoutGroup
+            GameObject horizontalLayoutGroupObject = new GameObject();
+            horizontalLayoutGroupObject.AddComponent<HorizontalLayoutGroup>();
+            horizontalLayoutGroupObject.transform.SetParent(InventoryUI.transform);
+            HorizontalLayoutGroup horizontalLayoutGroup = horizontalLayoutGroupObject.GetComponent<HorizontalLayoutGroup>();
+            horizontalLayoutGroup.spacing = 25;
+
+            // The first image child of horizontalLayoutGroup
+            GameObject Image1Object = new GameObject();
+            Image1Object.AddComponent<Image>();
+            Image1Object.transform.SetParent(horizontalLayoutGroupObject.transform);
+
+            UIInventory inventoryUI = InventoryUI.GetComponent<UIInventory>();
+            Inventory inventory = Inventory.GetComponent<Inventory>();
+
+            // Adding three item
+            inventory.AddItem(new HealPotion(20));
+            inventory.AddItem(new HealPotion(20));
+            inventory.AddItem(new HealPotion(20));
+
+            //check if i have three items now
+            Queue<Item> items = inventory.GetItems();
+            Assert.AreEqual(3, items.Count);
+
+            // start the inventoryUI Starting code (regenrate the Ui)
+            inventoryUI.StartCoroutine("Start");
+
+            // I have 5 max item so i must have 4 child for my horizontalLayoutGroup, the fifth is the firstItem gameobject)
+            Assert.AreEqual(4, horizontalLayoutGroupObject.transform.childCount);
+
+            // There is 3 item so only the three cases must be blue
+            Assert.AreEqual(Color.blue, firstItem.GetComponent<Image>().color);
+            Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(0).GetComponent<Image>().color);
+            Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
+            Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(2).GetComponent<Image>().color);
+            
+            // Using an item (heal potion)
+            inventory.UseItem();
+            Assert.AreEqual(100, InventoryUiTesthero.currentHealth);
+            Assert.AreEqual(InventoryUiTesthero.GetStats().maxHealth, InventoryUiTesthero.currentHealth);
+
+            // Now i have only two item
+            items = inventory.GetItems();
+            Assert.AreEqual(2, items.Count);
+
+            // I refresh the UI
+            inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
+
+            // Now the third case must not be blue because i have only two object left
+            Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
+
+            // adding two more item
+            inventory.AddItem(new HealPotion(20));
+            inventory.AddItem(new HealPotion(20));
+
+            // Now i have four object
+            items = inventory.GetItems();
+            Assert.AreEqual(4, items.Count);
+
+            // refresh the UI
+            inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
+
+            // Check if only my first four cases are blue
+            Assert.AreEqual(Color.blue, firstItem.GetComponent<Image>().color);
+            Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(0).GetComponent<Image>().color);
+            Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
+            Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(2).GetComponent<Image>().color);
+            Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(3).GetComponent<Image>().color);
+
+            GameObject.Destroy(manager);
+            GameObject.Destroy(inventory);
+            GameObject.Destroy(InventoryUI);
+            GameObject.Destroy(firstItem);
+            GameObject.Destroy(Image1Object);
+            GameObject.Destroy(horizontalLayoutGroupObject);
+
+            yield return null;
+        }
+    }
+}

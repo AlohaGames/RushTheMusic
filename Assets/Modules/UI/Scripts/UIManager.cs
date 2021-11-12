@@ -11,6 +11,7 @@ namespace Aloha
         public Bar HealthBar;
         public Bar SecondaryBar;
         public Bar LevelProgressBar;
+        public UIInventory UIinventory;
         public UIScore UIScore;
 
         public void Awake() {
@@ -24,6 +25,7 @@ namespace Aloha
             SecondaryBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
             UIScore.ShowInGameUIScoreElements();
+            UIinventory.gameObject.SetActive(true);
 
             Hero hero = GameManager.Instance.GetHero();
 
@@ -38,6 +40,11 @@ namespace Aloha
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
             }
             GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.levelMapping.tileCount);
+
+            // declaration of some items in the inventory
+            Inventory.Instance.AddItem(new HealPotion(20));
+            Inventory.Instance.AddItem(new HealPotion(20));
+            Inventory.Instance.AddItem(new HealPotion(20));
         }
 
         public void ShowEndGameUIElements(){

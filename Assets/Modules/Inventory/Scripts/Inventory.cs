@@ -4,12 +4,11 @@ using UnityEngine;
 
 namespace Aloha
 {
-    public class Inventory
+    public class Inventory  : Singleton<Inventory>
     {
 
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
-
         public void AddItem(Item item)
         {
             if(this.items.Count < this.maxItem)
@@ -31,6 +30,11 @@ namespace Aloha
         public Queue<Item> GetItems()
         {
             return this.items;
+        }
+
+        public int getMaxItems()
+        {
+            return this.maxItem;
         }
     }
 }
