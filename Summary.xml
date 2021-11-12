@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/11/2021 - 20:39:26</Generatedon>
+    <Generatedon>11/12/2021 - 11:31:58</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
-    <Classes>52</Classes>
-    <Files>50</Files>
+    <Classes>54</Classes>
+    <Files>52</Files>
     <Coveredlines>700</Coveredlines>
-    <Uncoveredlines>511</Uncoveredlines>
-    <Coverablelines>1211</Coverablelines>
-    <Totallines>2495</Totallines>
-    <Linecoverage>57.8</Linecoverage>
+    <Uncoveredlines>548</Uncoveredlines>
+    <Coverablelines>1248</Coverablelines>
+    <Totallines>2582</Totallines>
+    <Linecoverage>56</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="52" coverage="57.8" coveredlines="700" coverablelines="1211" totallines="2672" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="54" coverage="56" coveredlines="700" coverablelines="1248" totallines="2759" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="9" coverablelines="9" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="0" coveredlines="0" coverablelines="44" totallines="73" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="46.1" coveredlines="12" coverablelines="26" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -47,6 +47,8 @@
       <Class name="Aloha.LevelMetadata" coverage="0" coveredlines="0" coverablelines="14" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.PauseMenu" coverage="100" coveredlines="19" coverablelines="19" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.PortalSpawner" coverage="0" coveredlines="0" coverablelines="44" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Profil" coverage="0" coveredlines="0" coverablelines="4" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.ProfilManager" coverage="0" coveredlines="0" coverablelines="33" totallines="71" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ProgressionBar" coverage="0" coveredlines="0" coverablelines="7" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Rock" coverage="100" coveredlines="3" coverablelines="3" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ScoreManager" coverage="100" coveredlines="72" coverablelines="72" totallines="141" branchcoverage="" coveredbranches="0" totalbranches="0" />
