@@ -55,6 +55,16 @@ namespace Aloha
                 foreach (EnemyMapping enemyMapping in enemiesMapping)
                 {
                     GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.EnemyType);
+                    
+                    // Define enemy stats from mapping
+                    Entity entity = enemy.GetComponent<Entity>();
+                    EnemyStats stats = entity.GetStats() as EnemyStats;
+                    stats.Attack = enemyMapping.stats.Attack;
+                    stats.Defense = enemyMapping.stats.Defense;
+                    stats.Level = enemyMapping.stats.Level;
+                    stats.MaxHealth = enemyMapping.stats.MaxHealth;
+                    entity.CurrentHealth = enemyMapping.stats.MaxHealth;
+
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                     enemy.transform.SetParent(tile.transform);
                 }

@@ -12,14 +12,14 @@ namespace Aloha
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
 
-        [SerializeField] 
+        [SerializeField]
         private GameObject[] tilePrefabs = new GameObject[] { };
 
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
 
-        [HideInInspector] 
+        [HideInInspector]
         public bool GameIsStarted;
 
         /// <summary>
@@ -107,7 +107,23 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <returns>
+        /// Return background position based on last tile
+        /// </returns>
+        public Vector3 getEndTilesPosition()
+        {
+            return new Vector3(0, 0, tileSize * numberOfTiles);
+        }
+
+        /// <summary>
+        /// Create a tile at the end of the tile list
+        /// <example> Example(s):
+        /// <code>
         /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// Return background position based on last tile
         /// </returns>
         public void SpawnTileToQueue(int tileIndex)
         {
@@ -119,6 +135,14 @@ namespace Aloha
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);
+            GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.tilesCounter - numberOfTiles, LevelManager.Instance.levelMapping.tileCount);
+
+            if (EnemySpawner.Instance.tilesCounter - numberOfTiles >= LevelManager.Instance.levelMapping.tileCount)
+            {
+                Time.timeScale = 0f;
+                UIManager.Instance.ShowEndGameUIElements();
+                AudioManager.Instance.StopMusic();
+            }
         }
 
         /// <summary>

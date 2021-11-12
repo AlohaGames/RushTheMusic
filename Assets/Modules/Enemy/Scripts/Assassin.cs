@@ -12,6 +12,7 @@ namespace Aloha
     public class Assassin : Enemy<AssassinStats> 
     {
         private Hero hero;
+        private Animator anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
@@ -19,6 +20,7 @@ namespace Aloha
         void Start()
         {
             hero = GameManager.Instance.GetHero();
+            anim = GetComponent<Animator>();
         }
 
         /// <summary>
@@ -76,6 +78,8 @@ namespace Aloha
         /// <param name="speed"></param>
         protected IEnumerator Concentration(float speed)
         {
+            anim.SetBool("isAttacking", true);
+
             yield return new WaitForSeconds(0.8f);
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;

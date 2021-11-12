@@ -2,6 +2,8 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
+using System;
+using System.Collections.Generic;
 
 //TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
@@ -24,7 +26,7 @@ namespace Aloha.Test
             yield return null;
 
             Assert.Less(tile.transform.position.z, initialZPos, "Does the tile move towards the player ?");
-            Object.Destroy(tile);
+            GameObject.Destroy(tile);
             yield return null;
         }
 
@@ -37,7 +39,7 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.LevelMapping = new LevelMapping();
+            levelManager.levelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 50);
             yield return null;
 
             tilesManager.StartGame();
@@ -55,7 +57,7 @@ namespace Aloha.Test
             tilesManager.StopGame();
             yield return null;
 
-            Object.Destroy(manager);
+            GameObject.Destroy(manager);
             yield return null;
 
         }
@@ -88,7 +90,7 @@ namespace Aloha.Test
             yield return null;
             Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
-            Object.Destroy(manager);
+            GameObject.Destroy(manager);
             yield return null;
         }
     }

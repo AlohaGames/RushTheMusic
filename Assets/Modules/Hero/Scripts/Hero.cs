@@ -21,7 +21,8 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        public new virtual HeroStats GetStats() {
+        public new virtual HeroStats GetStats()
+        {
             return this.stats as HeroStats;
         }
 
@@ -83,6 +84,11 @@ namespace Aloha
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
+
+            if (this.CurrentHealth <= 0)
+            {
+                GlobalEvent.GameOver.Invoke();
+            }
         }
 
         /// <summary>

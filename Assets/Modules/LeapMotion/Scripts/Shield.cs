@@ -7,6 +7,9 @@ namespace Aloha
     /// </summary>
     public class Shield : MonoBehaviour
     {
+        [SerializeField] 
+        float minimumSpeedToProtect = 0.1f;
+
         private Vector3 presPos;
         private Vector3 newPos;
         public Warrior Warrior;
@@ -43,7 +46,7 @@ namespace Aloha
         /// <param name="collider"></param>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy")
+            if (collider.tag == "Enemy" && Speed > minimumSpeedToProtect)
             {
                 // Change minimum speed if actual speed is to low
                 if (Speed < 1) Speed = 1f;

@@ -65,6 +65,7 @@ namespace Aloha
     public enum HeroType
     {
         Generic = 0,
-        Warrior = 1
+        Warrior = 1,
+        Wizard = 2
     }
 }

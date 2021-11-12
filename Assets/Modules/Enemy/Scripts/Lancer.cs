@@ -11,17 +11,16 @@ namespace Aloha
     /// </summary>
     public class Lancer : Enemy<LancerStats>
     {
+        private Animator anim;
+
         /// <summary>
         /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
+        void Start()
+        {
+            anim = GetComponent<Animator>();
+        }
+
         protected override IEnumerator AI()
         {
             int rand = Utils.RandomInt(1, 4);
@@ -46,6 +45,9 @@ namespace Aloha
         /// </returns>
         protected IEnumerator AttackAnimation(float speed)
         {
+            // Start animation
+            anim.SetBool("isAttacking", true);
+
             yield return StartCoroutine(GetBump(new Vector3(0, 0, 1f), 3f));
             yield return new WaitForSeconds(0.2f);
 

@@ -80,8 +80,6 @@ namespace Aloha
         /// <example> Example(s):
         /// <code>
         ///     LoadHero(Warrior);
-        /// </code>
-        /// <code>
         ///     LoadHero(Wizard);
         /// </code>
         /// </example>
@@ -93,10 +91,40 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Will ask to Resume a paused Game (do nothing if already resumed).
+        /// Will return if the game is plaing or stopped
         /// <example> Example(s):
         /// <code>
-        ///     ResumeGame();
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
+        public bool GetIsPlaying()
+        {
+            return this.isPlaying;
+        }
+
+        /// <summary>
+        /// Will set if the game if playing or not (for the game over)
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param bool="isPlaying">The new value of isPlaying</param>
+        public void SetIsPlaying(bool isPlaying)
+        {
+            this.isPlaying = isPlaying;
+        }
+
+        /// <summary>
+        /// Will ask to Resume a paused Game (do nothing if already resumed)
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -139,7 +167,7 @@ namespace Aloha
         /// Set the new current Hero and Destroy the old Hero if needed.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -157,7 +185,7 @@ namespace Aloha
         /// Return the current playing Hero.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     TODO
         /// </code>
         /// </example>
         /// </summary>

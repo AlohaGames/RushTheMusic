@@ -32,7 +32,8 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        void ShowInGameUIElements() {
+        void ShowInGameUIElements()
+        {
             HealthBar.gameObject.SetActive(true);
             SecondaryBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
@@ -41,8 +42,16 @@ namespace Aloha
             Hero hero = GameManager.Instance.GetHero();
 
             GlobalEvent.OnHealthUpdate.Invoke(hero.CurrentHealth, hero.GetStats().MaxHealth);
-            // TODO 
-            // GlobalEvent.OnSecondaryUpdate.Invoke();
+            if (hero is Warrior)
+            {
+                Warrior warrior = hero as Warrior;
+                GlobalEvent.OnSecondaryUpdate.Invoke(warrior.CurrentRage, warrior.GetStats().MaxRage);
+            } else if (hero is Wizard)
+            {
+                Wizard wizard = hero as Wizard;
+                GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
+            }
+            GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.levelMapping.TileCount);
         }
 
         /// <summary>
