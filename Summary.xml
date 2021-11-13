@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/12/2021 - 20:32:47</Generatedon>
+    <Generatedon>11/13/2021 - 14:05:31</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>53</Classes>
     <Files>51</Files>
-    <Coveredlines>748</Coveredlines>
+    <Coveredlines>751</Coveredlines>
     <Uncoveredlines>515</Uncoveredlines>
-    <Coverablelines>1263</Coverablelines>
-    <Totallines>2593</Totallines>
-    <Linecoverage>59.2</Linecoverage>
+    <Coverablelines>1266</Coverablelines>
+    <Totallines>2597</Totallines>
+    <Linecoverage>59.3</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="53" coverage="59.2" coveredlines="748" coverablelines="1263" totallines="2770" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="53" coverage="59.3" coveredlines="751" coverablelines="1266" totallines="2774" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="9" coverablelines="9" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="0" coveredlines="0" coverablelines="44" totallines="73" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="46.1" coveredlines="12" coverablelines="26" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -57,7 +57,7 @@
       <Class name="Aloha.Sword" coverage="100" coveredlines="19" coverablelines="19" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.TilesManager" coverage="88.8" coveredlines="64" coverablelines="72" totallines="126" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Tree" coverage="100" coveredlines="3" coverablelines="3" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.UIInventory" coverage="86.6" coveredlines="39" coverablelines="45" totallines="87" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.UIInventory" coverage="87.5" coveredlines="42" coverablelines="48" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.UIManager" coverage="24.1" coveredlines="7" coverablelines="29" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.UIScore" coverage="100" coveredlines="14" coverablelines="14" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Utils" coverage="100" coveredlines="30" coverablelines="30" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" />
