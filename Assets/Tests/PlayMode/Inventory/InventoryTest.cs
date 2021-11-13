@@ -65,6 +65,9 @@ namespace Aloha.Test
             Assert.AreEqual(100, hero.currentHealth);
 
             GameObject.Destroy(manager);
+            GameObject.Destroy(hero);
+            inventory = null;
+            stats = null;
         }
     }
 }

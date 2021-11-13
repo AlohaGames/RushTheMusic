@@ -112,7 +112,7 @@ namespace Aloha
         /// </summary>
         public void Quit()
         {
-            GlobalEvent.QuitGame.Invoke();
+            Application.Quit();
         }
 
         #endregion

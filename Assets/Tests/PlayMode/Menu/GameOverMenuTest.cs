@@ -7,15 +7,15 @@ namespace Aloha.Test
 {
     public class GameOverMenuTest
     {
-      /*  // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
+        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
         public IEnumerator GameOverMenuTestWithEnumeratorPasses()
         {
             GameManager manager = MonoBehaviour.Instantiate(Resources.Load<GameManager>("Prefabs/GameManager"));
-            manager.setIsPlaying(true);
+            manager.SetIsPlaying(true);
 
-            Assert.IsTrue(manager.getIsPlaying());
+            Assert.IsTrue(manager.GetIsPlaying());
 
             GameObject gameOver = new GameObject();
             gameOver.AddComponent<GameOverMenu>();
@@ -27,26 +27,27 @@ namespace Aloha.Test
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
-            yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
 
             gameOver.GetComponent<GameOverMenu>().ShowGameOverUI();
-
-            // skip one frame
-            yield return null;
+            
 
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(ui.activeSelf);
-            Assert.IsFalse(manager.getIsPlaying());
-            yield return null;
+            Assert.IsFalse(manager.GetIsPlaying());
 
             Time.timeScale = 1f;
+            manager.SetIsPlaying(true);
 
-            GameObject.Destroy(ui);
-            GameObject.Destroy(gameOver);
             GameObject.Destroy(manager);
-        }*/
+            GameObject.Destroy(gameOver);
+            GameObject.Destroy(ui);
+
+            yield return null;
+
+
+        }
     }
 }
 
