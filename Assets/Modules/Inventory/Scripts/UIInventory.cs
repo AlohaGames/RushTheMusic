@@ -8,8 +8,9 @@ namespace Aloha
 {
     public class UIInventory : MonoBehaviour
     {
-        private int nbItems;
-        private int itemsCount;
+        private int nbMaxItems;
+        private Queue<Item> items;
+
         private GameObject horizontalLayout;
         private RectTransform horizontalLayoutTransform;
         // Start is called before the first frame update
@@ -26,16 +27,19 @@ namespace Aloha
          * */
         void ShowCurrentInventoryUI()
         {
-            nbItems = Inventory.Instance.getMaxItems();
-            itemsCount = Inventory.Instance.GetItems().Count;
-            for (int i = 0; i < nbItems; i++)
+            nbMaxItems = Inventory.Instance.getMaxItems();
+            items = Inventory.Instance.GetItems();
+            Item[] itemsArray = items.ToArray();
+            Color color = Color.white;
+            for (int i = 0; i < nbMaxItems; i++)
             {
 
-                if (i < itemsCount){
+                if (i < itemsArray.Length){
+                    if (itemsArray[i] is HealPotion) color = Color.blue;
                     if (i == 0){
-                        this.gameObject.transform.GetChild(0).GetComponent<Image>().color = Color.blue;
+                        this.gameObject.transform.GetChild(0).GetComponent<Image>().color = color;
                     }else{
-                        this.gameObject.transform.GetChild(1).transform.GetChild(i - 1).GetComponent<Image>().color = Color.blue;
+                        this.gameObject.transform.GetChild(1).transform.GetChild(i - 1).GetComponent<Image>().color = color;
                     }
                 }else{
                     if (i == 0){
@@ -53,18 +57,18 @@ namespace Aloha
          */
         void ConstructInventoryUI()
         {
-            nbItems = Inventory.Instance.getMaxItems();
+            nbMaxItems = Inventory.Instance.getMaxItems();
             horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;
             horizontalLayoutTransform = horizontalLayout.GetComponent<RectTransform>();
 
             // Creation of the dynamic interface
-            if (nbItems == 1)
+            if (nbMaxItems == 1)
             {
                 Destroy(horizontalLayout);
             }
-            else if (nbItems >= 3)
+            else if (nbMaxItems >= 3)
             {
-                for (int i = 2; i < nbItems; i++)
+                for (int i = 2; i < nbMaxItems; i++)
                 {
                     /*horizontalLayoutTransform.sizeDelta = new Vector2(horizontalLayoutTransform.sizeDelta.x + 75, horizontalLayoutTransform.sizeDelta.y);
                     Debug.Log(horizontalLayoutTransform.sizeDelta.x);
