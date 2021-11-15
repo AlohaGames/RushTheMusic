@@ -18,9 +18,9 @@ namespace Aloha.Test
         {
             // Declaration of a hero
             HeroStats InventoryUiTestherostats = ScriptableObject.CreateInstance<HeroStats>();
-            InventoryUiTestherostats.attack = 100;
-            InventoryUiTestherostats.defense = 0;
-            InventoryUiTestherostats.maxHealth = 100;
+            InventoryUiTestherostats.Attack = 100;
+            InventoryUiTestherostats.Defense = 0;
+            InventoryUiTestherostats.MaxHealth = 100;
 
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
@@ -28,7 +28,7 @@ namespace Aloha.Test
             InventoryUiTesthero.Init(InventoryUiTestherostats);
             // The hero take 20 damage that will be heal after
             InventoryUiTesthero.TakeDamage(20);
-            Assert.AreEqual(80, InventoryUiTesthero.currentHealth);
+            Assert.AreEqual(80, InventoryUiTesthero.CurrentHealth);
 
             GameObject Inventory = new GameObject();
             Inventory.AddComponent<Inventory>();
@@ -80,8 +80,8 @@ namespace Aloha.Test
             
             // Using an item (heal potion)
             inventory.UseItem();
-            Assert.AreEqual(100, InventoryUiTesthero.currentHealth);
-            Assert.AreEqual(InventoryUiTesthero.GetStats().maxHealth, InventoryUiTesthero.currentHealth);
+            Assert.AreEqual(100, InventoryUiTesthero.CurrentHealth);
+            Assert.AreEqual(InventoryUiTesthero.GetStats().MaxHealth, InventoryUiTesthero.CurrentHealth);
 
             // Now i have only two item
             items = inventory.GetItems();
