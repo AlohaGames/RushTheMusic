@@ -3,27 +3,55 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Singleton that manage the enemy instantiation
+    /// </summary>
     public class EnemyInstantier : Singleton<EnemyInstantier>
     {
         [SerializeField]
-        private List<GameObject> EnemyPrefabs = new List<GameObject>();
+        private List<GameObject> enemyPrefabs = new List<GameObject>();
 
+        /// <summary>
+        /// This function instantiate an enemy with an ID
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="id">The ID of enemy to instantiate</param>
+        /// <returns>
+        /// A GameObject instance of enemy prefab
+        /// </returns>
         public GameObject InstantiateEnemy(int id)
         {
-            GameObject instance = Instantiate(EnemyPrefabs[id]);
+            GameObject instance = Instantiate(enemyPrefabs[id]);
             Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
             return instance;
         }
 
+        /// <summary>
+        /// This function instantiate an enemy with an enemy type.
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="type"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
-
             return InstantiateEnemy((int) type);
         }
-
-
     }
+
+    /// <summary>
+    /// TODO
+    /// </summary>
     public enum EnemyType
     {
         generic = 0,

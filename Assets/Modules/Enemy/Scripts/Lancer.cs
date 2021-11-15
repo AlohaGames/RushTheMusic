@@ -6,11 +6,17 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Lancer : Enemy<LancerStats> {
-
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public class Lancer : Enemy<LancerStats>
+    {
         private Animator anim;
 
-        private void Start()
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
             anim = GetComponent<Animator>();
         }
@@ -25,6 +31,18 @@ namespace Aloha
             yield return StartCoroutine(AttackAnimation(4f));
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="speed"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         protected IEnumerator AttackAnimation(float speed)
         {
             // Start animation
@@ -38,22 +56,16 @@ namespace Aloha
             Vector3 posFinal = posInit;
             posFinal.x = 0; posFinal.z = -1;
 
-
             while (temps < 1f)
             {
                 temps += speed * Time.deltaTime;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
-
             gameObject.transform.position = posFinal;
-
             Hero hero = GameManager.Instance.GetHero();
             Attack(hero);
-            Debug.Log(hero.currentHealth);
-
             Disappear();
         }
-
     }
 }

@@ -4,16 +4,35 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Wyrmling : Enemy<WyrmlingStats>
     {
-        [SerializeField] private WyrmlingFireball fireballPrefab;
+        [SerializeField] 
+        private WyrmlingFireball fireballPrefab;
+
         private float initialY;
 
-        private void Start()
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
             initialY = transform.position.y;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
         protected override IEnumerator AI()
         {
             while (true)
@@ -27,6 +46,19 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="speed"></param>
+        /// <returns>
+        /// TODO
+        /// </returns>
         protected override IEnumerator MoveXToAnimation(float x, float speed)
         {
             float temps = 0;
@@ -45,6 +77,17 @@ namespace Aloha
             gameObject.transform.position = posFinal;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
         protected IEnumerator AttackAnimation()
         {
             // Config fireball's spawning position
@@ -53,7 +96,7 @@ namespace Aloha
 
             // Spawn fireball
             WyrmlingFireball fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);
-            fireball.associatedEnemy = this;
+            fireball.AssociatedEnemy = this;
             yield return new WaitForSeconds(1f);
 
             // Launch fireball to the hero

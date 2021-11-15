@@ -6,21 +6,23 @@ using UnityEngine.UI;
 using UnityEngine.TestTools;
 using Aloha.Events;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class VerticalBarTest
     {
-        // A Test behaves as an ordinary method
+        /// <summary>
+/// TODO
+/// </summary>
         [Test]
         public void VerticalBarTestSimplePasses()
         {
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-
             // GameObject pour le hero
             GameObject heroObject = new GameObject();
-
 
             // Panel enfant qui est la barre de vie et qui a pour parent le panel avec le script UpdateBar.cs
             GameObject healthBar = new GameObject();
@@ -33,15 +35,10 @@ namespace Aloha.Test
             updateBar.AddComponent<VerticalBar>();
             updateBar.AddComponent<RectTransform>();
 
-
-
-
-            //Creation d'un hero
-
             // Ici on fait les stats du hero
             HeroStats heroStats = ScriptableObject.CreateInstance<HeroStats>();
-            heroStats.xp = 100;
-            heroStats.maxHealth = 100;
+            heroStats.XP = 100;
+            heroStats.MaxHealth = 100;
 
             //declaration du hero
             Hero myHero = heroObject.AddComponent<Hero>();
@@ -51,51 +48,47 @@ namespace Aloha.Test
 
             float heightBarBefore = (float)healthBar.GetComponent<RectTransform>().sizeDelta.x;
 
-
-
             VerticalBar verticalBar = updateBar.GetComponent<VerticalBar>();
             //RectTransform updateBarRect = updateBar.GetComponent<RectTransform>();
 
+            //TODO: peut-Ãªtre faire une boucle for ici
 
-            // On répète le processus quatres fois avec 25 dégats de données
-
-            float expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.currentHealth - damageGiven) / (float)myHero.GetStats().maxHealth);
+            float expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.CurrentHealth - damageGiven) / (float)myHero.GetStats().MaxHealth);
             myHero.TakeDamage(damageGiven);
-            Assert.IsTrue(myHero.currentHealth == 75);
-            verticalBar.UpdateBar(myHero.currentHealth, myHero.GetStats().maxHealth);
+            Assert.IsTrue(myHero.CurrentHealth == 75);
+            verticalBar.UpdateBar(myHero.CurrentHealth, myHero.GetStats().MaxHealth);
             float heightBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
-            Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, heightBarAfter));
+            Assert.IsTrue(Utils.IsEqualFloat(expectedBarAfter, heightBarAfter));
             Assert.IsTrue(heightBarAfter < heightBarBefore);
-            Assert.IsTrue(Utils.EqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 75));
+            Assert.IsTrue(Utils.IsEqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 75));
 
-            expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.currentHealth - damageGiven) / (float)myHero.GetStats().maxHealth);
+            expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.CurrentHealth - damageGiven) / (float)myHero.GetStats().MaxHealth);
             myHero.TakeDamage(damageGiven);
-            Assert.IsTrue(myHero.currentHealth == 50);
-            verticalBar.UpdateBar(myHero.currentHealth, myHero.GetStats().maxHealth);
+            Assert.IsTrue(myHero.CurrentHealth == 50);
+            verticalBar.UpdateBar(myHero.CurrentHealth, myHero.GetStats().MaxHealth);
             heightBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
-            Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, heightBarAfter));
+            Assert.IsTrue(Utils.IsEqualFloat(expectedBarAfter, heightBarAfter));
             Assert.IsTrue(heightBarAfter < heightBarBefore);
-            Assert.IsTrue(Utils.EqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 50));
+            Assert.IsTrue(Utils.IsEqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 50));
 
-            expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.currentHealth - damageGiven) / (float)myHero.GetStats().maxHealth);
+            expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.CurrentHealth - damageGiven) / (float)myHero.GetStats().MaxHealth);
             myHero.TakeDamage(damageGiven);
-            Assert.IsTrue(myHero.currentHealth == 25);
-            verticalBar.UpdateBar(myHero.currentHealth, myHero.GetStats().maxHealth);
+            Assert.IsTrue(myHero.CurrentHealth == 25);
+            verticalBar.UpdateBar(myHero.CurrentHealth, myHero.GetStats().MaxHealth);
             heightBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
-            Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, heightBarAfter));
+            Assert.IsTrue(Utils.IsEqualFloat(expectedBarAfter, heightBarAfter));
             Assert.IsTrue(heightBarAfter < heightBarBefore);
-            Assert.IsTrue(Utils.EqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 25));
+            Assert.IsTrue(Utils.IsEqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 25));
 
-            expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.currentHealth - damageGiven) / (float)myHero.GetStats().maxHealth);
+            expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.CurrentHealth - damageGiven) / (float)myHero.GetStats().MaxHealth);
             myHero.TakeDamage(damageGiven);
-            Assert.IsTrue(myHero.currentHealth == 0);
-            verticalBar.UpdateBar(myHero.currentHealth, myHero.GetStats().maxHealth);
+            Assert.IsTrue(myHero.CurrentHealth == 0);
+            verticalBar.UpdateBar(myHero.CurrentHealth, myHero.GetStats().MaxHealth);
             heightBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
-            Assert.IsTrue(Utils.EqualFloat(expectedBarAfter, heightBarAfter));
+            Assert.IsTrue(Utils.IsEqualFloat(expectedBarAfter, heightBarAfter));
             Assert.IsTrue(heightBarAfter < heightBarBefore);
-            Assert.IsTrue(Utils.EqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 00));
+            Assert.IsTrue(Utils.IsEqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 00));
 
-            // On verifie que la taille voulu et obtenu sont bien à 0 puisque la vie est à 0
             Assert.IsTrue(expectedBarAfter == 0);
             Assert.IsTrue(heightBarAfter == 0);
 
@@ -103,6 +96,5 @@ namespace Aloha.Test
             Object.Destroy(healthBar);
             Object.Destroy(heroObject);
         }
-
     }
 }
