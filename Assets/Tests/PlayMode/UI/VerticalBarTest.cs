@@ -57,7 +57,7 @@ namespace Aloha.Test
             //RectTransform updateBarRect = updateBar.GetComponent<RectTransform>();
 
 
-            // On répète le processus quatres fois avec 25 dégats de données
+            // On rï¿½pï¿½te le processus quatres fois avec 25 dï¿½gats de donnï¿½es
 
             float expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.currentHealth - damageGiven) / (float)myHero.GetStats().maxHealth);
             myHero.TakeDamage(damageGiven);
@@ -95,13 +95,15 @@ namespace Aloha.Test
             Assert.IsTrue(heightBarAfter < heightBarBefore);
             Assert.IsTrue(Utils.EqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.height * 0, 00));
 
-            // On verifie que la taille voulu et obtenu sont bien à 0 puisque la vie est à 0
+            // On verifie que la taille voulu et obtenu sont bien ï¿½ 0 puisque la vie est ï¿½ 0
             Assert.IsTrue(expectedBarAfter == 0);
             Assert.IsTrue(heightBarAfter == 0);
 
-            Object.Destroy(updateBar);
-            Object.Destroy(healthBar);
-            Object.Destroy(heroObject);
+            Object.DestroyImmediate(updateBar);
+            Object.DestroyImmediate(healthBar);
+            Object.DestroyImmediate(heroObject);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
     }

@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Aloha
 {
@@ -21,9 +22,9 @@ namespace Aloha
         public static float RandomFloat(float min, float max)
         {
             double val = (random.NextDouble() * (max - min) + min);
-            return (float) val;
+            return (float)val;
         }
-      
+
         public static int Clamp(this int value, int min, int max)
         {
             if (value <= min)
@@ -48,6 +49,25 @@ namespace Aloha
                 return max;
             }
             return value;
+        }
+
+        public static void ClearCurrentScene(bool immediate = false)
+        {
+            Transform[] objects = GameObject.FindObjectsOfType<Transform>();
+            foreach (Transform obj in objects)
+            {
+                if (obj.parent == null)
+                {
+                    if (immediate)
+                    {
+                        GameObject.DestroyImmediate(obj.gameObject);
+                    }
+                    else
+                    {
+                        GameObject.Destroy(obj.gameObject);
+                    }
+                }
+            }
         }
     }
 }

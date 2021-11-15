@@ -68,6 +68,8 @@ namespace Aloha.Test
             GameObject.Destroy(hero);
             inventory = null;
             stats = null;
+            
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

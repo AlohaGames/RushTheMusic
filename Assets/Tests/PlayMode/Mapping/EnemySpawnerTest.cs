@@ -27,6 +27,8 @@ namespace Aloha.Test
 
             GameObject.Destroy(manager);
             yield return null;
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         [UnityTest]
@@ -51,6 +53,8 @@ namespace Aloha.Test
             Assert.AreEqual(0, enemySpawner.tilesCounter);
             GameObject.Destroy(manager);
             yield return null;
+
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }

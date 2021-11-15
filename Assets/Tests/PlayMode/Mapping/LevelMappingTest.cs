@@ -38,6 +38,8 @@ namespace Aloha.Test
 
             LevelMapping lm1 = GetLevelsMapping()[1];
             Assert.AreEqual(180, lm1.tileCount);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         [Test]
@@ -48,6 +50,8 @@ namespace Aloha.Test
 
             LevelMapping lm2 = GetLevelsMapping()[2];
             Assert.AreEqual(1, lm2.GetEnnemies(10).Count);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

@@ -40,6 +40,8 @@ namespace Aloha.Test
             {
                 GameObject.Destroy(enemyGO);
             }
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         [Test]
@@ -55,6 +57,9 @@ namespace Aloha.Test
 
             GameObject.Destroy(enemy.gameObject);
             GameObject.Destroy(manager);
+
+            
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
     }

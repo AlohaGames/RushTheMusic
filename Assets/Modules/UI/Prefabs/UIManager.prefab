@@ -382,7 +382,6 @@ GameObject:
   - component: {fileID: 6438750933365806855}
   - component: {fileID: 2475763762519772499}
   - component: {fileID: 6760601224794037676}
-  - component: {fileID: 6447479824457594434}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
@@ -472,18 +471,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6447479824457594434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271077533178812648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029054d9378b66844ae39d67a2f1ba46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1379632771618205302
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +626,7 @@ GameObject:
   - component: {fileID: 6325064735918017600}
   - component: {fileID: 6528296815274834488}
   - component: {fileID: 2424351652857213868}
+  - component: {fileID: 1323644462469482975}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -711,6 +699,19 @@ MonoBehaviour:
   DistanceScoreText: {fileID: 3094446537644204275}
   KillScoreText: {fileID: 1338494629124376809}
   HitScoreText: {fileID: 8092539407961413781}
+--- !u!114 &1323644462469482975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475678625191179969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671da08b2b99a74459d3a4b85a1c1869, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameOverUI: {fileID: 1271077533178812648}
 --- !u!1 &3664714090160274107
 GameObject:
   m_ObjectHideFlags: 0
@@ -2262,7 +2263,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6447479824457594434}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOver, Aloha
         m_MethodName: GameOverClick
         m_Mode: 1

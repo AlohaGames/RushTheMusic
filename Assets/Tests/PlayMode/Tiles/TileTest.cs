@@ -22,6 +22,8 @@ namespace Aloha.Test
             Assert.Less(tile.transform.position.z, initialZPos, "Does the tile move towards the player ?");
             GameObject.Destroy(tile);
             yield return null;
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         // This test checks that a new tile appears and the first one is destroy when tiles move
@@ -52,6 +54,7 @@ namespace Aloha.Test
             GameObject.Destroy(manager);
             yield return null;
 
+            Aloha.Utils.ClearCurrentScene();
         }
 
         // This Test checks if the game is correctly instanced and destroyed when it's start and stop
@@ -82,9 +85,9 @@ namespace Aloha.Test
 
             GameObject.Destroy(manager);
             yield return null;
+
+            Aloha.Utils.ClearCurrentScene();
         }
-
-
     }
 
 }

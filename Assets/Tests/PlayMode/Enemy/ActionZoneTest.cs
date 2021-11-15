@@ -38,6 +38,8 @@ namespace Aloha.Test
             GameObject.Destroy(enemy.gameObject);
             GameObject.Destroy(manager);
             yield return null;
+
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }

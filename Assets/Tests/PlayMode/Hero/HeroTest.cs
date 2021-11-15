@@ -19,6 +19,8 @@ namespace Aloha.Test
 
             GameObject.DestroyImmediate(hero.gameObject);
             GameObject.DestroyImmediate(manager);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         [Test]
@@ -35,6 +37,8 @@ namespace Aloha.Test
 
             GameObject.Destroy(hero.gameObject);
             GameObject.Destroy(manager);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         [UnityTest]
@@ -90,6 +94,8 @@ namespace Aloha.Test
             Assert.AreEqual(7, warrior.currentHealth);
 
             GameObject.Destroy(warriorGO);
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         [Test]
@@ -116,6 +122,8 @@ namespace Aloha.Test
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

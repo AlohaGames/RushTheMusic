@@ -28,6 +28,8 @@ namespace Aloha.Test
             Assert.IsFalse(instanceUIManager.UIScore.EndGameScore.activeSelf);
 
             GameObject.DestroyImmediate(manager);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -54,6 +56,8 @@ namespace Aloha.Test
             Assert.IsFalse(instanceUIManager.UIScore.InGameScore.activeSelf);
 
             GameObject.DestroyImmediate(manager);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

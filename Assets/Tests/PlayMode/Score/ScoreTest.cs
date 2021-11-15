@@ -91,6 +91,8 @@ namespace Aloha.Test
             //Destroy GameObjects
             GameObject.Destroy(warriorGO);
             GameObject.Destroy(manager);
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
@@ -140,6 +142,8 @@ namespace Aloha.Test
             //Destroy GameObjects
             GameObject.Destroy(warriorGO);
             GameObject.Destroy(manager);
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
@@ -195,6 +199,8 @@ namespace Aloha.Test
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);
             GameObject.Destroy(manager);
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
@@ -250,6 +256,8 @@ namespace Aloha.Test
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);
             GameObject.Destroy(manager);
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
@@ -289,6 +297,8 @@ namespace Aloha.Test
             //Destroy GameObjects
             GameObject.Destroy(tile);
             GameObject.Destroy(manager);
+
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }

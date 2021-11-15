@@ -7,7 +7,8 @@ namespace Aloha.Test
     public class WarriorTest
     {
         [Test]
-        public void WarriorRageTakeDamageRegenerationTest(){
+        public void WarriorRageTakeDamageRegenerationTest()
+        {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
@@ -27,10 +28,13 @@ namespace Aloha.Test
             Assert.AreEqual(7, warrior.currentRage);
 
             GameObject.Destroy(warriorGO);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         [Test]
-        public void WarriorRageAttackTest(){
+        public void WarriorRageAttackTest()
+        {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
@@ -52,8 +56,10 @@ namespace Aloha.Test
             warrior.Attack(enemy);
             Assert.AreEqual(2, warrior.currentRage);
 
-            for(int i = 0; i <= 5; i++){
-                if(enemy == null){
+            for (int i = 0; i <= 5; i++)
+            {
+                if (enemy == null)
+                {
                     Assert.LessOrEqual(warrior.currentRage, warrior.GetStats().maxRage);
                     break;
                 }
@@ -62,6 +68,8 @@ namespace Aloha.Test
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(warriorGO);
+
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

@@ -46,6 +46,8 @@ namespace Aloha.Test
 
             GameObject.Destroy(child);
             GameObject.Destroy(pause);
+
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }

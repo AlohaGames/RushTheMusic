@@ -1,3 +1,7 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.TestTools;
 using NUnit.Framework;
 
 namespace Aloha.Test
@@ -92,6 +96,62 @@ namespace Aloha.Test
 
             //False above max positive
             Assert.AreEqual(10f, 11f.Clamp(-10f, 10f));
+        }
+
+        [UnityTest]
+        public IEnumerator ClearCurrentSceneTest()
+        {
+            GameObject go1 = new GameObject();
+            GameObject go2 = new GameObject();
+            GameObject go3 = new GameObject();
+            GameObject go4 = new GameObject();
+            GameObject go5 = new GameObject();
+
+            go2.GetComponent<Transform>().SetParent(go1.GetComponent<Transform>());
+
+            Assert.IsTrue(go1 != null);
+            Assert.IsTrue(go2 != null);
+            Assert.IsTrue(go3 != null);
+            Assert.IsTrue(go4 != null);
+            Assert.IsTrue(go5 != null);
+
+            yield return null;
+
+            Utils.ClearCurrentScene();
+
+            yield return null;
+
+            Assert.IsTrue(go1 == null);
+            Assert.IsTrue(go2 == null);
+            Assert.IsTrue(go3 == null);
+            Assert.IsTrue(go4 == null);
+            Assert.IsTrue(go5 == null);
+
+            yield return null;
+
+            go1 = new GameObject();
+            go2 = new GameObject();
+            go3 = new GameObject();
+            go4 = new GameObject();
+            go5 = new GameObject();
+
+            go2.GetComponent<Transform>().SetParent(go1.GetComponent<Transform>());
+
+            Assert.IsTrue(go1 != null);
+            Assert.IsTrue(go2 != null);
+            Assert.IsTrue(go3 != null);
+            Assert.IsTrue(go4 != null);
+            Assert.IsTrue(go5 != null);
+
+            yield return null;
+
+            Utils.ClearCurrentScene(true); // Immediate
+
+            Assert.IsTrue(go1 == null);
+            Assert.IsTrue(go2 == null);
+            Assert.IsTrue(go3 == null);
+            Assert.IsTrue(go4 == null);
+            Assert.IsTrue(go5 == null);
         }
     }
 

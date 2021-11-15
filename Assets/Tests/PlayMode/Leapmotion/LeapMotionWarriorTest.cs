@@ -50,6 +50,8 @@ namespace Aloha.Test
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(swordGO);
             GameObject.Destroy(warriorGO);
+
+            Aloha.Utils.ClearCurrentScene();
         }
 
         [UnityTest]
@@ -93,6 +95,8 @@ namespace Aloha.Test
             GameObject.Destroy(warrior);
             GameObject.Destroy(shieldGO);
             GameObject.Destroy(enemyGO);
+
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }
