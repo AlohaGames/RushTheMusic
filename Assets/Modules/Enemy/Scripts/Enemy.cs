@@ -6,6 +6,9 @@ using Aloha.AI;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Enemy<T> : Enemy where T : EnemyStats
     {
         private T enemyStats
@@ -13,15 +16,31 @@ namespace Aloha
             get { return this.stats as T; }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// TODO
+        /// </returns>
         public new EnemyStats GetStats()
         {
             return this.enemyStats;
         }
     }
     
+    /// <summary>
+    /// This class inherits from Entity. It manages the enemies.
+    /// </summary>
     public class Enemy : Entity
     {
-        [SerializeField] private bool noAI = false;
+        [SerializeField] 
+        private bool noAI = false;
+
         protected bool AIActivated = false;
 
         public UnityEvent NearHeroTrigger = new UnityEvent();
@@ -30,30 +49,80 @@ namespace Aloha
         {
             get { return this.stats as EnemyStats; }
         }
+
+        /// <summary>
+        /// This function get the stats of enemy.
+        /// <example> Example(s):
+        /// <code>
+        ///     enemy.GetStats().MaxHealth;
+        ///     enemy.GetStats().Attack;
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// A EnemyStats from enemy.
+        /// </returns>
         public new EnemyStats GetStats()
         {
             return this.enemyStats;
         }
-        public void Awake()
+
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
         {
             this.dieEvent.AddListener(Disappear);
         }
 
+        /// <summary>
+        /// This function is called when an enemy died. It inherite from entity class.
+        /// <example> Example(s):
+        /// <code>
+        ///     myEnemyType.Die();
+        /// </code>
+        /// </example>
+        /// </summary>
         public override void Die()
         {
             base.Die();
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Disappear()
         {
             Destroy(this.gameObject);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void DetachFromParent()
         {
             transform.parent = null;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="value"></param>
         public void SetAI(bool value)
         {
             if (!noAI)
@@ -67,6 +136,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         protected virtual IEnumerator AI()
         {
             while (this.AIActivated)
@@ -75,6 +152,16 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="speed"></param>
         protected virtual IEnumerator MoveXToAnimation(float x, float speed)
         {
             float temps = 0;
@@ -88,14 +175,15 @@ namespace Aloha
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
-
             gameObject.transform.position = posFinal;
         }
 
-        public void OnDestroy()
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
         {
             this.dieEvent.RemoveListener(Disappear);
         }
-
     }
 }

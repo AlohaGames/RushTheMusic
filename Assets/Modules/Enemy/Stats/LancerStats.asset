@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f0dd35e1b2919243bc9030e5553f224, type: 3}
   m_Name: LancerStats
   m_EditorClassIdentifier: 
-  maxHealth: 90
-  attack: 300
-  defense: 0
-  level: 0
+  MaxHealth: 30
+  Attack: 1500
+  Defense: 0
+  Level: 0
