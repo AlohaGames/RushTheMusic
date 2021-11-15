@@ -11,6 +11,9 @@ namespace Aloha
         Left = -1
     }
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class SideEnvironmentManager : Singleton<SideEnvironmentManager>
     {
         [SerializeField]
@@ -19,18 +22,38 @@ namespace Aloha
         [SerializeField]
         private GameObject castleHill;
 
-        public void Awake()
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
         {
             GlobalEvent.TileCount.AddListener(CountTile);
             GlobalEvent.LevelStart.AddListener(SpawnCastle);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="tile"></param>
         public void CountTile(GameObject tile)
         {
             generateSideEnv(Side.Left, tile);
             generateSideEnv(Side.Righ, tile);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         void SpawnCastle()
         {
             GameObject castleHillGo = Instantiate(castleHill);
@@ -40,6 +63,16 @@ namespace Aloha
             GlobalEvent.LevelStart.RemoveListener(SpawnCastle);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="side"></param>
+        /// <param name="tile"></param>
         void generateSideEnv(Side side, GameObject tile)
         {
             // Generate random index
@@ -62,8 +95,10 @@ namespace Aloha
             sideEnvInstR.transform.SetParent(tile.transform);
         }
 
-
-        public void OnDestroy()
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
         }

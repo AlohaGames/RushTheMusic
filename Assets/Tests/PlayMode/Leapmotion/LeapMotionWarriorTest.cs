@@ -4,28 +4,36 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the LeapMotion scripts functions.
+    /// </summary>
     public class LeapMotionWarriorTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator Test_SwordOnTriggerEnter()
         {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            wStats.maxRage = 100;
-            wStats.maxHealth = 10;
-            wStats.attack = 5;
-            wStats.defense = 0;
-            wStats.xp = 0;
+            wStats.MaxRage = 100;
+            wStats.MaxHealth = 10;
+            wStats.Attack = 5;
+            wStats.Defense = 0;
+            wStats.XP = 0;
             warrior.Init(wStats);
 
             GameObject swordGO = new GameObject();
             Sword sword = swordGO.AddComponent<Sword>();
             sword.transform.position = Vector3.zero;
-            sword.warrior = warrior;
-            sword.speed = 30;
+            sword.Warrior = warrior;
+            sword.Speed = 30;
 
             BoxCollider swordBoxCollider = swordGO.AddComponent<BoxCollider>();
             swordBoxCollider.isTrigger = true;
@@ -34,7 +42,7 @@ namespace Aloha.Test
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             enemy.transform.position = new Vector3(0, 0, 3f);
             EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            eStats.maxHealth = 10;
+            eStats.MaxHealth = 10;
             enemy.Init(eStats);
 
             BoxCollider enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();
@@ -45,31 +53,34 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
             GameObject.Destroy(enemyGO);
             GameObject.Destroy(swordGO);
             GameObject.Destroy(warriorGO);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator Test_ShieldOnTriggerEnter()
         {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            wStats.maxRage = 0;
-            wStats.maxHealth = 10;
-            wStats.attack = 5;
-            wStats.defense = 0;
-            wStats.xp = 0;
+            wStats.MaxRage = 0;
+            wStats.MaxHealth = 10;
+            wStats.Attack = 5;
+            wStats.Defense = 0;
+            wStats.XP = 0;
             warrior.Init(wStats);
 
             GameObject shieldGO = new GameObject();
             Shield shield = shieldGO.AddComponent<Shield>();
             shield.transform.position = Vector3.zero;
-            shield.warrior = warrior;
-            shield.speed = 30;
+            shield.Warrior = warrior;
+            shield.Speed = 30;
 
             BoxCollider shieldBoxCollider = shieldGO.AddComponent<BoxCollider>();
             shieldBoxCollider.isTrigger = true;
@@ -77,8 +88,8 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             enemy.transform.position = new Vector3(0, 0, 3f);
-            EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            eStats.maxHealth = 10;
+            EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats"); 
+            eStats.MaxHealth = 10;
             enemy.Init(eStats);
 
             BoxCollider enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();

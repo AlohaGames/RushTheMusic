@@ -4,15 +4,27 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class WyrmlingFireball : MonoBehaviour
     {
-        public Enemy associatedEnemy;
+        public Enemy AssociatedEnemy;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="collider"></param>
         public void OnTriggerEnter(Collider collider)
         {
             if (collider.tag == "Player")
             {
-                associatedEnemy.Attack(collider.gameObject.GetComponent<Entity>());
+                AssociatedEnemy.Attack(collider.gameObject.GetComponent<Entity>());
                 Destroy(gameObject);
             }
         }

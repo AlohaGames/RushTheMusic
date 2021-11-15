@@ -4,27 +4,50 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class LevelMetadata
     {
-        public string author;
-        public string levelName;
-        public string musicFilePath;
-        public string mappingFilePath;
+        public string Author;
+        public string LevelName;
+        public string MusicFilePath;
+        public string MappingFilePath;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public LevelMetadata()
         {
-            this.author = "Unknown";
-            this.levelName = "Unknown";
-            this.musicFilePath = "music.mp3";
-            this.mappingFilePath = "mapping.xml";
+            this.Author = "Unknown";
+            this.LevelName = "Unknown";
+            this.MusicFilePath = "music.mp3";
+            this.MappingFilePath = "mapping.xml";
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="author"></param>
+        /// <param name="musicFilePath"></param>
+        /// <param name="mappingFilePath"></param>
+        /// <param name="levelName"></param>
         public LevelMetadata(string author, string musicFilePath, string mappingFilePath, string levelName)
         {
-            this.author = author;
-            this.musicFilePath = musicFilePath;
-            this.mappingFilePath = mappingFilePath;
-            this.levelName = levelName;
+            this.Author = author;
+            this.MusicFilePath = musicFilePath;
+            this.MappingFilePath = mappingFilePath;
+            this.LevelName = levelName;
         }
     }
 }
