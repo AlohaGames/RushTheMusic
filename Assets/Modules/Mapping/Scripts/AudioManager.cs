@@ -5,13 +5,19 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Singleton that manage the audio in game
+    /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
 
         private GameObject audioSourceGO;
         private AudioSource audioSource;
 
-        public void Awake()
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
         {
             // Create audio source
             audioSourceGO = new GameObject();
@@ -24,26 +30,58 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void StartMusic()
         {
-            AudioClip clip = LevelManager.Instance.levelMusic;
+            AudioClip clip = LevelManager.Instance.LevelMusic;
             audioSource.clip = clip;
             audioSource.Play();
-            Debug.Log($"Play music {LevelManager.Instance.levelMusic}");
+            Debug.Log($"Play music {LevelManager.Instance.LevelMusic}");
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void PauseMusic()
         {
             audioSource.Pause();
             Debug.Log($"Pause music");
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ResumeMusic()
         {
             audioSource.Play();
             Debug.Log($"Resume music");
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void StopMusic()
         {
             audioSource.Stop();

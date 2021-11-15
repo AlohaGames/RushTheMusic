@@ -6,24 +6,43 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     [RequireComponent(typeof(Button))]
     public class LevelLoaderButton : MonoBehaviour
     {
         [SerializeField]
         private bool isTuto = false;
-        public string level;
 
-        public void Awake()
+        public string Level;   
+
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
         {
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void OnClick()
         {
-            GameManager.Instance.LoadLevel(level, isTuto);
+            GameManager.Instance.LoadLevel(Level, isTuto);
         }
 
-        public void OnDestroy() {
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
             GetComponent<Button>().onClick.RemoveListener(OnClick);
         }
     }

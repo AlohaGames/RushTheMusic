@@ -1,48 +1,59 @@
 using NUnit.Framework;
 using UnityEngine;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the enemy mapping class functions.
+    /// </summary>
     public class EnemyMappingTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         EnemyMapping[] GetEnemiesMapping()
         {
             EnemyMapping em0 = new EnemyMapping();
 
             Stats stats = new Stats();
-            stats.attack = 4;
-            stats.defense = 6;
-            stats.level = 1;
-            stats.maxHealth = 150;
-            EnemyMapping em1 = new EnemyMapping(EnemyType.generic, stats, VerticalPosition.TOP, HorizontalPosition.RIGHT);
+            stats.Attack = 4;
+            stats.Defense = 6;
+            stats.Level = 1;
+            stats.MaxHealth = 150;
+            EnemyMapping em1 = new EnemyMapping(EnemyType.generic, stats, VerticalPositionEnum.TOP, HorizontalPositionEnum.RIGHT);
 
             EnemyMapping[] ems = { em0, em1 };
             return ems;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EnemyMappingConstructorTest()
         {
             EnemyMapping em0 = GetEnemiesMapping()[0];
-            Assert.AreEqual(0, em0.stats.attack);
-            Assert.AreEqual(0, em0.stats.defense);
-            Assert.AreEqual(0, em0.stats.level);
-            Assert.AreEqual(0, em0.stats.maxHealth);
-            Assert.AreEqual(VerticalPosition.BOT, em0.verticalPosition);
-            Assert.AreEqual(HorizontalPosition.CENTER, em0.horizontalPosition);
+            Assert.AreEqual(0, em0.Stats.Attack);
+            Assert.AreEqual(0, em0.Stats.Defense);
+            Assert.AreEqual(0, em0.Stats.Level);
+            Assert.AreEqual(0, em0.Stats.MaxHealth);
+            Assert.AreEqual(VerticalPositionEnum.BOT, em0.VerticalPosition);
+            Assert.AreEqual(HorizontalPositionEnum.CENTER, em0.HorizontalPosition);
 
             EnemyMapping em1 = GetEnemiesMapping()[1];
-            Assert.AreEqual(4, em1.stats.attack);
-            Assert.AreEqual(6, em1.stats.defense);
-            Assert.AreEqual(1, em1.stats.level);
-            Assert.AreEqual(150, em1.stats.maxHealth);
-            Assert.AreEqual(VerticalPosition.TOP, em1.verticalPosition);
-            Assert.AreEqual(HorizontalPosition.RIGHT, em1.horizontalPosition);
-
-
-            Aloha.Utils.ClearCurrentScene(true);
+            Assert.AreEqual(4, em1.Stats.Attack);
+            Assert.AreEqual(6, em1.Stats.Defense);
+            Assert.AreEqual(1, em1.Stats.Level);
+            Assert.AreEqual(150, em1.Stats.MaxHealth);
+            Assert.AreEqual(VerticalPositionEnum.TOP, em1.VerticalPosition);
+            Assert.AreEqual(HorizontalPositionEnum.RIGHT, em1.HorizontalPosition);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EnemyMappingGetPositionTest()
         {

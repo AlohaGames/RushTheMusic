@@ -4,33 +4,39 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the enemy class functions.
+    /// </summary>
     public class EnemyTest
     {
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemyTestDamage()
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            stats.maxHealth = 10;
+            stats.MaxHealth = 10;
             enemy.Init(stats);
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
             enemy.TakeDamage(-5);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
             // Use the Assert class to test conditions.
             // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(0, enemy.currentHealth);
+            Assert.AreEqual(0, enemy.CurrentHealth);
 
             yield return null;
 
@@ -44,6 +50,9 @@ namespace Aloha.Test
             Aloha.Utils.ClearCurrentScene();
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EnemyInstancierTest()
         {

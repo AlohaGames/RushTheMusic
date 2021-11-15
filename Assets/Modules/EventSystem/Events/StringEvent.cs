@@ -3,8 +3,8 @@ using UnityEngine.Events;
 
 namespace Aloha.Events
 {
-    public class StringEvent : UnityEvent<string>
-    {
-
-    }
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public class StringEvent : UnityEvent<string> { }
 }

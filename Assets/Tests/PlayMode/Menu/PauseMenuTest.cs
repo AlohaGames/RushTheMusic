@@ -3,12 +3,15 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
     public class PauseMenuTest
     {
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+        /// <summary>
+        /// This class test the pause menu class functions.
+        /// </summary>
         [UnityTest]
         public IEnumerator PauseMenuTestWithEnumeratorPasses()
         {
@@ -20,8 +23,6 @@ namespace Aloha.Test
             child.transform.SetParent(pause.transform);
             pause.GetComponent<PauseMenu>().MenuPauseUI = child;
 
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
             yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
@@ -30,10 +31,11 @@ namespace Aloha.Test
             // skip one frame
             yield return null;
 
-            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().IsGamePaused);
             Assert.AreEqual(0f, Time.timeScale);
             Assert.IsTrue(child.activeSelf);
-            
+            Assert.IsTrue(pause.GetComponent<PauseMenu>().IsGamePaused);
+
             yield return null;
 
             pause.GetComponent<PauseMenu>().Resume();
@@ -42,7 +44,7 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(child.activeSelf);
-            Assert.IsFalse(pause.GetComponent<PauseMenu>().isGamePaused);
+            Assert.IsFalse(pause.GetComponent<PauseMenu>().IsGamePaused);
 
             GameObject.Destroy(child);
             GameObject.Destroy(pause);

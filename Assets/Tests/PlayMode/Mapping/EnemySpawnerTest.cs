@@ -3,10 +3,18 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the enemy spawner class functions.
+    /// </summary>
     public class EnemySpawnerTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemySpawnerCountTileTest()
         {
@@ -14,13 +22,13 @@ namespace Aloha.Test
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping();
+            levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
             yield return null;
 
-            Assert.AreEqual(19, enemySpawner.tilesCounter);
+            Assert.AreEqual(19, enemySpawner.TilesCounter);
 
             tilesManager.StopGame();
             yield return null;
@@ -31,6 +39,9 @@ namespace Aloha.Test
             Aloha.Utils.ClearCurrentScene();
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemySpawnerRestCountTileTest()
         {
@@ -38,19 +49,19 @@ namespace Aloha.Test
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
-            levelManager.levelMapping = new LevelMapping();
+            levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
             tilesManager.StartGame();
             yield return null;
 
-            Assert.AreNotEqual(0, enemySpawner.tilesCounter);
+            Assert.AreNotEqual(0, enemySpawner.TilesCounter);
             yield return null;
 
             tilesManager.StopGame();
             yield return null;
 
-            Assert.AreEqual(0, enemySpawner.tilesCounter);
+            Assert.AreEqual(0, enemySpawner.TilesCounter);
             GameObject.Destroy(manager);
             yield return null;
 
