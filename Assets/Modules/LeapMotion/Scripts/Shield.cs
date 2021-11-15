@@ -2,36 +2,55 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Shield : MonoBehaviour
     {
-        public Warrior warrior;
+        [SerializeField] 
+        float minimumSpeedToProtect = 0.1f;
+
         private Vector3 presPos;
         private Vector3 newPos;
-        public float speed;
-        [SerializeField] float minimumSpeedToProtect = 0.1f;
+        public Warrior Warrior;
+        public float Speed;
 
-        private void Start()
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
-            warrior = GameManager.Instance.GetHero() as Warrior;
+            Warrior = GameManager.Instance.GetHero() as Warrior;
             presPos = transform.position;
             newPos = transform.position;
         }
 
-        private void Update()
+        /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
         {
             newPos = transform.position;
-            speed = (newPos - presPos).magnitude * 100;
+            Speed = (newPos - presPos).magnitude * 100;
             presPos = newPos;
         }
 
-        // If the Shield touch an Object
+        /// <summary>
+        /// Is called when a GameObject collides with another GameObject.
+        /// <example> Example(s):
+        /// <code>
+        ///     aGameObject.OnTriggerEnter(anotherGameObject);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="collider"></param>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy" && speed > minimumSpeedToProtect)
+            if (collider.tag == "Enemy" && Speed > minimumSpeedToProtect)
             {
                 // Change minimum speed if actual speed is to low
-                if (speed < 1) speed = 1f;
-                warrior.BumpEntity(collider.GetComponent<Entity>(), speed);
+                if (Speed < 1) Speed = 1f;
+                Warrior.BumpEntity(collider.GetComponent<Entity>(),Speed);
             }
         }
     }

@@ -4,18 +4,26 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class InventoryTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void InventaireTest()
         {
             // Declaration of a hero
             HeroStats stats = ScriptableObject.CreateInstance<HeroStats>();
-            stats.attack = 100;
-            stats.defense = 0;
-            stats.maxHealth = 100;
+            stats.Attack = 100;
+            stats.Defense = 0;
+            stats.MaxHealth = 100;
 
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
@@ -23,11 +31,11 @@ namespace Aloha.Test
             hero.Init(stats);
 
             //premier test pour voir si tout est bien initialis�
-            Assert.AreEqual(100, hero.GetStats().maxHealth);
-            hero.currentHealth = hero.GetStats().maxHealth;
-            Assert.AreEqual(100, hero.currentHealth);
+            Assert.AreEqual(100, hero.GetStats().MaxHealth);
+            hero.CurrentHealth = hero.GetStats().MaxHealth;
+            Assert.AreEqual(100, hero.CurrentHealth);
             hero.TakeDamage(20);
-            Assert.AreEqual(80, hero.currentHealth);
+            Assert.AreEqual(80, hero.CurrentHealth);
 
             // Create 6 health potion
             int gain = 20;
@@ -59,10 +67,10 @@ namespace Aloha.Test
             inventory.UseItem();
             // there must be one item less and an hero with more lofe
             Assert.AreEqual(4, inventory.GetItems().Count);
-            Assert.AreEqual(100, hero.currentHealth);
+            Assert.AreEqual(100, hero.CurrentHealth);
             inventory.UseItem();
             Assert.AreEqual(3, inventory.GetItems().Count);
-            Assert.AreEqual(100, hero.currentHealth);
+            Assert.AreEqual(100, hero.CurrentHealth);
 
             GameObject.Destroy(manager);
             GameObject.Destroy(hero);
@@ -71,4 +79,3 @@ namespace Aloha.Test
         }
     }
 }
-
