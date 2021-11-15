@@ -40,9 +40,14 @@ namespace Aloha.Test
             Time.timeScale = 1f;
             manager.SetIsPlaying(true);
 
-            GameObject.Destroy(manager);
-            GameObject.Destroy(gameOver);
-            GameObject.Destroy(ui);
+            Transform[] objects = GameObject.FindObjectsOfType<Transform>();
+            foreach (Transform obj in objects)
+            {
+                if (obj.parent == null)
+                {
+                    GameObject.DestroyImmediate(obj.gameObject);
+                }
+            }
 
             yield return null;
 
