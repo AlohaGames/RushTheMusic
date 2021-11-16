@@ -21,6 +21,7 @@ namespace Aloha
             anim = GetComponent<Animator>();
         }
 
+/*
         protected override IEnumerator AI()
         {
             int rand = Utils.RandomInt(1, 4);
@@ -69,5 +70,6 @@ namespace Aloha
             Attack(hero);
             Disappear();
         }
+        */
     }
 }

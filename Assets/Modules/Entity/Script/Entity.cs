@@ -15,7 +15,6 @@ namespace Aloha
         protected UnityEvent dieEvent = new UnityEvent();
         public UnityEvent TakeDamageEvent = new UnityEvent();
 
-        protected UnityEvent dieEvent = new UnityEvent();        
         public int CurrentHealth;
         
         /// <summary>
