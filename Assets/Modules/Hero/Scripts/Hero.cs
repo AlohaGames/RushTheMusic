@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class manage the hero
     /// </summary>
     public class Hero : Entity
     {
@@ -27,10 +27,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Initialize the hero
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     hero.Init();
         /// </code>
         /// </example>
         /// </summary>
@@ -40,10 +40,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Initialize the hero with stats
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     hero.Init(heroStats);
         /// </code>
         /// </example>
         /// </summary>
@@ -58,7 +58,7 @@ namespace Aloha
         /// This function is called when a hero level up.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     TODO
         /// </code>
         /// </example>
         /// </summary>
@@ -92,19 +92,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Regenerate HP of hero.
         /// <example> Example(s):
         /// <code>
         ///     TODO
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
-        public override void Regeneration(int gain)
+        public override void RegenerateHP(int hpGain)
         {
-            this.CurrentHealth += gain;
+            this.CurrentHealth += hpGain;
             if (this.CurrentHealth > this.GetStats().MaxHealth)
             {
                 this.CurrentHealth = this.GetStats().MaxHealth;
@@ -129,7 +126,13 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Regenerate a pourcentage of secondary bar. The gain change depending on max secondary's hero
+        /// </summary>
+        /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
+        public virtual void RegenerateSecondary(float secondaryRegen){}
+
+        /// <summary>
+        /// Invoke Die event
         /// <example> Example(s):
         /// <code>
         /// TODO
@@ -144,7 +147,7 @@ namespace Aloha
     }
 
     /// <summary>
-    /// TODO
+    /// This class manage the hero with stats
     /// </summary>
     public class Hero<T> : Hero where T : HeroStats
     {

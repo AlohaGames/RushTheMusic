@@ -110,10 +110,10 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="gain"></param>
-        public virtual void Regeneration(int gain)
+        /// <param name="hpGain"></param>
+        public virtual void RegenerateHP(int hpGain)
         {
-            this.CurrentHealth += gain;
+            this.CurrentHealth += hpGain;
             if (CurrentHealth > GetStats().MaxHealth)
             {
                 CurrentHealth = GetStats().MaxHealth;
