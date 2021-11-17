@@ -114,7 +114,7 @@ namespace Aloha
         /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
         public override void RegenerateSecondary(float secondaryRegen)
         {
-            int newRage = (int)(this.CurrentRage + this.heroStats.MaxRage * secondaryRegen);
+            int newRage = (int) (this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
             this.CurrentRage = newRage.Clamp(0, this.heroStats.MaxRage);
         }
     }

@@ -8,7 +8,7 @@ namespace Aloha
         private const float SECONDARY_REGENERATION = 0.2f;
 
         /// <summary>
-        /// Give an effect to the mana potion. It regenerate the mana
+        /// Give an effect to the mana potion. It regenerate the mana.
         /// <example> Example(s):
         /// <code>
         ///     wizard.Effect();
