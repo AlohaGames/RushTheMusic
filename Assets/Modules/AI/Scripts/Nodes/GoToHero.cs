@@ -25,14 +25,11 @@ namespace Aloha.AI
 
             float dist = Vector3.Distance(posInit, posFinal);
             float totalTime = dist / speed;
-            float proxitmityTime = proximity / speed;
 
-            while (time < totalTime && dist > proximity)
+            while (time < totalTime)
             {
                 time += speed * Time.deltaTime;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
-                dist = Vector3.Distance(posInit, posFinal);
-                Debug.Log(dist);
                 yield return null;
             }
 

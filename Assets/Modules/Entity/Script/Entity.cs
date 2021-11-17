@@ -149,6 +149,7 @@ namespace Aloha
             ActionZone actionZone = GetComponentInChildren<ActionZone>();
             if (actionZone != null)
             {
+                Debug.Log("ACtive again wasTriggered");
                 actionZone.WasTriggered = false;
             }
         }

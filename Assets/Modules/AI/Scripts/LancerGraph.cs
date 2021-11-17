@@ -21,7 +21,6 @@ namespace Aloha.AI
 
             GoToHero.AddEventLink(TamponNearHero, lancer.NearHeroTrigger);
             GoToHero.AddEventLink(GetBump, lancer.TakeDamageEvent);
-            //GoToHero.AddAutomaticLink(TamponNearHero, 1.0f);
 
             TamponNearHero.AddAutomaticLink(MoveLeft, 0.5f);
             TamponNearHero.AddAutomaticLink(MoveRight, 0.5f);
