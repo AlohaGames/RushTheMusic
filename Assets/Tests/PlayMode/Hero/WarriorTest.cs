@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+//TODO: explain your F***** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -19,7 +19,7 @@ namespace Aloha.Test
         {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 10;
@@ -35,8 +35,6 @@ namespace Aloha.Test
             warrior.TakeDamage(2);
             Assert.AreEqual(7, warrior.CurrentRage);
 
-            GameObject.Destroy(warriorGO);
-
             Aloha.Utils.ClearCurrentScene(true);
         }
 
@@ -48,7 +46,7 @@ namespace Aloha.Test
         {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 2;
@@ -60,7 +58,7 @@ namespace Aloha.Test
 
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
+            EnemyStats enemyStats = (EnemyStats) ScriptableObject.CreateInstance("EnemyStats");
             enemyStats.MaxHealth = 20;
             enemy.Init(enemyStats);
 
@@ -76,9 +74,6 @@ namespace Aloha.Test
                 }
                 warrior.Attack(enemy);
             }
-
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
 
             Aloha.Utils.ClearCurrentScene(true);
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+//TODO: explain your F****** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -21,7 +21,7 @@ namespace Aloha.Test
         {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats wStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             wStats.MaxRage = 100;
             wStats.MaxHealth = 10;
             wStats.Attack = 5;
@@ -41,7 +41,7 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             enemy.transform.position = new Vector3(0, 0, 3f);
-            EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats eStats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             eStats.MaxHealth = 10;
             enemy.Init(eStats);
 
@@ -70,7 +70,7 @@ namespace Aloha.Test
         {
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats wStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             wStats.MaxRage = 0;
             wStats.MaxHealth = 10;
             wStats.Attack = 5;
@@ -90,7 +90,7 @@ namespace Aloha.Test
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             enemy.transform.position = new Vector3(0, 0, 3f);
-            EnemyStats eStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats"); 
+            EnemyStats eStats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             eStats.MaxHealth = 10;
             enemy.Init(eStats);
 

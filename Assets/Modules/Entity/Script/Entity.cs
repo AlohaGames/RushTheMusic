@@ -13,9 +13,9 @@ namespace Aloha
         [SerializeField]
         protected Stats stats;
 
-        protected UnityEvent dieEvent = new UnityEvent();        
+        protected UnityEvent dieEvent = new UnityEvent();
         public int CurrentHealth;
-        
+
         /// <summary>
         /// TODO
         /// <example> Example(s):

@@ -25,7 +25,7 @@ namespace Aloha.Test
             enemyStats.Defense = 0;
             enemyStats.MaxHealth = 1;
             enemyStats.Level = 1;
-            
+
             //Create the level mapping 0 (with 4 enemies)
             EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
             List<EnemyMapping> tile2enemies = new List<EnemyMapping>();
@@ -57,7 +57,7 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             warriorStats.MaxRage = 10;
             warriorStats.MaxHealth = 10;
             warriorStats.Attack = 1;
@@ -70,7 +70,7 @@ namespace Aloha.Test
             LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
-            
+
             //Call the HeroTakeDamage event
             warrior.TakeDamage(0);
 
@@ -81,7 +81,7 @@ namespace Aloha.Test
             yield return null;
 
             //Test hit score and total score
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 warrior.TakeDamage(0);
             }
@@ -89,9 +89,6 @@ namespace Aloha.Test
             Assert.AreEqual(-100, instanceScoreManager.TotalScore);
 
             //Destroy GameObjects
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
-
             Aloha.Utils.ClearCurrentScene();
         }
 
@@ -108,7 +105,7 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             warriorStats.MaxRage = 10;
             warriorStats.MaxHealth = 10;
             warriorStats.Attack = 1;
@@ -121,7 +118,7 @@ namespace Aloha.Test
             LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
-            
+
             //Call the HeroTakeDamage event
             warrior.TakeDamage(0);
 
@@ -132,7 +129,7 @@ namespace Aloha.Test
             yield return null;
 
             //Test hit score and total score
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 warrior.TakeDamage(0);
             }
@@ -140,9 +137,6 @@ namespace Aloha.Test
             Assert.AreEqual(0, instanceScoreManager.TotalScore);
 
             //Destroy GameObjects
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
-
             Aloha.Utils.ClearCurrentScene();
         }
 
@@ -159,7 +153,7 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             warriorStats.MaxRage = 10;
             warriorStats.MaxHealth = 10;
             warriorStats.Attack = 1;
@@ -170,7 +164,7 @@ namespace Aloha.Test
             //Create enemy instance
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats enemyStats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             enemyStats.MaxHealth = 1;
             enemy.Init(enemyStats);
 
@@ -188,7 +182,7 @@ namespace Aloha.Test
             yield return null;
 
             //Kill many enemies
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 instanceScoreManager.DeathCount(enemy);
             }
@@ -196,10 +190,6 @@ namespace Aloha.Test
             Assert.AreEqual(300, instanceScoreManager.TotalScore);
 
             //Destroy GameObjects
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
-
             Aloha.Utils.ClearCurrentScene();
         }
 
@@ -216,7 +206,7 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             warriorStats.MaxRage = 10;
             warriorStats.MaxHealth = 10;
             warriorStats.Attack = 1;
@@ -227,7 +217,7 @@ namespace Aloha.Test
             //Create enemy instance
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats enemyStats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             enemyStats.MaxHealth = 1;
             enemy.Init(enemyStats);
 
@@ -245,7 +235,7 @@ namespace Aloha.Test
             yield return null;
 
             //Kill many enemies
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 instanceScoreManager.DeathCount(enemy);
             }
@@ -253,10 +243,6 @@ namespace Aloha.Test
             Assert.AreEqual(0, instanceScoreManager.TotalScore);
 
             //Destroy GameObjects
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
-
             Aloha.Utils.ClearCurrentScene();
         }
 
@@ -287,7 +273,7 @@ namespace Aloha.Test
             yield return null;
 
             //Passing many tile
-            for(int i = 0; i < 11; i++)
+            for (int i = 0; i < 11; i++)
             {
                 instanceScoreManager.TilesCount(tile);
             }
@@ -295,9 +281,6 @@ namespace Aloha.Test
             Assert.AreEqual(600, instanceScoreManager.TotalScore);
 
             //Destroy GameObjects
-            GameObject.Destroy(tile);
-            GameObject.Destroy(manager);
-
             Aloha.Utils.ClearCurrentScene();
         }
     }

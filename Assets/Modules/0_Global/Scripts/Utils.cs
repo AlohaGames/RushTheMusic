@@ -33,48 +33,55 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO 
+        /// Generate a random int value
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     int a = Utils.RandomInt();
+        /// </code>
+        /// <code>
+        ///     int b = Utils.RandomInt(0, 10);
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
+        /// <param name="min">min value (default is 0)</param>
+        /// <param name="max">max value (default is 1)</param>
         /// <returns>
         /// A random int value between min and max.
         /// </returns>
-        public static int RandomInt(int min, int max)
+        public static int RandomInt(int min = 0, int max = 1)
         {
             int val = random.Next(min, max);
             return val;
         }
 
         /// <summary>
-        /// TODO 
+        /// Generate a random float value
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     int a = Utils.RandomFloat();
+        /// </code>
+        /// <code>
+        ///     int b = Utils.RandomFloat(0f, 10f);
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="min"></param>
-        /// <param name="max"></param>
+        /// <param name="min">min value (default is 0)</param>
+        /// <param name="max">max value (default is 1)</param>
         /// <returns>
         /// A random float value between min and max.
         /// </returns>
-        public static float RandomFloat(float min, float max)
+        public static float RandomFloat(float min = 0f, float max = 1f)
         {
             double val = (random.NextDouble() * (max - min) + min);
-            return (float)val;
+            return (float) val;
         }
-      
+
         /// <summary>
         /// This function clamp a int value between a min and a max. 
         /// <example> Example(s):
         /// <code>
-        ///     int a = (-14).Clamp(0, 20);
+        ///     int a = -14;
+        ///     a = a.Clamp(0, 20); // now a = 0
         /// </code>
         /// <code>
         ///     int a = 10;
@@ -130,12 +137,35 @@ namespace Aloha
             return value;
         }
 
+        /// <summary>
+        /// Will clear all GameObject of current Scene
+        /// Only for Unit Test
+        /// <example> Example(s):
+        /// <code>
+        ///     [Test]
+        ///     public void TestThis()
+        ///     {
+        ///         // DoSomething
+        ///         ClearCurrentScene(true);
+        ///     }
+        /// </code>
+        /// <code>
+        ///     [UnityTest]
+        ///     public IEnumerator TestThis()
+        ///     {
+        ///         // DoSomething
+        ///         ClearCurrentScene();
+        ///     }
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="immediate"> Do we need to use DestroyImmediate() (for [Test])</param>
         public static void ClearCurrentScene(bool immediate = false)
         {
             Transform[] objects = GameObject.FindObjectsOfType<Transform>();
             foreach (Transform obj in objects)
             {
-                if (obj.parent == null)
+                if (obj != null && obj.parent == null)
                 {
                     if (immediate)
                     {

@@ -4,12 +4,10 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// TODO @Wilfried
     /// </summary>
     public class InventoryTest
     {
@@ -72,11 +70,6 @@ namespace Aloha.Test
             Assert.AreEqual(3, inventory.GetItems().Count);
             Assert.AreEqual(100, hero.CurrentHealth);
 
-            GameObject.Destroy(manager);
-            GameObject.Destroy(hero);
-            inventory = null;
-            stats = null;
-            
             Aloha.Utils.ClearCurrentScene(true);
         }
     }

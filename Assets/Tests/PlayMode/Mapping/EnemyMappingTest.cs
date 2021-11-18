@@ -1,7 +1,7 @@
 using NUnit.Framework;
 using UnityEngine;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+//TODO: explain your F***** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -11,7 +11,7 @@ namespace Aloha.Test
     public class EnemyMappingTest
     {
         /// <summary>
-        /// TODO
+        /// TODO @Tristan
         /// </summary>
         EnemyMapping[] GetEnemiesMapping()
         {
@@ -62,8 +62,6 @@ namespace Aloha.Test
 
             EnemyMapping em1 = GetEnemiesMapping()[1];
             Assert.AreEqual(new Vector3(1.5f, 3, 3), em1.GetPosition(3));
-
-            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

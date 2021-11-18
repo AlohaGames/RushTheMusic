@@ -5,10 +5,15 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// TODO @Wilfried
+    /// </summary>
     public class GameOverMenuTest
     {
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <returns></returns>
         [UnityTest]
         public IEnumerator GameOverMenuTestWithEnumeratorPasses()
         {
@@ -21,7 +26,7 @@ namespace Aloha.Test
             Assert.IsTrue(Time.timeScale != 0f);
 
             gameOverMenu.ShowGameOverUI();
-            
+
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(gameOverMenu.GameOverUI.activeSelf);
             Assert.IsFalse(manager.GetIsPlaying());
@@ -29,12 +34,8 @@ namespace Aloha.Test
             Time.timeScale = 1f;
             manager.SetIsPlaying(true);
 
-            GameObject.Destroy(manager);
-
-            yield return null;
-
             Aloha.Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }
-

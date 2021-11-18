@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+//TODO: explain your F***** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -13,7 +13,7 @@ namespace Aloha.Test
     public class EnemySpawnerTest
     {
         /// <summary>
-        /// TODO
+        /// TODO @Tristan? (Not sure)
         /// </summary>
         [UnityTest]
         public IEnumerator EnemySpawnerCountTileTest()
@@ -33,10 +33,8 @@ namespace Aloha.Test
             tilesManager.StopGame();
             yield return null;
 
-            GameObject.Destroy(manager);
-            yield return null;
-
             Aloha.Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -62,10 +60,9 @@ namespace Aloha.Test
             yield return null;
 
             Assert.AreEqual(0, enemySpawner.TilesCounter);
-            GameObject.Destroy(manager);
-            yield return null;
 
             Aloha.Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }
