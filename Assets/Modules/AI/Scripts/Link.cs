@@ -31,12 +31,6 @@ namespace Aloha.AI
             this.probability = probability;
         }
 
-        public override void PathToNext()
-        {
-            Debug.Log("Path from : " + from + " to : " + to +"\nbecause of : " + this.probability);
-            base.PathToNext();
-        }
-
         public bool TryLink(float random)
         {
             if (random <= probability)
@@ -57,12 +51,6 @@ namespace Aloha.AI
         {
             this.triggerEvent = triggerEvent;
             triggerEvent?.AddListener(PathToNext);
-        }
-
-        public override void PathToNext()
-        {
-            Debug.Log("Path from : " + from + " to : " + to +"\nbecause of : " + this.triggerEvent);
-            base.PathToNext();
         }
 
         ~EventLink()

@@ -26,17 +26,12 @@ namespace Aloha.AI
             float dist = Vector3.Distance(posInit, posFinal);
             float totalTime = dist / speed;
 
-            while (time < totalTime)
-            {
-                time += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
-                yield return null;
-            }
+            time += speed * Time.deltaTime;
+            gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
+            yield return null;
 
             gameObject.transform.position = posFinal;
 
-            Debug.Log("Finish : " + AutomaticLinks.Count);
-            yield return null;
             if (!AutomaticLinks.IsEmpty())
             {
                 yield return TryAllLink();

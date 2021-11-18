@@ -54,6 +54,7 @@ namespace Aloha
         /// <summary>
         /// TODO
         /// <example> Example(s):
+        [SerializeField]
         /// <code>
         /// TODO
         /// </code>
@@ -122,9 +123,6 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// Return background position based on last tile
-        /// </returns>
         public void SpawnTileToQueue(int tileIndex)
         {
             if (activeTiles.Count == 0)
@@ -137,7 +135,7 @@ namespace Aloha
             GlobalEvent.TileCount.Invoke(tile);
             GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
 
-            if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount)
+            if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount && !GameManager.Instance.IsGameInfinite)
             {
                 Time.timeScale = 0f;
                 UIManager.Instance.ShowEndGameUIElements();

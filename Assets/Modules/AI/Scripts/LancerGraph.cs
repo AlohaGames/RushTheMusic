@@ -4,10 +4,12 @@ using Aloha;
 namespace Aloha.AI
 {
     [CreateAssetMenu(fileName = "Lancer", menuName = "AI/Lancer", order = 0)]
-    public class LancerGraph : Graph {
+    public class LancerGraph : Graph
+    {
 
         Lancer lancer;
-        public override void Start() {
+        public override void Start()
+        {
             lancer = Runner.GetComponent<Lancer>();
 
             Node GoToHero = new GoToHero(this);
@@ -18,7 +20,7 @@ namespace Aloha.AI
             Node GetBump = new BasicNode(this, 5);
 
             MoveRight.IsLeft = true;
-
+            GoToHero.AddAutomaticLink(GoToHero, 1.0f);
             GoToHero.AddEventLink(TamponNearHero, lancer.NearHeroTrigger);
             GoToHero.AddEventLink(GetBump, lancer.TakeDamageEvent);
 

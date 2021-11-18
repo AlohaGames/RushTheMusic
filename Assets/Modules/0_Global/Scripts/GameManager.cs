@@ -10,6 +10,7 @@ namespace Aloha
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
+        public bool IsGameInfinite = false;
         private bool isGamePaused = false;
         private bool isPlaying = false;
         private Hero hero;
