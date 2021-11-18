@@ -27,11 +27,6 @@ namespace Aloha
 
         /// <summary>
         /// This function show the UI element in game.
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
         /// </summary>
         void ShowInGameUIElements()
         {
@@ -65,11 +60,6 @@ namespace Aloha
 
         /// <summary>
         /// This function show the UI element at end game.
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void ShowEndGameUIElements(){
             UIScore.ShowEndGameUIScoreElements();

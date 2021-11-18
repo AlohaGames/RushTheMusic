@@ -6,19 +6,14 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// The item for heal the Hero
     /// </summary>
     public class HealPotion : Item
     {
         private int gain;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// The class with a the number of life that will be regenerate
         /// </summary>
         /// <param name="gain"></param>
         public HealPotion(int gain)
@@ -27,12 +22,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Call the hero and regenerate him with the value of the gain
         /// </summary>
         public override void Effect()
         {

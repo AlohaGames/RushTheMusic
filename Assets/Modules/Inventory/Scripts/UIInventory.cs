@@ -6,14 +6,19 @@ using UnityEngine.UI;
 
 namespace Aloha
 {
+    /// <summary>
+    /// It's the class which manage the inventory canvas
+    /// </summary>
     public class UIInventory : MonoBehaviour
     {
         private int nbMaxItems;
         private Queue<Item> items;
-
         private GameObject horizontalLayout;
         private RectTransform horizontalLayoutTransform;
-        // Start is called before the first frame update
+
+        /// <summary>
+        ///  Start is called before the first frame update
+        /// </summary>
         void Start()
         {
             // First, I contruct the UI
@@ -22,12 +27,12 @@ namespace Aloha
             ShowCurrentInventoryUI();
         }
 
-        /*
-         * This function show the current UI. It will be invoke each time we use an item or collect one
-         * */
+        /// <summary>
+        /// This function show the current UI. It will be invoke each time we use an item or collect one
+        /// </summary>
         void ShowCurrentInventoryUI()
         {
-            nbMaxItems = Inventory.Instance.getMaxItems();
+            nbMaxItems = Inventory.Instance.GetMaxItems();
             items = Inventory.Instance.GetItems();
             Item[] itemsArray = items.ToArray();
             Color color = Color.white;
@@ -52,12 +57,12 @@ namespace Aloha
             
         }
 
-        /*
-         * This method construct the UI. it will call once, when this class is loaded in the UIManager
-         */
+        /// <summary>
+        ///  This method construct the UI. it will call once, when this class is loaded in the UIManager
+        /// </summary>
         void ConstructInventoryUI()
         {
-            nbMaxItems = Inventory.Instance.getMaxItems();
+            nbMaxItems = Inventory.Instance.GetMaxItems();
             horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;
             horizontalLayoutTransform = horizontalLayout.GetComponent<RectTransform>();
 
@@ -70,9 +75,6 @@ namespace Aloha
             {
                 for (int i = 2; i < nbMaxItems; i++)
                 {
-                    /*horizontalLayoutTransform.sizeDelta = new Vector2(horizontalLayoutTransform.sizeDelta.x + 75, horizontalLayoutTransform.sizeDelta.y);
-                    Debug.Log(horizontalLayoutTransform.sizeDelta.x);
-                    Debug.Log(horizontalLayoutTransform.sizeDelta.y);*/
                     GameObject image = new GameObject();
                     image.AddComponent<Image>();
                     image.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(50, 50);
@@ -80,7 +82,6 @@ namespace Aloha
                 }
             }
         }
-
     }
 }
 

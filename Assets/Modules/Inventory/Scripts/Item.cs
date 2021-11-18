@@ -6,17 +6,12 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// It's an abstract class which represent all the items
     /// </summary>
     public abstract class Item
     {
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// It's the effect of the item
         /// </summary>
         public abstract void Effect();
     }

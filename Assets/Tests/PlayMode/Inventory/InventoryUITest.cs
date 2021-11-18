@@ -9,8 +9,6 @@ namespace Aloha.Test
 {
     public class InventoryUITest
     {
-
-
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
         // `yield return null;` to skip a frame.
         [UnityTest]
@@ -83,11 +81,11 @@ namespace Aloha.Test
             Assert.AreEqual(100, InventoryUiTesthero.CurrentHealth);
             Assert.AreEqual(InventoryUiTesthero.GetStats().MaxHealth, InventoryUiTesthero.CurrentHealth);
 
-            // Now i have only two item
+            // Now we have only two item
             items = inventory.GetItems();
             Assert.AreEqual(2, items.Count);
 
-            // I refresh the UI
+            // Now we start the function ShowCurrentInventoryTU
             inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
 
             // Now the third case must not be blue because i have only two object left
@@ -97,7 +95,7 @@ namespace Aloha.Test
             inventory.AddItem(new HealPotion(20));
             inventory.AddItem(new HealPotion(20));
 
-            // Now i have four object
+            // Now we have four object
             items = inventory.GetItems();
             Assert.AreEqual(4, items.Count);
 

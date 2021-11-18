@@ -14,12 +14,7 @@ namespace Aloha
 
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Add an item to the inventory, if the inventory is full, the new item will be dropped
         /// </summary>
         /// <param name="item"></param>
         public void AddItem(Item item)
@@ -31,12 +26,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// We use the firt item of the queue and we delete it after
         /// </summary>
         public void UseItem()
         {
@@ -48,22 +38,23 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Get all the items of our inventory. WARNING : it's not a copy, it's the instance of the items
         /// </summary>
         /// <returns>
-        /// TODO
+        /// A queue with all the items in the inventory
         /// </returns>
         public Queue<Item> GetItems()
         {
             return this.items;
         }
 
-        public int getMaxItems()
+        /// <summary>
+        /// Get the max size of the inventory
+        /// </summary>
+        /// <returns>
+        /// An integer with the value of the max size of the inventory.
+        /// </returns>
+        public int GetMaxItems()
         {
             return this.maxItem;
         }
