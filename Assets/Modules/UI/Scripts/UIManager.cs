@@ -54,8 +54,6 @@ namespace Aloha
             Inventory.Instance.AddItem(new HealPotion(20));
             Inventory.Instance.AddItem(new HealPotion(20));
             Inventory.Instance.AddItem(new HealPotion(20));
-
-
         }
 
         /// <summary>

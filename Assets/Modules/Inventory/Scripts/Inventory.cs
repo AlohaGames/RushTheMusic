@@ -5,14 +5,12 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// The singleton which represent the inventory
     /// </summary>
     public class Inventory  : Singleton<Inventory>
     {
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
-
-
         /// <summary>
         /// Add an item to the inventory, if the inventory is full, the new item will be dropped
         /// </summary>
