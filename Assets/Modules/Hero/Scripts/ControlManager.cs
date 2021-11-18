@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+namespace Aloha
+{
 public class ControlManager : MonoBehaviour
 {
     //TODO Set mode in gameManager
@@ -16,7 +18,7 @@ public class ControlManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!leapMode)
+        if (!leapMode && GameManager.Instance.GetIsPlaying())
         {
             float ry = Input.GetAxis("Mouse Y");
             float rx = Input.GetAxis("Mouse X");
@@ -30,19 +32,28 @@ public class ControlManager : MonoBehaviour
     {
         if (Input.GetKeyDown(InputBinding.Instance.attack))
         {
-            Debug.Log("Charge Attack");
+            PrepareAttack();
         }
         else if (Input.GetKeyUp(InputBinding.Instance.attack))
         {
-            Debug.Log("Release Attack");
+            ReleaseAttack();
         }
         else if (Input.GetKeyDown(InputBinding.Instance.defense))
         {
-            Debug.Log("Charge Defense");
+            PrepareDefense();
         }
         else if (Input.GetKeyUp(InputBinding.Instance.defense))
         {
-            Debug.Log("Release Defense");
+            ReleaseDefense();
         }
+    }
+
+    protected virtual void PrepareAttack() { }
+
+    protected virtual void ReleaseAttack() { }
+
+    protected virtual void PrepareDefense() { }
+
+    protected virtual void ReleaseDefense() { }
     }
 }
