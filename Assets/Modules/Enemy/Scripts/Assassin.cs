@@ -6,25 +6,48 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Class that manage utils functions
+    /// </summary>
     public class Assassin : Enemy<AssassinStats> 
     {
         private Hero hero;
         private Animator anim;
 
-        private void Start()
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
             hero = GameManager.Instance.GetHero();
             anim = GetComponent<Animator>();
         }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         protected override IEnumerator AI()
         {
             yield return StartCoroutine(Concentration(15f));
             yield return StartCoroutine(StealthJump(2f));
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="speed"></param>
         protected IEnumerator StealthJump(float speed)
         {
-
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit * speed;
@@ -37,16 +60,21 @@ namespace Aloha
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
-
             gameObject.transform.position = posFinal;
-
             Hero hero = GameManager.Instance.GetHero();
             Attack(hero);
-            Debug.Log(hero.currentHealth);
-
             Disappear();
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="speed"></param>
         protected IEnumerator Concentration(float speed)
         {
             anim.SetBool("isAttacking", true);
@@ -56,6 +84,8 @@ namespace Aloha
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;
             posFinal.z = posFinal.z - 2.2f;
+
+            ///TODO: maybe remove Debug
             Debug.Log(posInit);
             Debug.Log(posFinal);
 
@@ -68,6 +98,5 @@ namespace Aloha
             gameObject.transform.position = posFinal;
             yield return new WaitForSeconds(0.15f);
         }
-
     }
 }
