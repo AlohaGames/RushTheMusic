@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 2686129647764689528, guid: fe11f12abcffa79409e2fe9fb474271a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 9c3435b7cf3210044b3a24266d8aebf1, type: 2}
+      objectReference: {fileID: 2100000, guid: 49c3c02661a83fd42b33859cfbf9a17d, type: 2}
     - target: {fileID: 4672000999976058457, guid: fe11f12abcffa79409e2fe9fb474271a, type: 3}
       propertyPath: m_Name
       value: ForestTile_Variant
