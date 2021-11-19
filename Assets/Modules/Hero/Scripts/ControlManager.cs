@@ -75,6 +75,10 @@ namespace Aloha
             {
                 ReleaseDefense();
             }
+            else if (Input.GetKeyUp(InputBinding.Instance.UseItem))
+            {
+                // TODO Add use item
+            }
         }
 
         /// <summary>
