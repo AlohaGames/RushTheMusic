@@ -13,17 +13,12 @@ namespace Aloha
 
         /// <summary>
         /// This function instantiate an enemy with an ID
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
         /// </summary>
         /// <param name="id">The ID of enemy to instantiate</param>
         /// <returns>
         /// A GameObject instance of enemy prefab
         /// </returns>
-        public GameObject InstantiateEnemy(int id)
+        private GameObject InstantiateEnemy(int id)
         {
             GameObject instance = Instantiate(enemyPrefabs[id]);
             Entity enemy = instance.GetComponent<Entity>();
@@ -50,13 +45,28 @@ namespace Aloha
     }
 
     /// <summary>
-    /// TODO
+    /// All EnemyType that can be instantiate
     /// </summary>
     public enum EnemyType
     {
+        /// <summary>
+        /// Generic type (Never used in game)
+        /// </summary>
         generic = 0,
+
+        /// <summary>
+        /// Lancer Enemy
+        /// </summary>
         lancer = 1,
+
+        /// <summary>
+        /// Assassin Enemy
+        /// </summary>
         assassin = 2,
+
+        /// <summary>
+        /// Wyrmling Enemy (flying)
+        /// </summary>
         wyrmling = 3
     }
 }

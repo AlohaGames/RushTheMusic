@@ -25,8 +25,8 @@ namespace Aloha
             if (!WasTriggered && other.tag == "Player")
             {
                 WasTriggered = true;
-                transform.parent.GetComponent<Enemy>().DetachFromParent();
-                transform.parent.GetComponent<Enemy>().SetAI(true);
+                //transform.parent.GetComponent<Enemy>().DetachFromParent();
+                //transform.parent.GetComponent<Enemy>().SetAI(true);
                 transform.parent.GetComponent<Enemy>().NearHeroTrigger.Invoke();
             }
         }
