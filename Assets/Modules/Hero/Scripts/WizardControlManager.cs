@@ -5,6 +5,9 @@ using UnityEngine.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Manager that allow to control mouse hands for Wizard
+    /// </summary>
     public class WizardControlManager : ControlManager
     {
         [SerializeField]

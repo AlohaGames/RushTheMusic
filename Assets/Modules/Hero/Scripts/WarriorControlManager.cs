@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Manager that allow to control mouse hands for Warrior
+    /// </summary>
     public class WarriorControlManager : ControlManager
     {
         private Animator rightHandAnimator;

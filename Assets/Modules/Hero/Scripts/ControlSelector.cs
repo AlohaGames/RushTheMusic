@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Allows to change between leap mode and keyboard mode
+    /// </summary>
     public class ControlSelector : MonoBehaviour
     {
         private bool actualMode; // leap : true, mouse : false

@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Manager that allow to control mouse hands
+    /// </summary>
     public class ControlManager : MonoBehaviour
     {
         [SerializeField]
