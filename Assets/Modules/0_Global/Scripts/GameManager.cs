@@ -13,6 +13,7 @@ namespace Aloha
         private bool isGamePaused = false;
         private bool isPlaying = false;
         private Hero hero;
+        public bool LeapMode = false; // leap : true, mouse : false
 
         [SerializeField]
         private string defaultLevel = "";
@@ -93,17 +94,33 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Will return if the game is plaing or stopped
+        /// Will return if the game is paused or not
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     IsGamePaused()
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        /// bool
         /// </returns>
-        public bool GetIsPlaying()
+        public bool IsGamePaused()
+        {
+            return this.isGamePaused;
+        }
+
+        /// <summary>
+        /// Will return if the game is plaing or stopped
+        /// <example> Example(s):
+        /// <code>
+        ///     IsPlaying()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// bool
+        /// </returns
+        public bool IsPlaying()
         {
             return this.isPlaying;
         }
@@ -120,6 +137,20 @@ namespace Aloha
         public void SetIsPlaying(bool isPlaying)
         {
             this.isPlaying = isPlaying;
+        }
+
+        /// <summary>
+        /// Will set if leap mode is activated in the game
+        /// <example> Example(s):
+        /// <code>
+        ///     SetLeapMode()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param bool="leapMode">The new value of LeapMode</param>
+        public void SetLeapMode(bool leapMode)
+        {
+            this.LeapMode = leapMode;
         }
 
         /// <summary>
@@ -221,14 +252,6 @@ namespace Aloha
             if (Input.GetKeyDown(InputBinding.Instance.Quit))
             {
                 Quit();
-            }
-            if (Input.GetKeyDown(InputBinding.Instance.Attack))
-            {
-                // hero.Attack();
-            }
-            if (Input.GetKeyDown(InputBinding.Instance.Defense))
-            {
-                // Defense
             }
         }
         #endregion

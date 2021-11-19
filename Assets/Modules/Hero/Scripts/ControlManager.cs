@@ -10,31 +10,42 @@ namespace Aloha
         protected GameObject rightHand;
         [SerializeField]
         protected GameObject leftHand;
-        //TODO Set mode in gameManager
-        private bool leapMode = false;
 
         // Update is called once per frame
         void Update()
         {
-            if (!leapMode && GameManager.Instance.GetIsPlaying())
+            // if mouse mode activated, play with mouse and keyboard
+            if (!GameManager.Instance.LeapMode && !GameManager.Instance.IsGamePaused() && GameManager.Instance.IsPlaying())
             {
-                // Get camera rotation
-                float ry = Input.GetAxis("Mouse Y");
-                float rx = Input.GetAxis("Mouse X");
-
-                // Rotate hands on y axis if it's in the camera angle
-                if ((transform.rotation.y > -0.5f && rx < 0) || (transform.rotation.y < 0.5f && rx > 0))
-                {
-                    transform.RotateAround(this.transform.parent.transform.position, this.transform.parent.transform.up, rx);
-                }
-
-                // Rotate hands on x axis if it's in the camera angle
-                if ((transform.rotation.x > -0.25f && ry > 0) || (transform.rotation.x < 0.1f && ry < 0))
-                {
-                    transform.RotateAround(this.transform.parent.transform.position, this.transform.parent.transform.right, -ry);
-                }
-                
+                MoveHandsWithMouse();
                 CheckInputs();
+            }
+        }
+
+        /// <summary>
+        /// Move hands according to mouse movements
+        /// <example> Example(s):
+        /// <code>
+        ///     MoveHandsWithMouse()
+        /// </code>
+        /// </example>
+        /// </summary>
+        private void MoveHandsWithMouse()
+        {
+            // Get camera rotation
+            float ry = Input.GetAxis("Mouse Y");
+            float rx = Input.GetAxis("Mouse X");
+
+            // Rotate hands on y axis if it's in the camera angle
+            if ((transform.rotation.y > -0.5f && rx < 0) || (transform.rotation.y < 0.5f && rx > 0))
+            {
+                transform.RotateAround(this.transform.parent.transform.position, this.transform.parent.transform.up, rx);
+            }
+
+            // Rotate hands on x axis if it's in the camera angle
+            if ((transform.rotation.x > -0.25f && ry > 0) || (transform.rotation.x < 0.1f && ry < 0))
+            {
+                transform.RotateAround(this.transform.parent.transform.position, this.transform.parent.transform.right, -ry);
             }
         }
 

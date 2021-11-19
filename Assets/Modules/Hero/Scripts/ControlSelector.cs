@@ -1,0 +1,49 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace Aloha
+{
+    public class ControlSelector : MonoBehaviour
+    {
+        private bool actualMode; // leap : true, mouse : false
+        [SerializeField]
+        protected GameObject leapController;
+        [SerializeField]
+        protected GameObject mouseController;
+
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        private void Start()
+        {
+            this.actualMode = !GameManager.Instance.LeapMode;
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            // if leap mode changes, update right hands to active
+            if (GameManager.Instance.LeapMode != this.actualMode)
+            {
+                this.actualMode = GameManager.Instance.LeapMode;
+                ActivateLeapHands(this.actualMode);
+            }
+        }
+
+        /// <summary>
+        /// If true, activate leap hands. Otherwise, activate mouse hands
+        /// <example> Example(s):
+        /// <code>
+        ///     ActivateLeapHands()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// /// <param name="leapActivated"></param>
+        void ActivateLeapHands(bool leapActivated)
+        {
+            leapController.SetActive(leapActivated);
+            mouseController.SetActive(!leapActivated);
+        }
+    }
+}
