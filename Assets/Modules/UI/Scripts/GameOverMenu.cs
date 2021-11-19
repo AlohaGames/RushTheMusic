@@ -5,15 +5,29 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class GameOverMenu : MonoBehaviour
     {
         public GameObject GameOverUI;
 
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
         void Awake()
         {
             GlobalEvent.GameOver.AddListener(ShowGameOverUI);
         }
-        
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ShowGameOverUI()
         {
             // Put the timeScale to 0, active my UI And stop the game
@@ -23,10 +37,12 @@ namespace Aloha
             AudioManager.Instance.StopMusic();
         }
 
-        public void OnDestroy()
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
         {
             GlobalEvent.GameOver.RemoveListener(ShowGameOverUI);
         }
     }
 }
-

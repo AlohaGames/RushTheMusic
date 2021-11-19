@@ -1,25 +1,36 @@
 using NUnit.Framework;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the utils class functions.
+    /// </summary>
     public class UtilsTest
     {
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void EqualFloatTest()
         {
             //True
-            Assert.IsTrue(Utils.EqualFloat(3.2254346f, 3.22f));
+            Assert.IsTrue(Utils.IsEqualFloat(3.2254346f, 3.22f));
 
             //False
-            Assert.IsTrue(Utils.EqualFloat(3.219453f, 3.2254655f));
+            Assert.IsTrue(Utils.IsEqualFloat(3.219453f, 3.2254655f));
 
             //Epsilon True
-            Assert.IsTrue(Utils.EqualFloat(3.213f, 3.213468484f, 0.001f));
+            Assert.IsTrue(Utils.IsEqualFloat(3.213f, 3.213468484f, 0.001f));
 
             //Epsilon False
-            Assert.IsTrue(Utils.EqualFloat(3.2139484548f, 3.21456226685f));
+            Assert.IsTrue(Utils.IsEqualFloat(3.2139484548f, 3.21456226685f));
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void RandomIntTest()
         {
@@ -75,6 +86,9 @@ namespace Aloha.Test
             Assert.AreEqual(10, 11.Clamp(-10, 10));
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void ClampFloatTest()
         {
@@ -94,5 +108,4 @@ namespace Aloha.Test
             Assert.AreEqual(10f, 11f.Clamp(-10f, 10f));
         }
     }
-
 }

@@ -5,15 +5,24 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class SecondaryBar : HorizontalBar
     {
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
         public new void Awake()
         {
             base.Awake();
             GlobalEvent.OnSecondaryUpdate.AddListener(UpdateBar);
         }
 
-        public void OnDestroy()
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
         {
             GlobalEvent.OnSecondaryUpdate.RemoveListener(UpdateBar);
         }

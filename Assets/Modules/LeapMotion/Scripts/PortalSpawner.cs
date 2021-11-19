@@ -4,19 +4,26 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class PortalSpawner : MonoBehaviour
     {
         [SerializeField] 
         private Vortex vortexPrefab;
+
         [SerializeField] 
         private Material raycastMaterial;
+
         private LineRenderer targetPreview;
         private Vector3 origin;
         private Vector3? endPoint;
         private bool preparingPortal;
         public Wizard Wizard;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             Wizard = GameManager.Instance.GetHero() as Wizard;
@@ -28,7 +35,9 @@ namespace Aloha
             targetPreview.endWidth = 0.02f;
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
         void Update()
         {
             if (preparingPortal)
@@ -37,11 +46,27 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void preparePortal()
         {
             preparingPortal = true;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SpawnPortal()
         {
             if (preparingPortal && endPoint != null)
@@ -54,6 +79,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         void checkLaser()
         {
             // Find the origin and end point of the laser

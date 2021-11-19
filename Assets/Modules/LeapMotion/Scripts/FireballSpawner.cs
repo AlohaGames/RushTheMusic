@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha 
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class FireballSpawner : MonoBehaviour
     {
         [SerializeField]
@@ -16,6 +19,9 @@ namespace Aloha
         private Fireball currentFireball;
         public Wizard Wizard;
 
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             Wizard = GameManager.Instance.GetHero() as Wizard;
@@ -40,6 +46,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SpawnFireball()
         {
             if (!this.currentFireball)
@@ -57,9 +71,9 @@ namespace Aloha
                     fireball.transform.parent = transform;
 
                     // Define size of the fireball
-                    if (fireballPower != Wizard.GetStats().attack)
+                    if (fireballPower != Wizard.GetStats().Attack)
                     {
-                        float size = (float)fireballPower / Wizard.GetStats().attack;
+                        float size = (float) fireballPower / Wizard.GetStats().Attack;
                         Vector3 defaultScale = fireball.transform.localScale;
                         fireball.transform.localScale = new Vector3(defaultScale.x * size, defaultScale.y * size, defaultScale.z * size);
                     }
@@ -72,6 +86,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SendFireball()
         {
             if (this.currentFireball)
