@@ -1,20 +1,18 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7796639644930983404
-MonoBehaviour:
+--- !u!65 &622201757541478989
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7389218948549837581}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f02ca30c9aceb449b05eb3b5b9c09b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 0
-  stats: {fileID: 11400000, guid: 2f385259489b9cf459facefb697dc964, type: 2}
-  noAI: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5600586, y: 2.5600586, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &7133849611462001882
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -66,19 +64,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &622201757541478989
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7389218948549837581}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.5600586, y: 2.5600586, z: 3}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &5298267029195136178
 Animator:
   serializedVersion: 3
@@ -98,6 +83,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7796639644930983404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7389218948549837581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28f02ca30c9aceb449b05eb3b5b9c09b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 2f385259489b9cf459facefb697dc964, type: 2}
+  CurrentHealth: 0
+  noAI: 0
 --- !u!1001 &8596839881166951461
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
       propertyPath: m_Name
-      value: Lancer Variant
+      value: Lancer
       objectReference: {fileID: 0}
     - target: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
       propertyPath: m_IsActive
