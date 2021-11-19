@@ -102,7 +102,7 @@ namespace Aloha.Test
             // refresh the UI
             inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
 
-            // Check if only my first four cases are blue
+            // Check if only our first four cases are blue
             Assert.AreEqual(Color.blue, firstItem.GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(0).GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);

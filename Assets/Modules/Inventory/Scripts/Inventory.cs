@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// The singleton which represent the inventory
+    /// This class manage the inventory
     /// </summary>
     public class Inventory  : Singleton<Inventory>
     {

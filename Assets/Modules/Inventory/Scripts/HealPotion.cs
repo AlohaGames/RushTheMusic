@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// The item for heal the Hero
+    /// This class manage healing potion
     /// </summary>
     public class HealPotion : Item
     {
@@ -14,6 +14,11 @@ namespace Aloha
 
         /// <summary>
         /// The constructor with a the number of life that will be regenerate
+        /// <example>
+        /// <code>
+        /// HealPotion healpotion = new HealPotion(20);
+        /// </code>
+        /// </example>
         /// </summary>
         /// <param name="gain"></param>
         public HealPotion(int gain)
@@ -23,6 +28,11 @@ namespace Aloha
 
         /// <summary>
         /// Call the hero and regenerate him with the value of the gain
+        /// <example>
+        /// <code>
+        /// healpotion.Effect();
+        /// </code>
+        /// </example>
         /// </summary>
         public override void Effect()
         {
