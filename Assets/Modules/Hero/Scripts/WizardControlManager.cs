@@ -16,6 +16,9 @@ namespace Aloha
         [SerializeField]
         private UnityEvent releaseDefense;
 
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
         private void Awake()
         {
             if (prepareAttack == null)
@@ -28,6 +31,14 @@ namespace Aloha
                 releaseDefense = new UnityEvent();
         }
 
+        /// <summary>
+        /// Prepare Wizard's fireball
+        /// <example> Example(s):
+        /// <code>
+        ///     PrepareAttack()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected override void PrepareAttack()
         {
             if (prepareAttack != null)
@@ -36,6 +47,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Send Wizard's fireball
+        /// <example> Example(s):
+        /// <code>
+        ///     ReleaseAttack()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected override void ReleaseAttack()
         {
             if (releaseAttack != null)
@@ -44,6 +63,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Prepare Wizard's vortex
+        /// <example> Example(s):
+        /// <code>
+        ///     PrepareDefense()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected override void PrepareDefense()
         {
             if (prepareDefense != null)
@@ -52,6 +79,14 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Spawn Wizard's vortex
+        /// <example> Example(s):
+        /// <code>
+        ///     PrepareDefense()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected override void ReleaseDefense()
         {
             if (releaseDefense != null)

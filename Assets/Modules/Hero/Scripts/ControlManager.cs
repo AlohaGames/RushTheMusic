@@ -9,7 +9,9 @@ namespace Aloha
         //TODO Set mode in gameManager
         private bool leapMode = true;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             leapMode = false;
@@ -40,32 +42,72 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Check user inputs to interact with the Hero with mouse and keyboard 
+        /// <example> Example(s):
+        /// <code>
+        ///     CheckInputs()
+        /// </code>
+        /// </example>
+        /// </summary>
         void CheckInputs()
         {
-            if (Input.GetKeyDown(InputBinding.Instance.attack))
+            if (Input.GetKeyDown(InputBinding.Instance.Attack))
             {
                 PrepareAttack();
             }
-            else if (Input.GetKeyUp(InputBinding.Instance.attack))
+            else if (Input.GetKeyUp(InputBinding.Instance.Attack))
             {
                 ReleaseAttack();
             }
-            else if (Input.GetKeyDown(InputBinding.Instance.defense))
+            else if (Input.GetKeyDown(InputBinding.Instance.Defense))
             {
                 PrepareDefense();
             }
-            else if (Input.GetKeyUp(InputBinding.Instance.defense))
+            else if (Input.GetKeyUp(InputBinding.Instance.Defense))
             {
                 ReleaseDefense();
             }
         }
 
+        /// <summary>
+        /// Prepare Hero's attack
+        /// <example> Example(s):
+        /// <code>
+        ///     PrepareAttack()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected virtual void PrepareAttack() { }
 
+        /// <summary>
+        /// Release Hero's attack
+        /// <example> Example(s):
+        /// <code>
+        ///     ReleaseAttack()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected virtual void ReleaseAttack() { }
 
+        /// <summary>
+        /// Prepare Hero's defense
+        /// <example> Example(s):
+        /// <code>
+        ///     PrepareDefense()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected virtual void PrepareDefense() { }
 
+        /// <summary>
+        /// Release Hero's defense
+        /// <example> Example(s):
+        /// <code>
+        ///     PrepareDefense()
+        /// </code>
+        /// </example>
+        /// </summary>
         protected virtual void ReleaseDefense() { }
     }
 }

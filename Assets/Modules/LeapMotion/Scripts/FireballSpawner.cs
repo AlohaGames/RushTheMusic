@@ -37,7 +37,7 @@ namespace Aloha
         {
             if (this.currentFireball)
             {
-                checkLaser();
+                CheckLaser();
             } 
             else
             {
@@ -47,10 +47,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Spawn a new fireball in front of the spawner according to wizard mana
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SpawnFireball()
         /// </code>
         /// </example>
         /// </summary>
@@ -87,10 +87,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// If a fireball have a fireball linked, it send it forward
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SendFireball()
         /// </code>
         /// </example>
         /// </summary>
@@ -103,7 +103,15 @@ namespace Aloha
             }
         }
 
-        void checkLaser()
+        /// <summary>
+        /// Update laser to help user aim
+        /// <example> Example(s):
+        /// <code>
+        ///     CheckLaser()
+        /// </code>
+        /// </example>
+        /// </summary>
+        void CheckLaser()
         {
             // Find the origin and end point of the laser
             origin = transform.position;
