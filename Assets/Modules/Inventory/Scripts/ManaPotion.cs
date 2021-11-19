@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Aloha
 {
     /// <summary>
@@ -11,7 +13,8 @@ namespace Aloha
         /// Give an effect to the mana potion. It regenerate the mana.
         /// <example> Example(s):
         /// <code>
-        ///     wizard.Effect();
+        ///     ManaPotion manaPotion;
+        ///     manaPotion.Effect();
         /// </code>
         /// </example>
         /// </summary>

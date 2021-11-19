@@ -11,7 +11,8 @@ namespace Aloha
         /// Give an effect to the rage potion. It regenerate the rage
         /// <example> Example(s):
         /// <code>
-        ///     warrior.Effect();
+        ///     RagePotion ragePotion;
+        ///     ragePotion.Effect();
         /// </code>
         /// </example>
         /// </summary>

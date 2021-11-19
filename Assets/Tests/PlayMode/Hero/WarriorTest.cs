@@ -100,9 +100,6 @@ namespace Aloha.Test
             stats.XP = 10;
             warrior.Init(stats);
 
-            //Create rage potion
-            RagePotion ragePotion = new RagePotion();
-
             //Check if max rage is correct
             Assert.AreEqual(100, warrior.GetStats().MaxRage);
 
@@ -145,9 +142,6 @@ namespace Aloha.Test
             stats.XP = 10;
             warrior.Init(stats);
 
-            //Create rage potion
-            RagePotion ragePotion = new RagePotion();
-
             //Check if max rage is correct
             Assert.AreEqual(100, warrior.GetStats().MaxRage);
 
@@ -182,9 +176,6 @@ namespace Aloha.Test
             stats.Defense = 10;
             stats.XP = 10;
             warrior.Init(stats);
-
-            //Create rage potion
-            RagePotion ragePotion = new RagePotion();
 
             //Check if max rage is correct
             Assert.AreEqual(100, warrior.GetStats().MaxRage);

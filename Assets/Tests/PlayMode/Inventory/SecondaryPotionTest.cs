@@ -59,5 +59,64 @@ namespace Aloha.Test
             GameObject.DestroyImmediate(hero.gameObject);
             GameObject.DestroyImmediate(manager);
         }
+
+        /// <summary>
+        /// Test the effect of rage potion
+        /// </summary>
+        [Test]
+        public void NormalUseRagePotion()
+        {
+            //Instance a warrior
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
+            Hero hero = GameManager.Instance.GetHero(); 
+            Warrior warrior = hero as Warrior;
+
+            //Create a rage potion
+            RagePotion ragePotion = new RagePotion();
+
+            //Add rage
+            warrior.CurrentRage = 50;
+
+            //Use a rage potion
+            ragePotion.Effect();
+
+            //Check warrior's rage
+            Assert.AreEqual(60, warrior.CurrentRage);
+
+            //Destroy the GameObjects
+            GameObject.DestroyImmediate(hero.gameObject);
+            GameObject.DestroyImmediate(manager);
+        }
+
+        /// <summary>
+        /// Test the effect of rage potion when hero have the maximum of rage
+        /// </summary>
+        [Test]
+        public void UseManaPotionOverMaxRageStats()
+        {
+            //Instance a warrior
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
+            Hero hero = GameManager.Instance.GetHero(); 
+            Warrior warrior = hero as Warrior;
+            Debug.Log("Max rage: " + warrior.GetStats().MaxRage);
+
+            //Create a rage potion
+            RagePotion ragePotion = new RagePotion();
+
+            //Add rage
+            warrior.CurrentRage = warrior.GetStats().MaxRage;
+
+            //Use a rage potion
+            ragePotion.Effect();
+
+            //Check warrior's rage
+            Assert.AreEqual(100, warrior.CurrentRage);
+
+            //Destroy the GameObjects
+            GameObject.DestroyImmediate(hero.gameObject);
+            GameObject.DestroyImmediate(manager);
+        }
     }
 }

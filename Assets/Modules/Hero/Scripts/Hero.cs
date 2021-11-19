@@ -101,11 +101,7 @@ namespace Aloha
         /// </summary>
         public override void RegenerateHP(int hpGain)
         {
-            this.CurrentHealth += hpGain;
-            if (this.CurrentHealth > this.GetStats().MaxHealth)
-            {
-                this.CurrentHealth = this.GetStats().MaxHealth;
-            }
+            base.RegenerateHP(hpGain);
         }
 
         /// <summary>

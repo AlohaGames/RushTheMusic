@@ -22,9 +22,6 @@ namespace Aloha.Test
             wizardStats.XP = 10;
             wizard.Init(wizardStats);
 
-            //Create a mana potion
-            ManaPotion manaPotion = new ManaPotion();
-
             //Check if max mana is correct
             Assert.AreEqual(100, wizard.CurrentMana);
 
@@ -67,9 +64,6 @@ namespace Aloha.Test
             wizardStats.XP = 10;
             wizard.Init(wizardStats);
 
-            //Create a mana potion
-            ManaPotion manaPotion = new ManaPotion();
-
             //Check if max mana is correct
             Assert.AreEqual(100, wizard.CurrentMana);
 
@@ -101,9 +95,6 @@ namespace Aloha.Test
             wizardStats.Defense = 10;
             wizardStats.XP = 10;
             wizard.Init(wizardStats);
-
-            //Create a mana potion
-            ManaPotion manaPotion = new ManaPotion();
 
             //Check if max mana is correct
             Assert.AreEqual(100, wizard.CurrentMana);

@@ -113,11 +113,8 @@ namespace Aloha
         /// <param name="hpGain"></param>
         public virtual void RegenerateHP(int hpGain)
         {
-            this.CurrentHealth += hpGain;
-            if (CurrentHealth > GetStats().MaxHealth)
-            {
-                CurrentHealth = GetStats().MaxHealth;
-            }
+            int newHealth = this.CurrentHealth + hpGain;
+            this.CurrentHealth = newHealth.Clamp(0, this.GetStats().MaxHealth);
         }
 
         /// <summary>
