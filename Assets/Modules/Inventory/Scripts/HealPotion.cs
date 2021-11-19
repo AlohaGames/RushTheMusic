@@ -10,7 +10,7 @@ namespace Aloha
     /// </summary>
     public class HealPotion : Item
     {
-        private int gain;
+        private int hpGain;
 
         /// <summary>
         /// The constructor with a the number of life that will be regenerate
@@ -20,10 +20,10 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="gain"></param>
-        public HealPotion(int gain)
+        /// <param name="hpGain"></param>
+        public HealPotion(int hpGain)
         {
-            this.gain = gain;
+            this.hpGain = hpGain;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace Aloha
         public override void Effect()
         {
             Hero hero = GameManager.Instance.GetHero();
-            hero.Regeneration(this.gain);
+            hero.RegenerateHP(this.hpGain);
         } 
     }
 }

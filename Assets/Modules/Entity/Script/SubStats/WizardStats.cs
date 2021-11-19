@@ -9,6 +9,5 @@ namespace Aloha
     public class WizardStats : HeroStats
     {
         public int MaxMana;
-
     }
 }
