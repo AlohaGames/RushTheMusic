@@ -6,6 +6,15 @@ namespace Aloha
 {
     public class WarriorControlManager : ControlManager
     {
+        private Animator rightHandAnimator;
+        private Animator leftHandAnimator;
+
+        void Start()
+        {
+            rightHandAnimator = rightHand.GetComponent<Animator>();
+            leftHandAnimator = leftHand.GetComponent<Animator>();
+        }
+
         /// <summary>
         /// Prepare Warrior's attack
         /// <example> Example(s):
@@ -16,7 +25,7 @@ namespace Aloha
         /// </summary>
         protected override void PrepareAttack()
         {
-            base.PrepareAttack();
+            rightHandAnimator.SetTrigger("Attack");
         }
 
         /// <summary>
@@ -29,7 +38,6 @@ namespace Aloha
         /// </summary>
         protected override void ReleaseAttack()
         {
-            base.ReleaseAttack();
         }
 
         /// <summary>
@@ -42,7 +50,7 @@ namespace Aloha
         /// </summary>
         protected override void PrepareDefense()
         {
-            base.PrepareDefense();
+            leftHandAnimator.SetBool("isDefending", true);
         }
 
         /// <summary>
@@ -55,7 +63,7 @@ namespace Aloha
         /// </summary>
         protected override void ReleaseDefense()
         {
-            base.ReleaseDefense();
+            leftHandAnimator.SetBool("isDefending", false);
         }
     }
 }

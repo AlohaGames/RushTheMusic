@@ -58,6 +58,7 @@ namespace Aloha
         public void StartLevel()
         {
             isPlaying = true;
+            Cursor.visible = false;
             GlobalEvent.LevelStart.Invoke();
         }
 
@@ -72,6 +73,7 @@ namespace Aloha
         public void StopLevel()
         {
             isPlaying = false;
+            Cursor.visible = true;
             GlobalEvent.LevelStop.Invoke();
         }
 
@@ -131,6 +133,7 @@ namespace Aloha
         public void ResumeGame()
         {
             isGamePaused = false;
+            Cursor.visible = false;
             GlobalEvent.Resume.Invoke();
         }
 
@@ -145,6 +148,7 @@ namespace Aloha
         public void PauseGame()
         {
             isGamePaused = true;
+            Cursor.visible = true;
             GlobalEvent.Pause.Invoke();
         }
 

@@ -6,16 +6,12 @@ namespace Aloha
 {
     public class ControlManager : MonoBehaviour
     {
+        [SerializeField]
+        protected GameObject rightHand;
+        [SerializeField]
+        protected GameObject leftHand;
         //TODO Set mode in gameManager
-        private bool leapMode = true;
-
-        /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
-        /// </summary>
-        void Start()
-        {
-            leapMode = false;
-        }
+        private bool leapMode = false;
 
         // Update is called once per frame
         void Update()

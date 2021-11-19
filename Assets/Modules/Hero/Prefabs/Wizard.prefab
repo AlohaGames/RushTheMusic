@@ -86,8 +86,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6becc575cd6561244a41df94d465e2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
   stats: {fileID: 11400000, guid: dfcc4493d8496f94b839506ca1e96f27, type: 2}
+  CurrentHealth: 0
   CurrentMana: 0
 --- !u!1 &4739307044864665320
 GameObject:
@@ -134,6 +134,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 362bc576362df634f91f67361bc7dc9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightHand: {fileID: 7497865178978470440}
+  leftHand: {fileID: 2051750750242981026}
   prepareAttack:
     m_PersistentCalls:
       m_Calls:
@@ -1779,6 +1781,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9af1df4bb506b5a45b1264c66e37a7a5, type: 3}
+--- !u!1 &7497865178978470440 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4030106156896497705, guid: 9af1df4bb506b5a45b1264c66e37a7a5, type: 3}
+  m_PrefabInstance: {fileID: 6908544459209079297}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5958181180018963519 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 959164062327164478, guid: 9af1df4bb506b5a45b1264c66e37a7a5, type: 3}
@@ -3272,6 +3279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f61e6c31608d7ee40b0fe1c570122775, type: 3}
+--- !u!1 &2051750750242981026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7846752847801908247, guid: f61e6c31608d7ee40b0fe1c570122775, type: 3}
+  m_PrefabInstance: {fileID: 8114374148875860149}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2799896461496892085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6216997960102609408, guid: f61e6c31608d7ee40b0fe1c570122775, type: 3}
