@@ -13,7 +13,7 @@ namespace Aloha
         private int gain;
 
         /// <summary>
-        /// The class with a the number of life that will be regenerate
+        /// The constructor with a the number of life that will be regenerate
         /// </summary>
         /// <param name="gain"></param>
         public HealPotion(int gain)

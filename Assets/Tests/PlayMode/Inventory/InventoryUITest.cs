@@ -88,7 +88,7 @@ namespace Aloha.Test
             // Now we start the function ShowCurrentInventoryTU
             inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
 
-            // Now the third case must not be blue because i have only two object left
+            // Now the third case must not be blue
             Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
 
             // adding two more item
