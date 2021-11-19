@@ -43,9 +43,6 @@ namespace Aloha.Test
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            GameObject.Destroy(hero.gameObject);
-            GameObject.Destroy(manager);
-
             Aloha.Utils.ClearCurrentScene(true);
         }
 
@@ -131,9 +128,6 @@ namespace Aloha.Test
 
             warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
-
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
 
             Aloha.Utils.ClearCurrentScene(true);
         }

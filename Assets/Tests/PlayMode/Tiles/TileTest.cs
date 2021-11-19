@@ -29,7 +29,6 @@ namespace Aloha.Test
 
             Aloha.Utils.ClearCurrentScene();
             yield return null;
-
         }
 
         /// <summary>
@@ -61,7 +60,6 @@ namespace Aloha.Test
 
             Aloha.Utils.ClearCurrentScene();
             yield return null;
-
         }
 
         /// <summary>
@@ -94,7 +92,6 @@ namespace Aloha.Test
 
             Aloha.Utils.ClearCurrentScene();
             yield return null;
-
         }
     }
 }

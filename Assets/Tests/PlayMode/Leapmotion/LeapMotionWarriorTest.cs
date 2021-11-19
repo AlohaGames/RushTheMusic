@@ -55,10 +55,6 @@ namespace Aloha.Test
             Assert.Greater(enemy.transform.position.z, 3f);
             Assert.AreEqual(5, enemy.CurrentHealth);
 
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(swordGO);
-            GameObject.Destroy(warriorGO);
-
             Aloha.Utils.ClearCurrentScene();
         }
 
@@ -102,10 +98,6 @@ namespace Aloha.Test
             yield return new WaitForSeconds(0.5f);
 
             Assert.Greater(enemy.transform.position.z, 3f);
-
-            GameObject.Destroy(warrior);
-            GameObject.Destroy(shieldGO);
-            GameObject.Destroy(enemyGO);
 
             Aloha.Utils.ClearCurrentScene();
         }

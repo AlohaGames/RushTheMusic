@@ -95,5 +95,5 @@ namespace Aloha.Test
 
             Aloha.Utils.ClearCurrentScene(true);
         }
-    } // class
-} // namespace
+    }
+}
