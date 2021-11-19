@@ -19,7 +19,7 @@ namespace Aloha
         /// <summary>
         ///  Start is called before the first frame update
         /// </summary>
-        void Start()
+        public void Start()
         {
             // First, I contruct the UI
             ConstructInventoryUI();
@@ -30,7 +30,7 @@ namespace Aloha
         /// <summary>
         /// This function show the current UI. It will be invoke each time we use an item or collect one
         /// </summary>
-        void ShowCurrentInventoryUI()
+        public void ShowCurrentInventoryUI()
         {
             nbMaxItems = Inventory.Instance.GetMaxItems();
             items = Inventory.Instance.GetItems();
@@ -38,7 +38,6 @@ namespace Aloha
             Color color = Color.white;
             for (int i = 0; i < nbMaxItems; i++)
             {
-
                 if (i < itemsArray.Length){
                     if (itemsArray[i] is HealPotion) color = Color.blue;
                     if (i == 0){
@@ -54,13 +53,12 @@ namespace Aloha
                     }
                 }
             }
-            
         }
 
         /// <summary>
         ///  This method construct the UI. it will call once, when this class is loaded in the UIManager
         /// </summary>
-        void ConstructInventoryUI()
+        public void ConstructInventoryUI()
         {
             nbMaxItems = Inventory.Instance.GetMaxItems();
             horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;

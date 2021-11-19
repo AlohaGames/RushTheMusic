@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 namespace Aloha.Test
 {
+    // Test the UI of the inventory
     public class InventoryUITest
     {
         // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
@@ -60,23 +61,23 @@ namespace Aloha.Test
             inventory.AddItem(new HealPotion(20));
             inventory.AddItem(new HealPotion(20));
 
-            //check if i have three items now
+            //check if we have three items now
             Queue<Item> items = inventory.GetItems();
             Assert.AreEqual(3, items.Count);
 
             // start the inventoryUI Starting code (regenrate the Ui)
-            inventoryUI.StartCoroutine("Start");
+            inventoryUI.Start();
 
-            // I have 5 max item so i must have 4 child for my horizontalLayoutGroup, the fifth is the firstItem gameobject)
+            // We have 5 max item so i must have 4 child for my horizontalLayoutGroup, the fifth is the firstItem gameobject)
             Assert.AreEqual(4, horizontalLayoutGroupObject.transform.childCount);
 
-            // There is 3 item so only the three cases must be blue
+            // Inventory have 3 items so we must have 3 blue cases.
             Assert.AreEqual(Color.blue, firstItem.GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(0).GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
             Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(2).GetComponent<Image>().color);
             
-            // Using an item (heal potion)
+            // Using healpotion item
             inventory.UseItem();
             Assert.AreEqual(100, InventoryUiTesthero.CurrentHealth);
             Assert.AreEqual(InventoryUiTesthero.GetStats().MaxHealth, InventoryUiTesthero.CurrentHealth);
@@ -86,12 +87,12 @@ namespace Aloha.Test
             Assert.AreEqual(2, items.Count);
 
             // Now we start the function ShowCurrentInventoryTU
-            inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
+            inventoryUI.ShowCurrentInventoryUI();
 
             // Now the third case must not be blue
             Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
 
-            // adding two more item
+            // Add 2 items
             inventory.AddItem(new HealPotion(20));
             inventory.AddItem(new HealPotion(20));
 
@@ -100,7 +101,7 @@ namespace Aloha.Test
             Assert.AreEqual(4, items.Count);
 
             // refresh the UI
-            inventoryUI.StartCoroutine("ShowCurrentInventoryUI");
+            inventoryUI.ShowCurrentInventoryUI();
 
             // Check if only our first four cases are blue
             Assert.AreEqual(Color.blue, firstItem.GetComponent<Image>().color);
@@ -108,6 +109,7 @@ namespace Aloha.Test
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(2).GetComponent<Image>().color);
             Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(3).GetComponent<Image>().color);
+
 
             GameObject.Destroy(manager);
             GameObject.Destroy(inventory);
