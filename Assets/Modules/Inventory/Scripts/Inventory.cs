@@ -11,8 +11,14 @@ namespace Aloha
     {
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
+
         /// <summary>
         /// Add an item to the inventory, if the inventory is full, the new item will be dropped
+        /// <example> Example(s):
+        /// <code>
+        ///     AddItem(item);
+        /// </code>
+        /// </example>
         /// </summary>
         /// <param name="item"></param>
         public void AddItem(Item item)
@@ -25,6 +31,11 @@ namespace Aloha
 
         /// <summary>
         /// We use the firt item of the queue and we delete it after
+        /// <example> Example(s):
+        /// <code>
+        ///     AddItem(item);
+        /// </code>
+        /// </example>
         /// </summary>
         public void UseItem()
         {
@@ -37,6 +48,12 @@ namespace Aloha
 
         /// <summary>
         /// Get all the items of our inventory. WARNING : it's not a copy, it's the instance of the items
+        /// <example> Example(s):
+        /// <code>
+        ///     Inventory inventory = new Inventory();
+        ///     Queue(item) items = inventory.GetItems();
+        /// </code>
+        /// </example>
         /// </summary>
         /// <returns>
         /// A queue with all the items in the inventory
@@ -48,6 +65,12 @@ namespace Aloha
 
         /// <summary>
         /// Get the max size of the inventory
+        /// <example> Example(s):
+        /// <code>
+        ///     Inventory inventory = new Inventory();
+        ///     int maxItems = inventory.GetMaxItems();
+        /// </code>
+        /// </example>
         /// </summary>
         /// <returns>
         /// An integer with the value of the max size of the inventory.

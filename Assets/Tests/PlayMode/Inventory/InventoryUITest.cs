@@ -7,13 +7,18 @@ using UnityEngine.UI;
 
 namespace Aloha.Test
 {
-    // Test the UI of the inventory
+    /// <summary>
+    /// Test the UI of the inventory
+    /// </summary>
     public class InventoryUITest
     {
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
-        [UnityTest]
-        public IEnumerator InventoryUIWithEnumeratorPasses()
+
+        /// <summary>
+        /// This Test checks everything 
+        /// </summary>
+        // TODO Create lot of little tests
+        [Test]
+        public void CheckEverythingInInventoryUITest()
         {
             // Declaration of a hero
             HeroStats InventoryUiTestherostats = ScriptableObject.CreateInstance<HeroStats>();
@@ -25,6 +30,7 @@ namespace Aloha.Test
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
             Hero InventoryUiTesthero = GameManager.Instance.GetHero();
             InventoryUiTesthero.Init(InventoryUiTestherostats);
+
             // The hero take 20 damage that will be heal after
             InventoryUiTesthero.TakeDamage(20);
             Assert.AreEqual(80, InventoryUiTesthero.CurrentHealth);
@@ -56,22 +62,22 @@ namespace Aloha.Test
             UIInventory inventoryUI = InventoryUI.GetComponent<UIInventory>();
             Inventory inventory = Inventory.GetComponent<Inventory>();
 
-            // Adding three item
+            // Adding three items
             inventory.AddItem(new HealPotion(20));
             inventory.AddItem(new HealPotion(20));
             inventory.AddItem(new HealPotion(20));
 
-            //check if we have three items now
+            // check if the inventory has three items
             Queue<Item> items = inventory.GetItems();
             Assert.AreEqual(3, items.Count);
 
             // start the inventoryUI Starting code (regenrate the Ui)
             inventoryUI.Start();
 
-            // We have 5 max item so i must have 4 child for my horizontalLayoutGroup, the fifth is the firstItem gameobject)
+            // Check the number of children
             Assert.AreEqual(4, horizontalLayoutGroupObject.transform.childCount);
 
-            // Inventory have 3 items so we must have 3 blue cases.
+            // Inventory has 3 blue cases
             Assert.AreEqual(Color.blue, firstItem.GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(0).GetComponent<Image>().color);
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(1).GetComponent<Image>().color);
@@ -82,11 +88,10 @@ namespace Aloha.Test
             Assert.AreEqual(100, InventoryUiTesthero.CurrentHealth);
             Assert.AreEqual(InventoryUiTesthero.GetStats().MaxHealth, InventoryUiTesthero.CurrentHealth);
 
-            // Now we have only two item
+            // Check if there is 2 items
             items = inventory.GetItems();
             Assert.AreEqual(2, items.Count);
 
-            // Now we start the function ShowCurrentInventoryTU
             inventoryUI.ShowCurrentInventoryUI();
 
             // Now the third case must not be blue
@@ -96,7 +101,7 @@ namespace Aloha.Test
             inventory.AddItem(new HealPotion(20));
             inventory.AddItem(new HealPotion(20));
 
-            // Now we have four object
+            // Check with 4 items
             items = inventory.GetItems();
             Assert.AreEqual(4, items.Count);
 
@@ -110,15 +115,13 @@ namespace Aloha.Test
             Assert.AreEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(2).GetComponent<Image>().color);
             Assert.AreNotEqual(Color.blue, horizontalLayoutGroup.transform.GetChild(3).GetComponent<Image>().color);
 
-
-            GameObject.Destroy(manager);
-            GameObject.Destroy(inventory);
-            GameObject.Destroy(InventoryUI);
-            GameObject.Destroy(firstItem);
-            GameObject.Destroy(Image1Object);
-            GameObject.Destroy(horizontalLayoutGroupObject);
-
-            yield return null;
+            // Destroy all gameobjects
+            GameObject.DestroyImmediate(manager);
+            GameObject.DestroyImmediate(inventory);
+            GameObject.DestroyImmediate(InventoryUI);
+            GameObject.DestroyImmediate(firstItem);
+            GameObject.DestroyImmediate(Image1Object);
+            GameObject.DestroyImmediate(horizontalLayoutGroupObject);
         }
     }
 }

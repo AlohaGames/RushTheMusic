@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// It's the class which manage the inventory canvas
+    /// This class manage the inventory canvas
     /// </summary>
     public class UIInventory : MonoBehaviour
     {
@@ -21,17 +21,23 @@ namespace Aloha
         /// </summary>
         public void Start()
         {
-            // First, I contruct the UI
+            // First, contruct the UI
             ConstructInventoryUI();
-            // Then, i refresh it with the current Items;
+            // Then, refresh it with the current Items
             ShowCurrentInventoryUI();
         }
 
         /// <summary>
         /// This function show the current UI. It will be invoke each time we use an item or collect one
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowCurrentInventoryUI()
+        /// </code>
+        /// </example>
         /// </summary>
         public void ShowCurrentInventoryUI()
         {
+            // TODO Change this by the new potion assets
             nbMaxItems = Inventory.Instance.GetMaxItems();
             items = Inventory.Instance.GetItems();
             Item[] itemsArray = items.ToArray();
@@ -57,6 +63,11 @@ namespace Aloha
 
         /// <summary>
         ///  This method construct the UI. it will call once, when this class is loaded in the UIManager
+        ///  <example> Example(s):
+        /// <code>
+        ///     ConstructInventoryUI()
+        /// </code>
+        /// </example>
         /// </summary>
         public void ConstructInventoryUI()
         {
@@ -82,4 +93,3 @@ namespace Aloha
         }
     }
 }
-

@@ -27,6 +27,11 @@ namespace Aloha
 
         /// <summary>
         /// This function show the UI element in game.
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowInGameUIElements()
+        /// </code>
+        /// </example>
         /// </summary>
         void ShowInGameUIElements()
         {
@@ -50,14 +55,15 @@ namespace Aloha
             }
 
             GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.LevelMapping.TileCount);
-            // declaration of some items in the inventory
-            Inventory.Instance.AddItem(new HealPotion(20));
-            Inventory.Instance.AddItem(new HealPotion(20));
-            Inventory.Instance.AddItem(new HealPotion(20));
         }
 
         /// <summary>
         /// This function show the UI element at end game.
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowEndGameUIElements()
+        /// </code>
+        /// </example>
         /// </summary>
         public void ShowEndGameUIElements(){
             UIScore.ShowEndGameUIScoreElements();

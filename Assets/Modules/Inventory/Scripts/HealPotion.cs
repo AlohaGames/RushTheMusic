@@ -14,9 +14,9 @@ namespace Aloha
 
         /// <summary>
         /// The constructor with a the number of life that will be regenerate
-        /// <example>
+        /// <example> Example(s): 
         /// <code>
-        /// HealPotion healpotion = new HealPotion(20);
+        ///     HealPotion healpotion = new HealPotion(20);
         /// </code>
         /// </example>
         /// </summary>
@@ -28,9 +28,9 @@ namespace Aloha
 
         /// <summary>
         /// Call the hero and regenerate him with the value of the gain
-        /// <example>
+        /// <example> Example(s): 
         /// <code>
-        /// healpotion.Effect();
+        ///     healpotion.Effect();
         /// </code>
         /// </example>
         /// </summary>
