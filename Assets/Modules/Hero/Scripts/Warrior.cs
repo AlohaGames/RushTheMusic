@@ -4,7 +4,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class manage the warrior
     /// </summary>
     public class Warrior : Hero<WarriorStats>
     {
@@ -13,10 +13,10 @@ namespace Aloha
         public int CurrentRage;
 
         /// <summary>
-        /// TODO
+        /// Initialize the warrior
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     warrior.Init();
         /// </code>
         /// </example>
         /// </summary>
@@ -26,10 +26,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Initialize the warrior with stats
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.Init(warriorStats);
         /// </code>
         /// </example>
         /// </summary>
@@ -42,18 +42,15 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Bump an entity
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.BumpEntity(assassin);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="entity"></param>
         /// <param name="speed"></param>
-        /// <returns>
-        /// TODO
-        /// </returns>
         public void BumpEntity(Entity entity, float speed)
         {
             Vector3 direction = new Vector3(0, 0, 2 * speed);
@@ -61,50 +58,64 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// This function makes the warrior take a certain amount of damage
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.TakeDamage(50);
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="damage"></param>
+        /// <param name="damage">The amount of damage taken</param>
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
+            int newRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
+            this.CurrentRage = newRage.Clamp(0, this.heroStats.MaxRage);
 
-            //TODO: voir si un clamp serait mieux
-            // Add limit to increasing of rage
-            if (CurrentRage < this.heroStats.MaxRage) CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
-            if (CurrentRage > this.heroStats.MaxRage) CurrentRage = this.heroStats.MaxRage;
-            
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
 
         /// <summary>
-        /// TODO
+        /// The warrior attacks an entity
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.Attack(wyrmling);
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="entity"></param>
+        /// <param name="entity">The entity type attacked</param>
         public override void Attack(Entity entity)
         {
             int damage;
-            if(this.CurrentRage == heroStats.MaxRage){
+            if (this.CurrentRage == heroStats.MaxRage)
+            {
                 Stats entityStats = entity.GetStats();
                 damage = entityStats.MaxHealth;
                 entity.TakeDamage(damage);
                 CurrentRage = 0;
-            }else
+            }
+            else
             {
                 damage = heroStats.Attack;
                 entity.TakeDamage(damage);
                 CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
                 GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
             }
+        }
+
+        /// <summary>
+        /// Regenerates a pourcentage of the warrior's max rage.
+        /// <example> Example(s):
+        /// <code>
+        ///     warrior.RegenerateSecondary();
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
+        public override void RegenerateSecondary(float secondaryRegen)
+        {
+            int newRage = (int) (this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
+            this.CurrentRage = newRage.Clamp(0, this.heroStats.MaxRage);
         }
     }
 }
