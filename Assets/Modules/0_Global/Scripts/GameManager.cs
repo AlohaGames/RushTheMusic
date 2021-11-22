@@ -102,7 +102,7 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <returns>
-        /// bool
+        /// a boolean if the game is paused or not
         /// </returns>
         public bool IsGamePaused()
         {
@@ -110,7 +110,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Will return if the game is plaing or stopped
+        /// Will return if the game is playing or stopped
         /// <example> Example(s):
         /// <code>
         ///     IsPlaying()
@@ -118,7 +118,7 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <returns>
-        /// bool
+        /// a boolean if the game is playing or not
         /// </returns
         public bool IsPlaying()
         {

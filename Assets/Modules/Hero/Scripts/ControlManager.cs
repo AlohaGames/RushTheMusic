@@ -14,7 +14,9 @@ namespace Aloha
         [SerializeField]
         protected GameObject leftHand;
 
-        // Update is called once per frame
+        /// <summary>
+        /// Update is called once per frame
+        /// </summary>
         void Update()
         {
             // if mouse mode activated, play with mouse and keyboard
@@ -33,7 +35,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void MoveHandsWithMouse()
+        void MoveHandsWithMouse()
         {
             // Get camera rotation
             float ry = Input.GetAxis("Mouse Y");

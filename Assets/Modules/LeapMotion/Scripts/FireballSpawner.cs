@@ -11,8 +11,10 @@ namespace Aloha
     {
         [SerializeField]
         private Fireball fireballPrefab;
+
         [SerializeField]
         private Material raycastMaterial;
+
         private LineRenderer targetPreview;
         private Vector3 origin;
         private Vector3? endPoint;
@@ -32,7 +34,9 @@ namespace Aloha
             targetPreview.endWidth = 0.02f;
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Update is called once per frame
+        /// </summary>
         void Update()
         {
             if (this.currentFireball)

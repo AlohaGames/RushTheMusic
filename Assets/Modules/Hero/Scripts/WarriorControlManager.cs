@@ -12,6 +12,9 @@ namespace Aloha
         private Animator rightHandAnimator;
         private Animator leftHandAnimator;
 
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             rightHandAnimator = rightHand.GetComponent<Animator>();
@@ -39,9 +42,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        protected override void ReleaseAttack()
-        {
-        }
+        protected override void ReleaseAttack() { }
 
         /// <summary>
         /// Prepare Warrior's defense

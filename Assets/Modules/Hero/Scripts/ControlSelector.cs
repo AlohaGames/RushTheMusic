@@ -10,8 +10,10 @@ namespace Aloha
     public class ControlSelector : MonoBehaviour
     {
         private bool actualMode; // leap : true, mouse : false
+
         [SerializeField]
         protected GameObject leapController;
+
         [SerializeField]
         protected GameObject mouseController;
 
@@ -23,7 +25,9 @@ namespace Aloha
             this.actualMode = !GameManager.Instance.LeapMode;
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Update is called once per frame
+        /// </summary>
         void Update()
         {
             // if leap mode changes, update right hands to active

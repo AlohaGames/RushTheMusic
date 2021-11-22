@@ -22,7 +22,7 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        private void Awake()
+        void Awake()
         {
             if (prepareAttack == null)
                 prepareAttack = new UnityEvent();
