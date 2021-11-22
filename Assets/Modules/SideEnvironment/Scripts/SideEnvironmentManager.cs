@@ -13,16 +13,18 @@ namespace Aloha
 
     public class SideEnvironmentManager : Singleton<SideEnvironmentManager>
     {
-        [SerializeField]
-        private SideEnvironment[] sideEnvironmentPrefab = new SideEnvironment[] { };
 
         [SerializeField]
-        private GameObject castleHill;
+        public Biome baseBiome;
+
+        [SerializeField]
+        public Biome redBiome;
+
+        private Biome currentBiome;
 
         public void Awake()
         {
             GlobalEvent.TileCount.AddListener(CountTile);
-            GlobalEvent.LevelStart.AddListener(SpawnCastle);
         }
 
         public void CountTile(GameObject tile)
@@ -31,22 +33,30 @@ namespace Aloha
             generateSideEnv(Side.Righ, tile);
         }
 
-        void SpawnCastle()
+        public void LoadBiome(string biomeName)
         {
-            GameObject castleHillGo = Instantiate(castleHill);
+            // Load biome
+            Debug.Log("Load biome " + biomeName);
+            if(biomeName == "red") {
+                currentBiome = Instantiate(redBiome);
+            } else {
+                currentBiome = Instantiate(baseBiome);
+            }
+            Camera.main.backgroundColor = currentBiome.BackgroundColor;
+
+            GameObject castleHillGo = Instantiate(currentBiome.CastleHill);
             Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
             bgPos.y = 20f;
             castleHillGo.transform.position = bgPos;
-            GlobalEvent.LevelStart.RemoveListener(SpawnCastle);
         }
 
         void generateSideEnv(Side side, GameObject tile)
         {
             // Generate random index
-            int index = Utils.RandomInt(0, sideEnvironmentPrefab.Length);
+            int index = Utils.RandomInt(0, currentBiome.SideEnvironmentPrefabs.Length);
 
             // Instantiate object + position
-            SideEnvironment sideEnvInstR = Instantiate(sideEnvironmentPrefab[index]);
+            SideEnvironment sideEnvInstR = Instantiate(currentBiome.SideEnvironmentPrefabs[index]);
             sideEnvInstR.Initialize();
 
             // Set scale
@@ -60,6 +70,10 @@ namespace Aloha
 
             // Attach to tile
             sideEnvInstR.transform.SetParent(tile.transform);
+        }
+
+        public Biome GetCurrentBiome() {
+            return currentBiome;
         }
 
 

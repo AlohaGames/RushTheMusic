@@ -10,10 +10,10 @@ namespace Aloha
         public int numberOfTiles = 20;
         public float tileSpeed = 10;
         public float tileSize = 5;
-
-        [SerializeField] private GameObject[] tilePrefabs = new GameObject[] { };
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
+
+        private  GameObject[] tilePrefabs;
 
         // Start is called before the first frame update
         void Start()
@@ -44,6 +44,7 @@ namespace Aloha
                 return;
 
             tilesContainer = new GameObject("TilesContainer");
+            this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
             gameIsStarted = true;
             for (int position = 0; position < numberOfTiles; position++)

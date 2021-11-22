@@ -69,6 +69,8 @@ namespace Aloha
             using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.mappingFilePath}", FileMode.Open))
             {
                 this.levelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
+                // TODO: Voir si possible de le load ailleur ?!
+                SideEnvironmentManager.Instance.LoadBiome(levelMapping.biomeName);
             }
 
             // Load AudioClip from mp3 file

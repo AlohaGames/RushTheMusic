@@ -7,6 +7,7 @@ namespace Aloha
     {
         [SerializeField] public SerializeDictionary<int, List<EnemyMapping>> enemies;
         public int tileCount;
+        public string biomeName;
 
         public LevelMapping()
         {
