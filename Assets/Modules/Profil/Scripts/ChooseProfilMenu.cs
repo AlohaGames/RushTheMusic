@@ -1,22 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace Aloha
 {
-    public class ChooseProfilMenu : MonoBehaviour
+    public class ChooseProfilMenu : UIBehaviour
     {
+
+        [SerializeField] private ProfilMenuItem profilMenuItemPrefab;
 
         public void DisplayProfils()
         {
             List<Profil> profils = ProfilManager.Instance.GetAllProfils();
 
-            VerticalLayoutGroup verticalLayout = GetComponent<VerticalLayoutGroup>();
+            VerticalLayoutGroup layout = GetComponent<VerticalLayoutGroup>();
 
-            Debug.Log(profils);
-
-            // TODO: Ajouter l'UI du profil dans verticalLayout
+            foreach(Profil profil in profils) {
+                ProfilMenuItem pmi = Instantiate(profilMenuItemPrefab);
+                pmi.profil = profil;
+                pmi.transform.SetParent(layout.transform);
+            }
         }
     }
 }
