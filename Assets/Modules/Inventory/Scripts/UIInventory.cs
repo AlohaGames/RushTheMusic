@@ -60,12 +60,16 @@ namespace Aloha
         {
             nbMaxItems = InventoryManager.Instance.GetMaxItems();
 
+            ItemContainer firstItemContainer = inventoryUI.transform.GetChild(0).GetComponent<ItemContainer>();
+            firstItemContainer.SetItem(null);
+
             // Creation of the dynamic interface
             if (nbMaxItems >= 1)
             {
                 for (int i = 0; i < nbMaxItems - 1; i++)
                 {
                     ItemContainer itemContainer = Instantiate(itemContainerPrefab);
+                    itemContainer.SetItem(null);
                     itemContainer.transform.SetParent(inventoryUI.transform);
                     itemContainer.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }
@@ -85,6 +89,9 @@ namespace Aloha
             inventoryUI.SetActive(true);
 
             ConstructInventoryUI();
+
+            InventoryManager.Instance.AddItem(new HealPotion(20));
+            InventoryManager.Instance.AddItem(new HealPotion(20));
         }
     }
 }
