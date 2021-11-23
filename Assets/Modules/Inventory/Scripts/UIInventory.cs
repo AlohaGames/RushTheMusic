@@ -13,50 +13,40 @@ namespace Aloha
     {
         private int nbMaxItems;
         private Queue<Item> items;
-        private GameObject horizontalLayout;
-        private RectTransform horizontalLayoutTransform;
 
-        /// <summary>
-        ///  Start is called before the first frame update
-        /// </summary>
-        public void Start()
-        {
-            // First, contruct the UI
-            ConstructInventoryUI();
-            // Then, refresh it with the current Items
-            ShowCurrentInventoryUI();
-        }
+        [SerializeField]
+        private GameObject inventoryUI;
+
+        [SerializeField]
+        private ItemContainer itemContainerPrefab;
 
         /// <summary>
         /// This function show the current UI. It will be invoke each time we use an item or collect one
         /// <example> Example(s):
         /// <code>
-        ///     ShowCurrentInventoryUI()
+        ///     UpdateInventoryUI()
         /// </code>
         /// </example>
         /// </summary>
-        public void ShowCurrentInventoryUI()
+        public void UpdateInventoryUI()
         {
-            // TODO Change this by the new potion assets
             nbMaxItems = Inventory.Instance.GetMaxItems();
             items = Inventory.Instance.GetItems();
             Item[] itemsArray = items.ToArray();
-            Color color = Color.white;
+
+            Debug.Log("maxitem : "+nbMaxItems);
+            Debug.Log("length : " + itemsArray.Length);
+
             for (int i = 0; i < nbMaxItems; i++)
             {
-                if (i < itemsArray.Length){
-                    if (itemsArray[i] is HealPotion) color = Color.blue;
-                    if (i == 0){
-                        this.gameObject.transform.GetChild(0).GetComponent<Image>().color = color;
-                    }else{
-                        this.gameObject.transform.GetChild(1).transform.GetChild(i - 1).GetComponent<Image>().color = color;
-                    }
-                }else{
-                    if (i == 0){
-                        this.gameObject.transform.GetChild(0).GetComponent<Image>().color = Color.white;
-                    }else{
-                        this.gameObject.transform.GetChild(1).transform.GetChild(i - 1).GetComponent<Image>().color = Color.white;
-                    }
+                ItemContainer itemContainer = inventoryUI.transform.GetChild(i).GetComponent<ItemContainer>();
+                if (i < itemsArray.Length)
+                {
+                    itemContainer.SetItem(itemsArray[i]);
+                }
+                else
+                {
+                    itemContainer.SetItem(null);
                 }
             }
         }
@@ -72,24 +62,25 @@ namespace Aloha
         public void ConstructInventoryUI()
         {
             nbMaxItems = Inventory.Instance.GetMaxItems();
-            horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;
-            horizontalLayoutTransform = horizontalLayout.GetComponent<RectTransform>();
 
             // Creation of the dynamic interface
-            if (nbMaxItems == 1)
+            if (nbMaxItems >= 1)
             {
-                Destroy(horizontalLayout);
-            }
-            else if (nbMaxItems >= 3)
-            {
-                for (int i = 2; i < nbMaxItems; i++)
+                for (int i = 0; i < nbMaxItems - 1; i++)
                 {
-                    GameObject image = new GameObject();
-                    image.AddComponent<Image>();
-                    image.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(50, 50);
-                    image.transform.SetParent(horizontalLayoutTransform);
+                    ItemContainer itemContainer = Instantiate(itemContainerPrefab);
+                    itemContainer.transform.SetParent(inventoryUI.transform);
+                    itemContainer.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }
             }
+        }
+
+        public void ShowInGameInventory()
+        {
+            inventoryUI.SetActive(true);
+
+            // First, contruct the UI
+            ConstructInventoryUI();
         }
     }
 }

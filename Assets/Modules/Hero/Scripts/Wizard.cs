@@ -123,6 +123,7 @@ namespace Aloha
         {
             int newMana = (int)(this.CurrentMana + this.heroStats.MaxMana * Mathf.Abs(secondaryRegen));
             this.CurrentMana = newMana.Clamp(0, this.heroStats.MaxMana);
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Aloha
 {
@@ -27,6 +28,7 @@ namespace Aloha
             {
                 this.items.Enqueue(item);
             }
+            UIManager.Instance.UIInventory.UpdateInventoryUI();
         }
 
         /// <summary>
@@ -44,6 +46,7 @@ namespace Aloha
                 Item item = this.items.Dequeue();
                 item.Effect();
             }
+            UIManager.Instance.UIInventory.UpdateInventoryUI();
         }
 
         /// <summary>
