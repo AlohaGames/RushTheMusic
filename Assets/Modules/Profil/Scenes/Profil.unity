@@ -321,7 +321,24 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6440427738491387553, guid: 1b8272c7f49066843abd1bfc0e7a700a, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440427738491387553, guid: 1b8272c7f49066843abd1bfc0e7a700a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449709169756298373, guid: 1b8272c7f49066843abd1bfc0e7a700a, type: 3}
+      propertyPath: m_ChildForceExpandWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7449709169756298373, guid: 1b8272c7f49066843abd1bfc0e7a700a, type: 3}
+      propertyPath: m_ChildForceExpandHeight
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 2991129210973179826, guid: 1b8272c7f49066843abd1bfc0e7a700a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1b8272c7f49066843abd1bfc0e7a700a, type: 3}
 --- !u!224 &820349270 stripped
 RectTransform:

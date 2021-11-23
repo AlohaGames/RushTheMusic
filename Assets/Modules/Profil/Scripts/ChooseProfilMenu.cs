@@ -15,7 +15,7 @@ namespace Aloha
         {
             List<Profil> profils = ProfilManager.Instance.GetAllProfils();
 
-            VerticalLayoutGroup layout = GetComponent<VerticalLayoutGroup>();
+            VerticalLayoutGroup layout = GetComponentInChildren<VerticalLayoutGroup>();
 
             foreach(Profil profil in profils) {
                 ProfilMenuItem pmi = Instantiate(profilMenuItemPrefab);
