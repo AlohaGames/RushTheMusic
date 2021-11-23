@@ -30,12 +30,9 @@ namespace Aloha
         /// </summary>
         public void UpdateInventoryUI()
         {
-            nbMaxItems = Inventory.Instance.GetMaxItems();
-            items = Inventory.Instance.GetItems();
+            nbMaxItems = InventoryManager.Instance.GetMaxItems();
+            items = InventoryManager.Instance.GetItems();
             Item[] itemsArray = items.ToArray();
-
-            Debug.Log("maxitem : "+nbMaxItems);
-            Debug.Log("length : " + itemsArray.Length);
 
             for (int i = 0; i < nbMaxItems; i++)
             {
@@ -52,8 +49,8 @@ namespace Aloha
         }
 
         /// <summary>
-        ///  This method construct the UI. it will call once, when this class is loaded in the UIManager
-        ///  <example> Example(s):
+        /// This method construct the UI to store items
+        /// <example> Example(s):
         /// <code>
         ///     ConstructInventoryUI()
         /// </code>
@@ -61,7 +58,7 @@ namespace Aloha
         /// </summary>
         public void ConstructInventoryUI()
         {
-            nbMaxItems = Inventory.Instance.GetMaxItems();
+            nbMaxItems = InventoryManager.Instance.GetMaxItems();
 
             // Creation of the dynamic interface
             if (nbMaxItems >= 1)
@@ -75,11 +72,18 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Display UI of inventory
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowInGameInventory()
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ShowInGameInventory()
         {
             inventoryUI.SetActive(true);
 
-            // First, contruct the UI
             ConstructInventoryUI();
         }
     }

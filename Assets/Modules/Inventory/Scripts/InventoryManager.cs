@@ -6,9 +6,9 @@ using UnityEngine.Events;
 namespace Aloha
 {
     /// <summary>
-    /// This class manage the inventory
+    /// This class manages the inventory
     /// </summary>
-    public class Inventory  : Singleton<Inventory>
+    public class InventoryManager  : Singleton<InventoryManager>
     {
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
@@ -32,7 +32,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// We use the firt item of the queue and we delete it after
+        /// Use the first item of the queue and delete it after
         /// <example> Example(s):
         /// <code>
         ///     AddItem(item);
