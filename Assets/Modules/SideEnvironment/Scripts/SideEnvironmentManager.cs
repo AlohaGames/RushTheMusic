@@ -26,7 +26,7 @@ namespace Aloha
         private Biome currentBiome;
 
         /// <summary>
-        /// Initialization function for this Manager
+        /// Is called when the script instance is being loaded.
         /// </summary>
         void Awake()
         {
@@ -113,6 +113,9 @@ namespace Aloha
         /// <summary>
         /// Get current loaded biome
         /// </summary>
+        /// <returns>
+        /// The current biome
+        /// </returns>
         public Biome GetCurrentBiome()
         {
             return currentBiome;
