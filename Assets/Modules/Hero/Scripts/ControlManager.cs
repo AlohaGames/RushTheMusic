@@ -82,7 +82,7 @@ namespace Aloha
             }
             else if (Input.GetKeyUp(InputBinding.Instance.UseItem))
             {
-                // TODO Add use item
+                InventoryManager.Instance.UseItem();
             }
         }
 
