@@ -9,9 +9,15 @@ namespace Aloha
     /// </summary>
     public class FireballSpawner : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private Fireball fireballPrefab;
 
+        [SerializeField]
+        private Material raycastMaterial;
+
+        private LineRenderer targetPreview;
+        private Vector3 origin;
+        private Vector3? endPoint;
         private Fireball currentFireball;
         public Wizard Wizard;
 
@@ -21,13 +27,34 @@ namespace Aloha
         void Start()
         {
             Wizard = GameManager.Instance.GetHero() as Wizard;
+
+            targetPreview = this.gameObject.AddComponent<LineRenderer>();
+            targetPreview.material = raycastMaterial;
+            targetPreview.startWidth = 0.02f;
+            targetPreview.endWidth = 0.02f;
         }
 
         /// <summary>
-        /// TODO
+        /// Update is called once per frame
+        /// </summary>
+        void Update()
+        {
+            if (this.currentFireball)
+            {
+                CheckLaser();
+            } 
+            else
+            {
+                // Remove the laser
+                targetPreview.enabled = false;
+            }
+        }
+
+        /// <summary>
+        /// Spawn a new fireball in front of the spawner according to wizard mana
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SpawnFireball()
         /// </code>
         /// </example>
         /// </summary>
@@ -39,19 +66,23 @@ namespace Aloha
 
                 if (fireballPower != 0)
                 {
-                    Vector3 fireballPos = transform.localPosition;
-                    fireballPos.z -= 0.05f;
+                    // Find a position to spawn a fireball
+                    Vector3 fireballPos = transform.position;
+                    fireballPos += this.transform.forward * 0.1f;
 
-                    Fireball fireball = Instantiate(fireballPrefab, Vector3.zero, Quaternion.identity);
-
+                    // Instantiate a new fireball
+                    Fireball fireball = Instantiate(fireballPrefab, fireballPos, transform.rotation);
                     fireball.transform.parent = transform;
-                    fireball.transform.localPosition = fireballPos;
+
+                    // Define size of the fireball
                     if (fireballPower != Wizard.GetStats().Attack)
                     {
                         float size = (float) fireballPower / Wizard.GetStats().Attack;
                         Vector3 defaultScale = fireball.transform.localScale;
                         fireball.transform.localScale = new Vector3(defaultScale.x * size, defaultScale.y * size, defaultScale.z * size);
                     }
+
+                    // Define some parameters of the fireball
                     fireball.Wizard = this.Wizard;
                     fireball.Power = fireballPower;
                     this.currentFireball = fireball;
@@ -60,10 +91,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// If a fireball have a fireball linked, it send it forward
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SendFireball()
         /// </code>
         /// </example>
         /// </summary>
@@ -74,6 +105,30 @@ namespace Aloha
                 this.currentFireball.Launch();
                 this.currentFireball = null;
             }
+        }
+
+        /// <summary>
+        /// Update laser to help user aim
+        /// <example> Example(s):
+        /// <code>
+        ///     CheckLaser()
+        /// </code>
+        /// </example>
+        /// </summary>
+        void CheckLaser()
+        {
+            // Find the origin and end point of the laser
+            origin = transform.position;
+            origin += this.transform.forward * 0.2f;
+            endPoint = origin + this.transform.forward * 9f;
+
+            // Set origin and end point of the laser
+            targetPreview.SetPosition(0, origin);
+            targetPreview.SetPosition(1, (Vector3)endPoint);
+
+            // Draw the laser
+            targetPreview.enabled = true;
+
         }
     }
 }
