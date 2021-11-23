@@ -138,6 +138,8 @@ namespace Aloha
             if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount && !GameManager.Instance.IsGameInfinite)
             {
                 Time.timeScale = 0f;
+                Cursor.visible = true;
+                GameManager.Instance.StopLevel();
                 UIManager.Instance.ShowEndGameUIElements();
                 AudioManager.Instance.StopMusic();
             }

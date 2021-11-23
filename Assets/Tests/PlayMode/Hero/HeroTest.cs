@@ -3,8 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
@@ -13,11 +11,12 @@ namespace Aloha.Test
     public class HeroTest
     {
         /// <summary>
-        /// TODO
+        /// Test the instantiation of warrior
         /// </summary>
         [Test]
         public void HeroInstantierTest()
         {
+            //Instantiate a hero
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
@@ -25,35 +24,39 @@ namespace Aloha.Test
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
+            //Destroy all GameObjects
             GameObject.DestroyImmediate(hero.gameObject);
             GameObject.DestroyImmediate(manager);
         }
 
         /// <summary>
-        /// TODO
+        /// Test the instantiation of a hero stats
         /// </summary>
         [Test]
         public void HeroStatsTest()
         {
+            //Instantiate a hero
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
-
+           
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            GameObject.Destroy(hero.gameObject);
-            GameObject.Destroy(manager);
+            GameObject.DestroyImmediate(hero.gameObject);
+            GameObject.DestroyImmediate(manager);
         }
+       
 
         /// <summary>
-        /// TODO
+        /// Test the amount of damage taken by hero
         /// </summary>
         [UnityTest]
         public IEnumerator HeroTestDamage()
         {
+            //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
@@ -67,6 +70,7 @@ namespace Aloha.Test
             Debug.Log("Hero life: " + warrior.CurrentHealth);
             Debug.Log("Hero defense: " + stats.Defense);
 
+            //Check the health after taking damage
             warrior.TakeDamage(-5);
             Assert.AreEqual(10, warrior.CurrentHealth);
 
@@ -103,15 +107,18 @@ namespace Aloha.Test
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.CurrentHealth);
 
+            GameObject.Destroy(stats);
+            GameObject.Destroy(warrior);
             GameObject.Destroy(warriorGO);
         }
 
         /// <summary>
-        /// TODO
+        /// Test the attack of hero
         /// </summary>
         [Test]
         public void HeroTestAttack()
         {
+            //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
             WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
@@ -122,16 +129,22 @@ namespace Aloha.Test
             stats.XP = 10;
             warrior.Init(stats);
 
+            //Instantiate an enemi and his stats
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
             enemyStats.MaxHealth = 100;
             enemy.Init(enemyStats);
 
+            //Hero attack the enemi
             warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
+            GameObject.Destroy(enemyStats);
+            GameObject.Destroy(enemy);
             GameObject.Destroy(enemyGO);
+            GameObject.Destroy(stats);
+            GameObject.Destroy(warrior);
             GameObject.Destroy(warriorGO);
         }
     }

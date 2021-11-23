@@ -5,17 +5,12 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class manage the item
     /// </summary>
     public abstract class Item
     {
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Give an effect to an item
         /// </summary>
         public abstract void Effect();
     }
