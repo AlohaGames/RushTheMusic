@@ -33,6 +33,8 @@ namespace Aloha
         /// </summary>
         void Awake()
         {
+            currentBiome = Instantiate(defaultBiome);
+
             foreach (Biome b in biomes)
             {
                 biometable.Add(b.BiomeName, b);
@@ -57,12 +59,7 @@ namespace Aloha
         /// <param name="biomeName">The name of the biome</param>
         public void LoadBiome(string biomeName)
         {
-            // Load default biome if no biome selected
-            if (biomeName == null)
-            {
-                currentBiome = Instantiate(defaultBiome);
-            }
-            else
+            if (biomeName != null)
             {
                 Debug.Log("Load biome " + biomeName);
                 Biome biome = biometable[biomeName] as Biome;
@@ -70,11 +67,6 @@ namespace Aloha
                 {
                     // Biome found
                     currentBiome = Instantiate(biome);
-                }
-                else
-                {
-                    // Biome not found
-                    currentBiome = Instantiate(defaultBiome);
                 }
             }
             Camera.main.backgroundColor = currentBiome.BackgroundColor;
