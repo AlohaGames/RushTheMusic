@@ -164,6 +164,21 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Change speed of tiles
+        /// <example> Example(s):
+        /// <code>
+        ///     TilesManager.Instance.ChangeTileSpeed(0);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="tileSpeed"></param>
+        public void ChangeTileSpeed(float tileSpeed)
+        {
+            this.TileSpeed = tileSpeed;
+        }
+
+
+        /// <summary>
         /// TODO
         /// <example> Example(s):
         /// <code>
