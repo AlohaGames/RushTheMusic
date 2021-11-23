@@ -9,7 +9,7 @@ namespace Aloha
     /// <summary>
     /// Class that manage utils functions
     /// </summary>
-    public class Assassin : Enemy<AssassinStats> 
+    public class Assassin : Enemy<AssassinStats>
     {
         private Hero hero;
         private Animator anim;
@@ -23,80 +23,83 @@ namespace Aloha
             anim = GetComponent<Animator>();
         }
 
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        protected override IEnumerator AI()
-        {
-            yield return StartCoroutine(Concentration(15f));
-            yield return StartCoroutine(StealthJump(2f));
-        }
 
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="speed"></param>
-        protected IEnumerator StealthJump(float speed)
-        {
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit * speed;
+        /*
+                /// <summary>
+                /// TODO
+                /// <example> Example(s):
+                /// <code>
+                ///     TODO
+                /// </code>
+                /// </example>
+                /// </summary>
+                protected override IEnumerator AI()
+                {
+                    yield return StartCoroutine(Concentration(15f));
+                    yield return StartCoroutine(StealthJump(2f));
+                }
 
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                posFinal.y = posInit.y + 15;
-                posFinal.z = posInit.z - 7;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-            gameObject.transform.position = posFinal;
-            Hero hero = GameManager.Instance.GetHero();
-            Attack(hero);
-            Disappear();
-        }
+                /// <summary>
+                /// TODO
+                /// <example> Example(s):
+                /// <code>
+                ///     TODO
+                /// </code>
+                /// </example>
+                /// </summary>
+                /// <param name="speed"></param>
+                protected IEnumerator StealthJump(float speed)
+                {
+                    float temps = 0;
+                    Vector3 posInit = gameObject.transform.position;
+                    Vector3 posFinal = posInit * speed;
 
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="speed"></param>
-        protected IEnumerator Concentration(float speed)
-        {
-            anim.SetBool("isAttacking", true);
+                    while (temps < 1f)
+                    {
+                        temps += speed * Time.deltaTime;
+                        posFinal.y = posInit.y + 15;
+                        posFinal.z = posInit.z - 7;
+                        gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+                        yield return null;
+                    }
+                    gameObject.transform.position = posFinal;
+                    Hero hero = GameManager.Instance.GetHero();
+                    Attack(hero);
+                    Disappear();
+                }
 
-            yield return new WaitForSeconds(0.8f);
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.z = posFinal.z - 2.2f;
+                /// <summary>
+                /// TODO
+                /// <example> Example(s):
+                /// <code>
+                ///     TODO
+                /// </code>
+                /// </example>
+                /// </summary>
+                /// <param name="speed"></param>
+                protected IEnumerator Concentration(float speed)
+                {
+                    anim.SetBool("isAttacking", true);
 
-            ///TODO: maybe remove Debug
-            Debug.Log(posInit);
-            Debug.Log(posFinal);
+                    yield return new WaitForSeconds(0.8f);
+                    float temps = 0;
+                    Vector3 posInit = gameObject.transform.position;
+                    Vector3 posFinal = posInit;
+                    posFinal.z = posFinal.z - 2.2f;
 
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-            gameObject.transform.position = posFinal;
-            yield return new WaitForSeconds(0.15f);
-        }
+                    ///TODO: maybe remove Debug
+                    Debug.Log(posInit);
+                    Debug.Log(posFinal);
+
+                    while (temps < 1f)
+                    {
+                        temps += speed * Time.deltaTime;
+                        gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+                        yield return null;
+                    }
+                    gameObject.transform.position = posFinal;
+                    yield return new WaitForSeconds(0.15f);
+                }
+                */
     }
 }

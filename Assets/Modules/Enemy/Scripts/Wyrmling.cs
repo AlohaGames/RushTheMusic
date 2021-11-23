@@ -9,7 +9,7 @@ namespace Aloha
     /// </summary>
     public class Wyrmling : Enemy<WyrmlingStats>
     {
-        [SerializeField] 
+        [SerializeField]
         private WyrmlingFireball fireballPrefab;
 
         private float initialY;
@@ -21,6 +21,8 @@ namespace Aloha
         {
             initialY = transform.position.y;
         }
+
+        /*
 
         /// <summary>
         /// TODO
@@ -107,6 +109,8 @@ namespace Aloha
             
             yield return null;
         }
+
+        */
 
     }
 }

@@ -109,19 +109,6 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void DetachFromParent()
-        {
-            transform.parent = null;
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
         /// <param name="value"></param>
         public void SetAI(bool value)
         {
@@ -138,48 +125,6 @@ namespace Aloha
                     GetComponent<GraphRunner>()?.StopGraph();
                 }
             }
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        protected virtual IEnumerator AI()
-        {
-            while (this.AIActivated)
-            {
-                yield return StartCoroutine(MoveXToAnimation(Utils.RandomFloat(-1.5f, 1.5f), 1));
-            }
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="speed"></param>
-        protected virtual IEnumerator MoveXToAnimation(float x, float speed)
-        {
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.x = x;
-
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-            gameObject.transform.position = posFinal;
         }
 
         /// <summary>

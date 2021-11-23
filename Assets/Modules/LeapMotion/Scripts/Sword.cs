@@ -10,9 +10,9 @@ namespace Aloha
         private Vector3 presPos;
         private Vector3 newPos;
 
-        [SerializeField] 
+        [SerializeField]
         private float minimumSpeedToKill = 1f;
-        
+
         public Warrior Warrior;
         public float Speed;
 
@@ -38,20 +38,15 @@ namespace Aloha
 
         /// <summary>
         /// Is called when a GameObject collides with another GameObject.
-        /// <example> Example(s):
-        /// <code>
-        ///     aGameObject.OnTriggerEnter(anotherGameObject);
-        /// </code>
-        /// </example>
         /// </summary>
-        /// <param name="collider"></param>
-        public void OnTriggerEnter(Collider collider)
+        /// <param name="other">other collider</param>
+        public void OnTriggerEnter(Collider other)
         {
-            if (collider.tag == "Enemy" && Speed > minimumSpeedToKill)
+            if (other.tag == "Enemy" && Speed > minimumSpeedToKill)
             {
                 Debug.Log(Speed);
-                Warrior.Attack(collider.gameObject.GetComponent<Entity>());
-                Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
+                Warrior.Attack(other.gameObject.GetComponent<Entity>());
+                Warrior.BumpEntity(other.GetComponent<Entity>(), Speed);
             }
         }
     }
