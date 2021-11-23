@@ -3,9 +3,14 @@ using UnityEngine;
 
 namespace Aloha
 {
+
+    /// <summary>
+    /// Object that represent a level read from an xml file
+    /// </summary>
     public class LevelMapping
     {
-        [SerializeField] public SerializeDictionary<int, List<EnemyMapping>> enemies;
+        [SerializeField]
+        public SerializeDictionary<int, List<EnemyMapping>> enemies;
         public int tileCount;
         public string biomeName;
 

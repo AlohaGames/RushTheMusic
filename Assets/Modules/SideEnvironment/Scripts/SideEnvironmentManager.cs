@@ -25,22 +25,33 @@ namespace Aloha
 
         private Biome currentBiome;
 
-        public void Awake()
+        /// <summary>
+        /// Initialization function for this Manager
+        /// </summary>
+        void Awake()
         {
             foreach (Biome b in biomes)
             {
-                biometable.Add(b.biomeName, b);
+                biometable.Add(b.BiomeName, b);
             }
 
             GlobalEvent.TileCount.AddListener(CountTile);
         }
 
+        /// <summary>
+        /// Even triggered on each Tile to generate side environment
+        /// </summary>
+        /// <param name="tile">GameObject of the tile</param>
         public void CountTile(GameObject tile)
         {
             generateSideEnv(Side.Left, tile);
             generateSideEnv(Side.Righ, tile);
         }
 
+        /// <summary>
+        /// Load biome based on his name
+        /// </summary>
+        /// <param name="biomeName">The name of the biome</param>
         public void LoadBiome(string biomeName)
         {
             // Load default biome if no biome selected
@@ -72,6 +83,11 @@ namespace Aloha
             castleHillGo.transform.position = bgPos;
         }
 
+        /// <summary>
+        ///  Generate the side environement of each tile based on the actual tile and the side
+        /// </summary>
+        /// <param name="side">Side to generate environment on (either Right or Left)</param>
+        /// <param name="tile">Gameobject of the actual tile</param>
         void generateSideEnv(Side side, GameObject tile)
         {
             // Generate random index
@@ -94,13 +110,18 @@ namespace Aloha
             sideEnvInstR.transform.SetParent(tile.transform);
         }
 
+        /// <summary>
+        /// Get current loaded biome
+        /// </summary>
         public Biome GetCurrentBiome()
         {
             return currentBiome;
         }
 
-
-        public void OnDestroy()
+        /// <summary>
+        /// Cleanup fonction called on destroy
+        /// </summary>
+        void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
         }

@@ -12,9 +12,11 @@ namespace Aloha
         public float tileSize = 5;
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
-        private  GameObject[] tilePrefabs;
+        private GameObject[] tilePrefabs;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Start is called before the first frame update
+        /// </summary>
         void Start()
         {
             gameIsStarted = false;
@@ -25,7 +27,9 @@ namespace Aloha
             GlobalEvent.LevelStart.AddListener(StartGame);
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Update is called once per frame
+        /// </summary>
         void Update()
         {
             // Delete a tile and replace it by a new one
