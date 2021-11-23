@@ -13,7 +13,11 @@ namespace Aloha
     {
         private int nbMaxItems;
         private Queue<Item> items;
-        private GameObject horizontalLayout;
+
+        [SerializeField]
+        private ItemContainer itemContainerPrefab;
+
+        private HorizontalLayoutGroup horizontalLayout;
         private RectTransform horizontalLayoutTransform;
 
         /// <summary>
@@ -38,7 +42,7 @@ namespace Aloha
         public void ShowCurrentInventoryUI()
         {
             // TODO Change this by the new potion assets
-            nbMaxItems = Inventory.Instance.GetMaxItems();
+            /*nbMaxItems = Inventory.Instance.GetMaxItems();
             items = Inventory.Instance.GetItems();
             Item[] itemsArray = items.ToArray();
             Color color = Color.white;
@@ -58,7 +62,7 @@ namespace Aloha
                         this.gameObject.transform.GetChild(1).transform.GetChild(i - 1).GetComponent<Image>().color = Color.white;
                     }
                 }
-            }
+            }*/
         }
 
         /// <summary>
@@ -72,22 +76,20 @@ namespace Aloha
         public void ConstructInventoryUI()
         {
             nbMaxItems = Inventory.Instance.GetMaxItems();
-            horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;
-            horizontalLayoutTransform = horizontalLayout.GetComponent<RectTransform>();
+            //horizontalLayout = GetComponent<HorizontalLayoutGroup>();
+            //horizontalLayout = this.gameObject.transform.GetChild(1).gameObject;
+            //horizontalLayoutTransform = horizontalLayout.GetComponent<RectTransform>();
 
             // Creation of the dynamic interface
-            if (nbMaxItems == 1)
+            if (nbMaxItems >= 1)
             {
-                Destroy(horizontalLayout);
-            }
-            else if (nbMaxItems >= 3)
-            {
-                for (int i = 2; i < nbMaxItems; i++)
+                for (int i = 0; i < nbMaxItems - 1; i++)
                 {
-                    GameObject image = new GameObject();
-                    image.AddComponent<Image>();
-                    image.GetComponent<Image>().rectTransform.sizeDelta = new Vector2(50, 50);
-                    image.transform.SetParent(horizontalLayoutTransform);
+                    ItemContainer itemContainer = Instantiate(itemContainerPrefab);
+                    /*GameObject image = new GameObject();
+                    image.AddComponent<Image>();*/
+                    //itemContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
+                    itemContainer.transform.SetParent(transform);
                 }
             }
         }
