@@ -11,8 +11,8 @@ namespace Aloha
     {
         [HideInInspector] public bool gameIsStarted;
         private List<GameObject> activeTiles = new List<GameObject>();
-        private GameObject TilesContainer;
-        private GameObject[] TilePrefabs;
+        private GameObject tilesContainer;
+        private GameObject[] tilePrefabs;
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
@@ -65,13 +65,13 @@ namespace Aloha
             if (GameIsStarted)
                 return;
 
-            TilesContainer = new GameObject("TilesContainer");
-            this.TilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
+            tilesContainer = new GameObject("TilesContainer");
+            this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
             GameIsStarted = true;
             for (int position = 0; position < NumberOfTiles; position++)
             {
-                SpawnTileToQueue(Random.Range(0, TilePrefabs.Length));
+                SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
             }
         }
 
@@ -93,7 +93,7 @@ namespace Aloha
 
             GameIsStarted = false;
             activeTiles.Clear();
-            Destroy(TilesContainer);
+            Destroy(tilesContainer);
             GlobalEvent.LevelStop.Invoke();
         }
 
@@ -131,7 +131,7 @@ namespace Aloha
                 SpawnTileAt(tileIndex, 0);
                 return;
             }
-            GameObject tile = Instantiate(TilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, TilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);
             GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
@@ -158,7 +158,7 @@ namespace Aloha
         /// <param name="position"></param>
         public void SpawnTileAt(int tileIndex, int position)
         {
-            GameObject tile = Instantiate(TilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation, TilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
         }
 
@@ -190,7 +190,7 @@ namespace Aloha
         /// </returns>
         int GetNextTileToSpawn()
         {
-            return Random.Range(0, TilePrefabs.Length);
+            return Random.Range(0, tilePrefabs.Length);
         }
 
         /// <summary>
@@ -229,7 +229,7 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
-            GameObject.Destroy(TilesContainer);
+            GameObject.Destroy(tilesContainer);
         }
     }
 }
