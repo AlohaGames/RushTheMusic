@@ -14,18 +14,31 @@ namespace Aloha
         public int tileCount;
         public string biomeName;
 
+        /// <summary>
+        /// Default constructor
+        /// </summary>
         public LevelMapping()
         {
             this.enemies = new SerializeDictionary<int, List<EnemyMapping>>();
             this.tileCount = 0;
         }
 
+        /// <summary>
+        /// Constructor defining ennemies and number of tiles
+        /// </summary>
+        /// <param name="enemies">Dictionnary of enemies and the tile they appear on</param>
+        /// <param name="tileCount">Number of tile, define the size (duratio) of the level</param>
         public LevelMapping(SerializeDictionary<int, List<EnemyMapping>> enemies, int tileCount)
         {
             this.enemies = enemies;
             this.tileCount = tileCount;
         }
 
+
+        /// <summary>
+        /// Get list of all enemy on a specific tile
+        /// </summary>
+        /// <param name="tileIndex">Index of the tile to get ennemies on</param>
         public List<EnemyMapping> GetEnnemies(int tileIndex)
         {
             List<EnemyMapping> tileEnnemies = enemies.GetValue(tileIndex);
@@ -39,6 +52,9 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Get number of ennemies on the level
+        /// </summary>
         public int GetEnemyNumber()
         {
             int enemiesnumber = 0;
