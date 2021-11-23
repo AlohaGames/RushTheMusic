@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/22/2021 - 15:02:46</Generatedon>
+    <Generatedon>11/23/2021 - 10:11:15</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
-    <Classes>59</Classes>
-    <Files>57</Files>
+    <Classes>63</Classes>
+    <Files>61</Files>
     <Coveredlines>726</Coveredlines>
-    <Uncoveredlines>646</Uncoveredlines>
-    <Coverablelines>1372</Coverablelines>
-    <Totallines>4667</Totallines>
-    <Linecoverage>52.9</Linecoverage>
+    <Uncoveredlines>709</Uncoveredlines>
+    <Coverablelines>1435</Coverablelines>
+    <Totallines>4812</Totallines>
+    <Linecoverage>50.5</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="59" coverage="52.9" coveredlines="726" coverablelines="1372" totallines="5027" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="63" coverage="50.5" coveredlines="726" coverablelines="1435" totallines="5172" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="9" coverablelines="9" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="0" coveredlines="0" coverablelines="43" totallines="102" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="46.1" coveredlines="12" coverablelines="26" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Bar" coverage="100" coveredlines="4" coverablelines="4" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.ChooseProfilMenu" coverage="0" coveredlines="0" coverablelines="9" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ControlManager" coverage="0" coveredlines="0" coverablelines="44" totallines="129" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ControlSelector" coverage="0" coveredlines="0" coverablelines="14" totallines="56" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Enemy" coverage="100" coveredlines="50" coverablelines="50" totallines="184" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -50,6 +51,9 @@
       <Class name="Aloha.ManaPotion" coverage="100" coveredlines="4" coverablelines="4" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.PauseMenu" coverage="100" coveredlines="19" coverablelines="19" totallines="64" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.PortalSpawner" coverage="0" coveredlines="0" coverablelines="44" totallines="119" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Profil" coverage="0" coveredlines="0" coverablelines="8" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.ProfilManager" coverage="0" coveredlines="0" coverablelines="42" totallines="80" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.ProfilMenuItem" coverage="0" coveredlines="0" coverablelines="4" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ProgressionBar" coverage="0" coveredlines="0" coverablelines="7" totallines="30" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.RagePotion" coverage="100" coveredlines="4" coverablelines="4" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Rock" coverage="100" coveredlines="3" coverablelines="3" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" />
