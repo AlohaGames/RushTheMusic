@@ -11,6 +11,9 @@ namespace Aloha
         Left = -1
     }
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class SideEnvironmentManager : Singleton<SideEnvironmentManager>
     {
 

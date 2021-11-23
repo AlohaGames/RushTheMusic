@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
   m_Name: BaseBiome
   m_EditorClassIdentifier: 
-  biomeName: base
+  BiomeName: base
   SideEnvironmentPrefabs:
   - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
   - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}

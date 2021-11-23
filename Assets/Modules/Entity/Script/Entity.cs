@@ -5,56 +5,128 @@ using UnityEngine.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public abstract class Entity : MonoBehaviour
     {
-        public int currentHealth;
         [SerializeField]
         protected Stats stats;
-        protected UnityEvent dieEvent = new UnityEvent();
 
+        protected UnityEvent dieEvent = new UnityEvent();        
+        public int CurrentHealth;
+        
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <return>
+        /// TODO
+        /// </return>
         public Stats GetStats()
         {
             return this.stats;
         }
 
+        /// <summary>
+        /// This function is called when a entity attack another entity.
+        /// <example> Example(s):
+        /// <code>
+        ///     anEntity.Attack(anotherEntity);
+        /// </code>
+        /// <code>
+        ///     warrior.Attack(assassin);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="entity"></param>
         public virtual void Attack(Entity entity)
         {
-            entity.TakeDamage(this.stats.attack);
+            entity.TakeDamage(this.stats.Attack);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public virtual void Init()
         {
             this.Init(this.stats);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="stats"></param>
         public virtual void Init(Stats stats)
         {
             this.stats = stats;
-            this.currentHealth = this.stats.maxHealth;
+            this.CurrentHealth = this.stats.MaxHealth;
         }
 
+        /// <summary>
+        /// This function is called when an entity taking damage amount.
+        /// <example> Example(s):
+        /// <code>
+        ///     warrior.TakeDamage(5);
+        /// </code>
+        /// <code>
+        ///     spearman.TakeDamage(2);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
         public virtual void TakeDamage(int damage)
         {
             if (damage < 0)
             {
                 return;
             }
-            currentHealth = currentHealth - damage;
-            if (currentHealth <= 0)
+            CurrentHealth = CurrentHealth - damage;
+            if (CurrentHealth <= 0)
             {
                 Die();
             }
         }
 
-        public virtual void Regeneration(int gain)
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="hpGain"></param>
+        public virtual void RegenerateHP(int hpGain)
         {
-            this.currentHealth += gain;
-            if (currentHealth > GetStats().maxHealth)
-            {
-                currentHealth = GetStats().maxHealth;
-            }
+            int newHealth = this.CurrentHealth + hpGain;
+            this.CurrentHealth = newHealth.Clamp(0, this.GetStats().MaxHealth);
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <param name="speed"></param>
         public IEnumerator GetBump(Vector3 direction, float speed = 2f)
         {
             float temps = 0;
@@ -68,15 +140,21 @@ namespace Aloha
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }
-
             gameObject.transform.position = posFinal;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public virtual void Die()
         {
             dieEvent.Invoke();
             GlobalEvent.EntityDied.Invoke(this);
         }
-
     }
 }

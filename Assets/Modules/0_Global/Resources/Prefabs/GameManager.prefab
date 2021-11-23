@@ -53,10 +53,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610366951730eedb0857b0df6a724115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pause: 27
-  quit: 0
-  attack: 323
-  defense: 324
+  Pause: 27
+  Quit: 293
+  Attack: 323
+  Defense: 324
 --- !u!114 &4034224953863319914
 MonoBehaviour:
   m_ObjectHideFlags: 0

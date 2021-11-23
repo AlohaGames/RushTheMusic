@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bb47a5bbe7cd444afd41b9292bd218, type: 3}
   m_Name: AssassinStats
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  attack: 100
-  defense: 0
-  level: 0
+  MaxHealth: 40
+  Attack: 100
+  Defense: 0
+  Level: 0

@@ -2,12 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aloha {
+namespace Aloha 
+{
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Fireball : MonoBehaviour
     {
         public Wizard Wizard;
         public int Power;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Launch()
         {
             GetComponent<Rigidbody>().AddForce(transform.forward * 5, ForceMode.Impulse);
@@ -15,7 +27,14 @@ namespace Aloha {
             Destroy(gameObject, 3f);
         }
 
-        // If the fireball touch an Object
+        /// <summary>
+        /// If the fireball touch an Object
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void OnTriggerEnter(Collider collider)
         {
             if (collider.tag == "Enemy")
@@ -25,6 +44,5 @@ namespace Aloha {
                 Destroy(gameObject);
             }
         }
-
     }
 }
