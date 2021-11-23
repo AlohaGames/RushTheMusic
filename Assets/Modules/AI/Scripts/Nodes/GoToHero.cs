@@ -6,7 +6,6 @@ namespace Aloha.AI
 {
     public class GoToHero : GONode
     {
-        public float speed = 2.0f;
         public float proximity = 5.0f;
 
         public GoToHero() : base() { }
@@ -19,22 +18,14 @@ namespace Aloha.AI
         {
             IsRunning = true;
 
-            float time = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = GameManager.Instance.GetHero().gameObject.transform.position;
-
-            float dist = Vector3.Distance(posInit, posFinal);
-            float totalTime = dist / speed;
-
-            time += speed * Time.deltaTime;
-            gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
+            //time += speed * Time.deltaTime;
+            //gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
+            gameObject.transform.Translate(Vector3.forward * TilesManager.Instance.TileSpeed * Time.deltaTime);
             yield return null;
-
-            gameObject.transform.position = posFinal;
 
             if (!AutomaticLinks.IsEmpty())
             {
-                yield return TryAllLink();
+                TryAllLink();
             }
             IsRunning = false;
         }

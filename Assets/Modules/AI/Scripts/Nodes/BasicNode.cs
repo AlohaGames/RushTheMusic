@@ -26,7 +26,7 @@ namespace Aloha.AI
             }
             if (!AutomaticLinks.IsEmpty())
             {
-                yield return TryAllLink();
+                TryAllLink();
             }
             IsRunning = false;
         }

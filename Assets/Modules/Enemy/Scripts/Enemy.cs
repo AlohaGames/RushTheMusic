@@ -32,19 +32,19 @@ namespace Aloha
             return this.enemyStats;
         }
     }
-    
+
     /// <summary>
     /// This class inherits from Entity. It manages the enemies.
     /// </summary>
     public class Enemy : Entity
     {
-        [SerializeField] 
+        [SerializeField]
         private bool noAI = false;
 
         protected bool AIActivated = false;
 
         public UnityEvent NearHeroTrigger = new UnityEvent();
-        
+
         private EnemyStats enemyStats
         {
             get { return this.stats as EnemyStats; }
@@ -131,7 +131,11 @@ namespace Aloha
                 if (AIActivated)
                 {
                     //StartCoroutine(AI()); 
-                    GetComponent<GraphRunner>()?.StartGraph();
+                    //GetComponent<GraphRunner>()?.StartGraph();
+                }
+                else
+                {
+                    GetComponent<GraphRunner>()?.StopGraph();
                 }
             }
         }

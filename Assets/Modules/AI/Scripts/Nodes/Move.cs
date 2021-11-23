@@ -26,16 +26,16 @@ namespace Aloha.AI
             while (time < actionTime)
             {
                 time += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time/actionTime);
+                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / actionTime);
                 yield return null;
             }
 
             gameObject.transform.position = posFinal;
-            
+
             yield return null;
             if (!AutomaticLinks.IsEmpty())
             {
-                yield return TryAllLink();
+                TryAllLink();
             }
             IsRunning = false;
         }

@@ -20,12 +20,12 @@ namespace Aloha.AI
             yield return null;
             if (!AutomaticLinks.IsEmpty())
             {
-                yield return TryAllLink();
+                TryAllLink();
             }
             IsRunning = false;
         }
 
-        protected IEnumerator TryAllLink()
+        protected void TryAllLink()
         {
             int count = AutomaticLinks.Count;
             float random = Utils.RandomFloat();
@@ -40,7 +40,6 @@ namespace Aloha.AI
                     random = random - link.probability;
                 }
             }
-            yield return null;
         }
 
         public void AddAutomaticLink(Node next, float probability)

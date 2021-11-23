@@ -52,9 +52,10 @@ namespace Aloha.AI
             lancer.Disappear();
 
             yield return null;
+
             if (!AutomaticLinks.IsEmpty())
             {
-                yield return TryAllLink();
+                TryAllLink();
             }
             IsRunning = false;
         }

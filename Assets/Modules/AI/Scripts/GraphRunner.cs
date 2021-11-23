@@ -10,15 +10,23 @@ namespace Aloha.AI
         public Graph BGraph;
         public IEnumerator currentCoroutine = null;
 
+        [SerializeField]
+        private bool isAutomaticStart;
+
         int currentNode;
 
         [SerializeField]
         private bool isRunning = false;
 
-        private void Start() {
+        private void Start()
+        {
             BGraph = Instantiate(BGraph);
             BGraph.Runner = this;
             BGraph.Start();
+            if (isAutomaticStart)
+            {
+                StartGraph();
+            }
         }
 
         public void StartGraph()
