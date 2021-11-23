@@ -627,6 +627,7 @@ GameObject:
   - component: {fileID: 6528296815274834488}
   - component: {fileID: 2424351652857213868}
   - component: {fileID: 4091359425436383512}
+  - component: {fileID: 8684326432909827869}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -664,7 +665,7 @@ MonoBehaviour:
   HealthBar: {fileID: 8292654593479803887}
   SecondaryBar: {fileID: 4333887411518495043}
   LevelProgressBar: {fileID: 936965030050165934}
-  UIinventory: {fileID: 7095990187990024229}
+  UIInventory: {fileID: 8684326432909827869}
   UIScore: {fileID: 2424351652857213868}
 --- !u!114 &6528296815274834488
 MonoBehaviour:
@@ -713,6 +714,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameOverUI: {fileID: 1271077533178812648}
+--- !u!114 &8684326432909827869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3475678625191179969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b5b608f566aa1c40b9538e4b04866f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryUI: {fileID: 3853150209731439126}
+  itemContainerPrefab: {fileID: 6031815596052443465}
 --- !u!1 &3664714090160274107
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +864,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4263411847070804310}
   - component: {fileID: 7478292331188984291}
-  - component: {fileID: 7095990187990024229}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -903,19 +917,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
---- !u!114 &7095990187990024229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3853150209731439126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b5b608f566aa1c40b9538e4b04866f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemContainerPrefab: {fileID: 4589894296012801993, guid: a4ec9d8e217c5003d8f770232dc9b471, type: 3}
 --- !u!1 &4167547046230785038
 GameObject:
   m_ObjectHideFlags: 0
@@ -2551,3 +2552,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1554589463420429189, guid: a4ec9d8e217c5003d8f770232dc9b471, type: 3}
   m_PrefabInstance: {fileID: 7784406915596072576}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6031815596052443465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4589894296012801993, guid: a4ec9d8e217c5003d8f770232dc9b471, type: 3}
+  m_PrefabInstance: {fileID: 7784406915596072576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9f213229ea33f45acb43a90c60c6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

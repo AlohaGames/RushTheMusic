@@ -15,10 +15,10 @@ namespace Aloha
         private Queue<Item> items;
 
         [SerializeField]
-        private ItemContainer itemContainerPrefab;
+        private GameObject inventoryUI;
 
-        private HorizontalLayoutGroup horizontalLayout;
-        private RectTransform horizontalLayoutTransform;
+        [SerializeField]
+        private ItemContainer itemContainerPrefab;
 
         /// <summary>
         ///  Start is called before the first frame update
@@ -27,6 +27,7 @@ namespace Aloha
         {
             // First, contruct the UI
             ConstructInventoryUI();
+
             // Then, refresh it with the current Items
             ShowCurrentInventoryUI();
         }
@@ -86,12 +87,15 @@ namespace Aloha
                 for (int i = 0; i < nbMaxItems - 1; i++)
                 {
                     ItemContainer itemContainer = Instantiate(itemContainerPrefab);
-                    /*GameObject image = new GameObject();
-                    image.AddComponent<Image>();*/
-                    //itemContainer.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
-                    itemContainer.transform.SetParent(transform);
+                    itemContainer.transform.SetParent(inventoryUI.transform);
+                    itemContainer.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
                 }
             }
+        }
+
+        public void ShowInGameInventory()
+        {
+            inventoryUI.SetActive(true);
         }
     }
 }

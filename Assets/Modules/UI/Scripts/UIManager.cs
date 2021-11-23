@@ -14,7 +14,7 @@ namespace Aloha
         public Bar HealthBar;
         public Bar SecondaryBar;
         public Bar LevelProgressBar;
-        public UIInventory UIinventory;
+        public UIInventory UIInventory;
         public UIScore UIScore;
 
         /// <summary>
@@ -39,7 +39,7 @@ namespace Aloha
             SecondaryBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
             UIScore.ShowInGameUIScoreElements();
-            UIinventory.gameObject.SetActive(true);
+            UIInventory.ShowInGameInventory();
 
             Hero hero = GameManager.Instance.GetHero();
 
