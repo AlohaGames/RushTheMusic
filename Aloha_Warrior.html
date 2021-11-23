@@ -17,21 +17,21 @@
 <tr><th>Class:</th><td>Aloha.Warrior</td></tr>
 <tr><th>Assembly:</th><td>Aloha</td></tr>
 <tr><th>File(s):</th><td><a href="#githubworkspaceAssetsModulesHeroScriptsWarriorcs" class="navigatetohash">/github/workspace/Assets/Modules/Hero/Scripts/Warrior.cs</a></td></tr>
-<tr><th>Covered lines:</th><td>37</td></tr>
+<tr><th>Covered lines:</th><td>38</td></tr>
 <tr><th>Uncovered lines:</th><td>0</td></tr>
-<tr><th>Coverable lines:</th><td>37</td></tr>
-<tr><th>Total lines:</th><td>121</td></tr>
-<tr><th>Line coverage:</th><td>100% (37 of 37)</td></tr>
+<tr><th>Coverable lines:</th><td>38</td></tr>
+<tr><th>Total lines:</th><td>122</td></tr>
+<tr><th>Line coverage:</th><td>100% (38 of 38)</td></tr>
 <tr><th>Covered branches:</th><td>0</td></tr>
 <tr><th>Total branches:</th><td>0</td></tr>
 </tbody>
 </table>
 <h1>Coverage History</h1>
-<div class="historychart ct-chart" data-data="historyChartDataccb1159230f2486e86318c52a9536e09"></div>
+<div class="historychart ct-chart" data-data="historyChartData566ac3fdcfc545de8d72cc5064c6c7e9"></div>
 <script type="text/javascript">/* <![CDATA[ */ 
-var historyChartDataccb1159230f2486e86318c52a9536e09 = {
+var historyChartData566ac3fdcfc545de8d72cc5064c6c7e9 = {
     "series" : [[0,100]],
-    "tooltips" : ['<h3>11/23/2021 - 19:58:51</h3><br /><span class="linecoverage"></span> Line coverage: 0% (0/37)<br />Total lines: 121','<h3>11/23/2021 - 19:59:16</h3><br /><span class="linecoverage"></span> Line coverage: 100% (37/37)<br />Total lines: 121']
+    "tooltips" : ['<h3>11/23/2021 - 20:00:17</h3><br /><span class="linecoverage"></span> Line coverage: 0% (0/38)<br />Total lines: 122','<h3>11/23/2021 - 20:00:42</h3><br /><span class="linecoverage"></span> Line coverage: 100% (38/38)<br />Total lines: 122']
 };
  /* ]]> */ </script>
 <h1>Metrics</h1>
@@ -169,12 +169,13 @@ var historyChartDataccb1159230f2486e86318c52a9536e09 = {
 <tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line116"></a><code>116</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
 <tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line117"></a><code>117</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;newRage&nbsp;=&nbsp;(int)&nbsp;(this.CurrentRage&nbsp;+&nbsp;this.heroStats.MaxRage&nbsp;*&nbsp;Mathf.Abs(secondaryRegen));</code></td></tr>
 <tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line118"></a><code>118</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.CurrentRage&nbsp;=&nbsp;newRage.Clamp(0,&nbsp;this.heroStats.MaxRage);</code></td></tr>
-<tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line119"></a><code>119</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
-<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line120"></a><code>120</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
-<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line121"></a><code>121</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
+<tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line119"></a><code>119</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage,&nbsp;this.heroStats.MaxRage);</code></td></tr>
+<tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line120"></a><code>120</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
+<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line121"></a><code>121</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
+<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line122"></a><code>122</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
 </tbody>
 </table>
-<div class="footer">Generated by: ReportGenerator 4.8.9.0<br />11/23/2021 - 19:59:16<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
+<div class="footer">Generated by: ReportGenerator 4.8.9.0<br />11/23/2021 - 20:00:43<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
 <div class="containerright">
 <div class="containerrightfixed">
 <h1>Methods/Properties</h1>
