@@ -45,7 +45,7 @@ namespace Aloha
     }
 
     /// <summary>
-    /// All EnemyType that can be instantiate
+    /// Enumerate the list of enemies listed in EnemyManager
     /// </summary>
     public enum EnemyType
     {
@@ -68,5 +68,10 @@ namespace Aloha
         /// Wyrmling Enemy (flying)
         /// </summary>
         wyrmling = 3
+        
+        /// <summary>
+        /// Wall
+        /// </summary>
+        wall = 4
     }
 }

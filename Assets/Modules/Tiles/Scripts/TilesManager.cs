@@ -9,12 +9,10 @@ namespace Aloha
     /// </summary>
     public class TilesManager : Singleton<TilesManager>
     {
+        [HideInInspector] public bool gameIsStarted;
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
-
-        [SerializeField]
-        private GameObject[] tilePrefabs = new GameObject[] { };
-
+        private GameObject[] tilePrefabs;
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
@@ -69,6 +67,7 @@ namespace Aloha
                 return;
 
             tilesContainer = new GameObject("TilesContainer");
+            this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
             GameIsStarted = true;
             for (int position = 0; position < NumberOfTiles; position++)
@@ -160,6 +159,21 @@ namespace Aloha
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation, tilesContainer.transform);
             activeTiles.Add(tile);
         }
+
+        /// <summary>
+        /// Change speed of tiles
+        /// <example> Example(s):
+        /// <code>
+        ///     TilesManager.Instance.ChangeTileSpeed(0);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="tileSpeed"></param>
+        public void ChangeTileSpeed(float tileSpeed)
+        {
+            this.TileSpeed = tileSpeed;
+        }
+
 
         /// <summary>
         /// TODO
