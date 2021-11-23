@@ -15,23 +15,24 @@ namespace Aloha
         [SerializeField]
         private Sprite sprite;
 
-        private void Start()
-        {
-            HealPotion hp = new HealPotion(20);
-            //SetItem(hp);
-        }
-
         public void SetItem(Item item)
         {
             linkedItem = item;
             if (linkedItem != null)
             {
+                Color tempColor = itemDisplayComponent.color;
+                tempColor.a = 1f;
+                itemDisplayComponent.color = tempColor;
+
                 itemDisplayComponent.sprite = sprite;
                 // TODO Replace by something like this
                 //itemDisplayComponent.sprite = linkedItem.sprite
             }
             else
             {
+                Color tempColor = itemDisplayComponent.color;
+                tempColor.a = 0f;
+                itemDisplayComponent.color = tempColor;
                 itemDisplayComponent.sprite = null;
             }
         }
