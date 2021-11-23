@@ -89,9 +89,6 @@ namespace Aloha
             inventoryUI.SetActive(true);
 
             ConstructInventoryUI();
-
-            InventoryManager.Instance.AddItem(new HealPotion(20));
-            InventoryManager.Instance.AddItem(new HealPotion(20));
         }
     }
 }
