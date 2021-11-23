@@ -6,6 +6,9 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Singleton that manage the UI
+    /// </summary>
     public class UIManager : Singleton<UIManager>
     {
         public Bar HealthBar;
@@ -13,11 +16,22 @@ namespace Aloha
         public Bar LevelProgressBar;
         public UIScore UIScore;
 
-        public void Awake() {
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake() {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
             GlobalEvent.LevelStop.AddListener(ShowEndGameUIElements);
         }
 
+        /// <summary>
+        /// This function show the UI element in game.
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         void ShowInGameUIElements()
         {
             HealthBar.gameObject.SetActive(true);
@@ -27,22 +41,29 @@ namespace Aloha
 
             Hero hero = GameManager.Instance.GetHero();
 
-            GlobalEvent.OnHealthUpdate.Invoke(hero.currentHealth, hero.GetStats().maxHealth);
+            GlobalEvent.OnHealthUpdate.Invoke(hero.CurrentHealth, hero.GetStats().MaxHealth);
             if (hero is Warrior)
             {
                 Warrior warrior = hero as Warrior;
-                GlobalEvent.OnSecondaryUpdate.Invoke(warrior.currentRage, warrior.GetStats().maxRage);
+                GlobalEvent.OnSecondaryUpdate.Invoke(warrior.CurrentRage, warrior.GetStats().MaxRage);
             } else if (hero is Wizard)
             {
                 Wizard wizard = hero as Wizard;
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
             }
-            GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.levelMapping.tileCount);
+            GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.LevelMapping.TileCount);
         }
 
+        /// <summary>
+        /// This function show the UI element at end game.
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ShowEndGameUIElements(){
             UIScore.ShowEndGameUIScoreElements();
         }
     }
 }
-

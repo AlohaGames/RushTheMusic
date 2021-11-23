@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c21d7cb81a211949b5e576bb513477a, type: 3}
   m_Name: WyrmlingStats
   m_EditorClassIdentifier: 
-  maxHealth: 30
-  attack: 300
-  defense: 0
-  level: 0
+  MaxHealth: 30
+  Attack: 300
+  Defense: 0
+  Level: 0

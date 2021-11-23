@@ -2,4 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Vortex : MonoBehaviour { }
+namespace Aloha
+{
+    /// <summary>
+    /// TODO
+    /// </summary>
+    public class Vortex : MonoBehaviour { }
+
+}

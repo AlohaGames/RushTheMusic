@@ -5,20 +5,39 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class HealPotion : Item
     {
-        private int gain;
+        private int hpGain;
 
-        public HealPotion(int gain)
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="hpGain"></param>
+        public HealPotion(int hpGain)
         {
-            this.gain = gain;
+            this.hpGain = hpGain;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public override void Effect()
         {
             Hero hero = GameManager.Instance.GetHero();
-            hero.Regeneration(this.gain);
+            hero.RegenerateHP(this.hpGain);
         } 
     }
 }
-

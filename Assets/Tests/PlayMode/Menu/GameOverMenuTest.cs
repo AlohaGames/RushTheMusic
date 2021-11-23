@@ -15,7 +15,7 @@ namespace Aloha.Test
             GameManager manager = MonoBehaviour.Instantiate(Resources.Load<GameManager>("Prefabs/GameManager"));
             manager.setIsPlaying(true);
 
-            Assert.IsTrue(manager.getIsPlaying());
+            Assert.IsTrue(manager.IsPlaying());
 
             GameObject gameOver = new GameObject();
             gameOver.AddComponent<GameOverMenu>();
@@ -38,7 +38,7 @@ namespace Aloha.Test
 
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(ui.activeSelf);
-            Assert.IsFalse(manager.getIsPlaying());
+            Assert.IsFalse(manager.IsPlaying());
             yield return null;
 
             Time.timeScale = 1f;
