@@ -16,7 +16,7 @@ namespace Aloha
         public UnityEvent TakeDamageEvent = new UnityEvent();
 
         public int CurrentHealth;
-        
+
         /// <summary>
         /// TODO
         /// <example> Example(s):
@@ -98,6 +98,13 @@ namespace Aloha
                 return;
             }
             CurrentHealth = CurrentHealth - damage;
+
+            ActionZone actionZone = GetComponentInChildren<ActionZone>();
+            if (actionZone != null)
+            {
+                Debug.Log("Active again wasTriggered");
+                actionZone.WasTriggered = false;
+            }
             if (CurrentHealth <= 0)
             {
                 Die();
@@ -143,12 +150,6 @@ namespace Aloha
                 yield return null;
             }
             gameObject.transform.position = posFinal;
-            ActionZone actionZone = GetComponentInChildren<ActionZone>();
-            if (actionZone != null)
-            {
-                Debug.Log("ACtive again wasTriggered");
-                actionZone.WasTriggered = false;
-            }
         }
 
         /// <summary>

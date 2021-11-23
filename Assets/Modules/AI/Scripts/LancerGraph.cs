@@ -27,14 +27,14 @@ namespace Aloha.AI
             TamponNearHero.AddAutomaticLink(MoveLeft, 0.5f);
             TamponNearHero.AddAutomaticLink(MoveRight, 0.5f);
 
-            MoveLeft.AddAutomaticLink(MoveRight, 0.49f);
-            MoveLeft.AddAutomaticLink(MoveLeft, 0.49f);
+            MoveLeft.AddAutomaticLink(MoveRight, 0.45f);
+            MoveLeft.AddAutomaticLink(MoveLeft, 0.45f);
             MoveLeft.AddAutomaticLink(Attack, 0.02f);
             MoveLeft.AddEventLink(GetBump, lancer.TakeDamageEvent);
 
-            MoveRight.AddAutomaticLink(MoveLeft, 0.49f);
-            MoveRight.AddAutomaticLink(MoveRight, 0.49f);
-            MoveRight.AddAutomaticLink(Attack, 0.02f);
+            MoveRight.AddAutomaticLink(MoveLeft, 0.45f);
+            MoveRight.AddAutomaticLink(MoveRight, 0.45f);
+            MoveRight.AddAutomaticLink(Attack, 0.10f);
             MoveRight.AddEventLink(GetBump, lancer.TakeDamageEvent);
 
             Attack.AddEventLink(GetBump, lancer.TakeDamageEvent);

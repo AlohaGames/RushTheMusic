@@ -47,7 +47,6 @@ namespace Aloha.AI
 
             Hero hero = GameManager.Instance.GetHero();
             lancer.Attack(hero);
-            Debug.Log(hero.CurrentHealth);
 
             lancer.Disappear();
 

@@ -40,7 +40,7 @@ namespace Aloha
         /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
-            return InstantiateEnemy((int) type);
+            return InstantiateEnemy((int)type);
         }
     }
 
@@ -67,8 +67,8 @@ namespace Aloha
         /// <summary>
         /// Wyrmling Enemy (flying)
         /// </summary>
-        wyrmling = 3
-        
+        wyrmling = 3,
+
         /// <summary>
         /// Wall
         /// </summary>

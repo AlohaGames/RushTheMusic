@@ -25,6 +25,8 @@ namespace Aloha
             isTilesStopped = false;
         }
 
+        /*
+
         /// <summary>
         /// Coroutine to start artificial intelligence of the wall
         /// <example> Example(s):
@@ -60,13 +62,13 @@ namespace Aloha
                 isTilesStopped = false;
             }
         }
-
+*/
         /// <summary>
         /// Method called if the wall dies
         /// </summary>
         public override void Die()
         {
-            if (isTilesStopped) runAndStopTiles();
+            // if (isTilesStopped) runAndStopTiles();
             base.Die();
         }
     }
