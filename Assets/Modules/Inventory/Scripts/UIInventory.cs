@@ -81,11 +81,6 @@ namespace Aloha
 
             // First, contruct the UI
             ConstructInventoryUI();
-
-            Inventory.Instance.AddItem(new HealPotion(100));
-            Inventory.Instance.AddItem(new ManaPotion());
-            Inventory.Instance.AddItem(new RagePotion());
-            Inventory.Instance.AddItem(new HealPotion(100));
         }
     }
 }

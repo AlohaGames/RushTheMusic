@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UI;
 
+//TODO: Repare this test @Wilfried
+
 namespace Aloha.Test
 {
     /// <summary>
