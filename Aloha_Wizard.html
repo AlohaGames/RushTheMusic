@@ -17,21 +17,21 @@
 <tr><th>Class:</th><td>Aloha.Wizard</td></tr>
 <tr><th>Assembly:</th><td>Aloha</td></tr>
 <tr><th>File(s):</th><td><a href="#githubworkspaceAssetsModulesHeroScriptsWizardcs" class="navigatetohash">/github/workspace/Assets/Modules/Hero/Scripts/Wizard.cs</a></td></tr>
-<tr><th>Covered lines:</th><td>12</td></tr>
+<tr><th>Covered lines:</th><td>13</td></tr>
 <tr><th>Uncovered lines:</th><td>29</td></tr>
-<tr><th>Coverable lines:</th><td>41</td></tr>
-<tr><th>Total lines:</th><td>128</td></tr>
-<tr><th>Line coverage:</th><td>29.2% (12 of 41)</td></tr>
+<tr><th>Coverable lines:</th><td>42</td></tr>
+<tr><th>Total lines:</th><td>129</td></tr>
+<tr><th>Line coverage:</th><td>30.9% (13 of 42)</td></tr>
 <tr><th>Covered branches:</th><td>0</td></tr>
 <tr><th>Total branches:</th><td>0</td></tr>
 </tbody>
 </table>
 <h1>Coverage History</h1>
-<div class="historychart ct-chart" data-data="historyChartData1012b697cf634f8eb09393cd33ca6a91"></div>
+<div class="historychart ct-chart" data-data="historyChartData7b312a1474414b12b3f5b4b2c45230e0"></div>
 <script type="text/javascript">/* <![CDATA[ */ 
-var historyChartData1012b697cf634f8eb09393cd33ca6a91 = {
-    "series" : [[0,29.2]],
-    "tooltips" : ['<h3>11/23/2021 - 15:08:15</h3><br /><span class="linecoverage"></span> Line coverage: 0% (0/41)<br />Total lines: 128','<h3>11/23/2021 - 15:08:39</h3><br /><span class="linecoverage"></span> Line coverage: 29.2% (12/41)<br />Total lines: 128']
+var historyChartData7b312a1474414b12b3f5b4b2c45230e0 = {
+    "series" : [[0,30.9]],
+    "tooltips" : ['<h3>11/23/2021 - 17:26:22</h3><br /><span class="linecoverage"></span> Line coverage: 0% (0/42)<br />Total lines: 129','<h3>11/23/2021 - 17:26:47</h3><br /><span class="linecoverage"></span> Line coverage: 30.9% (13/42)<br />Total lines: 129']
 };
  /* ]]> */ </script>
 <h1>Metrics</h1>
@@ -177,12 +177,13 @@ var historyChartData1012b697cf634f8eb09393cd33ca6a91 = {
 <tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line123"></a><code>123</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{</code></td></tr>
 <tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line124"></a><code>124</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;newMana&nbsp;=&nbsp;(int)(this.CurrentMana&nbsp;+&nbsp;this.heroStats.MaxMana&nbsp;*&nbsp;Mathf.Abs(secondaryRegen));</code></td></tr>
 <tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line125"></a><code>125</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.CurrentMana&nbsp;=&nbsp;newMana.Clamp(0,&nbsp;this.heroStats.MaxMana);</code></td></tr>
-<tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line126"></a><code>126</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
-<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line127"></a><code>127</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
-<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line128"></a><code>128</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
+<tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line126"></a><code>126</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana,&nbsp;this.heroStats.MaxMana);</code></td></tr>
+<tr class="coverableline" title="Covered (9 visits)" data-coverage="{'AllTestMethods': {'VC': '9', 'LVS': 'green'}}"><td class="green">&nbsp;</td><td class="leftmargin rightmargin right">9</td><td class="rightmargin right"><a id="file0_line127"></a><code>127</code></td><td></td><td class="lightgreen"><code>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
+<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line128"></a><code>128</code></td><td></td><td class="lightgray"><code>&nbsp;&nbsp;&nbsp;&nbsp;}</code></td></tr>
+<tr class="" title="Not coverable" data-coverage="{'AllTestMethods': {'VC': '', 'LVS': 'gray'}}"><td class="gray">&nbsp;</td><td class="leftmargin rightmargin right"></td><td class="rightmargin right"><a id="file0_line129"></a><code>129</code></td><td></td><td class="lightgray"><code>}</code></td></tr>
 </tbody>
 </table>
-<div class="footer">Generated by: ReportGenerator 4.8.9.0<br />11/23/2021 - 15:08:40<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
+<div class="footer">Generated by: ReportGenerator 4.8.9.0<br />11/23/2021 - 17:26:47<br /><a href="https://github.com/danielpalme/ReportGenerator">GitHub</a> | <a href="http://www.palmmedia.de">www.palmmedia.de</a></div></div>
 <div class="containerright">
 <div class="containerrightfixed">
 <h1>Methods/Properties</h1>
