@@ -15,15 +15,23 @@ namespace Aloha
     {
 
         [SerializeField]
-        public Biome baseBiome;
+        private List<Biome> biomes;
 
         [SerializeField]
-        public Biome redBiome;
+        private Biome defaultBiome;
+
+        [SerializeField]
+        private Hashtable biometable = new Hashtable();
 
         private Biome currentBiome;
 
         public void Awake()
         {
+            foreach (Biome b in biomes)
+            {
+                biometable.Add(b.biomeName, b);
+            }
+
             GlobalEvent.TileCount.AddListener(CountTile);
         }
 
@@ -35,15 +43,29 @@ namespace Aloha
 
         public void LoadBiome(string biomeName)
         {
-            // Load biome
-            Debug.Log("Load biome " + biomeName);
-            if(biomeName == "red") {
-                currentBiome = Instantiate(redBiome);
-            } else {
-                currentBiome = Instantiate(baseBiome);
+            // Load default biome if no biome selected
+            if (biomeName == null)
+            {
+                currentBiome = Instantiate(defaultBiome);
+            }
+            else
+            {
+                Debug.Log("Load biome " + biomeName);
+                Biome biome = biometable[biomeName] as Biome;
+                if (biome != null)
+                {
+                    // Biome found
+                    currentBiome = Instantiate(biome);
+                }
+                else
+                {
+                    // Biome not found
+                    currentBiome = Instantiate(defaultBiome);
+                }
             }
             Camera.main.backgroundColor = currentBiome.BackgroundColor;
 
+            // Set castle in background of biome
             GameObject castleHillGo = Instantiate(currentBiome.CastleHill);
             Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
             bgPos.y = 20f;
@@ -72,7 +94,8 @@ namespace Aloha
             sideEnvInstR.transform.SetParent(tile.transform);
         }
 
-        public Biome GetCurrentBiome() {
+        public Biome GetCurrentBiome()
+        {
             return currentBiome;
         }
 

@@ -1419,14 +1419,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: redBiome
-      value: 
-      objectReference: {fileID: 6670470980860773869, guid: d712385832a5d2a43b2507c7b45261a7, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: baseBiome
-      value: 
-      objectReference: {fileID: 3200851919659560904, guid: f343850b7899cf24da6eb537546b250e, type: 3}
-    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: currentBiome
       value: 
       objectReference: {fileID: 6670470980860773869, guid: d712385832a5d2a43b2507c7b45261a7, type: 3}

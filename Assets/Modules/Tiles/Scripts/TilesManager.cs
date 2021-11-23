@@ -12,7 +12,6 @@ namespace Aloha
         public float tileSize = 5;
         private List<GameObject> activeTiles = new List<GameObject>();
         private GameObject tilesContainer;
-
         private  GameObject[] tilePrefabs;
 
         // Start is called before the first frame update

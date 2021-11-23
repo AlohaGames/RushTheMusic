@@ -4,18 +4,18 @@ using UnityEngine;
 
 namespace Aloha
 {
-    public class Biome : MonoBehaviour
+    [CreateAssetMenu(fileName = "Biome", menuName = "Biome", order = 1)]
+    public class Biome : ScriptableObject
     {
-        [SerializeField]
-        public SideEnvironment[] SideEnvironmentPrefabs = new SideEnvironment[] { };
 
-        [SerializeField]
+        public string biomeName;
+
+        public SideEnvironment[] SideEnvironmentPrefabs;
+
         public GameObject CastleHill;
 
-        [SerializeField]
         public Color BackgroundColor;
 
-        [SerializeField]
-        public GameObject[] TilePrefabs = new GameObject[] { };
+        public GameObject[] TilePrefabs;
     }
 }
