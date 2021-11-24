@@ -34,6 +34,21 @@ namespace Aloha
             anim = GetComponent<Animator>();
         }
 
+        /// <summary>
+        /// Bump the entity in a specific direction and with a speed
+        /// <example> Example(s):
+        /// <code>
+        ///     wall.GetBump(new Vector3(0, 0, 2), 2);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <param name="speed"></param>
+        public override IEnumerator GetBump(Vector3 direction, float speed = 2)
+        {
+            yield return null;
+        }
+
         public override void Die()
         {
             anim.SetBool("isOpen", true);
