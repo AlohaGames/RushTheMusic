@@ -6,12 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.TestTools;
 using Aloha.Events;
 
-//TODO: e
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// This class test is for test the HorizontalBar class
+    /// Test the HorizontalBar class
     /// </summary>
     public class HorizontalBarTest
     {
@@ -35,7 +33,7 @@ namespace Aloha.Test
             updateBar.AddComponent<HorizontalBar>();
             updateBar.AddComponent<RectTransform>();
 
-            // Give stats to our hero
+            // Give stats to hero
             HeroStats heroStats = ScriptableObject.CreateInstance<HeroStats>();
             heroStats.XP = 100;
             heroStats.MaxHealth = 100;
@@ -50,24 +48,20 @@ namespace Aloha.Test
 
             HorizontalBar horizontalBar = updateBar.GetComponent<HorizontalBar>();
 
-            // Repeat the following process 4 time with 25 damages
-
             float expectedBarAfter = -1;
             float widthBarAfter = -1;
-            for (int i=0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
-                expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.width * ((float)(myHero.CurrentHealth - damageGiven) / (float)myHero.GetStats().MaxHealth);
+                expectedBarAfter = (float) updateBar.GetComponent<RectTransform>().rect.width * ((float) (myHero.CurrentHealth - damageGiven) / (float) myHero.GetStats().MaxHealth);
                 myHero.TakeDamage(damageGiven);
-                Assert.IsTrue(myHero.CurrentHealth == 75-25*i);
+                Assert.IsTrue(myHero.CurrentHealth == 75 - 25 * i);
                 horizontalBar.UpdateBar(myHero.CurrentHealth, myHero.GetStats().MaxHealth);
-                widthBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.x;
+                widthBarAfter = (float) healthBar.GetComponent<RectTransform>().sizeDelta.x;
                 Assert.IsTrue(Utils.IsEqualFloat(expectedBarAfter, widthBarAfter));
                 Assert.IsTrue(widthBarAfter < widthBarBefore);
-                Assert.IsTrue(Utils.IsEqualFloat(widthBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.width * (float) (0.75-0.25*i)));
+                Assert.IsTrue(Utils.IsEqualFloat(widthBarAfter, (float) updateBar.GetComponent<RectTransform>().rect.width * (float) (0.75 - 0.25 * i)));
             }
-            
 
-            
             Assert.IsTrue(expectedBarAfter == 0);
             Assert.IsTrue(widthBarAfter == 0);
 

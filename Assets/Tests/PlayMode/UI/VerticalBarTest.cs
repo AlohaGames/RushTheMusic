@@ -6,12 +6,10 @@ using UnityEngine.UI;
 using UnityEngine.TestTools;
 using Aloha.Events;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// This class test is for test the VerticalBar  class
+    /// Test the VerticalBar  class
     /// </summary>
     public class VerticalBarTest
     {
@@ -50,20 +48,18 @@ namespace Aloha.Test
 
             VerticalBar verticalBar = updateBar.GetComponent<VerticalBar>();
 
-            // Repeat the following process 4 time with 25 damages
-
             float expectedBarAfter = -1;
             float heightBarAfter = -1;
             for (int i = 0; i < 4; i++)
             {
-                expectedBarAfter = (float)updateBar.GetComponent<RectTransform>().rect.height * ((float)(myHero.CurrentHealth - damageGiven) / (float)myHero.GetStats().MaxHealth);
+                expectedBarAfter = (float) updateBar.GetComponent<RectTransform>().rect.height * ((float) (myHero.CurrentHealth - damageGiven) / (float) myHero.GetStats().MaxHealth);
                 myHero.TakeDamage(damageGiven);
                 Assert.IsTrue(myHero.CurrentHealth == 75 - 25 * i);
                 verticalBar.UpdateBar(myHero.CurrentHealth, myHero.GetStats().MaxHealth);
-                heightBarAfter = (float)healthBar.GetComponent<RectTransform>().sizeDelta.y;
+                heightBarAfter = (float) healthBar.GetComponent<RectTransform>().sizeDelta.y;
                 Assert.IsTrue(Utils.IsEqualFloat(expectedBarAfter, heightBarAfter));
                 Assert.IsTrue(heightBarAfter < heightBarBefore);
-                Assert.IsTrue(Utils.IsEqualFloat(heightBarAfter, (float)updateBar.GetComponent<RectTransform>().rect.width * (float)(0.75 - 0.25 * i)));
+                Assert.IsTrue(Utils.IsEqualFloat(heightBarAfter, (float) updateBar.GetComponent<RectTransform>().rect.width * (float) (0.75 - 0.25 * i)));
             }
 
             Assert.IsTrue(expectedBarAfter == 0);

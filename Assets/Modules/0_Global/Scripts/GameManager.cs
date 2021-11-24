@@ -11,11 +11,12 @@ namespace Aloha
     public class GameManager : Singleton<GameManager>
     {
         private bool isGamePaused = false;
-        private bool isPlaying = false;
         private Hero hero;
 
         [SerializeField]
         private string defaultLevel = "";
+
+        public bool IsPlaying = false;
 
         #region Events
         /// <summary>
@@ -57,7 +58,7 @@ namespace Aloha
         /// </summary>
         public void StartLevel()
         {
-            isPlaying = true;
+            IsPlaying = true;
             GlobalEvent.LevelStart.Invoke();
         }
 
@@ -71,7 +72,7 @@ namespace Aloha
         /// </summary>
         public void StopLevel()
         {
-            isPlaying = false;
+            IsPlaying = false;
             GlobalEvent.LevelStop.Invoke();
         }
 
@@ -88,36 +89,6 @@ namespace Aloha
         public void LoadHero(HeroType type)
         {
             GlobalEvent.LoadHero.Invoke(type);
-        }
-
-        /// <summary>
-        /// Will return if the game is plaing or stopped
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
-        public bool GetIsPlaying()
-        {
-            return this.isPlaying;
-        }
-
-        /// <summary>
-        /// Will set if the game if playing or not (for the game over)
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param bool="isPlaying">The new value of isPlaying</param>
-        public void SetIsPlaying(bool isPlaying)
-        {
-            this.isPlaying = isPlaying;
         }
 
         /// <summary>
@@ -206,7 +177,7 @@ namespace Aloha
         {
             if (Input.GetKeyDown(InputBinding.Instance.Pause))
             {
-                if (isPlaying)
+                if (IsPlaying)
                 {
                     if (isGamePaused)
                         ResumeGame();

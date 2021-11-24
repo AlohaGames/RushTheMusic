@@ -11,32 +11,32 @@ namespace Aloha.Test
     public class GameOverMenuTest
     {
         /// <summary>
-        /// This method create the game over menu and test if the game is well end
+        /// This test create the game over menu and test if the game ends well
         /// </summary>
-        /// <returns></returns>
         [UnityTest]
         public IEnumerator GameOverMenuTestWithEnumeratorPasses()
         {
             GameManager manager = MonoBehaviour.Instantiate(Resources.Load<GameManager>("Prefabs/GameManager"));
             GameOverMenu gameOverMenu = UIManager.Instance.GetComponent<GameOverMenu>();
+
             // the game is start
-            manager.SetIsPlaying(true);
+            manager.IsPlaying = true;
 
-            Assert.IsTrue(manager.GetIsPlaying());
+            Assert.IsTrue(manager.IsPlaying);
 
-            // check if the time is not stopped
+            // Check if the time is not stopped
             Assert.IsTrue(Time.timeScale != 0f);
 
-            // We show the gameover menu
+            // Show the gameover menu
             gameOverMenu.ShowGameOverUI();
 
             // Check if the menu is showed, and the game end
             Assert.IsTrue(Time.timeScale == 0f);
             Assert.IsTrue(gameOverMenu.GameOverUI.activeSelf);
-            Assert.IsFalse(manager.GetIsPlaying());
+            Assert.IsFalse(manager.IsPlaying);
 
             Time.timeScale = 1f;
-            manager.SetIsPlaying(true);
+            manager.IsPlaying = true;
 
             Aloha.Utils.ClearCurrentScene();
             yield return null;
