@@ -13,29 +13,33 @@ namespace Aloha
         private Item item;
         public List<Item> itemListPrefab;
 
+        private Animator anim;
+
         public override void Init()
         {
             this.Init(this.stats);
-            //this.item = itemListPrefab[(int) ;
-            this.item = new HealPotion(100);
+            initialize();
         }
 
         public void Init(ChestStats stats)
         {
             base.Init(stats);
-            //this.item = itemListPrefab[(int) ;
+            initialize();
+        }
+
+        private void initialize()
+        {
+            // Warning : Will change with mapping later, for now chest only gives heal potion
             this.item = new HealPotion(100);
+            anim = GetComponent<Animator>();
         }
 
         public override void Die()
         {
-            Debug.Log("coucou");
-
+            anim.SetBool("isOpen", true);
             InventoryManager.Instance.AddItem(this.item);
             base.Die();
         }
-
-        //private IEnumerator 
     }
 
     /// <summary>

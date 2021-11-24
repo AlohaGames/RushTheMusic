@@ -30,17 +30,17 @@ namespace Aloha
             return this.enemyStats;
         }
     }
-    
+
     /// <summary>
     /// This class inherits from Entity. It manages the enemies.
     /// </summary>
     public class Enemy : Entity
     {
-        [SerializeField] 
+        [SerializeField]
         private bool noAI = false;
 
         protected bool AIActivated = false;
-        
+
         private EnemyStats enemyStats
         {
             get { return this.stats as EnemyStats; }
@@ -94,7 +94,7 @@ namespace Aloha
         /// </summary>
         public void Disappear()
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.5f);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace Aloha
         /// </summary>
         protected virtual IEnumerator AI()
         {
-            while(this.AIActivated)
+            while (this.AIActivated)
             {
                 yield return StartCoroutine(MoveXToAnimation(Utils.RandomFloat(-1.5f, 1.5f), 1));
             }
