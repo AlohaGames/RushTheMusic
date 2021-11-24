@@ -4,22 +4,21 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
-    public class GoToHero : GONode
+    /// <summary>
+    /// A Node that make the gameObject move forward by one step at speed of Tiles
+    /// </summary>
+    public class MoveForward : GONode
     {
-        public float proximity = 5.0f;
+        public MoveForward() : base() { }
+        public MoveForward(Graph graph) : base(graph) { }
 
-        public GoToHero() : base() { }
-        public GoToHero(Graph graph, float proximity = 5.0f) : base(graph)
-        {
-            this.proximity = proximity;
-        }
-
+        /// <summary>
+        /// Move forward the gameObject
+        /// </summary>
         public override IEnumerator Action()
         {
             IsRunning = true;
 
-            //time += speed * Time.deltaTime;
-            //gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / totalTime);
             gameObject.transform.Translate(Vector3.forward * TilesManager.Instance.TileSpeed * Time.deltaTime);
             yield return null;
 

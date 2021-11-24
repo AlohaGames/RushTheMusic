@@ -6,14 +6,20 @@ using Aloha;
 
 namespace Aloha.AI
 {
+    /// <summary>
+    /// A Node is a state of the Graph,
+    /// it is define by a specific Action and different Link to other Node
+    /// </summary>
     public abstract class Node
     {
         public bool IsRunning = false;
         public List<EventLink> EventLinks = new List<EventLink>();
         public List<AutomaticLink> AutomaticLinks = new List<AutomaticLink>();
-
         public Graph Graph;
 
+        /// <summary>
+        /// The Action to be run when Node is active
+        /// </summary>
         public virtual IEnumerator Action()
         {
             IsRunning = true;
@@ -25,6 +31,9 @@ namespace Aloha.AI
             IsRunning = false;
         }
 
+        /// <summary>
+        /// Try to pass throw all AutomaticLink
+        /// </summary>
         protected void TryAllLink()
         {
             int count = AutomaticLinks.Count;
@@ -42,6 +51,11 @@ namespace Aloha.AI
             }
         }
 
+        /// <summary>
+        /// Add an AutomaticLink to another Node
+        /// </summary>
+        /// <param name="next">The node that need to be connect to</param>
+        /// <param name="probability">The probability to use this link</param>
         public void AddAutomaticLink(Node next, float probability)
         {
             AutomaticLink link = new AutomaticLink(probability);
@@ -50,6 +64,11 @@ namespace Aloha.AI
             AutomaticLinks.Add(link);
         }
 
+        /// <summary>
+        /// Add an EventLink to another Node
+        /// </summary>
+        /// <param name="next">The node that need to be connect to</param>
+        /// <param name="trigger">The UnityEvent the link need to listen</param>
         public void AddEventLink(Node next, UnityEvent trigger)
         {
             EventLink link = new EventLink(trigger);

@@ -5,6 +5,9 @@ using Aloha;
 
 namespace Aloha.AI
 {
+    /// <summary>
+    /// A Node that make the Lancer (gameObject) Attack the Hero
+    /// </summary>
     public class LancerAttack : GONode
     {
         public bool IsLeft = false;
@@ -23,6 +26,10 @@ namespace Aloha.AI
             lancer = gameObject.GetComponent<Lancer>();
         }
 
+        /// <summary>
+        /// Make the lancer Attack
+        /// </summary>
+        /// <returns></returns>
         public override IEnumerator Action()
         {
             IsRunning = true;

@@ -8,16 +8,19 @@ namespace Aloha.AI
     public class GraphRunner : MonoBehaviour
     {
         public Graph BGraph;
-        public IEnumerator currentCoroutine = null;
-
-        [SerializeField]
-        private bool isAutomaticStart;
-
-        int currentNode;
+        private IEnumerator CurrentCoroutine = null;
 
         [SerializeField]
         private bool isRunning = false;
 
+        [SerializeField]
+        private bool isAutomaticStart;
+
+        private int currentNode;
+
+        /// <summary>
+        /// Call at the instantiation
+        /// </summary>
         private void Start()
         {
             BGraph = Instantiate(BGraph);
@@ -29,6 +32,9 @@ namespace Aloha.AI
             }
         }
 
+        /// <summary>
+        /// Start the Graph
+        /// </summary>
         public void StartGraph()
         {
             isRunning = true;
@@ -36,38 +42,57 @@ namespace Aloha.AI
             StartNodeAction();
         }
 
+        /// <summary>
+        /// Pause the graph
+        /// </summary>
         public void Pause()
         {
             isRunning = false;
             BGraph.Nodes[currentNode].IsRunning = isRunning;
-            StopCoroutine(currentCoroutine);
+            StopCoroutine(CurrentCoroutine);
         }
 
+        /// <summary>
+        /// Resume the graph
+        /// </summary>
         public void Resume()
         {
             isRunning = true;
             BGraph.Nodes[currentNode].IsRunning = isRunning;
-            StartCoroutine(currentCoroutine);
+            StartCoroutine(CurrentCoroutine);
         }
 
+        /// <summary>
+        /// Stop running the graph
+        /// </summary>
         public void StopGraph()
         {
             isRunning = false;
             BGraph.Nodes[currentNode].IsRunning = isRunning;
-            StopCoroutine(currentCoroutine);
+            StopCoroutine(CurrentCoroutine);
         }
 
+        /// <summary>
+        /// Start the current Node Action
+        /// </summary>
         private void StartNodeAction()
         {
-            currentCoroutine = BGraph.Nodes[currentNode].Action();
-            StartCoroutine(currentCoroutine);
+            CurrentCoroutine = BGraph.Nodes[currentNode].Action();
+            StartCoroutine(CurrentCoroutine);
         }
 
+        /// <summary>
+        /// Stop the current node Action
+        /// </summary>
         private void StopNodeAction()
         {
-            StopCoroutine(currentCoroutine);
+            StopCoroutine(CurrentCoroutine);
         }
 
+        /// <summary>
+        /// Define the new current node
+        /// </summary>
+        /// <param name="node">The new current Node</param>
         public void SetCurrentNode(Node node)
         {
             StopNodeAction();

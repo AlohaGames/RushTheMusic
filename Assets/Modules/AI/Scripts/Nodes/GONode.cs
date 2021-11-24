@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
+    /// <summary>
+    /// An abstract Node that create a link to the gameObject
+    /// </summary>
     public abstract class GONode : Node
     {
         protected GameObject gameObject;

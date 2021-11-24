@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
+    /// <summary>
+    /// A Node that do nothing during a define time (can be )
+    /// </summary>
     public class BasicNode : Node
     {
         private int waitingTime = 0;
@@ -13,6 +16,9 @@ namespace Aloha.AI
             this.waitingTime = waitingTime;
         }
 
+        /// <summary>
+        /// Wait a time (can be 0)
+        /// </summary>
         public override IEnumerator Action()
         {
             IsRunning = true;

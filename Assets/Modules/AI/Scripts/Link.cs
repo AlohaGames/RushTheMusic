@@ -5,35 +5,49 @@ using UnityEngine.Events;
 
 namespace Aloha.AI
 {
-    public class Link
+    /// <summary>
+    /// Abstract Link class
+    /// </summary>
+    public abstract class Link
     {
-        public Node from;
-        public Node to;
+        public Node From;
+        public Node To;
 
-        public virtual void PathToNext()
+        /// <summary>
+        /// Make the link between 'From' node and 'To' node
+        /// </summary>
+        public void PathToNext()
         {
             if (from.IsRunning)
             {
                 from.IsRunning = false;
             }
-            to.Graph.SetCurrentNode(to);
+            To.Graph.SetCurrentNode(To);
         }
     }
 
+    /// <summary>
+    /// AutomaticLink can be crossed with a define probability
+    /// </summary>
     public class AutomaticLink : Link
     {
-        public float probability = 1.0f;
+        public float Probability = 1.0f;
 
         public AutomaticLink() : this(1.0f) { }
 
         public AutomaticLink(float probability)
         {
-            this.probability = probability;
+            Probability = probability;
         }
 
+        /// <summary>
+        /// Try to path throw this link with a random value
+        /// </summary>
+        /// <param name="random">A random value between 0 and 1 that will be compare to the probality</param>
+        /// <returns>True if the link pass, false otherwise</returns>
         public bool TryLink(float random)
         {
-            if (random <= probability)
+            if (random <= Probability)
             {
                 PathToNext();
                 return true;
@@ -42,20 +56,23 @@ namespace Aloha.AI
         }
     }
 
+    /// <summary>
+    /// EventLink can be crossed when a specific Event is raise
+    /// </summary>
     public class EventLink : Link
     {
-        public UnityEvent triggerEvent = null;
+        public UnityEvent TriggerEvent = null;
         public EventLink() : this(null) { }
 
         public EventLink(UnityEvent triggerEvent)
         {
-            this.triggerEvent = triggerEvent;
-            triggerEvent?.AddListener(PathToNext);
+            TriggerEvent = triggerEvent;
+            TriggerEvent?.AddListener(PathToNext);
         }
 
         ~EventLink()
         {
-            triggerEvent?.RemoveListener(PathToNext);
+            TriggerEvent?.RemoveListener(PathToNext);
         }
     }
 }

@@ -51,6 +51,10 @@ namespace Aloha
             return val;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         public static float RandomFloat()
         {
             return RandomFloat(0f, 1f);
@@ -74,7 +78,7 @@ namespace Aloha
             double val = (random.NextDouble() * (max - min) + min);
             return (float)val;
         }
-      
+
         /// <summary>
         /// This function clamp a int value between a min and a max. 
         /// <example> Example(s):
