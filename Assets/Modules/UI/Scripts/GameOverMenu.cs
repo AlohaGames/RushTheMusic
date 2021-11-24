@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class manage the GameOberMenu
     /// </summary>
     public class GameOverMenu : MonoBehaviour
     {
@@ -21,10 +21,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Stop the game, show the menu, stop the music
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     manager.showGameOverUi()
         /// </code>
         /// </example>
         /// </summary>
