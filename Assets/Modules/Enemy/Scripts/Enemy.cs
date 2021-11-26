@@ -43,6 +43,7 @@ namespace Aloha
 
         protected bool AIActivated = false;
 
+        [HideInInspector]
         public UnityEvent NearHeroTrigger = new UnityEvent();
 
         private EnemyStats enemyStats

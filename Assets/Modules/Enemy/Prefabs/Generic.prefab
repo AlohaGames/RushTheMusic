@@ -132,8 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9260d02f81df6a3c88b0b3ead1bf878d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGraph: {fileID: 0}
   isRunning: 0
+  isAutomaticStart: 0
+  BGraph: {fileID: 11400000, guid: ba5f36bda1a1a0e458b296da8d951103, type: 2}
 --- !u!1 &3551846757015188941
 GameObject:
   m_ObjectHideFlags: 0

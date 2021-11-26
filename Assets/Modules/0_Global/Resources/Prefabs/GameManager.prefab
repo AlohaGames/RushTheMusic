@@ -55,6 +55,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pause: 27
   Quit: 293
+  UseItem: 32
   Attack: 323
   Defense: 324
 --- !u!114 &4034224953863319914
@@ -69,6 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e067358a06d4ca6eb88644b301808475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsGameInfinite: 0
+  LeapMode: 0
   defaultLevel: test-level.rtm
 --- !u!114 &7324531514901806434
 MonoBehaviour:
@@ -166,6 +169,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5919959761908868424, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6040111523518724558, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -220,6 +227,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7126572907331169774, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
+    - {fileID: 6447479824457594434, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
 --- !u!4 &6929059939113907629 stripped
 Transform:

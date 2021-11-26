@@ -5,28 +5,21 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Invoke Event when collider enter ActionZone
     /// </summary>
     public class ActionZone : MonoBehaviour
     {
         public bool WasTriggered = false;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Call when other collider trigger this collider
         /// </summary>
-        /// <param name="other"></param>
+        /// <param name="other">Other Collider</param>
         public void OnTriggerEnter(Collider other)
         {
             if (!WasTriggered && other.tag == "Player")
             {
                 WasTriggered = true;
-                //transform.parent.GetComponent<Enemy>().DetachFromParent();
-                //transform.parent.GetComponent<Enemy>().SetAI(true);
                 transform.parent.GetComponent<Enemy>().NearHeroTrigger.Invoke();
             }
         }
