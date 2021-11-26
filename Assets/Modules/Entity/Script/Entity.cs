@@ -136,7 +136,7 @@ namespace Aloha
         /// </summary>
         /// <param name="direction"></param>
         /// <param name="speed"></param>
-        public IEnumerator GetBump(Vector3 direction, float speed = 2f)
+        public virtual IEnumerator GetBump(Vector3 direction, float speed = 2f)
         {
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
