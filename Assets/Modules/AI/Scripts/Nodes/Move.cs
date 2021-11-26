@@ -14,7 +14,15 @@ namespace Aloha.AI
         public float Speed = 2.0f;
         public float DistToMove = 0.5f;
 
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public Move() : base() { }
+
+        /// <summary>
+        /// Move Node constructor
+        /// </summary>
+        /// <param name="graph">Graph containing the node</param>
         public Move(Graph graph) : base(graph) { }
 
         /// <summary>

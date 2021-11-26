@@ -18,9 +18,9 @@ namespace Aloha.AI
         /// </summary>
         public void PathToNext()
         {
-            if (from.IsRunning)
+            if (From.IsRunning)
             {
-                from.IsRunning = false;
+                From.IsRunning = false;
             }
             To.Graph.SetCurrentNode(To);
         }
@@ -62,14 +62,25 @@ namespace Aloha.AI
     public class EventLink : Link
     {
         public UnityEvent TriggerEvent = null;
+
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public EventLink() : this(null) { }
 
+        /// <summary>
+        /// Constructor of EventLink
+        /// </summary>
+        /// <param name="triggerEvent">UnityEvent that pass to the Node</param>
         public EventLink(UnityEvent triggerEvent)
         {
             TriggerEvent = triggerEvent;
             TriggerEvent?.AddListener(PathToNext);
         }
 
+        /// <summary>
+        /// Destructor of EventLink
+        /// </summary>
         ~EventLink()
         {
             TriggerEvent?.RemoveListener(PathToNext);

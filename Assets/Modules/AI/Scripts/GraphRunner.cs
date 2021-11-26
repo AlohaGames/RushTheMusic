@@ -5,9 +5,12 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
+    /// <summary>
+    /// Runner of Graph
+    /// </summary>
     public class GraphRunner : MonoBehaviour
     {
-        public Graph BGraph;
+        private int currentNode;
         private IEnumerator CurrentCoroutine = null;
 
         [SerializeField]
@@ -16,7 +19,7 @@ namespace Aloha.AI
         [SerializeField]
         private bool isAutomaticStart;
 
-        private int currentNode;
+        public Graph BGraph;
 
         /// <summary>
         /// Call at the instantiation

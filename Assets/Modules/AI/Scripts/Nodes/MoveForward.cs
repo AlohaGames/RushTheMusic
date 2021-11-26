@@ -9,7 +9,15 @@ namespace Aloha.AI
     /// </summary>
     public class MoveForward : GONode
     {
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public MoveForward() : base() { }
+
+        /// <summary>
+        /// MoveForward Node constructor
+        /// </summary>
+        /// <param name="graph">Graph containing the node</param>
         public MoveForward(Graph graph) : base(graph) { }
 
         /// <summary>

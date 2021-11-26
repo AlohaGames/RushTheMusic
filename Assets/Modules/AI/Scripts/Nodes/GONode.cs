@@ -11,11 +11,18 @@ namespace Aloha.AI
     {
         protected GameObject gameObject;
 
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         public GONode()
         {
             gameObject = Graph.Runner.gameObject;
         }
 
+        /// <summary>
+        /// GO Constructor
+        /// </summary>
+        /// <param name="graph">Graph containing the node</param>
         public GONode(Graph graph) : base(graph)
         {
             gameObject = Graph.Runner.gameObject;

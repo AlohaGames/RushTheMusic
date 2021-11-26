@@ -5,13 +5,23 @@ using UnityEngine;
 namespace Aloha.AI
 {
     /// <summary>
-    /// A Node that do nothing during a define time (can be )
+    /// A Node that do nothing during a define time (can be 0)
     /// </summary>
     public class BasicNode : Node
     {
-        private int waitingTime = 0;
+        private float waitingTime = 0;
+
+        /// <summary>
+        /// Empty constructor
+        /// </summary>
         public BasicNode() : base() { }
-        public BasicNode(Graph graph, int waitingTime = 0) : base(graph)
+
+        /// <summary>
+        /// Constructor with Graph and waitingTime
+        /// </summary>
+        /// <param name="graph">Graph containing the node</param>
+        /// <param name="waitingTime">Time to wait in this Node</param>
+        public BasicNode(Graph graph, float waitingTime = 0) : base(graph)
         {
             this.waitingTime = waitingTime;
         }

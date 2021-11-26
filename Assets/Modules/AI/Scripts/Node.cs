@@ -46,7 +46,7 @@ namespace Aloha.AI
                 }
                 else
                 {
-                    random = random - link.probability;
+                    random = random - link.Probability;
                 }
             }
         }
@@ -59,8 +59,8 @@ namespace Aloha.AI
         public void AddAutomaticLink(Node next, float probability)
         {
             AutomaticLink link = new AutomaticLink(probability);
-            link.from = this;
-            link.to = next;
+            link.From = this;
+            link.To = next;
             AutomaticLinks.Add(link);
         }
 
@@ -72,12 +72,20 @@ namespace Aloha.AI
         public void AddEventLink(Node next, UnityEvent trigger)
         {
             EventLink link = new EventLink(trigger);
-            link.from = this;
-            link.to = next;
+            link.From = this;
+            link.To = next;
             EventLinks.Add(link);
         }
 
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
         public Node() { }
+
+        /// <summary>
+        /// Node Constructor
+        /// </summary>
+        /// <param name="graph">Graph containing the node</param>
         public Node(Graph graph)
         {
             this.Graph = graph;

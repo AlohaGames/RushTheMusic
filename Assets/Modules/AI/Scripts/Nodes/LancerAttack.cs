@@ -16,11 +16,20 @@ namespace Aloha.AI
         public float distToMove = 0.5f;
 
         private Lancer lancer;
+
+        /// <summary>
+        /// LancerAttack Node Constructor
+        /// </summary>
+        /// <param name="graph">Graph containing the node</param>
         public LancerAttack(Graph graph) : base(graph)
         {
             lancer = gameObject.GetComponent<Lancer>();
         }
 
+        /// <summary>
+        /// Empty Constructor
+        /// </summary>
+        /// <returns></returns>
         public LancerAttack() : base()
         {
             lancer = gameObject.GetComponent<Lancer>();
