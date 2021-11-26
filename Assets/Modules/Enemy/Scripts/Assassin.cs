@@ -12,7 +12,7 @@ namespace Aloha
     public class Assassin : Enemy<AssassinStats>
     {
         private Hero hero;
-        private Animator anim;
+        public Animator anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
@@ -23,6 +23,11 @@ namespace Aloha
             anim = GetComponent<Animator>();
         }
 
+        public override IEnumerator GetBump(Vector3 direction, float speed = 2)
+        {
+            anim.SetBool("isAttacking", false);
+            yield return base.GetBump(direction, speed);
+        }
 
         /*
                 /// <summary>
