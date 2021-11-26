@@ -116,6 +116,7 @@ namespace Aloha
         {
             int newRage = (int) (this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
             this.CurrentRage = newRage.Clamp(0, this.heroStats.MaxRage);
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
     }
 }
