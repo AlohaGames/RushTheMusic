@@ -33,7 +33,7 @@ namespace Aloha.Test
             updateBar.AddComponent<VerticalBar>();
             updateBar.AddComponent<RectTransform>();
 
-            // Give stats to our hero
+            // Give stats to hero
             HeroStats heroStats = ScriptableObject.CreateInstance<HeroStats>();
             heroStats.XP = 100;
             heroStats.MaxHealth = 100;
