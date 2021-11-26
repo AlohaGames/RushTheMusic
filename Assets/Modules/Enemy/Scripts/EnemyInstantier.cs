@@ -50,13 +50,14 @@ namespace Aloha
     }
 
     /// <summary>
-    /// TODO
+    /// Enumerate the list of ennemies listed in EnemyManager
     /// </summary>
     public enum EnemyType
     {
         generic = 0,
         lancer = 1,
         assassin = 2,
-        wyrmling = 3
+        wyrmling = 3,
+        wall = 4
     }
 }

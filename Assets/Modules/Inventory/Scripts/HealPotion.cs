@@ -1,22 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class manage healing potion
     /// </summary>
     public class HealPotion : Item
     {
         private int hpGain;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
+        /// The constructor with a the number of life that will be regenerate
+        /// <example> Example(s): 
         /// <code>
-        ///     TODO
+        ///     HealPotion healpotion = new HealPotion(20);
         /// </code>
         /// </example>
         /// </summary>
@@ -27,10 +27,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
+        /// Call the hero and regenerate him with the value of the gain
+        /// <example> Example(s): 
         /// <code>
-        ///     TODO
+        ///     healpotion.Effect();
         /// </code>
         /// </example>
         /// </summary>

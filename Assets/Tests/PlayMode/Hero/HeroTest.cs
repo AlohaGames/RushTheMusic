@@ -39,16 +39,16 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
-
+           
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(hero.gameObject);
-            GameObject.Destroy(manager);
+            GameObject.DestroyImmediate(hero.gameObject);
+            GameObject.DestroyImmediate(manager);
         }
+       
 
         /// <summary>
         /// Test the amount of damage taken by hero
@@ -107,7 +107,8 @@ namespace Aloha.Test
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.CurrentHealth);
 
-            //Destroy all GameObjects
+            GameObject.Destroy(stats);
+            GameObject.Destroy(warrior);
             GameObject.Destroy(warriorGO);
         }
 
@@ -139,8 +140,11 @@ namespace Aloha.Test
             warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
-            //Destroy all GameObjects
+            GameObject.Destroy(enemyStats);
+            GameObject.Destroy(enemy);
             GameObject.Destroy(enemyGO);
+            GameObject.Destroy(stats);
+            GameObject.Destroy(warrior);
             GameObject.Destroy(warriorGO);
         }
     }
