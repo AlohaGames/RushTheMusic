@@ -5,28 +5,33 @@ using UnityEngine.UI;
 
 namespace Aloha
 {
+    /// <summary>
+    /// This class manage the inventory item container 
     public class ItemContainer : MonoBehaviour
     {
-        private Item linkedItem;
+        public Image itemDisplayComponent; 
 
-        [SerializeField]
-        private Image itemDisplayComponent;
-
-        [SerializeField]
-        private Sprite sprite;
-
+        /// <summary>
+        /// Set the item in inventory container
+        /// <example> Example(s): 
+        /// <code>
+        ///     RagePotion ragePotion = new RagePotion();
+        ///     itemContainer.SetItem(null);
+        ///     itemContainer.SetItem(ragePotion);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="hpGain"></param>
         public void SetItem(Item item)
         {
-            linkedItem = item;
-            if (linkedItem != null)
+            if (item != null)
             {
                 Color tempColor = itemDisplayComponent.color;
                 tempColor.a = 1f;
                 itemDisplayComponent.color = tempColor;
 
-                itemDisplayComponent.sprite = sprite;
-                // TODO Replace by something like this
-                //itemDisplayComponent.sprite = linkedItem.sprite
+                itemDisplayComponent.sprite = item.itemSprite;
+                Debug.Log("Name item sprite: " + item.itemSprite.name);
             }
             else
             {
