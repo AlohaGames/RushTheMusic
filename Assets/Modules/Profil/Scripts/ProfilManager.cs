@@ -10,7 +10,7 @@ namespace Aloha
     public class ProfilManager : Singleton<ProfilManager>
     {
         private List<Profil> profils;
-        private Profil currentProfil;
+        public Profil CurrentProfil;
 
         public ProfilManager()
         {
@@ -25,7 +25,7 @@ namespace Aloha
         // Save current profil to disk
         public void SaveCurrentProfil()
         {
-            SaveProfil(currentProfil);
+            SaveProfil(CurrentProfil);
         }
 
         // Save a profil to disk
@@ -69,7 +69,7 @@ namespace Aloha
 
         public Profil GetCurrentProfil()
         {
-            return currentProfil;
+            return CurrentProfil;
         }
 
         public List<Profil> GetAllProfils()
