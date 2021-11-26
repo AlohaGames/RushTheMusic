@@ -14,6 +14,7 @@ namespace Aloha
         public Bar HealthBar;
         public Bar SecondaryBar;
         public Bar LevelProgressBar;
+        public UIInventory UIInventory;
         public UIScore UIScore;
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace Aloha
         /// This function show the UI element in game.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     ShowInGameUIElements()
         /// </code>
         /// </example>
         /// </summary>
@@ -38,6 +39,7 @@ namespace Aloha
             SecondaryBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
             UIScore.ShowInGameUIScoreElements();
+            UIInventory.ShowInGameInventory();
 
             Hero hero = GameManager.Instance.GetHero();
 
@@ -58,7 +60,7 @@ namespace Aloha
         /// This function show the UI element at end game.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     ShowEndGameUIElements()
         /// </code>
         /// </example>
         /// </summary>

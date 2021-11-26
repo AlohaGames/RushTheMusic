@@ -37,7 +37,7 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
-
+           
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
             Assert.IsTrue(hero.GetStats() != null);
@@ -45,6 +45,7 @@ namespace Aloha.Test
 
             Aloha.Utils.ClearCurrentScene(true);
         }
+       
 
         /// <summary>
         /// Test the amount of damage taken by hero

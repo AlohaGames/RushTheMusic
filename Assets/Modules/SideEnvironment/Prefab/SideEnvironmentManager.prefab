@@ -43,10 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd09263450a83e24b8844eaacdf5f8bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sideEnvironmentPrefab:
-  - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
-  - {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-  - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
-  - {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-  - {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
-  castleHill: {fileID: 8218562279950525143, guid: acb766cbac451b9429394615accae5e5, type: 3}
+  biomes:
+  - {fileID: 11400000, guid: 93c5a6137d83432469674032b626dec8, type: 2}
+  - {fileID: 11400000, guid: 49fc3db8686df0640a765961882dd9af, type: 2}
+  defaultBiome: {fileID: 11400000, guid: 93c5a6137d83432469674032b626dec8, type: 2}

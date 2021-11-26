@@ -12,6 +12,7 @@ namespace Aloha
     {
         private bool isGamePaused = false;
         private Hero hero;
+        public bool LeapMode = false; // leap : true, mouse : false
 
         [SerializeField]
         private string defaultLevel = "";
@@ -59,6 +60,7 @@ namespace Aloha
         public void StartLevel()
         {
             IsPlaying = true;
+            Cursor.visible = false;
             GlobalEvent.LevelStart.Invoke();
         }
 
@@ -73,6 +75,7 @@ namespace Aloha
         public void StopLevel()
         {
             IsPlaying = false;
+            Cursor.visible = true;
             GlobalEvent.LevelStop.Invoke();
         }
 
@@ -92,6 +95,36 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Will return if the game is paused or not
+        /// <example> Example(s):
+        /// <code>
+        ///     IsGamePaused()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// a boolean if the game is paused or not
+        /// </returns>
+        public bool IsGamePaused()
+        {
+            return this.isGamePaused;
+        }
+
+        /// <summary>
+        /// Will set if leap mode is activated in the game
+        /// <example> Example(s):
+        /// <code>
+        ///     SetLeapMode()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param bool="leapMode">The new value of LeapMode</param>
+        public void SetLeapMode(bool leapMode)
+        {
+            this.LeapMode = leapMode;
+        }
+
+        /// <summary>
         /// Will ask to Resume a paused Game (do nothing if already resumed)
         /// <example> Example(s):
         /// <code>
@@ -102,6 +135,7 @@ namespace Aloha
         public void ResumeGame()
         {
             isGamePaused = false;
+            Cursor.visible = false;
             GlobalEvent.Resume.Invoke();
         }
 
@@ -116,6 +150,7 @@ namespace Aloha
         public void PauseGame()
         {
             isGamePaused = true;
+            Cursor.visible = true;
             GlobalEvent.Pause.Invoke();
         }
 
@@ -188,14 +223,6 @@ namespace Aloha
             if (Input.GetKeyDown(InputBinding.Instance.Quit))
             {
                 Quit();
-            }
-            if (Input.GetKeyDown(InputBinding.Instance.Attack))
-            {
-                // hero.Attack();
-            }
-            if (Input.GetKeyDown(InputBinding.Instance.Defense))
-            {
-                // Defense
             }
         }
         #endregion

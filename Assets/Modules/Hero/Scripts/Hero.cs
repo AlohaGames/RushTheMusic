@@ -102,6 +102,7 @@ namespace Aloha
         public override void RegenerateHP(int hpGain)
         {
             base.RegenerateHP(hpGain);
+            GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
         }
 
         /// <summary>

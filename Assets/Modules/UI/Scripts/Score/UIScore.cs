@@ -58,7 +58,7 @@ namespace Aloha
             TotalScoreText.text = "Score total: " + ScoreManager.Instance.TotalScore;
             DistanceScoreText.text = "Distance\t" + ScoreManager.Instance.DistanceScore;
             KillScoreText.text = "Ennemis tués\t" + ScoreManager.Instance.EnemyKilledScore;
-            HitScoreText.text = "Coups reçus\t" + ScoreManager.Instance.HitScore;
+            HitScoreText.text = "Coups reçus\t-" + ScoreManager.Instance.HitScore;
             GameManager.Instance.IsPlaying = false;
         }
     }
