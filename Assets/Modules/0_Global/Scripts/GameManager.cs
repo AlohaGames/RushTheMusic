@@ -12,12 +12,12 @@ namespace Aloha
     {
         private bool isGamePaused = false;
         private Hero hero;
-        public bool LeapMode = false; // leap : true, mouse : false
 
         [SerializeField]
         private string defaultLevel = "";
 
         public bool IsPlaying = false;
+        public bool LeapMode = false; // leap : true, mouse : false
 
         #region Events
         /// <summary>
