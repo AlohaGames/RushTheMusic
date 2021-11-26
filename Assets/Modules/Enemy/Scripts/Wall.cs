@@ -23,22 +23,7 @@ namespace Aloha
             anim = GetComponent<Animator>();
             lastTileSpeed = 0;
             isTilesStopped = false;
-        }
-
-        /*
-
-        /// <summary>
-        /// Coroutine to start artificial intelligence of the wall
-        /// <example> Example(s):
-        /// <code>
-        ///     StartCoroutine(Wall.AI());
-        /// </code>
-        /// </example>
-        /// </summary>
-        protected override IEnumerator AI()
-        {
-            if (!isTilesStopped) runAndStopTiles();
-            yield return null;
+            this.NearHeroTrigger.AddListener(runAndStopTiles);
         }
 
         /// <summary>
@@ -62,13 +47,13 @@ namespace Aloha
                 isTilesStopped = false;
             }
         }
-*/
+
         /// <summary>
         /// Method called if the wall dies
         /// </summary>
         public override void Die()
         {
-            // if (isTilesStopped) runAndStopTiles();
+            if (isTilesStopped) runAndStopTiles();
             base.Die();
         }
     }
