@@ -65,6 +65,7 @@ namespace Aloha
                 Vector3 dir = hero.transform.position - this.fireball.transform.position;
                 dir.Normalize();
                 this.fireball.GetComponent<Rigidbody>().AddForce(dir * fireballSpeed, ForceMode.Impulse);
+                this.fireball = null;
             }
         }
 
