@@ -9,7 +9,7 @@ namespace Aloha
     /// This class manage the inventory item container 
     public class ItemContainer : MonoBehaviour
     {
-        public Image itemDisplayComponent; 
+        public Image ItemDisplayComponent; 
 
         /// <summary>
         /// Set the item in inventory container
@@ -26,19 +26,19 @@ namespace Aloha
         {
             if (item != null)
             {
-                Color tempColor = itemDisplayComponent.color;
+                Color tempColor = ItemDisplayComponent.color;
                 tempColor.a = 1f;
-                itemDisplayComponent.color = tempColor;
+                ItemDisplayComponent.color = tempColor;
 
-                itemDisplayComponent.sprite = item.itemSprite;
-                Debug.Log("Name item sprite: " + item.itemSprite.name);
+                ItemDisplayComponent.sprite = item.ItemSprite;
+                Debug.Log("Name item sprite: " + item.ItemSprite.name);
             }
             else
             {
-                Color tempColor = itemDisplayComponent.color;
+                Color tempColor = ItemDisplayComponent.color;
                 tempColor.a = 0f;
-                itemDisplayComponent.color = tempColor;
-                itemDisplayComponent.sprite = null;
+                ItemDisplayComponent.color = tempColor;
+                ItemDisplayComponent.sprite = null;
             }
         }
     }

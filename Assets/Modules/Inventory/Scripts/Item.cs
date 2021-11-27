@@ -10,7 +10,7 @@ namespace Aloha
     /// </summary>
     public abstract class Item : MonoBehaviour
     {
-        public Sprite itemSprite;        
+        public Sprite ItemSprite;        
 
         /// <summary>
         /// Give an effect to an item
