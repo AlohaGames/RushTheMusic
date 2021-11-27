@@ -25,7 +25,7 @@ namespace Aloha.AI
             WyrmlingMove MoveLeft = new WyrmlingMove(this);
             WyrmlingMove MoveRight = new WyrmlingMove(this);
             Node Attack = new WyrmlingAttack(this);
-            Node GetBump = new BasicNode(this, 5);
+            Node GetBump = new BasicNode(this, 3);
 
             // Add Link to MoveForward
             MoveForward.AddAutomaticLink(MoveForward, 1.0f);

@@ -20,7 +20,7 @@ namespace Aloha.AI
             assassin = Runner.GetComponent<Assassin>();
 
             // Create Nodes
-            Node GetBump = new BasicNode(this, 4);
+            Node GetBump = new BasicNode(this, 3);
             Node MoveForward = new MoveForward(this);
             Node TamponNearHero = new BasicNode(this);
             Node Attack = new AssassinAttack(this);
