@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha 
 {
     /// <summary>
-    /// TODO
+    /// Class for the fireball spell
     /// </summary>
     public class Fireball : MonoBehaviour
     {
@@ -13,10 +13,11 @@ namespace Aloha
         public int Power;
 
         /// <summary>
-        /// TODO
+        /// Send the fireball forward
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     Fireball fireball = Instantiate(fireballPrefab);
+        ///     fireball.Launch();
         /// </code>
         /// </example>
         /// </summary>
@@ -28,12 +29,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// If the fireball touch an Object
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// If the fireball touches an Object
         /// </summary>
         public void OnTriggerEnter(Collider collider)
         {
