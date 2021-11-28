@@ -20,7 +20,7 @@ namespace Aloha
         void Update()
         {
             // if mouse mode activated, play with mouse and keyboard
-            if (!GameManager.Instance.LeapMode && !GameManager.Instance.IsGamePaused() && GameManager.Instance.IsPlaying())
+            if (!GameManager.Instance.LeapMode && !GameManager.Instance.IsGamePaused() && GameManager.Instance.IsPlaying)
             {
                 MoveHandsWithMouse();
                 CheckInputs();
