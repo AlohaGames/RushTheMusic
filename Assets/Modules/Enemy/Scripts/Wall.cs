@@ -33,8 +33,8 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="direction"></param>
-        /// <param name="speed"></param>
+        /// <param name="direction">The direction of enemy bumping</param>
+        /// <param name="speed">The speed of enemy bumping</param>
         public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
             yield return null;

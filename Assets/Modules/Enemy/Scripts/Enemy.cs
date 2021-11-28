@@ -36,10 +36,10 @@ namespace Aloha
     /// </summary>
     public class Enemy : Entity
     {
+        protected bool AIActivated = false;
+
         [SerializeField]
         private bool noAI = false;
-
-        protected bool AIActivated = false;
 
         private EnemyStats enemyStats
         {

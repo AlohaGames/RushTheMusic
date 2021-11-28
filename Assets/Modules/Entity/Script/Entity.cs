@@ -123,7 +123,7 @@ namespace Aloha
         /// </summary>
         /// <param name="hpGain"></param>
         /// <returns> IEnumerator </returns>
-        private IEnumerator SwitchColor()
+        IEnumerator SwitchColor()
         {
             isHitted = true;
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();

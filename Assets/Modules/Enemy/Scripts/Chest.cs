@@ -12,14 +12,13 @@ namespace Aloha
     {
         private Item item;
         private Animator anim;
-
         public List<Item> ItemListPrefab;
 
         /// <summary>
         /// Initialize the chest
         /// <example> Example(s):
         /// <code>
-        ///     warrior.Init();
+        ///     chest.Init();
         /// </code>
         /// </example>
         /// </summary>
@@ -52,9 +51,9 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="direction"></param>
-        /// <param name="speed"></param>
-        public override IEnumerator GetBump(Vector3 direction, float speed = 2)
+        /// <param name="direction">The direction of enemy bumping</param>
+        /// <param name="speed">The speed of enemy bumping</param>
+        public override IEnumerator GetBump(Vector3 direction, float speed = 0)
         {
             yield return null;
         }
