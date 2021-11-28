@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/28/2021 - 15:36:25</Generatedon>
+    <Generatedon>11/28/2021 - 16:21:40</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>63</Classes>
     <Files>61</Files>
     <Coveredlines>721</Coveredlines>
-    <Uncoveredlines>801</Uncoveredlines>
-    <Coverablelines>1522</Coverablelines>
-    <Totallines>5072</Totallines>
-    <Linecoverage>47.3</Linecoverage>
+    <Uncoveredlines>796</Uncoveredlines>
+    <Coverablelines>1517</Coverablelines>
+    <Totallines>5056</Totallines>
+    <Linecoverage>47.5</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="63" coverage="47.3" coveredlines="721" coverablelines="1522" totallines="5433" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="63" coverage="47.5" coveredlines="721" coverablelines="1517" totallines="5417" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="9" coverablelines="9" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="0" coveredlines="0" coverablelines="43" totallines="102" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="46.1" coveredlines="12" coverablelines="26" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Bar" coverage="100" coveredlines="4" coverablelines="4" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Chest" coverage="0" coveredlines="0" coverablelines="20" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Chest" coverage="0" coveredlines="0" coverablelines="16" totallines="82" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ControlManager" coverage="0" coveredlines="0" coverablelines="45" totallines="129" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ControlSelector" coverage="0" coveredlines="0" coverablelines="14" totallines="56" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Enemy" coverage="100" coveredlines="50" coverablelines="50" totallines="184" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -43,7 +43,7 @@
       <Class name="Aloha.HeroInvokerButton" coverage="0" coveredlines="0" coverablelines="9" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.HorizontalBar" coverage="100" coveredlines="6" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.InventoryManager" coverage="8.6" coveredlines="2" coverablelines="23" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.ItemContainer" coverage="0" coveredlines="0" coverablelines="16" totallines="45" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.ItemContainer" coverage="0" coveredlines="0" coverablelines="15" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ItemUser" coverage="0" coveredlines="0" coverablelines="23" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Lancer" coverage="0" coveredlines="0" coverablelines="30" totallines="71" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.LevelLoaderButton" coverage="0" coveredlines="0" coverablelines="10" totallines="49" branchcoverage="" coveredbranches="0" totalbranches="0" />
