@@ -54,8 +54,8 @@ namespace Aloha
         /// </summary>
         private void initialize()
         {
-            // Warning : Will change with mapping later, for now chest only gives heal potion
-            this.item = new HealPotion(100);
+            // TODO  Warning : Will change with mapping later, for now chest only gives heal potion
+            this.item = Instantiate(this.itemListPrefab[0]);
             anim = GetComponent<Animator>();
         }
 
@@ -90,6 +90,8 @@ namespace Aloha
     /// </summary>
     public enum ItemType
     {
-        healPotion = 0
+        healPotion = 0,
+        ragePotion = 1,
+        manaPotion = 2
     }
 }

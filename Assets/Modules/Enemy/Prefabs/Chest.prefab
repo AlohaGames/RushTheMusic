@@ -98,6 +98,10 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 4babecb21c4dedf458b98b73736acd92, type: 2}
   CurrentHealth: 0
   noAI: 1
+  itemListPrefab:
+  - {fileID: 178135793847677982, guid: cc23d24f3e17a402d8a27b40a69c8e1f, type: 3}
+  - {fileID: -5959804295627250167, guid: 498198709754a61908af591ceba52522, type: 3}
+  - {fileID: 6561833360226492492, guid: 878babc6009c6a6e7845db6f3ae0f277, type: 3}
 --- !u!1001 &1379071932094576964
 PrefabInstance:
   m_ObjectHideFlags: 0
