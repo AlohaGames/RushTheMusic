@@ -1,6 +1,7 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.TestTools;
 using NUnit.Framework;
-
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -29,44 +30,47 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Test RandomInt function
         /// </summary>
         [Test]
         public void RandomIntTest()
         {
             //True
-            int randomInt = Utils.RandomInt(0, 1);
+            int randomInt = Utils.RandomInt(0, 10);
 
             // Test if random number is between min and max
             Assert.GreaterOrEqual(randomInt, 0);
-            Assert.LessOrEqual(randomInt, 1);
+            Assert.LessOrEqual(randomInt, 10);
 
-            int randomInt2 = Utils.RandomInt(0, 1);
+            int randomInt2 = Utils.RandomInt();
 
             // Test if the second random number is between min and max
             Assert.GreaterOrEqual(randomInt2, 0);
             Assert.LessOrEqual(randomInt2, 1);
-
         }
 
+        /// <summary>
+        /// Test RandomFloat function
+        /// </summary>
         [Test]
         public void RandomFloatTest()
         {
-            //True
-            float randomFloat = Utils.RandomFloat(0, 1);
+            float randomFloat = Utils.RandomFloat(0, 10);
 
             // Test if random number is between min and max
             Assert.GreaterOrEqual(randomFloat, 0);
-            Assert.LessOrEqual(randomFloat, 1);
+            Assert.LessOrEqual(randomFloat, 10);
 
-            float randomFloat2 = Utils.RandomFloat(0, 1);
+            float randomFloat2 = Utils.RandomFloat();
 
             // Test if the second random number is between min and max
             Assert.GreaterOrEqual(randomFloat2, 0);
             Assert.LessOrEqual(randomFloat2, 1);
-
         }
 
+        /// <summary>
+        /// Test int.Clamp() function
+        /// </summary>
         [Test]
         public void ClampIntTest()
         {
@@ -87,7 +91,7 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Test float.Clamp() function
         /// </summary>
         [Test]
         public void ClampFloatTest()
@@ -106,6 +110,65 @@ namespace Aloha.Test
 
             //False above max positive
             Assert.AreEqual(10f, 11f.Clamp(-10f, 10f));
+        }
+
+        /// <summary>
+        /// Test if ClearCurrentScene work well
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ClearCurrentSceneTest()
+        {
+            GameObject go1 = new GameObject();
+            GameObject go2 = new GameObject();
+            GameObject go3 = new GameObject();
+            GameObject go4 = new GameObject();
+            GameObject go5 = new GameObject();
+
+            go2.GetComponent<Transform>().SetParent(go1.GetComponent<Transform>());
+
+            Assert.IsTrue(go1 != null);
+            Assert.IsTrue(go2 != null);
+            Assert.IsTrue(go3 != null);
+            Assert.IsTrue(go4 != null);
+            Assert.IsTrue(go5 != null);
+
+            yield return null;
+
+            Utils.ClearCurrentScene();
+
+            yield return null;
+
+            Assert.IsTrue(go1 == null);
+            Assert.IsTrue(go2 == null);
+            Assert.IsTrue(go3 == null);
+            Assert.IsTrue(go4 == null);
+            Assert.IsTrue(go5 == null);
+
+            yield return null;
+
+            go1 = new GameObject();
+            go2 = new GameObject();
+            go3 = new GameObject();
+            go4 = new GameObject();
+            go5 = new GameObject();
+
+            go2.GetComponent<Transform>().SetParent(go1.GetComponent<Transform>());
+
+            Assert.IsTrue(go1 != null);
+            Assert.IsTrue(go2 != null);
+            Assert.IsTrue(go3 != null);
+            Assert.IsTrue(go4 != null);
+            Assert.IsTrue(go5 != null);
+
+            yield return null;
+
+            Utils.ClearCurrentScene(true); // Immediate
+
+            Assert.IsTrue(go1 == null);
+            Assert.IsTrue(go2 == null);
+            Assert.IsTrue(go3 == null);
+            Assert.IsTrue(go4 == null);
+            Assert.IsTrue(go5 == null);
         }
     }
 }

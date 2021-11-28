@@ -6,13 +6,16 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// All tests about ActionZone class
+    /// </summary>
     public class ActionZoneTest
     {
         /// <summary>
-        /// TODO
+        /// Check if ActionZone work well around Enemy
         /// </summary>
         [UnityTest]
-        public IEnumerator EnemyInstancierTest()
+        public IEnumerator ActionZoneActivationTest()
         {
             // Instance enemy and manager
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
@@ -37,10 +40,7 @@ namespace Aloha.Test
             yield return new WaitForSeconds(2);
 
             // Destroy objects
-            GameObject.Destroy(parentGO);
-            GameObject.Destroy(enemy.gameObject);
-            GameObject.Destroy(manager);
-            yield return null;
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }
