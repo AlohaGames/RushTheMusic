@@ -13,7 +13,7 @@ namespace Aloha
         private Item item;
         private Animator anim;
 
-        public List<Item> itemListPrefab;
+        public List<Item> ItemListPrefab;
 
         /// <summary>
         /// Initialize the chest
@@ -25,8 +25,7 @@ namespace Aloha
         /// </summary>
         public override void Init()
         {
-            this.Init(this.stats);
-            initialize();
+            this.Init(this.stats as ChestStats);
         }
 
         /// <summary>
@@ -41,21 +40,7 @@ namespace Aloha
         public void Init(ChestStats stats)
         {
             base.Init(stats);
-            initialize();
-        }
-
-        /// <summary>
-        /// Initialize chest variables
-        /// <example> Example(s):
-        /// <code>
-        ///     this.initialize();
-        /// </code>
-        /// </example>
-        /// </summary>
-        private void initialize()
-        {
-            // TODO  Warning : Will change with mapping later, for now chest only gives heal potion
-            this.item = Instantiate(this.itemListPrefab[0]);
+            this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
             anim = GetComponent<Animator>();
         }
 

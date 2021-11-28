@@ -16,4 +16,4 @@ MonoBehaviour:
   Attack: 0
   Defense: 0
   Level: 1
-  item: healPotion
+  Item: 0

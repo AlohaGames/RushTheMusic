@@ -9,6 +9,6 @@ namespace Aloha.EntityStats
     [CreateAssetMenu(fileName = "ChestStats", menuName = "Stats/Enemy/Chest", order = 1)]
     public class ChestStats : EnemyStats 
     {
-        public String item;
+        public ItemType Item;
     }
 }
