@@ -11,22 +11,47 @@ namespace Aloha
     public class Chest : Enemy<ChestStats>
     {
         private Item item;
-        public List<Item> itemListPrefab;
-
         private Animator anim;
 
+        public List<Item> itemListPrefab;
+
+        /// <summary>
+        /// Initialize the chest
+        /// <example> Example(s):
+        /// <code>
+        ///     warrior.Init();
+        /// </code>
+        /// </example>
+        /// </summary>
         public override void Init()
         {
             this.Init(this.stats);
             initialize();
         }
 
+        /// <summary>
+        /// Initialize the chest with stats
+        /// <example> Example(s):
+        /// <code>
+        ///     chest.Init(chestStats);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="stats"></param>
         public void Init(ChestStats stats)
         {
             base.Init(stats);
             initialize();
         }
 
+        /// <summary>
+        /// Initialize chest variables
+        /// <example> Example(s):
+        /// <code>
+        ///     this.initialize();
+        /// </code>
+        /// </example>
+        /// </summary>
         private void initialize()
         {
             // Warning : Will change with mapping later, for now chest only gives heal potion
@@ -49,6 +74,9 @@ namespace Aloha
             yield return null;
         }
 
+        /// <summary>
+        /// Method called if the chest dies
+        /// </summary>
         public override void Die()
         {
             anim.SetBool("isOpen", true);
