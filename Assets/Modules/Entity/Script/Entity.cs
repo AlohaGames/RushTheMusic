@@ -10,6 +10,8 @@ namespace Aloha
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
+        private bool isDead = false;
+
         [SerializeField]
         protected Stats stats;
 
@@ -98,7 +100,11 @@ namespace Aloha
             CurrentHealth = CurrentHealth - damage;
             if (CurrentHealth <= 0)
             {
-                Die();
+                if (!isDead)
+                {
+                    isDead = true;
+                    Die();
+                }
             }
         }
 
