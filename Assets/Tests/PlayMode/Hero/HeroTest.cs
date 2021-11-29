@@ -11,7 +11,7 @@ namespace Aloha.Test
     public class HeroTest
     {
         /// <summary>
-        /// Test the instantiation of warrior
+        /// Test if HeroInstancier work well
         /// </summary>
         [Test]
         public void HeroInstantierTest()
@@ -24,9 +24,7 @@ namespace Aloha.Test
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
-            //Destroy all GameObjects
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -45,8 +43,7 @@ namespace Aloha.Test
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            Aloha.Utils.ClearCurrentScene(true);
         }
        
 
@@ -59,7 +56,7 @@ namespace Aloha.Test
             //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 10;
@@ -107,13 +104,12 @@ namespace Aloha.Test
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.CurrentHealth);
 
-            GameObject.Destroy(stats);
-            GameObject.Destroy(warrior);
-            GameObject.Destroy(warriorGO);
+            //Destroy all GameObjects
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
-        /// Test the attack of hero
+        /// Test if Hero can attack an Enemy
         /// </summary>
         [Test]
         public void HeroTestAttack()
@@ -121,7 +117,7 @@ namespace Aloha.Test
             //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 10;
@@ -132,7 +128,7 @@ namespace Aloha.Test
             //Instantiate an enemi and his stats
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
+            EnemyStats enemyStats = (EnemyStats) ScriptableObject.CreateInstance("EnemyStats");
             enemyStats.MaxHealth = 100;
             enemy.Init(enemyStats);
 
@@ -140,12 +136,7 @@ namespace Aloha.Test
             warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
-            GameObject.Destroy(enemyStats);
-            GameObject.Destroy(enemy);
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(stats);
-            GameObject.Destroy(warrior);
-            GameObject.Destroy(warriorGO);
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }

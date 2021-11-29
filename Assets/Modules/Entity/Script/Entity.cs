@@ -13,8 +13,8 @@ namespace Aloha
         [SerializeField]
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
+        
         public UnityEvent TakeDamageEvent = new UnityEvent();
-
         public int CurrentHealth;
 
         /// <summary>

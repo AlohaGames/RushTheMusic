@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+//TODO: explain your F**** TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
@@ -46,8 +46,7 @@ namespace Aloha.Test
             Assert.IsFalse(child.activeSelf);
             Assert.IsFalse(pause.GetComponent<PauseMenu>().IsGamePaused);
 
-            GameObject.Destroy(child);
-            GameObject.Destroy(pause);
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }

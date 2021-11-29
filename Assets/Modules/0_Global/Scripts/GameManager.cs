@@ -12,12 +12,13 @@ namespace Aloha
     {
         public bool IsGameInfinite = false;
         private bool isGamePaused = false;
-        private bool isPlaying = false;
         private Hero hero;
-        public bool LeapMode = false; // leap : true, mouse : false
 
         [SerializeField]
         private string defaultLevel = "";
+
+        public bool IsPlaying = false;
+        public bool LeapMode = false; // leap : true, mouse : false
 
         #region Events
         /// <summary>
@@ -59,7 +60,7 @@ namespace Aloha
         /// </summary>
         public void StartLevel()
         {
-            isPlaying = true;
+            IsPlaying = true;
             Cursor.visible = false;
             GlobalEvent.LevelStart.Invoke();
         }
@@ -74,7 +75,7 @@ namespace Aloha
         /// </summary>
         public void StopLevel()
         {
-            isPlaying = false;
+            IsPlaying = false;
             Cursor.visible = true;
             GlobalEvent.LevelStop.Invoke();
         }
@@ -108,36 +109,6 @@ namespace Aloha
         public bool IsGamePaused()
         {
             return this.isGamePaused;
-        }
-
-        /// <summary>
-        /// Will return if the game is playing or stopped
-        /// <example> Example(s):
-        /// <code>
-        ///     IsPlaying()
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <returns>
-        /// a boolean if the game is playing or not
-        /// </returns
-        public bool IsPlaying()
-        {
-            return this.isPlaying;
-        }
-
-        /// <summary>
-        /// Will set if the game if playing or not (for the game over)
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param bool="isPlaying">The new value of isPlaying</param>
-        public void SetIsPlaying(bool isPlaying)
-        {
-            this.isPlaying = isPlaying;
         }
 
         /// <summary>
@@ -194,7 +165,7 @@ namespace Aloha
         /// </summary>
         public void Quit()
         {
-            GlobalEvent.QuitGame.Invoke();
+            Application.Quit();
         }
 
         #endregion
@@ -242,7 +213,7 @@ namespace Aloha
         {
             if (Input.GetKeyDown(InputBinding.Instance.Pause))
             {
-                if (isPlaying)
+                if (IsPlaying)
                 {
                     if (isGamePaused)
                         ResumeGame();

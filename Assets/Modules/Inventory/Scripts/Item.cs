@@ -8,8 +8,10 @@ namespace Aloha
     /// <summary>
     /// This class manage the item
     /// </summary>
-    public abstract class Item
+    public abstract class Item : MonoBehaviour
     {
+        public Sprite ItemSprite;        
+
         /// <summary>
         /// Give an effect to an item
         /// </summary>
