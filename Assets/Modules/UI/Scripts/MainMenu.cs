@@ -1,40 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using System.Collections;
 
-/// <summary>
-/// TODO
-/// </summary>
-public class MainMenu : MonoBehaviour
+namespace Aloha
 {
-    public int SceneIdToLoad = 1;
-
     /// <summary>
-    /// TODO
-    /// <example> Example(s):
-    /// <code>
-    /// TODO
-    /// </code>
-    /// </example>
+    /// Manage the main menu
     /// </summary>
-    public void LoadGame()
+    public class MainMenu : MonoBehaviour
     {
-        SceneManager.LoadScene(SceneIdToLoad);
-    }
-
-    /// <summary>
-    /// TODO
-    /// <example> Example(s):
-    /// <code>
-    /// TODO
-    /// </code>
-    /// </example>
-    /// </summary>
-    public void Quit()
-    {
-        Application.Quit();
+        /// <summary>
+        /// Exit the game
+        /// </summary>
+        public void Quit()
+        {
+            Application.Quit();
+        }
     }
 }
