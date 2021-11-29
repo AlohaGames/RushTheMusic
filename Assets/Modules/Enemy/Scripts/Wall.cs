@@ -29,7 +29,7 @@ namespace Aloha
         /// Bump the entity in a specific direction and with a speed
         /// <example> Example(s):
         /// <code>
-        ///     wall.GetBump(new Vector3(0, 0, 2), 2);
+        ///     StartCoroutine(wall.GetBump(new Vector3(0, 0, 2), 2));
         /// </code>
         /// </example>
         /// </summary>
