@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using Aloha.AI;
+//using Aloha.AI;
 
 namespace Aloha
 {
@@ -100,32 +100,6 @@ namespace Aloha
         public void Disappear()
         {
             Destroy(this.gameObject);
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="value"></param>
-        public void SetAI(bool value)
-        {
-            if (!noAI)
-            {
-                AIActivated = value;
-                if (AIActivated)
-                {
-                    //StartCoroutine(AI()); 
-                    //GetComponent<GraphRunner>()?.StartGraph();
-                }
-                else
-                {
-                    GetComponent<GraphRunner>()?.StopGraph();
-                }
-            }
         }
 
         /// <summary>

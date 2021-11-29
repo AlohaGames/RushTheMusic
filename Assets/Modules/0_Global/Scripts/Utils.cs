@@ -74,7 +74,7 @@ namespace Aloha
         public static float RandomFloat(float min = 0f, float max = 1f)
         {
             double val = (random.NextDouble() * (max - min) + min);
-            return (float)val;
+            return (float) val;
         }
 
         /// <summary>
@@ -180,6 +180,12 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Return if list is empty
+        /// </summary>
+        /// <param name="list"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>True if list is Empty, false otherwise</returns>
         public static bool IsEmpty<T>(this List<T> list)
         {
             return (list.Count == 0);

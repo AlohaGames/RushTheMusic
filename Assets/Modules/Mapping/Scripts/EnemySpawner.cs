@@ -67,7 +67,6 @@ namespace Aloha
                     entity.Init(stats);
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
-                    (entity as Enemy).SetAI(true);
                     // enemy.transform.SetParent(tile.transform);
                 }
             }

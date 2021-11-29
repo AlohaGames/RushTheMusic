@@ -11,8 +11,7 @@ namespace Aloha.AI
     public class GraphRunner : MonoBehaviour
     {
         private int currentNode;
-        private IEnumerator CurrentCoroutine = null;
-
+        private IEnumerator currentCoroutine;
         [SerializeField]
         private bool isRunning = false;
 
@@ -26,12 +25,15 @@ namespace Aloha.AI
         /// </summary>
         private void Start()
         {
-            BGraph = Instantiate(BGraph);
-            BGraph.Runner = this;
-            BGraph.Start();
-            if (isAutomaticStart)
+            if (BGraph)
             {
-                StartGraph();
+                BGraph = Instantiate(BGraph);
+                BGraph.Runner = this;
+                BGraph.Start();
+                if (isAutomaticStart)
+                {
+                    StartGraph();
+                }
             }
         }
 
@@ -52,7 +54,7 @@ namespace Aloha.AI
         {
             isRunning = false;
             BGraph.Nodes[currentNode].IsRunning = isRunning;
-            StopCoroutine(CurrentCoroutine);
+            StopCoroutine(currentCoroutine);
         }
 
         /// <summary>
@@ -62,7 +64,7 @@ namespace Aloha.AI
         {
             isRunning = true;
             BGraph.Nodes[currentNode].IsRunning = isRunning;
-            StartCoroutine(CurrentCoroutine);
+            StartCoroutine(currentCoroutine);
         }
 
         /// <summary>
@@ -72,7 +74,7 @@ namespace Aloha.AI
         {
             isRunning = false;
             BGraph.Nodes[currentNode].IsRunning = isRunning;
-            StopCoroutine(CurrentCoroutine);
+            StopCoroutine(currentCoroutine);
         }
 
         /// <summary>
@@ -80,8 +82,17 @@ namespace Aloha.AI
         /// </summary>
         private void StartNodeAction()
         {
-            CurrentCoroutine = BGraph.Nodes[currentNode].Action();
-            StartCoroutine(CurrentCoroutine);
+            Debug.Log(BGraph.Nodes.Count);
+            if (BGraph.Nodes.Count > currentNode)
+            {
+                Debug.Log(BGraph.Nodes[currentNode]);
+                currentCoroutine = BGraph.Nodes[currentNode].Action();
+                StartCoroutine(currentCoroutine);
+            }
+            else
+            {
+                Debug.Log("NIQUE");
+            }
         }
 
         /// <summary>
@@ -89,7 +100,7 @@ namespace Aloha.AI
         /// </summary>
         private void StopNodeAction()
         {
-            StopCoroutine(CurrentCoroutine);
+            StopCoroutine(currentCoroutine);
         }
 
         /// <summary>
