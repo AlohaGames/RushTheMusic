@@ -4,27 +4,25 @@ using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-//TODO: Repare this test @Wilfried
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// TODO @Wilfried
     /// </summary>
     public class InventoryTest
     {
+        /*
         /// <summary>
         /// TODO
         /// </summary>
-        /*[Test]
+        [Test]
         public void InventaireTest()
         {
             HeroStats stats = ScriptableObject.CreateInstance<HeroStats>();
             stats.Attack = 100;
             stats.Defense = 0;
             stats.MaxHealth = 100;
-            
+
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
             Hero hero = GameManager.Instance.GetHero();
@@ -45,7 +43,7 @@ namespace Aloha.Test
             HealPotion potion6 = new HealPotion(gain);
 
             // Inventory creation
-            Inventory inventory = Inventory.Instance;
+            InventoryManager inventory = InventoryManager.Instance;
             inventory.AddItem(potion);
             inventory.AddItem(potion2);
             inventory.AddItem(potion3);
@@ -65,7 +63,8 @@ namespace Aloha.Test
             Assert.AreEqual(3, inventory.GetItems().Count);
             Assert.AreEqual(100, hero.CurrentHealth);
 
-            GameObject.Destroy(manager);
-        }*/
+            Aloha.Utils.ClearCurrentScene(true);
+        }
+        */
     }
 }

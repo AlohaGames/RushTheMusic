@@ -14,14 +14,14 @@ namespace Aloha.Test
     public class EnemyTest
     {
         /// <summary>
-        /// TODO
+        /// Test if Enemy can take damage and Disapear when health reach 0
         /// </summary>
         [UnityTest]
         public IEnumerator EnemyTestDamage()
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             stats.MaxHealth = 10;
             enemy.Init(stats);
 
@@ -41,14 +41,11 @@ namespace Aloha.Test
 
             Assert.IsTrue(enemy == null);
 
-            if (enemyGO)
-            {
-                GameObject.Destroy(enemyGO);
-            }
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
-        /// TODO
+        /// Test if EnemyInstancier work well
         /// </summary>
         [Test]
         public void EnemyInstancierTest()
@@ -61,8 +58,7 @@ namespace Aloha.Test
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 
-            GameObject.Destroy(enemy.gameObject);
-            GameObject.Destroy(manager);
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
     }
