@@ -94,18 +94,6 @@ MonoBehaviour:
   KillCounter: 0
   TilesCounter: 0
   ScoreUI: {fileID: 3739102699806178544}
---- !u!114 &177600809718059206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7372933906617842963}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859920848160bca40b78fd164e0ffde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &571994427298975605
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -670,11 +658,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad24fb126b2ac32469303d8934b58e00, type: 3}
---- !u!1 &7372933906617842963 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5488421059186328220, guid: ad24fb126b2ac32469303d8934b58e00, type: 3}
-  m_PrefabInstance: {fileID: 3061081658224590735}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3517902891536591193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1921136562128230102, guid: ad24fb126b2ac32469303d8934b58e00, type: 3}
