@@ -27,16 +27,14 @@ namespace Aloha.AI
         /// <summary>
         /// Empty Constructor
         /// </summary>
-        /// <returns></returns>
         public AssassinConcentration() : base()
         {
             assassin = gameObject.GetComponent<Assassin>();
         }
 
         /// <summary>
-        /// Make the lancer Attack
+        /// Make the Assassin Attack
         /// </summary>
-        /// <returns></returns>
         public override IEnumerator Action()
         {
             IsRunning = true;

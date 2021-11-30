@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-//using Aloha.AI;
 
 namespace Aloha
 {
@@ -47,8 +46,6 @@ namespace Aloha
 
         [HideInInspector]
         public UnityEvent NearHeroTrigger = new UnityEvent();
-
-
 
         /// <summary>
         /// This function get the stats of enemy.
