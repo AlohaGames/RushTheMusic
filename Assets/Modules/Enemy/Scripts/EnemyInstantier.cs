@@ -18,7 +18,7 @@ namespace Aloha
         /// <returns>
         /// A GameObject instance of enemy prefab
         /// </returns>
-        private GameObject InstantiateEnemy(int id)
+        GameObject InstantiateEnemy(int id)
         {
             GameObject instance = Instantiate(enemyPrefabs[id]);
             Entity enemy = instance.GetComponent<Entity>();

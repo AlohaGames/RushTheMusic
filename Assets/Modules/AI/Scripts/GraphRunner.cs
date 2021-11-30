@@ -24,7 +24,7 @@ namespace Aloha.AI
         /// <summary>
         /// Call at the instantiation
         /// </summary>
-        private void Start()
+        void Start()
         {
             if (BGraph)
             {
@@ -81,7 +81,7 @@ namespace Aloha.AI
         /// <summary>
         /// Start the current Node Action
         /// </summary>
-        private void StartNodeAction()
+        void StartNodeAction()
         {
             if (BGraph.Nodes.Count > currentNode)
             {
@@ -94,7 +94,7 @@ namespace Aloha.AI
         /// <summary>
         /// Stop the current node Action
         /// </summary>
-        private void StopNodeAction()
+        void StopNodeAction()
         {
             StopCoroutine(currentCoroutine);
         }

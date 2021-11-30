@@ -38,9 +38,6 @@ namespace Aloha
     /// </summary>
     public class Enemy : Entity
     {
-        [SerializeField]
-        private bool noAI = false;
-
         private EnemyStats enemyStats
         {
             get { return this.stats as EnemyStats; }

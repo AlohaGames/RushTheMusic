@@ -14,7 +14,6 @@ namespace Aloha.AI
         /// </summary>
         public override void Start()
         {
-
             // Create Nodes
             Node MoveForward = new MoveForward(this);
 

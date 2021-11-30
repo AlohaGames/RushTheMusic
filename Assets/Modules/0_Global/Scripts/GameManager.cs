@@ -16,7 +16,6 @@ namespace Aloha
         [SerializeField]
         private string defaultLevel = "";
 
-        public bool IsGameInfinite = false;
         public bool IsPlaying = false;
         public bool LeapMode = false; // leap : true, mouse : false
 
