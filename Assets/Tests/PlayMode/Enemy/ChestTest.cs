@@ -15,14 +15,17 @@ namespace Aloha.Test
         [Test]
         public void ChestInstancierTest()
         {
+            // Instance Chest
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             Chest chest = EnemyInstantier.Instance
                 .InstantiateEnemy(EnemyType.chest)
                 .GetComponent<Chest>();
 
+            // Check good instanciation
             Assert.IsTrue(chest != null);
             Assert.IsTrue(chest is Chest);
 
+            // Clear immediately the scene
             Utils.ClearCurrentScene(true);
         }
 
@@ -73,7 +76,6 @@ namespace Aloha.Test
             yield return null;
         }
 
-        /*
         /// <summary>
         /// Check if a chest gives an item on death
         /// </summary>
@@ -86,18 +88,20 @@ namespace Aloha.Test
                 .InstantiateEnemy(EnemyType.chest)
                 .GetComponent<Chest>();
 
-
+            // Get item list
             System.Collections.Generic.Queue<Item> items = InventoryManager.Instance.GetItems();
             Assert.AreEqual(0, items.Count);
 
-            //chest.TakeDamage(10);
-            chest.Die();
-            yield return null;
+            // Kill the chest
+            chest.TakeDamage(10);
 
+            // Check if chest drop an item
             items = InventoryManager.Instance.GetItems();
-            Assert.AreEqual(2, items.Count);
+            Assert.AreEqual(1, items.Count);
 
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
-        }*/
+        }
     }
 }
