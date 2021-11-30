@@ -79,8 +79,8 @@ namespace Aloha.Test
         /// <summary>
         /// Check if a chest gives an item on death
         /// </summary>
-        [UnityTest]
-        public IEnumerator ChestDiesTest()
+        [Test]
+        public void ChestDiesTest()
         {
             // Instance Chest
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
@@ -100,8 +100,7 @@ namespace Aloha.Test
             Assert.AreEqual(1, items.Count);
 
             // Clear the scene
-            Utils.ClearCurrentScene();
-            yield return null;
+            Utils.ClearCurrentScene(true);
         }
     }
 }
