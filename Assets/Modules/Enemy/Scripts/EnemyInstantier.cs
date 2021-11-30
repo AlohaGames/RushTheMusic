@@ -59,6 +59,7 @@ namespace Aloha
         assassin = 2,
         wyrmling = 3,
         wall = 4,
-        chest = 5
+        chest = 5,
+        canon = 6
     }
 }
