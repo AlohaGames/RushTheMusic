@@ -7,10 +7,28 @@ TextureImporter:
     second: castle_base
   - first:
       213: 438981629274638983
-    second: castle_hill_1
+    second: hill_base
   - first:
       213: 4930662750632920157
-    second: castle_princess
+    second: kimberley_base
+  - first:
+      213: -3163134295658517456
+    second: castle_automn
+  - first:
+      213: 2266511933092614580
+    second: hill_automn
+  - first:
+      213: 6138401200203011916
+    second: kimberley_automn
+  - first:
+      213: -5220820961869652524
+    second: castle_ice
+  - first:
+      213: -7694121543174067402
+    second: hill_ice
+  - first:
+      213: -3345186602094453149
+    second: kimberley_winter
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -116,11 +134,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 1026
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,15 +151,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: castle_hill_1
+      name: hill_base
       rect:
         serializedVersion: 2
         x: 512
-        y: 0
+        y: 1026
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,11 +172,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: castle_princess
+      name: kimberley_base
       rect:
         serializedVersion: 2
-        x: 1025
-        y: 0
+        x: 1024
+        y: 1026
         width: 512
         height: 512
       alignment: 0
@@ -170,6 +188,132 @@ TextureImporter:
       bones: []
       spriteID: d54c9bed5ab3d6440800000000000000
       internalID: 4930662750632920157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castle_automn
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 514
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c2b6afd1a4a14d0800000000000000
+      internalID: -3163134295658517456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hill_automn
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 515
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b15b2b3894447f10800000000000000
+      internalID: 2266511933092614580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kimberley_automn
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 514
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c479ee27e5bff2550800000000000000
+      internalID: 6138401200203011916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: castle_ice
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd98db0ffaeb87b0800000000000000
+      internalID: -5220820961869652524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hill_ice
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bed60c83df83590800000000000000
+      internalID: -7694121543174067402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: kimberley_winter
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 2
+        width: 512
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36e93ca42828391d0800000000000000
+      internalID: -3345186602094453149
       vertices: []
       indices: 
       edges: []
