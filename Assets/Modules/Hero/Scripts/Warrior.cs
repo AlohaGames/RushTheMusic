@@ -104,7 +104,6 @@ namespace Aloha
                 CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
                 GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
             }
-            this.IsAttacking = false;
         }
 
         /// <summary>

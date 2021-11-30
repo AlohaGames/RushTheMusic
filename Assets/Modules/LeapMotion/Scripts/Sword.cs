@@ -51,6 +51,7 @@ namespace Aloha
             if (collider.tag == "Enemy" && ( (!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
                 Debug.Log(Speed);
+                Warrior.IsAttacking = false;
                 Warrior.Attack(collider.gameObject.GetComponent<Entity>());
                 Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
             }
