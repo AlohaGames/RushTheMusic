@@ -14,14 +14,14 @@ namespace Aloha.Test
     public class EnemyTest
     {
         /// <summary>
-        /// TODO
+        /// Test if Enemy can take damage and Disapear when health reach 0
         /// </summary>
         [UnityTest]
         public IEnumerator EnemyTestDamage()
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             stats.MaxHealth = 10;
             enemy.Init(stats);
 
@@ -31,25 +31,21 @@ namespace Aloha.Test
             enemy.TakeDamage(-5);
             Assert.AreEqual(5, enemy.CurrentHealth);
 
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
             Assert.AreEqual(0, enemy.CurrentHealth);
 
-            yield return null;
+            // Wait for death animation
+            yield return new WaitForSeconds(0.5f);
 
             Assert.IsTrue(enemy == null);
 
-            if (enemyGO)
-            {
-                GameObject.Destroy(enemyGO);
-            }
+            Aloha.Utils.ClearCurrentScene();
         }
 
         /// <summary>
-        /// TODO
+        /// Test if EnemyInstancier work well
         /// </summary>
         [Test]
         public void EnemyInstancierTest()
@@ -62,8 +58,7 @@ namespace Aloha.Test
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 
-            GameObject.Destroy(enemy.gameObject);
-            GameObject.Destroy(manager);
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
     }

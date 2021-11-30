@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// This class manage the GameOverMenu
     /// </summary>
     public class GameOverMenu : MonoBehaviour
     {
@@ -21,24 +21,24 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Stop the game, show the menu and stop the music
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     ShowGameOverUI()
         /// </code>
         /// </example>
         /// </summary>
         public void ShowGameOverUI()
         {
-            // Put the timeScale to 0, active my UI And stop the game
+            // Put the timeScale to 0, active the UI And stop the game
             Time.timeScale = 0f;
             GameOverUI.SetActive(true);
-            GameManager.Instance.SetIsPlaying(false);
+            GameManager.Instance.IsPlaying = false;
             AudioManager.Instance.StopMusic();
         }
 
         /// <summary>
-        /// Is called when a Scene or game ends.
+        /// Is called when MonoBehaviour is Destroy
         /// </summary>
         void OnDestroy()
         {

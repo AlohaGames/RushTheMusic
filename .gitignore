@@ -64,3 +64,5 @@ CodeCoverage/
 
 Assets/InitTestScene*.unity
 Assets/InitTestScene*.unity.meta
+
+omnisharp.json
