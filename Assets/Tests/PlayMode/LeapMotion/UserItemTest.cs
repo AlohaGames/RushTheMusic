@@ -18,6 +18,7 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
 
+            // Instance the itemUser
             GameObject itemUserGO = new GameObject();
             ItemUser itemUser = itemUserGO.AddComponent<ItemUser>();
             itemUser.transform.position = new Vector3(0, 0, 1);
@@ -28,20 +29,25 @@ namespace Aloha.Test
             Queue<Item> items = InventoryManager.Instance.GetItems();
             Assert.AreEqual(0, items.Count);
 
+            // Add health potion to inventory
             GameObject healthPotionGO = new GameObject();
             HealPotion healthPotion = healthPotionGO.AddComponent<HealPotion>();
             InventoryManager.Instance.AddItem(healthPotion);
 
+            // Check the number of items in inventory
             items = InventoryManager.Instance.GetItems();
             Assert.AreEqual(1, items.Count);
 
+            // Move the itemUser
             itemUser.transform.position = new Vector3(0, 0, 0.5f);
             yield return null;
 
+            // Rotate the itemUser
             itemUser.transform.position = new Vector3(0, 0, 0);
             itemUser.transform.eulerAngles = new Vector3(0, 0, 0);
             yield return null;
 
+            // Check if item has been used
             items = InventoryManager.Instance.GetItems();
             Assert.AreEqual(0, items.Count);
 
