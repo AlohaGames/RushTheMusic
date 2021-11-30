@@ -9,6 +9,7 @@ namespace Aloha
     /// </summary>
     public class Fireball : MonoBehaviour
     {
+        private bool isAutonomous = false;
         public Wizard Wizard;
         public int Power;
 
@@ -22,9 +23,10 @@ namespace Aloha
         /// </summary>
         public void Launch()
         {
+            isAutonomous = true;
             GetComponent<Rigidbody>().AddForce(transform.forward * 5, ForceMode.Impulse);
             transform.parent = null;
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 2f);
         }
 
         /// <summary>
@@ -37,7 +39,7 @@ namespace Aloha
         /// </summary>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy")
+            if (isAutonomous && collider.tag == "Enemy")
             {
                 collider.gameObject.GetComponent<Entity>().TakeDamage(this.Power);
                 Wizard.BumpEntity(collider.GetComponent<Entity>());
