@@ -72,6 +72,11 @@ namespace Aloha
         /// <summary>
         /// Wall
         /// </summary>
-        wall = 4
+        wall = 4,
+
+        /// <summary>
+        /// Chest
+        /// </summary>
+        chest = 4,
     }
 }

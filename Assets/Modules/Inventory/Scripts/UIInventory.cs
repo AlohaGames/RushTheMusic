@@ -31,20 +31,29 @@ namespace Aloha
         public void UpdateInventoryUI()
         {
             nbMaxItems = InventoryManager.Instance.GetMaxItems();
-            items = InventoryManager.Instance.GetItems();
-            Item[] itemsArray = items.ToArray();
 
-            for (int i = 0; i < nbMaxItems; i++)
+            // Check if UI has been created before the update
+            if (nbMaxItems == inventoryUI.transform.childCount)
             {
-                ItemContainer itemContainer = inventoryUI.transform.GetChild(i).GetComponent<ItemContainer>();
-                if (i < itemsArray.Length)
+                items = InventoryManager.Instance.GetItems();
+                Item[] itemsArray = items.ToArray();
+
+                for (int i = 0; i < nbMaxItems; i++)
                 {
-                    itemContainer.SetItem(itemsArray[i]);
+                    ItemContainer itemContainer = inventoryUI.transform.GetChild(i).GetComponent<ItemContainer>();
+                    if (i < itemsArray.Length)
+                    {
+                        itemContainer.SetItem(itemsArray[i]);
+                    }
+                    else
+                    {
+                        itemContainer.SetItem(null);
+                    }
                 }
-                else
-                {
-                    itemContainer.SetItem(null);
-                }
+            } 
+            else
+            {
+                Debug.Log("Warning : Trying to update InventoryUI before construction");
             }
         }
 

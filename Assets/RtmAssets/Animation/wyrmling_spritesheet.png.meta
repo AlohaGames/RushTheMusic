@@ -4,16 +4,40 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2554055003475306582
-    second: wyrmling_base
+    second: wyrmling_fire_0
   - first:
       213: -8844934301177962308
-    second: wyrmling_walk_1
+    second: wyrmling_fire_1
   - first:
       213: 7592878183921436576
-    second: wyrmling_walk_2
+    second: wyrmling_fire_2
   - first:
       213: -2810448420254029751
-    second: wyrmling_walk_3
+    second: wyrmling_fire_3
+  - first:
+      213: -1073025450286768352
+    second: wyrmling_ice_0
+  - first:
+      213: -7999199016640722182
+    second: wyrmling_ice_1
+  - first:
+      213: 3146882972310813012
+    second: wyrmling_ice_2
+  - first:
+      213: -64174485190064526
+    second: wyrmling_ice_3
+  - first:
+      213: -5895799642641748844
+    second: wyrmling_base_0
+  - first:
+      213: 1833478599187505214
+    second: wyrmling_base_1
+  - first:
+      213: -4396047938137904619
+    second: wyrmling_base_2
+  - first:
+      213: 8831058396784943989
+    second: wyrmling_base_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -115,11 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wyrmling_base
+      name: wyrmling_fire_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
+        y: 513
         width: 256
         height: 256
       alignment: 0
@@ -136,11 +160,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wyrmling_walk_1
+      name: wyrmling_fire_1
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
+        y: 513
         width: 256
         height: 256
       alignment: 0
@@ -157,11 +181,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wyrmling_walk_2
+      name: wyrmling_fire_2
       rect:
         serializedVersion: 2
-        x: 512
-        y: 256
+        x: 509
+        y: 511
         width: 256
         height: 256
       alignment: 0
@@ -178,11 +202,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wyrmling_walk_3
+      name: wyrmling_fire_3
       rect:
         serializedVersion: 2
         x: 768
-        y: 256
+        y: 513
         width: 256
         height: 256
       alignment: 0
@@ -194,6 +218,174 @@ TextureImporter:
       bones: []
       spriteID: 948633b5d084ff8d0800000000000000
       internalID: -2810448420254029751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_ice_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 257
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f14b0c909db11f0800000000000000
+      internalID: -1073025450286768352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_ice_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 257
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afac97d30e22df090800000000000000
+      internalID: -7999199016640722182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_ice_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 257
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459bf42f369fbab20800000000000000
+      internalID: 3146882972310813012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_ice_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 257
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2764a9e45a10c1ff0800000000000000
+      internalID: -64174485190064526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_base_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49ca6795679ed2ea0800000000000000
+      internalID: -5895799642641748844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_base_1
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e302adf5213d17910800000000000000
+      internalID: 1833478599187505214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_base_2
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aa3b701b91ef2c0800000000000000
+      internalID: -4396047938137904619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wyrmling_base_3
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 573e81ba2d83e8a70800000000000000
+      internalID: 8831058396784943989
       vertices: []
       indices: 
       edges: []

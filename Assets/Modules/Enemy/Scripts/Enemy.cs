@@ -38,8 +38,11 @@ namespace Aloha
     /// </summary>
     public class Enemy : Entity
     {
+        protected bool AIActivated = false;
+
         [SerializeField]
         private bool noAI = false;
+
         private EnemyStats enemyStats
         {
             get { return this.stats as EnemyStats; }
@@ -100,7 +103,7 @@ namespace Aloha
         /// </summary>
         public void Disappear()
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject, 0.5f);
         }
 
         /// <summary>
