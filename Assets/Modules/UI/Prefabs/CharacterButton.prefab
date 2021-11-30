@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2829858195361150494}
   - component: {fileID: 2829858195361150495}
   - component: {fileID: 2829858195361150492}
-  - component: {fileID: 2829858195361150493}
+  - component: {fileID: 5468656299743675706}
   m_Layer: 5
   m_Name: CharacterButton
   m_TagString: Untagged
@@ -37,8 +37,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -440}
-  m_SizeDelta: {x: 200, y: 200}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2829858195361150489
 CanvasRenderer:
@@ -166,7 +166,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
---- !u!114 &2829858195361150493
+--- !u!114 &5468656299743675706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2829858195361150483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6618582553c5a6a3eafa7fa516a8aac6, type: 3}
+  m_Script: {fileID: 11500000, guid: 900e40e255fd9c7e294fa2ee5405d991, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 0

@@ -10,7 +10,7 @@ namespace Aloha
     /// TODO
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class HeroInvokerButton : MonoBehaviour
+    public class HeroSelectionMenu : MonoBehaviour
     {
         public HeroType Type;
 
@@ -24,15 +24,11 @@ namespace Aloha
 
         /// <summary>
         /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void OnClick()
         {
             GlobalEvent.LoadHero.Invoke(Type);
+            GameManager.Instance.StartLevel();
         }
 
         /// <summary>

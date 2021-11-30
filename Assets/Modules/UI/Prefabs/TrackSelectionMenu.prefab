@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5459225827942183987}
   - component: {fileID: 5459225827942183984}
   m_Layer: 5
-  m_Name: TrackSelection
+  m_Name: TrackSelectionMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

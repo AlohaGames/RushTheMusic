@@ -69,6 +69,8 @@ namespace Aloha
                     currentBiome = Instantiate(biome);
                 }
             }
+            Debug.Log("Current biome: " + currentBiome);
+            Debug.Log("Color biome: " + currentBiome.BackgroundColor);
             Camera.main.backgroundColor = currentBiome.BackgroundColor;
 
             // Set castle in background of biome
