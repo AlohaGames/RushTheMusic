@@ -40,7 +40,7 @@ namespace Aloha
         /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
-            return InstantiateEnemy((int)type);
+            return InstantiateEnemy((int) type);
         }
     }
 
@@ -77,6 +77,6 @@ namespace Aloha
         /// <summary>
         /// Chest
         /// </summary>
-        chest = 4,
+        chest = 5,
     }
 }
