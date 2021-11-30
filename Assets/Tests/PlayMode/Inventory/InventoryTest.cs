@@ -15,7 +15,7 @@ namespace Aloha.Test
         /// <summary>
         /// TODO
         /// </summary>
-        /*[Test]
+        [Test]
         public void InventaireTest()
         {
             HeroStats stats = ScriptableObject.CreateInstance<HeroStats>();

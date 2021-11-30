@@ -10,12 +10,11 @@ namespace Aloha.AI
     /// </summary>
     public class LancerAttack : GONode
     {
-        public bool IsLeft = false;
-        public float actionTime = 1f;
-        public float speed = 4.0f;
-        public float distToMove = 0.5f;
-
         private Lancer lancer;
+        public bool IsLeft = false;
+        public float ActionTime = 1f;
+        public float Speed = 4.0f;
+        public float DistToMove = 0.5f;
 
         /// <summary>
         /// LancerAttack Node Constructor
@@ -54,7 +53,7 @@ namespace Aloha.AI
 
             while (temps < 1f)
             {
-                temps += speed * Time.deltaTime;
+                temps += Speed * Time.deltaTime;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
                 yield return null;
             }

@@ -10,11 +10,10 @@ namespace Aloha.AI
     /// </summary>
     public class AssassinAttack : GONode
     {
-        public float actionTime = 1f;
-        public float speed = 4.0f;
-        public float distToMove = 0.5f;
-
         private Assassin assassin;
+        public float ActionTime = 1f;
+        public float Speed = 4.0f;
+        public float DistToMove = 0.5f;
 
         /// <summary>
         /// AssassinAttack Node Constructor
@@ -44,11 +43,11 @@ namespace Aloha.AI
 
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit * speed;
+            Vector3 posFinal = posInit * Speed;
 
             while (time < 1f)
             {
-                time += speed * Time.deltaTime;
+                time += Speed * Time.deltaTime;
                 posFinal.y = posInit.y + 15;
                 posFinal.z = posInit.z - 7;
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time);

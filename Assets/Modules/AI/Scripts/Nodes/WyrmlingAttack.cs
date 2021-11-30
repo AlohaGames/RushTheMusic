@@ -11,11 +11,10 @@ namespace Aloha.AI
     public class WyrmlingAttack : GONode
     {
         private Wyrmling wyrmling;
-
         public bool IsLeft = false;
-        public float actionTime = 1f;
-        public float speed = 4.0f;
-        public float distToMove = 0.5f;
+        public float ActionTime = 1f;
+        public float Speed = 4.0f;
+        public float DistToMove = 0.5f;
 
         /// <summary>
         /// LancerAttack Node Constructor

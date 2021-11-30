@@ -52,7 +52,6 @@ namespace Aloha
         /// <summary>
         /// TODO
         /// <example> Example(s):
-        [SerializeField]
         /// <code>
         /// TODO
         /// </code>

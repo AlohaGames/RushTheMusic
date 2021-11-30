@@ -9,7 +9,6 @@ namespace Aloha.AI
     [CreateAssetMenu(fileName = "Wall", menuName = "AI/Wall", order = 0)]
     public class WallGraph : Graph
     {
-
         /// <summary>
         /// Call by GraphRunner to init the graph structure
         /// </summary>

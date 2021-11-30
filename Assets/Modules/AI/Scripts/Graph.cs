@@ -5,10 +5,12 @@ using UnityEngine;
 
 namespace Aloha.AI
 {
+    /// <summary>
+    /// Behaviour Graph that manage AI behaviour
+    /// </summary>
     public class Graph : ScriptableObject
     {
         public GraphRunner Runner;
-
         public List<Node> Nodes = new List<Node>();
         public int EntryNode = 0;
 

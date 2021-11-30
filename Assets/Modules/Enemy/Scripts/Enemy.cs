@@ -40,16 +40,17 @@ namespace Aloha
     {
         [SerializeField]
         private bool noAI = false;
+        private EnemyStats enemyStats
+        {
+            get { return this.stats as EnemyStats; }
+        }
 
         protected bool AIActivated = false;
 
         [HideInInspector]
         public UnityEvent NearHeroTrigger = new UnityEvent();
 
-        private EnemyStats enemyStats
-        {
-            get { return this.stats as EnemyStats; }
-        }
+
 
         /// <summary>
         /// This function get the stats of enemy.

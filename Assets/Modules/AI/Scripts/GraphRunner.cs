@@ -12,6 +12,7 @@ namespace Aloha.AI
     {
         private int currentNode;
         private IEnumerator currentCoroutine;
+
         [SerializeField]
         private bool isRunning = false;
 
@@ -82,16 +83,11 @@ namespace Aloha.AI
         /// </summary>
         private void StartNodeAction()
         {
-            Debug.Log(BGraph.Nodes.Count);
             if (BGraph.Nodes.Count > currentNode)
             {
                 Debug.Log(BGraph.Nodes[currentNode]);
                 currentCoroutine = BGraph.Nodes[currentNode].Action();
                 StartCoroutine(currentCoroutine);
-            }
-            else
-            {
-                Debug.Log("NIQUE");
             }
         }
 

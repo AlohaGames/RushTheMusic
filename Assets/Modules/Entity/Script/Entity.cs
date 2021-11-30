@@ -13,7 +13,7 @@ namespace Aloha
         [SerializeField]
         protected Stats stats;
         protected UnityEvent dieEvent = new UnityEvent();
-        
+
         public UnityEvent TakeDamageEvent = new UnityEvent();
         public int CurrentHealth;
 
@@ -102,7 +102,6 @@ namespace Aloha
             ActionZone actionZone = GetComponentInChildren<ActionZone>();
             if (actionZone != null)
             {
-                Debug.Log("Active again wasTriggered");
                 actionZone.WasTriggered = false;
             }
             if (CurrentHealth <= 0)

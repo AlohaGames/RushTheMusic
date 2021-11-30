@@ -10,13 +10,13 @@ namespace Aloha
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
-        public bool IsGameInfinite = false;
         private bool isGamePaused = false;
         private Hero hero;
 
         [SerializeField]
         private string defaultLevel = "";
 
+        public bool IsGameInfinite = false;
         public bool IsPlaying = false;
         public bool LeapMode = false; // leap : true, mouse : false
 
