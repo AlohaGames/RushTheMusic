@@ -31,14 +31,13 @@ namespace Aloha.Test
             enemy.TakeDamage(-5);
             Assert.AreEqual(5, enemy.CurrentHealth);
 
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
             Assert.AreEqual(0, enemy.CurrentHealth);
 
-            yield return null;
+            // Wait for death animation
+            yield return new WaitForSeconds(0.5f);
 
             Assert.IsTrue(enemy == null);
 
