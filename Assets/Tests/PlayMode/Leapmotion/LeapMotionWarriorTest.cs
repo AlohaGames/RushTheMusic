@@ -48,6 +48,7 @@ namespace Aloha.Test
             BoxCollider enemyBoxCollider = enemyGO.AddComponent<BoxCollider>();
             enemyBoxCollider.tag = "Enemy";
 
+            warrior.IsAttacking = true;
             sword.OnTriggerEnter(enemyBoxCollider);
 
             yield return new WaitForSeconds(0.5f);

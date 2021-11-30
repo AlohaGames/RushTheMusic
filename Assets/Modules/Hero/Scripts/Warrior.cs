@@ -24,7 +24,6 @@ namespace Aloha
         public override void Init()
         {
             this.Init(this.heroStats);
-            this.IsAttacking = false;
         }
 
         /// <summary>
