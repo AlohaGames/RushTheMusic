@@ -10,6 +10,8 @@ namespace Aloha
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
+        private bool isHitted = false;
+
         [SerializeField]
         protected Stats stats;
 
@@ -95,11 +97,43 @@ namespace Aloha
             {
                 return;
             }
-            CurrentHealth = CurrentHealth - damage;
+
+            if (!isHitted)
+            {
+                CurrentHealth = CurrentHealth - damage;
+            }
+
             if (CurrentHealth <= 0)
             {
                 Die();
             }
+            else
+            {
+                StartCoroutine(SwitchColor());
+            }
+        }
+
+        /// <summary>
+        /// Changes the color of the sprite and gives invincibility
+        /// <example> Example(s):
+        /// <code>
+        ///     StartCoroutine(SwitchColor());
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="hpGain"></param>
+        /// <returns> IEnumerator </returns>
+        IEnumerator SwitchColor()
+        {
+            isHitted = true;
+            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            if (sprite)
+            {
+                sprite.color = new Color(1f, 0.5f, 0.5f);
+                yield return new WaitForSeconds(0.5f);
+                sprite.color = Color.white;
+            }
+            isHitted = false;
         }
 
         /// <summary>
@@ -118,16 +152,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Bump the entity in a specific direction and with a speed
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     entity.GetBump(new Vector3(0, 0, 2), 2);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="direction"></param>
         /// <param name="speed"></param>
-        public IEnumerator GetBump(Vector3 direction, float speed = 2f)
+        public virtual IEnumerator GetBump(Vector3 direction, float speed = 2f)
         {
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
@@ -141,6 +175,7 @@ namespace Aloha
                 yield return null;
             }
             gameObject.transform.position = posFinal;
+            yield return null;
         }
 
         /// <summary>
