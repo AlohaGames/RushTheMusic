@@ -58,6 +58,7 @@ namespace Aloha
         protected override void PrepareDefense()
         {
             leftHandAnimator.SetBool("isDefending", true);
+            warrior.IsDefending = true;
         }
 
         /// <summary>
@@ -71,6 +72,7 @@ namespace Aloha
         protected override void ReleaseDefense()
         {
             leftHandAnimator.SetBool("isDefending", false);
+            warrior.IsDefending = false;
         }
     }
 }
