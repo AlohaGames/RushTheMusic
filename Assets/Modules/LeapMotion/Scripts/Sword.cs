@@ -42,11 +42,13 @@ namespace Aloha
         /// <param name="other">other collider</param>
         public void OnTriggerEnter(Collider other)
         {
-            if (other.tag == "Enemy" && Speed > minimumSpeedToKill)
+            bool leapActivated = GameManager.Instance.LeapMode;
+            if (collider.tag == "Enemy" && ( (!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
                 Debug.Log(Speed);
-                Warrior.Attack(other.gameObject.GetComponent<Entity>());
-                Warrior.BumpEntity(other.GetComponent<Entity>(), Speed);
+                Warrior.IsAttacking = false;
+                Warrior.Attack(collider.gameObject.GetComponent<Entity>());
+                Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
             }
         }
     }

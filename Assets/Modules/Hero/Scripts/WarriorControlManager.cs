@@ -33,6 +33,7 @@ namespace Aloha
         /// </summary>
         protected override void PrepareAttack()
         {
+            warrior.IsAttacking = true;
             rightHandAnimator.SetTrigger("Attack");
         }
 
