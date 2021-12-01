@@ -5,39 +5,37 @@ using UnityEngine;
 namespace Aloha 
 {
     /// <summary>
-    /// TODO
+    /// Class for the fireball spell
     /// </summary>
     public class Fireball : MonoBehaviour
     {
+        private bool isAutonomous = false;
         public Wizard Wizard;
         public int Power;
 
         /// <summary>
-        /// TODO
+        /// Send the fireball forward
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     Fireball fireball = Instantiate(fireballPrefab);
+        ///     fireball.Launch();
         /// </code>
         /// </example>
         /// </summary>
         public void Launch()
         {
+            isAutonomous = true;
             GetComponent<Rigidbody>().AddForce(transform.forward * 5, ForceMode.Impulse);
             transform.parent = null;
-            Destroy(gameObject, 3f);
+            Destroy(gameObject, 2f);
         }
 
         /// <summary>
-        /// If the fireball touch an Object
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// If the fireball touches an Object
         /// </summary>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy")
+            if (isAutonomous && collider.tag == "Enemy")
             {
                 collider.gameObject.GetComponent<Entity>().TakeDamage(this.Power);
                 Wizard.BumpEntity(collider.GetComponent<Entity>());

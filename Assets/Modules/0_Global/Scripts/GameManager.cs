@@ -135,7 +135,6 @@ namespace Aloha
         public void ResumeGame()
         {
             isGamePaused = false;
-            Cursor.visible = false;
             GlobalEvent.Resume.Invoke();
         }
 
@@ -150,7 +149,6 @@ namespace Aloha
         public void PauseGame()
         {
             isGamePaused = true;
-            Cursor.visible = true;
             GlobalEvent.Pause.Invoke();
         }
 

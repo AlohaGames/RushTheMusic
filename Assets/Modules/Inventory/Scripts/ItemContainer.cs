@@ -32,7 +32,6 @@ namespace Aloha
                 ItemDisplayComponent.color = tempColor;
 
                 ItemDisplayComponent.sprite = item.ItemSprite;
-                Debug.Log("Name item sprite: " + item.ItemSprite.name);
             }
             else
             {

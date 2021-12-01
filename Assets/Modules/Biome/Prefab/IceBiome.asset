@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
+  m_Name: IceBiome
+  m_EditorClassIdentifier: 
+  BiomeName: ice
+  SideEnvironmentPrefabs:
+  - {fileID: 7377985509968965142, guid: 6a163bbf97a55f94fb08d09770d166e5, type: 3}
+  CastleHill: {fileID: 5979782378925957397, guid: 75c34a110858e5f43acfdc022f18716e, type: 3}
+  BackgroundColor: {r: 0.7244571, g: 0.9433962, b: 0.92955214, a: 0}
+  TilePrefabs:
+  - {fileID: 7968008124985375963, guid: 5e1ede5e43265ba4a9547e8bb75d53e9, type: 3}
