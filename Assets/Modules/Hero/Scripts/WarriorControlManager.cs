@@ -11,6 +11,7 @@ namespace Aloha
     {
         private Animator rightHandAnimator;
         private Animator leftHandAnimator;
+        private Warrior warrior;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
@@ -19,6 +20,7 @@ namespace Aloha
         {
             rightHandAnimator = rightHand.GetComponent<Animator>();
             leftHandAnimator = leftHand.GetComponent<Animator>();
+            warrior = GameManager.Instance.GetHero() as Warrior;
         }
 
         /// <summary>
@@ -31,6 +33,7 @@ namespace Aloha
         /// </summary>
         protected override void PrepareAttack()
         {
+            warrior.IsAttacking = true;
             rightHandAnimator.SetTrigger("Attack");
         }
 

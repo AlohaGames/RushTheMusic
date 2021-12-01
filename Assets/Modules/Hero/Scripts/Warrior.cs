@@ -11,6 +11,7 @@ namespace Aloha
         //TODO: Ajouter une fonction de parade
         private const float REGENERATION_POURCENT = 0.2f;
         public int CurrentRage;
+        public bool IsAttacking;
 
         /// <summary>
         /// Initialize the warrior
@@ -38,6 +39,7 @@ namespace Aloha
         {
             base.Init(stats);
             this.CurrentRage = 0;
+            this.IsAttacking = false;
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
 
