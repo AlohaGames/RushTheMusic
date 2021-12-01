@@ -35,11 +35,7 @@ namespace Aloha
         public void Update() {
             // End of music
             if (shouldBePlaying && !audioSource.isPlaying) {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
-                GameManager.Instance.StopLevel();
-                UIManager.Instance.ShowEndGameUIElements();
-                shouldBePlaying = false;
+                GlobalEvent.GameOver.Invoke();
             }
         }
 
