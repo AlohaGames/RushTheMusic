@@ -25,7 +25,7 @@ namespace Aloha.AI
             Move MoveLeft = new Move(this);
             Move MoveRight = new Move(this);
             Node Attack = new LancerAttack(this);
-            Node GetBump = new BasicNode(this, 5);
+            Node GetBump = new BasicNode(this, 1);
 
             // Add Link to MoveForward
             MoveForward.AddAutomaticLink(MoveForward, 1.0f);
@@ -37,16 +37,16 @@ namespace Aloha.AI
             TamponNearHero.AddAutomaticLink(MoveRight, 0.5f);
 
             // Add Link to MoveLeft
-            MoveLeft.AddAutomaticLink(MoveRight, 0.45f);
-            MoveLeft.AddAutomaticLink(MoveLeft, 0.45f);
-            MoveLeft.AddAutomaticLink(Attack, 0.1f);
+            MoveLeft.AddAutomaticLink(MoveRight, 0.40f);
+            MoveLeft.AddAutomaticLink(MoveLeft, 0.40f);
+            MoveLeft.AddAutomaticLink(Attack, 0.2f);
             MoveLeft.AddEventLink(GetBump, lancer.TakeDamageEvent);
 
             // Add Link to MoveRight
             MoveRight.IsLeft = true;
-            MoveRight.AddAutomaticLink(MoveLeft, 0.45f);
-            MoveRight.AddAutomaticLink(MoveRight, 0.45f);
-            MoveRight.AddAutomaticLink(Attack, 0.10f);
+            MoveRight.AddAutomaticLink(MoveLeft, 0.40f);
+            MoveRight.AddAutomaticLink(MoveRight, 0.40f);
+            MoveRight.AddAutomaticLink(Attack, 0.20f);
             MoveRight.AddEventLink(GetBump, lancer.TakeDamageEvent);
 
             // Add Link to Attack
