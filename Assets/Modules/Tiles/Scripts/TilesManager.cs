@@ -121,9 +121,6 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// Return background position based on last tile
-        /// </returns>
         public void SpawnTileToQueue(int tileIndex)
         {
             if (activeTiles.Count == 0)

@@ -15,8 +15,9 @@ namespace Aloha
 
         [SerializeField]
         protected Stats stats;
-
         protected UnityEvent dieEvent = new UnityEvent();
+
+        public UnityEvent TakeDamageEvent = new UnityEvent();
         public int CurrentHealth;
 
         /// <summary>
@@ -94,9 +95,16 @@ namespace Aloha
         /// <param name="damage"></param>
         public virtual void TakeDamage(int damage)
         {
+            TakeDamageEvent.Invoke();
             if (damage < 0)
             {
                 return;
+            }
+
+            ActionZone actionZone = GetComponentInChildren<ActionZone>();
+            if (actionZone != null)
+            {
+                actionZone.WasTriggered = false;
             }
 
             if (!isHitted)

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aloha
@@ -177,6 +178,17 @@ namespace Aloha
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Return if list is empty
+        /// </summary>
+        /// <param name="list"></param>
+        /// <typeparam name="T"></typeparam>
+        /// <returns>True if list is Empty, false otherwise</returns>
+        public static bool IsEmpty<T>(this List<T> list)
+        {
+            return (list.Count == 0);
         }
     }
 }

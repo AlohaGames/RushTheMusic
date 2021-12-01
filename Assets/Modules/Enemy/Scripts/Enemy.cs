@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Aloha
 {
@@ -36,15 +37,15 @@ namespace Aloha
     /// </summary>
     public class Enemy : Entity
     {
-        protected bool AIActivated = false;
-
-        [SerializeField]
-        private bool noAI = false;
-
         private EnemyStats enemyStats
         {
             get { return this.stats as EnemyStats; }
         }
+
+        protected bool AIActivated = false;
+
+        [HideInInspector]
+        public UnityEvent NearHeroTrigger = new UnityEvent();
 
         /// <summary>
         /// This function get the stats of enemy.
@@ -95,82 +96,6 @@ namespace Aloha
         public void Disappear()
         {
             Destroy(this.gameObject, 0.5f);
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void DetachFromParent()
-        {
-            transform.parent = null;
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="value"></param>
-        public void SetAI(bool value)
-        {
-            if (!noAI)
-            {
-                AIActivated = value;
-                if (AIActivated)
-                {
-                    StartCoroutine(AI());
-                }
-            }
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        protected virtual IEnumerator AI()
-        {
-            while (this.AIActivated)
-            {
-                yield return StartCoroutine(MoveXToAnimation(Utils.RandomFloat(-1.5f, 1.5f), 1));
-            }
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="x"></param>
-        /// <param name="speed"></param>
-        protected virtual IEnumerator MoveXToAnimation(float x, float speed)
-        {
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.x = x;
-
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-            gameObject.transform.position = posFinal;
         }
 
         /// <summary>
