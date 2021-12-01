@@ -70,6 +70,7 @@ namespace Aloha
         /// </summary>
         public void PauseMusic()
         {
+            shouldBePlaying = false;
             audioSource.Pause();
             Debug.Log($"Pause music");
         }
@@ -84,6 +85,7 @@ namespace Aloha
         /// </summary>
         public void ResumeMusic()
         {
+            shouldBePlaying = true;
             audioSource.Play();
             Debug.Log($"Resume music");
         }
