@@ -116,6 +116,7 @@ namespace Aloha
             {
                 if (!isDead)
                 {
+                    StartCoroutine(SwitchColor());
                     isDead = true;
                     Die();
                 }

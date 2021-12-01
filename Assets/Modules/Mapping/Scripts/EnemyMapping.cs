@@ -32,11 +32,11 @@ namespace Aloha
         /// </summary>
         public EnemyMapping()
         {
-            Stats stats = new Stats();
-            stats.Attack = 0;
+            Stats stats = ScriptableObject.CreateInstance<Stats>();
+            stats.Attack = 10;
             stats.Defense = 0;
             stats.Level = 0;
-            stats.MaxHealth = 0;
+            stats.MaxHealth = 1;
             VerticalPositionEnum vpos = VerticalPositionEnum.BOT;
             HorizontalPositionEnum hpos = HorizontalPositionEnum.CENTER;
             Initialize(EnemyType.generic, stats, vpos, hpos);
