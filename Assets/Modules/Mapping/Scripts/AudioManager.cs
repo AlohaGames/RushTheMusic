@@ -14,6 +14,8 @@ namespace Aloha
         private GameObject audioSourceGO;
         private AudioSource audioSource;
 
+        private bool shouldBePlaying = false;
+
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
@@ -30,6 +32,17 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
+        public void Update() {
+            // End of music
+            if (shouldBePlaying && !audioSource.isPlaying) {
+                Time.timeScale = 0f;
+                Cursor.visible = true;
+                GameManager.Instance.StopLevel();
+                UIManager.Instance.ShowEndGameUIElements();
+                shouldBePlaying = false;
+            }
+        }
+
         /// <summary>
         /// TODO
         /// <example> Example(s):
@@ -43,6 +56,7 @@ namespace Aloha
             AudioClip clip = LevelManager.Instance.LevelMusic;
             audioSource.clip = clip;
             audioSource.Play();
+            shouldBePlaying = true;
             Debug.Log($"Play music {LevelManager.Instance.LevelMusic}");
         }
 
@@ -56,6 +70,7 @@ namespace Aloha
         /// </summary>
         public void PauseMusic()
         {
+            shouldBePlaying = false;
             audioSource.Pause();
             Debug.Log($"Pause music");
         }
@@ -70,6 +85,7 @@ namespace Aloha
         /// </summary>
         public void ResumeMusic()
         {
+            shouldBePlaying = true;
             audioSource.Play();
             Debug.Log($"Resume music");
         }
