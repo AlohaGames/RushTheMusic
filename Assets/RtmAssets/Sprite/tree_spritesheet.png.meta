@@ -7,7 +7,10 @@ TextureImporter:
     second: tree_base
   - first:
       213: 101844421843465588
-    second: tree_base_1
+    second: tree_red
+  - first:
+      213: -5780187970947242937
+    second: tree_ice
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -130,7 +133,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tree_base_1
+      name: tree_red
       rect:
         serializedVersion: 2
         x: 256
@@ -146,6 +149,27 @@ TextureImporter:
       bones: []
       spriteID: 475b55a46f2d96100800000000000000
       internalID: 101844421843465588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tree_ice
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74424b84aa5a8cfa0800000000000000
+      internalID: -5780187970947242937
       vertices: []
       indices: 
       edges: []

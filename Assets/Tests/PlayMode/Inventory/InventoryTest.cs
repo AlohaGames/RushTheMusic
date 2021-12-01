@@ -22,7 +22,7 @@ namespace Aloha.Test
             stats.Attack = 100;
             stats.Defense = 0;
             stats.MaxHealth = 100;
-
+            
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
             Hero hero = GameManager.Instance.GetHero();

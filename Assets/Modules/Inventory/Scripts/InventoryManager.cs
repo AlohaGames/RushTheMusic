@@ -27,8 +27,8 @@ namespace Aloha
             if(this.items.Count < this.maxItem)
             {
                 this.items.Enqueue(item);
+                UIManager.Instance.UIInventory.UpdateInventoryUI();
             }
-            UIManager.Instance.UIInventory.UpdateInventoryUI();
         }
 
         /// <summary>

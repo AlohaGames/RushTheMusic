@@ -94,6 +94,31 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Charge a vortex
+        /// <example> Example(s):
+        /// <code>
+        ///     wizard.ChargeVortex();
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// A int representing the mana used for the vortex
+        /// </returns>
+        public int ChargeVortex()
+        {
+            int manaToUse = 400;
+            int manaUsed = 0;
+
+            if (this.CurrentMana >= manaToUse)
+            {
+                manaUsed = manaToUse;
+                this.CurrentMana -= manaToUse;
+            }
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
+            return manaUsed;
+        }
+
+        /// <summary>
         /// Regain mana automatically during the game
         /// <example> Example(s):
         /// <code>
@@ -105,11 +130,12 @@ namespace Aloha
         {
             while (true)
             {
-                if (this.CurrentMana < this.heroStats.MaxMana) this.CurrentMana += 10;
+                if (this.CurrentMana < this.heroStats.MaxMana) this.CurrentMana += 5;
                 GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
                 yield return new WaitForSeconds(0.1f);
             }
         }
+
         /// <summary>
         /// Regenerates a pourcentage of the wizard's max mana.
         /// <example> Example(s):
