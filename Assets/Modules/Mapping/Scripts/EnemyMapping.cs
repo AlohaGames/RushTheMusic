@@ -32,7 +32,7 @@ namespace Aloha
         /// </summary>
         public EnemyMapping()
         {
-            Stats stats = new Stats();
+            Stats stats = ScriptableObject.CreateInstance<Stats>();
             stats.Attack = 10;
             stats.Defense = 0;
             stats.Level = 0;
