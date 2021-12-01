@@ -34,6 +34,7 @@ namespace Aloha
         {
             MenuPauseUI.SetActive(false);
             Time.timeScale = 1f;
+            Cursor.visible = false;
             IsGamePaused = false;
         }
 
@@ -49,6 +50,7 @@ namespace Aloha
         {
             MenuPauseUI.SetActive(true);
             Time.timeScale = 0f;
+            Cursor.visible = true;
             IsGamePaused = true;
         }
 
