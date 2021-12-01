@@ -25,7 +25,7 @@ namespace Aloha.AI
             Move MoveLeft = new Move(this);
             Move MoveRight = new Move(this);
             Node Attack = new LancerAttack(this);
-            Node GetBump = new BasicNode(this, 5);
+            Node GetBump = new BasicNode(this, 1);
 
             // Add Link to MoveForward
             MoveForward.AddAutomaticLink(MoveForward, 1.0f);
