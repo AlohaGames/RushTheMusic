@@ -84,11 +84,12 @@ namespace Aloha
                 power = this.heroStats.Attack;
                 this.CurrentMana -= manaToUse;
             }
-            else
+            else if (((float)this.CurrentMana / manaToUse > 0.1f))
             {
                 power = this.heroStats.Attack * this.CurrentMana / manaToUse;
                 this.CurrentMana = 0;
             }
+            Debug.Log("bite : " + (float)this.CurrentMana / manaToUse + ", ? "+ ((float)this.CurrentMana / manaToUse > 0.1f));
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
             return power;
         }
