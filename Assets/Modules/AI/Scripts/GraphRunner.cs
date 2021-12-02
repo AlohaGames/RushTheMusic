@@ -84,7 +84,6 @@ namespace Aloha.AI
         {
             if (BGraph.Nodes.Count > currentNode)
             {
-                Debug.Log(BGraph.Nodes[currentNode]);
                 currentCoroutine = BGraph.Nodes[currentNode].Action();
                 StartCoroutine(currentCoroutine);
             }

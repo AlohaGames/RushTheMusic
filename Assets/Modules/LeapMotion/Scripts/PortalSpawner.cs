@@ -83,12 +83,15 @@ namespace Aloha
                     Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
                     vortex.Wizard = this.Wizard;
                     vortex.Power = manaUsed;
-
-                    // Reset variables
-                    preparingPortal = false;
-                    targetPreview.enabled = false;
                 }
+            } else
+            {
+                // TODO Add behavior if not enough mana to spawn a new portal
             }
+
+            // Reset variables
+            preparingPortal = false;
+            targetPreview.enabled = false;
         }
 
         /// <summary>
