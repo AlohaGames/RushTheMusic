@@ -10,10 +10,9 @@ namespace Aloha
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
-
+    
         private GameObject audioSourceGO;
         private AudioSource audioSource;
-
         private bool shouldBePlaying = false;
 
         /// <summary>
@@ -97,6 +96,7 @@ namespace Aloha
         public void StopMusic()
         {
             audioSource.Stop();
+            shouldBePlaying = false;
             Debug.Log($"Stop music");
         }
     }
