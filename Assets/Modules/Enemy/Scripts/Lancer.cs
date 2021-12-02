@@ -11,14 +11,14 @@ namespace Aloha
     /// </summary>
     public class Lancer : Enemy<LancerStats>
     {
-        private Animator anim;
+        public Animator Anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {
-            anim = GetComponent<Animator>();
+            Anim = GetComponent<Animator>();
         }
 
 /*
