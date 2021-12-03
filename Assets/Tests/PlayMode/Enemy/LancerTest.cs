@@ -27,7 +27,8 @@ namespace Aloha.Test
             Assert.IsTrue(lancer is Lancer);
 
             // Clear the scene
-            Utils.ClearCurrentScene(true);
+            Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }

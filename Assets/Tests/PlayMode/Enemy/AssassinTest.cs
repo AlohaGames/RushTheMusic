@@ -42,7 +42,7 @@ namespace Aloha.Test
             Assert.AreNotEqual(initialZPosition, assassin.transform.position.z);
 
             // Clear the scene
-            Utils.ClearCurrentScene(true);
+            Utils.ClearCurrentScene();
             yield return null;
         }
     }
