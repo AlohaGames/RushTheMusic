@@ -16,7 +16,17 @@ namespace Aloha.Test
         {
             // Instance Chest
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
-            HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
+
+            GameObject wizardGO = new GameObject();
+            Wizard wizard = wizardGO.AddComponent<Wizard>();
+            WizardStats wizardStats = (WizardStats)ScriptableObject.CreateInstance("WizardStats");
+            wizardStats.MaxMana = 100;
+            wizardStats.MaxHealth = 10;
+            wizardStats.Attack = 10;
+            wizardStats.Defense = 10;
+            wizardStats.XP = 10;
+            wizard.Init(wizardStats);
+            GameManager.Instance.SetHero(wizard);
 
             // Instance the itemUser
             GameObject itemUserGO = new GameObject();
