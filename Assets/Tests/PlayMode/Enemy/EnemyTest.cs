@@ -41,7 +41,9 @@ namespace Aloha.Test
 
             Assert.IsTrue(enemy == null);
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -58,7 +60,8 @@ namespace Aloha.Test
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
     }

@@ -56,7 +56,10 @@ namespace Aloha.Test
             //Assert.Greater(enemy.transform.position.z, 3f);
             //Assert.AreEqual(5, enemy.CurrentHealth);
 
-            Aloha.Utils.ClearCurrentScene();
+
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -100,7 +103,9 @@ namespace Aloha.Test
 
             Assert.Greater(enemy.transform.position.z, 3f);
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }

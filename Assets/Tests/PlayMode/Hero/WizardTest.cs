@@ -43,8 +43,9 @@ namespace Aloha.Test
             wizard.RegenerateSecondary(1f);
             Assert.AreEqual(100, wizard.CurrentMana);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(wizardGO);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -75,8 +76,9 @@ namespace Aloha.Test
             wizard.RegenerateSecondary(1f);
             Assert.AreEqual(100, wizard.CurrentMana);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(wizardGO);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -107,8 +109,9 @@ namespace Aloha.Test
             wizard.RegenerateSecondary(-1f);
             Assert.AreEqual(100, wizard.CurrentMana);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(wizardGO);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

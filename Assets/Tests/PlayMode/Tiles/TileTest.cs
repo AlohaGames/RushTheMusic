@@ -27,7 +27,8 @@ namespace Aloha.Test
 
             Assert.Less(tile.transform.position.z, initialZPos, "Does the tile move towards the player ?");
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
 
@@ -58,7 +59,8 @@ namespace Aloha.Test
             tilesManager.StopGame();
             yield return null;
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
 
@@ -90,7 +92,8 @@ namespace Aloha.Test
             yield return null;
             Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
     }
