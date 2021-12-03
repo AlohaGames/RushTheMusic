@@ -4,65 +4,69 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Wyrmling : Enemy<WyrmlingStats>
     {
-        [SerializeField] private WyrmlingFireball fireballPrefab;
-        private float initialY;
+        [SerializeField]
+        private WyrmlingFireball fireballPrefab;
 
-        private void Start()
+        private WyrmlingFireball fireball;
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <param name="speed"></param>
+        public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
-            initialY = transform.position.y;
+            if (this.fireball) Destroy(this.fireball.gameObject);
+            yield return base.GetBump(direction, speed);
         }
 
-        protected override IEnumerator AI()
+        /// <summary>
+        /// Instantiate a fireball in front of the wyrmling
+        /// <example> Example(s):
+        /// <code>
+        ///     this.InstantiateFireball()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void InstantiateFireball()
         {
-            while (true)
-            {
-                int rand = Utils.RandomInt(2, 4);
-                for (int i = 0; i < rand; i++)
-                {
-                    yield return StartCoroutine(MoveXToAnimation(Utils.RandomFloat(-1.5f, 1.5f), 1));
-                }
-                yield return StartCoroutine(AttackAnimation());
-            }
-        }
-
-        protected override IEnumerator MoveXToAnimation(float x, float speed)
-        {
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.x = x;
-
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                posFinal.y = initialY + Mathf.Sin( Mathf.PI * gameObject.transform.position.x) * 0.1f;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-
-            gameObject.transform.position = posFinal;
-        }
-
-        protected IEnumerator AttackAnimation()
-        {
-            // Config fireball's spawning position
             Vector3 fireballPos = transform.position;
             fireballPos.x -= 0.5f;
 
             // Spawn fireball
-            WyrmlingFireball fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);
-            fireball.associatedEnemy = this;
-            yield return new WaitForSeconds(1f);
+            this.fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);
+            this.fireball.AssociatedEnemy = this;
+        }
 
-            // Launch fireball to the hero
-            Hero hero = GameManager.Instance.GetHero();
-            Vector3 dir = hero.transform.position - fireball.transform.position;
-            dir.Normalize();
-            fireball.GetComponent<Rigidbody>().AddForce(dir * 3, ForceMode.Impulse);
-            
-            yield return null;
+        /// <summary>
+        /// Launch the associated fireball on the hero
+        /// <example> Example(s):
+        /// <code>
+        ///     this.LaunchFireball(3)
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="fireballSpeed"></param>
+        public void LaunchFireball(float fireballSpeed)
+        {
+            if (this.fireball)
+            {
+                Hero hero = GameManager.Instance.GetHero();
+                Vector3 dir = hero.transform.position - this.fireball.transform.position;
+                dir.Normalize();
+                this.fireball.GetComponent<Rigidbody>().AddForce(dir * fireballSpeed, ForceMode.Impulse);
+                this.fireball = null;
+            }
         }
 
     }

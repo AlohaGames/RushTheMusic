@@ -5,48 +5,41 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This test is for testing the game over menu
+    /// </summary>
     public class GameOverMenuTest
     {
-      /*  // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+        /// <summary>
+        /// This test create the game over menu and test if the game ends well
+        /// </summary>
         [UnityTest]
         public IEnumerator GameOverMenuTestWithEnumeratorPasses()
         {
             GameManager manager = MonoBehaviour.Instantiate(Resources.Load<GameManager>("Prefabs/GameManager"));
-            manager.setIsPlaying(true);
+            GameOverMenu gameOverMenu = UIManager.Instance.GetComponent<GameOverMenu>();
 
-            Assert.IsTrue(manager.getIsPlaying());
+            // the game is start
+            manager.IsPlaying = true;
 
-            GameObject gameOver = new GameObject();
-            gameOver.AddComponent<GameOverMenu>();
+            Assert.IsTrue(manager.IsPlaying);
 
-            GameObject ui = new GameObject();
-            ui.SetActive(false);
-
-            gameOver.GetComponent<GameOverMenu>().GameOverUI = ui;
-
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
-            yield return null;
-
+            // Check if the time is not stopped
             Assert.IsTrue(Time.timeScale != 0f);
 
-            gameOver.GetComponent<GameOverMenu>().ShowGameOverUI();
+            // Show the gameover menu
+            gameOverMenu.ShowGameOverUI();
 
-            // skip one frame
-            yield return null;
-
+            // Check if the menu is showed, and the game end
             Assert.IsTrue(Time.timeScale == 0f);
-            Assert.IsTrue(ui.activeSelf);
-            Assert.IsFalse(manager.getIsPlaying());
-            yield return null;
+            Assert.IsTrue(gameOverMenu.GameOverUI.activeSelf);
+            Assert.IsFalse(manager.IsPlaying);
 
             Time.timeScale = 1f;
+            manager.IsPlaying = true;
 
-            GameObject.Destroy(ui);
-            GameObject.Destroy(gameOver);
-            GameObject.Destroy(manager);
-        }*/
+            Aloha.Utils.ClearCurrentScene();
+            yield return null;
+        }
     }
 }
-

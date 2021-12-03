@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ed82157467f56424b24d7e3c23afcc0, type: 3}
   m_Name: EnemyStats
   m_EditorClassIdentifier: 
-  maxHealth: 10
-  attackPower: 0
-  defensePower: 0
-  level: 0
+  MaxHealth: 10
+  Attack: 0
+  Defense: 0
+  Level: 0

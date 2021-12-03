@@ -5,6 +5,9 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the UIScore class functions.
+    /// </summary>
     public class UIScoreTest
     {
         /// <summary>
@@ -27,7 +30,7 @@ namespace Aloha.Test
             //Tests if UI end game elements are disable
             Assert.IsFalse(instanceUIManager.UIScore.EndGameScore.activeSelf);
 
-            GameObject.DestroyImmediate(manager);
+            Aloha.Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -53,7 +56,7 @@ namespace Aloha.Test
             //Tests if UI in game elements are disable
             Assert.IsFalse(instanceUIManager.UIScore.InGameScore.activeSelf);
 
-            GameObject.DestroyImmediate(manager);
+            Aloha.Utils.ClearCurrentScene(true);
         }
     }
 }
