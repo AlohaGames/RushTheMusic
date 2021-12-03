@@ -23,6 +23,7 @@ namespace Aloha
             anim = GetComponent<Animator>();
             lastTileSpeed = 0;
             isTilesStopped = false;
+            this.NearHeroTrigger.AddListener(runAndStopTiles);
         }
 
         /// <summary>
@@ -37,20 +38,6 @@ namespace Aloha
         /// <param name="speed">The speed of enemy bumping</param>
         public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
-            yield return null;
-        }
-
-        /// <summary>
-        /// Coroutine to start artificial intelligence of the wall
-        /// <example> Example(s):
-        /// <code>
-        ///     StartCoroutine(Wall.AI());
-        /// </code>
-        /// </example>
-        /// </summary>
-        protected override IEnumerator AI()
-        {
-            if (!isTilesStopped) runAndStopTiles();
             yield return null;
         }
 

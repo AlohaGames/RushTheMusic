@@ -11,16 +11,17 @@ namespace Aloha
     /// </summary>
     public class Lancer : Enemy<LancerStats>
     {
-        private Animator anim;
+        public Animator Anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {
-            anim = GetComponent<Animator>();
+            Anim = GetComponent<Animator>();
         }
 
+/*
         protected override IEnumerator AI()
         {
             int rand = Utils.RandomInt(1, 4);
@@ -51,10 +52,12 @@ namespace Aloha
             yield return StartCoroutine(GetBump(new Vector3(0, 0, 1f), 3f));
             yield return new WaitForSeconds(0.2f);
 
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.x = 0; posFinal.z = -1;
+                    while (temps < 1f)
+                    {
+                        temps += speed * Time.deltaTime;
+                        gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+                        yield return null;
+                    }
 
             while (temps < 1f)
             {
@@ -67,5 +70,6 @@ namespace Aloha
             Attack(hero);
             Disappear();
         }
+        */
     }
 }

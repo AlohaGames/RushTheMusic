@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the shield
     /// </summary>
     public class Shield : MonoBehaviour
     {
@@ -46,11 +46,12 @@ namespace Aloha
         /// <param name="collider"></param>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy" && Speed > minimumSpeedToProtect)
+            if (collider.tag == "Enemy" && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
                 // Change minimum speed if actual speed is to low
-                if (Speed < 1) Speed = 1f;
-                Warrior.BumpEntity(collider.GetComponent<Entity>(),Speed);
+                if (Speed < 1.5) Speed = 1.5f;
+                collider.gameObject.GetComponent<Entity>().TakeDamage(0);
+                Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
             }
         }
     }

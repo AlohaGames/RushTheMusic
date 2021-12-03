@@ -14,11 +14,12 @@ namespace Aloha.Test
             //Instance a wizard
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Wizard);
-            Hero hero = GameManager.Instance.GetHero(); 
+            Hero hero = GameManager.Instance.GetHero();
             Wizard wizard = hero as Wizard;
 
             //Create a mana potion
-            ManaPotion manaPotion = new ManaPotion();
+            GameObject potion = new GameObject();
+            ManaPotion manaPotion = potion.AddComponent<ManaPotion>();
 
             //Take out mana
             wizard.CurrentMana = 50;
@@ -30,8 +31,7 @@ namespace Aloha.Test
             Assert.AreEqual(250, wizard.CurrentMana);
 
             //Destroy the GameObjects
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -43,11 +43,12 @@ namespace Aloha.Test
             //Instance a wizard
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Wizard);
-            Hero hero = GameManager.Instance.GetHero(); 
+            Hero hero = GameManager.Instance.GetHero();
             Wizard wizard = hero as Wizard;
 
             //Create a mana potion
-            ManaPotion manaPotion = new ManaPotion();
+            GameObject potion = new GameObject();
+            ManaPotion manaPotion = potion.AddComponent<ManaPotion>();
 
             //Use a mana potion
             manaPotion.Effect();
@@ -56,8 +57,7 @@ namespace Aloha.Test
             Assert.AreEqual(1000, wizard.CurrentMana);
 
             //Destroy the GameObjects
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -69,11 +69,12 @@ namespace Aloha.Test
             //Instance a warrior
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
-            Hero hero = GameManager.Instance.GetHero(); 
+            Hero hero = GameManager.Instance.GetHero();
             Warrior warrior = hero as Warrior;
 
             //Create a rage potion
-            RagePotion ragePotion = new RagePotion();
+            GameObject potion = new GameObject();
+            RagePotion ragePotion = potion.AddComponent<RagePotion>();
 
             //Add rage
             warrior.CurrentRage = 50;
@@ -85,8 +86,7 @@ namespace Aloha.Test
             Assert.AreEqual(60, warrior.CurrentRage);
 
             //Destroy the GameObjects
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -98,12 +98,13 @@ namespace Aloha.Test
             //Instance a warrior
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
-            Hero hero = GameManager.Instance.GetHero(); 
+            Hero hero = GameManager.Instance.GetHero();
             Warrior warrior = hero as Warrior;
             Debug.Log("Max rage: " + warrior.GetStats().MaxRage);
 
             //Create a rage potion
-            RagePotion ragePotion = new RagePotion();
+            GameObject potion = new GameObject();
+            RagePotion ragePotion = potion.AddComponent<RagePotion>();
 
             //Add rage
             warrior.CurrentRage = warrior.GetStats().MaxRage;
@@ -115,8 +116,7 @@ namespace Aloha.Test
             Assert.AreEqual(100, warrior.CurrentRage);
 
             //Destroy the GameObjects
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            Utils.ClearCurrentScene(true);
         }
     }
 }

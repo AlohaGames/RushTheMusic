@@ -60,10 +60,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Spawn a new vortex at the laser position
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SpawnPortal()
         /// </code>
         /// </example>
         /// </summary>
@@ -71,12 +71,27 @@ namespace Aloha
         {
             if (preparingPortal && endPoint != null)
             {
-                Vector3 vortexPos = (Vector3)endPoint;
-                vortexPos.y = 1;
-                Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
-                preparingPortal = false;
-                targetPreview.enabled = false;
+                int manaUsed = Wizard.ChargeVortex();
+
+                if (manaUsed != 0)
+                {
+                    // Set vortex position
+                    Vector3 vortexPos = (Vector3)endPoint;
+                    vortexPos.y = 1;
+
+                    // Instantiate the vortex
+                    Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
+                    vortex.Wizard = this.Wizard;
+                    vortex.Power = manaUsed;
+                }
+            } else
+            {
+                // TODO Add behavior if not enough mana to spawn a new portal
             }
+
+            // Reset variables
+            preparingPortal = false;
+            targetPreview.enabled = false;
         }
 
         /// <summary>
