@@ -20,11 +20,10 @@ namespace Aloha.Test
 
             Vector3 firstPosition = fireball.transform.position;
             fireball.Launch();
-            yield return null;
-            yield return null;
+            yield return new WaitForSeconds(1);
 
             Assert.AreNotEqual(firstPosition, fireball.transform.position);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
 
             Assert.IsTrue(fireball == null);
             Assert.IsTrue(fireballGO == null);
@@ -37,31 +36,40 @@ namespace Aloha.Test
         /// <summary>
         /// 
         /// </summary>
-        /*[UnityTest]
+        [UnityTest]
         public IEnumerator FireballOnTriggerEnterTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
 
-            Lancer lancer = EnemyInstantier.Instance
-                .InstantiateEnemy(EnemyType.lancer)
-                .GetComponent<Lancer>();
+            GameObject wizardGO = new GameObject();
+            Wizard wizard = wizardGO.AddComponent<Wizard>();
+            WizardStats wizardStats = (WizardStats)ScriptableObject.CreateInstance("WizardStats");
+            wizardStats.MaxMana = 100;
+            wizardStats.MaxHealth = 10;
+            wizardStats.Attack = 10;
+            wizardStats.Defense = 10;
+            wizardStats.XP = 10;
+            wizard.Init(wizardStats);
 
-            HeroInstantier.Instance.InstantiateHero(HeroType.Wizard);
-            Hero hero = GameManager.Instance.GetHero();
-            Wizard wizard = hero as Wizard;
+            Enemy enemy = EnemyInstantier.Instance
+                .InstantiateEnemy(EnemyType.generic)
+                .GetComponent<Enemy>();
+            enemy.CurrentHealth = 100000;
+
+            yield return null;
 
             GameObject fireballGO = new GameObject();
             Fireball fireball = fireballGO.AddComponent<Fireball>();
             fireballGO.AddComponent<Rigidbody>();
             fireball.Wizard = wizard;
-            fireball.Power = 1;
+            fireball.Power = 10;
 
             BoxCollider fireballCollider = fireballGO.AddComponent<BoxCollider>();
             fireballCollider.isTrigger = true;
             fireball.Launch();
 
-            BoxCollider lancerCollider = lancer.GetComponent<BoxCollider>();
-            Assert.IsTrue(lancerCollider != null);
+            Collider enemyCollider = enemy.GetComponent<Collider>();
+            Assert.IsTrue(enemyCollider != null);
 
             yield return null;
 
@@ -70,6 +78,6 @@ namespace Aloha.Test
             // Clear the scene
             Utils.ClearCurrentScene();
             yield return null;
-        }*/
+        }
     }
 }
