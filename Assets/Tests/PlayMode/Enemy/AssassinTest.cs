@@ -12,7 +12,7 @@ namespace Aloha.Test
     public class AssassinTest
     {
         /// <summary>
-        /// Check if a chest
+        /// Check if a assassin was bumped
         /// </summary>
         [UnityTest]
         public IEnumerator AssassinGetBumpTest()
