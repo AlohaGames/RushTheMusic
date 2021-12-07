@@ -33,6 +33,30 @@ namespace Aloha.Test
         }
 
         /// <summary>
+        /// Changes tiles speed
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ChangeTilesSpeed()
+        {
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            TilesManager tilesManager = TilesManager.Instance;
+            LevelManager levelManager = LevelManager.Instance;
+            levelManager.LevelMapping = new LevelMapping();
+            tilesManager.getEndTilesPosition();
+            yield return null;
+
+            tilesManager.ChangeTileSpeed(1);
+            Assert.AreEqual(1, tilesManager.TileSpeed);
+
+            tilesManager.ChangeTileSpeed(10);
+            Assert.AreEqual(10, tilesManager.TileSpeed);
+
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
+        }
+
+        /// <summary>
         /// This test checks that a new tile appears and the first one is destroy when tiles move
         /// </summary>
         [UnityTest]
