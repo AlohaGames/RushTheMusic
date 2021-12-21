@@ -13,6 +13,7 @@ namespace Aloha
         public string LevelName;
         public string MusicFilePath;
         public string MappingFilePath;
+        public string Description;
 
         /// <summary>
         /// TODO
@@ -28,6 +29,7 @@ namespace Aloha
             this.LevelName = "Unknown";
             this.MusicFilePath = "music.mp3";
             this.MappingFilePath = "mapping.xml";
+            this.Description = "Unknown";
         }
 
         /// <summary>
@@ -42,12 +44,14 @@ namespace Aloha
         /// <param name="musicFilePath"></param>
         /// <param name="mappingFilePath"></param>
         /// <param name="levelName"></param>
-        public LevelMetadata(string author, string musicFilePath, string mappingFilePath, string levelName)
+        /// <param name="description"></param>
+        public LevelMetadata(string author, string musicFilePath, string mappingFilePath, string levelName, string descrption)
         {
             this.Author = author;
             this.MusicFilePath = musicFilePath;
             this.MappingFilePath = mappingFilePath;
             this.LevelName = levelName;
+            this.Description = descrption;
         }
     }
 }

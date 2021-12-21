@@ -266,6 +266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu_root
       objectReference: {fileID: 0}
+    - target: {fileID: 7386603568179018884, guid: 8c8951b4eb22dea439a631fa16c2d0bc, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.000061035156
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c8951b4eb22dea439a631fa16c2d0bc, type: 3}
 --- !u!1 &383908229 stripped
@@ -902,6 +906,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3198628217306462239, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3198628217306462239, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_RaycastTarget
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3296874842509850248, guid: beb08a16a330fd58b99485317896e360, type: 3}

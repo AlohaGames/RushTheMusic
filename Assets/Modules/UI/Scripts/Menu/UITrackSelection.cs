@@ -1,9 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
+using System;
 using System.Collections;
+using System.IO;
+using System.IO.Compression;
+using System.Xml.Serialization;
 
 namespace Aloha
 {
-    // TODO
     /// <summary>
     /// Manage the track selection UI
     /// </summary>
@@ -14,6 +18,10 @@ namespace Aloha
 
         public GameObject TrackSelectionUI;
 
+        void Awake() {
+            ShowTrackList();
+        }
+
         /// <summary>
         /// Get the list of tracks 
         /// <example> Example(s):
@@ -22,9 +30,35 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void GetTrackList()
+        public FileInfo[] GetTracksInDir()
         {
-            // TODO
+            DirectoryInfo dir = new DirectoryInfo(Application.streamingAssetsPath + "/Levels");
+            FileInfo[] info = dir.GetFiles("*.rtm");
+            return info;
+        }
+
+        public LevelMetadata GetTrackInfo(FileInfo pathFile)
+        {
+            string workingPath = Application.temporaryCachePath;
+
+            FileInfo[] files = GetTracksInDir();
+
+            // Extract zip file
+            Guid g = Guid.NewGuid();
+
+            Debug.Log($"Extract level to {g}");
+            ZipFile.ExtractToDirectory($"{pathFile}", $"{workingPath}/{g}");
+
+            // Read metadata file
+            Debug.Log($"Read metada.xml");
+            LevelMetadata metadata;
+            XmlSerializer metadataSerializer = new XmlSerializer(typeof(LevelMetadata));
+
+            using (FileStream stream = new FileStream($"{workingPath}/{g}/metadata.xml", FileMode.Open))
+            {
+                metadata = (LevelMetadata)metadataSerializer.Deserialize(stream);
+            }
+            return metadata;
         }
 
         /// <summary>
@@ -37,15 +71,18 @@ namespace Aloha
         /// </summary>
         public void ShowTrackList()
         {
-            int trackNumber = 3;
+            FileInfo[] files = GetTracksInDir();
+            int trackNumber = files.Length;
             
-            if(trackNumber >= 1)
+            foreach(FileInfo dir in files)
             {
-                for(int i = 0; i < trackNumber - 1; i++)
-                {
-                    GameObject trackElement = Instantiate(trackElementPrefab);
-                    trackElement.transform.SetParent(TrackSelectionUI.transform);
-                }
+                // Get track info from metadata
+                LevelMetadata metadata = GetTrackInfo(dir);
+
+                GameObject trackElement = Instantiate(trackElementPrefab);
+                trackElement.transform.SetParent(TrackSelectionUI.transform);
+                trackElement.transform.Find("MapName").GetComponent<Text>().text = metadata.LevelName;
+                trackElement.transform.Find("MapDescription").GetComponent<Text>().text = metadata.Description;
             }
         }
     }
