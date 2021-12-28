@@ -21,7 +21,6 @@ namespace Aloha
         public override void Effect()
         {
             Hero hero = GameManager.Instance.GetHero();
-            Debug.Log("MaxXP : "+hero.GetStats().MaxXP);
             hero.LevelUp(hero.GetStats().MaxXP);
         }
     }
