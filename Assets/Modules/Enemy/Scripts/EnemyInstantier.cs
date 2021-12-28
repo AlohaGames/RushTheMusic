@@ -80,12 +80,12 @@ namespace Aloha
         chest = 5,
 
         /// <summary>
-        /// Chest
+        /// Fire Wyrmling (flying)
         /// </summary>
         fireWyrmling = 6,
 
         /// <summary>
-        /// Chest
+        /// Ice Wyrmling (flying)
         /// </summary>
         iceWyrmling = 7,
     }

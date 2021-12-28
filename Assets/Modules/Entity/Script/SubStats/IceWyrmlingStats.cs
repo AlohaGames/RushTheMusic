@@ -6,5 +6,5 @@ namespace Aloha.EntityStats
     /// TODO
     /// </summary>
     [CreateAssetMenu(fileName = "IceWyrmlingStats", menuName = "Stats/Enemy/IceWyrmling", order = 1)]
-    public class IceWyrmlingStats : EnemyStats { }
+    public class IceWyrmlingStats : WyrmlingStats { }
 }
