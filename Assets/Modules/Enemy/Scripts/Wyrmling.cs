@@ -77,7 +77,6 @@ namespace Aloha
         {
             if (this.fireball)
             {
-                Hero hero = GameManager.Instance.GetHero();
                 Vector3 dir = hero.transform.position - this.fireball.transform.position;
                 dir.Normalize();
                 this.fireball.GetComponent<Rigidbody>().AddForce(dir * fireballSpeed, ForceMode.Impulse);

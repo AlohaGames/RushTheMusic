@@ -11,8 +11,6 @@ namespace Aloha
     /// </summary>
     public class Canon : Enemy<CanonStats>
     {
-        public Hero hero;
-
         [HideInInspector]
         public UnityEvent AttackAvailableEvent = new UnityEvent();
 
@@ -28,27 +26,7 @@ namespace Aloha
         void Start()
         {
             initialY = transform.position.y;
-            StartCoroutine(AI());
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
-        protected IEnumerator AI()
-        {
-            while (true)
-            {
-                yield return new WaitForSeconds(2f);
-                Fire();
-            }
+            StartCoroutine(WaitForAttackAvailable());
         }
 
         /// <summary>
@@ -84,7 +62,6 @@ namespace Aloha
             canonball.AssociatedEnemy = this;
 
             // Launch canonball to the hero
-            Hero hero = GameManager.Instance.GetHero();
             canonball.Launch(hero.transform.position);
 
             StartCoroutine(WaitForAttackAvailable());
@@ -92,8 +69,7 @@ namespace Aloha
 
         private IEnumerator WaitForAttackAvailable()
         {
-            yield return new WaitForSeconds(2);
-            Debug.Log("FIRE ! ");
+            yield return new WaitForSeconds(Utils.RandomFloat(2, 4));
             AttackAvailableEvent.Invoke();
         }
 

@@ -128,6 +128,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &513117508655809645
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571026481183983337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 2.56, z: 3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &-5455706218502843326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,10 +158,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   CurrentHealth: 0
+  hero: {fileID: 0}
   NearHeroTrigger:
     m_PersistentCalls:
       m_Calls: []
-  hero: {fileID: 0}
   AttackAvailableEvent:
     m_PersistentCalls:
       m_Calls: []

@@ -62,8 +62,7 @@ namespace Aloha.AI
 
             gameObject.transform.position = posFinal;
 
-            Hero hero = GameManager.Instance.GetHero();
-            lancer.Attack(hero);
+            lancer.Attack(lancer.hero);
 
             lancer.Disappear();
 

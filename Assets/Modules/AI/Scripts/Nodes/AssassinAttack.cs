@@ -54,8 +54,7 @@ namespace Aloha.AI
                 yield return null;
             }
             gameObject.transform.position = posFinal;
-            Hero hero = GameManager.Instance.GetHero();
-            assassin.Attack(hero);
+            assassin.Attack(assassin.hero);
             assassin.Disappear();
 
             yield return null;

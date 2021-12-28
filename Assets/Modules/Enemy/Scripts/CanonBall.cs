@@ -9,7 +9,6 @@ namespace Aloha
     /// </summary>
     public class CanonBall : MonoBehaviour
     {
-        private bool isAutonomous = false;
         public Enemy AssociatedEnemy;
 
         /// <summary>
@@ -23,7 +22,6 @@ namespace Aloha
         /// </summary>
         public void Launch(Vector3 heroPosition)
         {
-            isAutonomous = true;
             StartCoroutine(Movement(heroPosition, 1f, 1.5f));
             transform.parent = null;
         }
