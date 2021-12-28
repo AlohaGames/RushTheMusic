@@ -23,6 +23,7 @@ namespace Aloha
         void Start()
         {
             initialY = transform.position.y;
+            StartCoroutine(AI());
         }
 
         /// <summary>
@@ -36,7 +37,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        protected override IEnumerator AI()
+        protected IEnumerator AI()
         {
             while (true)
             {
@@ -65,14 +66,14 @@ namespace Aloha
             // Spawn canonball
             CanonBall canonball = Instantiate(canonballPrefab, canonballPos, Quaternion.identity);
             canonball.AssociatedEnemy = this;
-            yield return new WaitForSeconds(1f);
 
             // Launch canonball to the hero
             // TODO  CHANGE THIS
             // Hero hero = GameManager.Instance.GetHero();
-            Vector3 dir = hero.transform.position - canonball.transform.position;
+            /*Vector3 dir = hero.transform.position - canonball.transform.position;
             dir.Normalize();
-            canonball.GetComponent<Rigidbody>().AddForce(dir * 3, ForceMode.Impulse);
+            canonball.GetComponent<Rigidbody>().AddForce(dir * 3, ForceMode.Impulse);*/
+            canonball.Launch(hero.transform.position);
 
             yield return null;
         }

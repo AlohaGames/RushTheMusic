@@ -9,7 +9,54 @@ namespace Aloha
     /// </summary>
     public class CanonBall : MonoBehaviour
     {
+        private bool isAutonomous = false;
         public Enemy AssociatedEnemy;
+
+        /// <summary>
+        /// Send the canon forward
+        /// <example> Example(s):
+        /// <code>
+        ///     CanonBall canonball = Instantiate(canonBallPrefab);
+        ///     canonball.Launch();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Launch(Vector3 heroPosition)
+        {
+            isAutonomous = true;
+            StartCoroutine(Movement(heroPosition, 1f, 1.5f));
+            transform.parent = null;
+        }
+
+        /// <summary>
+        /// Moves 
+        /// <example> Example(s):
+        /// <code>
+        ///     StartCoroutine(Movement(heroPosition, 1f));
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="heroPosition"></param>
+        /// <param name="speed"></param>
+        public virtual IEnumerator Movement(Vector3 heroPosition, float speed = 2f, float actionTime = 2f)
+        {
+            float temps = 0;
+            Vector3 posInit = gameObject.transform.position;
+            Vector3 posFinal = heroPosition;
+
+            while (temps < actionTime)
+            {
+                temps += speed * Time.deltaTime;
+
+                Vector3 tmpPos = Vector3.Lerp(posInit, posFinal, temps / actionTime);
+                tmpPos.y = posInit.y + Mathf.Sin(temps / actionTime * Mathf.PI) * (posInit.z - posFinal.z) / 8; ;
+                gameObject.transform.position = tmpPos;
+
+                yield return null;
+            }
+            gameObject.transform.position = posFinal;
+            yield return null;
+        }
 
         /// <summary>
         /// TODO

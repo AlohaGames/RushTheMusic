@@ -59,8 +59,11 @@ namespace Aloha.AI
             while (time < ActionTime)
             {
                 time += Speed * Time.deltaTime;
-                posFinal.y = initialY + Mathf.Sin(Mathf.PI * gameObject.transform.position.x) * 0.1f;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / ActionTime);
+
+                Vector3 tmpPos = Vector3.Lerp(posInit, posFinal, time / ActionTime);
+                tmpPos.y = initialY + Mathf.Sin(Mathf.PI * gameObject.transform.position.x) * 0.1f;
+                gameObject.transform.position = tmpPos;
+
                 yield return null;
             }
             gameObject.transform.position = posFinal;
