@@ -53,7 +53,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4366357538128624557, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
+  m_Sprite: {fileID: -650218062088358348, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -64,7 +64,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5298267029195136178
+--- !u!95 &1707275308516661171
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -74,7 +74,7 @@ Animator:
   m_GameObject: {fileID: 7389218948549837581}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 380d0f374501e9946bee4460e95d74a0, type: 2}
+  m_Controller: {fileID: 9100000, guid: e35e6c08620588d48a6b78a17dc78ee9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -100,10 +100,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   CurrentHealth: 0
-  noAI: 0
   NearHeroTrigger:
     m_PersistentCalls:
       m_Calls: []
+  Anim: {fileID: 0}
 --- !u!1001 &8596839881166951461
 PrefabInstance:
   m_ObjectHideFlags: 0

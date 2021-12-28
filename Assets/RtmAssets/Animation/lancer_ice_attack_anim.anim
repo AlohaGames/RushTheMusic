@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: lancer_attack_anim
+  m_Name: lancer_ice_attack_anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1039733206962935696, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
+      value: {fileID: -5964278422655002777, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -40,7 +40,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1039733206962935696, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
+    - {fileID: -5964278422655002777, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
