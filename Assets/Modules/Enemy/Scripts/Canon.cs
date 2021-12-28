@@ -41,6 +41,21 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Bump the entity in a specific direction and with a speed
+        /// <example> Example(s):
+        /// <code>
+        ///     StartCoroutine(wall.GetBump(new Vector3(0, 0, 2), 2));
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="direction">The direction of enemy bumping</param>
+        /// <param name="speed">The speed of enemy bumping</param>
+        public override IEnumerator GetBump(Vector3 direction, float speed = 0)
+        {
+            yield return null;
+        }
+
+        /// <summary>
         /// TODO
         /// <example> Example(s):
         /// <code>
