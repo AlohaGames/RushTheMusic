@@ -54,7 +54,7 @@ namespace Aloha.AI
                 yield return null;
             }
             gameObject.transform.position = posFinal;
-            assassin.Attack(assassin.hero);
+            assassin.Attack(assassin.Hero);
             assassin.Disappear();
 
             yield return null;

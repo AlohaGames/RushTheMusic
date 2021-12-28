@@ -27,7 +27,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Moves 
+        /// Make a gravity movement 
         /// <example> Example(s):
         /// <code>
         ///     StartCoroutine(Movement(heroPosition, 1f));
@@ -57,10 +57,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Method called when object enter in collision with a player
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     canonBall.OnTriggerEnter(anotherCollider);
         /// </code>
         /// </example>
         /// </summary>

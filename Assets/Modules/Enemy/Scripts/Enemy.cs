@@ -44,7 +44,7 @@ namespace Aloha
 
         protected bool AIActivated = false;
 
-        public Hero hero;
+        public Hero Hero;
 
         [HideInInspector]
         public UnityEvent NearHeroTrigger = new UnityEvent();
@@ -73,9 +73,9 @@ namespace Aloha
         {
             // If hero is not set manually, get it from manager
             // Usefull for debug scenes
-            if (!hero)
+            if (!this.Hero)
             {
-                this.hero = GameManager.Instance.GetHero();
+                this.Hero = GameManager.Instance.GetHero();
             }
 
             this.dieEvent.AddListener(Disappear);

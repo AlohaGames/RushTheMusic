@@ -48,6 +48,7 @@ namespace Aloha
         /// </summary>
         void Update()
         {
+            // Kill the chest if it goes behing the player
             if (transform.position.z < 0)
             {
                 Destroy(this.gameObject);

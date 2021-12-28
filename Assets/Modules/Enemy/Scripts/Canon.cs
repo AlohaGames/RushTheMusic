@@ -15,17 +15,13 @@ namespace Aloha
         public UnityEvent AttackAvailableEvent = new UnityEvent();
 
         [SerializeField]
-        public CanonBall canonballPrefab;
-
-
-        private float initialY;
+        public CanonBall CanonballPrefab;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {
-            initialY = transform.position.y;
             StartCoroutine(WaitForAttackAvailable());
         }
 
@@ -34,6 +30,7 @@ namespace Aloha
         /// </summary>
         void Update()
         {
+            // Kill the chest if it goes behing the player
             if (transform.position.z < 0)
             {
                 Destroy(this.gameObject);
@@ -73,11 +70,11 @@ namespace Aloha
             canonballPos.z -= 0.5f;
 
             // Spawn canonball
-            CanonBall canonball = Instantiate(canonballPrefab, canonballPos, Quaternion.identity);
+            CanonBall canonball = Instantiate(CanonballPrefab, canonballPos, Quaternion.identity);
             canonball.AssociatedEnemy = this;
 
             // Launch canonball to the hero
-            canonball.Launch(hero.transform.position);
+            canonball.Launch(Hero.transform.position);
 
             StartCoroutine(WaitForAttackAvailable());
         }
