@@ -44,6 +44,17 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
+        {
+            if (transform.position.z < 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        /// <summary>
         /// Bump the entity in a specific direction and with a speed
         /// <example> Example(s):
         /// <code>

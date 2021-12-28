@@ -12,8 +12,13 @@ namespace Aloha
     public class Canon : Enemy<CanonStats>
     {
         public Hero hero;
+
+        [HideInInspector]
+        public UnityEvent AttackAvailableEvent = new UnityEvent();
+
         [SerializeField]
-        private CanonBall canonballPrefab;
+        public CanonBall canonballPrefab;
+
 
         private float initialY;
 
@@ -42,7 +47,18 @@ namespace Aloha
             while (true)
             {
                 yield return new WaitForSeconds(2f);
-                yield return StartCoroutine(AttackAnimation());
+                Fire();
+            }
+        }
+
+        /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
+        {
+            if (transform.position.z < 0)
+            {
+                Destroy(this.gameObject);
             }
         }
 
@@ -57,7 +73,7 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        protected IEnumerator AttackAnimation()
+        public void Fire()
         {
             // Config canonball's spawning position
             Vector3 canonballPos = transform.position;
@@ -68,14 +84,17 @@ namespace Aloha
             canonball.AssociatedEnemy = this;
 
             // Launch canonball to the hero
-            // TODO  CHANGE THIS
-            // Hero hero = GameManager.Instance.GetHero();
-            /*Vector3 dir = hero.transform.position - canonball.transform.position;
-            dir.Normalize();
-            canonball.GetComponent<Rigidbody>().AddForce(dir * 3, ForceMode.Impulse);*/
+            Hero hero = GameManager.Instance.GetHero();
             canonball.Launch(hero.transform.position);
 
-            yield return null;
+            StartCoroutine(WaitForAttackAvailable());
+        }
+
+        private IEnumerator WaitForAttackAvailable()
+        {
+            yield return new WaitForSeconds(2);
+            Debug.Log("FIRE ! ");
+            AttackAvailableEvent.Invoke();
         }
 
     }
