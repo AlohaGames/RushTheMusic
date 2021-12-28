@@ -66,10 +66,14 @@ namespace Aloha
         public void LevelUp(int xp = 1)
         {
             this.GetStats().XP += xp;
+
+            // LEVEL UP !
             if (this.GetStats().XP >= this.GetStats().MaxXP)
             {
                 this.GetStats().Level += 1;
                 this.GetStats().XP -= this.GetStats().MaxXP;
+                // Each level need 20% more XP
+                this.GetStats().MaxXP = (int)(this.GetStats().MaxXP * 1.20f);
             }
         }
 
