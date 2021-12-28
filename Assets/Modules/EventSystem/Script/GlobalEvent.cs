@@ -55,6 +55,14 @@ namespace Aloha.Events
         /// <summary>
         /// TODO
         /// </summary>
+        /// <param>int : the current level</param>
+        /// <param>int : the current xp</param>
+        /// <param>int : max xp for the level</param>
+        public static IntIntIntEvent OnExperienceUpdate = new IntIntIntEvent();
+
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param></param>
         public static IntIntEvent OnProgressionUpdate = new IntIntEvent();
 
