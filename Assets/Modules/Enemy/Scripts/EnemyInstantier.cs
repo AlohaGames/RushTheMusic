@@ -78,5 +78,15 @@ namespace Aloha
         /// Chest
         /// </summary>
         chest = 5,
+
+        /// <summary>
+        /// FireLancer
+        /// </summary>
+        fireLancer = 6,
+
+        /// <summary>
+        /// IceLancer
+        /// </summary>
+        iceLancer = 7,
     }
 }
