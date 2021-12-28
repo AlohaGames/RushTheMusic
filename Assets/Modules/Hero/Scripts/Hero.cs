@@ -66,6 +66,11 @@ namespace Aloha
         public void LevelUp(int xp = 1)
         {
             this.GetStats().XP += xp;
+            if (this.GetStats().XP >= this.GetStats().MaxXP)
+            {
+                this.GetStats().Level += 1;
+                this.GetStats().XP -= this.GetStats().MaxXP;
+            }
         }
 
         /// <summary>
@@ -126,7 +131,7 @@ namespace Aloha
         /// Regenerate a pourcentage of secondary bar. The gain change depending on max secondary's hero
         /// </summary>
         /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
-        public virtual void RegenerateSecondary(float secondaryRegen){}
+        public virtual void RegenerateSecondary(float secondaryRegen) { }
 
         /// <summary>
         /// Invoke Die event
@@ -150,7 +155,7 @@ namespace Aloha
     {
         protected T heroStats
         {
-            get{ return this.stats as T; }
+            get { return this.stats as T; }
         }
 
         /// <summary>

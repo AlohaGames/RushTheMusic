@@ -55,7 +55,7 @@ namespace Aloha
                 Wizard wizard = hero as Wizard;
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
             }
-            GlobalEvent.OnExperienceUpdate.Invoke(3, 500, 1000);
+            GlobalEvent.OnExperienceUpdate.Invoke(hero.GetStats().Level, hero.GetStats().XP, hero.GetStats().MaxXP);
             GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.LevelMapping.TileCount);
         }
 
