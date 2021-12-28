@@ -76,6 +76,7 @@ namespace Aloha
     {
         healPotion = 0,
         ragePotion = 1,
-        manaPotion = 2
+        manaPotion = 2,
+        experiencePotion = 3
     }
 }

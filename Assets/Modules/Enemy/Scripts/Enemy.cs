@@ -79,14 +79,10 @@ namespace Aloha
 
             // Hero get xp for each ennemy killed
             Hero hero = GameManager.Instance.GetHero();
-            HeroStats heroStats = hero.GetStats();
             hero.LevelUp(xpGain);
 
             // Show XP Text
             DynamicTextManager.Instance.Show(gameObject.transform.position, "+" + xpGain + " XP", Color.green);
-
-            // Update UI XP bar
-            GlobalEvent.OnExperienceUpdate.Invoke(heroStats.Level, heroStats.XP, heroStats.MaxXP);
         }
 
         /// <summary>
@@ -99,6 +95,7 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
+            gainXP();
             base.Die();
         }
 
@@ -112,7 +109,6 @@ namespace Aloha
         /// </summary>
         public void Disappear()
         {
-            gainXP();
             Destroy(this.gameObject, 0.5f);
         }
 

@@ -72,9 +72,13 @@ namespace Aloha
             {
                 this.GetStats().Level += 1;
                 this.GetStats().XP -= this.GetStats().MaxXP;
+
                 // Each level need 20% more XP
                 this.GetStats().MaxXP = (int)(this.GetStats().MaxXP * 1.20f);
             }
+
+            // Update UI XP bar
+            GlobalEvent.OnExperienceUpdate.Invoke(this.GetStats().Level, this.GetStats().XP, this.GetStats().MaxXP);
         }
 
         /// <summary>
