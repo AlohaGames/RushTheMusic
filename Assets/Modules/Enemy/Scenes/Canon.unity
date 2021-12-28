@@ -440,6 +440,10 @@ PrefabInstance:
       propertyPath: hero
       value: 
       objectReference: {fileID: 651244414}
+    - target: {fileID: 6453241871471794977, guid: ddcf27a87623cf34f84c97b35225217c, type: 3}
+      propertyPath: m_Radius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7571026481183983330, guid: ddcf27a87623cf34f84c97b35225217c, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -454,7 +458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7571026481183983330, guid: ddcf27a87623cf34f84c97b35225217c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.71
+      value: 10.17
       objectReference: {fileID: 0}
     - target: {fileID: 7571026481183983330, guid: ddcf27a87623cf34f84c97b35225217c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1064,6 +1068,10 @@ PrefabInstance:
     - target: {fileID: 7528355410111426718, guid: 9e824f1f643a1fe3cbfce8c4ab54cb50, type: 3}
       propertyPath: m_LocalRotation.z
       value: -5.820765e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8435809019147580441, guid: 9e824f1f643a1fe3cbfce8c4ab54cb50, type: 3}
+      propertyPath: CurrentHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 8545204124143965176, guid: 9e824f1f643a1fe3cbfce8c4ab54cb50, type: 3}
       propertyPath: m_LocalRotation.z

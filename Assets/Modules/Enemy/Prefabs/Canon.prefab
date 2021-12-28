@@ -15,7 +15,8 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 8e4c24ceafe717d4596bfe9b5c079c8c, type: 2}
   CurrentHealth: 0
   noAI: 0
-  canonballPrefab: {fileID: 3007334688731294170, guid: b6fefa44866eded46a643e178b31557a, type: 3}
+  hero: {fileID: 0}
+  canonballPrefab: {fileID: 8899978347479492083, guid: 2138075ee763a4b46b631b6fb9d2a37c, type: 3}
 --- !u!1 &8894750924174616307
 GameObject:
   m_ObjectHideFlags: 0

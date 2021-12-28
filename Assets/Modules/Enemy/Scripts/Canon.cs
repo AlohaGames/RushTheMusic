@@ -40,11 +40,7 @@ namespace Aloha
         {
             while (true)
             {
-                int rand = Utils.RandomInt(2, 4);
-                for (int i = 0; i < rand; i++)
-                {
-                    yield return new WaitForSeconds(2f);
-                }
+                yield return new WaitForSeconds(2f);
                 yield return StartCoroutine(AttackAnimation());
             }
         }
@@ -64,7 +60,7 @@ namespace Aloha
         {
             // Config canonball's spawning position
             Vector3 canonballPos = transform.position;
-            canonballPos.x -= 0.5f;
+            canonballPos.z -= 0.5f;
 
             // Spawn canonball
             CanonBall canonball = Instantiate(canonballPrefab, canonballPos, Quaternion.identity);
@@ -72,7 +68,8 @@ namespace Aloha
             yield return new WaitForSeconds(1f);
 
             // Launch canonball to the hero
-           // Hero hero = GameManager.Instance.GetHero();
+            // TODO  CHANGE THIS
+            // Hero hero = GameManager.Instance.GetHero();
             Vector3 dir = hero.transform.position - canonball.transform.position;
             dir.Normalize();
             canonball.GetComponent<Rigidbody>().AddForce(dir * 3, ForceMode.Impulse);
