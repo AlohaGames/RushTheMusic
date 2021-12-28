@@ -83,7 +83,7 @@ namespace Aloha
             hero.LevelUp(xpGain);
 
             // Show XP Text
-            DynamicTextManager.Instance.Show(gameObject.transform.position, "+" + xpGain + " XP", Color.green);
+            DynamicTextManager.Instance.Show(gameObject, "+" + xpGain + " XP", Color.green);
 
             // Update UI XP bar
             GlobalEvent.OnExperienceUpdate.Invoke(heroStats.Level, heroStats.XP, heroStats.MaxXP);

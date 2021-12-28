@@ -59,15 +59,10 @@ namespace Aloha
                     // Define enemy stats from mapping
                     Entity entity = enemy.GetComponent<Entity>();
                     EnemyStats stats = Instantiate(entity.GetStats() as EnemyStats);
-                    stats.Attack = enemyMapping.Stats.Attack;
-                    stats.Defense = enemyMapping.Stats.Defense;
-                    stats.Level = enemyMapping.Stats.Level;
-                    stats.MaxHealth = enemyMapping.Stats.MaxHealth;
-                    entity.CurrentHealth = enemyMapping.Stats.MaxHealth;
+                    // Stats are instantiate based on Scriptables Objects
                     entity.Init(stats);
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
-                    // enemy.transform.SetParent(tile.transform);
                 }
             }
         }
