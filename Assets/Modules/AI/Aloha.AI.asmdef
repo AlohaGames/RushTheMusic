@@ -1,0 +1,16 @@
+{
+    "name": "Aloha.AI",
+    "rootNamespace": "",
+    "references": [
+        "GUID:f7782f9d076f8eadc9c6c5fd95cee791"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

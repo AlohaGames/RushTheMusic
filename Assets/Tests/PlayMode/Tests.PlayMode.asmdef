@@ -6,7 +6,8 @@
         "UnityEditor.TestRunner",
         "Aloha",
         "LeapMotion.LeapCSharp",
-        "LeapMotion"
+        "LeapMotion",
+        "Aloha.AI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

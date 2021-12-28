@@ -2,7 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Aloha;
+using Aloha.AI;
 
 namespace Aloha.Test
 {
@@ -40,6 +40,7 @@ namespace Aloha.Test
             Chest chest = EnemyInstantier.Instance
                 .InstantiateEnemy(EnemyType.chest)
                 .GetComponent<Chest>();
+            GameObject.Destroy(chest.GetComponent<GraphRunner>());
 
             // Instance a warrior
             GameObject warriorGO = new GameObject();
@@ -52,35 +53,24 @@ namespace Aloha.Test
             wStats.XP = 0;
             warrior.Init(wStats);
 
-            // Instance a sword
-            GameObject swordGO = new GameObject();
-            Sword sword = swordGO.AddComponent<Sword>();
-            sword.transform.position = Vector3.zero;
-            sword.Warrior = warrior;
-            sword.Speed = 30;
-
-            // Config sword collider
-            BoxCollider swordBoxCollider = swordGO.AddComponent<BoxCollider>();
-            swordBoxCollider.isTrigger = true;
-
-            // Trigger chest collider to bump it
-            Vector3 initialPosition = chest.transform.position;
-            sword.OnTriggerEnter(chest.GetComponent<Collider>());
+            // Get the initial position and bump the assassin
+            float initialZPosition = chest.transform.position.z;
+            warrior.BumpEntity(chest, 2);
             yield return null;
 
-            // Check if chest is at the same position
-            Assert.IsTrue(initialPosition == chest.transform.position);
+            // Check if the assassin was bumped
+            Assert.AreEqual(initialZPosition, chest.transform.position.z);
 
             // Clear the scene
-            Utils.ClearCurrentScene();
+            Utils.ClearCurrentScene(true);
             yield return null;
         }
 
         /// <summary>
         /// Check if a chest gives an item on death
         /// </summary>
-        [UnityTest]
-        public IEnumerator ChestDiesTest()
+        [Test]
+        public void ChestDiesTest()
         {
             // Instance Chest
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
@@ -100,8 +90,7 @@ namespace Aloha.Test
             Assert.AreEqual(1, items.Count);
 
             // Clear the scene
-            Utils.ClearCurrentScene();
-            yield return null;
+            Utils.ClearCurrentScene(true);
         }
     }
 }

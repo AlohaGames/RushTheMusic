@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 727289605}
+      - m_Target: {fileID: 1356828636}
         m_TargetAssemblyTypeName: Aloha.InventoryManager, Aloha
         m_MethodName: UseItem
         m_Mode: 1
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 727289605}
+      - m_Target: {fileID: 1356828636}
         m_TargetAssemblyTypeName: Aloha.InventoryManager, Aloha
         m_MethodName: AddItem
         m_Mode: 2
@@ -1837,7 +1837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8, y: -491}
+  m_AnchoredPosition: {x: 8, y: 8}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &651420932
@@ -4175,17 +4175,6 @@ PrefabInstance:
     - {fileID: 9080577879669644027, guid: beb08a16a330fd58b99485317896e360, type: 3}
     - {fileID: 5421485536244349214, guid: beb08a16a330fd58b99485317896e360, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: beb08a16a330fd58b99485317896e360, type: 3}
---- !u!114 &727289605 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 177600809718059206, guid: beb08a16a330fd58b99485317896e360, type: 3}
-  m_PrefabInstance: {fileID: 727289604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 859920848160bca40b78fd164e0ffde3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &774757092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4978,6 +4967,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e067358a06d4ca6eb88644b301808475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1356828636 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2074672449818745090, guid: beb08a16a330fd58b99485317896e360, type: 3}
+  m_PrefabInstance: {fileID: 727289604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 859920848160bca40b78fd164e0ffde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1390214273
 GameObject:
   m_ObjectHideFlags: 0
@@ -5062,7 +5062,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 727289605}
+      - m_Target: {fileID: 1356828636}
         m_TargetAssemblyTypeName: Aloha.InventoryManager, Aloha
         m_MethodName: AddItem
         m_Mode: 2
@@ -5216,7 +5216,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 727289605}
+      - m_Target: {fileID: 1356828636}
         m_TargetAssemblyTypeName: Aloha.InventoryManager, Aloha
         m_MethodName: AddItem
         m_Mode: 2

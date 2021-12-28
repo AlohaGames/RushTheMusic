@@ -10,9 +10,10 @@ namespace Aloha
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
-
+    
         private GameObject audioSourceGO;
         private AudioSource audioSource;
+        private bool shouldBePlaying = false;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -30,6 +31,13 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
+        public void Update() {
+            // End of music
+            if (shouldBePlaying && !audioSource.isPlaying) {
+                GlobalEvent.GameOver.Invoke();
+            }
+        }
+
         /// <summary>
         /// TODO
         /// <example> Example(s):
@@ -43,6 +51,7 @@ namespace Aloha
             AudioClip clip = LevelManager.Instance.LevelMusic;
             audioSource.clip = clip;
             audioSource.Play();
+            shouldBePlaying = true;
             Debug.Log($"Play music {LevelManager.Instance.LevelMusic}");
         }
 
@@ -56,6 +65,7 @@ namespace Aloha
         /// </summary>
         public void PauseMusic()
         {
+            shouldBePlaying = false;
             audioSource.Pause();
             Debug.Log($"Pause music");
         }
@@ -70,6 +80,7 @@ namespace Aloha
         /// </summary>
         public void ResumeMusic()
         {
+            shouldBePlaying = true;
             audioSource.Play();
             Debug.Log($"Resume music");
         }
@@ -85,6 +96,7 @@ namespace Aloha
         public void StopMusic()
         {
             audioSource.Stop();
+            shouldBePlaying = false;
             Debug.Log($"Stop music");
         }
     }

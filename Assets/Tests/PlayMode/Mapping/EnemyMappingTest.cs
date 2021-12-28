@@ -17,7 +17,7 @@ namespace Aloha.Test
         {
             EnemyMapping em0 = new EnemyMapping();
 
-            Stats stats = new Stats();
+            Stats stats = ScriptableObject.CreateInstance<Stats>();
             stats.Attack = 4;
             stats.Defense = 6;
             stats.Level = 1;
@@ -35,10 +35,10 @@ namespace Aloha.Test
         public void EnemyMappingConstructorTest()
         {
             EnemyMapping em0 = GetEnemiesMapping()[0];
-            Assert.AreEqual(0, em0.Stats.Attack);
+            Assert.AreEqual(10, em0.Stats.Attack);
             Assert.AreEqual(0, em0.Stats.Defense);
             Assert.AreEqual(0, em0.Stats.Level);
-            Assert.AreEqual(0, em0.Stats.MaxHealth);
+            Assert.AreEqual(1, em0.Stats.MaxHealth);
             Assert.AreEqual(VerticalPositionEnum.BOT, em0.VerticalPosition);
             Assert.AreEqual(HorizontalPositionEnum.CENTER, em0.HorizontalPosition);
 
@@ -49,6 +49,10 @@ namespace Aloha.Test
             Assert.AreEqual(150, em1.Stats.MaxHealth);
             Assert.AreEqual(VerticalPositionEnum.TOP, em1.VerticalPosition);
             Assert.AreEqual(HorizontalPositionEnum.RIGHT, em1.HorizontalPosition);
+
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -62,6 +66,10 @@ namespace Aloha.Test
 
             EnemyMapping em1 = GetEnemiesMapping()[1];
             Assert.AreEqual(new Vector3(1.5f, 3, 3), em1.GetPosition(3));
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
+
         }
     }
 }
