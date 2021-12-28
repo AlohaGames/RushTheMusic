@@ -73,12 +73,18 @@ namespace Aloha
             this.dieEvent.AddListener(Disappear);
         }
 
-        public void gainXP() {
-            // Hero get 25 xp for each ennemy killed
+        public void gainXP()
+        {
+            int xpGain = 25;
+
+            // Hero get xp for each ennemy killed
             Hero hero = GameManager.Instance.GetHero();
             HeroStats heroStats = hero.GetStats();
-            hero.LevelUp(25);
-            
+            hero.LevelUp(xpGain);
+
+            // Show XP Text
+            DynamicTextManager.Instance.Show(gameObject.transform.position, "+" + xpGain + " XP", Color.green);
+
             // Update UI XP bar
             GlobalEvent.OnExperienceUpdate.Invoke(heroStats.Level, heroStats.XP, 100);
         }
