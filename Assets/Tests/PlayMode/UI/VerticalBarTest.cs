@@ -65,7 +65,8 @@ namespace Aloha.Test
             Assert.IsTrue(expectedBarAfter == 0);
             Assert.IsTrue(heightBarAfter == 0);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

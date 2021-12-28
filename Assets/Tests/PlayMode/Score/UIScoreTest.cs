@@ -30,7 +30,8 @@ namespace Aloha.Test
             //Tests if UI end game elements are disable
             Assert.IsFalse(instanceUIManager.UIScore.EndGameScore.activeSelf);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -56,7 +57,8 @@ namespace Aloha.Test
             //Tests if UI in game elements are disable
             Assert.IsFalse(instanceUIManager.UIScore.InGameScore.activeSelf);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

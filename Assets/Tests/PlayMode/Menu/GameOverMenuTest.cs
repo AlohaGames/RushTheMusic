@@ -38,7 +38,8 @@ namespace Aloha.Test
             Time.timeScale = 1f;
             manager.IsPlaying = true;
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
     }

@@ -46,7 +46,9 @@ namespace Aloha.Test
             Assert.IsFalse(child.activeSelf);
             Assert.IsFalse(pause.GetComponent<PauseMenu>().IsGamePaused);
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }

@@ -88,8 +88,9 @@ namespace Aloha.Test
             Assert.AreEqual(100, instanceScoreManager.HitScore);
             Assert.AreEqual(-100, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -136,8 +137,9 @@ namespace Aloha.Test
             Assert.AreEqual(0, instanceScoreManager.HitScore);
             Assert.AreEqual(0, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -189,8 +191,9 @@ namespace Aloha.Test
             Assert.AreEqual(300, instanceScoreManager.EnemyKilledScore);
             Assert.AreEqual(300, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -242,8 +245,9 @@ namespace Aloha.Test
             Assert.AreEqual(0, instanceScoreManager.EnemyKilledScore);
             Assert.AreEqual(0, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -280,8 +284,9 @@ namespace Aloha.Test
             Assert.AreEqual(600, instanceScoreManager.DistanceScore);
             Assert.AreEqual(600, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }

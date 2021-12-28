@@ -49,6 +49,10 @@ namespace Aloha.Test
             Assert.AreEqual(150, em1.Stats.MaxHealth);
             Assert.AreEqual(VerticalPositionEnum.TOP, em1.VerticalPosition);
             Assert.AreEqual(HorizontalPositionEnum.RIGHT, em1.HorizontalPosition);
+
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -62,6 +66,10 @@ namespace Aloha.Test
 
             EnemyMapping em1 = GetEnemiesMapping()[1];
             Assert.AreEqual(new Vector3(1.5f, 3, 3), em1.GetPosition(3));
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
+
         }
     }
 }

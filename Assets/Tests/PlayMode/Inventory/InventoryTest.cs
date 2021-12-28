@@ -7,64 +7,39 @@ using UnityEngine.TestTools;
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO @Wilfried
+    /// Tests for the inventory
     /// </summary>
     public class InventoryTest
     {
-        /*
         /// <summary>
-        /// TODO
+        /// Check if item can be added to inventory
         /// </summary>
         [Test]
-        public void InventaireTest()
+        public void InventoryAddItemTest()
         {
-            HeroStats stats = ScriptableObject.CreateInstance<HeroStats>();
-            stats.Attack = 100;
-            stats.Defense = 0;
-            stats.MaxHealth = 100;
-            
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
-            HeroInstantier.Instance.InstantiateHero(HeroType.Generic);
-            Hero hero = GameManager.Instance.GetHero();
-            hero.Init(stats);
 
-            Assert.AreEqual(100, hero.GetStats().MaxHealth);
-            hero.CurrentHealth = hero.GetStats().MaxHealth;
-            Assert.AreEqual(100, hero.CurrentHealth);
-            hero.TakeDamage(20);
-            Assert.AreEqual(80, hero.CurrentHealth);
+            Assert.AreEqual(0, InventoryManager.Instance.GetItems().Count);
+            HealPotion healthPotion = new HealPotion(5);
+            InventoryManager.Instance.AddItem(healthPotion);
 
-            int gain = 20;
-            HealPotion potion = new HealPotion(gain);
-            HealPotion potion2 = new HealPotion(gain);
-            HealPotion potion3 = new HealPotion(gain);
-            HealPotion potion4 = new HealPotion(gain);
-            HealPotion potion5 = new HealPotion(gain);
-            HealPotion potion6 = new HealPotion(gain);
+            Assert.AreEqual(1, InventoryManager.Instance.GetItems().Count);
 
-            // Inventory creation
-            InventoryManager inventory = InventoryManager.Instance;
-            inventory.AddItem(potion);
-            inventory.AddItem(potion2);
-            inventory.AddItem(potion3);
-            inventory.AddItem(potion4);
-            inventory.AddItem(potion5);
-            Assert.AreEqual(5, inventory.GetItems().Count);
-            Queue<Item> itemsFull = inventory.GetItems();
-            inventory.AddItem(potion6);
-            Queue<Item> itemsFull2 = inventory.GetItems();
-            Assert.IsTrue(itemsFull == itemsFull2);
-            Assert.AreEqual(5, inventory.GetItems().Count);
-
-            inventory.UseItem();
-            Assert.AreEqual(4, inventory.GetItems().Count);
-            Assert.AreEqual(100, hero.CurrentHealth);
-            inventory.UseItem();
-            Assert.AreEqual(3, inventory.GetItems().Count);
-            Assert.AreEqual(100, hero.CurrentHealth);
-
-            Aloha.Utils.ClearCurrentScene(true);
+            Utils.ClearCurrentScene(true);
         }
-        */
+
+        /// <summary>
+        /// Check if item can be added to inventory and used
+        /// </summary>
+        [Test]
+        public void InventoryMaxItemTest()
+        {
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+
+            Assert.AreEqual(5, InventoryManager.Instance.GetMaxItems());
+
+            Utils.ClearCurrentScene(true);
+        }
+
     }
 }

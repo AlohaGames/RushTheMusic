@@ -24,7 +24,8 @@ namespace Aloha.Test
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -43,7 +44,8 @@ namespace Aloha.Test
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
        
 
@@ -104,8 +106,9 @@ namespace Aloha.Test
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.CurrentHealth);
 
-            //Destroy all GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -136,7 +139,8 @@ namespace Aloha.Test
             warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }
