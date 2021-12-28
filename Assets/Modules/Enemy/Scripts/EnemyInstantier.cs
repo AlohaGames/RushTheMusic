@@ -78,5 +78,15 @@ namespace Aloha
         /// Chest
         /// </summary>
         chest = 5,
+
+        /// <summary>
+        /// Chest
+        /// </summary>
+        fireWyrmling = 6,
+
+        /// <summary>
+        /// Chest
+        /// </summary>
+        iceWyrmling = 7,
     }
 }
