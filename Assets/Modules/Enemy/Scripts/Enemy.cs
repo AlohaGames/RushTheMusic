@@ -73,12 +73,11 @@ namespace Aloha
             this.dieEvent.AddListener(Disappear);
         }
 
-        public void gainXP()
+        public void gainXP(Hero hero)
         {
             int xpGain = 25;
 
             // Hero get xp for each ennemy killed
-            Hero hero = GameManager.Instance.GetHero();
             hero.LevelUp(xpGain);
 
             // Show XP Text
@@ -95,7 +94,11 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
-            gainXP();
+            Hero hero = GameManager.Instance.GetHero();
+            if (hero)
+            {
+                gainXP(hero);
+            }
             base.Die();
         }
 
