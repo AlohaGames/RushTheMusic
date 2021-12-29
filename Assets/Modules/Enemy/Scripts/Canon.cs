@@ -53,16 +53,13 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Instance and launch a fireball
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     canon.Fire()
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
         public void Fire()
         {
             // Config canonball's spawning position

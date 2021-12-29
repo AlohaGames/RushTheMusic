@@ -6,13 +6,13 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
-    public class WyrmlingFireballTest
+    public class CanonBallTest
     {
         /// <summary>
         /// Test wyrmling fireball trigger enter
         /// </summary>
         [UnityTest]
-        public IEnumerator WyrmlingFireballOnTriggerEnterTest()
+        public IEnumerator CanonballOnTriggerEnterTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
 
@@ -32,21 +32,22 @@ namespace Aloha.Test
             wizard.Init(wizardStats);
 
             // Instance a wyrmling
-            Wyrmling wyrmling = EnemyInstantier.Instance
-                .InstantiateEnemy(EnemyType.wyrmling)
-                .GetComponent<Wyrmling>();
+            Canon canon = EnemyInstantier.Instance
+                .InstantiateEnemy(EnemyType.canon)
+                .GetComponent<Canon>();
+            canon.Hero = wizard;
             yield return null;
 
-            // Instance a fireball
-            GameObject fireballGO = new GameObject();
-            WyrmlingFireball fireball = fireballGO.AddComponent<WyrmlingFireball>();
-            fireballGO.AddComponent<Rigidbody>();
-            fireball.AssociatedEnemy = wyrmling;
-            fireball.transform.position = new Vector3(1000, 1000, 1000);
+            // Instance a canonball
+            GameObject canonballGO = new GameObject();
+            CanonBall canonball = canonballGO.AddComponent<CanonBall>();
+            canonballGO.AddComponent<Rigidbody>();
+            canonball.AssociatedEnemy = canon;
+            canonball.transform.position = new Vector3(1000, 1000, 1000);
 
-            // Instance the fireball collider
-            BoxCollider fireballCollider = fireballGO.AddComponent<BoxCollider>();
-            fireballCollider.isTrigger = true;
+            // Instance the canonball collider
+            BoxCollider canonballCollider = canonballGO.AddComponent<BoxCollider>();
+            canonballCollider.isTrigger = true;
 
             // Get wizard collider
             BoxCollider wizardCollider = wizardGO.AddComponent<BoxCollider>();
@@ -54,10 +55,11 @@ namespace Aloha.Test
             Assert.AreEqual("Player", wizard.tag, "player ?");
 
             // Trigger colliders
-            fireball.OnTriggerEnter(wizardCollider);
+            canonball.OnTriggerEnter(wizardCollider);
             yield return null;
 
-            Assert.IsTrue(fireball == null, "fireball not destroyed");
+            Assert.IsTrue(canonball == null, "fireball not destroyed");
+            yield return null;
 
             // Clear the scene
             Utils.ClearCurrentScene();

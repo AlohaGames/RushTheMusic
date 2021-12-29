@@ -158,14 +158,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   CurrentHealth: 0
-  hero: {fileID: 0}
+  Hero: {fileID: 0}
   NearHeroTrigger:
     m_PersistentCalls:
       m_Calls: []
   AttackAvailableEvent:
     m_PersistentCalls:
       m_Calls: []
-  canonballPrefab: {fileID: 8899978347479492083, guid: 2138075ee763a4b46b631b6fb9d2a37c, type: 3}
+  CanonballPrefab: {fileID: 8899978347479492083, guid: 2138075ee763a4b46b631b6fb9d2a37c, type: 3}
 --- !u!1 &8894750924174616307
 GameObject:
   m_ObjectHideFlags: 0
