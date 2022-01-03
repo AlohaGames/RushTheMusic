@@ -79,10 +79,16 @@ namespace Aloha
                 // Get track info from metadata
                 LevelMetadata metadata = GetTrackInfo(dir);
 
+                // Instantiate 
                 GameObject trackElement = Instantiate(trackElementPrefab);
                 trackElement.transform.SetParent(TrackSelectionUI.transform);
+                trackElement.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+
+                // Description of the track
                 trackElement.transform.Find("MapName").GetComponent<Text>().text = metadata.LevelName;
                 trackElement.transform.Find("MapDescription").GetComponent<Text>().text = metadata.Description;
+
+                // Button of the track
                 LevelLoaderButton button = trackElement.GetComponent<LevelLoaderButton>();
                 button.Level = dir.Name;
                 button.IsTuto = true;
