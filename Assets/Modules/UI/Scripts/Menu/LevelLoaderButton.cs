@@ -12,8 +12,7 @@ namespace Aloha
     [RequireComponent(typeof(Button))]
     public class LevelLoaderButton : MonoBehaviour
     {
-        [SerializeField]
-        private bool isTuto = false;
+        public bool IsTuto = false;
 
         public string Level;   
 
@@ -35,7 +34,7 @@ namespace Aloha
         /// </summary>
         public void OnClick()
         {
-            GameManager.Instance.LoadLevel(Level, isTuto);
+            GameManager.Instance.LoadLevel(Level, IsTuto);
         }
 
         /// <summary>

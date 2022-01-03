@@ -88,7 +88,6 @@ namespace Aloha
             Debug.Log($"Extract level to {g}");
             ZipFile.ExtractToDirectory($"{basePath}/{filename}", $"{workingPath}/{g}");
 
-
             // Read metadata file
             Debug.Log($"Read metada.xml");
             LevelMetadata metadata;
@@ -140,6 +139,7 @@ namespace Aloha
         {
             this.IsLoaded = true;
             Debug.Log($"Load level finished");
+            //GameManager.Instance.StartLevel();
         }
 
         /// <summary>

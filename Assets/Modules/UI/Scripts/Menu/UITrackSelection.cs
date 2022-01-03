@@ -83,6 +83,9 @@ namespace Aloha
                 trackElement.transform.SetParent(TrackSelectionUI.transform);
                 trackElement.transform.Find("MapName").GetComponent<Text>().text = metadata.LevelName;
                 trackElement.transform.Find("MapDescription").GetComponent<Text>().text = metadata.Description;
+                LevelLoaderButton button = trackElement.GetComponent<LevelLoaderButton>();
+                button.Level = dir.Name;
+                button.IsTuto = true;
             }
         }
     }
