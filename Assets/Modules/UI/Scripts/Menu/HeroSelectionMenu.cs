@@ -13,6 +13,7 @@ namespace Aloha
     public class HeroSelectionMenu : MonoBehaviour
     {
         public HeroType Type;
+        public MenuRoot MenuRoot;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -23,11 +24,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Event called when the user click on the button
         /// </summary>
         public void OnClick()
         {
-            GlobalEvent.LoadHero.Invoke(Type);
+            MenuRoot.Hide();
+            GameManager.Instance.LoadHero(Type);
             GameManager.Instance.StartLevel();
         }
 
