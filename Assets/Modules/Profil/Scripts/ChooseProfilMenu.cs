@@ -11,14 +11,22 @@ namespace Aloha
 
         [SerializeField]
         private ProfilPickerUI profilUIPrefab;
+
         [SerializeField]
-        private GameObject noProfilUIPrefab;
+        private NoProfilPickerUI noProfilUIPrefab;
+
+        public GridLayoutGroup profilesGridLayout;
+        public MenuRoot MenuRoot;
+
+        protected override void Awake()
+        {
+            ProfilManager.Instance.LoadProfiles();
+            DisplayProfils();
+        }
 
         public void DisplayProfils()
         {
             List<Profil> profils = ProfilManager.Instance.GetAllProfils();
-
-            HorizontalLayoutGroup layout = GetComponentInChildren<HorizontalLayoutGroup>();
 
             for (int i = 0; i < 3; i++)
             {
@@ -26,12 +34,14 @@ namespace Aloha
                 {
                     ProfilPickerUI pmi = Instantiate(profilUIPrefab);
                     pmi.profil = profils[i];
-                    pmi.transform.SetParent(layout.transform);
+                    pmi.MenuRoot = MenuRoot;
+                    pmi.transform.SetParent(profilesGridLayout.transform);
                 }
                 else
                 {
-                    GameObject noProfil = Instantiate(noProfilUIPrefab);
-                    noProfil.transform.SetParent(layout.transform);
+                    NoProfilPickerUI noProfil = Instantiate(noProfilUIPrefab);
+                    noProfil.MenuRoot = MenuRoot;
+                    noProfil.transform.SetParent(profilesGridLayout.transform);
                 }
             }
         }

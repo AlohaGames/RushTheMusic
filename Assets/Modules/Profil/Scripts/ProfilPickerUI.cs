@@ -8,27 +8,28 @@ namespace Aloha
     public class ProfilPickerUI : MonoBehaviour
     {
         public Profil profil;
+        public Button startButton;
+        public Button deleteButton;
+        public MenuRoot MenuRoot;
 
         void Start()
         {
-            Text name = GetComponentInChildren<Text>();
-            name.text = profil.Name;
+            startButton.GetComponentInChildren<Text>().text = profil.Name;
 
-            Button[] buttons = GetComponentsInChildren<Button>();
-            Button start = buttons[0];
-            Button delete  = buttons[1];
-            start.onClick.AddListener(onStart);
-            delete.onClick.AddListener(onDelete);
+            startButton.onClick.AddListener(onStart);
+            deleteButton.onClick.AddListener(onDelete);
         }
 
         private void onStart()
         {
             ProfilManager.Instance.CurrentProfil = profil;
+            MenuRoot.ShowMainMenu();
             Debug.Log("Current profil is " + ProfilManager.Instance.CurrentProfil.Name);
         }
 
         private void onDelete() {
-            Debug.Log("Delete " + profil.Name);
+            Debug.Log("TODO Delete " + profil.Name);
+            // TODO Delete the profil
         }
     }
 }

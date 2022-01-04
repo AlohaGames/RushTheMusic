@@ -22,13 +22,20 @@ namespace Aloha
             return $"{Application.persistentDataPath}/profils";
         }
 
-        // Save current profil to disk
+        // Save current profile to disk
         public void SaveCurrentProfil()
         {
             SaveProfil(CurrentProfil);
         }
 
-        // Save a profil to disk
+        // Create a new profile
+        public void CreateProfil(Profil profil)
+        {
+            this.CurrentProfil = profil;
+            SaveCurrentProfil();
+        }
+
+        // Save a profile to disk
         public void SaveProfil(Profil profil)
         {
             string profilFileName = $"{profil.Name}.xml";
@@ -52,13 +59,13 @@ namespace Aloha
             return profil;
         }
 
-        // Load all profils from disk
-        public void LoadProfils()
+        // Load all profiles from disk
+        public void LoadProfiles()
         {
-            // Create profil dir if not exists
+            // Create profile dir if not exists
             Directory.CreateDirectory(getProfilDir());
 
-            // Read each profil files
+            // Read each profile files
             Debug.Log($"Loading files from {getProfilDir()}");
             foreach (string file in Directory.EnumerateFiles(getProfilDir(), "*.xml"))
             {

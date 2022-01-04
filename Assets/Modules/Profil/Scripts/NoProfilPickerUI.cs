@@ -3,16 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NoProfilPickerUI : MonoBehaviour
+namespace Aloha
 {
-    void Start()
+    public class NoProfilPickerUI : MonoBehaviour
     {
-        Button create = GetComponentInChildren<Button>();
-        create.onClick.AddListener(onCreate);
-    }
+        public MenuRoot MenuRoot;
 
-    private void onCreate()
-    {
-        this.transform.parent.transform.parent.GetChild(1).gameObject.SetActive(true);
+        void Start()
+        {
+            Button create = GetComponentInChildren<Button>();
+            create.onClick.AddListener(onCreate);
+        }
+
+        private void onCreate()
+        {
+            this.transform.parent.transform.parent.GetChild(1).gameObject.SetActive(true);
+        }
+
     }
 }

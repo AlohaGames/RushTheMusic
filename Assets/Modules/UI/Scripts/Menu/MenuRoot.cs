@@ -25,7 +25,7 @@ namespace Aloha
         /// </summary>
         void Awake() {
             // The first screen to load
-            ShowMainMenu();
+            ShowProfilMenu();
         }
 
         /// <summary>
