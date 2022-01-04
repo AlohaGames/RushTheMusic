@@ -19,6 +19,7 @@ namespace Aloha
         public GameObject MainMenu;
         public GameObject TrackSelectionMenu;
         public GameObject CharacterMenu;
+        public GameObject SettingsMenu;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -57,6 +58,7 @@ namespace Aloha
             MainMenu.SetActive(false);
             TrackSelectionMenu.SetActive(false);
             CharacterMenu.SetActive(false);
+            SettingsMenu.SetActive(false);
         }
 
         /// <summary>
@@ -146,7 +148,7 @@ namespace Aloha
         public void ShowOptionMenu()
         {
             this.HideEverything();
-            // TODO
+            SettingsMenu.SetActive(true);
         }
     }
 }
