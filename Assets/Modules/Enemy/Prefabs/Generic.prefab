@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1280670638334809901}
   - component: {fileID: 1280670638334809902}
   - component: {fileID: 1280670638334809903}
+  - component: {fileID: 5156678528214987125}
   m_Layer: 0
   m_Name: Generic
   m_TagString: Enemy
@@ -110,9 +111,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ac433bd8cb2c700ad395eb5bdd4bb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 0
-  attack: 0
   stats: {fileID: 11400000, guid: a3204a433e3fe843988b4439328f117e, type: 2}
+  TakeDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealth: 0
+  noAI: 0
+  NearHeroTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5156678528214987125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280670638334809896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9260d02f81df6a3c88b0b3ead1bf878d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isRunning: 0
+  isAutomaticStart: 0
+  BGraph: {fileID: 11400000, guid: ba5f36bda1a1a0e458b296da8d951103, type: 2}
 --- !u!1 &3551846757015188941
 GameObject:
   m_ObjectHideFlags: 0
@@ -171,6 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dba6a468edbd8744b8e6d9667922f76b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WasTriggered: 0
 --- !u!54 &7879341317332457208
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cd48c100a482f49bdafc1ac79ba26c, type: 3}
   m_Name: WizardStats
   m_EditorClassIdentifier: 
-  maxHealth: 1000
-  attack: 10
-  defense: 0
-  level: 0
-  xp: 0
+  MaxHealth: 1000
+  Attack: 10
+  Defense: 0
+  Level: 0
+  XP: 0
   MaxMana: 1000

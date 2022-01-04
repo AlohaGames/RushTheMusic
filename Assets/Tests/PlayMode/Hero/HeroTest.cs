@@ -5,11 +5,18 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the hero class functions.
+    /// </summary>
     public class HeroTest
     {
+        /// <summary>
+        /// Test if HeroInstancier work well
+        /// </summary>
         [Test]
         public void HeroInstantierTest()
         {
+            //Instantiate a hero
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
@@ -17,105 +24,123 @@ namespace Aloha.Test
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
-            GameObject.DestroyImmediate(hero.gameObject);
-            GameObject.DestroyImmediate(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
+        /// <summary>
+        /// Test the instantiation of a hero stats
+        /// </summary>
         [Test]
         public void HeroStatsTest()
         {
+            //Instantiate a hero
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
-
+           
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            GameObject.Destroy(hero.gameObject);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
+       
 
+        /// <summary>
+        /// Test the amount of damage taken by hero
+        /// </summary>
         [UnityTest]
         public IEnumerator HeroTestDamage()
         {
+            //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            stats.maxRage = 10;
-            stats.maxHealth = 10;
-            stats.attack = 10;
-            stats.defense = 0;
-            stats.xp = 10;
+            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            stats.MaxRage = 10;
+            stats.MaxHealth = 10;
+            stats.Attack = 10;
+            stats.Defense = 0;
+            stats.XP = 10;
             warrior.Init(stats);
 
-            Debug.Log("Hero life: " + warrior.currentHealth);
-            Debug.Log("Hero defense: " + stats.defense);
+            Debug.Log("Hero life: " + warrior.CurrentHealth);
+            Debug.Log("Hero defense: " + stats.Defense);
 
+            //Check the health after taking damage
             warrior.TakeDamage(-5);
-            Assert.AreEqual(10, warrior.currentHealth);
+            Assert.AreEqual(10, warrior.CurrentHealth);
 
             yield return null;
 
             //Test calcul damage reduction 
-            stats.defense = 50;
+            stats.Defense = 50;
             float damageReduction = warrior.CalculateDamageReduction();
-            Assert.IsTrue(Utils.EqualFloat(damageReduction, 0.714f, 0.001f));
+            Assert.IsTrue(Utils.IsEqualFloat(damageReduction, 0.714f, 0.001f));
 
             //Test with defense = 0
-            stats.defense = 0;
-            stats.maxHealth = 10;
-            Debug.Log("Hero life: " + warrior.currentHealth);
-            Debug.Log("Hero defense: " + stats.defense);
+            stats.Defense = 0;
+            stats.MaxHealth = 10;
+            Debug.Log("Hero life: " + warrior.CurrentHealth);
+            Debug.Log("Hero defense: " + stats.Defense);
             warrior.TakeDamage(5);
-            Assert.AreEqual(5, warrior.currentHealth);
+            Assert.AreEqual(5, warrior.CurrentHealth);
 
-            Debug.Log("Hero life: " + warrior.currentHealth);
+            Debug.Log("Hero life: " + warrior.CurrentHealth);
             warrior.TakeDamage(2);
-            Assert.AreEqual(3, warrior.currentHealth);
+            Assert.AreEqual(3, warrior.CurrentHealth);
 
             yield return null;
 
             //Test with defense = 100
-            stats.defense = 100;
-            warrior.currentHealth = 50;
-            Debug.Log("Hero life: " + warrior.currentHealth);
-            Debug.Log("Hero defense: " + stats.defense);
+            stats.Defense = 100;
+            warrior.CurrentHealth = 50;
+            Debug.Log("Hero life: " + warrior.CurrentHealth);
+            Debug.Log("Hero defense: " + stats.Defense);
             warrior.TakeDamage(200);
-            Assert.AreEqual(17, warrior.currentHealth);
+            Assert.AreEqual(17, warrior.CurrentHealth);
 
-            Debug.Log("Hero life: " + warrior.currentHealth);
+            Debug.Log("Hero life: " + warrior.CurrentHealth);
             warrior.TakeDamage(60);
-            Assert.AreEqual(7, warrior.currentHealth);
+            Assert.AreEqual(7, warrior.CurrentHealth);
 
-            GameObject.Destroy(warriorGO);
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
+        /// <summary>
+        /// Test if Hero can attack an Enemy
+        /// </summary>
         [Test]
         public void HeroTestAttack()
         {
+            //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            stats.maxRage = 10;
-            stats.maxHealth = 10;
-            stats.attack = 10;
-            stats.defense = 10;
-            stats.xp = 10;
+            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            stats.MaxRage = 10;
+            stats.MaxHealth = 10;
+            stats.Attack = 10;
+            stats.Defense = 10;
+            stats.XP = 10;
             warrior.Init(stats);
 
+            //Instantiate an enemi and his stats
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
-            enemyStats.maxHealth = 100;
+            EnemyStats enemyStats = (EnemyStats) ScriptableObject.CreateInstance("EnemyStats");
+            enemyStats.MaxHealth = 100;
             enemy.Init(enemyStats);
 
+            //Hero attack the enemi
             warrior.Attack(enemy);
-            Assert.IsTrue(enemy.currentHealth < enemy.GetStats().maxHealth);
+            Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

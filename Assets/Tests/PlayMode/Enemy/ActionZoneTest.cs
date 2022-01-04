@@ -6,10 +6,16 @@ using UnityEngine.TestTools;
 
 namespace Aloha.Test
 {
+    /// <summary>
+    /// All tests about ActionZone class
+    /// </summary>
     public class ActionZoneTest
     {
+        /// <summary>
+        /// Check if ActionZone work well around Enemy
+        /// </summary>
         [UnityTest]
-        public IEnumerator EnemyInstancierTest()
+        public IEnumerator ActionZoneActivationTest()
         {
             // Instance enemy and manager
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
@@ -24,20 +30,20 @@ namespace Aloha.Test
             GameObject parentGO = new GameObject();
             enemy.transform.parent = parentGO.transform;
 
-            // Check if enemy parent is parentGO
-            Assert.IsTrue(enemy.transform.parent == parentGO.transform);
-
-            // Check if AI is activated
+            // Check if NearHeroEventIsTrigger
+            bool nearHero = false;
+            enemy.NearHeroTrigger.AddListener(() =>
+            {
+                nearHero = true;
+            });
             enemy.GetComponentInChildren<ActionZone>().OnTriggerEnter(playerCollider);
-            Assert.IsTrue(enemy.transform.parent == null);
-            enemy.SetAI(false);
             yield return new WaitForSeconds(2);
+            Assert.IsTrue(nearHero);
+
+            enemy.NearHeroTrigger.RemoveAllListeners();
 
             // Destroy objects
-            GameObject.Destroy(parentGO);
-            GameObject.Destroy(enemy.gameObject);
-            GameObject.Destroy(manager);
-            yield return null;
+            Aloha.Utils.ClearCurrentScene();
         }
     }
 }

@@ -6,68 +6,32 @@ using Aloha.EntityStats;
 
 namespace Aloha
 {
-    public class Assassin : Enemy<AssassinStats> 
+    /// <summary>
+    /// Class that manage utils functions
+    /// </summary>
+    public class Assassin : Enemy<AssassinStats>
     {
         private Hero hero;
-        private Animator anim;
+        public Animator Anim;
 
-        private void Start()
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
             hero = GameManager.Instance.GetHero();
-            anim = GetComponent<Animator>();
+            Anim = GetComponent<Animator>();
         }
-        protected override IEnumerator AI()
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="direction"></param>
+        /// <param name="speed"></param>
+        public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
-            yield return StartCoroutine(Concentration(15f));
-            yield return StartCoroutine(StealthJump(2f));
+            Anim.SetBool("isAttacking", false);
+            yield return base.GetBump(direction, speed);
         }
-
-        protected IEnumerator StealthJump(float speed)
-        {
-
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit * speed;
-
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                posFinal.y = posInit.y + 15;
-                posFinal.z = posInit.z - 7;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-
-            gameObject.transform.position = posFinal;
-
-            Hero hero = GameManager.Instance.GetHero();
-            Attack(hero);
-            Debug.Log(hero.currentHealth);
-
-            Disappear();
-        }
-
-        protected IEnumerator Concentration(float speed)
-        {
-            anim.SetBool("isAttacking", true);
-
-            yield return new WaitForSeconds(0.8f);
-            float temps = 0;
-            Vector3 posInit = gameObject.transform.position;
-            Vector3 posFinal = posInit;
-            posFinal.z = posFinal.z - 2.2f;
-            Debug.Log(posInit);
-            Debug.Log(posFinal);
-
-            while (temps < 1f)
-            {
-                temps += speed * Time.deltaTime;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
-                yield return null;
-            }
-            gameObject.transform.position = posFinal;
-            yield return new WaitForSeconds(0.15f);
-        }
-
     }
 }

@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7612138508069523298}
-  - component: {fileID: 8850634305947216680}
-  - component: {fileID: 5112830535044550315}
+  - component: {fileID: 4064478289390418503}
+  - component: {fileID: 6654113909656402897}
   - component: {fileID: 4217362768453614516}
   - component: {fileID: 405048531495236097}
   - component: {fileID: 3741824367721496689}
@@ -35,7 +35,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &8850634305947216680
+--- !u!33 &4064478289390418503
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7232379112145523908}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5112830535044550315
+--- !u!23 &6654113909656402897
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,9 +95,9 @@ CapsuleCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.50000066
-  m_Height: 2.0000005
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.0000019073486, y: 0.000000059604645, z: 0.0000019073486}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &405048531495236097
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,6 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5daa59f1e1a4e3742bdaf3178b8e5750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warrior: {fileID: 0}
-  speed: 0
   minimumSpeedToKill: 1
+  Warrior: {fileID: 0}
+  Speed: 0
