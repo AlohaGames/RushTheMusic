@@ -7,7 +7,7 @@ using Aloha.EntityStats;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class of a canon
     /// </summary>
     public class Canon : Enemy<CanonStats>
     {
@@ -24,6 +24,8 @@ namespace Aloha
         void Start()
         {
             Anim = GetComponent<Animator>();
+
+            // Charge a canonball
             StartCoroutine(WaitForAttackAvailable());
         }
 
@@ -32,7 +34,7 @@ namespace Aloha
         /// </summary>
         void Update()
         {
-            // Kill the chest if it goes behing the player
+            // Kill the canon if it goes behing the player
             if (transform.position.z < 0)
             {
                 Destroy(this.gameObject);
@@ -41,9 +43,10 @@ namespace Aloha
 
         /// <summary>
         /// Bump the entity in a specific direction and with a speed
+        /// In this case, the canon never moves
         /// <example> Example(s):
         /// <code>
-        ///     StartCoroutine(wall.GetBump(new Vector3(0, 0, 2), 2));
+        ///     StartCoroutine(canon.GetBump(new Vector3(0, 0, 2), 2));
         /// </code>
         /// </example>
         /// </summary>
@@ -55,7 +58,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Instance and launch a fireball
+        /// Instance and launch a canonball
         /// <example> Example(s):
         /// <code>
         ///     canon.Fire()
@@ -77,9 +80,19 @@ namespace Aloha
             // Launch canonball to the hero
             canonball.Launch(Hero.transform.position);
 
+            // Charge a new canonball
             StartCoroutine(WaitForAttackAvailable());
         }
 
+        /// <summary>
+        /// Wait a random time between 2 and 4 seconds to charge a canonball
+        /// <example> Example(s):
+        /// <code>
+        ///     StartCoroutine(WaitForAttackAvailable());
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>IEnumerator</returns>
         private IEnumerator WaitForAttackAvailable()
         {
             yield return new WaitForSeconds(Utils.RandomFloat(2, 4));

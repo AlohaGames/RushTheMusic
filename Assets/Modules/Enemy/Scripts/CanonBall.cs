@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for a canonball
     /// </summary>
     public class CanonBall : MonoBehaviour
     {

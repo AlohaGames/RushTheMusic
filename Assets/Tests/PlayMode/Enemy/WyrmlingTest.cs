@@ -100,9 +100,8 @@ namespace Aloha.Test
             // Instance fireball
             wyrmling.InstantiateFireball();
             yield return null;
-            Debug.Log("Instantiate");
+
             wyrmling.LaunchFireball(0.5f);
-            Debug.Log("Launch");
 
             // Check if fireball was instantiated
             Assert.IsTrue(wyrmling.GetWyrmlingFireball() == null);
