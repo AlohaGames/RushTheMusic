@@ -10,6 +10,7 @@ namespace Aloha
     public class EnemySpawner : Singleton<EnemySpawner>
     {
         public int TilesCounter = 0;
+        private int heroLevel = -1;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -19,6 +20,13 @@ namespace Aloha
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
             GlobalEvent.LevelStop.AddListener(ResetCount);
+            GlobalEvent.NextLevel.AddListener(NextLevelReached);
+        }
+
+        public void NextLevelReached()
+        {
+            // On each next level, check current level hero
+            this.saveLevelHero();
         }
 
         /// <summary>
@@ -59,12 +67,29 @@ namespace Aloha
                     // Define enemy stats from mapping
                     Entity entity = enemy.GetComponent<Entity>();
                     EnemyStats stats = Instantiate(entity.GetStats() as EnemyStats);
-                    // Stats are instantiate based on Scriptables Objects
+
+                    // If we don't know the level of the hero, check for it
+                    if (heroLevel == -1)
+                    {
+                        this.saveLevelHero();
+                    }
+
+                    // Stats scale based on hero level and current map number
+
+                    // TODO-TRISTAN: Scale stats based on this.heroLevel
                     entity.Init(stats);
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                 }
             }
+        }
+
+        private void saveLevelHero()
+        {
+            // Save the new hero
+            // It will be use later to instanciate ennemy stats
+            Hero hero = GameManager.Instance.GetHero();
+            this.heroLevel = hero.GetStats().Level;
         }
 
         /// <summary>
@@ -74,6 +99,7 @@ namespace Aloha
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
             GlobalEvent.LevelStop.RemoveListener(ResetCount);
+            GlobalEvent.NextLevel.RemoveListener(NextLevelReached);
         }
     }
 }

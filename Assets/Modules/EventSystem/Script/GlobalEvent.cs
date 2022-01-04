@@ -81,6 +81,12 @@ namespace Aloha.Events
         /// TODO
         /// </summary>
         public static UnityEvent LevelStart = new UnityEvent();
+
+        /// <summary>
+        /// Trigger when the next level is reached
+        /// </summary>
+        public static UnityEvent NextLevel = new UnityEvent();
+
         public static UnityEvent GameOver = new UnityEvent();
 
         /// <summary>
