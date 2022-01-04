@@ -18,6 +18,9 @@ namespace Aloha
         // Meaning it will be displayed last
         public int DtPriority;
 
+        /// <summary>
+        /// Object to pass to the manager to instanciate a dynamic text when possible
+        /// </summary>
         public DynamicTextCall(DynamicText Dt, Color DtColor, string DtMessage, int DtPriority)
         {
             this.Dt = Dt;
@@ -56,6 +59,10 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Ask the manager to create a dynamic text near the specified game object and as soon as possible.
+        /// A priority can also be passed to define what text should be rendered first
+        /// </summary>
         public void Show(GameObject gameObject, string message, Color color, int priority = 2)
         {
             string key = gameObject.GetInstanceID().ToString();

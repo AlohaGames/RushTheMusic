@@ -77,7 +77,7 @@ namespace Aloha
         /// <param name="stats"></param>
         public virtual void Init(Stats stats)
         {
-            this.stats = stats;
+            this.stats = Instantiate(stats);
             this.CurrentHealth = this.stats.MaxHealth;
         }
 

@@ -15,6 +15,10 @@ namespace Aloha
         public float Speed = 1.0f;
         public float Distance = 5f;
 
+
+        /// <summary>
+        /// Customize the dynamic text and run it
+        /// </summary>
         public void Trigger(string text, Color color)
         {
             tm = GetComponent<TextMesh>();
@@ -23,6 +27,10 @@ namespace Aloha
             StartCoroutine(Action());
         }
 
+
+        /// <summary>
+        /// Run the dynamic text
+        /// </summary>
         public IEnumerator Action()
         {
             Running = true;

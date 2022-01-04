@@ -73,7 +73,16 @@ namespace Aloha
             this.dieEvent.AddListener(Disappear);
         }
 
-        public void gainXP(Hero hero)
+
+        /// <summary>
+        /// This function is called to give xp to the hero on enemy death
+        /// <example> Example(s):
+        /// <code>
+        ///     myEnemyType.gainXP(myHero);
+        /// </code>
+        /// </example>
+        /// </summary>
+        private void gainXP(Hero hero)
         {
             int xpGain = 25;
 
