@@ -27,7 +27,32 @@ namespace Aloha.Test
 
             Assert.Less(tile.transform.position.z, initialZPos, "Does the tile move towards the player ?");
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
+        }
+
+        /// <summary>
+        /// Changes tiles speed
+        /// </summary>
+        [UnityTest]
+        public IEnumerator ChangeTilesSpeed()
+        {
+            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
+            TilesManager tilesManager = TilesManager.Instance;
+            LevelManager levelManager = LevelManager.Instance;
+            levelManager.LevelMapping = new LevelMapping();
+            tilesManager.getEndTilesPosition();
+            yield return null;
+
+            tilesManager.ChangeTileSpeed(1);
+            Assert.AreEqual(1, tilesManager.TileSpeed);
+
+            tilesManager.ChangeTileSpeed(10);
+            Assert.AreEqual(10, tilesManager.TileSpeed);
+
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
 
@@ -58,7 +83,8 @@ namespace Aloha.Test
             tilesManager.StopGame();
             yield return null;
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
 
@@ -90,7 +116,8 @@ namespace Aloha.Test
             yield return null;
             Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
     }

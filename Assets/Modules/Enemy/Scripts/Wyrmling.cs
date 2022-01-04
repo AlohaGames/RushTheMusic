@@ -15,6 +15,22 @@ namespace Aloha
         private WyrmlingFireball fireball;
 
         /// <summary>
+        /// Get the 
+        /// <example> Example(s):
+        /// <code>
+        /// TODO
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// The wyrmling firebal as WyrmlingFireball object
+        /// </returns>
+        public WyrmlingFireball GetWyrmlingFireball()
+        {
+            return this.fireball as WyrmlingFireball;
+        }
+
+        /// <summary>
         /// TODO
         /// <example> Example(s):
         /// <code>

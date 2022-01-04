@@ -42,6 +42,8 @@ namespace Aloha.AI
         {
             IsRunning = true;
 
+            lancer.Anim.SetBool("isAttacking", true);
+
             yield return lancer.GetBump(new Vector3(0, 0, 1f), 3f);
             yield return new WaitForSeconds(0.2f);
 

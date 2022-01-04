@@ -84,7 +84,7 @@ namespace Aloha
                 power = this.heroStats.Attack;
                 this.CurrentMana -= manaToUse;
             }
-            else
+            else if (((float)this.CurrentMana / manaToUse > 0.1f))
             {
                 power = this.heroStats.Attack * this.CurrentMana / manaToUse;
                 this.CurrentMana = 0;

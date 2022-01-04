@@ -112,18 +112,21 @@ namespace Aloha
                 CurrentHealth = CurrentHealth - damage;
             }
 
-            if (CurrentHealth <= 0)
+            if (damage > 0)
             {
-                if (!isDead)
+                if (CurrentHealth <= 0)
+                {
+                    if (!isDead)
+                    {
+                        StartCoroutine(SwitchColor());
+                        isDead = true;
+                        Die();
+                    }
+                }
+                else
                 {
                     StartCoroutine(SwitchColor());
-                    isDead = true;
-                    Die();
                 }
-            }
-            else
-            {
-                StartCoroutine(SwitchColor());
             }
         }
 

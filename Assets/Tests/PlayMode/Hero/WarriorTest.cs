@@ -35,7 +35,8 @@ namespace Aloha.Test
             warrior.TakeDamage(2);
             Assert.AreEqual(7, warrior.CurrentRage);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -79,7 +80,8 @@ namespace Aloha.Test
                 warrior.Attack(enemy);
             }
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -120,8 +122,9 @@ namespace Aloha.Test
             warrior.RegenerateSecondary(1f);
             Assert.AreEqual(100, warrior.CurrentRage);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(warriorGO);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -155,8 +158,8 @@ namespace Aloha.Test
             warrior.RegenerateSecondary(1f);
             Assert.AreEqual(100, warrior.CurrentRage);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(warriorGO);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -193,8 +196,9 @@ namespace Aloha.Test
             warrior.RegenerateSecondary(-0.1f);
             Assert.AreEqual(10, warrior.CurrentRage);
 
-            //Destroy all GameObjects
-            GameObject.Destroy(warriorGO);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

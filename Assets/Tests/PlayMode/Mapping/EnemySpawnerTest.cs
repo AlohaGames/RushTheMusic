@@ -33,7 +33,8 @@ namespace Aloha.Test
             tilesManager.StopGame();
             yield return null;
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
 
@@ -61,7 +62,8 @@ namespace Aloha.Test
 
             Assert.AreEqual(0, enemySpawner.TilesCounter);
 
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
             yield return null;
         }
     }

@@ -10,10 +10,9 @@ namespace Aloha
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
-
+    
         private GameObject audioSourceGO;
         private AudioSource audioSource;
-
         private bool shouldBePlaying = false;
 
         /// <summary>
@@ -35,11 +34,7 @@ namespace Aloha
         public void Update() {
             // End of music
             if (shouldBePlaying && !audioSource.isPlaying) {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
-                GameManager.Instance.StopLevel();
-                UIManager.Instance.ShowEndGameUIElements();
-                shouldBePlaying = false;
+                GlobalEvent.GameOver.Invoke();
             }
         }
 
@@ -101,6 +96,7 @@ namespace Aloha
         public void StopMusic()
         {
             audioSource.Stop();
+            shouldBePlaying = false;
             Debug.Log($"Stop music");
         }
     }

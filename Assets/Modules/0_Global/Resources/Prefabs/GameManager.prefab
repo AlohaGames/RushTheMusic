@@ -71,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e067358a06d4ca6eb88644b301808475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGameInfinite: 0
   defaultLevel: test-level.rtm
   IsPlaying: 0
   LeapMode: 0
@@ -355,6 +354,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -95
       objectReference: {fileID: 0}
+    - target: {fileID: 5361925845950049010, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 4034224953863319914}
     - target: {fileID: 5656972220722799140, guid: 647ba3af3eb8be848a0394f04ea226f8, type: 3}
       propertyPath: m_Spacing
       value: 0
