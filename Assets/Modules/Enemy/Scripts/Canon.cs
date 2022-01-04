@@ -64,7 +64,6 @@ namespace Aloha
         /// </summary>
         public void Fire()
         {
-            //Anim.SetBool("isAttacking", true);
             Anim.SetTrigger("isAttacking");
 
             // Config canonball's spawning position
