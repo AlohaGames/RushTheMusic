@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>01/04/2022 - 14:44:33</Generatedon>
+    <Generatedon>01/04/2022 - 14:44:31</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>66</Classes>
@@ -9,19 +9,19 @@
     <Coveredlines>989</Coveredlines>
     <Uncoveredlines>567</Uncoveredlines>
     <Coverablelines>1556</Coverablelines>
-    <Totallines>5209</Totallines>
+    <Totallines>5208</Totallines>
     <Linecoverage>63.5</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="66" coverage="63.5" coveredlines="989" coverablelines="1556" totallines="5504" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="66" coverage="63.5" coveredlines="989" coverablelines="1556" totallines="5503" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="8" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="85.7" coveredlines="6" coverablelines="7" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="47.2" coveredlines="17" coverablelines="36" totallines="103" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Bar" coverage="100" coveredlines="4" coverablelines="4" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.Canon" coverage="48.1" coveredlines="13" coverablelines="27" totallines="91" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.Canon" coverage="48.1" coveredlines="13" coverablelines="27" totallines="90" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.CanonBall" coverage="26.9" coveredlines="7" coverablelines="26" totallines="77" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Chest" coverage="86.3" coveredlines="19" coverablelines="22" totallines="93" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ControlManager" coverage="0" coveredlines="0" coverablelines="45" totallines="129" branchcoverage="" coveredbranches="0" totalbranches="0" />
