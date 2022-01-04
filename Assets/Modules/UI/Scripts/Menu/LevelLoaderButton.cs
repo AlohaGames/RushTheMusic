@@ -13,8 +13,8 @@ namespace Aloha
     public class LevelLoaderButton : MonoBehaviour
     {
         public bool IsTuto = false;
-
-        public string Level;   
+        public string Level;
+        public MenuRoot MenuRoot;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -34,6 +34,7 @@ namespace Aloha
         /// </summary>
         public void OnClick()
         {
+            MenuRoot.ShowCharacterMenu();
             GameManager.Instance.LoadLevel(Level, IsTuto);
         }
 

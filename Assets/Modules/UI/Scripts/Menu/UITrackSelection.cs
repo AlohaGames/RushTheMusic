@@ -17,6 +17,7 @@ namespace Aloha
         private GameObject trackElementPrefab;
 
         public GameObject TrackSelectionUI;
+        public MenuRoot MenuRoot;
 
         void Awake() {
             ShowTrackList();
@@ -92,6 +93,7 @@ namespace Aloha
                 LevelLoaderButton button = trackElement.GetComponent<LevelLoaderButton>();
                 button.Level = dir.Name;
                 button.IsTuto = metadata.IsTuto;
+                button.MenuRoot = MenuRoot;
             }
         }
     }
