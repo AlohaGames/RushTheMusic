@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trackElementPrefab: {fileID: 6047770129175443618, guid: 43b36a1a6cea51859a15a714e9683c7d, type: 3}
   TrackSelectionUI: {fileID: 9140492652903429135}
+  MenuRoot: {fileID: 0}
 --- !u!1 &5973492873032123387
 GameObject:
   m_ObjectHideFlags: 0
@@ -606,7 +607,7 @@ MonoBehaviour:
     m_Left: 25
     m_Right: 0
     m_Top: 25
-    m_Bottom: 0
+    m_Bottom: 25
   m_ChildAlignment: 0
   m_Spacing: 30
   m_ChildForceExpandWidth: 1
