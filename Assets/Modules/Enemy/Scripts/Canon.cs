@@ -14,14 +14,16 @@ namespace Aloha
         [HideInInspector]
         public UnityEvent AttackAvailableEvent = new UnityEvent();
 
-        [SerializeField]
         public CanonBall CanonballPrefab;
+
+        public Animator Anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {
+            Anim = GetComponent<Animator>();
             StartCoroutine(WaitForAttackAvailable());
         }
 
@@ -62,6 +64,9 @@ namespace Aloha
         /// </summary>
         public void Fire()
         {
+            //Anim.SetBool("isAttacking", true);
+            Anim.SetTrigger("isAttacking");
+
             // Config canonball's spawning position
             Vector3 canonballPos = transform.position;
             canonballPos.z -= 0.5f;

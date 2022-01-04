@@ -13,38 +13,13 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5455706218502843326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7571026481183983337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2df46bab0f2fc3541ad8bdf7e0054af1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 8e4c24ceafe717d4596bfe9b5c079c8c, type: 2}
-  TakeDamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  CurrentHealth: 0
-  Hero: {fileID: 0}
-  NearHeroTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  AttackAvailableEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  CanonballPrefab: {fileID: 8899978347479492083, guid: 2138075ee763a4b46b631b6fb9d2a37c, type: 3}
---- !u!212 &2281006655974201348
+--- !u!212 &8158591752619634133
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5304917788273894412}
+  m_GameObject: {fileID: 7571026481183983337}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -80,7 +55,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -1301063852752694408, guid: 01f3ff5eea96fa94e94e98686acdbcbc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 2.56, y: 2.56}
@@ -89,6 +64,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &7576555053855212343
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571026481183983337}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 99198e600472cca44975db8ae41a61a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-5455706218502843326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7571026481183983337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2df46bab0f2fc3541ad8bdf7e0054af1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 8e4c24ceafe717d4596bfe9b5c079c8c, type: 2}
+  TakeDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealth: 0
+  Hero: {fileID: 0}
+  NearHeroTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  AttackAvailableEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CanonballPrefab: {fileID: 8899978347479492083, guid: 2138075ee763a4b46b631b6fb9d2a37c, type: 3}
+  Anim: {fileID: 0}
 --- !u!1001 &8706701978273845697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -141,10 +161,5 @@ PrefabInstance:
 --- !u!1 &7571026481183983337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
-  m_PrefabInstance: {fileID: 8706701978273845697}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5304917788273894412 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3551846757015188941, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
   m_PrefabInstance: {fileID: 8706701978273845697}
   m_PrefabAsset: {fileID: 0}
