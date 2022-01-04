@@ -62,6 +62,9 @@ namespace Aloha
         // Load all profiles from disk
         public void LoadProfiles()
         {
+            // Clear list of profiles before load them
+            this.profils = new List<Profil>();
+
             // Create profile dir if not exists
             Directory.CreateDirectory(getProfilDir());
 

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InputName: {fileID: 8905754624655593828}
   MenuRoot: {fileID: 0}
+  CreateProfilUI: {fileID: 8845610452218792786}
 --- !u!1 &400361513239292031
 GameObject:
   m_ObjectHideFlags: 0

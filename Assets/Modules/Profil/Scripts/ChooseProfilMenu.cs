@@ -20,12 +20,22 @@ namespace Aloha
 
         protected override void Awake()
         {
-            ProfilManager.Instance.LoadProfiles();
             DisplayProfils();
+        }
+
+        public void ClearProfiles()
+        {
+            foreach (Transform child in profilesGridLayout.transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
         }
 
         public void DisplayProfils()
         {
+            ProfilManager.Instance.LoadProfiles();
+            this.ClearProfiles();
+
             List<Profil> profils = ProfilManager.Instance.GetAllProfils();
 
             for (int i = 0; i < 3; i++)
@@ -36,12 +46,14 @@ namespace Aloha
                     pmi.profil = profils[i];
                     pmi.MenuRoot = MenuRoot;
                     pmi.transform.SetParent(profilesGridLayout.transform);
+                    pmi.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 }
                 else
                 {
                     NoProfilPickerUI noProfil = Instantiate(noProfilUIPrefab);
                     noProfil.MenuRoot = MenuRoot;
                     noProfil.transform.SetParent(profilesGridLayout.transform);
+                    noProfil.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 }
             }
         }

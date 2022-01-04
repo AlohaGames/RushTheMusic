@@ -13,6 +13,7 @@ namespace Aloha
     {
         public InputField InputName;
         public MenuRoot MenuRoot;
+        public GameObject CreateProfilUI;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -35,6 +36,8 @@ namespace Aloha
             if (ProfilManager.Instance)
             {
                 ProfilManager.Instance.CreateProfil(new Profil(InputName.text));
+                InputName.text = "";
+                CreateProfilUI.SetActive(false);
                 MenuRoot.ShowMainMenu();
             }
         }

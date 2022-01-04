@@ -85,6 +85,10 @@ namespace Aloha
             this.HideEverything();
             GameName.SetActive(true);
             ProfilMenu.SetActive(true);
+
+            // Force profiles loading
+            ChooseProfilMenu cpm = ProfilMenu.GetComponent<ChooseProfilMenu>();
+            cpm.DisplayProfils();
         }
 
         /// <summary>

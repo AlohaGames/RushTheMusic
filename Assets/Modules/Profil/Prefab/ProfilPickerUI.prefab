@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 8947194500036224160}
   deleteButton: {fileID: 6115989726555955523}
+  MenuRoot: {fileID: 0}
 --- !u!1001 &5052326713827791302
 PrefabInstance:
   m_ObjectHideFlags: 0
