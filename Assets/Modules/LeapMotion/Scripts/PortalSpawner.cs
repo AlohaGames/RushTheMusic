@@ -4,19 +4,26 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class PortalSpawner : MonoBehaviour
     {
         [SerializeField] 
         private Vortex vortexPrefab;
+
         [SerializeField] 
         private Material raycastMaterial;
+
         private LineRenderer targetPreview;
         private Vector3 origin;
         private Vector3? endPoint;
         private bool preparingPortal;
         public Wizard Wizard;
 
-        // Start is called before the first frame update
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
         void Start()
         {
             Wizard = GameManager.Instance.GetHero() as Wizard;
@@ -28,7 +35,9 @@ namespace Aloha
             targetPreview.endWidth = 0.02f;
         }
 
-        // Update is called once per frame
+        /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
         void Update()
         {
             if (preparingPortal)
@@ -37,23 +46,62 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void preparePortal()
         {
             preparingPortal = true;
         }
 
+        /// <summary>
+        /// Spawn a new vortex at the laser position
+        /// <example> Example(s):
+        /// <code>
+        ///     SpawnPortal()
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SpawnPortal()
         {
             if (preparingPortal && endPoint != null)
             {
-                Vector3 vortexPos = (Vector3)endPoint;
-                vortexPos.y = 1;
-                Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
-                preparingPortal = false;
-                targetPreview.enabled = false;
+                int manaUsed = Wizard.ChargeVortex();
+
+                if (manaUsed != 0)
+                {
+                    // Set vortex position
+                    Vector3 vortexPos = (Vector3)endPoint;
+                    vortexPos.y = 1;
+
+                    // Instantiate the vortex
+                    Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
+                    vortex.Wizard = this.Wizard;
+                    vortex.Power = manaUsed;
+                }
+            } else
+            {
+                // TODO Add behavior if not enough mana to spawn a new portal
             }
+
+            // Reset variables
+            preparingPortal = false;
+            targetPreview.enabled = false;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         void checkLaser()
         {
             // Find the origin and end point of the laser

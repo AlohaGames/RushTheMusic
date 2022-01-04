@@ -21,13 +21,13 @@ namespace Aloha.Test
         {
             //Create enemy stats for the enemy mapping
             Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.attack = 1;
-            enemyStats.defense = 0;
-            enemyStats.maxHealth = 1;
-            enemyStats.level = 1;
-            
+            enemyStats.Attack = 1;
+            enemyStats.Defense = 0;
+            enemyStats.MaxHealth = 1;
+            enemyStats.Level = 1;
+
             //Create the level mapping 0 (with 4 enemies)
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPosition.BOT, HorizontalPosition.CENTER);
+            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
             List<EnemyMapping> tile2enemies = new List<EnemyMapping>();
             tile2enemies.Add(genericEnemy);
             tile2enemies.Add(genericEnemy);
@@ -57,20 +57,20 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            warriorStats.maxRage = 10;
-            warriorStats.maxHealth = 10;
-            warriorStats.attack = 1;
-            warriorStats.defense = 0;
-            warriorStats.xp = 0;
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.MaxRage = 10;
+            warriorStats.MaxHealth = 10;
+            warriorStats.Attack = 1;
+            warriorStats.Defense = 0;
+            warriorStats.XP = 0;
             warrior.Init(warriorStats);
 
             //Create the level mapping with 4 enemies
             LevelMapping levelMapping = GetLevelMapping()[0];
-            LevelManager.Instance.levelMapping = levelMapping;
+            LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
-            
+
             //Call the HeroTakeDamage event
             warrior.TakeDamage(0);
 
@@ -81,16 +81,16 @@ namespace Aloha.Test
             yield return null;
 
             //Test hit score and total score
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 warrior.TakeDamage(0);
             }
             Assert.AreEqual(100, instanceScoreManager.HitScore);
             Assert.AreEqual(-100, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -106,20 +106,20 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            warriorStats.maxRage = 10;
-            warriorStats.maxHealth = 10;
-            warriorStats.attack = 1;
-            warriorStats.defense = 0;
-            warriorStats.xp = 0;
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.MaxRage = 10;
+            warriorStats.MaxHealth = 10;
+            warriorStats.Attack = 1;
+            warriorStats.Defense = 0;
+            warriorStats.XP = 0;
             warrior.Init(warriorStats);
 
             //Create the level mapping without enemies
             LevelMapping levelMapping = GetLevelMapping()[1];
-            LevelManager.Instance.levelMapping = levelMapping;
+            LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
-            
+
             //Call the HeroTakeDamage event
             warrior.TakeDamage(0);
 
@@ -130,16 +130,16 @@ namespace Aloha.Test
             yield return null;
 
             //Test hit score and total score
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 warrior.TakeDamage(0);
             }
             Assert.AreEqual(0, instanceScoreManager.HitScore);
             Assert.AreEqual(0, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -155,24 +155,24 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            warriorStats.maxRage = 10;
-            warriorStats.maxHealth = 10;
-            warriorStats.attack = 1;
-            warriorStats.defense = 0;
-            warriorStats.xp = 0;
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.MaxRage = 10;
+            warriorStats.MaxHealth = 10;
+            warriorStats.Attack = 1;
+            warriorStats.Defense = 0;
+            warriorStats.XP = 0;
             warrior.Init(warriorStats);
 
             //Create enemy instance
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            enemyStats.maxHealth = 1;
+            EnemyStats enemyStats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
+            enemyStats.MaxHealth = 1;
             enemy.Init(enemyStats);
 
             //Create the level mapping with 4 enemies
             LevelMapping levelMapping = GetLevelMapping()[0];
-            LevelManager.Instance.levelMapping = levelMapping;
+            LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
 
@@ -184,17 +184,16 @@ namespace Aloha.Test
             yield return null;
 
             //Kill many enemies
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 instanceScoreManager.DeathCount(enemy);
             }
             Assert.AreEqual(300, instanceScoreManager.EnemyKilledScore);
             Assert.AreEqual(300, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -210,24 +209,24 @@ namespace Aloha.Test
             //Create the hero instance
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats warriorStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            warriorStats.maxRage = 10;
-            warriorStats.maxHealth = 10;
-            warriorStats.attack = 1;
-            warriorStats.defense = 0;
-            warriorStats.xp = 0;
+            WarriorStats warriorStats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            warriorStats.MaxRage = 10;
+            warriorStats.MaxHealth = 10;
+            warriorStats.Attack = 1;
+            warriorStats.Defense = 0;
+            warriorStats.XP = 0;
             warrior.Init(warriorStats);
 
             //Create enemy instance
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            enemyStats.maxHealth = 1;
+            EnemyStats enemyStats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
+            enemyStats.MaxHealth = 1;
             enemy.Init(enemyStats);
 
             //Create the level mapping with 4 enemies
             LevelMapping levelMapping = GetLevelMapping()[1];
-            LevelManager.Instance.levelMapping = levelMapping;
+            LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
 
@@ -239,17 +238,16 @@ namespace Aloha.Test
             yield return null;
 
             //Kill many enemies
-            for(int i = 0; i < 6; i++)
+            for (int i = 0; i < 6; i++)
             {
                 instanceScoreManager.DeathCount(enemy);
             }
             Assert.AreEqual(0, instanceScoreManager.EnemyKilledScore);
             Assert.AreEqual(0, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            GameObject.Destroy(enemyGO);
-            GameObject.Destroy(warriorGO);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -267,7 +265,7 @@ namespace Aloha.Test
 
             //Create the level mapping with 4 enemies
             LevelMapping levelMapping = GetLevelMapping()[1];
-            LevelManager.Instance.levelMapping = levelMapping;
+            LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
 
@@ -279,16 +277,16 @@ namespace Aloha.Test
             yield return null;
 
             //Passing many tile
-            for(int i = 0; i < 11; i++)
+            for (int i = 0; i < 11; i++)
             {
                 instanceScoreManager.TilesCount(tile);
             }
             Assert.AreEqual(600, instanceScoreManager.DistanceScore);
             Assert.AreEqual(600, instanceScoreManager.TotalScore);
 
-            //Destroy GameObjects
-            GameObject.Destroy(tile);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
     }
 }

@@ -4,44 +4,51 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the enemy class functions.
+    /// </summary>
     public class EnemyTest
     {
-        // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-        // `yield return null;` to skip a frame.
+        /// <summary>
+        /// Test if Enemy can take damage and Disapear when health reach 0
+        /// </summary>
         [UnityTest]
         public IEnumerator EnemyTestDamage()
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
-            stats.maxHealth = 10;
+            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
+            stats.MaxHealth = 10;
             enemy.Init(stats);
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
             enemy.TakeDamage(-5);
-            Assert.AreEqual(5, enemy.currentHealth);
+            Assert.AreEqual(5, enemy.CurrentHealth);
 
-            // Use the Assert class to test conditions.
-            // Use yield to skip a frame.
             yield return null;
 
             enemy.TakeDamage(5);
-            Assert.AreEqual(0, enemy.currentHealth);
+            Assert.AreEqual(0, enemy.CurrentHealth);
 
-            yield return null;
+            // Wait for death animation
+            yield return new WaitForSeconds(0.5f);
 
             Assert.IsTrue(enemy == null);
 
-            if (enemyGO)
-            {
-                GameObject.Destroy(enemyGO);
-            }
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
+        /// <summary>
+        /// Test if EnemyInstancier work well
+        /// </summary>
         [Test]
         public void EnemyInstancierTest()
         {
@@ -53,8 +60,8 @@ namespace Aloha.Test
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 
-            GameObject.Destroy(enemy.gameObject);
-            GameObject.Destroy(manager);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
     }

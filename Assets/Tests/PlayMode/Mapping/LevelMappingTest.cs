@@ -1,11 +1,19 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
+//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
+
 namespace Aloha.Test
 {
+    /// <summary>
+    /// This class test the level mapping class functions.
+    /// </summary>
     public class LevelMappingTest
     {
 
+        /// <summary>
+        /// TODO @Tristan
+        /// </summary>
         LevelMapping[] GetLevelsMapping()
         {
             LevelMapping lm0 = new LevelMapping();
@@ -30,16 +38,25 @@ namespace Aloha.Test
             return lms;
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void LevelMappingConstructorTest()
         {
             LevelMapping lm0 = GetLevelsMapping()[0];
-            Assert.AreEqual(0, lm0.tileCount);
+            Assert.AreEqual(0, lm0.TileCount);
 
             LevelMapping lm1 = GetLevelsMapping()[1];
-            Assert.AreEqual(180, lm1.tileCount);
+            Assert.AreEqual(180, lm1.TileCount);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
+        /// <summary>
+        /// TODO
+        /// </summary>
         [Test]
         public void LevelMappingGetEnemiesTest()
         {
@@ -48,6 +65,9 @@ namespace Aloha.Test
 
             LevelMapping lm2 = GetLevelsMapping()[2];
             Assert.AreEqual(1, lm2.GetEnnemies(10).Count);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

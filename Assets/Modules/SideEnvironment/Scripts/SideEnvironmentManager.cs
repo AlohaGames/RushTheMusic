@@ -11,42 +11,85 @@ namespace Aloha
         Left = -1
     }
 
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class SideEnvironmentManager : Singleton<SideEnvironmentManager>
     {
-        [SerializeField]
-        private SideEnvironment[] sideEnvironmentPrefab = new SideEnvironment[] { };
 
         [SerializeField]
-        private GameObject castleHill;
+        private List<Biome> biomes;
 
-        public void Awake()
+        [SerializeField]
+        private Biome defaultBiome;
+
+        [SerializeField]
+        private Hashtable biometable = new Hashtable();
+
+        private Biome currentBiome;
+
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
         {
+            currentBiome = Instantiate(defaultBiome);
+
+            foreach (Biome b in biomes)
+            {
+                biometable.Add(b.BiomeName, b);
+            }
+
             GlobalEvent.TileCount.AddListener(CountTile);
-            GlobalEvent.LevelStart.AddListener(SpawnCastle);
         }
 
+        /// <summary>
+        /// Even triggered on each Tile to generate side environment
+        /// </summary>
+        /// <param name="tile">GameObject of the tile</param>
         public void CountTile(GameObject tile)
         {
             generateSideEnv(Side.Left, tile);
             generateSideEnv(Side.Righ, tile);
         }
 
-        void SpawnCastle()
+        /// <summary>
+        /// Load biome based on his name
+        /// </summary>
+        /// <param name="biomeName">The name of the biome</param>
+        public void LoadBiome(string biomeName)
         {
-            GameObject castleHillGo = Instantiate(castleHill);
+            if (biomeName != null)
+            {
+                Debug.Log("Load biome " + biomeName);
+                Biome biome = biometable[biomeName] as Biome;
+                if (biome != null)
+                {
+                    // Biome found
+                    currentBiome = Instantiate(biome);
+                }
+            }
+            Camera.main.backgroundColor = currentBiome.BackgroundColor;
+
+            // Set castle in background of biome
+            GameObject castleHillGo = Instantiate(currentBiome.CastleHill);
             Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
             bgPos.y = 20f;
             castleHillGo.transform.position = bgPos;
-            GlobalEvent.LevelStart.RemoveListener(SpawnCastle);
         }
 
+        /// <summary>
+        ///  Generate the side environement of each tile based on the actual tile and the side
+        /// </summary>
+        /// <param name="side">Side to generate environment on (either Right or Left)</param>
+        /// <param name="tile">Gameobject of the actual tile</param>
         void generateSideEnv(Side side, GameObject tile)
         {
             // Generate random index
-            int index = Utils.RandomInt(0, sideEnvironmentPrefab.Length);
+            int index = Utils.RandomInt(0, currentBiome.SideEnvironmentPrefabs.Length);
 
             // Instantiate object + position
-            SideEnvironment sideEnvInstR = Instantiate(sideEnvironmentPrefab[index]);
+            SideEnvironment sideEnvInstR = Instantiate(currentBiome.SideEnvironmentPrefabs[index]);
             sideEnvInstR.Initialize();
 
             // Set scale
@@ -62,8 +105,21 @@ namespace Aloha
             sideEnvInstR.transform.SetParent(tile.transform);
         }
 
+        /// <summary>
+        /// Get current loaded biome
+        /// </summary>
+        /// <returns>
+        /// The current biome
+        /// </returns>
+        public Biome GetCurrentBiome()
+        {
+            return currentBiome;
+        }
 
-        public void OnDestroy()
+        /// <summary>
+        /// Cleanup fonction called on destroy
+        /// </summary>
+        void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
         }

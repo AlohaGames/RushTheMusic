@@ -1,24 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Aloha
 {
+    /// <summary>
+    /// This class manage healing potion
+    /// </summary>
     public class HealPotion : Item
     {
-        private int gain;
+        private int hpGain;
 
-        public HealPotion(int gain)
+        /// <summary>
+        /// The constructor with a the number of life that will be regenerate
+        /// <example> Example(s): 
+        /// <code>
+        ///     HealPotion healpotion = new HealPotion(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="hpGain"></param>
+        public HealPotion(int hpGain)
         {
-            this.gain = gain;
+            this.hpGain = hpGain;
         }
 
+        /// <summary>
+        /// Call the hero and regenerate him with the value of the gain
+        /// <example> Example(s): 
+        /// <code>
+        ///     healpotion.Effect();
+        /// </code>
+        /// </example>
+        /// </summary>
         public override void Effect()
         {
             Hero hero = GameManager.Instance.GetHero();
-            hero.Regeneration(this.gain);
+            hero.RegenerateHP(this.hpGain);
         } 
     }
 }
-

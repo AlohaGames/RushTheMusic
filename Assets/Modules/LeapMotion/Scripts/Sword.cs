@@ -2,36 +2,53 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// TODO
+    /// </summary>
     public class Sword : MonoBehaviour
     {
-        public Warrior warrior;
         private Vector3 presPos;
         private Vector3 newPos;
-        public float speed;
-        [SerializeField] float minimumSpeedToKill = 1f;
 
-        private void Start()
+        [SerializeField]
+        private float minimumSpeedToKill = 1f;
+
+        public Warrior Warrior;
+        public float Speed;
+
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
-            warrior = GameManager.Instance.GetHero() as Warrior;
+            Warrior = GameManager.Instance.GetHero() as Warrior;
             presPos = transform.position;
             newPos = transform.position;
         }
 
-        private void Update()
+        /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
         {
             newPos = transform.position;
-            speed = (newPos - presPos).magnitude * 100;
+            Speed = (newPos - presPos).magnitude * 100;
             presPos = newPos;
         }
 
-        // If the Sword touch an Object
-        public void OnTriggerEnter(Collider collider)
+        /// <summary>
+        /// Is called when a GameObject collides with another GameObject.
+        /// </summary>
+        /// <param name="other">other collider</param>
+        public void OnTriggerEnter(Collider other)
         {
-            if (collider.tag == "Enemy" && speed > minimumSpeedToKill)
+            bool leapActivated = GameManager.Instance.LeapMode;
+            if (other.tag == "Enemy" && ((!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
-                Debug.Log(speed);
-                warrior.Attack(collider.gameObject.GetComponent<Entity>());
-                warrior.BumpEntity(collider.GetComponent<Entity>(), speed);
+                Debug.Log(Speed);
+                Warrior.IsAttacking = false;
+                Warrior.Attack(other.gameObject.GetComponent<Entity>());
+                Warrior.BumpEntity(other.GetComponent<Entity>(), Speed);
             }
         }
     }
