@@ -12,7 +12,7 @@ namespace Aloha
         void Start()
         {
             Text name = GetComponentInChildren<Text>();
-            name.text = profil.name;
+            name.text = profil.Name;
 
             Button[] buttons = GetComponentsInChildren<Button>();
             Button start = buttons[0];
@@ -24,11 +24,11 @@ namespace Aloha
         private void onStart()
         {
             ProfilManager.Instance.CurrentProfil = profil;
-            Debug.Log("Current profil is " + ProfilManager.Instance.CurrentProfil.name);
+            Debug.Log("Current profil is " + ProfilManager.Instance.CurrentProfil.Name);
         }
 
         private void onDelete() {
-            Debug.Log("Delete " + profil.name);
+            Debug.Log("Delete " + profil.Name);
         }
     }
 }

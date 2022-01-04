@@ -6,16 +6,16 @@ namespace Aloha
 {
     public class Profil
     {
-        public string name;
+        public string Name;
 
         public Profil()
         {
-            this.name = "default-profil";
+            this.Name = "default-profil";
         }
 
         public Profil(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
     }
 }

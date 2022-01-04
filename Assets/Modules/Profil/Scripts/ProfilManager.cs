@@ -31,7 +31,7 @@ namespace Aloha
         // Save a profil to disk
         public void SaveProfil(Profil profil)
         {
-            string profilFileName = $"{profil.name}.xml";
+            string profilFileName = $"{profil.Name}.xml";
             XmlSerializer serializer = new XmlSerializer(typeof(Profil));
             using (FileStream stream = new FileStream($"{getProfilDir()}/{profilFileName}", FileMode.Create))
             {
@@ -48,7 +48,7 @@ namespace Aloha
             {
                 profil = (Profil)metadataSerializer.Deserialize(stream);
             }
-            Debug.Log($"Profil {profil.name} loaded");
+            Debug.Log($"Profil {profil.Name} loaded");
             return profil;
         }
 
