@@ -11,15 +11,15 @@ namespace Aloha
     public class Hero : Entity
     {
         /// <summary>
-        /// TODO
+        ///     give stats of the Hero
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     hero.GetStats();
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        ///     Stats of the hero
         /// </returns>
         public new virtual HeroStats GetStats()
         {
@@ -58,7 +58,7 @@ namespace Aloha
         /// This function is called when a hero level up.
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     warrior.LevelUp(2000);
         /// </code>
         /// </example>
         /// </summary>
@@ -95,7 +95,7 @@ namespace Aloha
         /// Regenerate HP of hero.
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     wizard.RegenerateHP(20);
         /// </code>
         /// </example>
         /// </summary>
@@ -132,7 +132,7 @@ namespace Aloha
         /// Invoke Die event
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.Die();
         /// </code>
         /// </example>
         /// </summary>
@@ -167,7 +167,7 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        ///     Returns stats of the hero
         /// </returns>
         public new T GetStats()
         {

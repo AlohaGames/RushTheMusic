@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class of an Entity
     /// </summary>
     public abstract class Entity : MonoBehaviour
     {
@@ -21,15 +21,15 @@ namespace Aloha
         public int CurrentHealth;
 
         /// <summary>
-        /// TODO
+        /// Get stats from the entity
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     entity.GetStats();
         /// </code>
         /// </example>
         /// </summary>
         /// <return>
-        /// TODO
+        /// Returns stats
         /// </return>
         public Stats GetStats()
         {
@@ -40,7 +40,7 @@ namespace Aloha
         /// This function is called when a entity attack another entity.
         /// <example> Example(s):
         /// <code>
-        ///     anEntity.Attack(anotherEntity);
+        ///     entity.Attack(anotherEntity);
         /// </code>
         /// <code>
         ///     warrior.Attack(assassin);
@@ -54,10 +54,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Initialisation of the ennemy
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     entity.Init();
         /// </code>
         /// </example>
         /// </summary>
@@ -67,10 +67,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Initialisation of the ennemy with stats
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     entity.Init(stats);
         /// </code>
         /// </example>
         /// </summary>
@@ -154,10 +154,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Regenerate HP in the limit of max health
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     entity.RegenerateHP(20);
         /// </code>
         /// </example>
         /// </summary>
@@ -196,10 +196,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Called when the entity dies
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     entity.Die();
         /// </code>
         /// </example>
         /// </summary>

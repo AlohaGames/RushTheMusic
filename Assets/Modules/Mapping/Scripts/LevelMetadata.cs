@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for level metadatas
     /// </summary>
     public class LevelMetadata
     {
@@ -15,10 +15,10 @@ namespace Aloha
         public string MappingFilePath;
 
         /// <summary>
-        /// TODO
+        /// Default constructor
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     LevelMetadata lm = new LevelMetadata();
         /// </code>
         /// </example>
         /// </summary>
@@ -31,10 +31,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Constructor with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     LevelMetadata lm = new LevelMetadata("Youen", "myPath", "mappingPath"; "Tuto1");
         /// </code>
         /// </example>
         /// </summary>

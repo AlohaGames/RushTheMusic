@@ -5,17 +5,17 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the fireball of a wyrmling
     /// </summary>
     public class WyrmlingFireball : MonoBehaviour
     {
         public Enemy AssociatedEnemy;
 
         /// <summary>
-        /// TODO
+        /// Method called when enter in collision with a player
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     fireball.OnTriggerEnter(collider);
         /// </code>
         /// </example>
         /// </summary>

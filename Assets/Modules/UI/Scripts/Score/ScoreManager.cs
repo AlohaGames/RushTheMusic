@@ -37,10 +37,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Increment the number of time the hero was hitted
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
         /// </code>
         /// </example>
         /// </summary>
@@ -51,10 +51,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Increment the number of time an entity dies
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GlobalEvent.EntityDied.AddListener(DeathCount);
         /// </code>
         /// </example>
         /// </summary>
@@ -65,10 +65,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Increment the number of time a new tile spawn 
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GlobalEvent.TileCount.AddListener(TilesCount);
         /// </code>
         /// </example>
         /// </summary>

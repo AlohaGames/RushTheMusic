@@ -3,7 +3,7 @@ using UnityEngine.Events;
 namespace Aloha.Events
 {
     /// <summary>
-    /// TODO
+    /// Class which regroup every game events
     /// </summary>
     public class GlobalEvent
     {
@@ -18,61 +18,65 @@ namespace Aloha.Events
         public static UnityEvent Pause = new UnityEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when an entity dies
         /// </summary>
         /// <param name="Entity"></param>
         public static EntityEvent EntityDied = new EntityEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the hero takes damages
         /// </summary>
         public static UnityEvent HeroTakeDamage = new UnityEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the hero dies
         /// </summary>
         public static UnityEvent HeroDie = new UnityEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when an enemy dies
         /// </summary>
         public static UnityEvent EnemyDie = new UnityEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when hero's health is updated 
         /// </summary>
         /// <param></param>
         /// <param></param>
         public static IntIntEvent OnHealthUpdate = new IntIntEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when hero's secondary bar is updated 
         /// </summary>
         /// <param></param>
         /// <param></param>
         public static IntIntEvent OnSecondaryUpdate = new IntIntEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the hero moves on the map
         /// </summary>
         /// <param></param>
         public static IntIntEvent OnProgressionUpdate = new IntIntEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called which count tiles
         /// </summary>
         /// <param></param>
         public static GameObjectEvent TileCount = new GameObjectEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the level finish
         /// </summary>
         public static UnityEvent LevelStop = new UnityEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the level start
         /// </summary>
         public static UnityEvent LevelStart = new UnityEvent();
+
+        /// <summary>
+        /// Event called when the hero dies / when the game is over
+        /// </summary>
         public static UnityEvent GameOver = new UnityEvent();
 
         /// <summary>
@@ -83,13 +87,13 @@ namespace Aloha.Events
         public static StringBoolEvent LoadLevel = new StringBoolEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the hero is loaded
         /// </summary>
         /// <param></param>
         public static HeroTypeEvent LoadHero = new HeroTypeEvent();
 
         /// <summary>
-        /// TODO
+        /// Event called when the player quit the game
         /// </summary>
         public static UnityEvent QuitGame = new UnityEvent();
     }

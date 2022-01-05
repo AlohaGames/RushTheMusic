@@ -24,7 +24,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Function to bump the assassin
         /// </summary>
         /// <param name="direction"></param>
         /// <param name="speed"></param>

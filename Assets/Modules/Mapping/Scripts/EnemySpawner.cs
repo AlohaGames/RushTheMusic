@@ -22,10 +22,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Reset tiles counter to 0
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LevelStop.AddListener(ResetCount);
         /// </code>
         /// </example>
         /// </summary>
@@ -36,10 +36,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Count a new tile when event is called
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.TileCount.AddListener(CountTile);
         /// </code>
         /// </example>
         /// </summary>

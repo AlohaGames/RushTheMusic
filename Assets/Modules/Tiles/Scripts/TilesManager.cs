@@ -50,16 +50,13 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Start the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LevelStart.AddListener(StartGame);
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
         public void StartGame()
         {
             if (GameIsStarted)
@@ -76,16 +73,13 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Stop the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     tilesManager.StopGame();
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
         public void StopGame()
         {
             if (!GameIsStarted)
@@ -98,10 +92,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Get position of the end of the last tile spawned
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
         /// </code>
         /// </example>
         /// </summary>
@@ -117,7 +111,7 @@ namespace Aloha
         /// Create a tile at the end of the tile list
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
         /// </code>
         /// </example>
         /// </summary>
@@ -144,10 +138,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Spawn a tile at a specific position
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SpawnTileAt(tileIndex, 0);
         /// </code>
         /// </example>
         /// </summary>
@@ -175,15 +169,15 @@ namespace Aloha
 
 
         /// <summary>
-        /// TODO
+        /// Returns a random tile between the list of prefabs
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SpawnTileToQueue(GetNextTileToSpawn());
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        ///     Returns a random tile between the list of prefabs
         /// </returns>
         int GetNextTileToSpawn()
         {
@@ -191,10 +185,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Delete the first tile of the list
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     DeleteFirstTile();
         /// </code>
         /// </example>
         /// </summary>
@@ -205,16 +199,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Get specific tile with an id
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GameObject lastTile = tilesManager.GetActiveTileById(tilesManager.NumberOfTiles - 1);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="index"></param>
         /// <returns>
-        /// TODO
+        /// The choosen tile
         /// </returns>
         public GameObject GetActiveTileById(int index)
         {

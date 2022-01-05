@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the progression bar
     /// </summary>
     public class ProgressionBar : VerticalBar
     {

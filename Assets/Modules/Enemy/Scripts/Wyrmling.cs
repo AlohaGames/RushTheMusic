@@ -5,7 +5,7 @@ using Aloha.EntityStats;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the default wyrmling
     /// </summary>
     public class Wyrmling : Enemy<WyrmlingStats>
     {
@@ -15,10 +15,10 @@ namespace Aloha
         private WyrmlingFireball fireball;
 
         /// <summary>
-        /// Get the 
+        /// Get the wyrmling's fireball
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// wyrmling.GetWyrmlingFireball();
         /// </code>
         /// </example>
         /// </summary>
@@ -31,10 +31,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Bump the ennemy
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// wyrmling.GetBump(new Vector(1.0f, 1.0f, 1.0f), 3);
         /// </code>
         /// </example>
         /// </summary>

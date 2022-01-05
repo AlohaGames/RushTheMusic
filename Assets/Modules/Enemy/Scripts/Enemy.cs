@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for an enemy with stats
     /// </summary>
     public class Enemy<T> : Enemy where T : EnemyStats
     {
@@ -16,15 +16,15 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Get stats from the ennemy
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     ennemy.GetStats();
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        /// Stats from the ennemy
         /// </returns>
         public new EnemyStats GetStats()
         {
@@ -86,10 +86,11 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Destroy the ennemy without killing it.
+        /// It will not update player's score
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// ennemy.Disappear();
         /// </code>
         /// </example>
         /// </summary>

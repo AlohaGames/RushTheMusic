@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace Aloha.Events
 {
     /// <summary>
-    /// TODO
+    /// Class for hero type event
     /// </summary>
     public class HeroTypeEvent : UnityEvent<HeroType> { }
 }

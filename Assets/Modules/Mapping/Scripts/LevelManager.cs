@@ -31,10 +31,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Save a map with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     LevelManager.Instance.Save(levelMapping, "Example", true);
         /// </code>
         /// </example>
         /// </summary>
@@ -53,10 +53,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Save a map 
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// LevelManager.Instance.Save();
         /// </code>
         /// </example>
         /// </summary>
@@ -66,10 +66,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Load a map with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LoadLevel.AddListener(Load);
         /// </code>
         /// </example>
         /// </summary>
@@ -116,10 +116,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Load a map
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     this.Load();
         /// </code>
         /// </example>
         /// </summary>
@@ -129,10 +129,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Called when load is finished
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         /// </code>
         /// </example>
         /// </summary>
@@ -143,17 +143,14 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Load a specific music and do an action
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         /// </code>
         /// </example>
         /// </summary>
         /// <param name=""></param>
-        /// <returns>
-        /// TODO
-        /// </returns>
         IEnumerator LoadMusic(string musicFileURI, Action cb)
         {
             Debug.Log($"Loading music {musicFileURI}");

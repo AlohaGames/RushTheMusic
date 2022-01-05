@@ -3,12 +3,12 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the horizontal bar
     /// </summary>
     public class HorizontalBar : Bar
     {
         /// <summary>
-        /// TODO
+        /// Update UI of the bar
         /// <example> Example(s):
         /// <code>
         /// </code>
