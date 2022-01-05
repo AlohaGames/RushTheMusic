@@ -28,8 +28,9 @@ namespace Aloha
         }
 
         private void onDelete() {
-            Debug.Log("TODO Delete " + profil.Name);
-            // TODO Delete the profil
+            Debug.Log("Delete " + profil.Name);
+            ProfilManager.Instance.DeleteProfil(profil);
+            MenuRoot.ShowProfilMenu();
         }
     }
 }

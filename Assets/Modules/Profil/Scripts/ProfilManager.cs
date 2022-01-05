@@ -46,6 +46,24 @@ namespace Aloha
             }
         }
 
+        // Delete a profile
+        public void DeleteProfil(Profil profil)
+        {
+            string profilFileName = $"{profil.Name}.xml";
+            string filePath = $"{getProfilDir()}/{profilFileName}";
+
+            // check if file exists
+            if (!File.Exists(filePath))
+            {
+                Debug.Log( "no " + profilFileName + " profile exists" );
+            }
+            else
+            {
+                File.Delete(filePath);
+            }
+
+        }
+
         // Load profile from disk
         public Profil LoadProfilFile(string filepath)
         {
