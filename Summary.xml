@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>01/05/2022 - 22:34:49</Generatedon>
+    <Generatedon>01/05/2022 - 22:37:36</Generatedon>
     <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
     <Assemblies>1</Assemblies>
     <Classes>64</Classes>
@@ -9,13 +9,13 @@
     <Coveredlines>963</Coveredlines>
     <Uncoveredlines>525</Uncoveredlines>
     <Coverablelines>1488</Coverablelines>
-    <Totallines>5007</Totallines>
+    <Totallines>5010</Totallines>
     <Linecoverage>64.7</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="64" coverage="64.7" coveredlines="963" coverablelines="1488" totallines="5294" branchcoverage="" coveredbranches="0" totalbranches="0">
+    <Assembly name="Aloha" classes="64" coverage="64.7" coveredlines="963" coverablelines="1488" totallines="5297" branchcoverage="" coveredbranches="0" totalbranches="0">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="8" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Assassin" coverage="87.5" coveredlines="7" coverablelines="8" totallines="37" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.AudioManager" coverage="47.2" coveredlines="17" coverablelines="36" totallines="103" branchcoverage="" coveredbranches="0" totalbranches="0" />
@@ -44,7 +44,7 @@
       <Class name="Aloha.HorizontalBar" coverage="100" coveredlines="6" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.InventoryManager" coverage="100" coveredlines="23" coverablelines="23" totallines="86" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.ItemContainer" coverage="0" coveredlines="0" coverablelines="15" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="Aloha.ItemUser" coverage="100" coveredlines="23" coverablelines="23" totallines="51" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="Aloha.ItemUser" coverage="100" coveredlines="23" coverablelines="23" totallines="54" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.Lancer" coverage="100" coveredlines="3" coverablelines="3" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.LevelLoaderButton" coverage="0" coveredlines="0" coverablelines="10" totallines="49" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="Aloha.LevelManager" coverage="12.6" coveredlines="8" coverablelines="63" totallines="178" branchcoverage="" coveredbranches="0" totalbranches="0" />
