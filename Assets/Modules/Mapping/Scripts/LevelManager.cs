@@ -139,7 +139,6 @@ namespace Aloha
         {
             this.IsLoaded = true;
             Debug.Log($"Load level finished");
-            //GameManager.Instance.StartLevel();
         }
 
         /// <summary>
