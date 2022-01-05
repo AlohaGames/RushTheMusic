@@ -16,7 +16,7 @@ namespace Aloha.AI
         public float DistToMove = 0.5f;
 
         /// <summary>
-        /// AssassinAttack Node Constructor
+        /// CanonAttack Node Constructor
         /// </summary>
         /// <param name="graph">Graph containing the node</param>
         public CanonAttack(Graph graph) : base(graph)
@@ -34,7 +34,7 @@ namespace Aloha.AI
         }
 
         /// <summary>
-        /// Make the lancer Attack
+        /// Make the canon Attack
         /// </summary>
         /// <returns></returns>
         public override IEnumerator Action()
