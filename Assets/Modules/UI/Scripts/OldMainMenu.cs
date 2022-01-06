@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 /// <summary>
 /// TODO
 /// </summary>
-public class MainMenu : MonoBehaviour
+public class OldMainMenu : MonoBehaviour
 {
     public int SceneIdToLoad = 1;
 

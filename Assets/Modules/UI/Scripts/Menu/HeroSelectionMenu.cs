@@ -10,12 +10,10 @@ namespace Aloha
     /// TODO
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class LevelLoaderButton : MonoBehaviour
+    public class HeroSelectionMenu : MonoBehaviour
     {
-        [SerializeField]
-        private bool isTuto = false;
-
-        public string Level;   
+        public HeroType Type;
+        public MenuRoot MenuRoot;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -26,16 +24,13 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Event called when the user click on the button
         /// </summary>
         public void OnClick()
         {
-            GameManager.Instance.LoadLevel(Level, isTuto);
+            MenuRoot.Hide();
+            GameManager.Instance.LoadHero(Type);
+            GameManager.Instance.StartLevel();
         }
 
         /// <summary>

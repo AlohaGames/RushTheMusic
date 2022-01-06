@@ -7,6 +7,7 @@ namespace Aloha
 {
     /// <summary>
     /// This class manage the inventory item container 
+    /// </summary>
     public class ItemContainer : MonoBehaviour
     {
         public Image ItemDisplayComponent; 
