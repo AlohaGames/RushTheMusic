@@ -63,7 +63,7 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <param name="xp"></param>
-        public void LevelUp(int xp = 1)
+        public void GainXp(int xp = 1)
         {
             this.GetStats().XP += xp;
 

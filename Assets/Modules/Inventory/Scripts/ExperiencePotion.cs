@@ -13,15 +13,15 @@ namespace Aloha
         /// Give an effect to the experience potion. It gives a level of xp.
         /// <example> Example(s):
         /// <code>
-        ///     ManaPotion manaPotion;
-        ///     manaPotion.Effect();
+        ///     ExperiencePotion experiencePotion;
+        ///     experiencePotion.Effect();
         /// </code>
         /// </example>
         /// </summary>
         public override void Effect()
         {
             Hero hero = GameManager.Instance.GetHero();
-            hero.LevelUp(hero.GetStats().MaxXP);
+            hero.GainXp(hero.GetStats().MaxXP);
         }
     }
 }

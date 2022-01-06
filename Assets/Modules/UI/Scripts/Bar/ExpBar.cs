@@ -43,7 +43,6 @@ namespace Aloha
         /// <param name="max"></param>
         public void UpdateXP(int level, int currentXp, int maxXp)
         {
-            Debug.Log("J'update l'XP tmtc");
             levelText.text = level.ToString();
             base.UpdateBar(currentXp, maxXp);
             Debug.Log("Updated");

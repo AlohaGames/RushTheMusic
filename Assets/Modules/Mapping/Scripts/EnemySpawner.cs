@@ -9,8 +9,8 @@ namespace Aloha
     /// </summary>
     public class EnemySpawner : Singleton<EnemySpawner>
     {
-        public int TilesCounter = 0;
         private int heroLevel = -1;
+        public int TilesCounter = 0;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -75,7 +75,6 @@ namespace Aloha
                     }
 
                     // Stats scale based on hero level and current map number
-
                     // TODO-TRISTAN: Scale stats based on this.heroLevel
                     entity.Init(stats);
 

@@ -4,12 +4,14 @@ using UnityEngine;
 
 namespace Aloha
 {
+
+    /// <summary>
+    /// POJO send DynamicTextManager to render a DynamicText
+    /// </summary>
     public class DynamicTextCall
     {
         public DynamicText Dt;
-
         public Color DtColor;
-
         public string DtMessage;
 
         // 0 = HIGHT PRIORITY
@@ -30,6 +32,9 @@ namespace Aloha
         }
     }
 
+    /// <summary>
+    /// Manage the creation and destruction of dynamics texts
+    /// </summary>
     public class DynamicTextManager : Singleton<DynamicTextManager>
     {
 
@@ -65,8 +70,8 @@ namespace Aloha
         /// </summary>
         public void Show(GameObject gameObject, string message, Color color, int priority = 2)
         {
-            if(dynamicTextPrefab == null) return;
-            
+            if (dynamicTextPrefab == null) return;
+
             string key = gameObject.GetInstanceID().ToString();
             DynamicText dt = Instantiate(dynamicTextPrefab);
             dt.transform.position = gameObject.transform.position;

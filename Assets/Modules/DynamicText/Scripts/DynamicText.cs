@@ -3,18 +3,19 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Class reprensting a dynamic text that pop up above and entity
+    /// and disapear after few secondes going up
+    /// </summary>
     public class DynamicText : MonoBehaviour
     {
-
         private TextMesh tm;
-
         public bool HasRun = false;
         public bool Running = false;
         public float RunningTime = 0.3f;
         public float ActionTime = 1.0f;
         public float Speed = 1.0f;
         public float Distance = 5f;
-
 
         /// <summary>
         /// Customize the dynamic text and run it
@@ -26,7 +27,6 @@ namespace Aloha
             tm.color = color;
             StartCoroutine(Action());
         }
-
 
         /// <summary>
         /// Run the dynamic text

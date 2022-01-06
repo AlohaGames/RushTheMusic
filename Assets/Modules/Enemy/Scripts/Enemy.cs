@@ -82,12 +82,12 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void gainXP(Hero hero)
+        private void gainHeroXp(Hero hero)
         {
             int xpGain = 25;
 
             // Hero get xp for each ennemy killed
-            hero.LevelUp(xpGain);
+            hero.GainXp(xpGain);
 
             // Show XP Text
             DynamicTextManager.Instance.Show(gameObject, "+" + xpGain + " XP", Color.cyan);
@@ -106,7 +106,7 @@ namespace Aloha
             Hero hero = GameManager.Instance.GetHero();
             if (hero)
             {
-                gainXP(hero);
+                gainHeroXp(hero);
             }
             base.Die();
         }
