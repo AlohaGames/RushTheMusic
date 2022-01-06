@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 1d9f430496433cd5cba33483f466b151
+guid: f66928e48b5dc5b4d8160a14eb6ac509
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 8581689985463165103
-    second: potions_sprite_0
-  - first:
-      213: 6395302208848726360
-    second: potions_sprite_1
-  - first:
-      213: 7225699165948058266
-    second: potions_sprite_2
-  - first:
-      213: 5762002375446065433
-    second: potions_sprite_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,95 +101,11 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: potions_sprite_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 3
-        width: 251
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa02f04f299481770800000000000000
-      internalID: 8581689985463165103
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: potions_sprite_1
-      rect:
-        serializedVersion: 2
-        x: 258
-        y: 3
-        width: 251
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 85903b5a97da0c850800000000000000
-      internalID: 6395302208848726360
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: potions_sprite_2
-      rect:
-        serializedVersion: 2
-        x: 514
-        y: 3
-        width: 251
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a9a9b28ab17d64460800000000000000
-      internalID: 7225699165948058266
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: potions_sprite_3
-      rect:
-        serializedVersion: 2
-        x: 770
-        y: 3
-        width: 251
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9117b6fc1aeb6ff40800000000000000
-      internalID: 5762002375446065433
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1fd8b43ad4700af9c98820b660a8cbfa
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

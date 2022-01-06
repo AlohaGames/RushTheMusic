@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Aloha.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -81,6 +82,26 @@ namespace Aloha
             this.dieEvent.AddListener(Disappear);
         }
 
+
+        /// <summary>
+        /// This function is called to give xp to the hero on enemy death
+        /// <example> Example(s):
+        /// <code>
+        ///     myEnemyType.gainXP(myHero);
+        /// </code>
+        /// </example>
+        /// </summary>
+        private void gainHeroXp(Hero hero)
+        {
+            int xpGain = 25;
+
+            // Hero get xp for each ennemy killed
+            hero.GainXp(xpGain);
+
+            // Show XP Text
+            DynamicTextManager.Instance.Show(gameObject, "+" + xpGain + " XP", Color.cyan);
+        }
+
         /// <summary>
         /// This function is called when an enemy died. It inherite from entity class.
         /// <example> Example(s):
@@ -91,6 +112,11 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
+            Hero hero = GameManager.Instance.GetHero();
+            if (hero)
+            {
+                gainHeroXp(hero);
+            }
             base.Die();
         }
 

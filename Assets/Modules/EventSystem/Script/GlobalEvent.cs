@@ -55,6 +55,14 @@ namespace Aloha.Events
         /// <summary>
         /// TODO
         /// </summary>
+        /// <param>int : the current level</param>
+        /// <param>int : the current xp</param>
+        /// <param>int : max xp for the level</param>
+        public static IntIntIntEvent OnExperienceUpdate = new IntIntIntEvent();
+
+        /// <summary>
+        /// TODO
+        /// </summary>
         /// <param></param>
         public static IntIntEvent OnProgressionUpdate = new IntIntEvent();
 
@@ -73,6 +81,12 @@ namespace Aloha.Events
         /// TODO
         /// </summary>
         public static UnityEvent LevelStart = new UnityEvent();
+
+        /// <summary>
+        /// Trigger when the next level is reached
+        /// </summary>
+        public static UnityEvent NextLevel = new UnityEvent();
+
         public static UnityEvent GameOver = new UnityEvent();
 
         /// <summary>
