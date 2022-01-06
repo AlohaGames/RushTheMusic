@@ -187,8 +187,11 @@ namespace Aloha
             while (temps < 1f)
             {
                 temps += speed * Time.deltaTime;
-                posFinal.y = posInit.y + Mathf.Sin(temps * Mathf.PI) * 0.25f;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, temps);
+
+                Vector3 tmpPos = Vector3.Lerp(posInit, posFinal, temps); ;
+                tmpPos.y = posInit.y + Mathf.Sin(temps * Mathf.PI) * 0.25f;
+                transform.position = tmpPos;
+
                 yield return null;
             }
             gameObject.transform.position = posFinal;

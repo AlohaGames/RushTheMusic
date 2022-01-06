@@ -57,7 +57,7 @@ namespace Aloha.Test
             fireball.OnTriggerEnter(wizardCollider);
             yield return null;
 
-            Assert.IsTrue(fireball == null, "fireb not destroyed");
+            Assert.IsTrue(fireball == null, "fireball not destroyed");
 
             // Clear the scene
             Utils.ClearCurrentScene();
