@@ -106,7 +106,6 @@ jobs:
           mkdir gh-pages
           cp -r doc gh-pages/doc
           cp -r coverage-results gh-pages/coverage-results
-          ls -la
           cp Docs/index.html gh-pages/index.html
 
       - name: Deploy 🚀
