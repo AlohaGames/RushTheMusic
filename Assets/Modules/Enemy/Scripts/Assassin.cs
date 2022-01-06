@@ -11,7 +11,6 @@ namespace Aloha
     /// </summary>
     public class Assassin : Enemy<AssassinStats>
     {
-        private Hero hero;
         public Animator Anim;
 
         /// <summary>
@@ -19,7 +18,6 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            hero = GameManager.Instance.GetHero();
             Anim = GetComponent<Animator>();
         }
 

@@ -97,5 +97,10 @@ namespace Aloha
         /// Ice Wyrmling (flying)
         /// </summary>
         iceWyrmling = 9,
+
+        /// <summary>
+        /// Canon
+        /// </summary>
+        canon = 10,
     }
 }
