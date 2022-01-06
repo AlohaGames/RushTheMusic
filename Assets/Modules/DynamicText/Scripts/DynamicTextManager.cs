@@ -65,6 +65,8 @@ namespace Aloha
         /// </summary>
         public void Show(GameObject gameObject, string message, Color color, int priority = 2)
         {
+            if(dynamicTextPrefab == null) return;
+            
             string key = gameObject.GetInstanceID().ToString();
             DynamicText dt = Instantiate(dynamicTextPrefab);
             dt.transform.position = gameObject.transform.position;
