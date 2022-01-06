@@ -7,13 +7,15 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
-/[Dd]ocs/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 /[Uu]ser[Ss]ettings
 /[Cc]ode[Cc]overage
 
+
 !/[Dd]ocs/Doxyfile
+/[Dd]ocs/html/*
+/[Dd]ocs/*
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
@@ -62,8 +64,6 @@ sysinfo.txt
 
 # Crashlytics generated file
 crashlytics-build.properties
-
-CodeCoverage/
 
 Assets/InitTestScene*.unity
 Assets/InitTestScene*.unity.meta
