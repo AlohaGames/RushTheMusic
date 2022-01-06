@@ -107,6 +107,7 @@ jobs:
           cp -r doc gh-pages/doc
           cp -r coverage-results gh-pages/coverage-results
           cp Docs/index.html gh-pages/index.html
+          cp Docs/background.mp4 gh-pages/background.mp4
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
