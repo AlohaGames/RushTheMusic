@@ -22,7 +22,7 @@ namespace Aloha
         /// </summary>
         void Awake() {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
-            GlobalEvent.LevelStop.AddListener(ShowEndGameUIElements);
+            GlobalEvent.GameStop.AddListener(ShowEndGameUIElements);
         }
 
         /// <summary>
@@ -64,8 +64,18 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void ShowEndGameUIElements(){
+        public void ShowEndGameUIElements()
+        {
             UIScore.ShowEndGameUIScoreElements();
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.LevelStart.RemoveListener(ShowInGameUIElements);
+            GlobalEvent.GameStop.RemoveListener(ShowEndGameUIElements);
         }
     }
 }

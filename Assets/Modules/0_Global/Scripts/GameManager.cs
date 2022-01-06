@@ -17,6 +17,7 @@ namespace Aloha
         private string defaultLevel = "";
 
         public bool IsPlaying = false;
+        public bool isInfinite = false;
         public bool LeapMode = false; // leap : true, mouse : false
 
         #region Events
@@ -68,15 +69,37 @@ namespace Aloha
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
-        ///     StopLevel();
+        ///     Loose();
         /// </code>
         /// </example>
         /// </summary>
-        public void StopLevel()
+        public void FinishGame()
         {
+            GlobalEvent.GameStop.Invoke();
             IsPlaying = false;
             Cursor.visible = true;
-            GlobalEvent.LevelStop.Invoke();
+            ResetHero();
+        }
+
+        /// <summary>
+        /// Will stop the current level.
+        /// <example> Example(s):
+        /// <code>
+        ///     Loose();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void FinishLevel()
+        {
+            Debug.Log("Level complete!");
+            if(isInfinite)
+            {
+                Debug.Log("Infinite level complete !");
+            }else
+            {
+                UIManager.Instance.ShowEndGameUIElements();
+                GlobalEvent.LevelStop.Invoke();
+            }
         }
 
         /// <summary>
@@ -199,6 +222,14 @@ namespace Aloha
         public Hero GetHero()
         {
             return hero;
+        }
+
+        /// <summary>
+        /// Reset the Game.
+        /// </summary>
+        public void ResetHero()
+        {
+            Destroy(hero);
         }
 
         #region KeyEvents

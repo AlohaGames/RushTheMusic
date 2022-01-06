@@ -34,15 +34,11 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
             GlobalEvent.TileCount.AddListener(TilesCount);
+            GlobalEvent.GameStop.AddListener(Reset);
         }
 
         /// <summary>
         /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void CountHeroHit()
         {
@@ -184,6 +180,20 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Reset the score
+        /// </summary>
+        public void Reset()
+        {
+            TotalScore = 0;
+            DistanceScore = 0;
+            EnemyKilledScore = 0;
+            HitScore = 0;
+            TakeHitCounter = 0;
+            KillCounter = 0;
+            TilesCounter = 0;
+        }
+
+        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
@@ -191,6 +201,7 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);
             GlobalEvent.EntityDied.RemoveListener(DeathCount);
             GlobalEvent.TileCount.RemoveListener(TilesCount);
+            GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
 }

@@ -30,7 +30,7 @@ namespace Aloha.Test
 
             Assert.AreEqual(19, enemySpawner.TilesCounter);
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
 
             // Clear the scene
@@ -57,7 +57,7 @@ namespace Aloha.Test
             Assert.AreNotEqual(0, enemySpawner.TilesCounter);
             yield return null;
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
 
             Assert.AreEqual(0, enemySpawner.TilesCounter);

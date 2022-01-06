@@ -5,6 +5,7 @@ using System.Collections;
 using System.IO;
 using System.IO.Compression;
 using System.Xml.Serialization;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -20,6 +21,7 @@ namespace Aloha
         public GameObject TrackSelectionMenu;
         public GameObject CharacterMenu;
         public GameObject SettingsMenu;
+        public GameObject GameOverMenu;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -27,6 +29,7 @@ namespace Aloha
         void Awake() {
             // The first screen to load
             ShowProfilMenu();
+            GlobalEvent.GameOver.AddListener(ShowGameOverMenu);
         }
 
         /// <summary>
@@ -59,6 +62,7 @@ namespace Aloha
             TrackSelectionMenu.SetActive(false);
             CharacterMenu.SetActive(false);
             SettingsMenu.SetActive(false);
+            GameOverMenu.SetActive(false);
         }
 
         /// <summary>
@@ -149,6 +153,31 @@ namespace Aloha
         {
             this.HideEverything();
             SettingsMenu.SetActive(true);
+        }
+
+        /// <summary>
+        /// Stop the game, show the menu and stop the music
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowGameOverMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowGameOverMenu()
+        {
+            this.HideEverything();
+            // Put the timeScale to 0, active the UI And stop the game
+            Time.timeScale = 0f;
+            GameOverMenu.SetActive(true);
+            GameManager.Instance.FinishGame();
+        }
+
+        /// <summary>
+        /// Is called when MonoBehaviour is Destroy
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.GameOver.RemoveListener(ShowGameOverMenu);
         }
     }
 }

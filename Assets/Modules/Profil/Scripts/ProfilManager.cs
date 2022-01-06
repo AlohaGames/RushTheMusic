@@ -12,30 +12,68 @@ namespace Aloha
         private List<Profil> profils;
         public Profil CurrentProfil;
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public ProfilManager()
         {
             this.profils = new List<Profil>();
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         private string getProfilDir()
         {
+            // Linux : ~/.config/unity3d/AlohaGames/RushTheMusic/profils/
             return $"{Application.persistentDataPath}/profils";
         }
 
-        // Save current profile to disk
+        /// <summary>
+        /// Save current profile to disk
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SaveCurrentProfil()
         {
             SaveProfil(CurrentProfil);
         }
 
-        // Create a new profile
+        /// <summary>
+        /// Create a new profile
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void CreateProfil(Profil profil)
         {
             this.CurrentProfil = profil;
             SaveCurrentProfil();
         }
 
-        // Save a profile to disk
+        /// <summary>
+        /// Save a profile to disk
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void SaveProfil(Profil profil)
         {
             string profilFileName = $"{profil.Name}.xml";
@@ -46,7 +84,14 @@ namespace Aloha
             }
         }
 
-        // Delete a profile
+        /// <summary>
+        /// Delete a profile
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void DeleteProfil(Profil profil)
         {
             string profilFileName = $"{profil.Name}.xml";
@@ -64,7 +109,14 @@ namespace Aloha
 
         }
 
-        // Load profile from disk
+        /// <summary>
+        /// Load profile from disk
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public Profil LoadProfilFile(string filepath)
         {
             Profil profil;
@@ -77,7 +129,14 @@ namespace Aloha
             return profil;
         }
 
-        // Load all profiles from disk
+        /// <summary>
+        /// Load all profiles from disk
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public void LoadProfiles()
         {
             // Clear list of profiles before load them
@@ -95,11 +154,27 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public Profil GetCurrentProfil()
         {
             return CurrentProfil;
         }
 
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO
+        /// </code>
+        /// </example>
+        /// </summary>
         public List<Profil> GetAllProfils()
         {
             return profils;

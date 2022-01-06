@@ -65,7 +65,12 @@ namespace Aloha.Events
         public static GameObjectEvent TileCount = new GameObjectEvent();
 
         /// <summary>
-        /// TODO
+        /// Invoke when a game is finished
+        /// </summary>
+        public static UnityEvent GameStop = new UnityEvent();
+
+        /// <summary>
+        /// Invoke when a level is finished
         /// </summary>
         public static UnityEvent LevelStop = new UnityEvent();
 

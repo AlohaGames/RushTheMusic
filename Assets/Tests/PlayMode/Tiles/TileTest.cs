@@ -80,7 +80,7 @@ namespace Aloha.Test
             Assert.IsTrue(firstTile == null, "Is the first tile deleted when it's behind the player ?");
             Assert.AreNotSame(lastTile, tilesManager.GetActiveTileById(tilesManager.NumberOfTiles - 1), "Does a new tile appear ?");
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
 
             // Clear the scene
@@ -108,11 +108,11 @@ namespace Aloha.Test
             yield return null;
             Assert.IsTrue(tilesManager.GameIsStarted, "Is the game started ?");
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
             Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
             Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 

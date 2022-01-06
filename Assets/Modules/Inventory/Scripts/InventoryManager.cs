@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -12,6 +13,14 @@ namespace Aloha
     {
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
+
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
+        {
+            GlobalEvent.GameStop.AddListener(Reset);
+        }
 
         /// <summary>
         /// Add an item to the inventory, if the inventory is full, the new item will be dropped
@@ -81,6 +90,22 @@ namespace Aloha
         public int GetMaxItems()
         {
             return this.maxItem;
+        }
+
+        /// <summary>
+        /// Reset the inventory
+        /// </summary>
+        public void Reset()
+        {
+            this.items.Clear();
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
 }

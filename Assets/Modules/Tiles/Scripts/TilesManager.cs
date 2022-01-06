@@ -34,6 +34,7 @@ namespace Aloha
         void Awake()
         {
             GlobalEvent.LevelStart.AddListener(StartGame);
+            GlobalEvent.GameStop.AddListener(Reset);
         }
 
         /// <summary>
@@ -84,28 +85,6 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
-        /// </returns>
-        public void StopGame()
-        {
-            if (!GameIsStarted)
-                return;
-
-            GameIsStarted = false;
-            activeTiles.Clear();
-            Destroy(tilesContainer);
-            GlobalEvent.LevelStop.Invoke();
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <returns>
         /// Return background position based on last tile
         /// </returns>
         public Vector3 getEndTilesPosition()
@@ -137,9 +116,7 @@ namespace Aloha
             {
                 Time.timeScale = 0f;
                 Cursor.visible = true;
-                GameManager.Instance.StopLevel();
-                UIManager.Instance.ShowEndGameUIElements();
-                AudioManager.Instance.StopMusic();
+                GameManager.Instance.FinishLevel();
             }
         }
 
@@ -172,7 +149,6 @@ namespace Aloha
         {
             this.TileSpeed = tileSpeed;
         }
-
 
         /// <summary>
         /// TODO
@@ -222,11 +198,25 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Reset the tiles
+        /// </summary>
+        public void Reset()
+        {
+            if (!GameIsStarted)
+                return;
+            GameIsStarted = false;
+            activeTiles.Clear();
+            Destroy(tilesContainer);
+            GlobalEvent.GameStop.Invoke();
+        }
+
+        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
         {
             GameObject.Destroy(tilesContainer);
+            GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace Aloha
             GlobalEvent.LevelStart.AddListener(StartMusic);
             GlobalEvent.Pause.AddListener(PauseMusic);
             GlobalEvent.Resume.AddListener(ResumeMusic);
-            GlobalEvent.LevelStop.AddListener(StopMusic);
+            GlobalEvent.GameStop.AddListener(StopMusic);
         }
 
         public void Update() {
@@ -98,6 +98,17 @@ namespace Aloha
             audioSource.Stop();
             shouldBePlaying = false;
             Debug.Log($"Stop music");
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.LevelStart.RemoveListener(StartMusic);
+            GlobalEvent.Pause.RemoveListener(PauseMusic);
+            GlobalEvent.Resume.RemoveListener(ResumeMusic);
+            GlobalEvent.GameStop.RemoveListener(StopMusic);
         }
     }
 }
