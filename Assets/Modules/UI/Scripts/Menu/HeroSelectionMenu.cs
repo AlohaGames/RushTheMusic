@@ -7,7 +7,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the hero invoker button
     /// </summary>
     [RequireComponent(typeof(Button))]
     public class HeroSelectionMenu : MonoBehaviour
@@ -24,7 +24,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Event called when the user click on the button
+        /// Called when user click on the button
+        /// <example> Example(s):
+        /// <code>
+        ///     GetComponent<Button>().onClick.AddListener(OnClick);
+        /// </code>
+        /// </example>
         /// </summary>
         public void OnClick()
         {

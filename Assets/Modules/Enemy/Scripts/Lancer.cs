@@ -7,7 +7,7 @@ using Aloha.EntityStats;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the default lancer
     /// </summary>
     public class Lancer : Enemy<LancerStats>
     {

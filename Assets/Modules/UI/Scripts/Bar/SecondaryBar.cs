@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the secondary bar
     /// </summary>
     public class SecondaryBar : HorizontalBar
     {

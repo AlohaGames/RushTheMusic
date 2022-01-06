@@ -5,12 +5,10 @@ using UnityEngine.TestTools;
 using System;
 using System.Collections.Generic;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// Class for tile test
     /// </summary>
     public class TileTest
     {

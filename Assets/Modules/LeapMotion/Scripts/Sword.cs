@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the warrior's sword
     /// </summary>
     public class Sword : MonoBehaviour
     {

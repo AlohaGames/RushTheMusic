@@ -6,17 +6,17 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// TODO
+/// Class for the main menu UI
 /// </summary>
 public class OldMainMenu : MonoBehaviour
 {
     public int SceneIdToLoad = 1;
 
     /// <summary>
-    /// TODO
+    /// Load a game
     /// <example> Example(s):
     /// <code>
-    /// TODO
+    ///     mn.LoadGame();
     /// </code>
     /// </example>
     /// </summary>
@@ -26,10 +26,10 @@ public class OldMainMenu : MonoBehaviour
     }
 
     /// <summary>
-    /// TODO
+    /// Quit the application
     /// <example> Example(s):
     /// <code>
-    /// TODO
+    ///     mn.Quit();
     /// </code>
     /// </example>
     /// </summary>
