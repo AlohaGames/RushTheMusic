@@ -13,6 +13,8 @@
 /[Uu]ser[Ss]ettings
 /[Cc]ode[Cc]overage
 
+!/[Dd]ocs/Doxyfile
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 !/[Aa]ssets/**/*.meta
 
