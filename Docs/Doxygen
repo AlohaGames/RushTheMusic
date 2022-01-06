@@ -44,21 +44,21 @@ PROJECT_NUMBER         = 0.3
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          =
+PROJECT_BRIEF          = Music Game - Using Leap Motion
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           =
+PROJECT_LOGO           = ./Assets/Logo/Icon.png
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
 # entered, it will be relative to the location where doxygen was started. If
 # left blank the current directory will be used.
 
-OUTPUT_DIRECTORY       = /home/dbricaud/Documents/Unity/RushTheMusic/Docs
+OUTPUT_DIRECTORY       = ./Docs
 
 # If the CREATE_SUBDIRS tag is set to YES then doxygen will create 4096 sub-
 # directories (in 2 levels) under the output directory of each output format and
@@ -91,7 +91,7 @@ ALLOW_UNICODE_NAMES    = NO
 # Ukrainian and Vietnamese.
 # The default value is: English.
 
-OUTPUT_LANGUAGE        = French
+OUTPUT_LANGUAGE        = English
 
 # If the BRIEF_MEMBER_DESC tag is set to YES, doxygen will include brief member
 # descriptions after the members that are listed in the file and class
@@ -197,7 +197,7 @@ JAVADOC_AUTOBRIEF      = YES
 # interpreted by doxygen.
 # The default value is: NO.
 
-JAVADOC_BANNER         = NO
+JAVADOC_BANNER         = YES
 
 # If the QT_AUTOBRIEF tag is set to YES then doxygen will interpret the first
 # line (until the first dot) of a Qt-style comment as the brief description. If
@@ -2512,7 +2512,7 @@ DIR_GRAPH_MAX_DEPTH    = 1
 # The default value is: png.
 # This tag requires that the tag HAVE_DOT is set to YES.
 
-DOT_IMAGE_FORMAT       = png
+DOT_IMAGE_FORMAT       = svg
 
 # If DOT_IMAGE_FORMAT is set to svg, then this option can be set to YES to
 # enable generation of interactive SVG images that allow zooming and panning.
