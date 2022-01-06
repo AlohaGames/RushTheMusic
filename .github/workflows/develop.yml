@@ -84,7 +84,7 @@ jobs:
           path: Docs/html
 
   deployPages:
-    needs: generateDocumentation
+    needs: [generateDocumentation, testRunner]
     name: 🚀 Deploy to Github Pages
     runs-on: ubuntu-latest
     steps:
