@@ -94,12 +94,13 @@ namespace Aloha.Test
             wStats.Defense = 0;
             wStats.XP = 0;
             warrior.Init(wStats);
-            GameManager.Instance.SetHero(warrior);
+            wyrmling.Hero = warrior;
             yield return null;
 
             // Instance fireball
             wyrmling.InstantiateFireball();
             yield return null;
+
             wyrmling.LaunchFireball(0.5f);
 
             // Check if fireball was instantiated
