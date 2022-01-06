@@ -1428,6 +1428,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 7031366254549557953, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_Color.b
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7031366254549557953, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431185326828938899, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431185326828938899, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: Color.b
+      value: 0.93333334
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431185326828938899, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431185326828938899, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769332619011299929, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769332619011299929, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769332619011299929, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769332619011299929, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8671487395231064468, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_Color.b
       value: 0

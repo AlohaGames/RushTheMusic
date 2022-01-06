@@ -77,7 +77,7 @@ namespace Aloha
         /// <param name="stats"></param>
         public virtual void Init(Stats stats)
         {
-            this.stats = stats;
+            this.stats = Instantiate(stats);
             this.CurrentHealth = this.stats.MaxHealth;
         }
 
@@ -110,6 +110,7 @@ namespace Aloha
             if (!isHitted)
             {
                 CurrentHealth = CurrentHealth - damage;
+                DynamicTextManager.Instance.Show(gameObject, "-" + damage + " HP", Color.red, 1);
             }
 
             if (damage > 0)

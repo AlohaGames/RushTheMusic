@@ -9,5 +9,6 @@ namespace Aloha
     public class HeroStats : Stats
     {
         public int XP;
+        public int MaxXP;
     }
 }
