@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   profilUIPrefab: {fileID: -730117425153319749, guid: 259f9f7ad06e9d445a871bc8f126dcf9, type: 3}
   noProfilUIPrefab: {fileID: 9079127556186977772, guid: 18d018e15c03f9f40876d42f3b2ed451, type: 3}
-  profilesGridLayout: {fileID: 1047409416505473447}
+  ProfilesGridLayout: {fileID: 1047409416505473447}
   MenuRoot: {fileID: 0}
 --- !u!1 &4814311671973733548
 GameObject:

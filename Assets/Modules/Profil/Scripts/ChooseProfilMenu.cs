@@ -15,7 +15,7 @@ namespace Aloha
         [SerializeField]
         private NoProfilPickerUI noProfilUIPrefab;
 
-        public GridLayoutGroup profilesGridLayout;
+        public GridLayoutGroup ProfilesGridLayout;
         public MenuRoot MenuRoot;
 
         protected override void Awake()
@@ -25,7 +25,7 @@ namespace Aloha
 
         public void ClearProfiles()
         {
-            foreach (Transform child in profilesGridLayout.transform)
+            foreach (Transform child in ProfilesGridLayout.transform)
             {
                 GameObject.Destroy(child.gameObject);
             }
@@ -45,14 +45,14 @@ namespace Aloha
                     ProfilPickerUI pmi = Instantiate(profilUIPrefab);
                     pmi.profil = profils[i];
                     pmi.MenuRoot = MenuRoot;
-                    pmi.transform.SetParent(profilesGridLayout.transform);
+                    pmi.transform.SetParent(ProfilesGridLayout.transform);
                     pmi.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 }
                 else
                 {
                     NoProfilPickerUI noProfil = Instantiate(noProfilUIPrefab);
                     noProfil.MenuRoot = MenuRoot;
-                    noProfil.transform.SetParent(profilesGridLayout.transform);
+                    noProfil.transform.SetParent(ProfilesGridLayout.transform);
                     noProfil.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 }
             }
