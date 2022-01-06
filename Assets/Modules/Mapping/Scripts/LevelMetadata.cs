@@ -13,6 +13,8 @@ namespace Aloha
         public string LevelName;
         public string MusicFilePath;
         public string MappingFilePath;
+        public string Description;
+        public bool IsTuto;
 
         /// <summary>
         /// TODO
@@ -28,6 +30,8 @@ namespace Aloha
             this.LevelName = "Unknown";
             this.MusicFilePath = "music.mp3";
             this.MappingFilePath = "mapping.xml";
+            this.Description = "Unknown";
+            this.IsTuto = false;
         }
 
         /// <summary>
@@ -38,16 +42,20 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="author"></param>
-        /// <param name="musicFilePath"></param>
-        /// <param name="mappingFilePath"></param>
-        /// <param name="levelName"></param>
-        public LevelMetadata(string author, string musicFilePath, string mappingFilePath, string levelName)
+        /// <param name="author">Author of the map</param>
+        /// <param name="musicFilePath">Path to access to the music</param>
+        /// <param name="mappingFilePath">Path to access to the level mapping</param>
+        /// <param name="levelName">Name of the level</param>
+        /// <param name="description">Description of the level</param>
+        /// <param name="isTuto">Define if the level is a tuturial created by @AlohaGames. If true, the level is readOnly</param>
+        public LevelMetadata(string author, string musicFilePath, string mappingFilePath, string levelName, string description, bool isTuto)
         {
             this.Author = author;
             this.MusicFilePath = musicFilePath;
             this.MappingFilePath = mappingFilePath;
             this.LevelName = levelName;
+            this.Description = description;
+            this.IsTuto = isTuto;
         }
     }
 }
