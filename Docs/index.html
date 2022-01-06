@@ -1,27 +1,75 @@
 <html>
+  <head>
+    <title>Rush The Music</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
   <style>
     body {
-      max-width: 50vw;
-      margin: auto;
+      margin: 0px;
+      overflow: hidden;
+      background-color: red;
     }
-    h1,
-    p {
-      text-align: center;
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+    video {
+      position: absolute;
+      width: 100%;
+      min-height: 100vh;
+      z-index: -9999;
+    }
+    .content {
+      padding: 3vh;
+      border-radius: 1vh;
+      background-color: white;
+    }
+    .link-container {
+      display: flex;
+      flex-direction: row;
+      gap: 3vw;
     }
     .link {
       flex: 1;
+      padding: 3vh;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 1vh;
+      text-align: center;
+    }
+    .github {
       text-align: center;
     }
   </style>
   <body>
-    <h1>Rush The Music</h1>
-    <p>Welcome to Rush The Music.</p>
-    <div style="display: flex; flex-direction: row">
-      <div class="link">
-        <a href="/RushTheMusic/doc">Documentation</a>
-      </div>
-      <div class="link">
-        <a href="/RushTheMusic/coverage-results">Code Coverage</a>
+    <video
+      src="http://techslides.com/demos/sample-videos/small.mp4"
+      muted
+      loop
+      autoplay
+    ></video>
+    <div class="container">
+      <div class="content">
+        <small>Welcome to</small>
+        <h1>Rush The Music</h1>
+        <div class="link-container">
+          <div class="link">
+            <a href="/RushTheMusic/doc">Documentation</a>
+          </div>
+          <div class="link">
+            <a href="/RushTheMusic/coverage-results">Code Coverage</a>
+          </div>
+        </div>
+        <p>
+          Rush The Music is a game based around music where you have to save
+          your dear princess.
+        </p>
+        <div class="github">
+          <a href="https://github.com/AlohaGames/RushTheMusic">Github</a>
+        </div>
       </div>
     </div>
   </body>
