@@ -21,7 +21,10 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            Warrior = GameManager.Instance.GetHero() as Warrior;
+            if (!Warrior)
+            {
+                Warrior = GameManager.Instance.GetHero() as Warrior;
+            }
             presPos = transform.position;
             newPos = transform.position;
         }
@@ -42,7 +45,7 @@ namespace Aloha
         /// <param name="other">other collider</param>
         public void OnTriggerEnter(Collider other)
         {
-            bool leapActivated = GameManager.Instance.LeapMode;
+            bool leapActivated = GameManager.Instance ? GameManager.Instance.LeapMode : true;
             if (other.tag == "Enemy" && ((!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
                 Debug.Log(Speed);
