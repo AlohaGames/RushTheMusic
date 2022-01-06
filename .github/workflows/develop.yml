@@ -104,8 +104,8 @@ jobs:
       - name: Build static website
         run: |
           mkdir gh-pages
-          cp doc gh-pages/doc
-          cp coverage-results gh-pages/coverage-results
+          cp -r doc gh-pages/doc
+          cp -r coverage-results gh-pages/coverage-results
           cp Docs/index.html gh-pages/index.html
 
       - name: Deploy 🚀
