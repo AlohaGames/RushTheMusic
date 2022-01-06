@@ -66,9 +66,26 @@ jobs:
           name: Coverage Results
           path: coverage-results/Report
 
+  generateDocumentation:
+    needs: checkLicense
+    name: Generate documentation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - uses: mattnotmitt/doxygen-action@v1
+        with:
+          doxyfile-path: 'Docs/Doxyfile'
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Documentation
+          path: Docs/html
+
   deployPages:
-    needs: testRunner
-    name: 🚀 Deploy to Github Pages 
+    needs: generateDocumentation
+    name: 🚀 Deploy to Github Pages
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -79,15 +96,23 @@ jobs:
           name: Coverage Results
           path: coverage-results
 
-      - name: Display structure of root files
-        run: ls -R
-        working-directory: coverage-results
+      - uses: actions/download-artifact@v2
+        with:
+          name: Documentation
+          path: doc
+
+      - name: Build static website
+        run: |
+          mkdir gh-pages
+          cp doc gh-pages/doc
+          cp coverage-results gh-pages/coverage-results
+          cp Docs/index.html gh-pages/index.html
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
           branch: gh-pages
-          folder: coverage-results
+          folder: gh-pages
 
 #  buildWindows:
 #    needs: testRunner
