@@ -11,10 +11,12 @@ namespace Aloha
     public class ContainerManager : Singleton<ContainerManager>
     {
 
+        private GameObject containerOfContainers;
         private Dictionary<string, GameObject> containers;
 
         void Awake()
         {
+            containerOfContainers = new GameObject("containers");
             containers = new Dictionary<string, GameObject>();
         }
 
@@ -27,7 +29,9 @@ namespace Aloha
         {
             if (!containers.ContainsKey(containerName))
             {
-                containers.Add(containerName, new GameObject(containerName + "Container"));
+                GameObject newContainer = new GameObject(containerName + "Container");
+                newContainer.transform.SetParent(containerOfContainers.transform);
+                containers.Add(containerName, newContainer);
             }
 
             GameObject container = containers[containerName];

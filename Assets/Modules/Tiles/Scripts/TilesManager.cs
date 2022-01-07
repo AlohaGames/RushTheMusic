@@ -11,11 +11,11 @@ namespace Aloha
     {
         [HideInInspector] public bool gameIsStarted;
         private List<GameObject> activeTiles = new List<GameObject>();
-        private GameObject tilesContainer;
         private GameObject[] tilePrefabs;
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
+        private string containerName = "tile";
 
         [HideInInspector]
         public bool GameIsStarted;
@@ -66,7 +66,6 @@ namespace Aloha
             if (GameIsStarted)
                 return;
 
-            tilesContainer = new GameObject("TilesContainer");
             this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
             GameIsStarted = true;
@@ -107,7 +106,8 @@ namespace Aloha
                 SpawnTileAt(tileIndex, 0);
                 return;
             }
-            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, tilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation);
+            ContainerManager.Instance.AddToContainer(containerName, tile);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);
             GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
@@ -132,7 +132,8 @@ namespace Aloha
         /// <param name="position"></param>
         public void SpawnTileAt(int tileIndex, int position)
         {
-            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation, tilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation);
+            ContainerManager.Instance.AddToContainer(containerName, tile);
             activeTiles.Add(tile);
         }
 
@@ -206,7 +207,7 @@ namespace Aloha
                 return;
             GameIsStarted = false;
             activeTiles.Clear();
-            Destroy(tilesContainer);
+            ContainerManager.Instance.ClearContainer(containerName);
             GlobalEvent.GameStop.Invoke();
         }
 
@@ -215,7 +216,7 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
-            GameObject.Destroy(tilesContainer);
+            ContainerManager.Instance.ClearContainer(containerName);
             GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
