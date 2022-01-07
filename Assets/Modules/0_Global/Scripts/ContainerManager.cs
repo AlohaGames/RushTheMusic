@@ -5,6 +5,16 @@ using Aloha.Events;
 
 namespace Aloha
 {
+
+    static class ContainerTypes
+    {
+        public const string Tile = "tile";
+        public const string Projectile = "projectile";
+        public const string Enemy = "enemy";
+        public const string Environment = "environment";
+        public const string Item = "item";
+    }
+
     /// <summary>
     /// Singleton that manage containers in scenes
     /// </summary>

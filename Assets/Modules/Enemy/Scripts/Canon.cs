@@ -75,6 +75,7 @@ namespace Aloha
 
             // Spawn canonball
             CanonBall canonball = Instantiate(CanonballPrefab, canonballPos, Quaternion.identity);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, canonball.gameObject);
             canonball.AssociatedEnemy = this;
 
             // Launch canonball to the hero

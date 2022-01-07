@@ -15,7 +15,6 @@ namespace Aloha
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
-        private string containerName = "tile";
 
         [HideInInspector]
         public bool GameIsStarted;
@@ -107,7 +106,7 @@ namespace Aloha
                 return;
             }
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation);
-            ContainerManager.Instance.AddToContainer(containerName, tile);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Tile, tile);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);
             GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
@@ -133,7 +132,7 @@ namespace Aloha
         public void SpawnTileAt(int tileIndex, int position)
         {
             GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation);
-            ContainerManager.Instance.AddToContainer(containerName, tile);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Tile, tile);
             activeTiles.Add(tile);
         }
 
@@ -207,7 +206,7 @@ namespace Aloha
                 return;
             GameIsStarted = false;
             activeTiles.Clear();
-            ContainerManager.Instance.ClearContainer(containerName);
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
             GlobalEvent.GameStop.Invoke();
         }
 
@@ -216,7 +215,7 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
-            ContainerManager.Instance.ClearContainer(containerName);
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
             GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }

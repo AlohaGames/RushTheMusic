@@ -26,7 +26,6 @@ namespace Aloha
         [SerializeField]
         private Hashtable biometable = new Hashtable();
         private Biome currentBiome;
-        private string containerName = "sideEnv";
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -46,7 +45,7 @@ namespace Aloha
 
         public void LevelStop()
         {
-            ContainerManager.Instance.ClearContainer(containerName);
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Environment);
         }
 
         /// <summary>
@@ -84,7 +83,7 @@ namespace Aloha
             castleHillGo.transform.position = bgPos;
 
             // Add castle to env
-            ContainerManager.Instance.AddToContainer(containerName, castleHillGo);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Environment, castleHillGo);
         }
 
         /// <summary>
