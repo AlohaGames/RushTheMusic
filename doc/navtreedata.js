@@ -55,7 +55,7 @@ var NAVTREEINDEX =
 "d4/d14/class_aloha_1_1_hero_selection_menu.html",
 "d7/d3d/class_aloha_1_1_score_manager.html#a84c553843c94810cff289cfcfd0c610d",
 "db/dd9/class_aloha_1_1_wizard.html#a94aea94e0554c84e7753bac36face569",
-"dir_eea61e29c0f509c57a1d02888193f70c.html"
+"dir_efe0d32f9fe97987a4c8866a6df4195a.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
