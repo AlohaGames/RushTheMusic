@@ -1470,7 +1470,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c6b2234e71e07498fb00ba9748e715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 1, b: 1, a: 0}
+  Color: {r: 0, g: 1, b: 1, a: 1}
   levelText: {fileID: 1093264419926711727}
 --- !u!1 &5072373197076456353
 GameObject:
