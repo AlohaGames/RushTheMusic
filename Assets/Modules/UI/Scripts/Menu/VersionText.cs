@@ -3,12 +3,17 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
-    public class VersionText : Text
+    /// <summary>
+    /// Manage the text displaying the version
+    /// </summary>
+    public class VersionText : MonoBehaviour
     {
-        // Start is called before the first frame update
-        protected override void Start()
+        /// <summary>
+        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// </summary>
+        void Start()
         {
-            this.text = Application.version;
+            this.gameObject.GetComponent<Text>().text = Application.version;
         }
     }
 }
