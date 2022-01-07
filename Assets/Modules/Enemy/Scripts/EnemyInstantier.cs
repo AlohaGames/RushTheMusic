@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -10,6 +11,7 @@ namespace Aloha
     {
         [SerializeField]
         private List<GameObject> enemyPrefabs = new List<GameObject>();
+        private GameObject enemiesContainer;
 
         /// <summary>
         /// This function instantiate an enemy with an ID
@@ -20,7 +22,11 @@ namespace Aloha
         /// </returns>
         GameObject InstantiateEnemy(int id)
         {
-            GameObject instance = Instantiate(enemyPrefabs[id]);
+            if(enemiesContainer == null) {
+                enemiesContainer = new GameObject("EnemiesContainer");
+            }
+            
+            GameObject instance = Instantiate(enemyPrefabs[id], enemiesContainer.transform);
             Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
             return instance;
@@ -41,6 +47,15 @@ namespace Aloha
         public GameObject InstantiateEnemy(EnemyType type)
         {
             return InstantiateEnemy((int) type);
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            //GlobalEvent.LevelStart.RemoveListener(InitEnemiesContainer);
+            GameObject.Destroy(enemiesContainer);
         }
     }
 

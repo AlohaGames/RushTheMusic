@@ -18,18 +18,13 @@ namespace Aloha
         {
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
-            GlobalEvent.GameStop.AddListener(ResetCount);
+            GlobalEvent.GameStop.AddListener(Reset);
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
+        /// Reset the enemy spawner
         /// </summary>
-        public void ResetCount()
+        public void Reset()
         {
             TilesCounter = 0;
             Debug.Log($"Reset tiles count to {TilesCounter}");
@@ -78,7 +73,7 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
-            GlobalEvent.GameStop.RemoveListener(ResetCount);
+            GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
 }

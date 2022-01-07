@@ -21,7 +21,7 @@ namespace Aloha
         void Awake()
         {
             // Create audio source
-            audioSourceGO = new GameObject();
+            audioSourceGO = new GameObject("Audio Source");
             audioSource = audioSourceGO.AddComponent<AudioSource>();
 
             // Listen to events
