@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>01/07/2022 - 20:07:29</Generatedon>
+    <Generatedon>01/07/2022 - 21:47:16</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>1</Assemblies>
     <Classes>64</Classes>
     <Files>61</Files>
-    <Coveredlines>1032</Coveredlines>
-    <Uncoveredlines>624</Uncoveredlines>
+    <Coveredlines>1033</Coveredlines>
+    <Uncoveredlines>623</Uncoveredlines>
     <Coverablelines>1656</Coverablelines>
     <Totallines>5281</Totallines>
     <Linecoverage>62.3</Linecoverage>
@@ -18,7 +18,7 @@
     <Methodcoverage>70.1</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="64" coverage="62.3" coveredlines="1032" coverablelines="1656" totallines="5712" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="188" totalmethods="268" methodcoverage="70.1">
+    <Assembly name="Aloha" classes="64" coverage="62.3" coveredlines="1033" coverablelines="1656" totallines="5712" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="188" totalmethods="268" methodcoverage="70.1">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="8" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="Aloha.Assassin" coverage="85.7" coveredlines="6" coverablelines="7" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="Aloha.AudioManager" coverage="47.2" coveredlines="17" coverablelines="36" totallines="103" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="7" methodcoverage="57.1" />
@@ -37,7 +37,7 @@
       <Class name="Aloha.EnemyInstantier" coverage="100" coveredlines="10" coverablelines="10" totallines="106" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
       <Class name="Aloha.EnemyMapping" coverage="90" coveredlines="36" coverablelines="40" totallines="120" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
       <Class name="Aloha.EnemySpawner" coverage="51.1" coveredlines="23" coverablelines="45" totallines="104" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="7" methodcoverage="71.4" />
-      <Class name="Aloha.Entity" coverage="96.3" coveredlines="79" coverablelines="82" totallines="216" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="10" totalmethods="10" methodcoverage="100" />
+      <Class name="Aloha.Entity" coverage="97.5" coveredlines="80" coverablelines="82" totallines="216" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="10" totalmethods="10" methodcoverage="100" />
       <Class name="Aloha.Events.GlobalEvent" coverage="100" coveredlines="18" coverablelines="18" totallines="110" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="Aloha.ExperiencePotion" coverage="0" coveredlines="0" coverablelines="4" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
       <Class name="Aloha.Fireball" coverage="100" coveredlines="15" coverablelines="15" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
