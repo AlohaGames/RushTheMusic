@@ -56,6 +56,7 @@ namespace Aloha
                 item.Effect();
             }
             UIManager.Instance.UIInventory.UpdateInventoryUI();
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
         }
 
         /// <summary>

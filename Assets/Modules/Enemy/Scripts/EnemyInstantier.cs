@@ -11,7 +11,6 @@ namespace Aloha
     {
         [SerializeField]
         private List<GameObject> enemyPrefabs = new List<GameObject>();
-        private GameObject enemiesContainer;
 
         /// <summary>
         /// This function instantiate an enemy with an ID
@@ -21,12 +20,9 @@ namespace Aloha
         /// A GameObject instance of enemy prefab
         /// </returns>
         GameObject InstantiateEnemy(int id)
-        {
-            if(enemiesContainer == null) 
-            {
-                enemiesContainer = new GameObject("EnemiesContainer");
-            }        
-            GameObject instance = Instantiate(enemyPrefabs[id], enemiesContainer.transform);
+        {       
+            GameObject instance = Instantiate(enemyPrefabs[id]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Enemy, instance);
             Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
             return instance;
@@ -54,7 +50,7 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
-            GameObject.Destroy(enemiesContainer);
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Enemy);
         }
     }
 
