@@ -13,7 +13,7 @@ namespace Aloha.UI
         /// </summary>
         void Start()
         {
-            this.gameObject.GetComponent<Text>().text = Application.version;
+            this.gameObject.GetComponent<Text>().text = "v{}" + Application.version;
         }
     }
 }
