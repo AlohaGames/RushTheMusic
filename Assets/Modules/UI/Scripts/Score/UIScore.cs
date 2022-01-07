@@ -4,7 +4,7 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the score UI
     /// </summary>
     public class UIScore : MonoBehaviour
     {
@@ -18,10 +18,10 @@ namespace Aloha
         public Text HitScoreText;
 
         /// <summary>
-        /// TODO
+        /// Method to show UI score elements in game
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     UIScore.ShowInGameUIScoreElements();
         /// </code>
         /// </example>
         /// </summary>
@@ -32,10 +32,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Update text of the score UI text
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     ScoreUI?.UpdateUIText();
         /// </code>
         /// </example>
         /// </summary>
@@ -45,10 +45,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Show UI score elements when game's end
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     UIScore.ShowEndGameUIScoreElements();
         /// </code>
         /// </example>
         /// </summary>

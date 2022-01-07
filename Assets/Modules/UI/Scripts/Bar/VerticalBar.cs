@@ -4,12 +4,12 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the vertical bar
     /// </summary>
     public class VerticalBar : Bar
     {
         /// <summary>
-        /// TODO
+        /// Update the UI of the bar
         /// <example> Example(s):
         /// <code>
         /// </code>

@@ -24,7 +24,8 @@ namespace Aloha.Test
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
@@ -37,15 +38,16 @@ namespace Aloha.Test
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             HeroInstantier.Instance.InstantiateHero(HeroType.Warrior);
             Hero hero = GameManager.Instance.GetHero();
-           
+
             Assert.IsTrue(hero != null);
             Assert.IsTrue(hero is Warrior);
             Assert.IsTrue(hero.GetStats() != null);
             Assert.IsTrue(hero.GetStats() is WarriorStats);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
-       
+
 
         /// <summary>
         /// Test the amount of damage taken by hero
@@ -56,7 +58,7 @@ namespace Aloha.Test
             //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 10;
@@ -74,13 +76,13 @@ namespace Aloha.Test
             yield return null;
 
             //Test calcul damage reduction 
-            stats.Defense = 50;
+            warrior.GetStats().Defense = 50;
             float damageReduction = warrior.CalculateDamageReduction();
             Assert.IsTrue(Utils.IsEqualFloat(damageReduction, 0.714f, 0.001f));
 
             //Test with defense = 0
-            stats.Defense = 0;
-            stats.MaxHealth = 10;
+            warrior.GetStats().Defense = 0;
+            warrior.GetStats().MaxHealth = 10;
             Debug.Log("Hero life: " + warrior.CurrentHealth);
             Debug.Log("Hero defense: " + stats.Defense);
             warrior.TakeDamage(5);
@@ -93,7 +95,7 @@ namespace Aloha.Test
             yield return null;
 
             //Test with defense = 100
-            stats.Defense = 100;
+            warrior.GetStats().Defense = 100;
             warrior.CurrentHealth = 50;
             Debug.Log("Hero life: " + warrior.CurrentHealth);
             Debug.Log("Hero defense: " + stats.Defense);
@@ -104,8 +106,9 @@ namespace Aloha.Test
             warrior.TakeDamage(60);
             Assert.AreEqual(7, warrior.CurrentHealth);
 
-            //Destroy all GameObjects
-            Aloha.Utils.ClearCurrentScene();
+            // Clear the scene
+            Utils.ClearCurrentScene();
+            yield return null;
         }
 
         /// <summary>
@@ -117,7 +120,7 @@ namespace Aloha.Test
             //Instantiate a hero and his stats
             GameObject warriorGO = new GameObject();
             Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats stats = (WarriorStats) ScriptableObject.CreateInstance("WarriorStats");
+            WarriorStats stats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
             stats.MaxRage = 10;
             stats.MaxHealth = 10;
             stats.Attack = 10;
@@ -128,7 +131,7 @@ namespace Aloha.Test
             //Instantiate an enemi and his stats
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats enemyStats = (EnemyStats) ScriptableObject.CreateInstance("EnemyStats");
+            EnemyStats enemyStats = (EnemyStats)ScriptableObject.CreateInstance("EnemyStats");
             enemyStats.MaxHealth = 100;
             enemy.Init(enemyStats);
 
@@ -136,7 +139,8 @@ namespace Aloha.Test
             warrior.Attack(enemy);
             Assert.IsTrue(enemy.CurrentHealth < enemy.GetStats().MaxHealth);
 
-            Aloha.Utils.ClearCurrentScene(true);
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

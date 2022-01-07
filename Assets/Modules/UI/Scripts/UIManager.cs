@@ -13,6 +13,7 @@ namespace Aloha
     {
         public Bar HealthBar;
         public Bar SecondaryBar;
+        public Bar ExpBar;
         public Bar LevelProgressBar;
         public UIInventory UIInventory;
         public UIScore UIScore;
@@ -37,6 +38,7 @@ namespace Aloha
         {
             HealthBar.gameObject.SetActive(true);
             SecondaryBar.gameObject.SetActive(true);
+            ExpBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
             UIScore.ShowInGameUIScoreElements();
             UIInventory.ShowInGameInventory();
@@ -53,6 +55,7 @@ namespace Aloha
                 Wizard wizard = hero as Wizard;
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
             }
+            GlobalEvent.OnExperienceUpdate.Invoke(hero.GetStats().Level, hero.GetStats().XP, hero.GetStats().MaxXP);
             GlobalEvent.OnProgressionUpdate.Invoke(0, LevelManager.Instance.LevelMapping.TileCount);
         }
 

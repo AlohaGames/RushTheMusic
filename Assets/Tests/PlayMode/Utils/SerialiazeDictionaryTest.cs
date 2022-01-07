@@ -1,17 +1,15 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// Class to test serialiezd dictionnary
     /// </summary>
     public class SerialiazeDictionaryTest
     {
         /// <summary>
-        /// TODO
+        /// Create a default dictionnary for tests
         /// </summary>
         public SerializeDictionary<int, string> GetHelloWorldDictionary()
         {
@@ -30,7 +28,7 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Test the constructor of the dictionnary
         /// </summary>
         [Test]
         public void SerialiazeDictionaryTestConstructor()
@@ -45,7 +43,7 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Check get function of a dictionnary
         /// </summary>
         [Test]
         public void SerialiazeDictionaryTestGetValue()
@@ -56,7 +54,7 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Check add function of the dictionnary
         /// </summary>
         [Test]
         public void SerialiazeDictionaryTestAdd()

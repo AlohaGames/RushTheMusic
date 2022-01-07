@@ -5,7 +5,7 @@ using Aloha.EntityStats;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the default wyrmling
     /// </summary>
     public class Wyrmling : Enemy<WyrmlingStats>
     {
@@ -15,10 +15,26 @@ namespace Aloha
         private WyrmlingFireball fireball;
 
         /// <summary>
-        /// TODO
+        /// Get the wyrmling's fireball
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// wyrmling.GetWyrmlingFireball();
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// The wyrmling firebal as WyrmlingFireball object
+        /// </returns>
+        public WyrmlingFireball GetWyrmlingFireball()
+        {
+            return this.fireball as WyrmlingFireball;
+        }
+
+        /// <summary>
+        /// Bump the ennemy
+        /// <example> Example(s):
+        /// <code>
+        /// wyrmling.GetBump(new Vector(1.0f, 1.0f, 1.0f), 3);
         /// </code>
         /// </example>
         /// </summary>
@@ -61,8 +77,7 @@ namespace Aloha
         {
             if (this.fireball)
             {
-                Hero hero = GameManager.Instance.GetHero();
-                Vector3 dir = hero.transform.position - this.fireball.transform.position;
+                Vector3 dir = Hero.transform.position - this.fireball.transform.position;
                 dir.Normalize();
                 this.fireball.GetComponent<Rigidbody>().AddForce(dir * fireballSpeed, ForceMode.Impulse);
                 this.fireball = null;

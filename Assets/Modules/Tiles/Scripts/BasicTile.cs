@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for a basic tile
     /// </summary>
     public class BasicTile : MonoBehaviour
     {

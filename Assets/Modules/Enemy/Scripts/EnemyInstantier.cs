@@ -30,13 +30,13 @@ namespace Aloha
         /// This function instantiate an enemy with an enemy type.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// EnnemyInstancier.Instance.InstantiateEnemy(EnemyType.Wizard);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="type"></param>
         /// <returns>
-        /// TODO
+        /// Instantiated ennemy
         /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
@@ -78,5 +78,29 @@ namespace Aloha
         /// Chest
         /// </summary>
         chest = 5,
+
+        /// <summary>
+        /// FireLancer
+        /// </summary>
+        fireLancer = 6,
+
+        /// <summary>
+        /// IceLancer
+        /// </summary>
+        iceLancer = 7,
+
+        /// Fire Wyrmling (flying)
+        /// </summary>
+        fireWyrmling = 8,
+
+        /// <summary>
+        /// Ice Wyrmling (flying)
+        /// </summary>
+        iceWyrmling = 9,
+
+        /// <summary>
+        /// Canon
+        /// </summary>
+        canon = 10,
     }
 }

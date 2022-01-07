@@ -39,10 +39,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Start the music on the map
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LevelStart.AddListener(StartMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -56,10 +56,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Pause the music if playing
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Pause.AddListener(PauseMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -71,10 +71,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Resume music if was paused
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Resume.AddListener(ResumeMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -86,10 +86,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Stop the music of the map
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LevelStop.AddListener(StopMusic);
         /// </code>
         /// </example>
         /// </summary>

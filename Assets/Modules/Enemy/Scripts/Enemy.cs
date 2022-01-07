@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
+using Aloha.Events;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for an enemy with stats
     /// </summary>
     public class Enemy<T> : Enemy where T : EnemyStats
     {
@@ -16,15 +17,15 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Get stats from the ennemy
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     ennemy.GetStats();
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        /// Stats from the ennemy
         /// </returns>
         public new EnemyStats GetStats()
         {
@@ -43,6 +44,8 @@ namespace Aloha
         }
 
         protected bool AIActivated = false;
+
+        public Hero Hero;
 
         [HideInInspector]
         public UnityEvent NearHeroTrigger = new UnityEvent();
@@ -69,7 +72,34 @@ namespace Aloha
         /// </summary>
         void Awake()
         {
+            // If hero is not set manually, get it from manager
+            // Usefull for debug scenes
+            if (!this.Hero)
+            {
+                this.Hero = GameManager.Instance.GetHero();
+            }
+
             this.dieEvent.AddListener(Disappear);
+        }
+
+
+        /// <summary>
+        /// This function is called to give xp to the hero on enemy death
+        /// <example> Example(s):
+        /// <code>
+        ///     myEnemyType.gainXP(myHero);
+        /// </code>
+        /// </example>
+        /// </summary>
+        private void gainHeroXp(Hero hero)
+        {
+            int xpGain = 25;
+
+            // Hero get xp for each ennemy killed
+            hero.GainXp(xpGain);
+
+            // Show XP Text
+            DynamicTextManager.Instance.Show(gameObject, "+" + xpGain + " XP", Color.cyan);
         }
 
         /// <summary>
@@ -82,14 +112,20 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
+            Hero hero = GameManager.Instance.GetHero();
+            if (hero)
+            {
+                gainHeroXp(hero);
+            }
             base.Die();
         }
 
         /// <summary>
-        /// TODO
+        /// Destroy the ennemy without killing it.
+        /// It will not update player's score
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// ennemy.Disappear();
         /// </code>
         /// </example>
         /// </summary>

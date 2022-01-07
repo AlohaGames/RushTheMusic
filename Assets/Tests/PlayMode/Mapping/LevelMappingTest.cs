@@ -1,8 +1,6 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
@@ -12,7 +10,7 @@ namespace Aloha.Test
     {
 
         /// <summary>
-        /// TODO @Tristan
+        /// Creates a default level mapping
         /// </summary>
         LevelMapping[] GetLevelsMapping()
         {
@@ -39,7 +37,7 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Check if level mapping constructor works
         /// </summary>
         [Test]
         public void LevelMappingConstructorTest()
@@ -49,10 +47,13 @@ namespace Aloha.Test
 
             LevelMapping lm1 = GetLevelsMapping()[1];
             Assert.AreEqual(180, lm1.TileCount);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
 
         /// <summary>
-        /// TODO
+        /// Check if level mapping has correct enemies 
         /// </summary>
         [Test]
         public void LevelMappingGetEnemiesTest()
@@ -62,6 +63,9 @@ namespace Aloha.Test
 
             LevelMapping lm2 = GetLevelsMapping()[2];
             Assert.AreEqual(1, lm2.GetEnnemies(10).Count);
+
+            // Clear the scene
+            Utils.ClearCurrentScene(true);
         }
     }
 }

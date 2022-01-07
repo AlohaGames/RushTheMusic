@@ -44,6 +44,18 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
+        {
+            // Kill the chest if it goes behing the player
+            if (transform.position.z < 0)
+            {
+                Destroy(this.gameObject);
+            }
+        }
+
+        /// <summary>
         /// Bump the entity in a specific direction and with a speed
         /// <example> Example(s):
         /// <code>
@@ -76,6 +88,7 @@ namespace Aloha
     {
         healPotion = 0,
         ragePotion = 1,
-        manaPotion = 2
+        manaPotion = 2,
+        experiencePotion = 3
     }
 }
