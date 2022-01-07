@@ -86,9 +86,6 @@ var annotated_dup =
         [ "SerialiazeDictionaryTest", "d8/d0e/class_aloha_1_1_test_1_1_serialiaze_dictionary_test.html", "d8/d0e/class_aloha_1_1_test_1_1_serialiaze_dictionary_test" ],
         [ "UtilsTest", "d5/dd9/class_aloha_1_1_test_1_1_utils_test.html", "d5/dd9/class_aloha_1_1_test_1_1_utils_test" ]
       ] ],
-      [ "UI", "d1/d6d/namespace_aloha_1_1_u_i.html", [
-        [ "VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", "db/dd3/class_aloha_1_1_u_i_1_1_version_text" ]
-      ] ],
       [ "CreateLevelMapping", "df/d7b/class_aloha_1_1_create_level_mapping.html", "df/d7b/class_aloha_1_1_create_level_mapping" ],
       [ "GameManager", "da/d6b/class_aloha_1_1_game_manager.html", "da/d6b/class_aloha_1_1_game_manager" ],
       [ "SerializeDictionary", "db/d73/class_aloha_1_1_serialize_dictionary.html", "db/d73/class_aloha_1_1_serialize_dictionary" ],

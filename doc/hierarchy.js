@@ -212,9 +212,6 @@ var hierarchy =
     [ "Singleton< UIManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.UIManager", "d1/d41/class_aloha_1_1_u_i_manager.html", null ]
     ] ],
-    [ "Text", null, [
-      [ "Aloha.UI.VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", null ]
-    ] ],
     [ "Aloha.Test.TileTest", "d3/d1c/class_aloha_1_1_test_1_1_tile_test.html", null ],
     [ "UIBehaviour", null, [
       [ "Aloha.ChooseProfilMenu", "d4/de4/class_aloha_1_1_choose_profil_menu.html", null ]
