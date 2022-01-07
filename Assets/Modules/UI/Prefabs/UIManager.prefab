@@ -889,7 +889,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 8292654593479803887}
   SecondaryBar: {fileID: 4333887411518495043}
-  ExpBar: {fileID: 8459500959132953039}
+  ExpBar: {fileID: 0}
   LevelProgressBar: {fileID: 936965030050165934}
   UIInventory: {fileID: 8684326432909827869}
   UIScore: {fileID: 2424351652857213868}
@@ -1391,7 +1391,7 @@ GameObject:
   - component: {fileID: 5397093949015051055}
   - component: {fileID: 4101979670835406594}
   - component: {fileID: 8987046702864064855}
-  - component: {fileID: 8459500959132953039}
+  - component: {fileID: 3018625284374271727}
   m_Layer: 0
   m_Name: ExperienceBar
   m_TagString: Untagged
@@ -1458,7 +1458,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8459500959132953039
+--- !u!114 &3018625284374271727
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1467,10 +1467,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4926884534353224981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51c6b2234e71e07498fb00ba9748e715, type: 3}
+  m_Script: {fileID: 11500000, guid: ebf1998805600a392a65b870cabaacf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Color: {r: 0, g: 1, b: 1, a: 1}
+  Color: {r: 0, g: 1, b: 0.80855703, a: 0}
   levelText: {fileID: 1093264419926711727}
 --- !u!1 &5072373197076456353
 GameObject:
