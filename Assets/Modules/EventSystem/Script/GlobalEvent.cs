@@ -80,6 +80,8 @@ namespace Aloha.Events
         public static UnityEvent LevelStart = new UnityEvent();
         public static UnityEvent GameOver = new UnityEvent();
 
+        public static UnityEvent Victory = new UnityEvent();
+
         /// <summary>
         /// Invoke when load level is request and will pass the string <paramref name="level" /> and the bool <paramref name="isTuto" />
         /// </summary>

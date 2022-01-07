@@ -169,7 +169,6 @@ namespace Aloha
             // Put the timeScale to 0, active the UI And stop the game
             Time.timeScale = 0f;
             GameOverMenu.SetActive(true);
-            GameManager.Instance.FinishGame();
         }
 
         /// <summary>

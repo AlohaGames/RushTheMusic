@@ -22,7 +22,7 @@ namespace Aloha
         /// </summary>
         void Awake() {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
-            GlobalEvent.GameStop.AddListener(ShowEndGameUIElements);
+            GlobalEvent.Victory.AddListener(ShowEndGameUIElements);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.LevelStart.RemoveListener(ShowInGameUIElements);
-            GlobalEvent.GameStop.RemoveListener(ShowEndGameUIElements);
+            GlobalEvent.Victory.RemoveListener(ShowEndGameUIElements);
         }
     }
 }

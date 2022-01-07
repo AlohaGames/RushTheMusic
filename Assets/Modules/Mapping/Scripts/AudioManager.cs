@@ -28,7 +28,7 @@ namespace Aloha
             GlobalEvent.LevelStart.AddListener(StartMusic);
             GlobalEvent.Pause.AddListener(PauseMusic);
             GlobalEvent.Resume.AddListener(ResumeMusic);
-            GlobalEvent.GameStop.AddListener(StopMusic);
+            GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
         public void Update() {
@@ -108,7 +108,7 @@ namespace Aloha
             GlobalEvent.LevelStart.RemoveListener(StartMusic);
             GlobalEvent.Pause.RemoveListener(PauseMusic);
             GlobalEvent.Resume.RemoveListener(ResumeMusic);
-            GlobalEvent.GameStop.RemoveListener(StopMusic);
+            GlobalEvent.LevelStop.RemoveListener(StopMusic);
         }
     }
 }

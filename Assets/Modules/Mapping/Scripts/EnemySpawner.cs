@@ -18,7 +18,7 @@ namespace Aloha
         {
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
-            GlobalEvent.GameStop.AddListener(Reset);
+            GlobalEvent.LevelStop.AddListener(Reset);
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
-            GlobalEvent.GameStop.RemoveListener(Reset);
+            GlobalEvent.LevelStop.RemoveListener(Reset);
         }
     }
 }

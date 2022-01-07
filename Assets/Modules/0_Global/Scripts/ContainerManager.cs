@@ -63,6 +63,15 @@ namespace Aloha
             }
         }
 
+        public void ClearContainers(string[] containersName)
+        {
+            foreach (var containerName in containersName)
+            {
+                Debug.Log(containerName);
+                ClearContainer(containerName);
+            }
+        }
+
         public void ClearAllContainer()
         {
             foreach (var containerName in containers.Keys)

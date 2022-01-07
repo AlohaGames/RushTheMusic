@@ -33,7 +33,7 @@ namespace Aloha
         void Awake()
         {
             GlobalEvent.LevelStart.AddListener(StartGame);
-            GlobalEvent.GameStop.AddListener(Reset);
+            GlobalEvent.LevelStop.AddListener(Reset);
         }
 
         /// <summary>
@@ -115,7 +115,7 @@ namespace Aloha
             {
                 Time.timeScale = 0f;
                 Cursor.visible = true;
-                GameManager.Instance.FinishLevel();
+                GlobalEvent.Victory.Invoke();
             }
         }
 
@@ -203,11 +203,13 @@ namespace Aloha
         public void Reset()
         {
             if (!GameIsStarted)
+            {
                 return;
+            }
+
             GameIsStarted = false;
             activeTiles.Clear();
             ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
-            GlobalEvent.GameStop.Invoke();
         }
 
         /// <summary>
@@ -216,7 +218,7 @@ namespace Aloha
         void OnDestroy()
         {
             ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
-            GlobalEvent.GameStop.RemoveListener(Reset);
+            GlobalEvent.LevelStop.RemoveListener(Reset);
         }
     }
 }

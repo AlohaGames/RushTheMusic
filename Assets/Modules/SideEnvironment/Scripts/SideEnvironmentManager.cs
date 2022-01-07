@@ -39,13 +39,7 @@ namespace Aloha
                 biometable.Add(b.BiomeName, b);
             }
 
-            GlobalEvent.LevelStop.AddListener(LevelStop);
             GlobalEvent.TileCount.AddListener(CountTile);
-        }
-
-        public void LevelStop()
-        {
-            ContainerManager.Instance.ClearContainer(ContainerTypes.Environment);
         }
 
         /// <summary>
@@ -129,7 +123,6 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
-            GlobalEvent.LevelStop.RemoveListener(LevelStop);
             GlobalEvent.TileCount.RemoveListener(CountTile);
         }
     }

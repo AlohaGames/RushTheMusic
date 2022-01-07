@@ -20,6 +20,13 @@ namespace Aloha
         public bool isInfinite = false;
         public bool LeapMode = false; // leap : true, mouse : false
 
+        void Awake()
+        {
+            GlobalEvent.GameOver.AddListener(FinishGame);
+            GlobalEvent.Victory.AddListener(FinishLevel);
+        }
+
+
         #region Events
         /// <summary>
         /// Will ask to load the request <paramref name="level"/>
@@ -75,11 +82,12 @@ namespace Aloha
         /// </summary>
         public void FinishGame()
         {
-            GlobalEvent.LevelStop.Invoke();
+            FinishLevel();
             GlobalEvent.GameStop.Invoke();
             IsPlaying = false;
             Cursor.visible = true;
-            ResetHero();
+            GameObject.Destroy(hero);
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
         }
 
         /// <summary>
@@ -92,16 +100,11 @@ namespace Aloha
         /// </summary>
         public void FinishLevel()
         {
-            Debug.Log("Level complete!");
-            if (isInfinite)
-            {
-                Debug.Log("Infinite level complete !");
-            }
-            else
-            {
-                UIManager.Instance.ShowEndGameUIElements();
-                GlobalEvent.LevelStop.Invoke();
-            }
+            Debug.Log("Level complete !");
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Environment, ContainerTypes.Projectile }
+            );
+            GlobalEvent.LevelStop.Invoke();
         }
 
         /// <summary>
@@ -224,14 +227,6 @@ namespace Aloha
         public Hero GetHero()
         {
             return hero;
-        }
-
-        /// <summary>
-        /// Reset the Game.
-        /// </summary>
-        public void ResetHero()
-        {
-            Destroy(hero);
         }
 
         #region KeyEvents
