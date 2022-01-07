@@ -75,6 +75,7 @@ namespace Aloha
         /// </summary>
         public void FinishGame()
         {
+            GlobalEvent.LevelStop.Invoke();
             GlobalEvent.GameStop.Invoke();
             IsPlaying = false;
             Cursor.visible = true;
@@ -92,10 +93,11 @@ namespace Aloha
         public void FinishLevel()
         {
             Debug.Log("Level complete!");
-            if(isInfinite)
+            if (isInfinite)
             {
                 Debug.Log("Infinite level complete !");
-            }else
+            }
+            else
             {
                 UIManager.Instance.ShowEndGameUIElements();
                 GlobalEvent.LevelStop.Invoke();

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Aloha.Events;
+using UnityEngine;
 
 namespace Aloha
 {
@@ -25,8 +25,8 @@ namespace Aloha
 
         [SerializeField]
         private Hashtable biometable = new Hashtable();
-
         private Biome currentBiome;
+        private string containerName = "sideEnv";
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -40,7 +40,13 @@ namespace Aloha
                 biometable.Add(b.BiomeName, b);
             }
 
+            GlobalEvent.LevelStop.AddListener(LevelStop);
             GlobalEvent.TileCount.AddListener(CountTile);
+        }
+
+        public void LevelStop()
+        {
+            ContainerManager.Instance.ClearContainer(containerName);
         }
 
         /// <summary>
@@ -76,6 +82,9 @@ namespace Aloha
             Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
             bgPos.y = 20f;
             castleHillGo.transform.position = bgPos;
+
+            // Add castle to env
+            ContainerManager.Instance.AddToContainer(containerName, castleHillGo);
         }
 
         /// <summary>
@@ -121,6 +130,7 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
+            GlobalEvent.LevelStop.RemoveListener(LevelStop);
             GlobalEvent.TileCount.RemoveListener(CountTile);
         }
     }
