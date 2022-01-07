@@ -22,10 +22,10 @@ namespace Aloha
         /// </returns>
         GameObject InstantiateEnemy(int id)
         {
-            if(enemiesContainer == null) {
+            if(enemiesContainer == null) 
+            {
                 enemiesContainer = new GameObject("EnemiesContainer");
-            }
-            
+            }        
             GameObject instance = Instantiate(enemyPrefabs[id], enemiesContainer.transform);
             Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
@@ -54,7 +54,6 @@ namespace Aloha
         /// </summary>
         void OnDestroy()
         {
-            //GlobalEvent.LevelStart.RemoveListener(InitEnemiesContainer);
             GameObject.Destroy(enemiesContainer);
         }
     }
