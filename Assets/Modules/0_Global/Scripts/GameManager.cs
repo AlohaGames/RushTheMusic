@@ -24,6 +24,8 @@ namespace Aloha
         {
             GlobalEvent.GameOver.AddListener(FinishGame);
             GlobalEvent.Victory.AddListener(FinishLevel);
+            GlobalEvent.Resume.AddListener(UnFreeze);
+            GlobalEvent.Pause.AddListener(Freeze);
         }
 
 
@@ -67,8 +69,8 @@ namespace Aloha
         /// </summary>
         public void StartLevel()
         {
+            UnFreeze();
             IsPlaying = true;
-            Cursor.visible = false;
             GlobalEvent.LevelStart.Invoke();
         }
 
@@ -85,9 +87,11 @@ namespace Aloha
             FinishLevel();
             GlobalEvent.GameStop.Invoke();
             IsPlaying = false;
-            Cursor.visible = true;
-            GameObject.Destroy(hero);
             ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
+            if (hero != null)
+            {
+                GameObject.Destroy(hero.gameObject);
+            }
         }
 
         /// <summary>
@@ -100,9 +104,9 @@ namespace Aloha
         /// </summary>
         public void FinishLevel()
         {
-            Debug.Log("Level complete !");
+            Freeze();
             ContainerManager.Instance.ClearContainers(
-                new[] { ContainerTypes.Enemy, ContainerTypes.Environment, ContainerTypes.Projectile }
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
             );
             GlobalEvent.LevelStop.Invoke();
         }
@@ -208,7 +212,7 @@ namespace Aloha
         {
             if (this.hero != null)
             {
-                Destroy(this.hero.gameObject);
+                GameObject.Destroy(hero.gameObject);
             }
             this.hero = hero;
         }
@@ -230,7 +234,6 @@ namespace Aloha
         }
 
         #region KeyEvents
-
         /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
         /// </summary>
@@ -252,5 +255,25 @@ namespace Aloha
             }
         }
         #endregion
+
+        public void Freeze()
+        {
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+        }
+
+        public void UnFreeze()
+        {
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+        }
+
+        void OnDestroy()
+        {
+            GlobalEvent.GameOver.RemoveListener(FinishGame);
+            GlobalEvent.Victory.RemoveListener(FinishLevel);
+            GlobalEvent.Resume.RemoveListener(UnFreeze);
+            GlobalEvent.Pause.RemoveListener(Freeze);
+        }
     }
 }

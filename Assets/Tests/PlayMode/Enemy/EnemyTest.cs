@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
@@ -21,7 +19,7 @@ namespace Aloha.Test
         {
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
             stats.MaxHealth = 10;
             enemy.Init(stats);
 

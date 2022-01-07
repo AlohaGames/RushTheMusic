@@ -26,7 +26,8 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        void Awake() {
+        void Awake()
+        {
             // The first screen to load
             ShowProfilMenu();
             GlobalEvent.GameOver.AddListener(ShowGameOverMenu);
@@ -166,8 +167,6 @@ namespace Aloha
         public void ShowGameOverMenu()
         {
             this.HideEverything();
-            // Put the timeScale to 0, active the UI And stop the game
-            Time.timeScale = 0f;
             GameOverMenu.SetActive(true);
         }
 

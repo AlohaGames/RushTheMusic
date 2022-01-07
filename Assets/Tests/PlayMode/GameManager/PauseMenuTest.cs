@@ -3,8 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your F**** TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     public class PauseMenuTest
@@ -13,7 +11,7 @@ namespace Aloha.Test
         /// This class test the pause menu class functions.
         /// </summary>
         [UnityTest]
-        public IEnumerator PauseMenuTestWithEnumeratorPasses()
+        public IEnumerator PauseResumeTest()
         {
             GameObject pause = new GameObject();
             pause.AddComponent<PauseMenu>();
@@ -26,27 +24,22 @@ namespace Aloha.Test
             yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
-            pause.GetComponent<PauseMenu>().PauseGame();
+            GameManager.Instance.PauseGame();
 
-            // skip one frame
             yield return null;
 
-            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().IsGamePaused);
             Assert.AreEqual(0f, Time.timeScale);
-            Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(pause.GetComponent<PauseMenu>().IsGamePaused);
+            Assert.IsTrue(GameManager.Instance.IsGamePaused());
 
             yield return null;
 
-            pause.GetComponent<PauseMenu>().Resume();
+            GameManager.Instance.ResumeGame();
 
             yield return null;
 
             Assert.IsTrue(Time.timeScale != 0f);
-            Assert.IsFalse(child.activeSelf);
-            Assert.IsFalse(pause.GetComponent<PauseMenu>().IsGamePaused);
+            Assert.IsFalse(GameManager.Instance.IsGamePaused());
 
-            // Clear the scene
             Utils.ClearCurrentScene();
             yield return null;
         }

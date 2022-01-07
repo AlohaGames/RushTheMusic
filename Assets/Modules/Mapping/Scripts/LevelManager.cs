@@ -15,7 +15,7 @@ namespace Aloha
     /// </summary>
     public class LevelManager : Singleton<LevelManager>
     {
-        [SerializeField] 
+        [SerializeField]
         private string filename = "";
 
         public LevelMapping LevelMapping;
@@ -104,8 +104,7 @@ namespace Aloha
 
             using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Open))
             {
-                this.LevelMapping = (LevelMapping) mappingSerializer.Deserialize(stream);
-                // TODO: Voir si possible de le load ailleur ?!
+                this.LevelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
                 SideEnvironmentManager.Instance.LoadBiome(LevelMapping.BiomeName);
             }
 

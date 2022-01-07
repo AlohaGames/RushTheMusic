@@ -9,7 +9,7 @@ namespace Aloha
     /// <summary>
     /// This class manages the inventory
     /// </summary>
-    public class InventoryManager  : Singleton<InventoryManager>
+    public class InventoryManager : Singleton<InventoryManager>
     {
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
@@ -33,7 +33,7 @@ namespace Aloha
         /// <param name="item"></param>
         public void AddItem(Item item)
         {
-            if(this.items.Count < this.maxItem)
+            if (this.items.Count < this.maxItem)
             {
                 this.items.Enqueue(item);
                 UIManager.Instance.UIInventory.UpdateInventoryUI();
@@ -50,7 +50,7 @@ namespace Aloha
         /// </summary>
         public void UseItem()
         {
-            if(this.items.Count > 0)
+            if (this.items.Count > 0)
             {
                 Item item = this.items.Dequeue();
                 item.Effect();

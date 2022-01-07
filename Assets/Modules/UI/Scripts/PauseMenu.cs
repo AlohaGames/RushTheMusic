@@ -10,7 +10,6 @@ namespace Aloha
     /// </summary>
     public class PauseMenu : MonoBehaviour
     {
-        public bool IsGamePaused = false;
         public GameObject MenuPauseUI;
 
         /// <summary>
@@ -33,9 +32,6 @@ namespace Aloha
         public void Resume()
         {
             MenuPauseUI.SetActive(false);
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-            IsGamePaused = false;
         }
 
         /// <summary>
@@ -49,9 +45,6 @@ namespace Aloha
         public void PauseGame()
         {
             MenuPauseUI.SetActive(true);
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            IsGamePaused = true;
         }
 
         /// <summary>

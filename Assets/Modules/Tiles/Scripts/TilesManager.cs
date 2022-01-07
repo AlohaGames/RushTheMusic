@@ -16,23 +16,14 @@ namespace Aloha
         public float TileSpeed = 10;
         public float TileSize = 5;
 
-        [HideInInspector]
-        public bool GameIsStarted;
-
-        /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
-        /// </summary>
-        void Start()
-        {
-            GameIsStarted = false;
-        }
+        public bool running = false;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
         void Awake()
         {
-            GlobalEvent.LevelStart.AddListener(StartGame);
+            GlobalEvent.LevelStart.AddListener(OnLevelStart);
             GlobalEvent.LevelStop.AddListener(Reset);
         }
 
@@ -42,7 +33,7 @@ namespace Aloha
         void Update()
         {
             // Delete a tile and replace it by a new one
-            if (GameIsStarted && activeTiles.Count != 0 && activeTiles[0].transform.position.z + TileSize < 0)
+            if (running && activeTiles.Count != 0 && activeTiles[0].transform.position.z + TileSize < 0)
             {
                 DeleteFirstTile();
                 SpawnTileToQueue(GetNextTileToSpawn());
@@ -60,14 +51,13 @@ namespace Aloha
         /// <returns>
         /// TODO
         /// </returns>
-        public void StartGame()
+        public void OnLevelStart()
         {
-            if (GameIsStarted)
-                return;
+
+            this.running = true;
 
             this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
-            GameIsStarted = true;
             for (int position = 0; position < NumberOfTiles; position++)
             {
                 SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
@@ -113,8 +103,6 @@ namespace Aloha
 
             if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount)
             {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
                 GlobalEvent.Victory.Invoke();
             }
         }
@@ -202,12 +190,7 @@ namespace Aloha
         /// </summary>
         public void Reset()
         {
-            if (!GameIsStarted)
-            {
-                return;
-            }
-
-            GameIsStarted = false;
+            running = false;
             activeTiles.Clear();
             ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
         }
@@ -218,6 +201,7 @@ namespace Aloha
         void OnDestroy()
         {
             ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
+            GlobalEvent.LevelStart.RemoveListener(OnLevelStart);
             GlobalEvent.LevelStop.RemoveListener(Reset);
         }
     }

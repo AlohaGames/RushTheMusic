@@ -20,7 +20,8 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        void Awake() {
+        void Awake()
+        {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
             GlobalEvent.Victory.AddListener(ShowEndGameUIElements);
         }
@@ -48,7 +49,8 @@ namespace Aloha
             {
                 Warrior warrior = hero as Warrior;
                 GlobalEvent.OnSecondaryUpdate.Invoke(warrior.CurrentRage, warrior.GetStats().MaxRage);
-            } else if (hero is Wizard)
+            }
+            else if (hero is Wizard)
             {
                 Wizard wizard = hero as Wizard;
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);

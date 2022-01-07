@@ -33,7 +33,7 @@ namespace Aloha
             nbMaxItems = InventoryManager.Instance.GetMaxItems();
 
             // Check if UI has been created before the update
-            if (nbMaxItems == inventoryUI.transform.childCount)
+            if (InventoryIsConstructed())
             {
                 items = InventoryManager.Instance.GetItems();
                 Item[] itemsArray = items.ToArray();
@@ -50,11 +50,16 @@ namespace Aloha
                         itemContainer.SetItem(null);
                     }
                 }
-            } 
+            }
             else
             {
                 Debug.Log("Warning : Trying to update InventoryUI before construction");
             }
+        }
+
+        public bool InventoryIsConstructed()
+        {
+            return nbMaxItems == inventoryUI.transform.childCount;
         }
 
         /// <summary>
@@ -96,8 +101,10 @@ namespace Aloha
         public void ShowInGameInventory()
         {
             inventoryUI.SetActive(true);
-
-            ConstructInventoryUI();
+            if (!InventoryIsConstructed())
+            {
+                ConstructInventoryUI();
+            }
         }
     }
 }

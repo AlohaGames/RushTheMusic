@@ -40,6 +40,13 @@ namespace Aloha
             }
 
             GlobalEvent.TileCount.AddListener(CountTile);
+            GlobalEvent.LevelStop.AddListener(Reset);
+        }
+
+        public void Reset()
+        {
+            currentBiome = null;
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Environment);
         }
 
         /// <summary>
@@ -58,16 +65,23 @@ namespace Aloha
         /// <param name="biomeName">The name of the biome</param>
         public void LoadBiome(string biomeName)
         {
+            // Look biome to load it
             if (biomeName != null)
             {
                 Debug.Log("Load biome " + biomeName);
                 Biome biome = biometable[biomeName] as Biome;
                 if (biome != null)
                 {
-                    // Biome found
                     currentBiome = Instantiate(biome);
                 }
             }
+
+            // No biome, reload default one
+            if (!currentBiome)
+            {
+                currentBiome = Instantiate(defaultBiome);
+            }
+
             Camera.main.backgroundColor = currentBiome.BackgroundColor;
 
             // Set castle in background of biome
@@ -124,6 +138,7 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
+            GlobalEvent.LevelStop.AddListener(Reset);
         }
     }
 }
