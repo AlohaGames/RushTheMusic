@@ -17,5 +17,8 @@ var dir_b2f60a770aed58bff55e5e24e14330d7 =
     ] ],
     [ "UITrackSelection.cs", "d3/d62/_u_i_track_selection_8cs.html", [
       [ "UITrackSelection", "d6/d0a/class_aloha_1_1_u_i_track_selection.html", "d6/d0a/class_aloha_1_1_u_i_track_selection" ]
+    ] ],
+    [ "VersionText.cs", "da/df1/_version_text_8cs.html", [
+      [ "VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", null ]
     ] ]
 ];
