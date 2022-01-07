@@ -92,7 +92,7 @@ namespace Aloha
                 // Button of the track
                 LevelLoaderButton button = trackElement.GetComponent<LevelLoaderButton>();
                 button.Level = dir.Name;
-                button.IsTuto = metadata.IsTuto;
+                button.IsTuto = true;
                 button.MenuRoot = MenuRoot;
             }
         }
