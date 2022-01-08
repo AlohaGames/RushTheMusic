@@ -27,7 +27,7 @@ namespace Aloha.AI
         {
             IsRunning = true;
 
-            gameObject.transform.Translate(Vector3.forward * TilesManager.Instance.TileSpeed * Time.deltaTime);
+            gameObject.transform.Translate(Vector3.forward * (TilesManager.Instance.TileSpeed + (TilesManager.Instance.TileSpeed / 4)) * Time.deltaTime);
             yield return null;
 
             if (!AutomaticLinks.IsEmpty())
