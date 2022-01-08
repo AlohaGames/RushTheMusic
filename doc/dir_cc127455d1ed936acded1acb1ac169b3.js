@@ -9,6 +9,9 @@ var dir_cc127455d1ed936acded1acb1ac169b3 =
     [ "HeroTypeEvent.cs", "de/d22/_hero_type_event_8cs.html", [
       [ "HeroTypeEvent", "df/dee/class_aloha_1_1_events_1_1_hero_type_event.html", null ]
     ] ],
+    [ "HUDEffectEvent.cs", "dc/d53/_h_u_d_effect_event_8cs.html", [
+      [ "HUDEffectEvent", "dc/de1/class_aloha_1_1_events_1_1_h_u_d_effect_event.html", null ]
+    ] ],
     [ "IntIntEvent.cs", "d9/dbb/_int_int_event_8cs.html", [
       [ "IntIntEvent", "dc/d48/class_aloha_1_1_events_1_1_int_int_event.html", null ]
     ] ],

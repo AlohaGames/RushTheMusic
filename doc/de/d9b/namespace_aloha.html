@@ -324,6 +324,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dba/class_aloha_1_1_game_over_menu.html">GameOverMenu</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class manage the <a class="el" href="../../db/dba/class_aloha_1_1_game_over_menu.html" title="This class manage the GameOverMenu">GameOverMenu</a>  <a href="../../db/dba/class_aloha_1_1_game_over_menu.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d39/class_aloha_1_1_h_u_d_effect.html">HUDEffect</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for the HUD effect  <a href="../../d4/d39/class_aloha_1_1_h_u_d_effect.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d41/class_aloha_1_1_u_i_manager.html">UIManager</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d3/dbc/class_singleton.html" title="Inherit from this base class to create a singleton.">Singleton</a> that manage the UI  <a href="../../d1/d41/class_aloha_1_1_u_i_manager.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -401,6 +404,11 @@ Enumerations</h2></td></tr>
 , <a class="el" href="../../de/d9b/namespace_aloha.html#aaad57c2291bb1ee112f688c25f3068e5a945d5e233cf7d6240f6b783b36a374ff">Left</a> = -1
  }</td></tr>
 <tr class="separator:aaad57c2291bb1ee112f688c25f3068e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0febe2a4aa972b39cdbd035b93b560ae"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560ae">HUDEffectType</a> { <a class="el" href="../../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea6b157916b43b09df5a22f658ccb92b64">blood</a> = 0
+, <a class="el" href="../../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea214d940b5313897d9e25b3a2b3533770">heal</a> = 1
+ }</td></tr>
+<tr class="memdesc:a0febe2a4aa972b39cdbd035b93b560ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enumerate the list of hud effects  <a href="../../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560ae">More...</a><br /></td></tr>
+<tr class="separator:a0febe2a4aa972b39cdbd035b93b560ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a37f2e3c7d7eed4c7f62041369885923a"></a>
@@ -505,6 +513,36 @@ Enumerations</h2></td></tr>
 
 </div>
 </div>
+<a id="a0febe2a4aa972b39cdbd035b93b560ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0febe2a4aa972b39cdbd035b93b560ae">&#9670;&nbsp;</a></span>HUDEffectType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="../../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560ae">Aloha.HUDEffectType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enumerate the list of hud effects </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0febe2a4aa972b39cdbd035b93b560aea6b157916b43b09df5a22f658ccb92b64"></a>blood&#160;</td><td class="fielddoc"><p>Blood effect when player take damages </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a0febe2a4aa972b39cdbd035b93b560aea214d940b5313897d9e25b3a2b3533770"></a>heal&#160;</td><td class="fielddoc"><p>Healing effect when player take damages </p>
+</td></tr>
+</table>
+
+</div>
+</div>
 <a id="afcc76bb47435d012a5c32f1c0d435e89"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcc76bb47435d012a5c32f1c0d435e89">&#9670;&nbsp;</a></span>ItemType</h2>
 
@@ -594,7 +632,7 @@ Enumerations</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="../../de/d9b/namespace_aloha.html">Aloha</a></li>
-    <li class="footer">Generated on Fri Jan 7 2022 23:51:44 for RushTheMusic by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+    <li class="footer">Generated on Sat Jan 8 2022 02:52:36 for RushTheMusic by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>
 </body>

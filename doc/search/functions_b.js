@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['nextlevelreached_1198',['NextLevelReached',['../d9/d5c/class_aloha_1_1_enemy_spawner.html#ad172bb3706fd4cd74b45b54db8f817d1',1,'Aloha::EnemySpawner']]],
-  ['node_1199',['Node',['../d4/dd3/class_aloha_1_1_a_i_1_1_node.html#a712307b7e44a6b64ccd6bc7a29a0c6c5',1,'Aloha.AI.Node.Node()'],['../d4/dd3/class_aloha_1_1_a_i_1_1_node.html#a8a7a92af34956f80419781953bdfc704',1,'Aloha.AI.Node.Node(Graph graph)']]],
-  ['normalusehealthpotion_1200',['NormalUseHealthPotion',['../d1/d54/class_aloha_1_1_test_1_1_health_potion_test.html#a0c0a6f2ae272aa12523bc87ee844b537',1,'Aloha::Test::HealthPotionTest']]],
-  ['normalusemanapotion_1201',['NormalUseManaPotion',['../dc/de1/class_aloha_1_1_test_1_1_secondary_potion_test.html#a39dc1a76cf0c771c909e3161a733e584',1,'Aloha::Test::SecondaryPotionTest']]],
-  ['normaluseragepotion_1202',['NormalUseRagePotion',['../dc/de1/class_aloha_1_1_test_1_1_secondary_potion_test.html#a193bcce7f63a8e6871df6d8d13b161e6',1,'Aloha::Test::SecondaryPotionTest']]]
+  ['nextlevelreached_1219',['NextLevelReached',['../d9/d5c/class_aloha_1_1_enemy_spawner.html#ad172bb3706fd4cd74b45b54db8f817d1',1,'Aloha::EnemySpawner']]],
+  ['node_1220',['Node',['../d4/dd3/class_aloha_1_1_a_i_1_1_node.html#a712307b7e44a6b64ccd6bc7a29a0c6c5',1,'Aloha.AI.Node.Node()'],['../d4/dd3/class_aloha_1_1_a_i_1_1_node.html#a8a7a92af34956f80419781953bdfc704',1,'Aloha.AI.Node.Node(Graph graph)']]],
+  ['normalusehealthpotion_1221',['NormalUseHealthPotion',['../d1/d54/class_aloha_1_1_test_1_1_health_potion_test.html#a0c0a6f2ae272aa12523bc87ee844b537',1,'Aloha::Test::HealthPotionTest']]],
+  ['normalusemanapotion_1222',['NormalUseManaPotion',['../dc/de1/class_aloha_1_1_test_1_1_secondary_potion_test.html#a39dc1a76cf0c771c909e3161a733e584',1,'Aloha::Test::SecondaryPotionTest']]],
+  ['normaluseragepotion_1223',['NormalUseRagePotion',['../dc/de1/class_aloha_1_1_test_1_1_secondary_potion_test.html#a193bcce7f63a8e6871df6d8d13b161e6',1,'Aloha::Test::SecondaryPotionTest']]]
 ];
