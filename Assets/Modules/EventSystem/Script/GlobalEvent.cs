@@ -61,10 +61,16 @@ namespace Aloha.Events
         public static IntIntIntEvent OnExperienceUpdate = new IntIntIntEvent();
 
         /// <summary>
-        /// TODO
+        /// Event for level progression
         /// </summary>
         /// <param></param>
         public static IntIntEvent OnProgressionUpdate = new IntIntEvent();
+
+        /// <summary>
+        /// Event when the user needs to display an effect on the HUD
+        /// </summary>
+        /// <param></param>
+        public static HUDEffectEvent HudEffect = new HUDEffectEvent();
 
         /// <summary>
         /// Event called which count tiles

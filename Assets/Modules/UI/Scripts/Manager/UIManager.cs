@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Aloha;
 using Aloha.Events;
 
 namespace Aloha
@@ -17,6 +18,7 @@ namespace Aloha
         public Bar LevelProgressBar;
         public UIInventory UIInventory;
         public UIScore UIScore;
+        public HUDEffect HUDEffect;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -40,6 +42,7 @@ namespace Aloha
             SecondaryBar.gameObject.SetActive(true);
             ExpBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
+            HUDEffect.gameObject.SetActive(false);
             UIScore.ShowInGameUIScoreElements();
             UIInventory.ShowInGameInventory();
 
