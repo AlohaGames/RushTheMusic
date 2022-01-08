@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1437318802557482488}
   m_Layer: 0
   m_Name: ShieldTest
-  m_TagString: Untagged
+  m_TagString: AttackBlocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,7 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddaffc79f9e1a74495df2a98dc190c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warrior: {fileID: 0}
+  minimumSpeedToProtect: 0.1
+  Warrior: {fileID: 0}
+  Speed: 0
 --- !u!65 &8297352963750951132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91,7 +93,7 @@ GameObject:
   - component: {fileID: 6401195120167645643}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: AttackBlocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

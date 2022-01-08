@@ -4818,7 +4818,7 @@ GameObject:
   - component: {fileID: 3774964591226292649}
   m_Layer: 0
   m_Name: Vortex
-  m_TagString: Untagged
+  m_TagString: AttackBlocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

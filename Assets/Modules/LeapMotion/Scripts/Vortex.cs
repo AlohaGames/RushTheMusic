@@ -24,6 +24,9 @@ namespace Aloha
 
                 Wizard.RegenerateSecondary((float)this.Power / (float)Wizard.GetStats().MaxMana);
                 Destroy(gameObject);
+            } else if (collider.tag == "AttackBlocker")
+            {
+                Destroy(gameObject);
             }
         }
     }
