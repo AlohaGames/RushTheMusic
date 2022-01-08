@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: -851441894914036630
     second: bat_spritesheet_4
+  - first:
+      213: 7226047375429553786
+    second: bat_spritesheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -218,6 +221,27 @@ TextureImporter:
       bones: []
       spriteID: a6c63c29b121f24f0800000000000000
       internalID: -851441894914036630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bat_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7e4f9e7dc3184460800000000000000
+      internalID: 7226047375429553786
       vertices: []
       indices: 
       edges: []

@@ -38,6 +38,8 @@ namespace Aloha.AI
         {
             IsRunning = true;
 
+            bat.Anim.SetBool("isEscaping", true);
+
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;
