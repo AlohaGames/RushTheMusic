@@ -88,7 +88,6 @@ var hierarchy =
       [ "Aloha.Fireball", "dd/d86/class_aloha_1_1_fireball.html", null ],
       [ "Aloha.FireballSpawner", "d5/de7/class_aloha_1_1_fireball_spawner.html", null ],
       [ "Aloha.GameOverMenu", "db/dba/class_aloha_1_1_game_over_menu.html", null ],
-      [ "Aloha.HUDEffect", "d4/d39/class_aloha_1_1_h_u_d_effect.html", null ],
       [ "Aloha.HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", null ],
       [ "Aloha.Item", "d7/d1c/class_aloha_1_1_item.html", [
         [ "Aloha.ExperiencePotion", "d7/dd9/class_aloha_1_1_experience_potion.html", null ],
@@ -221,7 +220,6 @@ var hierarchy =
     [ "UnityEvent", null, [
       [ "Aloha.Events.EntityEvent", "d9/db6/class_aloha_1_1_events_1_1_entity_event.html", null ],
       [ "Aloha.Events.GameObjectEvent", "d0/d73/class_aloha_1_1_events_1_1_game_object_event.html", null ],
-      [ "Aloha.Events.HUDEffectEvent", "dc/de1/class_aloha_1_1_events_1_1_h_u_d_effect_event.html", null ],
       [ "Aloha.Events.HeroTypeEvent", "df/dee/class_aloha_1_1_events_1_1_hero_type_event.html", null ],
       [ "Aloha.Events.IntIntEvent", "dc/d48/class_aloha_1_1_events_1_1_int_int_event.html", null ],
       [ "Aloha.Events.IntIntIntEvent", "da/d35/class_aloha_1_1_events_1_1_int_int_int_event.html", null ],
