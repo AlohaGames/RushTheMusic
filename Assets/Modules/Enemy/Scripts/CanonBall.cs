@@ -71,6 +71,9 @@ namespace Aloha
             {
                 AssociatedEnemy.Attack(collider.gameObject.GetComponent<Entity>());
                 Destroy(gameObject);
+            } else if (collider.tag == "AttackBlocker")
+            {
+                Destroy(gameObject);
             }
         }
     }
