@@ -23,7 +23,8 @@ namespace Aloha.AI
             Node MoveForward = new MoveForward(this);
             Node TamponNearHero = new BasicNode(this);
             BatMove Move = new BatMove(this);
-            //Node Attack = new BatAttack(this);
+            Node Attack = new BatAttack(this);
+            Node Escape = new BatEscape(this);
             Node GetBump = new BasicNode(this, 1);
 
             // Add Link to MoveForward
@@ -35,22 +36,23 @@ namespace Aloha.AI
             TamponNearHero.AddAutomaticLink(Move, 1.0f);
 
             // Add Link to Move
-            Move.AddAutomaticLink(Move, 1.0f);
-            //Move.AddAutomaticLink(Attack, 0.20f);
+            Move.AddAutomaticLink(Move, 0.90f);
+            Move.AddAutomaticLink(Attack, 0.10f);
             Move.AddEventLink(GetBump, bat.TakeDamageEvent);
 
             // Add Link to Attack
-            //Attack.AddAutomaticLink(TamponNearHero, 1.0f);
-            //Attack.AddEventLink(GetBump, wyrmling.TakeDamageEvent);
+            Attack.AddAutomaticLink(Move, 1.0f);
+            Attack.AddEventLink(GetBump, bat.TakeDamageEvent);
 
             // Add Link to GetBump
-            GetBump.AddAutomaticLink(MoveForward, 1.0f);
+            GetBump.AddAutomaticLink(Escape, 1.0f);
 
             // Register Node in Graph
             Nodes.Add(MoveForward);
             Nodes.Add(TamponNearHero);
             Nodes.Add(Move);
-            //Nodes.Add(Attack);
+            Nodes.Add(Attack);
+            Nodes.Add(Escape);
             Nodes.Add(GetBump);
         }
     }
