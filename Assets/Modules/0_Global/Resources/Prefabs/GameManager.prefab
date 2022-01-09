@@ -76,6 +76,10 @@ MonoBehaviour:
   defaultLevel: test-level.rtm
   IsPlaying: 0
   LeapMode: 0
+  MouseHorizontalInversion: 0
+  MouseVerticalInversion: 0
+  AllowDynamicTexts: 1
+  MouseSensibility: 1
 --- !u!114 &7324531514901806434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -863,7 +867,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1300808901146286847, guid: 185f73b232fb9b6498cc9318463e7541, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1300808901146286847, guid: 185f73b232fb9b6498cc9318463e7541, type: 3}
       propertyPath: m_LocalPosition.x

@@ -38,8 +38,12 @@ namespace Aloha
         void MoveHandsWithMouse()
         {
             // Get camera rotation
-            float ry = Input.GetAxis("Mouse Y");
-            float rx = Input.GetAxis("Mouse X");
+            float ry = GameManager.Instance.MouseVerticalInversion ? -Input.GetAxis("Mouse Y") : Input.GetAxis("Mouse Y");
+            float rx = GameManager.Instance.MouseVerticalInversion ? -Input.GetAxis("Mouse X") : Input.GetAxis("Mouse X");
+
+            // Change speed according to sensibility
+            ry *= GameManager.Instance.MouseSensibility;
+            rx *= GameManager.Instance.MouseSensibility;
 
             // Rotate hands on y axis if it's in the camera angle
             if ((transform.rotation.y > -0.5f && rx < 0) || (transform.rotation.y < 0.5f && rx > 0))

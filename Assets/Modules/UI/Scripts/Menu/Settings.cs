@@ -9,6 +9,11 @@ namespace Aloha.UI
     {
         public Slider sensibilitySlider;
 
+        public void UpdateVolume()
+        {
+            // TODO Update game volume in the right manager
+        }
+
         public void UpdateMouseSensibility()
         {
             GameManager.Instance.MouseSensibility = sensibilitySlider.value;
@@ -27,6 +32,11 @@ namespace Aloha.UI
         public void SetMouseVerticalInversion(bool value)
         {
             GameManager.Instance.MouseVerticalInversion = value;
+        }
+
+        public void SetAllowDynamicTexts(bool value)
+        {
+            GameManager.Instance.AllowDynamicTexts = value;
         }
     }
 }
