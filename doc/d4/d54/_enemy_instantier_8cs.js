@@ -12,6 +12,7 @@ var _enemy_instantier_8cs =
       [ "iceLancer", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aac3899ed00668679c0bea3d5ea7c57555", null ],
       [ "fireWyrmling", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa7672e2c33102c8cd42253df7b28748fb", null ],
       [ "iceWyrmling", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aac19c2b6ccd4e643db16d6ba97cdee63b", null ],
-      [ "canon", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa6638070bc99321b316adbd95e6951f5b", null ]
+      [ "canon", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa6638070bc99321b316adbd95e6951f5b", null ],
+      [ "bat", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa5f3f4681121b460e3304a1887f42f1c3", null ]
     ] ]
 ];
