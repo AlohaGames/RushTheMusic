@@ -6,9 +6,6 @@ var dir_42460606d2d07f703f9a593b26e44ace =
     [ "Assassin.cs", "dd/d09/_assassin_8cs.html", [
       [ "Assassin", "d3/d4f/class_aloha_1_1_assassin.html", "d3/d4f/class_aloha_1_1_assassin" ]
     ] ],
-    [ "Bat.cs", "d2/d11/_bat_8cs.html", [
-      [ "Bat", "d8/dae/class_aloha_1_1_bat.html", "d8/dae/class_aloha_1_1_bat" ]
-    ] ],
     [ "Canon.cs", "d6/d73/_canon_8cs.html", [
       [ "Canon", "d2/d4d/class_aloha_1_1_canon.html", "d2/d4d/class_aloha_1_1_canon" ]
     ] ],

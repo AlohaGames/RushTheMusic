@@ -3,7 +3,6 @@ var annotated_dup =
     [ "Aloha", "de/d9b/namespace_aloha.html", [
       [ "AI", "d6/dc1/namespace_aloha_1_1_a_i.html", [
         [ "AssassinGraph", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph.html", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph" ],
-        [ "BatGraph", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph.html", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph" ],
         [ "CanonGraph", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph.html", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph" ],
         [ "ChestGraph", "db/df0/class_aloha_1_1_a_i_1_1_chest_graph.html", "db/df0/class_aloha_1_1_a_i_1_1_chest_graph" ],
         [ "EmptyGraph", "d7/d53/class_aloha_1_1_a_i_1_1_empty_graph.html", null ],
@@ -19,9 +18,6 @@ var annotated_dup =
         [ "AssassinAttack", "d6/d05/class_aloha_1_1_a_i_1_1_assassin_attack.html", "d6/d05/class_aloha_1_1_a_i_1_1_assassin_attack" ],
         [ "AssassinConcentration", "d8/d86/class_aloha_1_1_a_i_1_1_assassin_concentration.html", "d8/d86/class_aloha_1_1_a_i_1_1_assassin_concentration" ],
         [ "BasicNode", "d5/d11/class_aloha_1_1_a_i_1_1_basic_node.html", "d5/d11/class_aloha_1_1_a_i_1_1_basic_node" ],
-        [ "BatAttack", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack.html", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack" ],
-        [ "BatEscape", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape.html", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape" ],
-        [ "BatMove", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move.html", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move" ],
         [ "CanonAttack", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack" ],
         [ "GONode", "d9/dc0/class_aloha_1_1_a_i_1_1_g_o_node.html", "d9/dc0/class_aloha_1_1_a_i_1_1_g_o_node" ],
         [ "LancerAttack", "d1/d81/class_aloha_1_1_a_i_1_1_lancer_attack.html", "d1/d81/class_aloha_1_1_a_i_1_1_lancer_attack" ],
@@ -32,7 +28,6 @@ var annotated_dup =
       ] ],
       [ "EntityStats", "d8/d84/namespace_aloha_1_1_entity_stats.html", [
         [ "AssassinStats", "d4/dd6/class_aloha_1_1_entity_stats_1_1_assassin_stats.html", null ],
-        [ "BatStats", "d6/d85/class_aloha_1_1_entity_stats_1_1_bat_stats.html", null ],
         [ "CanonStats", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats.html", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats" ],
         [ "ChestStats", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats.html", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats" ],
         [ "FireLancerStats", "d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html", null ],
@@ -101,7 +96,6 @@ var annotated_dup =
       [ "DynamicTextManager", "d1/ddd/class_aloha_1_1_dynamic_text_manager.html", "d1/ddd/class_aloha_1_1_dynamic_text_manager" ],
       [ "ActionZone", "d0/d17/class_aloha_1_1_action_zone.html", "d0/d17/class_aloha_1_1_action_zone" ],
       [ "Assassin", "d3/d4f/class_aloha_1_1_assassin.html", "d3/d4f/class_aloha_1_1_assassin" ],
-      [ "Bat", "d8/dae/class_aloha_1_1_bat.html", "d8/dae/class_aloha_1_1_bat" ],
       [ "Canon", "d2/d4d/class_aloha_1_1_canon.html", "d2/d4d/class_aloha_1_1_canon" ],
       [ "CanonBall", "d3/d34/class_aloha_1_1_canon_ball.html", "d3/d34/class_aloha_1_1_canon_ball" ],
       [ "Chest", "db/d71/class_aloha_1_1_chest.html", "db/d71/class_aloha_1_1_chest" ],

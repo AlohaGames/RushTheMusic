@@ -15,7 +15,6 @@ var namespace_aloha =
     [ "DynamicTextManager", "d1/ddd/class_aloha_1_1_dynamic_text_manager.html", "d1/ddd/class_aloha_1_1_dynamic_text_manager" ],
     [ "ActionZone", "d0/d17/class_aloha_1_1_action_zone.html", "d0/d17/class_aloha_1_1_action_zone" ],
     [ "Assassin", "d3/d4f/class_aloha_1_1_assassin.html", "d3/d4f/class_aloha_1_1_assassin" ],
-    [ "Bat", "d8/dae/class_aloha_1_1_bat.html", "d8/dae/class_aloha_1_1_bat" ],
     [ "Canon", "d2/d4d/class_aloha_1_1_canon.html", "d2/d4d/class_aloha_1_1_canon" ],
     [ "CanonBall", "d3/d34/class_aloha_1_1_canon_ball.html", "d3/d34/class_aloha_1_1_canon_ball" ],
     [ "Chest", "db/d71/class_aloha_1_1_chest.html", "db/d71/class_aloha_1_1_chest" ],
@@ -101,8 +100,7 @@ var namespace_aloha =
       [ "iceLancer", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aac3899ed00668679c0bea3d5ea7c57555", null ],
       [ "fireWyrmling", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa7672e2c33102c8cd42253df7b28748fb", null ],
       [ "iceWyrmling", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aac19c2b6ccd4e643db16d6ba97cdee63b", null ],
-      [ "canon", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa6638070bc99321b316adbd95e6951f5b", null ],
-      [ "bat", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa5f3f4681121b460e3304a1887f42f1c3", null ]
+      [ "canon", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa6638070bc99321b316adbd95e6951f5b", null ]
     ] ],
     [ "HeroType", "de/d9b/namespace_aloha.html#a5e478af85f2b5f0bff187b7190115aad", [
       [ "Generic", "de/d9b/namespace_aloha.html#a5e478af85f2b5f0bff187b7190115aada8045a0a6c688b0635e3caccc408a1446", null ],

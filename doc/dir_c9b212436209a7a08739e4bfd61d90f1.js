@@ -3,9 +3,6 @@ var dir_c9b212436209a7a08739e4bfd61d90f1 =
     [ "AssassinStats.cs", "df/da3/_assassin_stats_8cs.html", [
       [ "AssassinStats", "d4/dd6/class_aloha_1_1_entity_stats_1_1_assassin_stats.html", null ]
     ] ],
-    [ "BatStats.cs", "de/de3/_bat_stats_8cs.html", [
-      [ "BatStats", "d6/d85/class_aloha_1_1_entity_stats_1_1_bat_stats.html", null ]
-    ] ],
     [ "CanonStats.cs", "da/dfd/_canon_stats_8cs.html", [
       [ "CanonStats", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats.html", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats" ]
     ] ],

@@ -9,15 +9,6 @@ var dir_2a2e8899830ae786b4114fa3b9e34a6d =
     [ "BasicNode.cs", "da/d77/_basic_node_8cs.html", [
       [ "BasicNode", "d5/d11/class_aloha_1_1_a_i_1_1_basic_node.html", "d5/d11/class_aloha_1_1_a_i_1_1_basic_node" ]
     ] ],
-    [ "BatAttack.cs", "d6/db2/_bat_attack_8cs.html", [
-      [ "BatAttack", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack.html", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack" ]
-    ] ],
-    [ "BatEscape.cs", "d6/d35/_bat_escape_8cs.html", [
-      [ "BatEscape", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape.html", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape" ]
-    ] ],
-    [ "BatMove.cs", "dd/d5d/_bat_move_8cs.html", [
-      [ "BatMove", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move.html", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move" ]
-    ] ],
     [ "CanonAttack.cs", "d7/d1c/_canon_attack_8cs.html", [
       [ "CanonAttack", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack" ]
     ] ],
