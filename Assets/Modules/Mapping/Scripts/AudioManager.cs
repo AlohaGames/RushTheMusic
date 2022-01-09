@@ -86,6 +86,21 @@ namespace Aloha
         }
 
         /// <summary>
+        ///     Update volume of the music
+        /// <example> Example(s):
+        /// <code>
+        ///     GlobalEvent.UpdateVolume(ResumeMusic);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="volume">New volume of the music</param>
+        public void UpdateVolume(float volume)
+        {
+            audioSource.volume = volume;
+            Debug.Log($"New volume : {volume * 100}%");
+        }
+
+        /// <summary>
         ///     Stop the music of the map
         /// <example> Example(s):
         /// <code>
