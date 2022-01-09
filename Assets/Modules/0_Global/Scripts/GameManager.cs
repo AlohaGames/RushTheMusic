@@ -18,6 +18,9 @@ namespace Aloha
 
         public bool IsPlaying = false;
         public bool LeapMode = false; // leap : true, mouse : false
+        public bool MouseHorizontalInversion = false;
+        public bool MouseVerticalInversion = false;
+        public float MouseSensibility = 1.0f;
 
         #region Events
         /// <summary>
