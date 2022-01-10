@@ -229,11 +229,12 @@ var NAVTREEINDEX2 =
 "da/d70/class_aloha_1_1_vortex.html#ae4190068607a0ae74a4999bd8b734679":[1,0,0,57,2],
 "da/d77/_basic_node_8cs.html":[2,0,0,1,1,0,1,2],
 "da/d9d/class_aloha_1_1_container_types.html":[1,0,0,7],
-"da/d9d/class_aloha_1_1_container_types.html#a4d208aa9f2c0f2df2f276ed389066022":[1,0,0,7,2],
-"da/d9d/class_aloha_1_1_container_types.html#a563bb407b6d3aa13e68934f350e8933f":[1,0,0,7,0],
-"da/d9d/class_aloha_1_1_container_types.html#a5d07fdf8d1905ab1274fc5f12509f740":[1,0,0,7,3],
-"da/d9d/class_aloha_1_1_container_types.html#a611aaba76e142d2636186e13504b44e4":[1,0,0,7,4],
-"da/d9d/class_aloha_1_1_container_types.html#addefeb51d7b574600dc3b17fad39398d":[1,0,0,7,1],
+"da/d9d/class_aloha_1_1_container_types.html#a4d208aa9f2c0f2df2f276ed389066022":[1,0,0,7,3],
+"da/d9d/class_aloha_1_1_container_types.html#a563bb407b6d3aa13e68934f350e8933f":[1,0,0,7,1],
+"da/d9d/class_aloha_1_1_container_types.html#a5d07fdf8d1905ab1274fc5f12509f740":[1,0,0,7,4],
+"da/d9d/class_aloha_1_1_container_types.html#a611aaba76e142d2636186e13504b44e4":[1,0,0,7,5],
+"da/d9d/class_aloha_1_1_container_types.html#addefeb51d7b574600dc3b17fad39398d":[1,0,0,7,2],
+"da/d9d/class_aloha_1_1_container_types.html#af52e671ab7b6415396a6e4c82de112d1":[1,0,0,7,0],
 "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html":[1,0,0,4,14],
 "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html#acc63e7cd237a7cbc79d499339de2b1de":[1,0,0,4,14,1],
 "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html#aebc20993b483b244d086659c370c20f3":[1,0,0,4,14,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "db/d1f/class_aloha_1_1_test_1_1_canon_ball_test.html":[1,0,0,4,2],
 "db/d1f/class_aloha_1_1_test_1_1_canon_ball_test.html#a53db10e64d15eb65de4184c3aa42d512":[1,0,0,4,2,0],
 "db/d2c/_hero_stats_8cs.html":[2,0,0,1,5,0,0,7],
-"db/d31/_user_item_test_8cs.html":[2,0,0,2,0,4,2],
-"db/d37/_u_i_inventory_8cs.html":[2,0,0,1,8,0,7]
+"db/d31/_user_item_test_8cs.html":[2,0,0,2,0,4,2]
 };

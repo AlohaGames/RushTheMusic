@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"db/d37/_u_i_inventory_8cs.html":[2,0,0,1,8,0,7],
 "db/d3d/class_aloha_1_1_entity_stats_1_1_wall_stats.html":[1,0,0,1,9],
 "db/d49/class_aloha_1_1_enemy_instantier.html":[1,0,0,23],
 "db/d49/class_aloha_1_1_enemy_instantier.html#a8709101c76466c33ff65027972de4428":[1,0,0,23,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "df/dbb/class_aloha_1_1_test_1_1_chest_test.html":[1,0,0,4,3],
 "df/dbb/class_aloha_1_1_test_1_1_chest_test.html#a0a9576e0e711a686959ff2cabac10785":[1,0,0,4,3,0],
 "df/dbb/class_aloha_1_1_test_1_1_chest_test.html#a554bac436e205ff488f59365d000626b":[1,0,0,4,3,1],
-"df/dbb/class_aloha_1_1_test_1_1_chest_test.html#a830a75144d435ddc3c5d5a6e176bf896":[1,0,0,4,3,2],
-"df/dd6/class_aloha_1_1_shield.html":[1,0,0,55]
+"df/dbb/class_aloha_1_1_test_1_1_chest_test.html#a830a75144d435ddc3c5d5a6e176bf896":[1,0,0,4,3,2]
 };

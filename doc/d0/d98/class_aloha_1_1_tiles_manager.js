@@ -9,7 +9,7 @@ var class_aloha_1_1_tiles_manager =
     [ "SpawnTileToQueue", "d0/d98/class_aloha_1_1_tiles_manager.html#af82ed6c540c5fd77901e0fceffa02ff0", null ],
     [ "gameIsStarted", "d0/d98/class_aloha_1_1_tiles_manager.html#af20f4625bd27be12e1106faa89571dc5", null ],
     [ "NumberOfTiles", "d0/d98/class_aloha_1_1_tiles_manager.html#aaa95e572045244156c17bd89e8b56cc3", null ],
-    [ "running", "d0/d98/class_aloha_1_1_tiles_manager.html#af5ad45f260dbc392b2307f4f41f51b9a", null ],
+    [ "Running", "d0/d98/class_aloha_1_1_tiles_manager.html#ad00e880a784e685947fce65b82d840a9", null ],
     [ "TileSize", "d0/d98/class_aloha_1_1_tiles_manager.html#aba3b374cadf75665a4ca69574642ba4d", null ],
     [ "TileSpeed", "d0/d98/class_aloha_1_1_tiles_manager.html#a408d4513d3ccea1cc0a49abde845ab74", null ]
 ];
