@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Class to manage setting's updates
+    /// </summary>
     public class Settings : MonoBehaviour
     {
         public Slider volumeSlider;
@@ -33,7 +36,7 @@ namespace Aloha.UI
         /// </summary>
         public void UpdateMouseSensibility()
         {
-            GameManager.Instance.MouseSensibility = sensibilitySlider.value;
+            GameManager.Instance.Config.MouseSensibility = sensibilitySlider.value;
         }
 
         /// <summary>
@@ -47,7 +50,7 @@ namespace Aloha.UI
         /// <param name="value">true : leap is activated</param>
         public void SetLeapMode(bool value)
         {
-            GameManager.Instance.SetLeapMode(value);
+            GameManager.Instance.Config.LeapMode = value;
         }
 
         /// <summary>
@@ -61,7 +64,7 @@ namespace Aloha.UI
         /// <param name="value">true : horizontal controls are inverted</param>
         public void SetMouseHorizontalInversion(bool value)
         {
-            GameManager.Instance.MouseHorizontalInversion = value;
+            GameManager.Instance.Config.MouseHorizontalInversion = value;
         }
 
         /// <summary>
@@ -75,7 +78,7 @@ namespace Aloha.UI
         /// <param name="value">true : vertical controls are inverted</param>
         public void SetMouseVerticalInversion(bool value)
         {
-            GameManager.Instance.MouseVerticalInversion = value;
+            GameManager.Instance.Config.MouseVerticalInversion = value;
         }
 
         /// <summary>
@@ -89,7 +92,7 @@ namespace Aloha.UI
         /// <param name="value">true : dynmic texts will appear</param>
         public void SetAllowDynamicTexts(bool value)
         {
-            GameManager.Instance.AllowDynamicTexts = value;
+            GameManager.Instance.Config.AllowDynamicTexts = value;
         }
     }
 }

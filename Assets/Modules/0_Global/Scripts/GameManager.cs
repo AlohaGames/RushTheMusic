@@ -17,11 +17,7 @@ namespace Aloha
         private string defaultLevel = "";
 
         public bool IsPlaying = false;
-        public bool LeapMode = false; // leap : true, mouse : false
-        public bool MouseHorizontalInversion = false;
-        public bool MouseVerticalInversion = false;
-        public bool AllowDynamicTexts = true;
-        public float MouseSensibility = 1.0f;
+        public RtmConfig Config = new RtmConfig();
 
         #region Events
         /// <summary>
@@ -125,7 +121,7 @@ namespace Aloha
         /// <param bool="leapMode">The new value of LeapMode</param>
         public void SetLeapMode(bool leapMode)
         {
-            this.LeapMode = leapMode;
+            this.Config.LeapMode = leapMode;
         }
 
         /// <summary>

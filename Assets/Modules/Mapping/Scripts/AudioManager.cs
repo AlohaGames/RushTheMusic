@@ -23,6 +23,7 @@ namespace Aloha
             // Create audio source
             audioSourceGO = new GameObject();
             audioSource = audioSourceGO.AddComponent<AudioSource>();
+            audioSource.volume = GameManager.Instance.Config.GameVolume;
 
             // Listen to events
             GlobalEvent.LevelStart.AddListener(StartMusic);
@@ -93,10 +94,14 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name="volume">New volume of the music</param>
+        /// <param name="volume">value between 0 and 1</param>
         public void UpdateVolume(float volume)
         {
-            audioSource.volume = volume;
+            GameManager.Instance.Config.GameVolume = volume;
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
             Debug.Log($"New volume : {volume * 100}%");
         }
 
