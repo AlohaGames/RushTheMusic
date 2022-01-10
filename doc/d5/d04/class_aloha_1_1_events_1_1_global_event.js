@@ -6,7 +6,6 @@ var class_aloha_1_1_events_1_1_global_event =
     [ "GameStop", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a1e0ca1adc33aaaf3c2b0e1165005567a", null ],
     [ "HeroDie", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a7eda7cac2218c4df9dc63d645e454f1c", null ],
     [ "HeroTakeDamage", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ae118257efc1383085c5b54f0ffd36397", null ],
-    [ "HudEffect", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#af56f1ec5def6c86cc18de16e677d45d9", null ],
     [ "LevelStart", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ad0e8e7ff05ca6638f771da92f2b93355", null ],
     [ "LevelStop", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a44a4e89acc7267eed47d4a169e3c1b51", null ],
     [ "LoadHero", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a0f133c4f85e4b560cf2186cbd451e05a", null ],
