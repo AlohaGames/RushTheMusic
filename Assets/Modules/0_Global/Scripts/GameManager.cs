@@ -70,6 +70,7 @@ namespace Aloha
         {
             UnFreeze();
             IsPlaying = true;
+            isGamePaused = false;
             GlobalEvent.LevelStart.Invoke();
         }
 
