@@ -10,7 +10,7 @@ namespace Aloha
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
-    
+
         private GameObject audioSourceGO;
         private AudioSource audioSource;
         private bool shouldBePlaying = false;
@@ -21,8 +21,9 @@ namespace Aloha
         void Awake()
         {
             // Create audio source
-            audioSourceGO = new GameObject();
+            audioSourceGO = new GameObject("Audio Source");
             audioSource = audioSourceGO.AddComponent<AudioSource>();
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Audio, audioSourceGO);
 
             // Listen to events
             GlobalEvent.LevelStart.AddListener(StartMusic);
@@ -31,9 +32,11 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
-        public void Update() {
+        public void Update()
+        {
             // End of music
-            if (shouldBePlaying && !audioSource.isPlaying) {
+            if (shouldBePlaying && !audioSource.isPlaying)
+            {
                 GlobalEvent.GameOver.Invoke();
             }
         }
@@ -98,6 +101,17 @@ namespace Aloha
             audioSource.Stop();
             shouldBePlaying = false;
             Debug.Log($"Stop music");
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.LevelStart.RemoveListener(StartMusic);
+            GlobalEvent.Pause.RemoveListener(PauseMusic);
+            GlobalEvent.Resume.RemoveListener(ResumeMusic);
+            GlobalEvent.LevelStop.RemoveListener(StopMusic);
         }
     }
 }

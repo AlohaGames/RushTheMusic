@@ -61,6 +61,7 @@ namespace Aloha
 
             // Spawn fireball
             this.fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, fireball.gameObject);
             this.fireball.AssociatedEnemy = this;
         }
 

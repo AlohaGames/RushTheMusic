@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aloha 
+namespace Aloha
 {
     /// <summary>
     /// Class for the fireball spell
@@ -27,6 +27,7 @@ namespace Aloha
             isAutonomous = true;
             GetComponent<Rigidbody>().AddForce(transform.forward * 5, ForceMode.Impulse);
             transform.parent = null;
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, this.gameObject);
             Destroy(gameObject, 2f);
         }
 

@@ -40,6 +40,7 @@ namespace Aloha
         {
             base.Init(stats);
             this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
             anim = GetComponent<Animator>();
         }
 

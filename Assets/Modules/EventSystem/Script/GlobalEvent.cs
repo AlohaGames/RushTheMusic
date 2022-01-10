@@ -79,7 +79,12 @@ namespace Aloha.Events
         public static GameObjectEvent TileCount = new GameObjectEvent();
 
         /// <summary>
-        /// Event called when the level finish
+        /// Invoke when a game is finished
+        /// </summary>
+        public static UnityEvent GameStop = new UnityEvent();
+
+        /// <summary>
+        /// Invoke when a level is finished
         /// </summary>
         public static UnityEvent LevelStop = new UnityEvent();
 
@@ -94,6 +99,8 @@ namespace Aloha.Events
         public static UnityEvent NextLevel = new UnityEvent();
 
         public static UnityEvent GameOver = new UnityEvent();
+
+        public static UnityEvent Victory = new UnityEvent();
 
         /// <summary>
         /// Invoke when load level is request and will pass the string <paramref name="level" /> and the bool <paramref name="isTuto" />
