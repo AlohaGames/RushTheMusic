@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using Aloha.Events;
+using UnityEngine;
 
 namespace Aloha
 {
@@ -25,7 +25,6 @@ namespace Aloha
 
         [SerializeField]
         private Hashtable biometable = new Hashtable();
-
         private Biome currentBiome;
 
         /// <summary>
@@ -41,6 +40,16 @@ namespace Aloha
             }
 
             GlobalEvent.TileCount.AddListener(CountTile);
+            GlobalEvent.LevelStop.AddListener(Reset);
+        }
+
+        /// <summary>
+        /// Reset the current biome and clear the environment
+        /// </summary>
+        public void Reset()
+        {
+            currentBiome = null;
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Environment);
         }
 
         /// <summary>
@@ -59,16 +68,23 @@ namespace Aloha
         /// <param name="biomeName">The name of the biome</param>
         public void LoadBiome(string biomeName)
         {
+            // Look biome to load it
             if (biomeName != null)
             {
                 Debug.Log("Load biome " + biomeName);
                 Biome biome = biometable[biomeName] as Biome;
                 if (biome != null)
                 {
-                    // Biome found
                     currentBiome = Instantiate(biome);
                 }
             }
+
+            // No biome, reload default one
+            if (!currentBiome)
+            {
+                currentBiome = Instantiate(defaultBiome);
+            }
+
             Camera.main.backgroundColor = currentBiome.BackgroundColor;
 
             // Set castle in background of biome
@@ -76,6 +92,9 @@ namespace Aloha
             Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
             bgPos.y = 20f;
             castleHillGo.transform.position = bgPos;
+
+            // Add castle to env
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Environment, castleHillGo);
         }
 
         /// <summary>
@@ -122,6 +141,7 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
+            GlobalEvent.LevelStop.AddListener(Reset);
         }
     }
 }

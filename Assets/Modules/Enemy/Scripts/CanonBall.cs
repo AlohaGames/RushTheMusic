@@ -23,7 +23,6 @@ namespace Aloha
         public void Launch(Vector3 heroPosition)
         {
             StartCoroutine(Movement(heroPosition, 1f, 1.5f));
-            transform.parent = null;
         }
 
         /// <summary>
