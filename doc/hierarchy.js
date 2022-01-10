@@ -93,6 +93,8 @@ var hierarchy =
       [ "Aloha.FireballSpawner", "d5/de7/class_aloha_1_1_fireball_spawner.html", null ],
       [ "Aloha.HUDEffect", "d4/d39/class_aloha_1_1_h_u_d_effect.html", null ],
       [ "Aloha.HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", null ],
+      [ "Aloha.InfiniteModeButton", "de/de4/class_aloha_1_1_infinite_mode_button.html", null ],
+      [ "Aloha.InfiniteModeNextLevelButton", "d0/d71/class_aloha_1_1_infinite_mode_next_level_button.html", null ],
       [ "Aloha.Item", "d7/d1c/class_aloha_1_1_item.html", [
         [ "Aloha.ExperiencePotion", "d7/dd9/class_aloha_1_1_experience_potion.html", null ],
         [ "Aloha.HealPotion", "dd/dc6/class_aloha_1_1_heal_potion.html", null ],

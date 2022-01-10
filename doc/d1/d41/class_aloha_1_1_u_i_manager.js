@@ -1,5 +1,6 @@
 var class_aloha_1_1_u_i_manager =
 [
+    [ "HideEndGameUIElements", "d1/d41/class_aloha_1_1_u_i_manager.html#a1ecf9e01ff51a8cb5b431b19b12c4b49", null ],
     [ "ShowEndGameUIElements", "d1/d41/class_aloha_1_1_u_i_manager.html#ac96ecd4d2f888b581754fdcd2f4c1aa0", null ],
     [ "ExpBar", "d1/d41/class_aloha_1_1_u_i_manager.html#a6686a76d0397e503efc30bc55088bcc6", null ],
     [ "HealthBar", "d1/d41/class_aloha_1_1_u_i_manager.html#a2d2583c51ad6beb1c533c879c3b7b3b9", null ],

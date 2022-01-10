@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['takehitcounter_1644',['TakeHitCounter',['../d7/d3d/class_aloha_1_1_score_manager.html#ac6160ac3d45ffc18a0bc8f9a04e63c64',1,'Aloha::ScoreManager']]]
+  ['takehitcounter_1671',['TakeHitCounter',['../d7/d3d/class_aloha_1_1_score_manager.html#ac6160ac3d45ffc18a0bc8f9a04e63c64',1,'Aloha::ScoreManager']]]
 ];
