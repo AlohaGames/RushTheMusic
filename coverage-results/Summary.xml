@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>01/10/2022 - 12:53:39</Generatedon>
+    <Generatedon>01/10/2022 - 13:08:35</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>1</Assemblies>
     <Classes>68</Classes>
     <Files>65</Files>
     <Coveredlines>1193</Coveredlines>
-    <Uncoveredlines>661</Uncoveredlines>
-    <Coverablelines>1854</Coverablelines>
-    <Totallines>5808</Totallines>
-    <Linecoverage>64.3</Linecoverage>
+    <Uncoveredlines>667</Uncoveredlines>
+    <Coverablelines>1860</Coverablelines>
+    <Totallines>5814</Totallines>
+    <Linecoverage>64.1</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
     <Coveredmethods>214</Coveredmethods>
@@ -18,7 +18,7 @@
     <Methodcoverage>72</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="Aloha" classes="68" coverage="64.3" coveredlines="1193" coverablelines="1854" totallines="6241" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="214" totalmethods="297" methodcoverage="72">
+    <Assembly name="Aloha" classes="68" coverage="64.1" coveredlines="1193" coverablelines="1860" totallines="6247" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="214" totalmethods="297" methodcoverage="72">
       <Class name="Aloha.ActionZone" coverage="100" coveredlines="8" coverablelines="8" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="Aloha.Assassin" coverage="85.7" coveredlines="6" coverablelines="7" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="Aloha.AudioManager" coverage="47.1" coveredlines="25" coverablelines="53" totallines="137" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="9" methodcoverage="55.5" />
@@ -26,7 +26,7 @@
       <Class name="Aloha.BasicTile" coverage="100" coveredlines="6" coverablelines="6" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
       <Class name="Aloha.Bat" coverage="0" coveredlines="0" coverablelines="3" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
       <Class name="Aloha.Canon" coverage="46.4" coveredlines="13" coverablelines="28" totallines="104" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="6" methodcoverage="66.6" />
-      <Class name="Aloha.CanonBall" coverage="28" coveredlines="7" coverablelines="25" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="3" methodcoverage="33.3" />
+      <Class name="Aloha.CanonBall" coverage="25" coveredlines="7" coverablelines="28" totallines="79" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="3" methodcoverage="33.3" />
       <Class name="Aloha.Chest" coverage="86.9" coveredlines="20" coverablelines="23" totallines="95" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
       <Class name="Aloha.ContainerManager" coverage="82.3" coveredlines="28" coverablelines="34" totallines="98" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="5" methodcoverage="80" />
       <Class name="Aloha.ControlManager" coverage="0" coveredlines="0" coverablelines="47" totallines="133" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="7" methodcoverage="0" />
@@ -85,7 +85,7 @@
       <Class name="Aloha.Wizard" coverage="100" coveredlines="54" coverablelines="54" totallines="155" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="8" methodcoverage="100" />
       <Class name="Aloha.WizardControlManager" coverage="17.6" coveredlines="6" coverablelines="34" totallines="101" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="5" methodcoverage="20" />
       <Class name="Aloha.Wyrmling" coverage="82.6" coveredlines="19" coverablelines="23" totallines="89" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="4" methodcoverage="75" />
-      <Class name="Aloha.WyrmlingFireball" coverage="100" coveredlines="7" coverablelines="7" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="Aloha.WyrmlingFireball" coverage="70" coveredlines="7" coverablelines="10" totallines="35" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="Singleton[T]" coverage="100" coveredlines="16" coverablelines="16" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
     </Assembly>
   </Coverage>
