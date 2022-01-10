@@ -52,10 +52,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d3/db4/class_aloha_1_1_entity.html#a9f2540e85d105883c1a6826250b5053c",
-"d7/d02/class_aloha_1_1_level_metadata.html#a58b1a3245e45a77c9def8f3e9e7406dc",
-"db/d73/class_aloha_1_1_serialize_dictionary.html#a390258bdff3445b70b48017573056702",
-"dir_42460606d2d07f703f9a593b26e44ace.html"
+"d3/db4/class_aloha_1_1_entity.html#a6b8d62ab33584618cd4f9ddfab09d09f",
+"d6/de2/_ice_lancer_stats_8cs.html",
+"db/d71/class_aloha_1_1_chest.html#a8311349aa4b7f9ab2a1013da7bd9c009",
+"df/dd6/class_aloha_1_1_shield.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
