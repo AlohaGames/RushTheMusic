@@ -92,10 +92,13 @@ var annotated_dup =
         [ "UtilsTest", "d5/dd9/class_aloha_1_1_test_1_1_utils_test.html", "d5/dd9/class_aloha_1_1_test_1_1_utils_test" ]
       ] ],
       [ "UI", "d1/d6d/namespace_aloha_1_1_u_i.html", [
+        [ "Settings", "dd/d86/class_aloha_1_1_u_i_1_1_settings.html", "dd/d86/class_aloha_1_1_u_i_1_1_settings" ],
+        [ "SliderValueToText", "d7/dc8/class_aloha_1_1_u_i_1_1_slider_value_to_text.html", "d7/dc8/class_aloha_1_1_u_i_1_1_slider_value_to_text" ],
         [ "VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", null ]
       ] ],
       [ "CreateLevelMapping", "df/d7b/class_aloha_1_1_create_level_mapping.html", "df/d7b/class_aloha_1_1_create_level_mapping" ],
       [ "GameManager", "da/d6b/class_aloha_1_1_game_manager.html", "da/d6b/class_aloha_1_1_game_manager" ],
+      [ "RtmConfig", "dd/d59/class_aloha_1_1_rtm_config.html", "dd/d59/class_aloha_1_1_rtm_config" ],
       [ "SerializeDictionary", "db/d73/class_aloha_1_1_serialize_dictionary.html", "db/d73/class_aloha_1_1_serialize_dictionary" ],
       [ "Utils", "dc/d53/class_aloha_1_1_utils.html", "dc/d53/class_aloha_1_1_utils" ],
       [ "Biome", "d4/dbb/class_aloha_1_1_biome.html", "d4/dbb/class_aloha_1_1_biome" ],
