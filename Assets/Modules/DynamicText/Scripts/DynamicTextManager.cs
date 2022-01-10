@@ -70,7 +70,7 @@ namespace Aloha
         /// </summary>
         public void Show(GameObject gameObject, string message, Color color, int priority = 2)
         {
-            if (dynamicTextPrefab == null) return;
+            if (dynamicTextPrefab == null || !GameManager.Instance.Config.AllowDynamicTexts) return;
 
             string key = gameObject.GetInstanceID().ToString();
             DynamicText dt = Instantiate(dynamicTextPrefab);
