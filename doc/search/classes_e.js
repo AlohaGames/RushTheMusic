@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ragepotion_874',['RagePotion',['../d9/d71/class_aloha_1_1_rage_potion.html',1,'Aloha']]],
-  ['rock_875',['Rock',['../d3/de9/class_aloha_1_1_rock.html',1,'Aloha']]]
+  ['ragepotion_877',['RagePotion',['../d9/d71/class_aloha_1_1_rage_potion.html',1,'Aloha']]],
+  ['rock_878',['Rock',['../d3/de9/class_aloha_1_1_rock.html',1,'Aloha']]]
 ];

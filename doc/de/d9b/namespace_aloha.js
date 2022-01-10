@@ -5,6 +5,7 @@ var namespace_aloha =
     [ "Events", "d4/d15/namespace_aloha_1_1_events.html", "d4/d15/namespace_aloha_1_1_events" ],
     [ "Example", "db/dbe/namespace_aloha_1_1_example.html", "db/dbe/namespace_aloha_1_1_example" ],
     [ "Test", "dc/d45/namespace_aloha_1_1_test.html", "dc/d45/namespace_aloha_1_1_test" ],
+    [ "UI", "d1/d6d/namespace_aloha_1_1_u_i.html", "d1/d6d/namespace_aloha_1_1_u_i" ],
     [ "CreateLevelMapping", "df/d7b/class_aloha_1_1_create_level_mapping.html", "df/d7b/class_aloha_1_1_create_level_mapping" ],
     [ "GameManager", "da/d6b/class_aloha_1_1_game_manager.html", "da/d6b/class_aloha_1_1_game_manager" ],
     [ "SerializeDictionary", "db/d73/class_aloha_1_1_serialize_dictionary.html", "db/d73/class_aloha_1_1_serialize_dictionary" ],

@@ -113,6 +113,7 @@ var hierarchy =
         [ "Aloha.Tree", "d1/de3/class_aloha_1_1_tree.html", null ]
       ] ],
       [ "Aloha.Sword", "d8/d29/class_aloha_1_1_sword.html", null ],
+      [ "Aloha.UI.VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", null ],
       [ "Aloha.UIInventory", "db/da9/class_aloha_1_1_u_i_inventory.html", null ],
       [ "Aloha.UIScore", "d5/dbf/class_aloha_1_1_u_i_score.html", null ],
       [ "Aloha.UITrackSelection", "d6/d0a/class_aloha_1_1_u_i_track_selection.html", null ],
