@@ -29,6 +29,15 @@ namespace Aloha
             GlobalEvent.OnSecondaryUpdate.AddListener(UpdateBar);
         }
 
+        /// <summary>
+        /// Update UI of the bar
+        /// <example> Example(s):
+        /// <code>
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="current"></param>
+        /// <param name="max"></param>
         public override void UpdateBar(int current, int max)
         {
             // Change bar according to hero type
