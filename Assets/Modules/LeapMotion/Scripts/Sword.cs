@@ -45,7 +45,7 @@ namespace Aloha
         /// <param name="other">other collider</param>
         public void OnTriggerEnter(Collider other)
         {
-            bool leapActivated = GameManager.Instance ? GameManager.Instance.LeapMode : true;
+            bool leapActivated = GameManager.Instance ? GameManager.Instance.Config.LeapMode : true;
             if (other.tag == "Enemy" && ((!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
                 if (!leapActivated) Speed = 2;

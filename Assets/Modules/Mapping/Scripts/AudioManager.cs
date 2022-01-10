@@ -23,6 +23,7 @@ namespace Aloha
             // Create audio source
             audioSourceGO = new GameObject("Audio Source");
             audioSource = audioSourceGO.AddComponent<AudioSource>();
+            audioSource.volume = GameManager.Instance.Config.GameVolume;
             ContainerManager.Instance.AddToContainer(ContainerTypes.Audio, audioSourceGO);
 
             // Listen to events
@@ -86,6 +87,25 @@ namespace Aloha
             shouldBePlaying = true;
             audioSource.Play();
             Debug.Log($"Resume music");
+        }
+
+        /// <summary>
+        ///     Update volume of the music
+        /// <example> Example(s):
+        /// <code>
+        ///     GlobalEvent.UpdateVolume(ResumeMusic);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="volume">value between 0 and 1</param>
+        public void UpdateVolume(float volume)
+        {
+            GameManager.Instance.Config.GameVolume = volume;
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
+            Debug.Log($"New volume : {volume * 100}%");
         }
 
         /// <summary>
