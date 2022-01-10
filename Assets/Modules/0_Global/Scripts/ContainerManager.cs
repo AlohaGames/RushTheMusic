@@ -6,6 +6,9 @@ using Aloha.Events;
 namespace Aloha
 {
 
+    /// <summary>
+    /// Type of the differents containers (work as an enum)
+    /// </summary>
     static class ContainerTypes
     {
         public const string Tile = "tile";
@@ -13,6 +16,8 @@ namespace Aloha
         public const string Enemy = "enemy";
         public const string Environment = "environment";
         public const string Item = "item";
+        
+        public const string Audio = "audio";
     }
 
     /// <summary>
@@ -48,6 +53,10 @@ namespace Aloha
             go.transform.SetParent(container.transform);
         }
 
+        /// <summary>
+        /// Clean the container
+        /// </summary>
+        /// <param name="containerName">The name of the container to clear</param>
         public void ClearContainer(string containerName)
         {
             if (containers.ContainsKey(containerName))
@@ -63,6 +72,10 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Clean multiple containers
+        /// </summary>
+        /// <param name="containerName">The names of the containers to clear</param>
         public void ClearContainers(string[] containersName)
         {
             foreach (var containerName in containersName)
@@ -72,6 +85,9 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Clean all containers
+        /// </summary>
         public void ClearAllContainer()
         {
             foreach (var containerName in containers.Keys)

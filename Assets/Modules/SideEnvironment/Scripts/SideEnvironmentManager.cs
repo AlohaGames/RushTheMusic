@@ -43,6 +43,9 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(Reset);
         }
 
+        /// <summary>
+        /// Reset the current biome and clear the environment
+        /// </summary>
         public void Reset()
         {
             currentBiome = null;

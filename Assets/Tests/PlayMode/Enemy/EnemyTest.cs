@@ -19,7 +19,7 @@ namespace Aloha.Test
             // Instantiation of an enemy
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
-            EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
+            EnemyStats stats = (EnemyStats) EnemyStats.CreateInstance("EnemyStats");
             stats.MaxHealth = 10;
             enemy.Init(stats);
 

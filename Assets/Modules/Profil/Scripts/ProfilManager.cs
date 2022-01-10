@@ -13,12 +13,7 @@ namespace Aloha
         public Profil CurrentProfil;
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Manager of user profils
         /// </summary>
         public ProfilManager()
         {
@@ -26,12 +21,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Return the directory where profils are stored on local computer
         /// </summary>
         private string getProfilDir()
         {
@@ -41,11 +31,6 @@ namespace Aloha
 
         /// <summary>
         /// Save current profile to disk
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void SaveCurrentProfil()
         {
@@ -54,11 +39,6 @@ namespace Aloha
 
         /// <summary>
         /// Create a new profile
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void CreateProfil(Profil profil)
         {
@@ -68,11 +48,6 @@ namespace Aloha
 
         /// <summary>
         /// Save a profile to disk
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void SaveProfil(Profil profil)
         {
@@ -86,11 +61,6 @@ namespace Aloha
 
         /// <summary>
         /// Delete a profile
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void DeleteProfil(Profil profil)
         {
@@ -111,11 +81,6 @@ namespace Aloha
 
         /// <summary>
         /// Load profile from disk
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public Profil LoadProfilFile(string filepath)
         {
@@ -131,11 +96,6 @@ namespace Aloha
 
         /// <summary>
         /// Load all profiles from disk
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
         /// </summary>
         public void LoadProfiles()
         {
@@ -155,12 +115,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Get current profil
         /// </summary>
         public Profil GetCurrentProfil()
         {
@@ -168,12 +123,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO
-        /// </code>
-        /// </example>
+        /// Get all profils as a list
         /// </summary>
         public List<Profil> GetAllProfils()
         {

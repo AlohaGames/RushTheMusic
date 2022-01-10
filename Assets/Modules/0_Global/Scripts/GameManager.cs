@@ -28,7 +28,6 @@ namespace Aloha
             GlobalEvent.Pause.AddListener(Freeze);
         }
 
-
         #region Events
         /// <summary>
         /// Will ask to load the request <paramref name="level"/>

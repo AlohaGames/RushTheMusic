@@ -55,8 +55,8 @@ namespace Aloha
                 Item item = this.items.Dequeue();
                 item.Effect();
             }
+
             UIManager.Instance.UIInventory.UpdateInventoryUI();
-            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
         }
 
         /// <summary>
@@ -99,6 +99,7 @@ namespace Aloha
         public void Reset()
         {
             this.items.Clear();
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
         }
 
         /// <summary>

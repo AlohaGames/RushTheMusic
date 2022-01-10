@@ -23,6 +23,7 @@ namespace Aloha
             // Create audio source
             audioSourceGO = new GameObject("Audio Source");
             audioSource = audioSourceGO.AddComponent<AudioSource>();
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Audio, audioSourceGO);
 
             // Listen to events
             GlobalEvent.LevelStart.AddListener(StartMusic);
