@@ -27,8 +27,6 @@ var namespace_aloha_1_1_test =
     [ "ScoreTest", "d7/d4c/class_aloha_1_1_test_1_1_score_test.html", "d7/d4c/class_aloha_1_1_test_1_1_score_test" ],
     [ "UIScoreTest", "d1/de7/class_aloha_1_1_test_1_1_u_i_score_test.html", "d1/de7/class_aloha_1_1_test_1_1_u_i_score_test" ],
     [ "TileTest", "d3/d1c/class_aloha_1_1_test_1_1_tile_test.html", "d3/d1c/class_aloha_1_1_test_1_1_tile_test" ],
-    [ "HorizontalBarTest", "dd/d4f/class_aloha_1_1_test_1_1_horizontal_bar_test.html", "dd/d4f/class_aloha_1_1_test_1_1_horizontal_bar_test" ],
-    [ "VerticalBarTest", "dc/def/class_aloha_1_1_test_1_1_vertical_bar_test.html", "dc/def/class_aloha_1_1_test_1_1_vertical_bar_test" ],
     [ "SerialiazeDictionaryTest", "d8/d0e/class_aloha_1_1_test_1_1_serialiaze_dictionary_test.html", "d8/d0e/class_aloha_1_1_test_1_1_serialiaze_dictionary_test" ],
     [ "UtilsTest", "d5/dd9/class_aloha_1_1_test_1_1_utils_test.html", "d5/dd9/class_aloha_1_1_test_1_1_utils_test" ]
 ];

@@ -8,6 +8,5 @@ var dir_eea61e29c0f509c57a1d02888193f70c =
     [ "Mapping", "dir_b5061e0ffafeeab4f4d02b2af82b8bd8.html", "dir_b5061e0ffafeeab4f4d02b2af82b8bd8" ],
     [ "Score", "dir_0b07beb97804e52788b5b322fb6ec9af.html", "dir_0b07beb97804e52788b5b322fb6ec9af" ],
     [ "Tiles", "dir_217f8a5ab21f8502faa4b1b3c4b03fe9.html", "dir_217f8a5ab21f8502faa4b1b3c4b03fe9" ],
-    [ "UI", "dir_cd0a56a727a1a50b2f9d65c8cab25f6c.html", "dir_cd0a56a727a1a50b2f9d65c8cab25f6c" ],
     [ "Utils", "dir_a39652c81e012b92725853a9493ceb12.html", "dir_a39652c81e012b92725853a9493ceb12" ]
 ];

@@ -20,7 +20,6 @@ var hierarchy =
       [ "Aloha.Hero< T >", "d5/d2a/class_aloha_1_1_hero.html", null ]
     ] ],
     [ "Aloha.Test.HeroTest", "d3/d94/class_aloha_1_1_test_1_1_hero_test.html", null ],
-    [ "Aloha.Test.HorizontalBarTest", "dd/d4f/class_aloha_1_1_test_1_1_horizontal_bar_test.html", null ],
     [ "Aloha.Test.InventoryTest", "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html", null ],
     [ "Aloha.Test.InventoryUITest", "d0/d7d/class_aloha_1_1_test_1_1_inventory_u_i_test.html", null ],
     [ "Aloha.Test.LancerTest", "d1/dc8/class_aloha_1_1_test_1_1_lancer_test.html", null ],
@@ -93,8 +92,6 @@ var hierarchy =
       [ "Aloha.FireballSpawner", "d5/de7/class_aloha_1_1_fireball_spawner.html", null ],
       [ "Aloha.HUDEffect", "d4/d39/class_aloha_1_1_h_u_d_effect.html", null ],
       [ "Aloha.HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", null ],
-      [ "Aloha.InfiniteModeButton", "de/de4/class_aloha_1_1_infinite_mode_button.html", null ],
-      [ "Aloha.InfiniteModeNextLevelButton", "d0/d71/class_aloha_1_1_infinite_mode_next_level_button.html", null ],
       [ "Aloha.Item", "d7/d1c/class_aloha_1_1_item.html", [
         [ "Aloha.ExperiencePotion", "d7/dd9/class_aloha_1_1_experience_potion.html", null ],
         [ "Aloha.HealPotion", "dd/dc6/class_aloha_1_1_heal_potion.html", null ],
@@ -248,7 +245,6 @@ var hierarchy =
     [ "Aloha.Test.UserItemTest", "d8/d47/class_aloha_1_1_test_1_1_user_item_test.html", null ],
     [ "Aloha.Utils", "dc/d53/class_aloha_1_1_utils.html", null ],
     [ "Aloha.Test.UtilsTest", "d5/dd9/class_aloha_1_1_test_1_1_utils_test.html", null ],
-    [ "Aloha.Test.VerticalBarTest", "dc/def/class_aloha_1_1_test_1_1_vertical_bar_test.html", null ],
     [ "Aloha.Test.VortexTest", "de/db9/class_aloha_1_1_test_1_1_vortex_test.html", null ],
     [ "Aloha.Test.WallTest", "d1/daa/class_aloha_1_1_test_1_1_wall_test.html", null ],
     [ "Aloha.Test.WarriorTest", "d9/d95/class_aloha_1_1_test_1_1_warrior_test.html", null ],

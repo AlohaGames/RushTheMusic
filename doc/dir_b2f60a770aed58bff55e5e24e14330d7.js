@@ -6,12 +6,6 @@ var dir_b2f60a770aed58bff55e5e24e14330d7 =
     [ "HeroSelectionMenu.cs", "de/df7/_hero_selection_menu_8cs.html", [
       [ "HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", "d4/d14/class_aloha_1_1_hero_selection_menu" ]
     ] ],
-    [ "InfiniteModeButton.cs", "db/d48/_infinite_mode_button_8cs.html", [
-      [ "InfiniteModeButton", "de/de4/class_aloha_1_1_infinite_mode_button.html", "de/de4/class_aloha_1_1_infinite_mode_button" ]
-    ] ],
-    [ "InfiniteModeNextLevelButton.cs", "d1/d30/_infinite_mode_next_level_button_8cs.html", [
-      [ "InfiniteModeNextLevelButton", "d0/d71/class_aloha_1_1_infinite_mode_next_level_button.html", "d0/d71/class_aloha_1_1_infinite_mode_next_level_button" ]
-    ] ],
     [ "LevelLoaderButton.cs", "df/d10/_level_loader_button_8cs.html", [
       [ "LevelLoaderButton", "d9/d2a/class_aloha_1_1_level_loader_button.html", "d9/d2a/class_aloha_1_1_level_loader_button" ]
     ] ],

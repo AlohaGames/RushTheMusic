@@ -13,7 +13,7 @@ var dir_c9b212436209a7a08739e4bfd61d90f1 =
       [ "ChestStats", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats.html", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats" ]
     ] ],
     [ "EnemyStats.cs", "d5/d95/_enemy_stats_8cs.html", [
-      [ "EnemyStats", "d9/dcf/class_aloha_1_1_enemy_stats.html", "d9/dcf/class_aloha_1_1_enemy_stats" ]
+      [ "EnemyStats", "d9/dcf/class_aloha_1_1_enemy_stats.html", null ]
     ] ],
     [ "FireLancerStats.cs", "d9/d22/_fire_lancer_stats_8cs.html", [
       [ "FireLancerStats", "d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html", null ]
