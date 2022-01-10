@@ -8,6 +8,7 @@ var namespace_aloha =
     [ "UI", "d1/d6d/namespace_aloha_1_1_u_i.html", "d1/d6d/namespace_aloha_1_1_u_i" ],
     [ "CreateLevelMapping", "df/d7b/class_aloha_1_1_create_level_mapping.html", "df/d7b/class_aloha_1_1_create_level_mapping" ],
     [ "GameManager", "da/d6b/class_aloha_1_1_game_manager.html", "da/d6b/class_aloha_1_1_game_manager" ],
+    [ "RtmConfig", "dd/d59/class_aloha_1_1_rtm_config.html", "dd/d59/class_aloha_1_1_rtm_config" ],
     [ "SerializeDictionary", "db/d73/class_aloha_1_1_serialize_dictionary.html", "db/d73/class_aloha_1_1_serialize_dictionary" ],
     [ "Utils", "dc/d53/class_aloha_1_1_utils.html", "dc/d53/class_aloha_1_1_utils" ],
     [ "Biome", "d4/dbb/class_aloha_1_1_biome.html", "d4/dbb/class_aloha_1_1_biome" ],

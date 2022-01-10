@@ -15,6 +15,12 @@ var dir_b2f60a770aed58bff55e5e24e14330d7 =
     [ "MenuRoot.cs", "dc/dfb/_menu_root_8cs.html", [
       [ "MenuRoot", "d1/dc5/class_aloha_1_1_menu_root.html", "d1/dc5/class_aloha_1_1_menu_root" ]
     ] ],
+    [ "Settings.cs", "d2/d74/_settings_8cs.html", [
+      [ "Settings", "dd/d86/class_aloha_1_1_u_i_1_1_settings.html", "dd/d86/class_aloha_1_1_u_i_1_1_settings" ]
+    ] ],
+    [ "SliderValueToText.cs", "d9/d30/_slider_value_to_text_8cs.html", [
+      [ "SliderValueToText", "d7/dc8/class_aloha_1_1_u_i_1_1_slider_value_to_text.html", "d7/dc8/class_aloha_1_1_u_i_1_1_slider_value_to_text" ]
+    ] ],
     [ "UITrackSelection.cs", "d3/d62/_u_i_track_selection_8cs.html", [
       [ "UITrackSelection", "d6/d0a/class_aloha_1_1_u_i_track_selection.html", "d6/d0a/class_aloha_1_1_u_i_track_selection" ]
     ] ],
