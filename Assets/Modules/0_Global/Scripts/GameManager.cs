@@ -34,8 +34,8 @@ namespace Aloha
         /// Will ask to load the request <paramref name="level"/>
         /// <example> Example(s):
         /// <code>
-        ///     LoadLevel(monlevel);
-        ///     LoadLevel(monautrelevel, true);
+        ///     GameManager.Instance.LoadLevel(monlevel);
+        ///     GameManager.Instance.LoadLevel(monautrelevel, true);
         /// </code>
         /// </example>
         /// </summary>
@@ -50,7 +50,7 @@ namespace Aloha
         /// Will ask to load the default level.
         /// <example> Example(s):
         /// <code>
-        ///     LoadLevel();
+        ///     GameManager.Instance.LoadLevel();
         /// </code>
         /// </example>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Aloha
         /// Will start the loaded level.
         /// <example> Example(s):
         /// <code>
-        ///     StartLevel();
+        ///     GameManager.Instance.StartLevel();
         /// </code>
         /// </example>
         /// </summary>
@@ -78,7 +78,7 @@ namespace Aloha
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
-        ///     Loose();
+        ///     GameManager.Instance.StopLevel();
         /// </code>
         /// </example>
         /// </summary>
@@ -115,8 +115,8 @@ namespace Aloha
         /// Will ask to load a specific Hero based on <paramref name="type"/>.
         /// <example> Example(s):
         /// <code>
-        ///     LoadHero(Warrior);
-        ///     LoadHero(Wizard);
+        ///     GameManager.Instance.LoadHero(Warrior);
+        ///     GameManager.Instance.LoadHero(Wizard);
         /// </code>
         /// </example>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Aloha
         /// Will return if the game is paused or not
         /// <example> Example(s):
         /// <code>
-        ///     IsGamePaused()
+        ///     GameManager.Instance.IsGamePaused()
         /// </code>
         /// </example>
         /// </summary>
@@ -146,7 +146,7 @@ namespace Aloha
         /// Will set if leap mode is activated in the game
         /// <example> Example(s):
         /// <code>
-        ///     SetLeapMode()
+        ///     GameManager.Instance.SetLeapMode()
         /// </code>
         /// </example>
         /// </summary>
@@ -160,7 +160,7 @@ namespace Aloha
         /// Will ask to Resume a paused Game (do nothing if already resumed)
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GameManager.Instance.ResumeGame()
         /// </code>
         /// </example>
         /// </summary>
@@ -174,7 +174,7 @@ namespace Aloha
         /// Will ask to Pause the game (do nothing if already paused).
         /// <example> Example(s):
         /// <code>
-        ///     PauseGame();
+        ///     GameManager.Instance.PauseGame();
         /// </code>
         /// </example>
         /// </summary>
@@ -188,7 +188,7 @@ namespace Aloha
         /// Will ask to Quit the game.
         /// <example> Example(s):
         /// <code>
-        ///     Quit();
+        ///     GameManager.Instance.Quit();
         /// </code>
         /// </example>
         /// </summary>
@@ -203,7 +203,7 @@ namespace Aloha
         /// Set the new current Hero and Destroy the old Hero if needed.
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GameManager.Instance.SetHero(wizard)
         /// </code>
         /// </example>
         /// </summary>
@@ -221,7 +221,7 @@ namespace Aloha
         /// Return the current playing Hero.
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GameManager.Instance.GetHero()
         /// </code>
         /// </example>
         /// </summary>

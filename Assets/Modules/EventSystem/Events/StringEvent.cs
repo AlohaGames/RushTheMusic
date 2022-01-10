@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace Aloha.Events
 {
     /// <summary>
-    /// TODO
+    /// Class for a String Event
     /// </summary>
     public class StringEvent : UnityEvent<string> { }
 }

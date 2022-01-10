@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the portal spawner attached to the wizard's arm
     /// </summary>
     public class PortalSpawner : MonoBehaviour
     {
@@ -47,10 +47,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Prepare the portal before spawning it
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     ps.preparePortal();
         /// </code>
         /// </example>
         /// </summary>
@@ -95,10 +95,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Check if the laser hits a target
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     this.checkLaser();
         /// </code>
         /// </example>
         /// </summary>

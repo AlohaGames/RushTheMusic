@@ -7,7 +7,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the level loader button
     /// </summary>
     [RequireComponent(typeof(Button))]
     public class LevelLoaderButton : MonoBehaviour
@@ -25,10 +25,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Called when the user click on the button
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GetComponent<Button>().onClick.AddListener(OnClick);
         /// </code>
         /// </example>
         /// </summary>

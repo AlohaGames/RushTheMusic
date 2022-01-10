@@ -104,6 +104,8 @@ namespace Aloha
             if (!InventoryIsConstructed())
             {
                 ConstructInventoryUI();
+            } else {
+                UpdateInventoryUI();
             }
         }
     }

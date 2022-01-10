@@ -6,7 +6,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the pause menu
     /// </summary>
     public class PauseMenu : MonoBehaviour
     {
@@ -22,10 +22,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Resume the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Resume.AddListener(Resume);
         /// </code>
         /// </example>
         /// </summary>
@@ -35,10 +35,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Pause the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Pause.RemoveListener(PauseGame);
         /// </code>
         /// </example>
         /// </summary>

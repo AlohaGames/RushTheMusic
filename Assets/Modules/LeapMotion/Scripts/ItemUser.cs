@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Class for the item user
+    /// </summary>
     public class ItemUser : MonoBehaviour
     {
 

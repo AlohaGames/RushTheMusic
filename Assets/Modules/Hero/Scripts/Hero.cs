@@ -11,15 +11,15 @@ namespace Aloha
     public class Hero : Entity
     {
         /// <summary>
-        /// TODO
+        ///     give stats of the Hero
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     hero.GetStats();
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        ///     Stats of the hero
         /// </returns>
         public new virtual HeroStats GetStats()
         {
@@ -58,14 +58,27 @@ namespace Aloha
         /// This function is called when a hero level up.
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     warrior.LevelUp(2000);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="xp"></param>
-        public void LevelUp(int xp = 1)
+        public void GainXp(int xp = 1)
         {
             this.GetStats().XP += xp;
+
+            // LEVEL UP !
+            if (this.GetStats().XP >= this.GetStats().MaxXP)
+            {
+                this.GetStats().Level += 1;
+                this.GetStats().XP -= this.GetStats().MaxXP;
+
+                // Each level need 20% more XP
+                this.GetStats().MaxXP = (int)(this.GetStats().MaxXP * 1.20f);
+            }
+
+            // Update UI XP bar
+            GlobalEvent.OnExperienceUpdate.Invoke(this.GetStats().Level, this.GetStats().XP, this.GetStats().MaxXP);
         }
 
         /// <summary>
@@ -95,7 +108,7 @@ namespace Aloha
         /// Regenerate HP of hero.
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     wizard.RegenerateHP(20);
         /// </code>
         /// </example>
         /// </summary>
@@ -126,13 +139,13 @@ namespace Aloha
         /// Regenerate a pourcentage of secondary bar. The gain change depending on max secondary's hero
         /// </summary>
         /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
-        public virtual void RegenerateSecondary(float secondaryRegen){}
+        public virtual void RegenerateSecondary(float secondaryRegen) { }
 
         /// <summary>
         /// Invoke Die event
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     warrior.Die();
         /// </code>
         /// </example>
         /// </summary>
@@ -150,7 +163,7 @@ namespace Aloha
     {
         protected T heroStats
         {
-            get{ return this.stats as T; }
+            get { return this.stats as T; }
         }
 
         /// <summary>
@@ -167,7 +180,7 @@ namespace Aloha
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        ///     Returns stats of the hero
         /// </returns>
         public new T GetStats()
         {

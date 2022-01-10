@@ -32,13 +32,13 @@ namespace Aloha
         /// This function instantiate an enemy with an enemy type.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// EnnemyInstancier.Instance.InstantiateEnemy(EnemyType.Wizard);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="type"></param>
         /// <returns>
-        /// TODO
+        /// Instantiated ennemy
         /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
@@ -112,5 +112,10 @@ namespace Aloha
         /// Canon
         /// </summary>
         canon = 10,
+
+        /// <summary>
+        /// Bat
+        /// </summary>
+        bat = 11,
     }
 }

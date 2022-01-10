@@ -6,7 +6,7 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the button to create a profile
     /// </summary>
     [RequireComponent(typeof(Button))]
     public class CreateProfileButton : MonoBehaviour
@@ -24,10 +24,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Event called when the user clicks on the button
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GetComponent<Button>().onClick.AddListener(OnClick);
         /// </code>
         /// </example>
         /// </summary>

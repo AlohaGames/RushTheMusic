@@ -8,7 +8,6 @@ namespace Aloha
     /// </summary>
     public class Warrior : Hero<WarriorStats>
     {
-        //TODO: Ajouter une fonction de parade
         private const float REGENERATION_POURCENT = 0.2f;
         public int CurrentRage;
         public bool IsAttacking;

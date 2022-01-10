@@ -12,7 +12,7 @@ namespace Aloha
     }
 
     /// <summary>
-    /// TODO
+    /// Class of the manager for the side environment
     /// </summary>
     public class SideEnvironmentManager : Singleton<SideEnvironmentManager>
     {

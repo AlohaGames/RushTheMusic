@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for basic stats
     /// </summary>
     public class Stats : ScriptableObject
     {

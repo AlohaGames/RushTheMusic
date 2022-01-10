@@ -2,7 +2,6 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
-using Aloha;
 
 namespace Aloha.Test
 {
@@ -17,26 +16,30 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator EnemyTestDamage()
         {
+            // Instantiation of an enemy
             GameObject enemyGO = new GameObject();
             Enemy enemy = enemyGO.AddComponent<Enemy>();
             EnemyStats stats = (EnemyStats)EnemyStats.CreateInstance("EnemyStats");
             stats.MaxHealth = 10;
             enemy.Init(stats);
 
+            // Hit the enemy
             enemy.TakeDamage(5);
             Assert.AreEqual(5, enemy.CurrentHealth);
 
+            // Check if enemy is not healed with negatives damages
             enemy.TakeDamage(-5);
             Assert.AreEqual(5, enemy.CurrentHealth);
-
             yield return null;
 
+            // Hit the enemy
             enemy.TakeDamage(5);
             Assert.AreEqual(0, enemy.CurrentHealth);
 
             // Wait for death animation
             yield return new WaitForSeconds(0.5f);
 
+            // Check if enemy is killed
             Assert.IsTrue(enemy == null);
 
             // Clear the scene
@@ -50,11 +53,13 @@ namespace Aloha.Test
         [Test]
         public void EnemyInstancierTest()
         {
+            // Instantiation of a generic enemy
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             Enemy enemy = EnemyInstantier.Instance
                 .InstantiateEnemy(EnemyType.generic)
                 .GetComponent<Enemy>();
 
+            // Check if enemy has been instanced
             Assert.IsTrue(enemy != null);
             Assert.IsTrue(enemy is Enemy);
 

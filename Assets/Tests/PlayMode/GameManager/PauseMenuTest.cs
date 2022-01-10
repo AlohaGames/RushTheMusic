@@ -13,16 +13,18 @@ namespace Aloha.Test
         [UnityTest]
         public IEnumerator PauseResumeTest()
         {
+            // Create pause menu component
             GameObject pause = new GameObject();
             pause.AddComponent<PauseMenu>();
 
+            // Add UI to pause menu
             GameObject child = new GameObject();
             child.SetActive(false);
             child.transform.SetParent(pause.transform);
             pause.GetComponent<PauseMenu>().MenuPauseUI = child;
-
             yield return null;
 
+            // Check if the game is playing
             Assert.IsTrue(Time.timeScale != 0f);
             GameManager.Instance.PauseGame();
 
@@ -37,6 +39,7 @@ namespace Aloha.Test
 
             yield return null;
 
+            // Check the game is playing again
             Assert.IsTrue(Time.timeScale != 0f);
             Assert.IsFalse(GameManager.Instance.IsGamePaused());
 
