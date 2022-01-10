@@ -53,10 +53,13 @@ namespace Aloha
         {
             if (!isTilesStopped)
             {
-                lastTileSpeed = TilesManager.Instance.TileSpeed;
-                TilesManager.Instance.ChangeTileSpeed(0);
-                isTilesStopped = true;
-            } else
+                if (this.CurrentHealth > 0) // Security to avoid this case if the wall is in death animation
+                {
+                    lastTileSpeed = TilesManager.Instance.TileSpeed;
+                    TilesManager.Instance.ChangeTileSpeed(0);
+                    isTilesStopped = true;
+                }
+            } else 
             {
                 TilesManager.Instance.ChangeTileSpeed(lastTileSpeed);
                 isTilesStopped = false;
@@ -68,6 +71,7 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
+            anim.SetTrigger("isDead");
             if (isTilesStopped) runAndStopTiles();
             base.Die();
         }
