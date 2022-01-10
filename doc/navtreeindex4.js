@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"df/d01/_item_8cs.html":[2,0,0,1,8,0,3],
 "df/d10/_level_loader_button_8cs.html":[2,0,0,1,14,0,3,2],
 "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html":[1,0,0,0,20],
 "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html#a0d1dad6f86055867b3dad39719dad114":[1,0,0,0,20,0],
@@ -99,8 +100,8 @@ var NAVTREEINDEX4 =
 "dir_feb90bd73bfdb91d044d00150c895788.html":[2,0,0,1,11,0],
 "dir_ff033150d323fd08e590dc5591a8ca57.html":[2,0,0,1,1,0],
 "files.html":[2,0],
-"functions.html":[1,3,0,0],
 "functions.html":[1,3,0],
+"functions.html":[1,3,0,0],
 "functions_b.html":[1,3,0,1],
 "functions_c.html":[1,3,0,2],
 "functions_d.html":[1,3,0,3],

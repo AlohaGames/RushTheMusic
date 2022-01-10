@@ -54,8 +54,8 @@ var NAVTREEINDEX =
 "annotated.html",
 "d3/db4/class_aloha_1_1_entity.html",
 "d6/db2/_bat_attack_8cs.html",
-"da/d9d/class_aloha_1_1_container_types.html#af52e671ab7b6415396a6e4c82de112d1",
-"df/d10/_level_loader_button_8cs.html"
+"da/d9d/class_aloha_1_1_container_types.html#addefeb51d7b574600dc3b17fad39398d",
+"df/d01/_item_8cs.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

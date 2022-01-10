@@ -59,14 +59,15 @@ var NAVTREEINDEX2 =
 "d7/d4c/class_aloha_1_1_test_1_1_score_test.html#acb8364c03d76c69d479fe2a7f6e50d75":[1,0,0,4,24,0],
 "d7/d50/class_aloha_1_1_entity_stats_1_1_lancer_stats.html":[1,0,0,1,8],
 "d7/d50/class_aloha_1_1_warrior.html":[1,0,0,40],
-"d7/d50/class_aloha_1_1_warrior.html#a064c2ed056ce0e94ca26d8e33f6607ca":[1,0,0,40,6],
+"d7/d50/class_aloha_1_1_warrior.html#a064c2ed056ce0e94ca26d8e33f6607ca":[1,0,0,40,7],
 "d7/d50/class_aloha_1_1_warrior.html#a0f2535049344e41cba6415c392e3c54d":[1,0,0,40,5],
-"d7/d50/class_aloha_1_1_warrior.html#a11d50c908bf66950fe4c9ad77493a162":[1,0,0,40,8],
+"d7/d50/class_aloha_1_1_warrior.html#a11d50c908bf66950fe4c9ad77493a162":[1,0,0,40,9],
 "d7/d50/class_aloha_1_1_warrior.html#a6bae66b981c95ef86dec859d4524d31d":[1,0,0,40,3],
 "d7/d50/class_aloha_1_1_warrior.html#a726afeb632b910e2d994d573ad3ddbc5":[1,0,0,40,0],
 "d7/d50/class_aloha_1_1_warrior.html#a8b2deece388e13efae9148d804b89ab5":[1,0,0,40,4],
 "d7/d50/class_aloha_1_1_warrior.html#a8d322ff755c5eac38589b46a5e6069c4":[1,0,0,40,2],
-"d7/d50/class_aloha_1_1_warrior.html#acbc9f0676d48cbeb1f7aa3fbecbf3f5b":[1,0,0,40,7],
+"d7/d50/class_aloha_1_1_warrior.html#ab331046ef6c9cbd25ad7f5bf5b558d69":[1,0,0,40,6],
+"d7/d50/class_aloha_1_1_warrior.html#acbc9f0676d48cbeb1f7aa3fbecbf3f5b":[1,0,0,40,8],
 "d7/d50/class_aloha_1_1_warrior.html#afbb2143e2ecc237bac18e37508e13d09":[1,0,0,40,1],
 "d7/d52/class_aloha_1_1_control_manager.html":[1,0,0,36],
 "d7/d52/class_aloha_1_1_control_manager.html#a204966c259e21b06887f4804e1d967a5":[1,0,0,36,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "da/d9d/class_aloha_1_1_container_types.html#a4d208aa9f2c0f2df2f276ed389066022":[1,0,0,7,3],
 "da/d9d/class_aloha_1_1_container_types.html#a563bb407b6d3aa13e68934f350e8933f":[1,0,0,7,1],
 "da/d9d/class_aloha_1_1_container_types.html#a5d07fdf8d1905ab1274fc5f12509f740":[1,0,0,7,4],
-"da/d9d/class_aloha_1_1_container_types.html#a611aaba76e142d2636186e13504b44e4":[1,0,0,7,5],
-"da/d9d/class_aloha_1_1_container_types.html#addefeb51d7b574600dc3b17fad39398d":[1,0,0,7,2]
+"da/d9d/class_aloha_1_1_container_types.html#a611aaba76e142d2636186e13504b44e4":[1,0,0,7,5]
 };

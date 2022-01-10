@@ -1,5 +1,6 @@
 var NAVTREEINDEX3 =
 {
+"da/d9d/class_aloha_1_1_container_types.html#addefeb51d7b574600dc3b17fad39398d":[1,0,0,7,2],
 "da/d9d/class_aloha_1_1_container_types.html#af52e671ab7b6415396a6e4c82de112d1":[1,0,0,7,0],
 "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html":[1,0,0,4,14],
 "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html#acc63e7cd237a7cbc79d499339de2b1de":[1,0,0,4,14,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "de/de3/_bat_stats_8cs.html":[2,0,0,1,5,0,0,1],
 "de/df7/_hero_selection_menu_8cs.html":[2,0,0,1,14,0,3,1],
 "de/df8/class_aloha_1_1_test_1_1_wyrmling_fireball_test.html":[1,0,0,4,7],
-"de/df8/class_aloha_1_1_test_1_1_wyrmling_fireball_test.html#ae92168f78bcfcd3af6e04fb7cd1d942b":[1,0,0,4,7,0],
-"df/d01/_item_8cs.html":[2,0,0,1,8,0,3]
+"de/df8/class_aloha_1_1_test_1_1_wyrmling_fireball_test.html#ae92168f78bcfcd3af6e04fb7cd1d942b":[1,0,0,4,7,0]
 };
