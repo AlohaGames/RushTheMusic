@@ -107,7 +107,8 @@ var NAVTREEINDEX3 =
 "dd/da8/class_aloha_1_1_control_selector.html#aa64473079e7ef3fb6479f91deb58d06c":[1,0,0,34,0],
 "dd/da8/class_aloha_1_1_control_selector.html#ae883e369e4ec3b4ed89f99aab264f625":[1,0,0,34,1],
 "dd/db7/class_aloha_1_1_lancer.html":[1,0,0,22],
-"dd/db7/class_aloha_1_1_lancer.html#a91763bf0cc13883349ecd0ccb3aaf8c9":[1,0,0,22,0],
+"dd/db7/class_aloha_1_1_lancer.html#a76f001121119cbe201dc960ac85f0a15":[1,0,0,22,0],
+"dd/db7/class_aloha_1_1_lancer.html#a91763bf0cc13883349ecd0ccb3aaf8c9":[1,0,0,22,1],
 "dd/dc6/class_aloha_1_1_heal_potion.html":[1,0,0,42],
 "dd/dc6/class_aloha_1_1_heal_potion.html#a0b3d594c32af01186fa1a491f198edd5":[1,0,0,42,1],
 "dd/dc6/class_aloha_1_1_heal_potion.html#ac5c53f7284e76afc50425d9a73120495":[1,0,0,42,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "dir_162164fbd0334bd00ed8abeb9e2b70ce.html":[2,0,0,1,0],
 "dir_217f8a5ab21f8502faa4b1b3c4b03fe9.html":[2,0,0,2,0,7],
 "dir_2a2e8899830ae786b4114fa3b9e34a6d.html":[2,0,0,1,1,0,1],
-"dir_3f91f67d57820a3df6f19bc967f59149.html":[2,0,0,1,3],
-"dir_418239d9e32adde253467bf9870897d9.html":[2,0,0,1,5,0]
+"dir_3f91f67d57820a3df6f19bc967f59149.html":[2,0,0,1,3]
 };
