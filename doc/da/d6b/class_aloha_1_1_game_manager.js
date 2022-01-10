@@ -15,7 +15,7 @@ var class_aloha_1_1_game_manager =
     [ "SetLeapMode", "da/d6b/class_aloha_1_1_game_manager.html#a4f341b1164e6ae672abf01bdf0867bc1", null ],
     [ "StartLevel", "da/d6b/class_aloha_1_1_game_manager.html#a115f604787d7cce75537cbfcfe8b59eb", null ],
     [ "UnFreeze", "da/d6b/class_aloha_1_1_game_manager.html#ac8e26f3c2b5cc838c57d56db46e07e47", null ],
+    [ "Config", "da/d6b/class_aloha_1_1_game_manager.html#a2fba9ed36e315b47d1ddd7b826c4bccd", null ],
     [ "isInfinite", "da/d6b/class_aloha_1_1_game_manager.html#af1030775be8e4878e5966ce52c013f3e", null ],
-    [ "IsPlaying", "da/d6b/class_aloha_1_1_game_manager.html#a3ba7786a9196f50c391685579da931d7", null ],
-    [ "LeapMode", "da/d6b/class_aloha_1_1_game_manager.html#a54a836ae082cbf0bc09d3e6895b5608e", null ]
+    [ "IsPlaying", "da/d6b/class_aloha_1_1_game_manager.html#a3ba7786a9196f50c391685579da931d7", null ]
 ];
