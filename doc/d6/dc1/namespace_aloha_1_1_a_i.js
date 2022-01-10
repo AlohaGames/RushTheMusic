@@ -1,6 +1,7 @@
 var namespace_aloha_1_1_a_i =
 [
     [ "AssassinGraph", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph.html", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph" ],
+    [ "BatGraph", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph.html", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph" ],
     [ "CanonGraph", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph.html", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph" ],
     [ "ChestGraph", "db/df0/class_aloha_1_1_a_i_1_1_chest_graph.html", "db/df0/class_aloha_1_1_a_i_1_1_chest_graph" ],
     [ "EmptyGraph", "d7/d53/class_aloha_1_1_a_i_1_1_empty_graph.html", null ],
@@ -16,6 +17,9 @@ var namespace_aloha_1_1_a_i =
     [ "AssassinAttack", "d6/d05/class_aloha_1_1_a_i_1_1_assassin_attack.html", "d6/d05/class_aloha_1_1_a_i_1_1_assassin_attack" ],
     [ "AssassinConcentration", "d8/d86/class_aloha_1_1_a_i_1_1_assassin_concentration.html", "d8/d86/class_aloha_1_1_a_i_1_1_assassin_concentration" ],
     [ "BasicNode", "d5/d11/class_aloha_1_1_a_i_1_1_basic_node.html", "d5/d11/class_aloha_1_1_a_i_1_1_basic_node" ],
+    [ "BatAttack", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack.html", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack" ],
+    [ "BatEscape", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape.html", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape" ],
+    [ "BatMove", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move.html", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move" ],
     [ "CanonAttack", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack" ],
     [ "GONode", "d9/dc0/class_aloha_1_1_a_i_1_1_g_o_node.html", "d9/dc0/class_aloha_1_1_a_i_1_1_g_o_node" ],
     [ "LancerAttack", "d1/d81/class_aloha_1_1_a_i_1_1_lancer_attack.html", "d1/d81/class_aloha_1_1_a_i_1_1_lancer_attack" ],

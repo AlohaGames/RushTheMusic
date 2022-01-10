@@ -1,6 +1,7 @@
 var namespace_aloha_1_1_entity_stats =
 [
     [ "AssassinStats", "d4/dd6/class_aloha_1_1_entity_stats_1_1_assassin_stats.html", null ],
+    [ "BatStats", "d6/d85/class_aloha_1_1_entity_stats_1_1_bat_stats.html", null ],
     [ "CanonStats", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats.html", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats" ],
     [ "ChestStats", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats.html", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats" ],
     [ "FireLancerStats", "d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html", null ],

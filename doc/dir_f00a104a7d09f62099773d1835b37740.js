@@ -3,6 +3,9 @@ var dir_f00a104a7d09f62099773d1835b37740 =
     [ "AssassinGraph.cs", "de/d33/_assassin_graph_8cs.html", [
       [ "AssassinGraph", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph.html", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph" ]
     ] ],
+    [ "BatGraph.cs", "dc/de5/_bat_graph_8cs.html", [
+      [ "BatGraph", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph.html", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph" ]
+    ] ],
     [ "CanonGraph.cs", "d7/ddc/_canon_graph_8cs.html", [
       [ "CanonGraph", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph.html", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph" ]
     ] ],

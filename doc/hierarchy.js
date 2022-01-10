@@ -68,6 +68,9 @@ var hierarchy =
         [ "Aloha.Enemy< WallStats >", "d3/d34/class_aloha_1_1_enemy.html", [
           [ "Aloha.Wall", "d2/d86/class_aloha_1_1_wall.html", null ]
         ] ],
+        [ "Aloha.Enemy< BatStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.Bat", "d8/dae/class_aloha_1_1_bat.html", null ]
+        ] ],
         [ "Aloha.Enemy< ChestStats >", "d3/d34/class_aloha_1_1_enemy.html", [
           [ "Aloha.Chest", "db/d71/class_aloha_1_1_chest.html", null ]
         ] ],
@@ -123,6 +126,9 @@ var hierarchy =
       [ "Aloha.AI.GONode", "d9/dc0/class_aloha_1_1_a_i_1_1_g_o_node.html", [
         [ "Aloha.AI.AssassinAttack", "d6/d05/class_aloha_1_1_a_i_1_1_assassin_attack.html", null ],
         [ "Aloha.AI.AssassinConcentration", "d8/d86/class_aloha_1_1_a_i_1_1_assassin_concentration.html", null ],
+        [ "Aloha.AI.BatAttack", "d0/d92/class_aloha_1_1_a_i_1_1_bat_attack.html", null ],
+        [ "Aloha.AI.BatEscape", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape.html", null ],
+        [ "Aloha.AI.BatMove", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move.html", null ],
         [ "Aloha.AI.CanonAttack", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html", null ],
         [ "Aloha.AI.LancerAttack", "d1/d81/class_aloha_1_1_a_i_1_1_lancer_attack.html", null ],
         [ "Aloha.AI.Move", "d5/dad/class_aloha_1_1_a_i_1_1_move.html", null ],
@@ -137,6 +143,7 @@ var hierarchy =
     [ "ScriptableObject", null, [
       [ "Aloha.AI.Graph", "d0/d1a/class_aloha_1_1_a_i_1_1_graph.html", [
         [ "Aloha.AI.AssassinGraph", "d5/d51/class_aloha_1_1_a_i_1_1_assassin_graph.html", null ],
+        [ "Aloha.AI.BatGraph", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph.html", null ],
         [ "Aloha.AI.CanonGraph", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph.html", null ],
         [ "Aloha.AI.ChestGraph", "db/df0/class_aloha_1_1_a_i_1_1_chest_graph.html", null ],
         [ "Aloha.AI.EmptyGraph", "d7/d53/class_aloha_1_1_a_i_1_1_empty_graph.html", null ],
@@ -148,6 +155,7 @@ var hierarchy =
       [ "Aloha.Stats", "df/d5f/class_aloha_1_1_stats.html", [
         [ "Aloha.EnemyStats", "d9/dcf/class_aloha_1_1_enemy_stats.html", [
           [ "Aloha.EntityStats.AssassinStats", "d4/dd6/class_aloha_1_1_entity_stats_1_1_assassin_stats.html", null ],
+          [ "Aloha.EntityStats.BatStats", "d6/d85/class_aloha_1_1_entity_stats_1_1_bat_stats.html", null ],
           [ "Aloha.EntityStats.CanonStats", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats.html", null ],
           [ "Aloha.EntityStats.ChestStats", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats.html", null ],
           [ "Aloha.EntityStats.LancerStats", "d7/d50/class_aloha_1_1_entity_stats_1_1_lancer_stats.html", [
