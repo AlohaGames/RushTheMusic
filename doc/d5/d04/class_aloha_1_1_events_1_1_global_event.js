@@ -3,6 +3,7 @@ var class_aloha_1_1_events_1_1_global_event =
     [ "EnemyDie", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a4e39d79d869e662e590bd988ae158e49", null ],
     [ "EntityDied", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a2ab0e6642c6994b283533f4169e3d47a", null ],
     [ "GameOver", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a0f30591fe14c9f3d5dcf2126f8d67f22", null ],
+    [ "GameStop", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a1e0ca1adc33aaaf3c2b0e1165005567a", null ],
     [ "HeroDie", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a7eda7cac2218c4df9dc63d645e454f1c", null ],
     [ "HeroTakeDamage", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ae118257efc1383085c5b54f0ffd36397", null ],
     [ "LevelStart", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ad0e8e7ff05ca6638f771da92f2b93355", null ],
@@ -17,5 +18,6 @@ var class_aloha_1_1_events_1_1_global_event =
     [ "Pause", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ada25027769d1b158891be26ba1aa010c", null ],
     [ "QuitGame", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a99d38154907c96459afcaa34a7476f4b", null ],
     [ "Resume", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#aeca7a53ee9d9cbf4f0fd73ebedf631e3", null ],
-    [ "TileCount", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ade6b7b5c255136980dfe8f6fdb7296d9", null ]
+    [ "TileCount", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#ade6b7b5c255136980dfe8f6fdb7296d9", null ],
+    [ "Victory", "d5/d04/class_aloha_1_1_events_1_1_global_event.html#a4f548281308b9a51e376bbe80f959bf0", null ]
 ];
