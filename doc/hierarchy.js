@@ -4,7 +4,6 @@ var hierarchy =
     [ "Aloha.Test.AssassinTest", "df/d8d/class_aloha_1_1_test_1_1_assassin_test.html", null ],
     [ "Aloha.Test.CanonBallTest", "db/d1f/class_aloha_1_1_test_1_1_canon_ball_test.html", null ],
     [ "Aloha.Test.ChestTest", "df/dbb/class_aloha_1_1_test_1_1_chest_test.html", null ],
-    [ "Aloha.ContainerTypes", "da/d9d/class_aloha_1_1_container_types.html", null ],
     [ "Aloha.DynamicTextCall", "d8/d63/class_aloha_1_1_dynamic_text_call.html", null ],
     [ "Enemy", null, [
       [ "Aloha.Enemy< T >", "d3/d34/class_aloha_1_1_enemy.html", null ]
@@ -14,6 +13,7 @@ var hierarchy =
     [ "Aloha.Test.EnemySpawnerTest", "d9/d19/class_aloha_1_1_test_1_1_enemy_spawner_test.html", null ],
     [ "Aloha.Test.EnemyTest", "d7/db7/class_aloha_1_1_test_1_1_enemy_test.html", null ],
     [ "Aloha.Test.FireballTest", "d5/dcd/class_aloha_1_1_test_1_1_fireball_test.html", null ],
+    [ "Aloha.Test.GameOverMenuTest", "d1/dfd/class_aloha_1_1_test_1_1_game_over_menu_test.html", null ],
     [ "Aloha.Events.GlobalEvent", "d5/d04/class_aloha_1_1_events_1_1_global_event.html", null ],
     [ "Aloha.Test.HealthPotionTest", "d1/d54/class_aloha_1_1_test_1_1_health_potion_test.html", null ],
     [ "Hero", null, [
@@ -47,7 +47,6 @@ var hierarchy =
       ] ],
       [ "Aloha.BasicTile", "da/d25/class_aloha_1_1_basic_tile.html", null ],
       [ "Aloha.CanonBall", "d3/d34/class_aloha_1_1_canon_ball.html", null ],
-      [ "Aloha.ContinueButton", "de/dca/class_aloha_1_1_continue_button.html", null ],
       [ "Aloha.ControlManager", "d7/d52/class_aloha_1_1_control_manager.html", [
         [ "Aloha.WarriorControlManager", "d3/d3b/class_aloha_1_1_warrior_control_manager.html", null ],
         [ "Aloha.WizardControlManager", "d6/d28/class_aloha_1_1_wizard_control_manager.html", null ]
@@ -91,6 +90,7 @@ var hierarchy =
       [ "Aloha.Example.TestBar", "da/d18/class_aloha_1_1_example_1_1_test_bar.html", null ],
       [ "Aloha.Fireball", "dd/d86/class_aloha_1_1_fireball.html", null ],
       [ "Aloha.FireballSpawner", "d5/de7/class_aloha_1_1_fireball_spawner.html", null ],
+      [ "Aloha.GameOverMenu", "db/dba/class_aloha_1_1_game_over_menu.html", null ],
       [ "Aloha.HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", null ],
       [ "Aloha.Item", "d7/d1c/class_aloha_1_1_item.html", [
         [ "Aloha.ExperiencePotion", "d7/dd9/class_aloha_1_1_experience_potion.html", null ],
@@ -107,7 +107,6 @@ var hierarchy =
       [ "Aloha.PauseMenu", "d2/de9/class_aloha_1_1_pause_menu.html", null ],
       [ "Aloha.PortalSpawner", "d5/dd0/class_aloha_1_1_portal_spawner.html", null ],
       [ "Aloha.ProfilPickerUI", "de/de1/class_aloha_1_1_profil_picker_u_i.html", null ],
-      [ "Aloha.QuitButton", "d6/dfb/class_aloha_1_1_quit_button.html", null ],
       [ "Aloha.Shield", "df/dd6/class_aloha_1_1_shield.html", null ],
       [ "Aloha.SideEnvironment", "db/dc7/class_aloha_1_1_side_environment.html", [
         [ "Aloha.Rock", "d3/de9/class_aloha_1_1_rock.html", null ],
@@ -120,6 +119,7 @@ var hierarchy =
       [ "Aloha.UITrackSelection", "d6/d0a/class_aloha_1_1_u_i_track_selection.html", null ],
       [ "Aloha.Vortex", "da/d70/class_aloha_1_1_vortex.html", null ],
       [ "Aloha.WyrmlingFireball", "de/dc9/class_aloha_1_1_wyrmling_fireball.html", null ],
+      [ "OldMainMenu", "d5/de0/class_old_main_menu.html", null ],
       [ "Singleton< T >", "d3/dbc/class_singleton.html", null ]
     ] ],
     [ "Aloha.AI.Node", "d4/dd3/class_aloha_1_1_a_i_1_1_node.html", [
@@ -181,9 +181,6 @@ var hierarchy =
     [ "Aloha.SerializeDictionary< int, List< Aloha.EnemyMapping > >", "db/d73/class_aloha_1_1_serialize_dictionary.html", null ],
     [ "Singleton< AudioManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.AudioManager", "d5/d93/class_aloha_1_1_audio_manager.html", null ]
-    ] ],
-    [ "Singleton< ContainerManager >", "d3/dbc/class_singleton.html", [
-      [ "Aloha.ContainerManager", "d1/d27/class_aloha_1_1_container_manager.html", null ]
     ] ],
     [ "Singleton< DynamicTextManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.DynamicTextManager", "d1/ddd/class_aloha_1_1_dynamic_text_manager.html", null ]

@@ -4,7 +4,6 @@ var class_aloha_1_1_score_manager =
     [ "CalculateTotalScore", "d7/d3d/class_aloha_1_1_score_manager.html#a97048a7f0048a90a5d7c9599a1a2f715", null ],
     [ "CountHeroHit", "d7/d3d/class_aloha_1_1_score_manager.html#a2a95be63a8eb0cf8d6a872c293991c49", null ],
     [ "DeathCount", "d7/d3d/class_aloha_1_1_score_manager.html#acc6a41512fa2c9172b459840fceae041", null ],
-    [ "Reset", "d7/d3d/class_aloha_1_1_score_manager.html#a6e81d7f152cf54ab633076af1c4c0736", null ],
     [ "ScoreDistance", "d7/d3d/class_aloha_1_1_score_manager.html#ab87d9edefb53f507e9b6ad05ba3c9279", null ],
     [ "ScoreHit", "d7/d3d/class_aloha_1_1_score_manager.html#a84c553843c94810cff289cfcfd0c610d", null ],
     [ "ScoreKill", "d7/d3d/class_aloha_1_1_score_manager.html#aaa2f795b637c8fb5ecb24d86096b5015", null ],
