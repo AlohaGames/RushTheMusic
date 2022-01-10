@@ -20,7 +20,7 @@ namespace Aloha
         void Update()
         {
             // if mouse mode activated, play with mouse and keyboard
-            if (!GameManager.Instance.LeapMode && !GameManager.Instance.IsGamePaused() && GameManager.Instance.IsPlaying)
+            if (!GameManager.Instance.Config.LeapMode && !GameManager.Instance.IsGamePaused() && GameManager.Instance.IsPlaying)
             {
                 MoveHandsWithMouse();
                 CheckInputs();
@@ -38,8 +38,12 @@ namespace Aloha
         void MoveHandsWithMouse()
         {
             // Get camera rotation
-            float ry = Input.GetAxis("Mouse Y");
-            float rx = Input.GetAxis("Mouse X");
+            float ry = GameManager.Instance.Config.MouseVerticalInversion ? -Input.GetAxis("Mouse Y") : Input.GetAxis("Mouse Y");
+            float rx = GameManager.Instance.Config.MouseVerticalInversion ? -Input.GetAxis("Mouse X") : Input.GetAxis("Mouse X");
+
+            // Change speed according to sensibility
+            ry *= GameManager.Instance.Config.MouseSensibility;
+            rx *= GameManager.Instance.Config.MouseSensibility;
 
             // Rotate hands on y axis if it's in the camera angle
             if ((transform.rotation.y > -0.5f && rx < 0) || (transform.rotation.y < 0.5f && rx > 0))

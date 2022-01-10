@@ -17,8 +17,8 @@ namespace Aloha
         private string defaultLevel = "";
 
         public bool IsPlaying = false;
+        public RtmConfig Config = new RtmConfig();
         public bool isInfinite = false;
-        public bool LeapMode = false; // leap : true, mouse : false
 
         void Awake()
         {
@@ -152,7 +152,7 @@ namespace Aloha
         /// <param bool="leapMode">The new value of LeapMode</param>
         public void SetLeapMode(bool leapMode)
         {
-            this.LeapMode = leapMode;
+            this.Config.LeapMode = leapMode;
         }
 
         /// <summary>
