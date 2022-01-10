@@ -102,5 +102,10 @@ namespace Aloha
         /// Canon
         /// </summary>
         canon = 10,
+
+        /// <summary>
+        /// Bat
+        /// </summary>
+        bat = 11,
     }
 }

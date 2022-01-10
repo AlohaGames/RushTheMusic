@@ -8,7 +8,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WarriorAttack
-  m_Speed: 1
+  m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -3484026419704058999}
@@ -60,7 +60,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1017389610527250840}
-    m_Position: {x: 50, y: 190, z: 0}
+    m_Position: {x: 30, y: 190, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9203725011031641371}
     m_Position: {x: 320, y: 190, z: 0}
@@ -88,7 +88,7 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

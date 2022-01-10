@@ -5,11 +5,11 @@ using UnityEngine;
 namespace Aloha.AI
 {
     /// <summary>
-    /// Node that move the gameObject to the left or the right
+    /// Node the bat uses to escape from game
     /// </summary>
-    public class Move : GONode
+    public class BatEscape : GONode
     {
-        public bool IsLeft = false;
+        private Bat bat;
         public float ActionTime = 1.0f;
         public float Speed = 2.0f;
         public float DistToMove = 0.5f;
@@ -17,25 +17,33 @@ namespace Aloha.AI
         /// <summary>
         /// Empty Constructor
         /// </summary>
-        public Move() : base() { }
+        public BatEscape() : base() 
+        {
+            bat = gameObject.GetComponent<Bat>();
+        }
 
         /// <summary>
-        /// Move Node constructor
+        /// Escape Node constructor
         /// </summary>
         /// <param name="graph">Graph containing the node</param>
-        public Move(Graph graph) : base(graph) { }
+        public BatEscape(Graph graph) : base(graph) 
+        {
+            bat = gameObject.GetComponent<Bat>();
+        }
 
         /// <summary>
-        /// Move the gameObject Left or Right
+        /// Move the gameObject in every random direction
         /// </summary>
         public override IEnumerator Action()
         {
             IsRunning = true;
 
+            bat.Anim.SetBool("isEscaping", true);
+
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;
-            posFinal.x = IsLeft ? (posFinal.x + DistToMove).Clamp(-3, 3) : (posFinal.x - DistToMove).Clamp(-3, 3);
+            posFinal.y = posFinal.y + 10;
 
             while (time < ActionTime)
             {
@@ -45,6 +53,8 @@ namespace Aloha.AI
             }
 
             gameObject.transform.position = posFinal;
+
+            bat.Die();
 
             yield return null;
             if (!AutomaticLinks.IsEmpty())
