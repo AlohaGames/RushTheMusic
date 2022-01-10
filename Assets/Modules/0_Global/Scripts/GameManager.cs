@@ -18,6 +18,15 @@ namespace Aloha
 
         public bool IsPlaying = false;
         public RtmConfig Config = new RtmConfig();
+        public bool isInfinite = false;
+
+        void Awake()
+        {
+            GlobalEvent.GameOver.AddListener(FinishGame);
+            GlobalEvent.Victory.AddListener(FinishLevel);
+            GlobalEvent.Resume.AddListener(UnFreeze);
+            GlobalEvent.Pause.AddListener(Freeze);
+        }
 
         #region Events
         /// <summary>
@@ -59,23 +68,45 @@ namespace Aloha
         /// </summary>
         public void StartLevel()
         {
+            UnFreeze();
             IsPlaying = true;
-            Cursor.visible = false;
             GlobalEvent.LevelStart.Invoke();
+        }
+
+        /// <summary>
+        /// Stop the game.
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.FinishGame();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void FinishGame()
+        {
+            FinishLevel();
+            GlobalEvent.GameStop.Invoke();
+            IsPlaying = false;
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
+            if (hero != null)
+            {
+                GameObject.Destroy(hero.gameObject);
+            }
         }
 
         /// <summary>
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
-        ///     GameManager.Instance.StopLevel();
+        ///     GameManager.Instance.FinishLevel();
         /// </code>
         /// </example>
         /// </summary>
-        public void StopLevel()
+        public void FinishLevel()
         {
-            IsPlaying = false;
-            Cursor.visible = true;
+            Freeze();
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
+            );
             GlobalEvent.LevelStop.Invoke();
         }
 
@@ -180,7 +211,7 @@ namespace Aloha
         {
             if (this.hero != null)
             {
-                Destroy(this.hero.gameObject);
+                GameObject.Destroy(hero.gameObject);
             }
             this.hero = hero;
         }
@@ -202,7 +233,6 @@ namespace Aloha
         }
 
         #region KeyEvents
-
         /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
         /// </summary>
@@ -224,5 +254,25 @@ namespace Aloha
             }
         }
         #endregion
+
+        public void Freeze()
+        {
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+        }
+
+        public void UnFreeze()
+        {
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+        }
+
+        void OnDestroy()
+        {
+            GlobalEvent.GameOver.RemoveListener(FinishGame);
+            GlobalEvent.Victory.RemoveListener(FinishLevel);
+            GlobalEvent.Resume.RemoveListener(UnFreeze);
+            GlobalEvent.Pause.RemoveListener(Freeze);
+        }
     }
 }

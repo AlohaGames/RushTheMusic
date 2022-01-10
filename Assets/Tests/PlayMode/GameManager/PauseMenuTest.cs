@@ -11,7 +11,7 @@ namespace Aloha.Test
         /// This class test the pause menu class functions.
         /// </summary>
         [UnityTest]
-        public IEnumerator PauseMenuTestWithEnumeratorPasses()
+        public IEnumerator PauseResumeTest()
         {
             // Create pause menu component
             GameObject pause = new GameObject();
@@ -26,28 +26,23 @@ namespace Aloha.Test
 
             // Check if the game is playing
             Assert.IsTrue(Time.timeScale != 0f);
+            GameManager.Instance.PauseGame();
 
-            // Pause the game
-            pause.GetComponent<PauseMenu>().PauseGame();
             yield return null;
 
-            // Check if the game is paused/stopped
-            Assert.AreEqual(true, pause.GetComponent<PauseMenu>().IsGamePaused);
             Assert.AreEqual(0f, Time.timeScale);
-            Assert.IsTrue(child.activeSelf);
-            Assert.IsTrue(pause.GetComponent<PauseMenu>().IsGamePaused);
+            Assert.IsTrue(GameManager.Instance.IsGamePaused());
+
             yield return null;
 
-            // Resume the game
-            pause.GetComponent<PauseMenu>().Resume();
+            GameManager.Instance.ResumeGame();
+
             yield return null;
 
             // Check the game is playing again
             Assert.IsTrue(Time.timeScale != 0f);
-            Assert.IsFalse(child.activeSelf);
-            Assert.IsFalse(pause.GetComponent<PauseMenu>().IsGamePaused);
+            Assert.IsFalse(GameManager.Instance.IsGamePaused());
 
-            // Clear the scene
             Utils.ClearCurrentScene();
             yield return null;
         }
