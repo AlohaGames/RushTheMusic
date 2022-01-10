@@ -1,5 +1,8 @@
 var class_aloha_1_1_game_manager =
 [
+    [ "FinishGame", "da/d6b/class_aloha_1_1_game_manager.html#af6d64871c40967f9bbaca7a303535fe3", null ],
+    [ "FinishLevel", "da/d6b/class_aloha_1_1_game_manager.html#af2c0bd39d49c75a4cb58a12b309a8d34", null ],
+    [ "Freeze", "da/d6b/class_aloha_1_1_game_manager.html#a3b232f8fd0772100a01adcbf72d50a6b", null ],
     [ "GetHero", "da/d6b/class_aloha_1_1_game_manager.html#a15535cbeb0223af46dd32feaca998b28", null ],
     [ "IsGamePaused", "da/d6b/class_aloha_1_1_game_manager.html#a16fa0d90dd00e98e17446e042c97f53e", null ],
     [ "LoadHero", "da/d6b/class_aloha_1_1_game_manager.html#ad53bbb61dd13d22a6ea8482f3402a517", null ],
@@ -11,7 +14,8 @@ var class_aloha_1_1_game_manager =
     [ "SetHero", "da/d6b/class_aloha_1_1_game_manager.html#aacfeb3e1b1a4c4d724c98b7f035718c7", null ],
     [ "SetLeapMode", "da/d6b/class_aloha_1_1_game_manager.html#a4f341b1164e6ae672abf01bdf0867bc1", null ],
     [ "StartLevel", "da/d6b/class_aloha_1_1_game_manager.html#a115f604787d7cce75537cbfcfe8b59eb", null ],
-    [ "StopLevel", "da/d6b/class_aloha_1_1_game_manager.html#a26c8f159368ee4b8d9bae41528f1dc46", null ],
+    [ "UnFreeze", "da/d6b/class_aloha_1_1_game_manager.html#ac8e26f3c2b5cc838c57d56db46e07e47", null ],
+    [ "isInfinite", "da/d6b/class_aloha_1_1_game_manager.html#af1030775be8e4878e5966ce52c013f3e", null ],
     [ "IsPlaying", "da/d6b/class_aloha_1_1_game_manager.html#a3ba7786a9196f50c391685579da931d7", null ],
     [ "LeapMode", "da/d6b/class_aloha_1_1_game_manager.html#a54a836ae082cbf0bc09d3e6895b5608e", null ]
 ];

@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['mainmenu_877',['MainMenu',['../dc/d37/class_aloha_1_1_main_menu.html',1,'Aloha']]],
-  ['manapotion_878',['ManaPotion',['../dc/d1f/class_aloha_1_1_mana_potion.html',1,'Aloha']]],
-  ['menuroot_879',['MenuRoot',['../d1/dc5/class_aloha_1_1_menu_root.html',1,'Aloha']]],
-  ['move_880',['Move',['../d5/dad/class_aloha_1_1_a_i_1_1_move.html',1,'Aloha::AI']]],
-  ['moveforward_881',['MoveForward',['../d6/d07/class_aloha_1_1_a_i_1_1_move_forward.html',1,'Aloha::AI']]]
+  ['mainmenu_875',['MainMenu',['../dc/d37/class_aloha_1_1_main_menu.html',1,'Aloha']]],
+  ['manapotion_876',['ManaPotion',['../dc/d1f/class_aloha_1_1_mana_potion.html',1,'Aloha']]],
+  ['menuroot_877',['MenuRoot',['../d1/dc5/class_aloha_1_1_menu_root.html',1,'Aloha']]],
+  ['move_878',['Move',['../d5/dad/class_aloha_1_1_a_i_1_1_move.html',1,'Aloha::AI']]],
+  ['moveforward_879',['MoveForward',['../d6/d07/class_aloha_1_1_a_i_1_1_move_forward.html',1,'Aloha::AI']]]
 ];

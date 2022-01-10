@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['fireball_826',['Fireball',['../dd/d86/class_aloha_1_1_fireball.html',1,'Aloha']]],
-  ['fireballspawner_827',['FireballSpawner',['../d5/de7/class_aloha_1_1_fireball_spawner.html',1,'Aloha']]],
-  ['fireballtest_828',['FireballTest',['../d5/dcd/class_aloha_1_1_test_1_1_fireball_test.html',1,'Aloha::Test']]],
-  ['firelancerstats_829',['FireLancerStats',['../d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html',1,'Aloha::EntityStats']]],
-  ['firewyrmlingstats_830',['FireWyrmlingStats',['../d5/d53/class_aloha_1_1_entity_stats_1_1_fire_wyrmling_stats.html',1,'Aloha::EntityStats']]]
+  ['fireball_828',['Fireball',['../dd/d86/class_aloha_1_1_fireball.html',1,'Aloha']]],
+  ['fireballspawner_829',['FireballSpawner',['../d5/de7/class_aloha_1_1_fireball_spawner.html',1,'Aloha']]],
+  ['fireballtest_830',['FireballTest',['../d5/dcd/class_aloha_1_1_test_1_1_fireball_test.html',1,'Aloha::Test']]],
+  ['firelancerstats_831',['FireLancerStats',['../d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html',1,'Aloha::EntityStats']]],
+  ['firewyrmlingstats_832',['FireWyrmlingStats',['../d5/d53/class_aloha_1_1_entity_stats_1_1_fire_wyrmling_stats.html',1,'Aloha::EntityStats']]]
 ];

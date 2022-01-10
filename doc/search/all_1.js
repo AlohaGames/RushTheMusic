@@ -26,7 +26,6 @@ var searchData=
   ['biome_67',['Biome',['../d4/dbb/class_aloha_1_1_biome.html',1,'Aloha']]],
   ['biome_2ecs_68',['Biome.cs',['../dc/dac/_biome_8cs.html',1,'']]],
   ['biomename_69',['BiomeName',['../d4/dbb/class_aloha_1_1_biome.html#aad1b88199220ba13d4b052e530067da6',1,'Aloha.Biome.BiomeName()'],['../dc/dcd/class_aloha_1_1_level_mapping.html#a3f068aa8f58f73894f3e2c46e72ccd21',1,'Aloha.LevelMapping.BiomeName()']]],
-  ['blood_70',['blood',['../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea6b157916b43b09df5a22f658ccb92b64',1,'Aloha']]],
-  ['bot_71',['BOT',['../de/d9b/namespace_aloha.html#a9a526fd9fd56370690e954da6ba74e68ab24436a7bab0fa6dc89ad0684c6fc675',1,'Aloha']]],
-  ['bumpentity_72',['BumpEntity',['../d7/d50/class_aloha_1_1_warrior.html#afbb2143e2ecc237bac18e37508e13d09',1,'Aloha.Warrior.BumpEntity()'],['../db/dd9/class_aloha_1_1_wizard.html#a6cdc899a8bf34ab9aea4060d41b1d2dc',1,'Aloha.Wizard.BumpEntity()']]]
+  ['bot_70',['BOT',['../de/d9b/namespace_aloha.html#a9a526fd9fd56370690e954da6ba74e68ab24436a7bab0fa6dc89ad0684c6fc675',1,'Aloha']]],
+  ['bumpentity_71',['BumpEntity',['../d7/d50/class_aloha_1_1_warrior.html#afbb2143e2ecc237bac18e37508e13d09',1,'Aloha.Warrior.BumpEntity()'],['../db/dd9/class_aloha_1_1_wizard.html#a6cdc899a8bf34ab9aea4060d41b1d2dc',1,'Aloha.Wizard.BumpEntity()']]]
 ];

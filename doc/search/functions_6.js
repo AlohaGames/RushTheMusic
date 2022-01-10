@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['gainxp_1196',['GainXp',['../d5/d2a/class_aloha_1_1_hero.html#abc00764f05e3a897edb56d0f67ff6fc5',1,'Aloha::Hero']]],
-  ['gameovermenutestwithenumeratorpasses_1197',['GameOverMenuTestWithEnumeratorPasses',['../d1/dfd/class_aloha_1_1_test_1_1_game_over_menu_test.html#ad84a4c8b3e7d565a577509c0b7a99f47',1,'Aloha::Test::GameOverMenuTest']]],
-  ['gamestartandstop_1198',['GameStartAndStop',['../d3/d1c/class_aloha_1_1_test_1_1_tile_test.html#a75dab1efbe41042b78dbed89b6d27207',1,'Aloha::Test::TileTest']]],
+  ['gainxp_1198',['GainXp',['../d5/d2a/class_aloha_1_1_hero.html#abc00764f05e3a897edb56d0f67ff6fc5',1,'Aloha::Hero']]],
   ['getactivetilebyid_1199',['GetActiveTileById',['../d0/d98/class_aloha_1_1_tiles_manager.html#a9c67c2dfb5db4b2d5d034b3fb1870c5c',1,'Aloha::TilesManager']]],
   ['getallprofils_1200',['GetAllProfils',['../d2/ded/class_aloha_1_1_profil_manager.html#afa51d785972ab5429f32742e8ad86c3d',1,'Aloha::ProfilManager']]],
   ['getbump_1201',['GetBump',['../d3/d4f/class_aloha_1_1_assassin.html#ac9a45f6c23ce2dd51a68cfa23f2605a8',1,'Aloha.Assassin.GetBump()'],['../d2/d4d/class_aloha_1_1_canon.html#aad793c2ac3b7fcd7988ac85c043bb851',1,'Aloha.Canon.GetBump()'],['../db/d71/class_aloha_1_1_chest.html#a1a9655457dd94e0ec002d56b819b4243',1,'Aloha.Chest.GetBump()'],['../d2/d86/class_aloha_1_1_wall.html#a161c318a15a5b2a691a2f5575f238d26',1,'Aloha.Wall.GetBump()'],['../d8/d23/class_aloha_1_1_wyrmling.html#a33e41ea6c0743c37075222aa82635fd8',1,'Aloha.Wyrmling.GetBump()'],['../d3/db4/class_aloha_1_1_entity.html#a5fe0f59e1bf7aeb52d63844d54f0439b',1,'Aloha.Entity.GetBump()']]],

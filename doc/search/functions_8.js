@@ -6,8 +6,9 @@ var searchData=
   ['instantiatefireball_1228',['InstantiateFireball',['../d8/d23/class_aloha_1_1_wyrmling.html#a359fcc29c60158f9be5424060cd9ecce',1,'Aloha::Wyrmling']]],
   ['instantiatehero_1229',['InstantiateHero',['../d7/df3/class_aloha_1_1_hero_instantier.html#a2cb1652c18e51cfb0a41e507a9c07c31',1,'Aloha::HeroInstantier']]],
   ['inventoryadditemtest_1230',['InventoryAddItemTest',['../da/dc1/class_aloha_1_1_test_1_1_inventory_test.html#aebc20993b483b244d086659c370c20f3',1,'Aloha::Test::InventoryTest']]],
-  ['inventorymaxitemtest_1231',['InventoryMaxItemTest',['../da/dc1/class_aloha_1_1_test_1_1_inventory_test.html#acc63e7cd237a7cbc79d499339de2b1de',1,'Aloha::Test::InventoryTest']]],
-  ['isempty_3c_20t_20_3e_1232',['IsEmpty&lt; T &gt;',['../dc/d53/class_aloha_1_1_utils.html#a7c291d98510f49dd5334323a4df0776e',1,'Aloha::Utils']]],
-  ['isequalfloat_1233',['IsEqualFloat',['../dc/d53/class_aloha_1_1_utils.html#a96099d920ac357523fd6482d001e835f',1,'Aloha::Utils']]],
-  ['isgamepaused_1234',['IsGamePaused',['../da/d6b/class_aloha_1_1_game_manager.html#a16fa0d90dd00e98e17446e042c97f53e',1,'Aloha::GameManager']]]
+  ['inventoryisconstructed_1231',['InventoryIsConstructed',['../db/da9/class_aloha_1_1_u_i_inventory.html#a4b8b1a38a17ffd63ce1f79db63729e66',1,'Aloha::UIInventory']]],
+  ['inventorymaxitemtest_1232',['InventoryMaxItemTest',['../da/dc1/class_aloha_1_1_test_1_1_inventory_test.html#acc63e7cd237a7cbc79d499339de2b1de',1,'Aloha::Test::InventoryTest']]],
+  ['isempty_3c_20t_20_3e_1233',['IsEmpty&lt; T &gt;',['../dc/d53/class_aloha_1_1_utils.html#a7c291d98510f49dd5334323a4df0776e',1,'Aloha::Utils']]],
+  ['isequalfloat_1234',['IsEqualFloat',['../dc/d53/class_aloha_1_1_utils.html#a96099d920ac357523fd6482d001e835f',1,'Aloha::Utils']]],
+  ['isgamepaused_1235',['IsGamePaused',['../da/d6b/class_aloha_1_1_game_manager.html#a16fa0d90dd00e98e17446e042c97f53e',1,'Aloha::GameManager']]]
 ];
