@@ -85,6 +85,7 @@ var namespace_aloha =
     [ "VerticalBar", "da/d5d/class_aloha_1_1_vertical_bar.html", "da/d5d/class_aloha_1_1_vertical_bar" ],
     [ "ContinueButton", "de/dca/class_aloha_1_1_continue_button.html", "de/dca/class_aloha_1_1_continue_button" ],
     [ "QuitButton", "d6/dfb/class_aloha_1_1_quit_button.html", "d6/dfb/class_aloha_1_1_quit_button" ],
+    [ "HUDEffect", "d4/d39/class_aloha_1_1_h_u_d_effect.html", "d4/d39/class_aloha_1_1_h_u_d_effect" ],
     [ "UIManager", "d1/d41/class_aloha_1_1_u_i_manager.html", "d1/d41/class_aloha_1_1_u_i_manager" ],
     [ "CreateProfileButton", "d5/db7/class_aloha_1_1_create_profile_button.html", "d5/db7/class_aloha_1_1_create_profile_button" ],
     [ "HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", "d4/d14/class_aloha_1_1_hero_selection_menu" ],
@@ -118,6 +119,10 @@ var namespace_aloha =
       [ "LEFT", "de/d9b/namespace_aloha.html#a3b81211351e145b7dbcf3dfa08ae46d3a684d325a7303f52e64011467ff5c5758", null ],
       [ "CENTER", "de/d9b/namespace_aloha.html#a3b81211351e145b7dbcf3dfa08ae46d3ac397289ee45877be0cd49811fe245b4e", null ],
       [ "RIGHT", "de/d9b/namespace_aloha.html#a3b81211351e145b7dbcf3dfa08ae46d3a21507b40c80068eda19865706fdc2403", null ]
+    ] ],
+    [ "HUDEffectType", "de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560ae", [
+      [ "blood", "de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea6b157916b43b09df5a22f658ccb92b64", null ],
+      [ "heal", "de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea214d940b5313897d9e25b3a2b3533770", null ]
     ] ],
     [ "ItemType", "de/d9b/namespace_aloha.html#afcc76bb47435d012a5c32f1c0d435e89", [
       [ "healPotion", "de/d9b/namespace_aloha.html#afcc76bb47435d012a5c32f1c0d435e89af7da92b4c48a2e2b7203c70b7088b8a3", null ],
