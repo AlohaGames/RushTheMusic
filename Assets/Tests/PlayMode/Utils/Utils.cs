@@ -11,7 +11,7 @@ namespace Aloha.Test
     public class UtilsTest
     {
         /// <summary>
-        /// TODO
+        /// Test IsEqualFloat util's function
         /// </summary>
         [Test]
         public void EqualFloatTest()

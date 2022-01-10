@@ -11,29 +11,19 @@ namespace Aloha
     {
         [HideInInspector] public bool gameIsStarted;
         private List<GameObject> activeTiles = new List<GameObject>();
-        private GameObject tilesContainer;
         private GameObject[] tilePrefabs;
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
-
-        [HideInInspector]
-        public bool GameIsStarted;
-
-        /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
-        /// </summary>
-        void Start()
-        {
-            GameIsStarted = false;
-        }
+        public bool Running = false;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
         void Awake()
         {
-            GlobalEvent.LevelStart.AddListener(StartGame);
+            GlobalEvent.LevelStart.AddListener(OnLevelStart);
+            GlobalEvent.LevelStop.AddListener(Reset);
         }
 
         /// <summary>
@@ -42,7 +32,7 @@ namespace Aloha
         void Update()
         {
             // Delete a tile and replace it by a new one
-            if (GameIsStarted && activeTiles.Count != 0 && activeTiles[0].transform.position.z + TileSize < 0)
+            if (Running && activeTiles.Count != 0 && activeTiles[0].transform.position.z + TileSize < 0)
             {
                 DeleteFirstTile();
                 SpawnTileToQueue(GetNextTileToSpawn());
@@ -50,25 +40,20 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Start the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LevelStart.AddListener(OnLevelStart);
         /// </code>
         /// </example>
         /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
-        public void StartGame()
+        public void OnLevelStart()
         {
-            if (GameIsStarted)
-                return;
 
-            tilesContainer = new GameObject("TilesContainer");
+            this.Running = true;
+
             this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
-            GameIsStarted = true;
             for (int position = 0; position < NumberOfTiles; position++)
             {
                 SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
@@ -76,38 +61,8 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <returns>
-        /// TODO
-        /// </returns>
-        public void StopGame()
-        {
-            if (!GameIsStarted)
-                return;
-
-            GameIsStarted = false;
-            activeTiles.Clear();
-            Destroy(tilesContainer);
-            GlobalEvent.LevelStop.Invoke();
-        }
-
-        /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        /// TODO
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <returns>
         /// Return background position based on last tile
-        /// </returns>
+        /// </summary>
         public Vector3 getEndTilesPosition()
         {
             return new Vector3(0, 0, TileSize * NumberOfTiles);
@@ -117,7 +72,7 @@ namespace Aloha
         /// Create a tile at the end of the tile list
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SpawnTileToQueue(Random.Range(0, tilePrefabs.Length));
         /// </code>
         /// </example>
         /// </summary>
@@ -128,26 +83,23 @@ namespace Aloha
                 SpawnTileAt(tileIndex, 0);
                 return;
             }
-            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation, tilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (activeTiles[activeTiles.Count - 1].transform.position.z + TileSize), transform.rotation);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Tile, tile);
             activeTiles.Add(tile);
             GlobalEvent.TileCount.Invoke(tile);
             GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
 
             if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount)
             {
-                Time.timeScale = 0f;
-                Cursor.visible = true;
-                GameManager.Instance.StopLevel();
-                UIManager.Instance.ShowEndGameUIElements();
-                AudioManager.Instance.StopMusic();
+                GlobalEvent.Victory.Invoke();
             }
         }
 
         /// <summary>
-        /// TODO
+        /// Spawn a tile at a specific position
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SpawnTileAt(tileIndex, 0);
         /// </code>
         /// </example>
         /// </summary>
@@ -155,7 +107,8 @@ namespace Aloha
         /// <param name="position"></param>
         public void SpawnTileAt(int tileIndex, int position)
         {
-            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation, tilesContainer.transform);
+            GameObject tile = Instantiate(tilePrefabs[tileIndex], transform.forward * (TileSize * position), transform.rotation);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Tile, tile);
             activeTiles.Add(tile);
         }
 
@@ -173,17 +126,16 @@ namespace Aloha
             this.TileSpeed = tileSpeed;
         }
 
-
         /// <summary>
-        /// TODO
+        /// Returns a random tile between the list of prefabs
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SpawnTileToQueue(GetNextTileToSpawn());
         /// </code>
         /// </example>
         /// </summary>
         /// <returns>
-        /// TODO
+        ///     Returns a random tile between the list of prefabs
         /// </returns>
         int GetNextTileToSpawn()
         {
@@ -191,10 +143,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Delete the first tile of the list
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     DeleteFirstTile();
         /// </code>
         /// </example>
         /// </summary>
@@ -205,16 +157,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Get specific tile with an id
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GameObject lastTile = tilesManager.GetActiveTileById(tilesManager.NumberOfTiles - 1);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="index"></param>
         /// <returns>
-        /// TODO
+        /// The choosen tile
         /// </returns>
         public GameObject GetActiveTileById(int index)
         {
@@ -222,11 +174,23 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Reset the tiles
+        /// </summary>
+        public void Reset()
+        {
+            Running = false;
+            activeTiles.Clear();
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
+        }
+
+        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
         {
-            GameObject.Destroy(tilesContainer);
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
+            GlobalEvent.LevelStart.RemoveListener(OnLevelStart);
+            GlobalEvent.LevelStop.RemoveListener(Reset);
         }
     }
 }

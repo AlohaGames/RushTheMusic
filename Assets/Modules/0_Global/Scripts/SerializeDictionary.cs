@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// A class for Serialized dictionnaries
     /// </summary>
     /// <param name="TKey"></param>
     /// <param name="TValue"></param>
@@ -14,10 +14,10 @@ namespace Aloha
         public List<TValue> DictionaryValue;
 
         /// <summary>
-        /// TODO
+        /// Default constructor with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     SerializeDictionary sd = new SerializeDictionary(keys, values)
         /// </code>
         /// </example>
         /// </summary>
@@ -29,10 +29,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Default constructor with no parameter
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SerializeDictionary sd = new SerializeDictionary()
         /// </code>
         /// </example>
         /// </summary>
@@ -42,10 +42,11 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Method to define new parameters
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SerializeDictionary sd = new SerializeDictionary()
+        ///     sd.Initializrd(keys, values)
         /// </code>
         /// </example>
         /// </summary>
@@ -58,10 +59,11 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Add a new value in the dictionnary
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SerializeDictionary sd = new SerializeDictionary();
+        ///     sd.Initializrd(newKey, newValue);
         /// </code>
         /// </example>
         /// </summary>
@@ -81,16 +83,17 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Method to get a specific value with a key
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     SerializeDictionary sd = new SerializeDictionary(keys, values);
+        ///     sd.GetValue(myKey)
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="searchKey"></param>
         /// <returns>
-        /// TODO
+        /// TValue : The value of the selected data
         /// </returns>
         public TValue GetValue(TKey searchKey)
         {

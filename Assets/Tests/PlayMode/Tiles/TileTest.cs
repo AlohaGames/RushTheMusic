@@ -5,12 +5,10 @@ using UnityEngine.TestTools;
 using System;
 using System.Collections.Generic;
 
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
-    /// TODO
+    /// Class for tile test
     /// </summary>
     public class TileTest
     {
@@ -68,7 +66,7 @@ namespace Aloha.Test
             levelManager.LevelMapping = new LevelMapping(new SerializeDictionary<int, List<EnemyMapping>>(), 50);
             yield return null;
 
-            tilesManager.StartGame();
+            tilesManager.OnLevelStart();
             yield return null;
 
             GameObject firstTile = tilesManager.GetActiveTileById(0);
@@ -80,41 +78,8 @@ namespace Aloha.Test
             Assert.IsTrue(firstTile == null, "Is the first tile deleted when it's behind the player ?");
             Assert.AreNotSame(lastTile, tilesManager.GetActiveTileById(tilesManager.NumberOfTiles - 1), "Does a new tile appear ?");
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
-
-            // Clear the scene
-            Utils.ClearCurrentScene();
-            yield return null;
-        }
-
-        /// <summary>
-        /// This Test checks if the game is correctly instanced and destroyed when it's start and stop
-        /// </summary>
-        [UnityTest]
-        public IEnumerator GameStartAndStop()
-        {
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
-            TilesManager tilesManager = TilesManager.Instance;
-            LevelManager levelManager = LevelManager.Instance;
-            levelManager.LevelMapping = new LevelMapping();
-            yield return null;
-
-            tilesManager.StartGame();
-            yield return null;
-            Assert.IsTrue(tilesManager.GameIsStarted, "Is the game started ?");
-
-            tilesManager.StartGame();
-            yield return null;
-            Assert.IsTrue(tilesManager.GameIsStarted, "Is the game started ?");
-
-            tilesManager.StopGame();
-            yield return null;
-            Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
-
-            tilesManager.StopGame();
-            yield return null;
-            Assert.IsFalse(tilesManager.GameIsStarted, "Is the game stopped ?");
 
             // Clear the scene
             Utils.ClearCurrentScene();

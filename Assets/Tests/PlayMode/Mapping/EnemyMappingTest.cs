@@ -1,8 +1,6 @@
 using NUnit.Framework;
 using UnityEngine;
 
-//TODO: explain your F***** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
@@ -11,7 +9,7 @@ namespace Aloha.Test
     public class EnemyMappingTest
     {
         /// <summary>
-        /// TODO @Tristan
+        /// Create an array of enemy mapping
         /// </summary>
         EnemyMapping[] GetEnemiesMapping()
         {
@@ -29,11 +27,12 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Check if enemy mapping constructor works
         /// </summary>
         [Test]
         public void EnemyMappingConstructorTest()
         {
+            // Position of the first enemy
             EnemyMapping em0 = GetEnemiesMapping()[0];
             Assert.AreEqual(10, em0.Stats.Attack);
             Assert.AreEqual(0, em0.Stats.Defense);
@@ -42,6 +41,7 @@ namespace Aloha.Test
             Assert.AreEqual(VerticalPositionEnum.BOT, em0.VerticalPosition);
             Assert.AreEqual(HorizontalPositionEnum.CENTER, em0.HorizontalPosition);
 
+            // Position of the second enemy 
             EnemyMapping em1 = GetEnemiesMapping()[1];
             Assert.AreEqual(4, em1.Stats.Attack);
             Assert.AreEqual(6, em1.Stats.Defense);
@@ -56,7 +56,7 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Check if position functions works with enemy mapping
         /// </summary>
         [Test]
         public void EnemyMappingGetPositionTest()

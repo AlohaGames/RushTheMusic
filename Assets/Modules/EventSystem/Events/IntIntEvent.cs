@@ -4,7 +4,7 @@ using UnityEngine.Events;
 namespace Aloha.Events
 {
     /// <summary>
-    /// TODO
+    /// Class for a IntInt Event
     /// </summary>
     public class IntIntEvent : UnityEvent<int, int> { }
 }

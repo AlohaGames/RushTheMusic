@@ -2,16 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using Aloha.Events;
 
 namespace Aloha
 {
     /// <summary>
     /// This class manages the inventory
     /// </summary>
-    public class InventoryManager  : Singleton<InventoryManager>
+    public class InventoryManager : Singleton<InventoryManager>
     {
         private Queue<Item> items = new Queue<Item>();
         private int maxItem = 5;
+
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
+        {
+            GlobalEvent.GameStop.AddListener(Reset);
+        }
 
         /// <summary>
         /// Add an item to the inventory, if the inventory is full, the new item will be dropped
@@ -24,7 +33,7 @@ namespace Aloha
         /// <param name="item"></param>
         public void AddItem(Item item)
         {
-            if(this.items.Count < this.maxItem)
+            if (this.items.Count < this.maxItem)
             {
                 this.items.Enqueue(item);
                 UIManager.Instance.UIInventory.UpdateInventoryUI();
@@ -41,11 +50,12 @@ namespace Aloha
         /// </summary>
         public void UseItem()
         {
-            if(this.items.Count > 0)
+            if (this.items.Count > 0)
             {
                 Item item = this.items.Dequeue();
                 item.Effect();
             }
+
             UIManager.Instance.UIInventory.UpdateInventoryUI();
         }
 
@@ -81,6 +91,23 @@ namespace Aloha
         public int GetMaxItems()
         {
             return this.maxItem;
+        }
+
+        /// <summary>
+        /// Reset the inventory
+        /// </summary>
+        public void Reset()
+        {
+            this.items.Clear();
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
 }

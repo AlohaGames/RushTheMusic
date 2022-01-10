@@ -43,7 +43,7 @@ namespace Aloha.AI
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;
-            posFinal.x = IsLeft ? posFinal.x + DistToMove : posFinal.x - DistToMove;
+            posFinal.x = IsLeft ? (posFinal.x + DistToMove).Clamp(-3, 3) : (posFinal.x - DistToMove).Clamp(-3, 3);
 
             // Change the rotation of the wyrmling according to its direction
             if (IsLeft)
@@ -59,8 +59,11 @@ namespace Aloha.AI
             while (time < ActionTime)
             {
                 time += Speed * Time.deltaTime;
-                posFinal.y = initialY + Mathf.Sin(Mathf.PI * gameObject.transform.position.x) * 0.1f;
-                gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time / ActionTime);
+
+                Vector3 tmpPos = Vector3.Lerp(posInit, posFinal, time / ActionTime);
+                tmpPos.y = initialY + Mathf.Sin(Mathf.PI * gameObject.transform.position.x) * 0.1f;
+                gameObject.transform.position = tmpPos;
+
                 yield return null;
             }
             gameObject.transform.position = posFinal;

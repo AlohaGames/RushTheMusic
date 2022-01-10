@@ -40,7 +40,20 @@ namespace Aloha
         {
             base.Init(stats);
             this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
             anim = GetComponent<Animator>();
+        }
+
+        /// <summary>
+        /// Is called every frame, if the MonoBehaviour is enabled.
+        /// </summary>
+        void Update()
+        {
+            // Kill the chest if it goes behing the player
+            if (transform.position.z < 0)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         /// <summary>
@@ -76,6 +89,7 @@ namespace Aloha
     {
         healPotion = 0,
         ragePotion = 1,
-        manaPotion = 2
+        manaPotion = 2,
+        experiencePotion = 3
     }
 }

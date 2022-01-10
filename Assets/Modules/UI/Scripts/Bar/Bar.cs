@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for a default bar
     /// </summary>
     public abstract class Bar : MonoBehaviour
     {
@@ -24,7 +24,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Method called to update the bar
         /// <example> Example(s):
         /// <code>
         /// </code>

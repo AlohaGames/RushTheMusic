@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for a tree
     /// </summary>
     public class Tree : SideEnvironment
     {
@@ -13,10 +13,10 @@ namespace Aloha
         float MAX_TREE_HEIGHT;
 
         /// <summary>
-        /// TODO
+        /// Initilize a tree
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     sideEnvInstR.Initialize();
         /// </code>
         /// </example>
         /// </summary>

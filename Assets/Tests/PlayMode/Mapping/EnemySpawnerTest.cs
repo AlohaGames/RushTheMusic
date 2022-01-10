@@ -3,8 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-//TODO: explain your F***** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
-
 namespace Aloha.Test
 {
     /// <summary>
@@ -13,11 +11,12 @@ namespace Aloha.Test
     public class EnemySpawnerTest
     {
         /// <summary>
-        /// TODO @Tristan? (Not sure)
+        /// Check if tiles manager instance the right number of tiles
         /// </summary>
         [UnityTest]
         public IEnumerator EnemySpawnerCountTileTest()
         {
+            // Instance managers
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
@@ -25,12 +24,13 @@ namespace Aloha.Test
             levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
-            tilesManager.StartGame();
+            tilesManager.OnLevelStart();
             yield return null;
 
+            // Check if 19 tiles spawn
             Assert.AreEqual(19, enemySpawner.TilesCounter);
 
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
 
             // Clear the scene
@@ -39,10 +39,10 @@ namespace Aloha.Test
         }
 
         /// <summary>
-        /// TODO
+        /// Check if tiles counter successfully reset
         /// </summary>
         [UnityTest]
-        public IEnumerator EnemySpawnerRestCountTileTest()
+        public IEnumerator EnemySpawnerResetCountTileTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
@@ -51,15 +51,17 @@ namespace Aloha.Test
             levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
-            tilesManager.StartGame();
+            tilesManager.OnLevelStart();
             yield return null;
 
+            // Check if tiles counter successfully reset
             Assert.AreNotEqual(0, enemySpawner.TilesCounter);
             yield return null;
 
-            tilesManager.StopGame();
+            enemySpawner.Reset();
             yield return null;
 
+            // Check if tiles counter successfully reset
             Assert.AreEqual(0, enemySpawner.TilesCounter);
 
             // Clear the scene

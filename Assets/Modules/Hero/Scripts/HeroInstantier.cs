@@ -28,10 +28,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Instantiate a Hero on the map
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     HeroInstantier.InstantiateHero(HeroType.Warrior());
         /// </code>
         /// </example>
         /// </summary>
@@ -42,16 +42,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Instantiate a Hero on the map with its ID
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// HeroInstantier.InstantiateHero(1);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="id"></param>
         /// <returns>
-        /// TODO
+        /// Instance of the hero
         /// </returns>
         private Hero InstantiateHeroID(int id)
         {

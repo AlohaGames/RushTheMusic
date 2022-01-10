@@ -10,7 +10,7 @@ namespace Aloha
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
-    
+
         private GameObject audioSourceGO;
         private AudioSource audioSource;
         private bool shouldBePlaying = false;
@@ -21,8 +21,10 @@ namespace Aloha
         void Awake()
         {
             // Create audio source
-            audioSourceGO = new GameObject();
+            audioSourceGO = new GameObject("Audio Source");
             audioSource = audioSourceGO.AddComponent<AudioSource>();
+            audioSource.volume = GameManager.Instance.Config.GameVolume;
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Audio, audioSourceGO);
 
             // Listen to events
             GlobalEvent.LevelStart.AddListener(StartMusic);
@@ -31,18 +33,20 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
-        public void Update() {
+        public void Update()
+        {
             // End of music
-            if (shouldBePlaying && !audioSource.isPlaying) {
+            if (shouldBePlaying && !audioSource.isPlaying)
+            {
                 GlobalEvent.GameOver.Invoke();
             }
         }
 
         /// <summary>
-        /// TODO
+        ///     Start the music on the map
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LevelStart.AddListener(StartMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -56,10 +60,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Pause the music if playing
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Pause.AddListener(PauseMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -71,10 +75,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Resume music if was paused
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Resume.AddListener(ResumeMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -86,10 +90,29 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        ///     Update volume of the music
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.UpdateVolume(ResumeMusic);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="volume">value between 0 and 1</param>
+        public void UpdateVolume(float volume)
+        {
+            GameManager.Instance.Config.GameVolume = volume;
+            if (audioSource)
+            {
+                audioSource.volume = volume;
+            }
+            Debug.Log($"New volume : {volume * 100}%");
+        }
+
+        /// <summary>
+        ///     Stop the music of the map
+        /// <example> Example(s):
+        /// <code>
+        ///     GlobalEvent.LevelStop.AddListener(StopMusic);
         /// </code>
         /// </example>
         /// </summary>
@@ -98,6 +121,17 @@ namespace Aloha
             audioSource.Stop();
             shouldBePlaying = false;
             Debug.Log($"Stop music");
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.LevelStart.RemoveListener(StartMusic);
+            GlobalEvent.Pause.RemoveListener(PauseMusic);
+            GlobalEvent.Resume.RemoveListener(ResumeMusic);
+            GlobalEvent.LevelStop.RemoveListener(StopMusic);
         }
     }
 }

@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.TestTools;
 using NUnit.Framework;
-
-//TODO: explain your FUNCKING TEST (like youyou in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {

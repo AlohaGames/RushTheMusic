@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha 
 {
     /// <summary>
-    /// TODO
+    /// Class for the fireball spawner attached to the wizard's arm
     /// </summary>
     public class FireballSpawner : MonoBehaviour
     {

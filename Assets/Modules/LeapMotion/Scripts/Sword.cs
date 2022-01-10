@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the warrior's sword
     /// </summary>
     public class Sword : MonoBehaviour
     {
@@ -21,7 +21,10 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            Warrior = GameManager.Instance.GetHero() as Warrior;
+            if (!Warrior)
+            {
+                Warrior = GameManager.Instance.GetHero() as Warrior;
+            }
             presPos = transform.position;
             newPos = transform.position;
         }
@@ -42,10 +45,10 @@ namespace Aloha
         /// <param name="other">other collider</param>
         public void OnTriggerEnter(Collider other)
         {
-            bool leapActivated = GameManager.Instance.LeapMode;
+            bool leapActivated = GameManager.Instance ? GameManager.Instance.Config.LeapMode : true;
             if (other.tag == "Enemy" && ((!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
-                Debug.Log(Speed);
+                if (!leapActivated) Speed = 2;
                 Warrior.IsAttacking = false;
                 Warrior.Attack(other.gameObject.GetComponent<Entity>());
                 Warrior.BumpEntity(other.GetComponent<Entity>(), Speed);

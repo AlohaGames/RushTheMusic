@@ -5,15 +5,15 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for a rock
     /// </summary>
     public class Rock : SideEnvironment
     {
         /// <summary>
-        /// TODO
+        /// Initialize a rock
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     sideEnvInstR.Initialize();
         /// </code>
         /// </example>
         /// </summary>

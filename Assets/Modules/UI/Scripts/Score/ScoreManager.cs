@@ -34,13 +34,14 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
             GlobalEvent.TileCount.AddListener(TilesCount);
+            GlobalEvent.GameStop.AddListener(Reset);
         }
 
         /// <summary>
-        /// TODO
+        /// Increment the number of time the hero was hitted
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
         /// </code>
         /// </example>
         /// </summary>
@@ -51,10 +52,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Increment the number of time an entity dies
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GlobalEvent.EntityDied.AddListener(DeathCount);
         /// </code>
         /// </example>
         /// </summary>
@@ -65,10 +66,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Increment the number of time a new tile spawn 
         /// <example> Example(s):
         /// <code>
-        ///     TODO
+        ///     GlobalEvent.TileCount.AddListener(TilesCount);
         /// </code>
         /// </example>
         /// </summary>
@@ -184,6 +185,20 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Reset the score
+        /// </summary>
+        public void Reset()
+        {
+            TotalScore = 0;
+            DistanceScore = 0;
+            EnemyKilledScore = 0;
+            HitScore = 0;
+            TakeHitCounter = 0;
+            KillCounter = 0;
+            TilesCounter = 0;
+        }
+
+        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
@@ -191,6 +206,7 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);
             GlobalEvent.EntityDied.RemoveListener(DeathCount);
             GlobalEvent.TileCount.RemoveListener(TilesCount);
+            GlobalEvent.GameStop.RemoveListener(Reset);
         }
     }
 }

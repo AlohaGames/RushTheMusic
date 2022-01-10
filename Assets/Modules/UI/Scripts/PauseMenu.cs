@@ -6,11 +6,10 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the pause menu
     /// </summary>
     public class PauseMenu : MonoBehaviour
     {
-        public bool IsGamePaused = false;
         public GameObject MenuPauseUI;
 
         /// <summary>
@@ -23,35 +22,29 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Resume the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Resume.AddListener(Resume);
         /// </code>
         /// </example>
         /// </summary>
         public void Resume()
         {
             MenuPauseUI.SetActive(false);
-            Time.timeScale = 1f;
-            Cursor.visible = false;
-            IsGamePaused = false;
         }
 
         /// <summary>
-        /// TODO
+        /// Pause the game
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.Pause.RemoveListener(PauseGame);
         /// </code>
         /// </example>
         /// </summary>
         public void PauseGame()
         {
             MenuPauseUI.SetActive(true);
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            IsGamePaused = true;
         }
 
         /// <summary>

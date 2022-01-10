@@ -15,7 +15,7 @@ namespace Aloha
     /// </summary>
     public class LevelManager : Singleton<LevelManager>
     {
-        [SerializeField] 
+        [SerializeField]
         private string filename = "";
 
         public LevelMapping LevelMapping;
@@ -31,10 +31,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Save a map with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     LevelManager.Instance.Save(levelMapping, "Example", true);
         /// </code>
         /// </example>
         /// </summary>
@@ -53,10 +53,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Save a map 
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// LevelManager.Instance.Save();
         /// </code>
         /// </example>
         /// </summary>
@@ -66,10 +66,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Load a map with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     GlobalEvent.LoadLevel.AddListener(Load);
         /// </code>
         /// </example>
         /// </summary>
@@ -88,7 +88,6 @@ namespace Aloha
             Debug.Log($"Extract level to {g}");
             ZipFile.ExtractToDirectory($"{basePath}/{filename}", $"{workingPath}/{g}");
 
-
             // Read metadata file
             Debug.Log($"Read metada.xml");
             LevelMetadata metadata;
@@ -105,8 +104,7 @@ namespace Aloha
 
             using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Open))
             {
-                this.LevelMapping = (LevelMapping) mappingSerializer.Deserialize(stream);
-                // TODO: Voir si possible de le load ailleur ?!
+                this.LevelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
                 SideEnvironmentManager.Instance.LoadBiome(LevelMapping.BiomeName);
             }
 
@@ -116,10 +114,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Load a map
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     this.Load();
         /// </code>
         /// </example>
         /// </summary>
@@ -129,10 +127,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Called when load is finished
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         /// </code>
         /// </example>
         /// </summary>
@@ -143,17 +141,14 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Load a specific music and do an action
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         /// </code>
         /// </example>
         /// </summary>
         /// <param name=""></param>
-        /// <returns>
-        /// TODO
-        /// </returns>
         IEnumerator LoadMusic(string musicFileURI, Action cb)
         {
             Debug.Log($"Loading music {musicFileURI}");

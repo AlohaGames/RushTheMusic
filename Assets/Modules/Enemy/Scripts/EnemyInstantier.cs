@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha.Events;
 
 namespace Aloha
 {
@@ -19,8 +20,9 @@ namespace Aloha
         /// A GameObject instance of enemy prefab
         /// </returns>
         GameObject InstantiateEnemy(int id)
-        {
+        {       
             GameObject instance = Instantiate(enemyPrefabs[id]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Enemy, instance);
             Entity enemy = instance.GetComponent<Entity>();
             enemy.Init();
             return instance;
@@ -30,17 +32,25 @@ namespace Aloha
         /// This function instantiate an enemy with an enemy type.
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// EnnemyInstancier.Instance.InstantiateEnemy(EnemyType.Wizard);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="type"></param>
         /// <returns>
-        /// TODO
+        /// Instantiated ennemy
         /// </returns>
         public GameObject InstantiateEnemy(EnemyType type)
         {
             return InstantiateEnemy((int) type);
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Enemy);
         }
     }
 
@@ -97,5 +107,15 @@ namespace Aloha
         /// Ice Wyrmling (flying)
         /// </summary>
         iceWyrmling = 9,
+
+        /// <summary>
+        /// Canon
+        /// </summary>
+        canon = 10,
+
+        /// <summary>
+        /// Bat
+        /// </summary>
+        bat = 11,
     }
 }

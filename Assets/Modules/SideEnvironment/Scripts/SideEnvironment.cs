@@ -5,16 +5,16 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// TODO
+    /// Class for the side environment
     /// </summary>
     public abstract class SideEnvironment : MonoBehaviour
     {
         public float Height;
 
         /// <summary>
-        /// TODO
+        /// Initialize the side environment
         /// <example>
-        ///     TODO
+        ///     sideEnvInstR.Initialize();
         /// </example>
         /// </summary>
         public abstract void Initialize();

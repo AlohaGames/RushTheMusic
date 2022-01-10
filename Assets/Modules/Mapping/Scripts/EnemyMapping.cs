@@ -13,7 +13,7 @@ namespace Aloha
     }
 
     /// <summary>
-    /// TODO
+    /// Class for mapping of ennemies
     /// </summary>
     public class EnemyMapping
     {
@@ -23,10 +23,10 @@ namespace Aloha
         public HorizontalPositionEnum HorizontalPosition;
 
         /// <summary>
-        /// TODO
+        /// Default constructor of enemyMapping
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     EnemyMapping em0 = new EnemyMapping();
         /// </code>
         /// </example>
         /// </summary>
@@ -43,10 +43,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Default constructor with parameters
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
         /// </code>
         /// </example>
         /// </summary>
@@ -56,10 +56,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Initialise enemy informations
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        /// this.Initialize(EnemyType.generic, stats, vpos, hpos);
         /// </code>
         /// </example>
         /// </summary>
@@ -72,16 +72,16 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Gives enemy position for a specific Z
         /// <example> Example(s):
         /// <code>
-        /// TODO
+        ///     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
         /// </code>
         /// </example>
         /// </summary>
         /// <param name="z"></param>
         /// <returns>
-        /// TODO
+        ///     Position of the enemy
         /// </returns>
         public Vector3 GetPosition(float z)
         {
