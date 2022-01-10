@@ -21,9 +21,10 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        void Awake() {
+        void Awake()
+        {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
-            GlobalEvent.LevelStop.AddListener(ShowEndGameUIElements);
+            GlobalEvent.Victory.AddListener(ShowEndGameUIElements);
         }
 
         /// <summary>
@@ -50,7 +51,8 @@ namespace Aloha
             {
                 Warrior warrior = hero as Warrior;
                 GlobalEvent.OnSecondaryUpdate.Invoke(warrior.CurrentRage, warrior.GetStats().MaxRage);
-            } else if (hero is Wizard)
+            }
+            else if (hero is Wizard)
             {
                 Wizard wizard = hero as Wizard;
                 GlobalEvent.OnSecondaryUpdate.Invoke(wizard.CurrentMana, wizard.GetStats().MaxMana);
@@ -67,8 +69,18 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void ShowEndGameUIElements(){
+        public void ShowEndGameUIElements()
+        {
             UIScore.ShowEndGameUIScoreElements();
+        }
+
+        /// <summary>
+        /// Is called when a Scene or game ends.
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.LevelStart.RemoveListener(ShowInGameUIElements);
+            GlobalEvent.Victory.RemoveListener(ShowEndGameUIElements);
         }
     }
 }

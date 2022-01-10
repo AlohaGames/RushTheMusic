@@ -13,42 +13,6 @@ namespace Aloha.Test
     public class WyrmlingTest
     {
         /// <summary>
-        /// Check if Wyrmling was bumped
-        /// </summary>
-        /*[UnityTest]
-        public IEnumerator WyrmlingGetBumpTest()
-        {
-            // Instance wyrmling
-            GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
-            Wyrmling wyrmling = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.wyrmling).GetComponent<Wyrmling>();
-            TilesManager.Instance.TileSpeed = 0;
-            yield return null;
-
-            // Instance a warrior
-            GameObject warriorGO = new GameObject();
-            Warrior warrior = warriorGO.AddComponent<Warrior>();
-            WarriorStats wStats = (WarriorStats)ScriptableObject.CreateInstance("WarriorStats");
-            wStats.MaxRage = 100;
-            wStats.MaxHealth = 10;
-            wStats.Attack = 5;
-            wStats.Defense = 0;
-            wStats.XP = 0;
-            warrior.Init(wStats);
-
-            // Get the initial position and bump the wyrmling
-            float initialZPosition = wyrmling.transform.position.z;
-            warrior.BumpEntity(wyrmling, 2);
-            yield return new WaitForSeconds(0.5f);
-
-            // Check if the wyrmling was bumped
-            Assert.AreNotEqual(initialZPosition, wyrmling.transform.position.z);
-
-            // Clear the scene
-            Utils.ClearCurrentScene();
-            yield return null;
-        }*/
-
-        /// <summary>
         /// Check the instantiation of fireball
         /// </summary>
         [UnityTest]
@@ -81,7 +45,7 @@ namespace Aloha.Test
             // Instance wyrmling
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             Wyrmling wyrmling = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.wyrmling).GetComponent<Wyrmling>();
-            wyrmling.transform.position = new Vector3 (2, 2, 2);
+            wyrmling.transform.position = new Vector3(2, 2, 2);
             yield return null;
 
             // Instance a warrior
