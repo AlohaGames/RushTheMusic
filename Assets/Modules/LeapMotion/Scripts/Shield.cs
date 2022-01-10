@@ -9,10 +9,10 @@ namespace Aloha
     public class Shield : MonoBehaviour
     {
         [SerializeField] 
-        float minimumSpeedToProtect = 0.1f;
+        private float minimumSpeedToProtect = 0.1f;
 
         [SerializeField]
-        SpriteRenderer sprite;
+        private SpriteRenderer sprite;
 
         private Vector3 presPos;
         private Vector3 newPos;
@@ -67,7 +67,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private IEnumerator Wink()
+        IEnumerator Wink()
         {
             Warrior.CanDefend = false;
 
