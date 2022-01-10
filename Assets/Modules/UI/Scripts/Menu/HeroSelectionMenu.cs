@@ -33,7 +33,7 @@ namespace Aloha
         /// </summary>
         public void OnClick()
         {
-            MenuRoot.Hide();
+            MenuRoot.HideEverything();
             GameManager.Instance.LoadHero(Type);
             GameManager.Instance.StartLevel();
         }
