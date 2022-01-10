@@ -11,7 +11,15 @@ namespace Aloha
     /// </summary>
     public abstract class Bar : MonoBehaviour
     {
-        protected GameObject bar;
+        [SerializeField]
+        protected Image bar;
+
+        [SerializeField]
+        protected Text text;
+
+        [SerializeField]
+        protected bool isValueDesplayed = false;
+
         public Color Color; 
 
         /// <summary>
@@ -19,8 +27,7 @@ namespace Aloha
         /// </summary>
         protected void Awake()
         {
-            bar = transform.GetChild(0).gameObject;
-            bar.GetComponent<Image>().color = Color;
+            bar.color = Color;
         }
 
         /// <summary>
