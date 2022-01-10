@@ -9621,7 +9621,7 @@ GameObject:
   - component: {fileID: 1023215018960411582}
   m_Layer: 0
   m_Name: WyrmlingFireball
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9671,7 +9671,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabb004affbe33a46a7a775124d80ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  associatedEnemy: {fileID: 0}
+  AssociatedEnemy: {fileID: 0}
 --- !u!1 &5481640108851689180
 GameObject:
   m_ObjectHideFlags: 0

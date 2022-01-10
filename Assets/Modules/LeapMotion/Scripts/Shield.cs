@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Aloha
@@ -10,8 +11,12 @@ namespace Aloha
         [SerializeField] 
         float minimumSpeedToProtect = 0.1f;
 
+        [SerializeField]
+        SpriteRenderer sprite;
+
         private Vector3 presPos;
         private Vector3 newPos;
+        private bool canProtect;
         public Warrior Warrior;
         public float Speed;
 
@@ -24,8 +29,11 @@ namespace Aloha
             {
                 Warrior = GameManager.Instance.GetHero() as Warrior;
             }
+            canProtect = true;
+
             presPos = transform.position;
             newPos = transform.position;
+            StartCoroutine(Wink());
         }
 
         /// <summary>
@@ -36,6 +44,71 @@ namespace Aloha
             newPos = transform.position;
             Speed = (newPos - presPos).magnitude * 100;
             presPos = newPos;
+        }
+
+        void changeOpacity(float opacity)
+        {
+            Color c = sprite.color;
+            c.a = opacity;
+            sprite.color = c;
+        }
+
+        public IEnumerator Wink()
+        {
+            this.canProtect = false;
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.75f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(0.25f);
+            yield return new WaitForSeconds(0.5f);
+
+            changeOpacity(1.0f);
+            this.canProtect = true;
+
+            yield return null;
         }
 
         /// <summary>
@@ -49,12 +122,16 @@ namespace Aloha
         /// <param name="collider"></param>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy" && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
+            if (collider.tag == "Enemy" && canProtect && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
                 // Change minimum speed if actual speed is to low
                 if (Speed < 1.5) Speed = 1.5f;
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
                 Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
+            } else if (collider.tag == "EnemyAttack" && canProtect &&(Warrior.IsDefending || Speed > minimumSpeedToProtect))
+            {
+                StartCoroutine(Wink());
+                Destroy(collider.gameObject);
             }
         }
     }
