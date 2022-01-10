@@ -7,9 +7,6 @@ var dir_a218dec1f0e6f877ee12541574524f9e =
     [ "GameManager.cs", "d4/d22/_game_manager_8cs.html", [
       [ "GameManager", "da/d6b/class_aloha_1_1_game_manager.html", "da/d6b/class_aloha_1_1_game_manager" ]
     ] ],
-    [ "RtmConfig.cs", "d9/d90/_rtm_config_8cs.html", [
-      [ "RtmConfig", "dd/d59/class_aloha_1_1_rtm_config.html", "dd/d59/class_aloha_1_1_rtm_config" ]
-    ] ],
     [ "SerializeDictionary.cs", "dc/d8a/_serialize_dictionary_8cs.html", [
       [ "SerializeDictionary", "db/d73/class_aloha_1_1_serialize_dictionary.html", "db/d73/class_aloha_1_1_serialize_dictionary" ]
     ] ],
