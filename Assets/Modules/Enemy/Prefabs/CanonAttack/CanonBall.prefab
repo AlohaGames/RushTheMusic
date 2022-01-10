@@ -4815,7 +4815,6 @@ GameObject:
   - component: {fileID: 5296903633872555768}
   - component: {fileID: 3192688153925469190}
   - component: {fileID: 8291651117422289497}
-  - component: {fileID: 3659731913199833388}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -4886,19 +4885,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3659731913199833388
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7028273350388524802}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7262134909622556312
 GameObject:
   m_ObjectHideFlags: 0
@@ -4910,6 +4896,7 @@ GameObject:
   - component: {fileID: 4717651050752382965}
   - component: {fileID: 5609378975067406228}
   - component: {fileID: 8899978347479492083}
+  - component: {fileID: 582520773843201301}
   m_Layer: 0
   m_Name: CanonBall
   m_TagString: EnemyAttack
@@ -4962,3 +4949,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AssociatedEnemy: {fileID: 0}
+--- !u!135 &582520773843201301
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7262134909622556312}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
