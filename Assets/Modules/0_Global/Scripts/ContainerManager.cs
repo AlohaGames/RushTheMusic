@@ -78,9 +78,8 @@ namespace Aloha
         /// <param name="containerName">The names of the containers to clear</param>
         public void ClearContainers(string[] containersName)
         {
-            foreach (var containerName in containersName)
+            foreach (string containerName in containersName)
             {
-                Debug.Log(containerName);
                 ClearContainer(containerName);
             }
         }
@@ -90,7 +89,7 @@ namespace Aloha
         /// </summary>
         public void ClearAllContainer()
         {
-            foreach (var containerName in containers.Keys)
+            foreach (string containerName in containers.Keys)
             {
                 ClearContainer(containerName);
             }

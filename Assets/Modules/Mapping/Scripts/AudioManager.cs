@@ -10,7 +10,7 @@ namespace Aloha
     /// </summary>
     public class AudioManager : Singleton<AudioManager>
     {
-    
+
         private GameObject audioSourceGO;
         private AudioSource audioSource;
         private bool shouldBePlaying = false;
@@ -32,9 +32,11 @@ namespace Aloha
             GlobalEvent.LevelStop.AddListener(StopMusic);
         }
 
-        public void Update() {
+        public void Update()
+        {
             // End of music
-            if (shouldBePlaying && !audioSource.isPlaying) {
+            if (shouldBePlaying && !audioSource.isPlaying)
+            {
                 GlobalEvent.GameOver.Invoke();
             }
         }

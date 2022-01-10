@@ -23,7 +23,7 @@ namespace Aloha
         /// <summary>
         /// Return the directory where profils are stored on local computer
         /// </summary>
-        private string getProfilDir()
+        private string GetProfilDir()
         {
             // Linux : ~/.config/unity3d/AlohaGames/RushTheMusic/profils/
             return $"{Application.persistentDataPath}/profils";
@@ -53,7 +53,7 @@ namespace Aloha
         {
             string profilFileName = $"{profil.Name}.xml";
             XmlSerializer serializer = new XmlSerializer(typeof(Profil));
-            using (FileStream stream = new FileStream($"{getProfilDir()}/{profilFileName}", FileMode.Create))
+            using (FileStream stream = new FileStream($"{GetProfilDir()}/{profilFileName}", FileMode.Create))
             {
                 serializer.Serialize(stream, profil);
             }
@@ -65,7 +65,7 @@ namespace Aloha
         public void DeleteProfil(Profil profil)
         {
             string profilFileName = $"{profil.Name}.xml";
-            string filePath = $"{getProfilDir()}/{profilFileName}";
+            string filePath = $"{GetProfilDir()}/{profilFileName}";
 
             // check if file exists
             if (!File.Exists(filePath))
@@ -103,11 +103,11 @@ namespace Aloha
             this.profils = new List<Profil>();
 
             // Create profile dir if not exists
-            Directory.CreateDirectory(getProfilDir());
+            Directory.CreateDirectory(GetProfilDir());
 
             // Read each profile files
-            Debug.Log($"Loading files from {getProfilDir()}");
-            foreach (string file in Directory.EnumerateFiles(getProfilDir(), "*.xml"))
+            Debug.Log($"Loading files from {GetProfilDir()}");
+            foreach (string file in Directory.EnumerateFiles(GetProfilDir(), "*.xml"))
             {
                 Profil profil = LoadProfilFile(file);
                 this.profils.Add(profil);

@@ -15,8 +15,7 @@ namespace Aloha
         public int NumberOfTiles = 20;
         public float TileSpeed = 10;
         public float TileSize = 5;
-
-        public bool running = false;
+        public bool Running = false;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -33,7 +32,7 @@ namespace Aloha
         void Update()
         {
             // Delete a tile and replace it by a new one
-            if (running && activeTiles.Count != 0 && activeTiles[0].transform.position.z + TileSize < 0)
+            if (Running && activeTiles.Count != 0 && activeTiles[0].transform.position.z + TileSize < 0)
             {
                 DeleteFirstTile();
                 SpawnTileToQueue(GetNextTileToSpawn());
@@ -44,14 +43,14 @@ namespace Aloha
         /// Start the game
         /// <example> Example(s):
         /// <code>
-        ///     GlobalEvent.LevelStart.AddListener(StartGame);
+        ///     GlobalEvent.LevelStart.AddListener(OnLevelStart);
         /// </code>
         /// </example>
         /// </summary>
         public void OnLevelStart()
         {
 
-            this.running = true;
+            this.Running = true;
 
             this.tilePrefabs = SideEnvironmentManager.Instance.GetCurrentBiome().TilePrefabs;
 
@@ -179,7 +178,7 @@ namespace Aloha
         /// </summary>
         public void Reset()
         {
-            running = false;
+            Running = false;
             activeTiles.Clear();
             ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
         }

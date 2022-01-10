@@ -74,10 +74,10 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Will stop the current level.
+        /// Stop the game.
         /// <example> Example(s):
         /// <code>
-        ///     GameManager.Instance.StopLevel();
+        ///     GameManager.Instance.FinishGame();
         /// </code>
         /// </example>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Aloha
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
-        ///     Loose();
+        ///     GameManager.Instance.FinishLevel();
         /// </code>
         /// </example>
         /// </summary>
