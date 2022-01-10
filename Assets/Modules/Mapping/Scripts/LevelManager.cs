@@ -6,7 +6,6 @@ using System.IO;
 using System.IO.Compression;
 using UnityEngine;
 using UnityEngine.Networking;
-using Aloha.Events;
 
 namespace Aloha
 {
@@ -21,14 +20,6 @@ namespace Aloha
         public LevelMapping LevelMapping;
         public AudioClip LevelMusic;
         public bool IsLoaded = false;
-
-        /// <summary>
-        /// Is called when the script instance is being loaded.
-        /// </summary>
-        void Awake()
-        {
-            GlobalEvent.LoadLevel.AddListener(Load);
-        }
 
         /// <summary>
         /// Save a map with parameters
@@ -75,8 +66,13 @@ namespace Aloha
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="isTutp"></param>
-        public void Load(string filename, bool isTuto = false)
+        public void Load(string filename, Action cb, bool isTuto = false)
         {
+            if (cb == null)
+            {
+                cb = FinishLoad;
+            }
+
             Debug.Log($"Load level {filename}");
 
             string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
@@ -110,7 +106,34 @@ namespace Aloha
 
             // Load AudioClip from mp3 file
             string musicFilePath = $"file://{workingPath}/{g}/{metadata.MusicFilePath}";
-            StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
+            StartCoroutine(LoadMusic(musicFilePath, cb));
+        }
+
+        public void LoadRandomLevel(Action cb)
+        {
+            List<string> levels = GetAllAvailableMusics();
+            if (levels.Count > 0)
+            {
+                var rand = new System.Random().Next(0, levels.Count - 1);
+                string level = levels[rand];
+                Load(level, cb, true);
+            }
+            else
+            {
+                throw new Exception("No level to load !");
+            }
+        }
+
+        public List<string> GetAllAvailableMusics()
+        {
+            List<string> levels = new List<string>();
+            string tutoDirectory = Application.streamingAssetsPath + "/Levels";
+            string[] tutoLevels = Directory.GetFiles(tutoDirectory, "*.rtm");
+            foreach (string tutoLevel in tutoLevels)
+            {
+                levels.Add(Path.GetFileName(tutoLevel));
+            }
+            return levels;
         }
 
         /// <summary>
@@ -123,7 +146,7 @@ namespace Aloha
         /// </summary>
         public void Load()
         {
-            Load(this.filename);
+            Load(this.filename, null);
         }
 
         /// <summary>
@@ -163,14 +186,6 @@ namespace Aloha
                 }
             }
             cb();
-        }
-
-        /// <summary>
-        /// Is called when a Scene or game ends.
-        /// </summary>
-        void OnDestroy()
-        {
-            GlobalEvent.LoadLevel.RemoveListener(Load);
         }
     }
 }

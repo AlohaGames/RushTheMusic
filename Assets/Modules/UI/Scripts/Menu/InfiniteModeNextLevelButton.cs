@@ -6,19 +6,8 @@ using Aloha.Events;
 
 namespace Aloha
 {
-    /// <summary>
-    /// Class for the level loader button
-    /// </summary>
-    [RequireComponent(typeof(Button))]
-    public class LevelLoaderButton : MonoBehaviour
+    public class InfiniteModeNextLevelButton : MonoBehaviour
     {
-        public bool IsTuto = false;
-        public string Level;
-        public MenuRoot MenuRoot;
-
-        /// <summary>
-        /// Is called when the script instance is being loaded.
-        /// </summary>
         void Awake()
         {
             GetComponent<Button>().onClick.AddListener(OnClick);
@@ -34,8 +23,14 @@ namespace Aloha
         /// </summary>
         public void OnClick()
         {
-            MenuRoot.ShowCharacterMenu();
-            LevelManager.Instance.Load(Level, null, IsTuto);
+            ScoreManager.Instance.FinishLevelReset();
+            LevelManager.Instance.LoadRandomLevel(onFinishLoad);
+        }
+
+        public void onFinishLoad()
+        {
+            GameManager.Instance.StartLevel();
+            UIManager.Instance.HideEndGameUIElements();
         }
 
         /// <summary>

@@ -58,7 +58,7 @@ namespace Aloha
         /// This function is called when a hero level up.
         /// <example> Example(s):
         /// <code>
-        ///     warrior.LevelUp(2000);
+        ///     warrior.GainXp(2000);
         /// </code>
         /// </example>
         /// </summary>
@@ -70,11 +70,8 @@ namespace Aloha
             // LEVEL UP !
             if (this.GetStats().XP >= this.GetStats().MaxXP)
             {
-                this.GetStats().Level += 1;
                 this.GetStats().XP -= this.GetStats().MaxXP;
-
-                // Each level need 20% more XP
-                this.GetStats().MaxXP = (int)(this.GetStats().MaxXP * 1.20f);
+                this.GetStats().Scale();
             }
 
             // Update UI XP bar

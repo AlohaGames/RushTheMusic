@@ -12,6 +12,7 @@ namespace Aloha
         public GameObject ScoreDetail;
         public GameObject InGameScore;
         public Text InGameScoreText;
+        public Text InGameScoreInfini;
         public Text TotalScoreText;
         public Text DistanceScoreText;
         public Text KillScoreText;
@@ -28,6 +29,17 @@ namespace Aloha
         public void ShowInGameUIScoreElements()
         {
             InGameScore.SetActive(true);
+
+            // Show total score if inifinite mode is ONE
+            if (GameManager.Instance.IsInfinite)
+            {
+                InGameScoreInfini.gameObject.SetActive(true);
+            }
+            else
+            {
+                InGameScoreInfini.gameObject.SetActive(false);
+            }
+
             UpdateUIText();
         }
 
@@ -42,6 +54,7 @@ namespace Aloha
         public void UpdateUIText()
         {
             InGameScoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
+            InGameScoreInfini.text = "(Total: " + ScoreManager.Instance.InfiniteScore + ")";
         }
 
         /// <summary>
@@ -59,7 +72,11 @@ namespace Aloha
             DistanceScoreText.text = "Distance\t" + ScoreManager.Instance.DistanceScore;
             KillScoreText.text = "Ennemis tués\t" + ScoreManager.Instance.EnemyKilledScore;
             HitScoreText.text = "Coups reçus\t-" + ScoreManager.Instance.HitScore;
-            GameManager.Instance.IsPlaying = false;
+        }
+
+        public void HideEndGameUIScoreElements()
+        {
+            EndGameScore.SetActive(false);
         }
     }
 }

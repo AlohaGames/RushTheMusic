@@ -10,5 +10,17 @@ namespace Aloha
     {
         public int XP;
         public int MaxXP;
+
+        public void Scale()
+        {
+            this.Level += 1;
+
+            // Each level need 20% more XP
+            this.MaxXP = (int)(this.MaxXP * 1.20f);
+
+            this.Attack = this.Attack + (Level * 3);
+            this.Defense = this.Defense + (Level * 3);
+            this.MaxHealth = this.MaxHealth + (Level * 3);
+        }
     }
 }

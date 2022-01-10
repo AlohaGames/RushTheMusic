@@ -71,7 +71,14 @@ namespace Aloha
         /// </summary>
         public void ShowEndGameUIElements()
         {
+            GameManager.Instance.Freeze();
             UIScore.ShowEndGameUIScoreElements();
+        }
+
+        public void HideEndGameUIElements()
+        {
+            GameManager.Instance.UnFreeze();
+            UIScore.HideEndGameUIScoreElements();
         }
 
         /// <summary>
