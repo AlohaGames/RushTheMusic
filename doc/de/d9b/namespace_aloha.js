@@ -10,7 +10,6 @@ var namespace_aloha =
     [ "ContainerTypes", "da/d9d/class_aloha_1_1_container_types.html", "da/d9d/class_aloha_1_1_container_types" ],
     [ "ContainerManager", "d1/d27/class_aloha_1_1_container_manager.html", "d1/d27/class_aloha_1_1_container_manager" ],
     [ "GameManager", "da/d6b/class_aloha_1_1_game_manager.html", "da/d6b/class_aloha_1_1_game_manager" ],
-    [ "RtmConfig", "dd/d59/class_aloha_1_1_rtm_config.html", "dd/d59/class_aloha_1_1_rtm_config" ],
     [ "SerializeDictionary", "db/d73/class_aloha_1_1_serialize_dictionary.html", "db/d73/class_aloha_1_1_serialize_dictionary" ],
     [ "Utils", "dc/d53/class_aloha_1_1_utils.html", "dc/d53/class_aloha_1_1_utils" ],
     [ "Biome", "d4/dbb/class_aloha_1_1_biome.html", "d4/dbb/class_aloha_1_1_biome" ],
