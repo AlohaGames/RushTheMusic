@@ -114,6 +114,8 @@ var hierarchy =
         [ "Aloha.Tree", "d1/de3/class_aloha_1_1_tree.html", null ]
       ] ],
       [ "Aloha.Sword", "d8/d29/class_aloha_1_1_sword.html", null ],
+      [ "Aloha.UI.Settings", "dd/d86/class_aloha_1_1_u_i_1_1_settings.html", null ],
+      [ "Aloha.UI.SliderValueToText", "d7/dc8/class_aloha_1_1_u_i_1_1_slider_value_to_text.html", null ],
       [ "Aloha.UI.VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", null ],
       [ "Aloha.UIInventory", "db/da9/class_aloha_1_1_u_i_inventory.html", null ],
       [ "Aloha.UIScore", "d5/dbf/class_aloha_1_1_u_i_score.html", null ],
@@ -140,6 +142,7 @@ var hierarchy =
     ] ],
     [ "Aloha.Test.PauseMenuTest", "d5/df7/class_aloha_1_1_test_1_1_pause_menu_test.html", null ],
     [ "Aloha.Profil", "d5/d57/class_aloha_1_1_profil.html", null ],
+    [ "Aloha.RtmConfig", "dd/d59/class_aloha_1_1_rtm_config.html", null ],
     [ "Aloha.Test.ScoreTest", "d7/d4c/class_aloha_1_1_test_1_1_score_test.html", null ],
     [ "ScriptableObject", null, [
       [ "Aloha.AI.Graph", "d0/d1a/class_aloha_1_1_a_i_1_1_graph.html", [
