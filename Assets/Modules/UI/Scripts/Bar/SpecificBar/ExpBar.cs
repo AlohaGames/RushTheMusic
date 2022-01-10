@@ -32,7 +32,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Update experience bar
         /// <example> Example(s):
         /// <code>
         /// </code>
@@ -45,7 +45,6 @@ namespace Aloha
         {
             levelText.text = level.ToString();
             base.UpdateBar(currentXp, maxXp);
-            Debug.Log("Updated");
         }
     }
 }
