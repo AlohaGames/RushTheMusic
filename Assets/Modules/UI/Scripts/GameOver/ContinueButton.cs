@@ -6,14 +6,12 @@ using UnityEngine.UI;
 namespace Aloha
 {
     /// <summary>
-    /// Class for the button to create a profile
+    /// Manage the continue button in Game Over Menu
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class CreateProfileButton : MonoBehaviour
+    public class ContinueButton : MonoBehaviour
     {
-        public InputField InputName;
         public MenuRoot MenuRoot;
-        public GameObject CreateProfilUI;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -24,22 +22,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Event called when the user clicks on the button
-        /// <example> Example(s):
-        /// <code>
-        ///     GetComponent<Button>().onClick.AddListener(OnClick);
-        /// </code>
-        /// </example>
+        /// Manage actions where button is clicked
         /// </summary>
         void OnClick()
         {
-            if (ProfilManager.Instance)
-            {
-                ProfilManager.Instance.CreateProfil(new Profil(InputName.text));
-                InputName.text = "";
-                CreateProfilUI.SetActive(false);
-                MenuRoot.ShowMainMenu();
-            }
+            //TODO : add if(infinite or select track state)
+            MenuRoot.ShowTrackSelectionMenu();
         }
 
         /// <summary>
