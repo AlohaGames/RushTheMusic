@@ -12,6 +12,7 @@ namespace Aloha
         public int CurrentRage;
         public bool IsAttacking;
         public bool IsDefending;
+        public bool CanDefend;
 
         /// <summary>
         /// Initialize the warrior
@@ -25,6 +26,7 @@ namespace Aloha
         {
             this.Init(this.heroStats);
             this.IsDefending = false;
+            this.CanDefend = true;
         }
 
         /// <summary>

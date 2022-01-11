@@ -19,9 +19,19 @@ namespace Aloha
         {
             if (collider.tag == "Enemy")
             {
+                // Affect entity
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
                 Wizard.BumpEntity(collider.GetComponent<Entity>());
 
+                // Auto destroy
+                Wizard.RegenerateSecondary((float)this.Power / (float)Wizard.GetStats().MaxMana);
+                Destroy(gameObject);
+            } else if (collider.tag == "EnemyAttack")
+            {
+                // Affect entity attack
+                Destroy(collider.gameObject);
+
+                // Auto destroy
                 Wizard.RegenerateSecondary((float)this.Power / (float)Wizard.GetStats().MaxMana);
                 Destroy(gameObject);
             }
