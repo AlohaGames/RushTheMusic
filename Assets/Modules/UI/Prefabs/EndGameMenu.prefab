@@ -545,12 +545,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
+      propertyPath: m_Color.b
+      value: 0.29803923
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
+      propertyPath: m_Color.g
+      value: 0.14509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8901961
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
       propertyPath: m_RaycastPadding.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2280619050529490083, guid: be5ece050cbf67244940267cae08640d, type: 3}
       propertyPath: m_FontData.m_AlignByGeometry
@@ -702,9 +722,9 @@ PrefabInstance:
       value: VICTOIRE !
       objectReference: {fileID: 0}
     - target: {fileID: 2358525265430308172, guid: af9960489dac50a41b09b741a9740481, type: 3}
-      propertyPath: m_FontData.m_FontStyle
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 4e6709eb2cfeb94638dda15d66d8f443, type: 3}
     - target: {fileID: 2358525265430308172, guid: af9960489dac50a41b09b741a9740481, type: 3}
       propertyPath: m_FontData.m_AlignByGeometry
       value: 1

@@ -171,10 +171,10 @@ namespace Aloha
         {
             this.HideEverything();
             EndGameMenu.SetActive(true);
-            EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total: " + ScoreManager.Instance.TotalScore;
-            EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t" + ScoreManager.Instance.DistanceScore;
-            EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués\t" + ScoreManager.Instance.EnemyKilledScore;
-            EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus\t-" + ScoreManager.Instance.HitScore;
+            EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total" + "\t\t" + ScoreManager.Instance.TotalScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués" + "\t\t" + ScoreManager.Instance.EnemyKilledScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
         }
 
         /// <summary>
