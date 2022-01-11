@@ -4,6 +4,7 @@ var class_aloha_1_1_game_manager =
     [ "FinishLevel", "da/d6b/class_aloha_1_1_game_manager.html#af2c0bd39d49c75a4cb58a12b309a8d34", null ],
     [ "Freeze", "da/d6b/class_aloha_1_1_game_manager.html#a3b232f8fd0772100a01adcbf72d50a6b", null ],
     [ "GetHero", "da/d6b/class_aloha_1_1_game_manager.html#a15535cbeb0223af46dd32feaca998b28", null ],
+    [ "IsGameFinished", "da/d6b/class_aloha_1_1_game_manager.html#aee93496e47cd58e6b82c316d80e1a464", null ],
     [ "IsGamePaused", "da/d6b/class_aloha_1_1_game_manager.html#a16fa0d90dd00e98e17446e042c97f53e", null ],
     [ "LoadHero", "da/d6b/class_aloha_1_1_game_manager.html#ad53bbb61dd13d22a6ea8482f3402a517", null ],
     [ "LoadLevel", "da/d6b/class_aloha_1_1_game_manager.html#a0e06695534019a96285558499902007a", null ],

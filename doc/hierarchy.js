@@ -102,9 +102,9 @@ var hierarchy =
       [ "Aloha.ItemUser", "de/d8b/class_aloha_1_1_item_user.html", null ],
       [ "Aloha.LevelLoaderButton", "d9/d2a/class_aloha_1_1_level_loader_button.html", null ],
       [ "Aloha.MainMenu", "dc/d37/class_aloha_1_1_main_menu.html", null ],
+      [ "Aloha.MainMenuReturnButton", "d8/d3d/class_aloha_1_1_main_menu_return_button.html", null ],
       [ "Aloha.MenuRoot", "d1/dc5/class_aloha_1_1_menu_root.html", null ],
       [ "Aloha.NoProfilPickerUI", "d3/d81/class_aloha_1_1_no_profil_picker_u_i.html", null ],
-      [ "Aloha.PauseMenu", "d2/de9/class_aloha_1_1_pause_menu.html", null ],
       [ "Aloha.PortalSpawner", "d5/dd0/class_aloha_1_1_portal_spawner.html", null ],
       [ "Aloha.ProfilPickerUI", "de/de1/class_aloha_1_1_profil_picker_u_i.html", null ],
       [ "Aloha.QuitButton", "d6/dfb/class_aloha_1_1_quit_button.html", null ],
@@ -140,7 +140,6 @@ var hierarchy =
         [ "Aloha.AI.WyrmlingMove", "d2/d63/class_aloha_1_1_a_i_1_1_wyrmling_move.html", null ]
       ] ]
     ] ],
-    [ "Aloha.Test.PauseMenuTest", "d5/df7/class_aloha_1_1_test_1_1_pause_menu_test.html", null ],
     [ "Aloha.Profil", "d5/d57/class_aloha_1_1_profil.html", null ],
     [ "Aloha.RtmConfig", "dd/d59/class_aloha_1_1_rtm_config.html", null ],
     [ "Aloha.Test.ScoreTest", "d7/d4c/class_aloha_1_1_test_1_1_score_test.html", null ],
@@ -231,7 +230,6 @@ var hierarchy =
     [ "UIBehaviour", null, [
       [ "Aloha.ChooseProfilMenu", "d4/de4/class_aloha_1_1_choose_profil_menu.html", null ]
     ] ],
-    [ "Aloha.Test.UIScoreTest", "d1/de7/class_aloha_1_1_test_1_1_u_i_score_test.html", null ],
     [ "UnityEvent", null, [
       [ "Aloha.Events.EntityEvent", "d9/db6/class_aloha_1_1_events_1_1_entity_event.html", null ],
       [ "Aloha.Events.GameObjectEvent", "d0/d73/class_aloha_1_1_events_1_1_game_object_event.html", null ],

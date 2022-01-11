@@ -9,7 +9,6 @@ var namespace_aloha_1_1_test =
     [ "WallTest", "d1/daa/class_aloha_1_1_test_1_1_wall_test.html", "d1/daa/class_aloha_1_1_test_1_1_wall_test" ],
     [ "WyrmlingFireballTest", "de/df8/class_aloha_1_1_test_1_1_wyrmling_fireball_test.html", "de/df8/class_aloha_1_1_test_1_1_wyrmling_fireball_test" ],
     [ "WyrmlingTest", "db/daf/class_aloha_1_1_test_1_1_wyrmling_test.html", "db/daf/class_aloha_1_1_test_1_1_wyrmling_test" ],
-    [ "PauseMenuTest", "d5/df7/class_aloha_1_1_test_1_1_pause_menu_test.html", "d5/df7/class_aloha_1_1_test_1_1_pause_menu_test" ],
     [ "HeroTest", "d3/d94/class_aloha_1_1_test_1_1_hero_test.html", "d3/d94/class_aloha_1_1_test_1_1_hero_test" ],
     [ "WarriorTest", "d9/d95/class_aloha_1_1_test_1_1_warrior_test.html", "d9/d95/class_aloha_1_1_test_1_1_warrior_test" ],
     [ "WizardTest", "d2/db5/class_aloha_1_1_test_1_1_wizard_test.html", "d2/db5/class_aloha_1_1_test_1_1_wizard_test" ],
@@ -25,7 +24,6 @@ var namespace_aloha_1_1_test =
     [ "EnemySpawnerTest", "d9/d19/class_aloha_1_1_test_1_1_enemy_spawner_test.html", "d9/d19/class_aloha_1_1_test_1_1_enemy_spawner_test" ],
     [ "LevelMappingTest", "d5/db8/class_aloha_1_1_test_1_1_level_mapping_test.html", "d5/db8/class_aloha_1_1_test_1_1_level_mapping_test" ],
     [ "ScoreTest", "d7/d4c/class_aloha_1_1_test_1_1_score_test.html", "d7/d4c/class_aloha_1_1_test_1_1_score_test" ],
-    [ "UIScoreTest", "d1/de7/class_aloha_1_1_test_1_1_u_i_score_test.html", "d1/de7/class_aloha_1_1_test_1_1_u_i_score_test" ],
     [ "TileTest", "d3/d1c/class_aloha_1_1_test_1_1_tile_test.html", "d3/d1c/class_aloha_1_1_test_1_1_tile_test" ],
     [ "SerialiazeDictionaryTest", "d8/d0e/class_aloha_1_1_test_1_1_serialiaze_dictionary_test.html", "d8/d0e/class_aloha_1_1_test_1_1_serialiaze_dictionary_test" ],
     [ "UtilsTest", "d5/dd9/class_aloha_1_1_test_1_1_utils_test.html", "d5/dd9/class_aloha_1_1_test_1_1_utils_test" ]

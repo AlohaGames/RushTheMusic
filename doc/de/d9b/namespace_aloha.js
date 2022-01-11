@@ -83,6 +83,7 @@ var namespace_aloha =
     [ "ProgressionBar", "d4/dd9/class_aloha_1_1_progression_bar.html", "d4/dd9/class_aloha_1_1_progression_bar" ],
     [ "SecondaryBar", "d1/ded/class_aloha_1_1_secondary_bar.html", "d1/ded/class_aloha_1_1_secondary_bar" ],
     [ "VerticalBar", "da/d5d/class_aloha_1_1_vertical_bar.html", "da/d5d/class_aloha_1_1_vertical_bar" ],
+    [ "MainMenuReturnButton", "d8/d3d/class_aloha_1_1_main_menu_return_button.html", "d8/d3d/class_aloha_1_1_main_menu_return_button" ],
     [ "ContinueButton", "de/dca/class_aloha_1_1_continue_button.html", "de/dca/class_aloha_1_1_continue_button" ],
     [ "QuitButton", "d6/dfb/class_aloha_1_1_quit_button.html", "d6/dfb/class_aloha_1_1_quit_button" ],
     [ "HUDEffect", "d4/d39/class_aloha_1_1_h_u_d_effect.html", "d4/d39/class_aloha_1_1_h_u_d_effect" ],
@@ -93,7 +94,6 @@ var namespace_aloha =
     [ "MainMenu", "dc/d37/class_aloha_1_1_main_menu.html", "dc/d37/class_aloha_1_1_main_menu" ],
     [ "MenuRoot", "d1/dc5/class_aloha_1_1_menu_root.html", "d1/dc5/class_aloha_1_1_menu_root" ],
     [ "UITrackSelection", "d6/d0a/class_aloha_1_1_u_i_track_selection.html", "d6/d0a/class_aloha_1_1_u_i_track_selection" ],
-    [ "PauseMenu", "d2/de9/class_aloha_1_1_pause_menu.html", "d2/de9/class_aloha_1_1_pause_menu" ],
     [ "ScoreManager", "d7/d3d/class_aloha_1_1_score_manager.html", "d7/d3d/class_aloha_1_1_score_manager" ],
     [ "UIScore", "d5/dbf/class_aloha_1_1_u_i_score.html", "d5/dbf/class_aloha_1_1_u_i_score" ],
     [ "EnemyType", "de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923a", [
