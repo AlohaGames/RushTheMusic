@@ -31,6 +31,7 @@ namespace Aloha
             GlobalEvent.Pause.AddListener(PauseMusic);
             GlobalEvent.Resume.AddListener(ResumeMusic);
             GlobalEvent.LevelStop.AddListener(StopMusic);
+            GlobalEvent.Victory.AddListener(delegate { this.shouldBePlaying = false; });
         }
 
         public void Update()

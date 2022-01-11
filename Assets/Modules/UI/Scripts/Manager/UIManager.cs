@@ -26,7 +26,6 @@ namespace Aloha
         void Awake()
         {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
-            GlobalEvent.Victory.AddListener(ShowEndGameUIElements);
         }
 
         /// <summary>
@@ -65,25 +64,11 @@ namespace Aloha
         }
 
         /// <summary>
-        /// This function show the UI element at end game.
-        /// <example> Example(s):
-        /// <code>
-        ///     ShowEndGameUIElements()
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void ShowEndGameUIElements()
-        {
-            UIScore.ShowEndGameUIScoreElements();
-        }
-
-        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
         {
             GlobalEvent.LevelStart.RemoveListener(ShowInGameUIElements);
-            GlobalEvent.Victory.RemoveListener(ShowEndGameUIElements);
         }
     }
 }

@@ -22,6 +22,7 @@ namespace Aloha
         public GameObject SettingsMenu;
         public GameObject GameOverMenu;
         public GameObject PauseMenu;
+        public GameObject EndGameMenu;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -33,6 +34,7 @@ namespace Aloha
             GlobalEvent.GameOver.AddListener(ShowGameOverMenu);
             GlobalEvent.Resume.AddListener(HideEverything);
             GlobalEvent.Pause.AddListener(ShowPauseMenu);
+            GlobalEvent.Victory.AddListener(ShowEndGameMenu);
         }
 
         /// <summary>
@@ -52,6 +54,7 @@ namespace Aloha
             SettingsMenu.SetActive(false);
             GameOverMenu.SetActive(false);
             PauseMenu.SetActive(false);
+            EndGameMenu.SetActive(false);
         }
 
         /// <summary>
@@ -143,7 +146,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Freeze the game, show the pause menu and stop the music
+        /// Show the pause menu and stop the music
         /// <example> Example(s):
         /// <code>
         ///     ShowPauseMenu()
@@ -156,6 +159,23 @@ namespace Aloha
             PauseMenu.SetActive(true);
         }
 
+        /// <summary>
+        /// Freeze the game, show the pause menu and stop the music
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowPauseMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowEndGameMenu()
+        {
+            this.HideEverything();
+            EndGameMenu.SetActive(true);
+            EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total: " + ScoreManager.Instance.TotalScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t" + ScoreManager.Instance.DistanceScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués\t" + ScoreManager.Instance.EnemyKilledScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus\t-" + ScoreManager.Instance.HitScore;
+        }
 
         /// <summary>
         /// Is called when MonoBehaviour is Destroy
@@ -165,6 +185,7 @@ namespace Aloha
             GlobalEvent.GameOver.RemoveListener(ShowGameOverMenu);
             GlobalEvent.Resume.RemoveListener(HideEverything);
             GlobalEvent.Pause.RemoveListener(ShowPauseMenu);
+            GlobalEvent.Victory.RemoveListener(ShowEndGameMenu);
         }
     }
 }
