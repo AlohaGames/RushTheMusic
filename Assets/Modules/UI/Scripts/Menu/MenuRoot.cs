@@ -15,13 +15,14 @@ namespace Aloha
     /// </summary>
     public class MenuRoot : MonoBehaviour
     {
-        public GameObject GameName;
         public GameObject ProfilMenu;
         public GameObject MainMenu;
         public GameObject TrackSelectionMenu;
         public GameObject CharacterMenu;
         public GameObject SettingsMenu;
         public GameObject GameOverMenu;
+        public GameObject PauseMenu;
+        public GameObject EndGameMenu;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -31,19 +32,9 @@ namespace Aloha
             // The first screen to load
             ShowProfilMenu();
             GlobalEvent.GameOver.AddListener(ShowGameOverMenu);
-        }
-
-        /// <summary>
-        /// Hide menu root UI completely
-        /// <example> Example(s):
-        /// <code>
-        /// menuRoot.Hide()
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void Hide()
-        {
-            this.gameObject.SetActive(false);
+            GlobalEvent.Resume.AddListener(HideEverything);
+            GlobalEvent.Pause.AddListener(ShowPauseMenu);
+            GlobalEvent.Victory.AddListener(ShowEndGameMenu);
         }
 
         /// <summary>
@@ -54,29 +45,16 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void HideEverything()
+        public void HideEverything()
         {
-            this.Show();
-            GameName.SetActive(false);
             ProfilMenu.SetActive(false);
             MainMenu.SetActive(false);
             TrackSelectionMenu.SetActive(false);
             CharacterMenu.SetActive(false);
             SettingsMenu.SetActive(false);
             GameOverMenu.SetActive(false);
-        }
-
-        /// <summary>
-        /// Show menu root UI
-        /// <example> Example(s):
-        /// <code>
-        /// menuRoot.Show()
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void Show()
-        {
-            this.gameObject.SetActive(true);
+            PauseMenu.SetActive(false);
+            EndGameMenu.SetActive(false);
         }
 
         /// <summary>
@@ -90,7 +68,6 @@ namespace Aloha
         public void ShowProfilMenu()
         {
             this.HideEverything();
-            GameName.SetActive(true);
             ProfilMenu.SetActive(true);
 
             // Force profiles loading
@@ -109,7 +86,6 @@ namespace Aloha
         public void ShowMainMenu()
         {
             this.HideEverything();
-            GameName.SetActive(true);
             MainMenu.SetActive(true);
         }
 
@@ -124,7 +100,6 @@ namespace Aloha
         public void ShowTrackSelectionMenu()
         {
             this.HideEverything();
-            GameName.SetActive(true);
             TrackSelectionMenu.SetActive(true);
         }
 
@@ -171,11 +146,46 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Show the pause menu and stop the music
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowPauseMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowPauseMenu()
+        {
+            this.HideEverything();
+            PauseMenu.SetActive(true);
+        }
+
+        /// <summary>
+        /// Freeze the game, show the pause menu and stop the music
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowPauseMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowEndGameMenu()
+        {
+            this.HideEverything();
+            EndGameMenu.SetActive(true);
+            EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total" + "\t\t" + ScoreManager.Instance.TotalScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués" + "\t\t" + ScoreManager.Instance.EnemyKilledScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
+        }
+
+        /// <summary>
         /// Is called when MonoBehaviour is Destroy
         /// </summary>
         void OnDestroy()
         {
             GlobalEvent.GameOver.RemoveListener(ShowGameOverMenu);
+            GlobalEvent.Resume.RemoveListener(HideEverything);
+            GlobalEvent.Pause.RemoveListener(ShowPauseMenu);
+            GlobalEvent.Victory.RemoveListener(ShowEndGameMenu);
         }
     }
 }

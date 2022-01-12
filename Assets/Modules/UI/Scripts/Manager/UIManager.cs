@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Aloha;
 using Aloha.Events;
 
 namespace Aloha
@@ -17,6 +18,7 @@ namespace Aloha
         public Bar LevelProgressBar;
         public UIInventory UIInventory;
         public UIScore UIScore;
+        public HUDEffect HUDEffect;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -24,7 +26,6 @@ namespace Aloha
         void Awake()
         {
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
-            GlobalEvent.Victory.AddListener(ShowEndGameUIElements);
         }
 
         /// <summary>
@@ -41,6 +42,7 @@ namespace Aloha
             SecondaryBar.gameObject.SetActive(true);
             ExpBar.gameObject.SetActive(true);
             LevelProgressBar.gameObject.SetActive(true);
+            HUDEffect.gameObject.SetActive(false);
             UIScore.ShowInGameUIScoreElements();
             UIInventory.ShowInGameInventory();
 
@@ -62,25 +64,11 @@ namespace Aloha
         }
 
         /// <summary>
-        /// This function show the UI element at end game.
-        /// <example> Example(s):
-        /// <code>
-        ///     ShowEndGameUIElements()
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void ShowEndGameUIElements()
-        {
-            UIScore.ShowEndGameUIScoreElements();
-        }
-
-        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
         {
             GlobalEvent.LevelStart.RemoveListener(ShowInGameUIElements);
-            GlobalEvent.Victory.RemoveListener(ShowEndGameUIElements);
         }
     }
 }
