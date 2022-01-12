@@ -43,7 +43,9 @@ namespace Aloha.UI
             {
                 foreach (EnemyMapping enemy in levelMapping.Enemies[id])
                 {
-                    GameObject ui = GetGameObjectFromPos(horizontalPosition, verticalPosition);
+                    Debug.Log(enemy.EnemyType + " " + enemy.HorizontalPosition + " " + enemy.VerticalPosition);
+                    GameObject ui = GetGameObjectFromPos(enemy.HorizontalPosition, enemy.VerticalPosition);
+                    Debug.Log(ui);
                     SetUIType(ui, enemy.EnemyType);
                 }
             }
@@ -106,18 +108,19 @@ namespace Aloha.UI
                 enemyMapping.HorizontalPosition = horizontalPosition;
                 enemyMappings = new List<EnemyMapping>();
                 enemyMappings.Add(enemyMapping);
-                levelMapping.Enemies.Add(currentId, enemyMappings);
             }
+
+            levelMapping.Enemies.Add(currentId, enemyMappings);
             GameObject ui = GetGameObjectFromPos(horizontalPosition, verticalPosition);
             SetUIType(ui, type);
         }
 
         private GameObject GetGameObjectFromPos(HorizontalPositionEnum h, VerticalPositionEnum v)
         {
-            switch (horizontalPosition)
+            switch (h)
             {
                 case HorizontalPositionEnum.LEFT:
-                    switch (verticalPosition)
+                    switch (v)
                     {
                         case VerticalPositionEnum.TOP:
                             return upLeft;
@@ -129,7 +132,7 @@ namespace Aloha.UI
                             return null;
                     }
                 case HorizontalPositionEnum.CENTER:
-                    switch (verticalPosition)
+                    switch (v)
                     {
                         case VerticalPositionEnum.TOP:
                             return upCenter;
@@ -141,7 +144,7 @@ namespace Aloha.UI
                             return null;
                     }
                 case HorizontalPositionEnum.RIGHT:
-                    switch (verticalPosition)
+                    switch (v)
                     {
                         case VerticalPositionEnum.TOP:
                             return upRight;
