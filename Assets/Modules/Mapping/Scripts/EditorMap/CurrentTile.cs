@@ -29,7 +29,7 @@ namespace Aloha.UI
 
         public void LoadTile(int id, LevelMapping levelMapping)
         {
-
+            Debug.Log("Edit Tile : " + id);
         }
     }
 }
