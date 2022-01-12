@@ -6,15 +6,19 @@ using UnityEngine.UI;
 namespace Aloha.UI
 {
     [RequireComponent(typeof(UnityEngine.UI.Button))]
-    public class SelectTile : MonoBehaviour
+    public class SelectPos : MonoBehaviour
     {
+        CurrentTile tile;
         static Color selectedColor;
         static Color unselectedColor;
         [SerializeField]
-        private int id;
+        private HorizontalPositionEnum horizontal;
+        [SerializeField]
+        private VerticalPositionEnum vertical;
 
         private void Awake()
         {
+            tile = GetComponentInParent<CurrentTile>();
             selectedColor = EditorManager.Instance.SelectedColor;
             unselectedColor = EditorManager.Instance.UnselectedColor;
             GetComponent<Button>().onClick.AddListener(OnClick);
@@ -23,7 +27,7 @@ namespace Aloha.UI
 
         private void OnClick()
         {
-            EditorManager.Instance.UpdateSelectedTile(id);
+            tile.UpdateSelected(horizontal, vertical, this);
         }
 
         public void Select()

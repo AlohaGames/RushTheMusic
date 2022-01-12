@@ -12,8 +12,6 @@ namespace Aloha.UI
         [SerializeField]
         private LevelMapping levelMapping = null;
 
-        public static IntEvent UpdateSelectedTile = new IntEvent();
-
         public CurrentTile SelectedTileUI;
         private int currentTileId;
 
@@ -27,10 +25,9 @@ namespace Aloha.UI
         {
             levelMapping = new LevelMapping();
             selectTiles = GetComponentsInChildren<SelectTile>().ToList();
-            UpdateSelectedTile.AddListener(OnSelectedTileUpdate);
         }
 
-        private void OnSelectedTileUpdate(int id)
+        public void UpdateSelectedTile(int id)
         {
             selectTiles[currentTileId].Unselect();
             currentTileId = id;
@@ -38,9 +35,11 @@ namespace Aloha.UI
             SelectedTileUI.LoadTile(id, levelMapping);
         }
 
-        private void OnDestroy()
+        public void AddEnemy(EnemyType type)
         {
-            UpdateSelectedTile.RemoveListener(OnSelectedTileUpdate);
+            Debug.Log("Add : " + type);
+            SelectedTileUI.AddEnemy(type, levelMapping);
         }
+
     }
 }

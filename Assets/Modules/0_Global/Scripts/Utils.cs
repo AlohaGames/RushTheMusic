@@ -190,5 +190,24 @@ namespace Aloha
         {
             return (list.Count == 0);
         }
+
+        public static T AddGetComponent<T>(this GameObject go) where T : Component
+        {
+            T component = go.GetComponent<T>();
+            if (component == null)
+            {
+                component = go.AddComponent<T>();
+            }
+            return component;
+        }
+
+        public static Transform Clear(this Transform transform)
+        {
+            foreach (Transform child in transform)
+            {
+                GameObject.Destroy(child.gameObject);
+            }
+            return transform;
+        }
     }
 }
