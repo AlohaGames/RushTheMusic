@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Aloha.Events;
 
 namespace Aloha
 {
     /// <summary>
-    /// Class for the hero invoker button
+    /// Manage the main menu return button in EndGame Menu
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class HeroSelectionMenu : MonoBehaviour
+    public class MainMenuReturnButton : MonoBehaviour
     {
-        public HeroType Type;
         public MenuRoot MenuRoot;
 
         /// <summary>
@@ -24,18 +22,12 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Called when user click on the button
-        /// <example> Example(s):
-        /// <code>
-        ///     GetComponent<Button>().onClick.AddListener(OnClick);
-        /// </code>
-        /// </example>
+        /// Manage actions where button is clicked
         /// </summary>
-        public void OnClick()
+        void OnClick()
         {
-            MenuRoot.HideEverything();
-            GameManager.Instance.LoadHero(Type);
-            GameManager.Instance.StartLevel();
+            MenuRoot.ShowMainMenu();
+            GameManager.Instance.FinishGame();
         }
 
         /// <summary>

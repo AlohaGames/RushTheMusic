@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2327405529444994804}
   - component: {fileID: 6991915861664251484}
   m_Layer: 5
-  m_Name: 'TransparentButton '
+  m_Name: GameOverButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
