@@ -1,21 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Aloha;
 
 namespace Aloha.UI
 {
     public class CurrentTile : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        [SerializeField]
+        private GameObject upLeft;
+        [SerializeField]
+        private GameObject upCenter;
+        [SerializeField]
+        private GameObject upRight;
+        [SerializeField]
+        private GameObject middleLeft;
+        [SerializeField]
+        private GameObject middleCenter;
+        [SerializeField]
+        private GameObject middleRight;
+        [SerializeField]
+        private GameObject downLeft;
+        [SerializeField]
+        private GameObject downCenter;
+        [SerializeField]
+        private GameObject downRight;
 
-        // Update is called once per frame
-        void Update()
+
+        public void LoadTile(int id, LevelMapping levelMapping)
         {
-        
+
         }
     }
 }
