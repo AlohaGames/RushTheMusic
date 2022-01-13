@@ -41,7 +41,8 @@ namespace Aloha.UI
         public void NeedUpdate()
         {
             needUpdate = true;
-            selectTiles.Clear();
+            selectTiles = new List<SelectTile>();
+            selectTiles.TrimExcess();
         }
         public void UpdateSelectTiles()
         {

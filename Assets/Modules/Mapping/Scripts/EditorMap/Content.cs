@@ -52,7 +52,7 @@ namespace Aloha.UI
                 p.GetComponent<SelectTile>().SetId(i);
                 text.transform.SetParent(this.transform);
             }
-            EditorManager.Instance.UpdateSelectTiles();
+            EditorManager.Instance.NeedUpdate();
         }
     }
 }
