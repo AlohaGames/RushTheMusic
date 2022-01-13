@@ -41,15 +41,58 @@ namespace Aloha
         /// <param name="level"></param>
         /// <param name="filename"></param>
         /// <param name="isTuto"></param>
-        public void Save(LevelMapping level, string filename, bool isTuto = false)
+        public void Save(LevelMapping level, string filename, LevelMetadata metadata, String musicURI, bool isTuto = false)
         {
-            string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
+            /*string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
 
             XmlSerializer serializer = new XmlSerializer(typeof(LevelMapping));
             using (FileStream stream = new FileStream($"{basePath}/{filename}", FileMode.Create))
             {
                 serializer.Serialize(stream, level);
+            }*/
+
+            string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
+            string workingPath = Application.temporaryCachePath;
+
+
+            Guid g = Guid.NewGuid();
+            Directory.CreateDirectory($"{workingPath}/{g}");
+
+            // Read mapping file
+            Debug.Log($"Create {metadata.MappingFilePath}");
+            XmlSerializer mappingSerializer = new XmlSerializer(typeof(LevelMapping));
+
+            using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Create))
+            {
+                mappingSerializer.Serialize(stream, level);
             }
+
+
+            // Copy mp3 file to working space
+            string musicFilePath = $"{workingPath}/{g}/music.mp3";
+            try
+            {
+                File.Copy(musicURI, musicFilePath, true);
+            }
+            catch (IOException copyError)
+            {
+                Debug.Log(copyError.Message);
+            }
+            metadata.MusicFilePath = "music.mp3";
+
+
+            // Create metadata file
+            Debug.Log($"Create metada.xml");
+            XmlSerializer metadataSerializer = new XmlSerializer(typeof(LevelMetadata));
+
+            using (FileStream stream = new FileStream($"{workingPath}/{g}/metadata.xml", FileMode.Create))
+            {
+                metadataSerializer.Serialize(stream, metadata);
+            }
+
+            // Create zip file
+            Debug.Log($"Create level from {g}");
+            ZipFile.CreateFromDirectory($"{workingPath}/{g}", $"{basePath}/{filename}");
         }
 
         /// <summary>
@@ -62,7 +105,9 @@ namespace Aloha
         /// </summary>
         public void Save()
         {
-            this.Save(this.LevelMapping, this.filename);
+            // TODO 
+            throw new NotImplementedException("TODO later");
+            //this.Save(this.LevelMapping, this.filename);
         }
 
         /// <summary>
@@ -95,7 +140,7 @@ namespace Aloha
 
             using (FileStream stream = new FileStream($"{workingPath}/{g}/metadata.xml", FileMode.Open))
             {
-                metadata = (LevelMetadata)metadataSerializer.Deserialize(stream);
+                metadata = (LevelMetadata) metadataSerializer.Deserialize(stream);
             }
 
             // Read mapping file
@@ -104,7 +149,7 @@ namespace Aloha
 
             using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Open))
             {
-                this.LevelMapping = (LevelMapping)mappingSerializer.Deserialize(stream);
+                this.LevelMapping = (LevelMapping) mappingSerializer.Deserialize(stream);
                 SideEnvironmentManager.Instance.LoadBiome(LevelMapping.BiomeName);
             }
 

@@ -211,8 +211,9 @@ GameObject:
   - component: {fileID: 10516427}
   - component: {fileID: 10516426}
   - component: {fileID: 10516430}
+  - component: {fileID: 10516431}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Editor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -318,6 +319,21 @@ MonoBehaviour:
   selectTiles: []
   SelectedColor: {r: 0.09831533, g: 0.9716981, b: 0, a: 0}
   UnselectedColor: {r: 0.6037736, g: 0.58934146, b: 0.5838377, a: 0}
+--- !u!114 &10516431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10516425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 454c623a6c567764c829cc0553bdca49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  filename: 
+  LevelMusic: {fileID: 0}
+  IsLoaded: 0
 --- !u!1 &10815144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1033,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: TEST
+  m_Text: Export
 --- !u!222 &277343207
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3983,8 +3999,9 @@ GameObject:
   - component: {fileID: 1316971182}
   - component: {fileID: 1316971181}
   - component: {fileID: 1316971180}
+  - component: {fileID: 1316971183}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Export
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4092,6 +4109,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1316971178}
   m_CullTransparentMesh: 1
+--- !u!114 &1316971183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316971178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 892f6ec01acc7b7868e0c50a8486c1e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339835634
 GameObject:
   m_ObjectHideFlags: 0

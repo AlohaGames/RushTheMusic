@@ -25,7 +25,8 @@ namespace Aloha
             LevelMapping levelMapping = new LevelMapping(enemies, 80);
 
             // Save le level
-            LevelManager.Instance.Save(levelMapping, "Example", true);
+            // TODO réparer
+            // LevelManager.Instance.Save(levelMapping, "Example", true);
 
             // Reset
             levelMapping = null;

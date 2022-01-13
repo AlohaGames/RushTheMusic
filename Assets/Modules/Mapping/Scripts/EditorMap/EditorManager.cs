@@ -41,5 +41,10 @@ namespace Aloha.UI
             SelectedTileUI.AddEnemy(type, levelMapping);
         }
 
+        public LevelMapping GetLevelMapping()
+        {
+            return levelMapping;
+        }
+
     }
 }

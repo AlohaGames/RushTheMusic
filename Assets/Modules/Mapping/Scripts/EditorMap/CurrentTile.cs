@@ -36,16 +36,13 @@ namespace Aloha.UI
 
         public void LoadTile(int id, LevelMapping levelMapping)
         {
-            Debug.Log("Edit Tile : " + id);
             currentId = id;
             ClearCurrent();
             if (levelMapping.Enemies.ContainsKey(id))
             {
                 foreach (EnemyMapping enemy in levelMapping.Enemies[id])
                 {
-                    Debug.Log(enemy.EnemyType + " " + enemy.HorizontalPosition + " " + enemy.VerticalPosition);
                     GameObject ui = GetGameObjectFromPos(enemy.HorizontalPosition, enemy.VerticalPosition);
-                    Debug.Log(ui);
                     SetUIType(ui, enemy.EnemyType);
                 }
             }
