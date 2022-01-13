@@ -8,13 +8,7 @@ namespace Aloha
     {
         public void CreateAndSave()
         {
-            Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.Attack = 10;
-            enemyStats.Defense = 10;
-            enemyStats.MaxHealth = 10;
-            enemyStats.Level = 2;
-
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
+            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER, new List<string>());
 
             List<EnemyMapping> tile10Enemies = new List<EnemyMapping>();
             tile10Enemies.Add(genericEnemy);

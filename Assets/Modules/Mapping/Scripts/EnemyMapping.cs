@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aloha
@@ -18,9 +20,11 @@ namespace Aloha
     public class EnemyMapping
     {
         public EnemyType EnemyType;
-        public Stats Stats;
+        public Stats Stats; //TODO Remove safely after modifying map
         public VerticalPositionEnum VerticalPosition;
         public HorizontalPositionEnum HorizontalPosition;
+
+        public List<string> Parameters;
 
         /// <summary>
         /// Default constructor of enemyMapping
@@ -30,17 +34,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public EnemyMapping()
-        {
-            Stats stats = ScriptableObject.CreateInstance<Stats>();
-            stats.Attack = 10;
-            stats.Defense = 0;
-            stats.Level = 0;
-            stats.MaxHealth = 1;
-            VerticalPositionEnum vpos = VerticalPositionEnum.BOT;
-            HorizontalPositionEnum hpos = HorizontalPositionEnum.CENTER;
-            Initialize(EnemyType.generic, stats, vpos, hpos);
-        }
+        public EnemyMapping() : this(EnemyType.generic, VerticalPositionEnum.TOP, HorizontalPositionEnum.LEFT, null) { }
 
         /// <summary>
         /// Default constructor with parameters
@@ -50,25 +44,12 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public EnemyMapping(EnemyType enemyType, Stats stats, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition)
-        {
-            Initialize(enemyType, stats, verticalPosition, horizontalPosition);
-        }
-
-        /// <summary>
-        /// Initialise enemy informations
-        /// <example> Example(s):
-        /// <code>
-        /// this.Initialize(EnemyType.generic, stats, vpos, hpos);
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void Initialize(EnemyType enemyType, Stats stats, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition)
+        public EnemyMapping(EnemyType enemyType, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition, List<string> parameters)
         {
             this.EnemyType = enemyType;
             this.VerticalPosition = verticalPosition;
             this.HorizontalPosition = horizontalPosition;
-            this.Stats = stats;
+            this.Parameters = parameters;
         }
 
         /// <summary>
