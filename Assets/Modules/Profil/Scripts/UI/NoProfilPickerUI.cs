@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +9,9 @@ namespace Aloha
     {
         public MenuRoot MenuRoot;
 
+        [HideInInspector]
+        public ChooseProfilMenu cpm;
+
         void Start()
         {
             Button create = GetComponentInChildren<Button>();
@@ -17,7 +20,7 @@ namespace Aloha
 
         private void onCreate()
         {
-            this.transform.parent.transform.parent.GetChild(1).gameObject.SetActive(true);
+            cpm.transform.GetChild(cpm.transform.childCount - 1).gameObject.SetActive(true);
         }
 
     }

@@ -52,6 +52,7 @@ namespace Aloha
                 {
                     NoProfilPickerUI noProfil = Instantiate(noProfilUIPrefab);
                     noProfil.MenuRoot = MenuRoot;
+                    noProfil.cpm = this;
                     noProfil.transform.SetParent(ProfilesGridLayout.transform);
                     noProfil.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
                 }
