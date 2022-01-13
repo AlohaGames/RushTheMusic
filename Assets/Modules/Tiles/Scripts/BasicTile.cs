@@ -13,7 +13,7 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            transform.localScale = new Vector3(10, 0.1f, TilesManager.Instance.TileSize);
+            //transform.localScale = new Vector3(1, 1f, TilesManager.Instance.TileSize);
         }
 
         /// <summary>

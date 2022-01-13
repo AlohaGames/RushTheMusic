@@ -115,10 +115,11 @@ namespace Aloha
             sideEnvInstR.transform.localScale = new Vector3(1, sideEnvInstR.Height, 1);
 
             // Set position
-            float tileWidth = tile.transform.localScale.x;
-            float tileHeight = tile.transform.localScale.y;
+            Collider collider = tile.GetComponent<Collider>();
+            float tileWidth = collider.bounds.size.x;
+            float tileHeight = collider.bounds.size.y;
 
-            sideEnvInstR.transform.position = new Vector3(tile.transform.position.x + (int)side * tileWidth / 2.5f, sideEnvInstR.Height + tileHeight, tile.transform.position.z);
+            sideEnvInstR.transform.position = new Vector3(tile.transform.position.x + (int)side * tileWidth / 2.5f, sideEnvInstR.Height + tileHeight / 2, tile.transform.position.z);
 
             // Attach to tile
             sideEnvInstR.transform.SetParent(tile.transform);
