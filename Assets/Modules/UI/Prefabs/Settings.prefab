@@ -602,7 +602,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 667535585578933272}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.8511551
+  m_Size: 0.6172483
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -653,6 +653,18 @@ PrefabInstance:
     - target: {fileID: 126156438067235633, guid: f0b71d5ac4152d840a1f61f157858e47, type: 3}
       propertyPath: m_Name
       value: ControlDynamicText
+      objectReference: {fileID: 0}
+    - target: {fileID: 764171942712567250, guid: f0b71d5ac4152d840a1f61f157858e47, type: 3}
+      propertyPath: m_text
+      value: 'Activer les textes dynamiques :'
+      objectReference: {fileID: 0}
+    - target: {fileID: 764171942712567250, guid: f0b71d5ac4152d840a1f61f157858e47, type: 3}
+      propertyPath: m_fontSize
+      value: 26.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 764171942712567250, guid: f0b71d5ac4152d840a1f61f157858e47, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3268902879966493155, guid: f0b71d5ac4152d840a1f61f157858e47, type: 3}
       propertyPath: m_Pivot.x
@@ -763,6 +775,18 @@ PrefabInstance:
     - target: {fileID: 5066713668964046362, guid: b9f4e078a277d224fa7681a7f6bccf34, type: 3}
       propertyPath: m_Name
       value: VerticalInversion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551326409871620345, guid: b9f4e078a277d224fa7681a7f6bccf34, type: 3}
+      propertyPath: m_text
+      value: 'Inversion Verticale :'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551326409871620345, guid: b9f4e078a277d224fa7681a7f6bccf34, type: 3}
+      propertyPath: m_fontSize
+      value: 35.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5551326409871620345, guid: b9f4e078a277d224fa7681a7f6bccf34, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7696051953707574472, guid: b9f4e078a277d224fa7681a7f6bccf34, type: 3}
       propertyPath: m_Pivot.x
@@ -953,6 +977,18 @@ PrefabInstance:
     - target: {fileID: 7016848813113783521, guid: f13c07a5aa77a5b44850f4a6a4003d60, type: 3}
       propertyPath: m_Name
       value: HorizontalInversion
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654441616774994434, guid: f13c07a5aa77a5b44850f4a6a4003d60, type: 3}
+      propertyPath: m_text
+      value: 'Inversion Horizontale :'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654441616774994434, guid: f13c07a5aa77a5b44850f4a6a4003d60, type: 3}
+      propertyPath: m_fontSize
+      value: 35.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7654441616774994434, guid: f13c07a5aa77a5b44850f4a6a4003d60, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f13c07a5aa77a5b44850f4a6a4003d60, type: 3}
@@ -1184,6 +1220,18 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 484118172609508102, guid: 1ad55e0e4a91fd202be007f3f2dcb19b, type: 3}
+      propertyPath: m_text
+      value: "Volume g\xE9n\xE9ral :"
+      objectReference: {fileID: 0}
+    - target: {fileID: 484118172609508102, guid: 1ad55e0e4a91fd202be007f3f2dcb19b, type: 3}
+      propertyPath: m_fontSize
+      value: 35.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 484118172609508102, guid: 1ad55e0e4a91fd202be007f3f2dcb19b, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 1134352633454645639, guid: 1ad55e0e4a91fd202be007f3f2dcb19b, type: 3}
       propertyPath: m_Name
       value: Volume
@@ -1310,8 +1358,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1265522078114191931}
     m_Modifications:
     - target: {fileID: 522328464139496595, guid: 61213d5cbc446776c863f2896d8d52cd, type: 3}
+      propertyPath: m_text
+      value: 'Mode Leap : '
+      objectReference: {fileID: 0}
+    - target: {fileID: 522328464139496595, guid: 61213d5cbc446776c863f2896d8d52cd, type: 3}
       propertyPath: m_fontSize
-      value: 49.7
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 522328464139496595, guid: 61213d5cbc446776c863f2896d8d52cd, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 893258851708535408, guid: 61213d5cbc446776c863f2896d8d52cd, type: 3}
       propertyPath: m_Name
@@ -1522,6 +1578,18 @@ PrefabInstance:
     - target: {fileID: 3939582726094220285, guid: 90725b6d9b63815469ab11abc91b2343, type: 3}
       propertyPath: m_Name
       value: Sensibility
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607986766962506341, guid: 90725b6d9b63815469ab11abc91b2343, type: 3}
+      propertyPath: m_text
+      value: "Sensibilit\xE9 souris :"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607986766962506341, guid: 90725b6d9b63815469ab11abc91b2343, type: 3}
+      propertyPath: m_fontSize
+      value: 35.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6607986766962506341, guid: 90725b6d9b63815469ab11abc91b2343, type: 3}
+      propertyPath: m_fontSizeMax
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6759157018852978704, guid: 90725b6d9b63815469ab11abc91b2343, type: 3}
       propertyPath: m_AnchorMax.x
