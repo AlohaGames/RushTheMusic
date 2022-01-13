@@ -39,7 +39,7 @@ namespace Aloha
         {
             // Get camera rotation
             float ry = GameManager.Instance.Config.MouseVerticalInversion ? -Input.GetAxis("Mouse Y") : Input.GetAxis("Mouse Y");
-            float rx = GameManager.Instance.Config.MouseVerticalInversion ? -Input.GetAxis("Mouse X") : Input.GetAxis("Mouse X");
+            float rx = GameManager.Instance.Config.MouseHorizontalInversion ? -Input.GetAxis("Mouse X") : Input.GetAxis("Mouse X");
 
             // Change speed according to sensibility
             ry *= GameManager.Instance.Config.MouseSensibility;
