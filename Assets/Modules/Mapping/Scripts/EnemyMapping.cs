@@ -34,17 +34,17 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public EnemyMapping() : this(EnemyType.generic, VerticalPositionEnum.TOP, HorizontalPositionEnum.LEFT, null) { }
+        public EnemyMapping() : this(EnemyType.generic, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER) { }
 
         /// <summary>
         /// Default constructor with parameters
         /// <example> Example(s):
         /// <code>
-        ///     EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
+        ///     EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER, new List<string>());
         /// </code>
         /// </example>
         /// </summary>
-        public EnemyMapping(EnemyType enemyType, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition, List<string> parameters)
+        public EnemyMapping(EnemyType enemyType, VerticalPositionEnum verticalPosition, HorizontalPositionEnum horizontalPosition, List<string> parameters = null)
         {
             this.EnemyType = enemyType;
             this.VerticalPosition = verticalPosition;

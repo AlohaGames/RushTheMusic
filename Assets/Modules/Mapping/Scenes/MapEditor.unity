@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073987, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -920,7 +920,7 @@ MonoBehaviour:
   m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
-  m_ReadOnly: 1
+  m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
 --- !u!114 &289816212
 MonoBehaviour:
@@ -2397,7 +2397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Default: {fileID: 21300000, guid: 1af8b02dbfcea8a0390204e0b92e9271, type: 3}
   Lancer: {fileID: -650218062088358348, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
-  Wyrmling: {fileID: -5895799642641748844, guid: cf910e5deccb1af44937299cbaf83698, type: 3}
+  Wyrmling: {fileID: 2554055003475306582, guid: cf910e5deccb1af44937299cbaf83698, type: 3}
   Assassin: {fileID: 7216209594270603566, guid: 8ce92b2bc22e94341affec753dc02fc2, type: 3}
   Chest: {fileID: -6341029276875165808, guid: 6122a34bd530df4468573436288bf8c3, type: 3}
   Wall: {fileID: 1931772509911548677, guid: 5cfd5ff46b267ad499748a62a78e0b4d, type: 3}
@@ -3098,7 +3098,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 860898396162900206, guid: 267c3510dd3648547a8e335d2f896dad, type: 3}
   panelNum: {fileID: 6634880869448865105, guid: ea86cef7b3c38ec478cef417ec48251d, type: 3}
-  duration: 110
+  tileNumber: {fileID: 843025732}
+  duration: 0
   tileSpeed: 7
   titleSize: 5
 --- !u!1 &1277741891
@@ -3370,6 +3371,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892f6ec01acc7b7868e0c50a8486c1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathText: {fileID: 1696043170}
+  mapName: {fileID: 289816211}
 --- !u!1 &1631247228
 GameObject:
   m_ObjectHideFlags: 0
@@ -3553,6 +3556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892f6ec01acc7b7868e0c50a8486c1e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathText: {fileID: 0}
+  mapName: {fileID: 0}
 --- !u!114 &1681209571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4418,8 +4423,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d017e6feee1cc45898008cac8b185d2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PathText: {fileID: 1696043170}
+  pathText: {fileID: 1696043170}
   content: {fileID: 1272211230}
+  durationText: {fileID: 73416539}
 --- !u!1 &1929396777
 GameObject:
   m_ObjectHideFlags: 0

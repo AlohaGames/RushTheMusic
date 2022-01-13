@@ -20,7 +20,7 @@ namespace Aloha.Test
             stats.Defense = 6;
             stats.Level = 1;
             stats.MaxHealth = 150;
-            EnemyMapping em1 = new EnemyMapping(EnemyType.generic, stats, VerticalPositionEnum.TOP, HorizontalPositionEnum.RIGHT);
+            EnemyMapping em1 = new EnemyMapping(EnemyType.generic, VerticalPositionEnum.TOP, HorizontalPositionEnum.RIGHT);
 
             EnemyMapping[] ems = { em0, em1 };
             return ems;

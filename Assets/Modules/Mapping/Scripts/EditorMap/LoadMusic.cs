@@ -11,9 +11,11 @@ namespace Aloha.UI
     public class LoadMusic : MonoBehaviour
     {
         [SerializeField]
-        InputField PathText;
+        InputField pathText;
         [SerializeField]
         Content content;
+        [SerializeField]
+        Text durationText;
 
         private void Awake()
         {
@@ -59,27 +61,30 @@ namespace Aloha.UI
                 // Print paths of the selected files (FileBrowser.Result) (null, if FileBrowser.Success is false)
                 for (int i = 0; i < FileBrowser.Result.Length; i++)
                 {
-                    Debug.Log(FileBrowser.Result[i]);
-                    PathText.text = FileBrowser.Result[i];
-                    Debug.Log(PathText.text);
+                    pathText.text = FileBrowser.Result[i];
                 }
-                /*
-                // Read the bytes of the first file via FileBrowserHelpers
-                // Contrary to File.ReadAllBytes, this function works on Android 10+, as well
-                byte[] bytes = FileBrowserHelpers.ReadBytesFromFile(FileBrowser.Result[0]);
-
-                // Or, copy the first file to persistentDataPath
-                string destinationPath = Path.Combine(Application.persistentDataPath, FileBrowserHelpers.GetFilename(FileBrowser.Result[0]));
-                FileBrowserHelpers.CopyFile(FileBrowser.Result[0], destinationPath);*/
             }
-            Load("file://" + PathText.text);
+            Load("file://" + pathText.text);
         }
 
         private void FinishLoad()
         {
             AudioClip clip = LevelManager.Instance.LevelMusic;
-            Debug.Log(clip.length);
             content.SetDuration(clip.length);
+            durationText.text = ConvertToMinSec(clip.length);
+        }
+
+        private string ConvertToMinSec(float duration)
+        {
+            string str = "";
+            int min = (int) (duration / 60);
+            int sec = (int) (duration % 60);
+            if (min > 0)
+            {
+                str += min + " min ";
+            }
+            str += sec + " sec";
+            return str;
         }
 
         private void OnDestroy()

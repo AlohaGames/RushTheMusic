@@ -8,6 +8,13 @@ namespace Aloha.UI
     [RequireComponent(typeof(UnityEngine.UI.Button))]
     public class Export : MonoBehaviour
     {
+        [SerializeField]
+        InputField pathText;
+
+
+        [SerializeField]
+        InputField mapName;
+
         private void Awake()
         {
             GetComponent<Button>().onClick.AddListener(OnClick);
@@ -22,7 +29,7 @@ namespace Aloha.UI
         private void ExportMap(LevelMapping levelMapping)
         {
             LevelMetadata metadata = new LevelMetadata();
-            LevelManager.Instance.Save(levelMapping, "NewMap.rtm", metadata, "/home/dbricaud/Musique/test.mp3", true);
+            LevelManager.Instance.Save(levelMapping, mapName.text + ".rtm", metadata, pathText.text, true);
         }
 
         private void OnDestroy()

@@ -14,9 +14,12 @@ namespace Aloha.UI
         [SerializeField]
         private Text panelNum;
 
+        [SerializeField]
+        private Text tileNumber;
+
         // Duration of the music (in seconds)
         [SerializeField]
-        private float duration;
+        private float duration = 0;
 
         // number of tiles during one second
         [SerializeField]
@@ -42,7 +45,7 @@ namespace Aloha.UI
         {
             this.transform.Clear();
             float numTiles = ((this.duration * this.tileSpeed) / this.titleSize);
-            Debug.Log("We need : " + numTiles + " Tiles");
+            tileNumber.text = ((int) numTiles + 1).ToString();
             for (int i = 0; i < numTiles; i++)
             {
                 GameObject p = Instantiate(panel);
