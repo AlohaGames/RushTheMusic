@@ -187,14 +187,16 @@ namespace Aloha
 
         /// <summary>
         /// Load a specific music and do an action
-        /// <example> Example(s):
+        /// <example>
+        /// Example(s):
         /// <code>
         ///     StartCoroutine(LoadMusic(musicFilePath, FinishLoad));
         /// </code>
         /// </example>
         /// </summary>
-        /// <param name=""></param>
-        IEnumerator LoadMusic(string musicFileURI, Action cb)
+        /// <param name="musicFileURI">URI to music file</param>
+        /// <param name="cb">Callback function</param>
+        public IEnumerator LoadMusic(string musicFileURI, Action cb)
         {
             Debug.Log($"Loading music {musicFileURI}");
             using (UnityWebRequest web = UnityWebRequestMultimedia.GetAudioClip(musicFileURI, AudioType.MPEG))

@@ -21,9 +21,30 @@ namespace Aloha.UI
         public Color SelectedColor;
         public Color UnselectedColor;
 
+        private bool needUpdate = false;
+
         private void Awake()
         {
             levelMapping = new LevelMapping();
+            selectTiles = GetComponentsInChildren<SelectTile>().ToList();
+        }
+
+        private void Update()
+        {
+            if (needUpdate)
+            {
+                needUpdate = false;
+                UpdateSelectTiles();
+            }
+        }
+
+        public void NeedUpdate()
+        {
+            needUpdate = true;
+            selectTiles.Clear();
+        }
+        public void UpdateSelectTiles()
+        {
             selectTiles = GetComponentsInChildren<SelectTile>().ToList();
         }
 

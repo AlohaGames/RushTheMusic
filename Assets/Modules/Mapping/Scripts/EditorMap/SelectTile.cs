@@ -26,6 +26,11 @@ namespace Aloha.UI
             EditorManager.Instance.UpdateSelectedTile(id);
         }
 
+        public void SetId(int id)
+        {
+            this.id = id;
+        }
+
         public void Select()
         {
             this.GetComponent<Image>().color = Color.green;
