@@ -10,7 +10,7 @@ namespace Aloha
         public MenuRoot MenuRoot;
 
         [HideInInspector]
-        public ChooseProfilMenu cpm;
+        public ChooseProfilMenu CPM;
 
         void Start()
         {
@@ -20,7 +20,7 @@ namespace Aloha
 
         private void onCreate()
         {
-            cpm.transform.GetChild(cpm.transform.childCount - 1).gameObject.SetActive(true);
+            CPM.transform.GetChild(CPM.transform.childCount - 1).gameObject.SetActive(true);
         }
 
     }
