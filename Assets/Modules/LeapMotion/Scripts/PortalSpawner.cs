@@ -83,6 +83,8 @@ namespace Aloha
                     Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
                     vortex.Wizard = this.Wizard;
                     vortex.Power = manaUsed;
+
+                    ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, vortex.gameObject);
                 }
             } else
             {
