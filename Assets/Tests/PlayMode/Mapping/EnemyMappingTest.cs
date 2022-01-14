@@ -34,19 +34,11 @@ namespace Aloha.Test
         {
             // Position of the first enemy
             EnemyMapping em0 = GetEnemiesMapping()[0];
-            Assert.AreEqual(10, em0.Stats.Attack);
-            Assert.AreEqual(0, em0.Stats.Defense);
-            Assert.AreEqual(0, em0.Stats.Level);
-            Assert.AreEqual(1, em0.Stats.MaxHealth);
             Assert.AreEqual(VerticalPositionEnum.BOT, em0.VerticalPosition);
             Assert.AreEqual(HorizontalPositionEnum.CENTER, em0.HorizontalPosition);
 
             // Position of the second enemy 
             EnemyMapping em1 = GetEnemiesMapping()[1];
-            Assert.AreEqual(4, em1.Stats.Attack);
-            Assert.AreEqual(6, em1.Stats.Defense);
-            Assert.AreEqual(1, em1.Stats.Level);
-            Assert.AreEqual(150, em1.Stats.MaxHealth);
             Assert.AreEqual(VerticalPositionEnum.TOP, em1.VerticalPosition);
             Assert.AreEqual(HorizontalPositionEnum.RIGHT, em1.HorizontalPosition);
 
