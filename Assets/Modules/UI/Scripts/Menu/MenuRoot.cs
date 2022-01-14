@@ -117,7 +117,7 @@ namespace Aloha
         {
             this.HideEverything();
             CharacterMenu.SetActive(true);
-            navigationHistory.Push(ShowCharacterMenu);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Aloha
         {
             this.HideEverything();
             GameOverMenu.SetActive(true);
-            navigationHistory.Push(ShowGameOverMenu);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -177,7 +177,16 @@ namespace Aloha
         {
             this.HideEverything();
             EndGameMenu.SetActive(true);
-            navigationHistory.Push(ShowEndGameMenu);
+            navigationHistory.Push(ShowMainMenu);
+
+            if (!GameManager.Instance.IsInfinite)
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(false);
+            }
+            else
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(true);
+            }
 
             EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total" + "\t\t" + ScoreManager.Instance.TotalScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
