@@ -20,6 +20,13 @@ namespace Aloha
         /// </summary>
         public override void Effect()
         {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.hero_drink, this.gameObject
+            );
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.mana_potion_effect, this.gameObject, SoundEffectManager.Instance.Sounds.hero_drink.length
+            );
+
             Hero hero = GameManager.Instance.GetHero();
             hero.RegenerateSecondary(SECONDARY_REGENERATION);
         }

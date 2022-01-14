@@ -109,7 +109,7 @@ namespace Aloha
             Freeze();
             isGameFinished = true;
             ContainerManager.Instance.ClearContainers(
-                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Text }
             );
             GlobalEvent.LevelStop.Invoke();
         }

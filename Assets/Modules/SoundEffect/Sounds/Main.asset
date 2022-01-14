@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536c77e92e81f8f45aabaefb40b6aa50, type: 3}
+  m_Name: Main
+  m_EditorClassIdentifier: 
+  lancer_idle: {fileID: 0}
+  lancer_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  lancer_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  assassin_idle: {fileID: 0}
+  assassin_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  assassin_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  wyrmling_idle: {fileID: 8300000, guid: 81ce4e02615fec447b9c9c1286806530, type: 3}
+  wyrmling_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  wyrmling_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  bat_idle: {fileID: 0}
+  bat_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  bat_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  canon_idle: {fileID: 0}
+  canon_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  canon_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  wall_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  chest_open: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  hero_drink: {fileID: 8300000, guid: 62f8aaacaa074a047aa393b759128ac0, type: 3}
+  hero_take_damage: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
+  hero_level_up: {fileID: 8300000, guid: fed8d7c3040b9ac4dbb591f5d574fc46, type: 3}
+  wizard_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  wizard_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}
+  wizard_no_mana: {fileID: 8300000, guid: 754ec75f3d586054192a7b71fb57931b, type: 3}
+  warrior_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  warrior_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}
+  warrior_rage: {fileID: 8300000, guid: fa381a510f66ab743b0666ee794f20a2, type: 3}
+  health_potion_effect: {fileID: 0}
+  xp_potion_effect: {fileID: 0}
+  mana_potion_effect: {fileID: 0}
+  rage_potion_effect: {fileID: 0}
+  victory: {fileID: 8300000, guid: 1647a7e6b6eae1e43940a98e66068080, type: 3}
+  loose: {fileID: 8300000, guid: 64fee0b3a5a12b74894422c2ffe4be55, type: 3}
+  click: {fileID: 8300000, guid: eb614c557e04d3646b31df19693f81ec, type: 3}
+  back: {fileID: 8300000, guid: 2cb7dd17807dc82479d4556e6f5366c9, type: 3}

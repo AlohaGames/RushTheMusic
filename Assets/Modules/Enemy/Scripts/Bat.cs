@@ -18,5 +18,13 @@ namespace Aloha
         {
             Anim = GetComponent<Animator>();
         }
+
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.bat_hurt, this.gameObject
+            );
+        }
     }
 }

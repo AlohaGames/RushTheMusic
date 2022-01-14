@@ -41,6 +41,14 @@ namespace Aloha
             }
         }
 
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.canon_hurt, this.gameObject
+            );
+        }
+
         /// <summary>
         /// Bump the entity in a specific direction and with a speed
         /// In this case, the canon never moves

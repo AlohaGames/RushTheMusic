@@ -21,6 +21,12 @@ namespace Aloha
             Anim = GetComponent<Animator>();
         }
 
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(SoundEffectManager.Instance.Sounds.assassin_hurt, this.gameObject);
+        }
+
         /// <summary>
         /// Function to bump the assassin
         /// </summary>

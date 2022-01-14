@@ -8,7 +8,7 @@ namespace Aloha
     /// </summary>
     public class Shield : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private float minimumSpeedToProtect = 0.1f;
 
         [SerializeField]
@@ -102,14 +102,25 @@ namespace Aloha
         {
             if (collider.tag == "Enemy" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
+
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                );
+
                 // Change minimum speed if actual speed is to low
                 if (Speed < 1.5) Speed = 1.5f;
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
                 Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
 
                 StartCoroutine(Wink());
-            } else if (collider.tag == "EnemyAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
+            }
+            else if (collider.tag == "EnemyAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
+
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                );
+
                 StartCoroutine(Wink());
                 Destroy(collider.gameObject);
             }

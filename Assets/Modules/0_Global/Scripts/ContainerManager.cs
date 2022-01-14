@@ -16,7 +16,8 @@ namespace Aloha
         public const string Enemy = "enemy";
         public const string Environment = "environment";
         public const string Item = "item";
-        
+        public const string Text = "text";
+
         public const string Audio = "audio";
     }
 

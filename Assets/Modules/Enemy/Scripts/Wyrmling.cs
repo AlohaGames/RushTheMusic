@@ -14,6 +14,13 @@ namespace Aloha
 
         private WyrmlingFireball fireball;
 
+        void Awake()
+        {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wyrmling_idle, this.gameObject, loop: true
+            );
+        }
+
         /// <summary>
         /// Get the wyrmling's fireball
         /// <example> Example(s):
@@ -44,6 +51,14 @@ namespace Aloha
         {
             if (this.fireball) Destroy(this.fireball.gameObject);
             yield return base.GetBump(direction, speed);
+        }
+
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wyrmling_hurt, this.gameObject
+            );
         }
 
         /// <summary>

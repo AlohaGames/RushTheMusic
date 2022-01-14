@@ -9,10 +9,10 @@ namespace Aloha
     /// </summary>
     public class PortalSpawner : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private Vortex vortexPrefab;
 
-        [SerializeField] 
+        [SerializeField]
         private Material raycastMaterial;
 
         private LineRenderer targetPreview;
@@ -86,9 +86,13 @@ namespace Aloha
 
                     ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, vortex.gameObject);
                 }
-            } else
+            }
+            else
             {
                 // TODO Add behavior if not enough mana to spawn a new portal
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.wizard_no_mana, this.gameObject
+                );
             }
 
             // Reset variables
@@ -126,7 +130,8 @@ namespace Aloha
 
                 // Draw the laser
                 targetPreview.enabled = true;
-            } else
+            }
+            else
             {
                 endPoint = null;
                 targetPreview.enabled = false;

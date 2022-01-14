@@ -45,6 +45,11 @@ namespace Aloha.AI
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit * Speed;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.assassin_attack, this.gameObject
+            );
+
+
             while (time < 1f)
             {
                 time += Speed * Time.deltaTime;
@@ -53,6 +58,7 @@ namespace Aloha.AI
                 gameObject.transform.position = Vector3.Lerp(posInit, posFinal, time);
                 yield return null;
             }
+
             gameObject.transform.position = posFinal;
             assassin.Attack(assassin.Hero);
             assassin.Disappear();
