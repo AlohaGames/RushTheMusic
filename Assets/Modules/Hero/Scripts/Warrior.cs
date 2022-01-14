@@ -12,6 +12,7 @@ namespace Aloha
         public int CurrentRage;
         public bool IsAttacking;
         public bool IsDefending;
+        public bool CanDefend;
 
         /// <summary>
         /// Initialize the warrior
@@ -25,6 +26,7 @@ namespace Aloha
         {
             this.Init(this.heroStats);
             this.IsDefending = false;
+            this.CanDefend = true;
         }
 
         /// <summary>
@@ -93,6 +95,7 @@ namespace Aloha
             int damage;
             if (this.CurrentRage == heroStats.MaxRage)
             {
+                GlobalEvent.HudEffect.Invoke(0.8f, 1.0f, HUDEffectType.rage);
                 Stats entityStats = entity.GetStats();
                 damage = entityStats.MaxHealth;
                 entity.TakeDamage(damage);
@@ -103,8 +106,8 @@ namespace Aloha
                 damage = heroStats.Attack;
                 entity.TakeDamage(damage);
                 CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
-                GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
             }
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
 
         /// <summary>

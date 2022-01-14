@@ -10,43 +10,22 @@ namespace Aloha
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
+        private bool isGameFinished = false;
         private bool isGamePaused = false;
-        private Hero hero;
+        public bool IsPlaying = false;
+        public bool IsInfinite = false;
 
         [SerializeField]
         private string defaultLevel = "";
+        private Hero hero;
+        public RtmConfig Config = new RtmConfig();
 
-        public bool IsPlaying = false;
-        public bool LeapMode = false; // leap : true, mouse : false
-
-        #region Events
-        /// <summary>
-        /// Will ask to load the request <paramref name="level"/>
-        /// <example> Example(s):
-        /// <code>
-        ///     GameManager.Instance.LoadLevel(monlevel);
-        ///     GameManager.Instance.LoadLevel(monautrelevel, true);
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="level">Level Name with .rtm extension</param>
-        /// <param name="isTuto">Is the level a tutorial (locate in StreamingAssets)</param>
-        public void LoadLevel(string level, bool isTuto = false)
+        void Awake()
         {
-            GlobalEvent.LoadLevel.Invoke(level, isTuto);
-        }
-
-        /// <summary>
-        /// Will ask to load the default level.
-        /// <example> Example(s):
-        /// <code>
-        ///     GameManager.Instance.LoadLevel();
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void LoadLevel()
-        {
-            LoadLevel(defaultLevel);
+            GlobalEvent.GameOver.AddListener(FinishGame);
+            GlobalEvent.Victory.AddListener(FinishLevel);
+            GlobalEvent.Resume.AddListener(UnFreeze);
+            GlobalEvent.Pause.AddListener(Freeze);
         }
 
         /// <summary>
@@ -59,23 +38,49 @@ namespace Aloha
         /// </summary>
         public void StartLevel()
         {
+            UnFreeze();
             IsPlaying = true;
-            Cursor.visible = false;
+            isGamePaused = false;
+            isGameFinished = false;
             GlobalEvent.LevelStart.Invoke();
+        }
+
+        /// <summary>
+        /// Stop the game.
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.FinishGame();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void FinishGame()
+        {
+            FinishLevel();
+            GlobalEvent.GameStop.Invoke();
+            IsPlaying = false;
+            IsInfinite = false;
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
+            if (hero != null)
+            {
+                GameObject.Destroy(hero.gameObject);
+            }
         }
 
         /// <summary>
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
-        ///     GameManager.Instance.StopLevel();
+        ///     GameManager.Instance.FinishLevel();
         /// </code>
         /// </example>
         /// </summary>
-        public void StopLevel()
+        public void FinishLevel()
         {
-            IsPlaying = false;
-            Cursor.visible = true;
+            Freeze();
+            isGameFinished = true;
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
+            );
             GlobalEvent.LevelStop.Invoke();
         }
 
@@ -111,6 +116,22 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Will return if the game is finished or not
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.IsGameFinished()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// a boolean if the game is finished or not
+        /// </returns>
+        public bool IsGameFinished()
+        {
+            return this.isGameFinished;
+        }
+
+        /// <summary>
         /// Will set if leap mode is activated in the game
         /// <example> Example(s):
         /// <code>
@@ -121,7 +142,7 @@ namespace Aloha
         /// <param bool="leapMode">The new value of LeapMode</param>
         public void SetLeapMode(bool leapMode)
         {
-            this.LeapMode = leapMode;
+            this.Config.LeapMode = leapMode;
         }
 
         /// <summary>
@@ -165,8 +186,6 @@ namespace Aloha
             Application.Quit();
         }
 
-        #endregion
-
         /// <summary>
         /// Set the new current Hero and Destroy the old Hero if needed.
         /// <example> Example(s):
@@ -180,7 +199,7 @@ namespace Aloha
         {
             if (this.hero != null)
             {
-                Destroy(this.hero.gameObject);
+                GameObject.Destroy(hero.gameObject);
             }
             this.hero = hero;
         }
@@ -202,7 +221,6 @@ namespace Aloha
         }
 
         #region KeyEvents
-
         /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
         /// </summary>
@@ -210,7 +228,7 @@ namespace Aloha
         {
             if (Input.GetKeyDown(InputBinding.Instance.Pause))
             {
-                if (IsPlaying)
+                if (IsPlaying && !isGameFinished)
                 {
                     if (isGamePaused)
                         ResumeGame();
@@ -224,5 +242,25 @@ namespace Aloha
             }
         }
         #endregion
+
+        public void Freeze()
+        {
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+        }
+
+        public void UnFreeze()
+        {
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+        }
+
+        void OnDestroy()
+        {
+            GlobalEvent.GameOver.RemoveListener(FinishGame);
+            GlobalEvent.Victory.RemoveListener(FinishLevel);
+            GlobalEvent.Resume.RemoveListener(UnFreeze);
+            GlobalEvent.Pause.RemoveListener(Freeze);
+        }
     }
 }

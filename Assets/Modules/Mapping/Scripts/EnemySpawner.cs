@@ -19,7 +19,7 @@ namespace Aloha
         {
             Debug.Log("Start listening to tiles creation");
             GlobalEvent.TileCount.AddListener(CountTile);
-            GlobalEvent.LevelStop.AddListener(ResetCount);
+            GlobalEvent.LevelStop.AddListener(Reset);
             GlobalEvent.NextLevel.AddListener(NextLevelReached);
         }
 
@@ -37,7 +37,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void ResetCount()
+        public void Reset()
         {
             TilesCounter = 0;
             Debug.Log($"Reset tiles count to {TilesCounter}");
@@ -75,7 +75,7 @@ namespace Aloha
                     }
 
                     // Stats scale based on hero level and current map number
-                    // TODO-TRISTAN: Scale stats based on this.heroLevel
+                    stats.Scale(heroLevel);
                     entity.Init(stats);
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
@@ -97,7 +97,7 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.TileCount.RemoveListener(CountTile);
-            GlobalEvent.LevelStop.RemoveListener(ResetCount);
+            GlobalEvent.LevelStop.RemoveListener(Reset);
             GlobalEvent.NextLevel.RemoveListener(NextLevelReached);
         }
     }

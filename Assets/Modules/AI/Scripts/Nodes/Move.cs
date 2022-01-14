@@ -35,7 +35,7 @@ namespace Aloha.AI
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;
-            posFinal.x = IsLeft ? posFinal.x + DistToMove : posFinal.x - DistToMove;
+            posFinal.x = IsLeft ? (posFinal.x + DistToMove).Clamp(-3, 3) : (posFinal.x - DistToMove).Clamp(-3, 3);
 
             while (time < ActionTime)
             {
