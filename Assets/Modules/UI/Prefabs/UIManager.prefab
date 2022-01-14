@@ -146,7 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InGameScore: {fileID: 3673821296135884471}
   InGameScoreText: {fileID: 3925960748488201773}
-  InGameScoreInfiniText: {fileID: 0}
+  InGameScoreInfiniText: {fileID: 2090341275031476198}
 --- !u!114 &8684326432909827869
 MonoBehaviour:
   m_ObjectHideFlags: 0

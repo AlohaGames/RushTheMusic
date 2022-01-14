@@ -1849,10 +1849,6 @@ PrefabInstance:
       propertyPath: InGameScoreInfini
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 3739102699806178544, guid: beb08a16a330fd58b99485317896e360, type: 3}
-      propertyPath: InGameScoreInfiniText
-      value: 
-      objectReference: {fileID: 727289605}
     - target: {fileID: 3740594859508643305, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3583,17 +3579,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb08a16a330fd58b99485317896e360, type: 3}
---- !u!114 &727289605 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1100165506651871418, guid: beb08a16a330fd58b99485317896e360, type: 3}
-  m_PrefabInstance: {fileID: 727289604}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &774757092
 GameObject:
   m_ObjectHideFlags: 0
