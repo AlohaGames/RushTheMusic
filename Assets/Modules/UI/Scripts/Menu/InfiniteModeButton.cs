@@ -7,13 +7,11 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// Class for the level loader button
+    /// Class for the infinite mode level button
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class LevelLoaderButton : MonoBehaviour
+    public class InfiniteModeButton : MonoBehaviour
     {
-        public bool IsTuto = false;
-        public string Level;
         public MenuRoot MenuRoot;
 
         /// <summary>
@@ -34,8 +32,9 @@ namespace Aloha
         /// </summary>
         public void OnClick()
         {
+            GameManager.Instance.IsInfinite = true;
             MenuRoot.ShowCharacterMenu();
-            LevelManager.Instance.Load(Level, null, IsTuto);
+            LevelManager.Instance.LoadRandomLevel(null);
         }
 
         /// <summary>
