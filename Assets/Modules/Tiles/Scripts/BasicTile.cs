@@ -7,15 +7,6 @@ namespace Aloha
     /// </summary>
     public class BasicTile : MonoBehaviour
     {
-
-        /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
-        /// </summary>
-        void Start()
-        {
-            //transform.localScale = new Vector3(1, 1f, TilesManager.Instance.TileSize);
-        }
-
         /// <summary>
         /// Is called after all Update functions have been called.
         /// </summary>

@@ -123,6 +123,14 @@ namespace Aloha
 
             // Attach to tile
             sideEnvInstR.transform.SetParent(tile.transform);
+
+            // Generate random index
+            int index_panel_right = Utils.RandomInt(0, currentBiome.SidePanelSprites.Length);
+            int index_panel_left = Utils.RandomInt(0, currentBiome.SidePanelSprites.Length);
+
+            // Set tile sprite
+            tile.transform.Find("SidePanel_right").GetComponent<SpriteRenderer>().sprite = currentBiome.SidePanelSprites[index_panel_right];
+            tile.transform.Find("SidePanel_left").GetComponent<SpriteRenderer>().sprite = currentBiome.SidePanelSprites[index_panel_left];
         }
 
         /// <summary>
