@@ -11,6 +11,9 @@ namespace Aloha
         public int XP;
         public int MaxXP;
 
+        /// <summary>
+        /// Scale the hero stats based on his level
+        /// </summary>
         public void Scale()
         {
             this.Level += 1;

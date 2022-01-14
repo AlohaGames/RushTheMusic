@@ -6,6 +6,9 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Button to start infinite mode on main menu
+    /// </summary>
     public class InfiniteModeNextLevelButton : MonoBehaviour
     {
         void Awake()
@@ -27,6 +30,9 @@ namespace Aloha
             LevelManager.Instance.LoadRandomLevel(onFinishLoad);
         }
 
+        /// <summary>
+        /// Callback when level is finish loading
+        /// </summary>
         public void onFinishLoad()
         {
             GameManager.Instance.StartLevel();

@@ -75,6 +75,9 @@ namespace Aloha
             UIScore.ShowEndGameUIScoreElements();
         }
 
+        /// <summary>
+        /// Hide EndGame screen
+        /// </summary>
         public void HideEndGameUIElements()
         {
             GameManager.Instance.UnFreeze();

@@ -109,6 +109,9 @@ namespace Aloha
             StartCoroutine(LoadMusic(musicFilePath, cb));
         }
 
+        /// <summary>
+        /// Load a random tutorial level
+        /// </summary>
         public void LoadRandomLevel(Action cb)
         {
             List<string> levels = GetAllAvailableMusics();
@@ -124,6 +127,10 @@ namespace Aloha
             }
         }
 
+
+        /// <summary>
+        /// Get list of all available tutorial musics 
+        /// </summary>
         public List<string> GetAllAvailableMusics()
         {
             List<string> levels = new List<string>();

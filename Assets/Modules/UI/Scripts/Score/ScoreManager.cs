@@ -202,6 +202,9 @@ namespace Aloha
             TilesCounter = 0;
         }
 
+        /// <summary>
+        /// Reset the score at the end of the game
+        /// </summary>
         public void FinishGameReset()
         {
             FinishLevelReset();

@@ -74,6 +74,9 @@ namespace Aloha
             HitScoreText.text = "Coups reçus\t-" + ScoreManager.Instance.HitScore;
         }
 
+        /// <summary>
+        /// Hide End Game score
+        /// </summary>
         public void HideEndGameUIScoreElements()
         {
             EndGameScore.SetActive(false);

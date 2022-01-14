@@ -8,6 +8,9 @@ namespace Aloha
     [CreateAssetMenu(fileName = "EnemyStats", menuName = "Stats/Enemy/Generic", order = 1)]
     public class EnemyStats : Stats
     {
+        /// <summary>
+        /// Scale the enemy stats based on a level
+        /// </summary>
         public void Scale(int level)
         {
             this.Attack = this.Attack + (level * 2);
