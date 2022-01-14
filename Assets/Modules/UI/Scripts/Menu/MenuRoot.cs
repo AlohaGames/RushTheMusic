@@ -117,7 +117,7 @@ namespace Aloha
         {
             this.HideEverything();
             CharacterMenu.SetActive(true);
-            navigationHistory.Push(ShowCharacterMenu);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace Aloha
         {
             this.HideEverything();
             GameOverMenu.SetActive(true);
-            navigationHistory.Push(ShowGameOverMenu);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace Aloha
         {
             this.HideEverything();
             EndGameMenu.SetActive(true);
-            navigationHistory.Push(ShowEndGameMenu);
+            navigationHistory.Push(ShowMainMenu);
 
             if (!GameManager.Instance.IsInfinite)
             {

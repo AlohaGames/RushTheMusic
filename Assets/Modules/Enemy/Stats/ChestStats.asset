@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79c6001be38818d419738d2c65d6cc2d, type: 3}
   m_Name: ChestStats
   m_EditorClassIdentifier: 
-  MaxHealth: 10
+  MaxHealth: 1
   Attack: 0
   Defense: 0
   Level: 1
