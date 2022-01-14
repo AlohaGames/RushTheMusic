@@ -11,6 +11,8 @@ namespace Aloha
     /// </summary>
     public class InfiniteModeNextLevelButton : MonoBehaviour
     {
+        public MenuRoot MenuRoot;
+
         void Awake()
         {
             GetComponent<Button>().onClick.AddListener(OnClick);
@@ -36,7 +38,7 @@ namespace Aloha
         public void onFinishLoad()
         {
             GameManager.Instance.StartLevel();
-            UIManager.Instance.HideEndGameUIElements();
+            MenuRoot.HideEverything();
         }
 
         /// <summary>

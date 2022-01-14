@@ -10,11 +10,15 @@ namespace Aloha
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
+        private bool isGameFinished = false;
         private bool isGamePaused = false;
-        private Hero hero;
         public bool IsPlaying = false;
-        public RtmConfig Config = new RtmConfig();
         public bool IsInfinite = false;
+
+        [SerializeField]
+        private string defaultLevel = "";
+        private Hero hero;
+        public RtmConfig Config = new RtmConfig();
 
         void Awake()
         {
@@ -36,6 +40,8 @@ namespace Aloha
         {
             UnFreeze();
             IsPlaying = true;
+            isGamePaused = false;
+            isGameFinished = false;
             GlobalEvent.LevelStart.Invoke();
         }
 
@@ -71,6 +77,7 @@ namespace Aloha
         public void FinishLevel()
         {
             Freeze();
+            isGameFinished = true;
             ContainerManager.Instance.ClearContainers(
                 new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
             );
@@ -106,6 +113,22 @@ namespace Aloha
         public bool IsGamePaused()
         {
             return this.isGamePaused;
+        }
+
+        /// <summary>
+        /// Will return if the game is finished or not
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.IsGameFinished()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// a boolean if the game is finished or not
+        /// </returns>
+        public bool IsGameFinished()
+        {
+            return this.isGameFinished;
         }
 
         /// <summary>
@@ -205,7 +228,7 @@ namespace Aloha
         {
             if (Input.GetKeyDown(InputBinding.Instance.Pause))
             {
-                if (IsPlaying)
+                if (IsPlaying && !isGameFinished)
                 {
                     if (isGamePaused)
                         ResumeGame();

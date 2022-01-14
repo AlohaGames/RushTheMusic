@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1223403410241036943}
   - component: {fileID: 2081910755377011322}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minimumSpeedToProtect: 0.1
+  sprite: {fileID: 2081910755377011322}
   Warrior: {fileID: 0}
   Speed: 0
 --- !u!65 &8297352963750951132
@@ -176,7 +177,7 @@ GameObject:
   - component: {fileID: 6401195120167645643}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: AttackBlocker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -32,9 +32,9 @@ namespace Aloha
         /// </summary>
         public void OnClick()
         {
+            GameManager.Instance.IsInfinite = true;
             MenuRoot.ShowCharacterMenu();
             LevelManager.Instance.LoadRandomLevel(null);
-            GameManager.Instance.IsInfinite = true;
         }
 
         /// <summary>

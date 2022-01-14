@@ -94,6 +94,7 @@ namespace Aloha
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
+            GlobalEvent.HudEffect.Invoke(0.5f, 0.25f, HUDEffectType.blood);
 
             if (this.CurrentHealth <= 0)
             {
@@ -113,6 +114,7 @@ namespace Aloha
         {
             base.RegenerateHP(hpGain);
             GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
+            GlobalEvent.HudEffect.Invoke(0.8f, 1.0f, HUDEffectType.heal);
         }
 
         /// <summary>

@@ -1,11 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-using System.Collections;
-using System.IO;
-using System.IO.Compression;
-using System.Xml.Serialization;
 using Aloha.Events;
+using System.Collections.Generic;
 
 namespace Aloha
 {
@@ -15,13 +12,16 @@ namespace Aloha
     /// </summary>
     public class MenuRoot : MonoBehaviour
     {
-        public GameObject GameName;
         public GameObject ProfilMenu;
         public GameObject MainMenu;
         public GameObject TrackSelectionMenu;
         public GameObject CharacterMenu;
         public GameObject SettingsMenu;
         public GameObject GameOverMenu;
+        public GameObject PauseMenu;
+        public GameObject EndGameMenu;
+
+        private Stack<Action> navigationHistory = new Stack<Action>();
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -31,19 +31,9 @@ namespace Aloha
             // The first screen to load
             ShowProfilMenu();
             GlobalEvent.GameOver.AddListener(ShowGameOverMenu);
-        }
-
-        /// <summary>
-        /// Hide menu root UI completely
-        /// <example> Example(s):
-        /// <code>
-        /// menuRoot.Hide()
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void Hide()
-        {
-            this.gameObject.SetActive(false);
+            GlobalEvent.Resume.AddListener(HideEverything);
+            GlobalEvent.Pause.AddListener(ShowPauseMenu);
+            GlobalEvent.Victory.AddListener(ShowEndGameMenu);
         }
 
         /// <summary>
@@ -54,29 +44,16 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void HideEverything()
+        public void HideEverything()
         {
-            this.Show();
-            GameName.SetActive(false);
             ProfilMenu.SetActive(false);
             MainMenu.SetActive(false);
             TrackSelectionMenu.SetActive(false);
             CharacterMenu.SetActive(false);
             SettingsMenu.SetActive(false);
             GameOverMenu.SetActive(false);
-        }
-
-        /// <summary>
-        /// Show menu root UI
-        /// <example> Example(s):
-        /// <code>
-        /// menuRoot.Show()
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void Show()
-        {
-            this.gameObject.SetActive(true);
+            PauseMenu.SetActive(false);
+            EndGameMenu.SetActive(false);
         }
 
         /// <summary>
@@ -90,8 +67,8 @@ namespace Aloha
         public void ShowProfilMenu()
         {
             this.HideEverything();
-            GameName.SetActive(true);
             ProfilMenu.SetActive(true);
+            navigationHistory.Push(ShowProfilMenu);
 
             // Force profiles loading
             ChooseProfilMenu cpm = ProfilMenu.GetComponent<ChooseProfilMenu>();
@@ -109,8 +86,8 @@ namespace Aloha
         public void ShowMainMenu()
         {
             this.HideEverything();
-            GameName.SetActive(true);
             MainMenu.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -124,8 +101,8 @@ namespace Aloha
         public void ShowTrackSelectionMenu()
         {
             this.HideEverything();
-            GameName.SetActive(true);
             TrackSelectionMenu.SetActive(true);
+            navigationHistory.Push(ShowTrackSelectionMenu);
         }
 
         /// <summary>
@@ -140,6 +117,7 @@ namespace Aloha
         {
             this.HideEverything();
             CharacterMenu.SetActive(true);
+            navigationHistory.Push(ShowCharacterMenu);
         }
 
         /// <summary>
@@ -154,6 +132,7 @@ namespace Aloha
         {
             this.HideEverything();
             SettingsMenu.SetActive(true);
+            navigationHistory.Push(ShowOptionMenu);
         }
 
         /// <summary>
@@ -168,6 +147,77 @@ namespace Aloha
         {
             this.HideEverything();
             GameOverMenu.SetActive(true);
+            navigationHistory.Push(ShowGameOverMenu);
+        }
+
+        /// <summary>
+        /// Show the pause menu and stop the music
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowPauseMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowPauseMenu()
+        {
+            this.HideEverything();
+            PauseMenu.SetActive(true);
+            navigationHistory.Push(ShowPauseMenu);
+        }
+
+        /// <summary>
+        /// Freeze the game, show the pause menu and stop the music
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowPauseMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowEndGameMenu()
+        {
+            this.HideEverything();
+            EndGameMenu.SetActive(true);
+            navigationHistory.Push(ShowEndGameMenu);
+
+            if (!GameManager.Instance.IsInfinite)
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(false);
+            }
+            else
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(true);
+            }
+
+            EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total" + "\t\t" + ScoreManager.Instance.TotalScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués" + "\t\t" + ScoreManager.Instance.EnemyKilledScore;
+            EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
+        }
+
+        /// <summary>
+        /// Show the last menu in the stack
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowLastMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowLastMenu()
+        {
+            if (navigationHistory.Count != 0)
+            {
+                // Remove actual menu from the stack
+                navigationHistory.Pop();
+
+                if (navigationHistory.Count != 0)
+                {
+                    // Get last menu from the stack
+                    Action LastMenuAction = navigationHistory.Pop();
+
+                    // Go to the last menu
+                    LastMenuAction();
+                }
+            }
         }
 
         /// <summary>
@@ -176,6 +226,9 @@ namespace Aloha
         void OnDestroy()
         {
             GlobalEvent.GameOver.RemoveListener(ShowGameOverMenu);
+            GlobalEvent.Resume.RemoveListener(HideEverything);
+            GlobalEvent.Pause.RemoveListener(ShowPauseMenu);
+            GlobalEvent.Victory.RemoveListener(ShowEndGameMenu);
         }
     }
 }
