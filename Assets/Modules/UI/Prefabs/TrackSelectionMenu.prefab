@@ -440,7 +440,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2358525265430308172, guid: af9960489dac50a41b09b741a9740481, type: 3}
       propertyPath: m_Text
-      value: Selectionner une musique
+      value: "S\xE9lectionner une musique"
       objectReference: {fileID: 0}
     - target: {fileID: 2358525265430308173, guid: af9960489dac50a41b09b741a9740481, type: 3}
       propertyPath: m_Pivot.x
