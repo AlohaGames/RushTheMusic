@@ -52,6 +52,7 @@ MonoBehaviour:
   effectsList:
   - {fileID: 21300000, guid: 5aa16e215a894d3419b50852c7a35a27, type: 3}
   - {fileID: 21300000, guid: 37c19b97091dc7747867a8c8c5ce2b2b, type: 3}
+  - {fileID: 21300000, guid: 6dc7b98d69312c942a70eca981785101, type: 3}
   hud: {fileID: 9179559638646670021}
 --- !u!1 &8569088904308198708
 GameObject:
