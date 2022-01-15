@@ -308,7 +308,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartProfileButton
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9079127556186977772, guid: 18d018e15c03f9f40876d42f3b2ed451, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 18d018e15c03f9f40876d42f3b2ed451, type: 3}
 --- !u!224 &8947194500036224161 stripped
 RectTransform:
