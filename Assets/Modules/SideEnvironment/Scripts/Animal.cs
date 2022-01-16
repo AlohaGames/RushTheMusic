@@ -1,19 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aloha
 {
     /// <summary>
-    /// Class for a rock
+    /// Class for animals
     /// </summary>
-    public class Rock : SideEnvironment
+    public class Animal : SideEnvironment
     {
-        float MAX_SIZE = 1f;
-        float MIN_SIZE = 0.3f;
 
         /// <summary>
-        /// Initialize a rock
+        /// Initialize bush
         /// <example> Example(s):
         /// <code>
         ///     sideEnvInstR.Initialize();
@@ -28,9 +24,9 @@ namespace Aloha
             // Attribute sprite to prefab
             this.gameObject.GetComponent<SpriteRenderer>().sprite = sprite[index];
 
-            //Set the size of bush
-            Height = Utils.RandomFloat(MIN_SIZE, MAX_SIZE);
-            Width = Utils.RandomFloat(MIN_SIZE, MAX_SIZE);
+            //Set the size of animal
+            Height = 1;
+            Width = 1;
         }
     }
 }

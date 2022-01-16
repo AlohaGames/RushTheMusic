@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BiomeName: base
   SideEnvironmentPrefabs:
-  - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
-  - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
-  - {fileID: 1094033744343563915, guid: 33e81be7c765eb74e91dea9061b74596, type: 3}
+  - {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+  - {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+  - {fileID: 3255093394491753834, guid: 76e5b80189f97f1468e243a38e21f0a9, type: 3}
+  - {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
   - {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
   SidePanelSprites:
   - {fileID: 21300000, guid: b04395b6d7c3a5c4fbe294cbf951fee9, type: 3}

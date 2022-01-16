@@ -10,6 +10,8 @@ namespace Aloha
     public abstract class SideEnvironment : MonoBehaviour
     {
         public float Height;
+        public float Width;
+        public Sprite[] sprite;
 
         /// <summary>
         /// Initialize the side environment

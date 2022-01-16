@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5893729757211252587
+--- !u!1001 &1517638077606104654
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 4399147626777480233, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4085196911494784215, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+      objectReference: {fileID: -7240665791441622493, guid: 711be827276896f40811e2b6988d1f07, type: 3}
     - target: {fileID: 5859083706670256325, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -21,11 +21,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5859083706670256325, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5859083706670256325, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5859083706670256325, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: m_LocalRotation.w
@@ -57,7 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6684432535425593731, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: m_Name
-      value: Rock_B
+      value: Rock_frost_Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -7240665791441622493, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: -2400430842921496241, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: sprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 5770589798565384561, guid: 711be827276896f40811e2b6988d1f07, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d7035db905b0094ab165bffc3675033, type: 3}

@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Aloha
 {
     /// <summary>
-    /// Class for a rock
+    /// Class for a bush
     /// </summary>
-    public class Rock : SideEnvironment
+    public class Bush : SideEnvironment
     {
         float MAX_SIZE = 1f;
-        float MIN_SIZE = 0.3f;
+        float MIN_SIZE = 0.4f;
 
         /// <summary>
-        /// Initialize a rock
+        /// Initialize bush
         /// <example> Example(s):
         /// <code>
         ///     sideEnvInstR.Initialize();

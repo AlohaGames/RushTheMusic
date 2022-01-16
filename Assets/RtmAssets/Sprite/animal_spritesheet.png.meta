@@ -1,34 +1,34 @@
 fileFormatVersion: 2
-guid: 711be827276896f40811e2b6988d1f07
+guid: 3cb14572ee1f3314fa38febbf50ecf33
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4699062507891441953
-    second: rock_spritesheet_forest_0
+      213: 8093255392680721652
+    second: animal_spritesheet_forest_deer
   - first:
-      213: 4085196911494784215
-    second: rock_spritesheet_forest_1
+      213: -7429663939123958712
+    second: animal_spritesheet_forest_boar
   - first:
-      213: -5103960262004443950
-    second: rock_spritesheet_forest_2
+      213: 6475295738423869126
+    second: animal_spritesheet_forest_fox
   - first:
-      213: 2180427326100245224
-    second: rock_spritesheet_fall_0
+      213: -4157605890959312669
+    second: animal_spritesheet_frost_rabbit
   - first:
-      213: 6650121109357635932
-    second: rock_spritesheet_fall_1
+      213: 1549355321054509301
+    second: animal_spritesheet_frost_ermine
   - first:
-      213: -5548540143647178870
-    second: rock_spritesheet_fall_2
+      213: 5912129260817185474
+    second: animal_spritesheet_frost_erminewake
   - first:
-      213: -7240665791441622493
-    second: rock_spritesheet_frost_0
+      213: -3964089090123274949
+    second: animal_spritesheet_fall_redfox
   - first:
-      213: -2400430842921496241
-    second: rock_spritesheet_frost_1
+      213: -9099274957874924581
+    second: animal_spritesheet_fall_deer
   - first:
-      213: 5770589798565384561
-    second: rock_spritesheet_frost_2
+      213: -8179682611975428121
+    second: animal_spritesheet_fall_chipmunk
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rock_spritesheet_forest_0
+      name: animal_spritesheet_forest_deer
       rect:
         serializedVersion: 2
         x: 0
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 121c938447c663140800000000000000
-      internalID: 4699062507891441953
+      spriteID: 4fcbf3556e4015070800000000000000
+      internalID: 8093255392680721652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_forest_1
+      name: animal_spritesheet_forest_boar
       rect:
         serializedVersion: 2
         x: 256
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d46b2b52f881b830800000000000000
-      internalID: 4085196911494784215
+      spriteID: 84cacfbe20884e890800000000000000
+      internalID: -7429663939123958712
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_forest_2
+      name: animal_spritesheet_forest_fox
       rect:
         serializedVersion: 2
         x: 512
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d4f3830f271b29b0800000000000000
-      internalID: -5103960262004443950
+      spriteID: 6cefa50aa2fdcd950800000000000000
+      internalID: 6475295738423869126
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_fall_0
+      name: animal_spritesheet_frost_rabbit
       rect:
         serializedVersion: 2
         x: 0
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ea82c6c91f624e10800000000000000
-      internalID: 2180427326100245224
+      spriteID: 3e87c4958773d46c0800000000000000
+      internalID: -4157605890959312669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_fall_1
+      name: animal_spritesheet_frost_ermine
       rect:
         serializedVersion: 2
         x: 256
@@ -216,14 +216,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c59a6944ae9f94c50800000000000000
-      internalID: 6650121109357635932
+      spriteID: 5f8b056a47a608510800000000000000
+      internalID: 1549355321054509301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_fall_2
+      name: animal_spritesheet_frost_erminewake
       rect:
         serializedVersion: 2
         x: 512
@@ -237,14 +237,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8f3ae30320aff2b0800000000000000
-      internalID: -5548540143647178870
+      spriteID: 2ca73392d3a1c0250800000000000000
+      internalID: 5912129260817185474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_frost_0
+      name: animal_spritesheet_fall_redfox
       rect:
         serializedVersion: 2
         x: 0
@@ -258,14 +258,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32aaccb43dcf38b90800000000000000
-      internalID: -7240665791441622493
+      spriteID: b356335a9f9bcf8c0800000000000000
+      internalID: -3964089090123274949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_frost_1
+      name: animal_spritesheet_fall_deer
       rect:
         serializedVersion: 2
         x: 256
@@ -279,14 +279,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f41d5cbcdd4ffaed0800000000000000
-      internalID: -2400430842921496241
+      spriteID: bd3f146c2a1e8b180800000000000000
+      internalID: -9099274957874924581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_frost_2
+      name: animal_spritesheet_fall_chipmunk
       rect:
         serializedVersion: 2
         x: 512
@@ -300,8 +300,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1719bff09d0451050800000000000000
-      internalID: 5770589798565384561
+      spriteID: 7e7e3c1900eeb7e80800000000000000
+      internalID: -8179682611975428121
       vertices: []
       indices: 
       edges: []
@@ -309,7 +309,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a64613185d9b7fc44a9521712d578017
+    spriteID: 7c854797f19f0e0449f6ed0e09b338dd
     internalID: 0
     vertices: []
     indices: 
