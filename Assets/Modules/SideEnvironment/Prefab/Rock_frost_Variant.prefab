@@ -60,6 +60,18 @@ PrefabInstance:
       value: Rock_frost_Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -7240665791441622493, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: -2400430842921496241, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 5770589798565384561, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: sprite.Array.data[0]
       value: 
       objectReference: {fileID: -7240665791441622493, guid: 711be827276896f40811e2b6988d1f07, type: 3}

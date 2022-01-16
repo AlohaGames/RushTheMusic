@@ -97,7 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Height: 0
   Width: 0
-  sprite:
+  Sprite:
   - {fileID: -7429663939123958712, guid: 3cb14572ee1f3314fa38febbf50ecf33, type: 3}
   - {fileID: 8093255392680721652, guid: 3cb14572ee1f3314fa38febbf50ecf33, type: 3}
   - {fileID: 6475295738423869126, guid: 3cb14572ee1f3314fa38febbf50ecf33, type: 3}

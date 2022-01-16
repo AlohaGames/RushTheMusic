@@ -52,8 +52,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
       propertyPath: sprite.Array.size
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 5039118915161270674, guid: 47a72087d625b41429375231dfe2d542, type: 3}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.data[1]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
       propertyPath: sprite.Array.data[0]

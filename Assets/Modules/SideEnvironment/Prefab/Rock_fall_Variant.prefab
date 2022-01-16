@@ -60,6 +60,22 @@ PrefabInstance:
       value: Rock_fall_Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180427326100245224, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 6650121109357635932, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
+      propertyPath: Sprite.Array.data[2]
+      value: 
+      objectReference: {fileID: -5548540143647178870, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+    - target: {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}
       propertyPath: sprite.Array.data[0]
       value: 
       objectReference: {fileID: 2180427326100245224, guid: 711be827276896f40811e2b6988d1f07, type: 3}

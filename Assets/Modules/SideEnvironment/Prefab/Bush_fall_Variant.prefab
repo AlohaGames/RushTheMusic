@@ -52,6 +52,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.data[0]
+      value: 
+      objectReference: {fileID: -5868419482766462049, guid: 47a72087d625b41429375231dfe2d542, type: 3}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.data[1]
+      value: 
+      objectReference: {fileID: 2961519408739701447, guid: 47a72087d625b41429375231dfe2d542, type: 3}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
+      propertyPath: Sprite.Array.data[2]
+      value: 
+      objectReference: {fileID: 421427589021570799, guid: 47a72087d625b41429375231dfe2d542, type: 3}
+    - target: {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
       propertyPath: sprite.Array.data[0]
       value: 
       objectReference: {fileID: -5868419482766462049, guid: 47a72087d625b41429375231dfe2d542, type: 3}
