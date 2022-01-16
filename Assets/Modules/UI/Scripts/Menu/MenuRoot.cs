@@ -196,6 +196,14 @@ namespace Aloha
             EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
         }
 
+        /// <summary>
+        /// Show only credits and hide other components
+        /// <example> Example(s):
+        /// <code>
+        /// menuRoot.ShowCredits()
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ShowCredits()
         {
             this.HideEverything();
