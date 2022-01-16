@@ -119,7 +119,7 @@ namespace Aloha
             //Generate random chance to spawning side environment
             float spawningChance = Utils.RandomFloat(0, 1);
 
-            if(spawningChance >= 0.3f)
+            if(spawningChance >= 0.2f)
             {
                 // Generate random index
                 int index = Utils.RandomInt(0, currentBiome.SideEnvironmentPrefabs.Length);
@@ -131,23 +131,24 @@ namespace Aloha
                 // Set scale
                 sideEnvInstR.transform.localScale = new Vector3(sideEnvInstR.Width, sideEnvInstR.Height, 1);
 
-                // Set position
+                // Get collider of tiles
                 Collider collider = tile.GetComponent<Collider>();
                 float tileWidth = collider.bounds.size.x;
                 float tileHeight = collider.bounds.size.y;
 
-                // Get the width and height of sprite
+                // Get the width and height of side environment sprite
                 float widthSprite = sideEnvInstR.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
                 float realwidthSprite = widthSprite * sideEnvInstR.Width;
                 float halfWidthSprite = realwidthSprite / 2;
                 float heightSprite = sideEnvInstR.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
                 float halfHeightSprite = heightSprite * sideEnvInstR.Height / 2;
 
-                // Generate random position
+                // Generate random position between the path and the end of tile
                 float rand_min = (int)side * 2f + ((int)side * halfWidthSprite);
                 float rand_max = (int)side * (tileWidth / 2) - ((int)side * halfWidthSprite);
                 float randPosition = Utils.RandomFloat(rand_min, rand_max);
 
+                // Set position
                 float xPosition = tile.transform.position.x + randPosition;
                 float yPosition = halfHeightSprite + (tileHeight / 2);
                 sideEnvInstR.transform.position = new Vector3(xPosition, yPosition, tile.transform.position.z);

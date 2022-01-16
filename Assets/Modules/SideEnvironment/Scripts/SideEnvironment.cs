@@ -11,7 +11,7 @@ namespace Aloha
     {
         public float Height;
         public float Width;
-        public Sprite[] sprite;
+        public Sprite[] Sprite;
 
         /// <summary>
         /// Initialize the side environment

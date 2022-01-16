@@ -23,12 +23,12 @@ namespace Aloha
         public override void Initialize()
         {
             // Generate random index
-            int index = Utils.RandomInt(0, sprite.Length);
+            int index = Utils.RandomInt(0, Sprite.Length);
 
             // Attribute sprite to prefab
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = sprite[index];
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprite[index];
 
-            //Set the size of bush
+            //Set the size of rock
             Height = Utils.RandomFloat(MIN_SIZE, MAX_SIZE);
             Width = Utils.RandomFloat(MIN_SIZE, MAX_SIZE);
         }
