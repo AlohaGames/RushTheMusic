@@ -208,6 +208,7 @@ namespace Aloha
         {
             this.HideEverything();
             this.Credits.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
