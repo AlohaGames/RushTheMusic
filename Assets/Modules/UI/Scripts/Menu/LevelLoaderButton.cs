@@ -35,7 +35,7 @@ namespace Aloha
         public void OnClick()
         {
             MenuRoot.ShowCharacterMenu();
-            GameManager.Instance.LoadLevel(Level, IsTuto);
+            LevelManager.Instance.Load(Level, null, IsTuto);
         }
 
         /// <summary>

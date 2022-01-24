@@ -154,5 +154,10 @@ namespace Aloha
         /// Healing effect when player take damages
         /// </summary>
         heal = 1,
+
+        /// <summary>
+        /// Rage effect when the warrior uses its effect
+        /// </summary>
+        rage = 2,
     }
 }

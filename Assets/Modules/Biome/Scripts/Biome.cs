@@ -12,6 +12,7 @@ namespace Aloha
     {
         public string BiomeName;
         public SideEnvironment[] SideEnvironmentPrefabs;
+        public Sprite[] SidePanelSprites;
         public GameObject CastleHill;
         public Color BackgroundColor;
         public GameObject[] TilePrefabs;
