@@ -130,7 +130,7 @@ namespace Aloha
         {
             while (true)
             {
-                if (this.CurrentMana < this.heroStats.MaxMana) this.CurrentMana += 5;
+                if (this.CurrentMana < this.heroStats.MaxMana) this.CurrentMana += 10;
                 GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentMana, this.heroStats.MaxMana);
                 yield return new WaitForSeconds(0.1f);
             }
