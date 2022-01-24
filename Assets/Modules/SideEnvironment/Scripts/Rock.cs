@@ -9,6 +9,9 @@ namespace Aloha
     /// </summary>
     public class Rock : SideEnvironment
     {
+        float MAX_SIZE = 1f;
+        float MIN_SIZE = 0.3f;
+
         /// <summary>
         /// Initialize a rock
         /// <example> Example(s):
@@ -19,7 +22,15 @@ namespace Aloha
         /// </summary>
         public override void Initialize()
         {
-            Height = 1;
+            // Generate random index
+            int index = Utils.RandomInt(0, Sprite.Length);
+
+            // Attribute sprite to prefab
+            this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprite[index];
+
+            //Set the size of rock
+            Height = Utils.RandomFloat(MIN_SIZE, MAX_SIZE);
+            Width = Utils.RandomFloat(MIN_SIZE, MAX_SIZE);
         }
     }
 }
