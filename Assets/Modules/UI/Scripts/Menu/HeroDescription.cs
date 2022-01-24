@@ -41,7 +41,6 @@ namespace Aloha.UI
         public void Show(HeroType heroType)
         {
             gameObject.SetActive(true);
-            Debug.Log(heroType);
             HeroStats heroStat = heroStats[(int)heroType];
 
             heroName.text = heroType.ToString();
