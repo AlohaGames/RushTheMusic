@@ -13,12 +13,16 @@ namespace Aloha.UI
         [SerializeField]
         private int id;
 
+        public HorizontalTilePos[] Positions;
+
         private void Awake()
         {
             selectedColor = EditorManager.Instance.SelectedColor;
             unselectedColor = EditorManager.Instance.UnselectedColor;
             GetComponent<Button>().onClick.AddListener(OnClick);
             Unselect();
+
+            Positions = GetComponentsInChildren<HorizontalTilePos>();
         }
 
         private void OnClick()

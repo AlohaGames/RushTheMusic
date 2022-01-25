@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 using Aloha;
@@ -44,6 +45,8 @@ namespace Aloha.UI
                 {
                     GameObject ui = GetGameObjectFromPos(enemy.HorizontalPosition, enemy.VerticalPosition);
                     SetUIType(ui, enemy.EnemyType);
+                    GameObject tileUI = GetTileGameObjectFromPos(enemy.HorizontalPosition);
+                    SetUIType(tileUI, enemy.EnemyType);
                 }
             }
         }
@@ -110,6 +113,15 @@ namespace Aloha.UI
             levelMapping.Enemies.Add(currentId, enemyMappings);
             GameObject ui = GetGameObjectFromPos(horizontalPosition, verticalPosition);
             SetUIType(ui, type);
+            GameObject tileUI = GetTileGameObjectFromPos(horizontalPosition);
+            SetUIType(tileUI, type);
+        }
+
+        private GameObject GetTileGameObjectFromPos(HorizontalPositionEnum h)
+        {
+            SelectTile tile = EditorManager.Instance.GetSelectTile(currentId);
+            List<HorizontalTilePos> hPos = tile.Positions.ToList();
+            return hPos.Find(x => x.Pos == h)?.gameObject;
         }
 
         private GameObject GetGameObjectFromPos(HorizontalPositionEnum h, VerticalPositionEnum v)
@@ -159,10 +171,10 @@ namespace Aloha.UI
 
         private void SetUIType(GameObject uiPos, EnemyType type)
         {
-            uiPos.transform.Clear();
+            uiPos?.transform.Clear();
             GameObject image = new GameObject("image_" + type);
             image.AddGetComponent<Image>().sprite = EnemyTypeToSprite.Instance.GetEnemySprite(type);
-            image.transform.SetParent(uiPos.transform);
+            image.transform.SetParent(uiPos?.transform);
             image.transform.localPosition = new Vector3(0, 0, 0);
         }
     }

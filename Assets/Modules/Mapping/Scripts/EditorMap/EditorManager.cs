@@ -63,6 +63,11 @@ namespace Aloha.UI
             SelectedTileUI.AddEnemy(type, levelMapping);
         }
 
+        public SelectTile GetSelectTile(int id)
+        {
+            return selectTiles[id];
+        }
+
         public LevelMapping GetLevelMapping()
         {
             return levelMapping;
