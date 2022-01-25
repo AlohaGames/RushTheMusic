@@ -6,15 +6,15 @@ using Aloha;
 
 namespace Aloha.UI
 {
-    public class Content : MonoBehaviour
+    public class MapContent : MonoBehaviour
     {
+        public EditorRoot Root;
         [SerializeField]
         private GameObject panel;
 
         [SerializeField]
         private Text panelNum;
 
-        [SerializeField]
         private Text tileNumber;
 
         // Duration of the music (in seconds)
@@ -30,7 +30,12 @@ namespace Aloha.UI
         private float titleSize = 5;
 
 
-        void Start()
+        private void Awake()
+        {
+            tileNumber = Root.Information.NbTiles;
+        }
+
+        private void Start()
         {
             UpdateNumTiles();
         }

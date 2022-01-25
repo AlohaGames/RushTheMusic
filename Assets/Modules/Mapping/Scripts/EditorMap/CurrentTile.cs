@@ -9,6 +9,7 @@ namespace Aloha.UI
 {
     public class CurrentTile : MonoBehaviour
     {
+        public EditorRoot Root;
         [SerializeField]
         private GameObject upLeft;
         [SerializeField]
@@ -28,12 +29,12 @@ namespace Aloha.UI
         [SerializeField]
         private GameObject downRight;
 
-        HorizontalPositionEnum horizontalPosition;
-        VerticalPositionEnum verticalPosition;
+        private HorizontalPositionEnum horizontalPosition;
+        private VerticalPositionEnum verticalPosition;
 
-        int currentId;
+        private int currentId;
 
-        SelectPos currentSelect;
+        private SelectPos currentSelect;
 
         public void LoadTile(int id, LevelMapping levelMapping)
         {

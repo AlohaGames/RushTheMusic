@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Aloha.UI
 {
     public class InformationRoot : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
-        {
-        
-        }
+        public EditorRoot EditorRoot;
+        public Button LoadMusic;
+        public InputField PathToMusic;
 
-        // Update is called once per frame
-        void Update()
-        {
-        
-        }
+        public InputField MapName;
+        public InputField Description;
+
+        public Text Duration;
+
+        public Text NbTiles;
+        public Button Export;
+        public Button Import;
     }
 }

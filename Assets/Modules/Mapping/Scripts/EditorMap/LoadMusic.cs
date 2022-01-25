@@ -10,15 +10,18 @@ namespace Aloha.UI
     [RequireComponent(typeof(UnityEngine.UI.Button))]
     public class LoadMusic : MonoBehaviour
     {
-        [SerializeField]
-        InputField pathText;
-        [SerializeField]
-        Content content;
-        [SerializeField]
-        Text durationText;
+        public InformationRoot Root;
+
+        private InputField pathText;
+        private MapContent content;
+        private Text durationText;
 
         private void Awake()
         {
+            pathText = Root.PathToMusic;
+            content = Root.EditorRoot.Content;
+            durationText = Root.Duration;
+
             GetComponent<Button>().onClick.AddListener(OnClick);
 
             // Set filters (optional)

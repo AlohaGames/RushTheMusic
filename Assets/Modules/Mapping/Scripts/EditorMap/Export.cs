@@ -8,15 +8,17 @@ namespace Aloha.UI
     [RequireComponent(typeof(UnityEngine.UI.Button))]
     public class Export : MonoBehaviour
     {
-        [SerializeField]
-        InputField pathText;
-
-
-        [SerializeField]
-        InputField mapName;
+        public InformationRoot Root;
+        private InputField pathText;
+        private InputField mapName;
+        private InputField description;
 
         private void Awake()
         {
+            pathText = Root.PathToMusic;
+            mapName = Root.MapName;
+            description = Root.Description;
+
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
@@ -29,6 +31,10 @@ namespace Aloha.UI
         private void ExportMap(LevelMapping levelMapping)
         {
             LevelMetadata metadata = new LevelMetadata();
+            // TODO metadata.Author = Profil
+            metadata.LevelName = mapName.text;
+            metadata.Description = description.text;
+
             LevelManager.Instance.Save(levelMapping, mapName.text + ".rtm", metadata, pathText.text, true);
         }
 
