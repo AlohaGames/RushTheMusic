@@ -40,13 +40,9 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO()
-        /// </code>
-        /// </example>
+        /// Coroutine called to extend the laser
         /// </summary>
+        /// <param name="delay"></param>
         private IEnumerator Extend(float delay = 0.0f)
         {
             // Set to default values
@@ -108,13 +104,9 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
-        /// <example> Example(s):
-        /// <code>
-        ///     TODO()
-        /// </code>
-        /// </example>
+        /// Method to call to attack with the laser
         /// </summary>
+        /// <param name="collider"></param>
         private IEnumerator Damage(Collider collider)
         {
             this.canDamage = false;
@@ -124,13 +116,22 @@ namespace Aloha
         }
 
         /// <summary>
-        /// TODO
+        /// Method to call to throw the laser in a specific direction
         /// <example> Example(s):
         /// <code>
-        ///     TODO()
+        ///     Vector3 initial = transform.position;
+        ///     initial.x += 0.75f;
+        ///     initial.y -= 0.5f;
+        ///     Vector3 target = new Vector3(0.0f, 1.0f, 0.0f);
+        ///     laser.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f)
         /// </code>
         /// </example>
         /// </summary>
+        /// <param name="origin"></param>
+        /// <param name="end"></param>
+        /// <param name="speed"></param>
+        /// <param name="duration"></param>
+        /// <param name="delay"></param>
         public void ThrowLaser(Vector3 origin, Vector3 end, float speed, float duration, float delay = 0.0f)
         {
             this.Origin = origin;
@@ -139,16 +140,6 @@ namespace Aloha
             this.Duration = duration;
             actionCoroutine = StartCoroutine(Extend(delay));
         }
-
-        /// <summary>
-        /// Method called with the objectif is destroyed
-        /// </summary>
-        private void OnDestroy()
-        {
-            DarkWizard.ReleaseAttack();
-            StopCoroutine(actionCoroutine);
-        }
-
         
         /// <summary>
         /// Method called when enter in collision with a player
@@ -168,6 +159,15 @@ namespace Aloha
                     StartCoroutine(Damage(collider));
                 }
             }
+        }
+
+        /// <summary>
+        /// Method called with the objectif is destroyed
+        /// </summary>
+        private void OnDestroy()
+        {
+            DarkWizard.ReleaseAttack();
+            StopCoroutine(actionCoroutine);
         }
     }
 }

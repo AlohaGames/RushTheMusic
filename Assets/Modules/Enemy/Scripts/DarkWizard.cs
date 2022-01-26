@@ -43,6 +43,14 @@ namespace Aloha
             yield return base.GetBump(direction, speed);
         }
 
+        /// <summary>
+        /// Throw an ice laser on the hero
+        /// <example> Example(s):
+        /// <code>
+        ///     darkWizard.IceLaser();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void IceLaser()
         {
             isAttacking = true;
@@ -58,6 +66,14 @@ namespace Aloha
             laserBeam.DarkWizard = this;
         }
 
+        /// <summary>
+        /// Throw an fire laser on the hero
+        /// <example> Example(s):
+        /// <code>
+        ///     darkWizard.IceLaser();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void FireLaser()
         {
             isAttacking = true;
@@ -74,6 +90,14 @@ namespace Aloha
 
         }
 
+        /// <summary>
+        /// Release everything when release attack
+        /// <example> Example(s):
+        /// <code>
+        ///     darkWizard.ReleaseAttack();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ReleaseAttack()
         {
             if (laserBeam != null)
