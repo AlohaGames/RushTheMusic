@@ -50,7 +50,7 @@ namespace Aloha
             Vector3 initial = transform.position;
             initial.x -= 0.85f;
             initial.y -= 0.5f;
-            Vector3 target = new Vector3(0.0f, 0.5f, 0.0f);
+            Vector3 target = new Vector3(0.0f, 1.0f, 0.0f);
 
             this.laserBeam = Instantiate(iceLaserPrefab, initial, Quaternion.identity);
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
@@ -65,7 +65,7 @@ namespace Aloha
             Vector3 initial = transform.position;
             initial.x += 0.75f;
             initial.y -= 0.5f;
-            Vector3 target = new Vector3(0.0f, 0.5f, 0.0f);
+            Vector3 target = new Vector3(0.0f, 1.0f, 0.0f);
 
             this.laserBeam = Instantiate(fireLaserPrefab, initial, Quaternion.identity);
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
