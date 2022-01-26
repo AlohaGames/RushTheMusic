@@ -12,6 +12,7 @@ namespace Aloha
         private Coroutine actionCoroutine;
         private float currentSize;
         private Vector3 center;
+        public DarkWizard DarkWizard;
 
         [HideInInspector]
         public Vector3 Origin;
@@ -28,14 +29,12 @@ namespace Aloha
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
-        void Start()
+        void Awake()
         {
             this.Origin = Vector3.zero;
             this.End = Vector3.zero;
             this.Speed = 2;
             this.Duration = 2;
-
-            // ThrowLaser(new Vector3(0, 1, 4.4f), new Vector3(0, 1, 0), 4f, 3);
         }
 
         /// <summary>
@@ -46,19 +45,26 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private IEnumerator Extend()
+        private IEnumerator Extend(float delay = 0.0f)
         {
-            // First step : extension from origin to end
+            // Set to default values
             float distance = Vector3.Distance(this.Origin, this.End);
             this.currentSize = 0;
             this.center = this.Origin;
             transform.position = this.Origin;
+            Vector3 localScale = transform.localScale;
+            transform.localScale = Vector3.zero;
             yield return null;
 
+            // Rotate in target direction
             transform.LookAt(this.End);
             transform.Rotate(new Vector3(90, 0, 0));
 
+            yield return new WaitForSeconds(delay);
+
+            // First step : extension from origin to end
             float time = 0;
+            transform.localScale = localScale;
             while (time < (distance / 2))
             {
                 time += Time.deltaTime * this.Speed;
@@ -72,6 +78,7 @@ namespace Aloha
                 // Update position
                 this.center = this.Origin + transform.up * this.currentSize;
                 transform.localPosition = this.center;
+
                 yield return null;
             }
 
@@ -95,7 +102,7 @@ namespace Aloha
                 yield return null;
             }
 
-            yield return null;  
+            this.DarkWizard.ReleaseAttack();
         }
 
         /// <summary>
@@ -106,16 +113,13 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void ThrowLaser(Vector3 origin, Vector3 end, float speed, float duration)
+        public void ThrowLaser(Vector3 origin, Vector3 end, float speed, float duration, float delay = 0.0f)
         {
             this.Origin = origin;
             this.End = end;
             this.Speed = speed;
             this.Duration = duration;
-            actionCoroutine = StartCoroutine(Extend());
-
-            Debug.Log("ori:" + Origin);
-            Debug.Log("end:" + End);
+            actionCoroutine = StartCoroutine(Extend(delay));
         }
 
         /// <summary>
