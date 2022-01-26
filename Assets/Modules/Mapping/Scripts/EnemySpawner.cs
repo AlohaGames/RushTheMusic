@@ -75,7 +75,7 @@ namespace Aloha
                     }
 
                     // Stats scale based on hero level and current map number
-                    // TODO-TRISTAN: Scale stats based on this.heroLevel
+                    stats.Scale(heroLevel);
                     entity.Init(stats);
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);

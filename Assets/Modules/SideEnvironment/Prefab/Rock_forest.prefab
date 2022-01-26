@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5859083706670256325}
-  - component: {fileID: 7431554564362571214}
   - component: {fileID: 4399147626777480233}
+  - component: {fileID: 7431554564362571214}
   m_Layer: 0
-  m_Name: Rock
+  m_Name: Rock_forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7431554564362571214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6684432535425593731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f87e3162ce85bd1429dffc9ea04ccd13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  height: 0
 --- !u!212 &4399147626777480233
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -85,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2400430842921496241, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+  m_Sprite: {fileID: 4699062507891441953, guid: 711be827276896f40811e2b6988d1f07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,3 +83,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7431554564362571214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684432535425593731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f87e3162ce85bd1429dffc9ea04ccd13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Height: 0
+  Width: 0
+  Sprite:
+  - {fileID: 4699062507891441953, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+  - {fileID: 4085196911494784215, guid: 711be827276896f40811e2b6988d1f07, type: 3}
+  - {fileID: -5103960262004443950, guid: 711be827276896f40811e2b6988d1f07, type: 3}

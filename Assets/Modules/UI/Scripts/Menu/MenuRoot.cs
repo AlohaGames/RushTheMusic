@@ -1,11 +1,8 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
-using System.Collections;
-using System.IO;
-using System.IO.Compression;
-using System.Xml.Serialization;
 using Aloha.Events;
+using System.Collections.Generic;
 
 namespace Aloha
 {
@@ -23,6 +20,8 @@ namespace Aloha
         public GameObject GameOverMenu;
         public GameObject PauseMenu;
         public GameObject EndGameMenu;
+
+        private Stack<Action> navigationHistory = new Stack<Action>();
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -69,6 +68,7 @@ namespace Aloha
         {
             this.HideEverything();
             ProfilMenu.SetActive(true);
+            navigationHistory.Push(ShowProfilMenu);
 
             // Force profiles loading
             ChooseProfilMenu cpm = ProfilMenu.GetComponent<ChooseProfilMenu>();
@@ -87,6 +87,7 @@ namespace Aloha
         {
             this.HideEverything();
             MainMenu.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -101,6 +102,7 @@ namespace Aloha
         {
             this.HideEverything();
             TrackSelectionMenu.SetActive(true);
+            navigationHistory.Push(ShowTrackSelectionMenu);
         }
 
         /// <summary>
@@ -115,6 +117,7 @@ namespace Aloha
         {
             this.HideEverything();
             CharacterMenu.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -129,6 +132,7 @@ namespace Aloha
         {
             this.HideEverything();
             SettingsMenu.SetActive(true);
+            navigationHistory.Push(ShowOptionMenu);
         }
 
         /// <summary>
@@ -143,6 +147,7 @@ namespace Aloha
         {
             this.HideEverything();
             GameOverMenu.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -157,6 +162,7 @@ namespace Aloha
         {
             this.HideEverything();
             PauseMenu.SetActive(true);
+            navigationHistory.Push(ShowPauseMenu);
         }
 
         /// <summary>
@@ -171,10 +177,47 @@ namespace Aloha
         {
             this.HideEverything();
             EndGameMenu.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
+
+            if (!GameManager.Instance.IsInfinite)
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(false);
+            }
+            else
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(true);
+            }
+
             EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total" + "\t\t" + ScoreManager.Instance.TotalScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués" + "\t\t" + ScoreManager.Instance.EnemyKilledScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
+        }
+
+        /// <summary>
+        /// Show the last menu in the stack
+        /// <example> Example(s):
+        /// <code>
+        ///     ShowLastMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowLastMenu()
+        {
+            if (navigationHistory.Count != 0)
+            {
+                // Remove actual menu from the stack
+                navigationHistory.Pop();
+
+                if (navigationHistory.Count != 0)
+                {
+                    // Get last menu from the stack
+                    Action LastMenuAction = navigationHistory.Pop();
+
+                    // Go to the last menu
+                    LastMenuAction();
+                }
+            }
         }
 
         /// <summary>

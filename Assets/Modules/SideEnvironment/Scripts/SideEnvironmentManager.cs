@@ -58,8 +58,20 @@ namespace Aloha
         /// <param name="tile">GameObject of the tile</param>
         public void CountTile(GameObject tile)
         {
-            generateSideEnv(Side.Left, tile);
-            generateSideEnv(Side.Righ, tile);
+            GenerateSideEnv(Side.Left, tile);
+            GenerateSideEnv(Side.Righ, tile);
+            SetSidePanel(tile);
+        }
+
+        void SetSidePanel(GameObject tile)
+        {
+            // Generate random index
+            int index_panel_right = Utils.RandomInt(0, currentBiome.SidePanelSprites.Length);
+            int index_panel_left = Utils.RandomInt(0, currentBiome.SidePanelSprites.Length);
+
+            // Set tile sprite
+            tile.transform.Find("SidePanel_right").GetComponent<SpriteRenderer>().sprite = currentBiome.SidePanelSprites[index_panel_right];
+            tile.transform.Find("SidePanel_left").GetComponent<SpriteRenderer>().sprite = currentBiome.SidePanelSprites[index_panel_left];
         }
 
         /// <summary>
@@ -102,26 +114,48 @@ namespace Aloha
         /// </summary>
         /// <param name="side">Side to generate environment on (either Right or Left)</param>
         /// <param name="tile">Gameobject of the actual tile</param>
-        void generateSideEnv(Side side, GameObject tile)
+        void GenerateSideEnv(Side side, GameObject tile)
         {
-            // Generate random index
-            int index = Utils.RandomInt(0, currentBiome.SideEnvironmentPrefabs.Length);
+            //Generate random chance to spawning side environment
+            float spawningChance = Utils.RandomFloat(0, 1);
 
-            // Instantiate object + position
-            SideEnvironment sideEnvInstR = Instantiate(currentBiome.SideEnvironmentPrefabs[index]);
-            sideEnvInstR.Initialize();
+            if(spawningChance >= 0.2f)
+            {
+                // Generate random index
+                int index = Utils.RandomInt(0, currentBiome.SideEnvironmentPrefabs.Length);
 
-            // Set scale
-            sideEnvInstR.transform.localScale = new Vector3(1, sideEnvInstR.Height, 1);
+                // Instantiate object + position
+                SideEnvironment sideEnvInstR = Instantiate(currentBiome.SideEnvironmentPrefabs[index]);
+                sideEnvInstR.Initialize();
 
-            // Set position
-            float tileWidth = tile.transform.localScale.x;
-            float tileHeight = tile.transform.localScale.y;
+                // Set scale
+                sideEnvInstR.transform.localScale = new Vector3(sideEnvInstR.Width, sideEnvInstR.Height, 1);
 
-            sideEnvInstR.transform.position = new Vector3(tile.transform.position.x + (int)side * tileWidth / 2.5f, sideEnvInstR.Height + tileHeight, tile.transform.position.z);
+                // Get collider of tiles
+                Collider collider = tile.GetComponent<Collider>();
+                float tileWidth = collider.bounds.size.x;
+                float tileHeight = collider.bounds.size.y;
 
-            // Attach to tile
-            sideEnvInstR.transform.SetParent(tile.transform);
+                // Get the width and height of side environment sprite
+                float widthSprite = sideEnvInstR.GetComponent<SpriteRenderer>().sprite.bounds.size.x;
+                float realwidthSprite = widthSprite * sideEnvInstR.Width;
+                float halfWidthSprite = realwidthSprite / 2;
+                float heightSprite = sideEnvInstR.GetComponent<SpriteRenderer>().sprite.bounds.size.y;
+                float halfHeightSprite = heightSprite * sideEnvInstR.Height / 2;
+
+                // Generate random position between the path and the end of tile
+                float rand_min = (int)side * 2f + ((int)side * halfWidthSprite);
+                float rand_max = (int)side * (tileWidth / 2) - ((int)side * halfWidthSprite);
+                float randPosition = Utils.RandomFloat(rand_min, rand_max);
+
+                // Set position
+                float xPosition = tile.transform.position.x + randPosition;
+                float yPosition = halfHeightSprite + (tileHeight / 2);
+                sideEnvInstR.transform.position = new Vector3(xPosition, yPosition, tile.transform.position.z);
+
+                // Attach to tile
+                sideEnvInstR.transform.SetParent(tile.transform);
+            }
         }
 
         /// <summary>
