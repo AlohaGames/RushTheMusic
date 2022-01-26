@@ -710,6 +710,18 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6554040974859298758, guid: 04531a5c0b194b2f2a2d7ca18914712f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3071692529375055030}
+    - target: {fileID: 6554040974859298758, guid: 04531a5c0b194b2f2a2d7ca18914712f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShowControlsMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915625168239848453, guid: 04531a5c0b194b2f2a2d7ca18914712f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3071692529375055030}
     - target: {fileID: 8902622705552025760, guid: 04531a5c0b194b2f2a2d7ca18914712f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
