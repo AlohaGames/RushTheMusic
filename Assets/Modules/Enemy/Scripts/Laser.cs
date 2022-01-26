@@ -11,6 +11,7 @@ namespace Aloha
     {
         private Coroutine actionCoroutine;
         private float currentSize;
+        private bool canDamage;
         private Vector3 center;
         public DarkWizard DarkWizard;
 
@@ -35,6 +36,7 @@ namespace Aloha
             this.End = Vector3.zero;
             this.Speed = 2;
             this.Duration = 2;
+            this.canDamage = true;
         }
 
         /// <summary>
@@ -113,6 +115,22 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
+        private IEnumerator Damage(Collider collider)
+        {
+            this.canDamage = false;
+            DarkWizard.Attack(collider.gameObject.GetComponent<Entity>());
+            yield return new WaitForSeconds(Duration / 10);
+            this.canDamage = true;
+        }
+
+        /// <summary>
+        /// TODO
+        /// <example> Example(s):
+        /// <code>
+        ///     TODO()
+        /// </code>
+        /// </example>
+        /// </summary>
         public void ThrowLaser(Vector3 origin, Vector3 end, float speed, float duration, float delay = 0.0f)
         {
             this.Origin = origin;
@@ -127,7 +145,29 @@ namespace Aloha
         /// </summary>
         private void OnDestroy()
         {
+            DarkWizard.ReleaseAttack();
             StopCoroutine(actionCoroutine);
+        }
+
+        
+        /// <summary>
+        /// Method called when enter in collision with a player
+        /// <example> Example(s):
+        /// <code>
+        ///     fireball.OnTriggerEnter(collider);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="collider"></param>
+        public void OnTriggerStay(Collider collider)
+        {
+            if (collider.tag == "Player")
+            {
+                if (canDamage)
+                {
+                    StartCoroutine(Damage(collider));
+                }
+            }
         }
     }
 }

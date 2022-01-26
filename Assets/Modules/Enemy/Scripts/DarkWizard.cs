@@ -40,7 +40,6 @@ namespace Aloha
         public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
             ReleaseAttack();
-            Debug.Log("LOOOOL");
             yield return base.GetBump(direction, speed);
         }
 
@@ -72,6 +71,7 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.DarkWizard = this;
+
         }
 
         public void ReleaseAttack()
@@ -79,7 +79,6 @@ namespace Aloha
             if (laserBeam != null)
             {
                 Destroy(laserBeam.gameObject);
-                Debug.Log("DESTROYING BOOOM");
             }
             isAttacking = false;
             Anim.SetBool("isIceAttacking", false);
