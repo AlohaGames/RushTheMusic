@@ -105,8 +105,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   iceLaserPrefab: {fileID: 3438102084729186062, guid: a2ecd2886ea48c348a0f2902253a0fa6, type: 3}
-  fireLaserPrefab: {fileID: 9017859617791118251, guid: e29bda55aabff3c4994adf8abd5dbac8, type: 3}
+  fireLaserPrefab: {fileID: 169328092424425285, guid: 6af46a9118eca514b9edbb01f9f95d0d, type: 3}
   Anim: {fileID: 5288911166049048538}
+  isAttacking: 0
 --- !u!1001 &6257342088356890287
 PrefabInstance:
   m_ObjectHideFlags: 0
