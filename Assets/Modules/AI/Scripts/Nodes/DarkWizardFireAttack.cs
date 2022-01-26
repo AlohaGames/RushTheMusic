@@ -6,14 +6,14 @@ using Aloha;
 namespace Aloha.AI
 {
     /// <summary>
-    /// A Node that make the dark wizard (gameObject) Attack the Hero with an ice laser
+    /// A Node that make the dark wizard (gameObject) Attack the Hero with an fire laser
     /// </summary>
     public class DarkWizardFireAttack : GONode
     {
         private DarkWizard darkWizard;
 
         /// <summary>
-        /// LancerAttack Node Constructor
+        /// DarkWizardFireAttack Node Constructor
         /// </summary>
         /// <param name="graph">Graph containing the node</param>
         public DarkWizardFireAttack(Graph graph) : base(graph)
@@ -31,17 +31,17 @@ namespace Aloha.AI
         }
 
         /// <summary>
-        /// Make the wyrmling Attack
+        /// Make the dark wizard fire laser Attack
         /// </summary>
         /// <returns></returns>
         public override IEnumerator Action()
         {
             IsRunning = true;
 
-            // Create an ice laser
+            // Create a fire laser
             darkWizard.FireLaser();
 
-            while(darkWizard.isAttacking)
+            while(darkWizard.IsAttacking)
             {
                 yield return null;
             }

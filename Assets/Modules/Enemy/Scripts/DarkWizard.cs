@@ -5,7 +5,7 @@ using Aloha.EntityStats;
 namespace Aloha
 {
     /// <summary>
-    /// Class for the default wyrmling
+    /// Class for the dark wizard
     /// </summary>
     public class DarkWizard : Enemy<DarkWizardStats>
     {
@@ -21,7 +21,7 @@ namespace Aloha
         [HideInInspector]
         public Animator Anim;
         
-        public bool isAttacking;
+        public bool IsAttacking;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
@@ -29,7 +29,7 @@ namespace Aloha
         void Start()
         {
             Anim = GetComponent<Animator>();
-            isAttacking = false;
+            IsAttacking = false;
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace Aloha
         /// </summary>
         public void IceLaser()
         {
-            isAttacking = true;
+            IsAttacking = true;
             Anim.SetBool("isIceAttacking", true);
             Vector3 initial = transform.position;
             initial.x -= 0.85f;
@@ -63,20 +63,20 @@ namespace Aloha
             this.laserBeam = Instantiate(iceLaserPrefab, initial, Quaternion.identity);
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
-            laserBeam.DarkWizard = this;
+            laserBeam.AssociatedEnemy = this;
         }
 
         /// <summary>
         /// Throw an fire laser on the hero
         /// <example> Example(s):
         /// <code>
-        ///     darkWizard.IceLaser();
+        ///     darkWizard.FireLaser();
         /// </code>
         /// </example>
         /// </summary>
         public void FireLaser()
         {
-            isAttacking = true;
+            IsAttacking = true;
             Anim.SetBool("isFireAttacking", true);
             Vector3 initial = transform.position;
             initial.x += 0.75f;
@@ -86,7 +86,7 @@ namespace Aloha
             this.laserBeam = Instantiate(fireLaserPrefab, initial, Quaternion.identity);
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
-            laserBeam.DarkWizard = this;
+            laserBeam.AssociatedEnemy = this;
 
         }
 
@@ -104,7 +104,7 @@ namespace Aloha
             {
                 Destroy(laserBeam.gameObject);
             }
-            isAttacking = false;
+            IsAttacking = false;
             Anim.SetBool("isIceAttacking", false);
             Anim.SetBool("isFireAttacking", false);
         }

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: DarkWizardStats
   m_EditorClassIdentifier: 
   MaxHealth: 40
-  Attack: 2
+  Attack: 4
   Defense: 0
   Level: 0

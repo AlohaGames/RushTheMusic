@@ -13,7 +13,7 @@ namespace Aloha.AI
         private DarkWizard darkWizard;
 
         /// <summary>
-        /// LancerAttack Node Constructor
+        /// DarkWizardIceAttack Node Constructor
         /// </summary>
         /// <param name="graph">Graph containing the node</param>
         public DarkWizardIceAttack(Graph graph) : base(graph)
@@ -31,7 +31,7 @@ namespace Aloha.AI
         }
 
         /// <summary>
-        /// Make the wyrmling Attack
+        /// Make the dark wizard ice laser Attack
         /// </summary>
         /// <returns></returns>
         public override IEnumerator Action()
@@ -41,7 +41,7 @@ namespace Aloha.AI
             // Create an ice laser
             darkWizard.IceLaser();
 
-            while(darkWizard.isAttacking)
+            while(darkWizard.IsAttacking)
             {
                 yield return null;
             }
