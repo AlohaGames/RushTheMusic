@@ -117,5 +117,10 @@ namespace Aloha
         /// Bat
         /// </summary>
         bat = 11,
+
+        /// <summary>
+        /// DarkWizard
+        /// </summary>
+        darkWizard = 12,
     }
 }
