@@ -7,7 +7,6 @@ namespace Aloha.UI
 {
 	/// <summary>
 	/// Class to animate an image
-	/// https://gist.github.com/almirage/e9e4f447190371ee6ce9
 	/// </summary>
 	public class ImageAnimation : MonoBehaviour
 	{
