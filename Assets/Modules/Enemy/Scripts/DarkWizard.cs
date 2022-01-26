@@ -21,6 +21,7 @@ namespace Aloha
         [HideInInspector]
         public Animator Anim;
         
+        [HideInInspector]
         public bool IsAttacking;
 
         /// <summary>

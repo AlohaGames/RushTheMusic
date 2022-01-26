@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
   prewarm: 1
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -4819,6 +4819,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireLaser
       objectReference: {fileID: 0}
+    - target: {fileID: 3511686556560137361, guid: 05840e935772d0742835af2c6dd0f9d0, type: 3}
+      propertyPath: Particles
+      value: 
+      objectReference: {fileID: 3994235118544181430}
     - target: {fileID: 3511686556560137373, guid: 05840e935772d0742835af2c6dd0f9d0, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -17,6 +17,7 @@ namespace Aloha
         private float speed;
         private float duration;
         public DarkWizard AssociatedEnemy;
+        public ParticleSystem Particles;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
@@ -54,6 +55,10 @@ namespace Aloha
             // First step : extension from origin to end
             float time = 0;
             transform.localScale = localScale;
+            if (this.Particles)
+            {
+                this.Particles.Play();
+            }
             while (time < (distance / 2))
             {
                 time += Time.deltaTime * this.speed;
