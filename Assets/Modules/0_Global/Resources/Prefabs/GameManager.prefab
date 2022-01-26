@@ -74,9 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e067358a06d4ca6eb88644b301808475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsPlaying: 0
-  IsInfinite: 0
   defaultLevel: test-level.rtm
+  IsPlaying: 0
+  isInfinite: 0
 --- !u!114 &7324531514901806434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,8 +93,6 @@ MonoBehaviour:
   DistanceScore: 0
   EnemyKilledScore: 0
   HitScore: 0
-  InfiniteScore: 0
-  PreviousScore: 0
   KillCounter: 0
   TilesCounter: 0
   ScoreUI: {fileID: 3739102699806178544}
@@ -1093,10 +1091,6 @@ PrefabInstance:
     - target: {fileID: 6015154607925918880, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6015154607925918881, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
-      propertyPath: NumberOfTiles
-      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6015154607925918886, guid: 2ecd410e9200a8b40901704dcb4881f3, type: 3}
       propertyPath: m_Name
