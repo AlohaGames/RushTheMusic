@@ -13,12 +13,12 @@ namespace Aloha.UI
 	{
 		private int index = 0;
 		private Image image;
-		private int frame = 0;
 
-		public Sprite[] sprites;
+		public Sprite[] Sprites;
+		public float Delay = 1.0f;
 		public int spritePerFrame = 6;
-		public bool loop = true;
-		public bool destroyOnEnd = false;
+		public bool Loop = true;
+		public bool DestroyOnEnd = false;
 
 		/// <summary>
 		/// Is called when the script instance is being loaded.
@@ -26,23 +26,24 @@ namespace Aloha.UI
 		void Awake()
 		{
 			image = GetComponent<Image>();
+			StartCoroutine(Animate(this.Delay));
 		}
 
 		/// <summary>
-		/// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
+		/// Coroutine to animate the image
 		/// </summary>
-		void Update()
+		private IEnumerator Animate(float delay)
 		{
-			if (!loop && index == sprites.Length) return;
-			frame++;
-			if (frame < spritePerFrame) return;
-			image.sprite = sprites[index];
-			frame = 0;
-			index++;
-			if (index >= sprites.Length)
-			{
-				if (loop) index = 0;
-				if (destroyOnEnd) Destroy(gameObject);
+			while (true)
+            {
+				image.sprite = Sprites[index];
+				index++;
+				if (index >= Sprites.Length)
+				{
+					if (Loop) index = 0;
+					if (DestroyOnEnd) Destroy(gameObject);
+				}
+				yield return new WaitForSeconds(delay);
 			}
 		}
 	}

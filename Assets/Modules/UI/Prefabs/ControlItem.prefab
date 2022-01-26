@@ -164,9 +164,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites: []
+  Delay: 1
   spritePerFrame: 400
-  loop: 1
-  destroyOnEnd: 0
+  Loop: 1
+  DestroyOnEnd: 0
 --- !u!1 &2955632282226463141
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,9 +257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites: []
+  Delay: 1
   spritePerFrame: 400
-  loop: 1
-  destroyOnEnd: 0
+  Loop: 1
+  DestroyOnEnd: 0
 --- !u!1 &3198075173398373470
 GameObject:
   m_ObjectHideFlags: 0

@@ -1052,15 +1052,15 @@ PrefabInstance:
       value: 0.39215687
       objectReference: {fileID: 0}
     - target: {fileID: 1120280464480596912, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.size
+      propertyPath: Sprites.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1120280464480596912, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.data[0]
+      propertyPath: Sprites.Array.data[0]
       value: 
       objectReference: {fileID: -7919483562067870764, guid: 0587ba0e015e7fc43849814ba826defd, type: 3}
     - target: {fileID: 1120280464480596912, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.data[1]
+      propertyPath: Sprites.Array.data[1]
       value: 
       objectReference: {fileID: 6992781528146470872, guid: 0587ba0e015e7fc43849814ba826defd, type: 3}
     - target: {fileID: 2185887436433252803, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
@@ -1545,15 +1545,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -195983692151551658, guid: 77cfcefc8cccc1146840dfdc7daffc52, type: 3}
     - target: {fileID: 4814675663287928993, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.size
+      propertyPath: Sprites.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4814675663287928993, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.data[0]
+      propertyPath: Sprites.Array.data[0]
       value: 
       objectReference: {fileID: 7596617482867935680, guid: 0587ba0e015e7fc43849814ba826defd, type: 3}
     - target: {fileID: 4814675663287928993, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.data[1]
+      propertyPath: Sprites.Array.data[1]
       value: 
       objectReference: {fileID: 5616455819647492170, guid: 0587ba0e015e7fc43849814ba826defd, type: 3}
     - target: {fileID: 4869458386161416213, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
@@ -1834,15 +1834,15 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4814675663287928993, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.size
+      propertyPath: Sprites.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4814675663287928993, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.data[0]
+      propertyPath: Sprites.Array.data[0]
       value: 
       objectReference: {fileID: 7596617482867935680, guid: 0587ba0e015e7fc43849814ba826defd, type: 3}
     - target: {fileID: 4814675663287928993, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
-      propertyPath: sprites.Array.data[1]
+      propertyPath: Sprites.Array.data[1]
       value: 
       objectReference: {fileID: -5049792356719779147, guid: 0587ba0e015e7fc43849814ba826defd, type: 3}
     - target: {fileID: 4869458386161416213, guid: 77433c53a3f2c9244a5bae0ffb8afb23, type: 3}
