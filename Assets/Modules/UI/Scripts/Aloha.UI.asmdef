@@ -2,7 +2,8 @@
     "name": "Aloha.UI",
     "rootNamespace": "Aloha.UI",
     "references": [
-        "GUID:f7782f9d076f8eadc9c6c5fd95cee791"
+        "GUID:f7782f9d076f8eadc9c6c5fd95cee791",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
