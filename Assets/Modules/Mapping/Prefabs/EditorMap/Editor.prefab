@@ -130,6 +130,7 @@ MonoBehaviour:
   Spider: {fileID: 0}
   Canon: {fileID: -1301063852752694408, guid: 01f3ff5eea96fa94e94e98686acdbcbc, type: 3}
   Bat: {fileID: 3727447608914176434, guid: 7de7721102ebc2840a4cf6dccf7eae93, type: 3}
+  DarkWizard: {fileID: 94039783306638625, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
 --- !u!1 &8990941128608269565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,8 +1405,8 @@ MonoBehaviour:
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
-  m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_DecelerationRate: 1
+  m_ScrollSensitivity: 100
   m_Viewport: {fileID: 0}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
@@ -1546,6 +1547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0424ccd13aa710323b6fde126302e38f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EditorRoot: {fileID: 0}
   SelectedTileUI: {fileID: 8990941129706454653}
   selectTiles: []
   SelectedColor: {r: 0.09831533, g: 0.9716981, b: 0, a: 0}
@@ -2125,7 +2127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74937d3959d7678f8ba53c33c58ad20d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
+  type: 12
 --- !u!1 &8990941129443040109
 GameObject:
   m_ObjectHideFlags: 0
@@ -4330,7 +4332,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 6000, y: 630}
+  m_SizeDelta: {x: 100000, y: 630}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &8990941130140189409
 MonoBehaviour:
@@ -4452,7 +4454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: Description
 --- !u!1 &8990941130191810239
 GameObject:
   m_ObjectHideFlags: 0

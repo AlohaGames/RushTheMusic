@@ -61,6 +61,8 @@ namespace Aloha.UI
                 p.GetComponent<SelectTile>().SetId(i);
                 text.transform.SetParent(this.transform);
             }
+
+            (this.transform as RectTransform).sizeDelta = new Vector2((270 * numTiles), 630);
             EditorManager.Instance.NeedUpdate();
         }
     }

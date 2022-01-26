@@ -16,6 +16,13 @@ namespace Aloha.UI
         public Sprite Spider;
         public Sprite Canon;
         public Sprite Bat;
+        public Sprite DarkWizard;
+
+        /// <summary>
+        /// Get the corresponding Enemy Sprite based on EnemyType
+        /// </summary>
+        /// <param name="enemyType"></param>
+        /// <returns></returns>
 
         public Sprite GetEnemySprite(EnemyType enemyType)
         {
@@ -37,6 +44,8 @@ namespace Aloha.UI
                     return Bat;
                 // case EnemyType.spider:
                 // return Spider;
+                case EnemyType.darkWizard:
+                    return DarkWizard;
                 default:
                     return Default;
             }
