@@ -8,6 +8,7 @@ namespace Aloha.UI
 {
     public class EditorManager : Singleton<EditorManager>
     {
+        public EditorRoot EditorRoot;
         public int? SelectedTilesId = null;
         [SerializeField]
         private LevelMapping levelMapping = null;
@@ -36,6 +37,11 @@ namespace Aloha.UI
                 needUpdate = false;
                 UpdateSelectTiles();
             }
+        }
+
+        public void SetTilesCount(int count)
+        {
+            levelMapping.TileCount = count;
         }
 
         public void NeedUpdate()
@@ -71,6 +77,11 @@ namespace Aloha.UI
         public LevelMapping GetLevelMapping()
         {
             return levelMapping;
+        }
+
+        public void SetLevelMapping(LevelMapping levelMapping)
+        {
+            this.levelMapping = levelMapping;
         }
 
     }

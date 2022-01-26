@@ -4,6 +4,7 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using SimpleFileBrowser;
+using Aloha;
 
 namespace Aloha.UI
 {
@@ -74,20 +75,7 @@ namespace Aloha.UI
         {
             AudioClip clip = LevelManager.Instance.LevelMusic;
             content.SetDuration(clip.length);
-            durationText.text = ConvertToMinSec(clip.length);
-        }
-
-        private string ConvertToMinSec(float duration)
-        {
-            string str = "";
-            int min = (int) (duration / 60);
-            int sec = (int) (duration % 60);
-            if (min > 0)
-            {
-                str += min + " min ";
-            }
-            str += sec + " sec";
-            return str;
+            durationText.text = Utils.ConvertToMinSec(clip.length);
         }
 
         private void OnDestroy()

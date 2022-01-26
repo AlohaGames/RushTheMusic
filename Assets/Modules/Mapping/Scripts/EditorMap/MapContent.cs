@@ -51,6 +51,7 @@ namespace Aloha.UI
             this.transform.Clear();
             float numTiles = ((this.duration * this.tileSpeed) / this.titleSize);
             tileNumber.text = ((int) numTiles + 1).ToString();
+            EditorManager.Instance.SetTilesCount((int) numTiles + 1);
             for (int i = 0; i < numTiles; i++)
             {
                 GameObject p = Instantiate(panel);

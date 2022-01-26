@@ -191,6 +191,12 @@ namespace Aloha
             return (list.Count == 0);
         }
 
+        /// <summary>
+        /// Add or Get Component
+        /// </summary>
+        /// <param name="go"></param>
+        /// <typeparam name="T">Component</typeparam>
+        /// <returns>return the component if found add and return it else</returns>
         public static T AddGetComponent<T>(this GameObject go) where T : Component
         {
             T component = go.GetComponent<T>();
@@ -201,6 +207,11 @@ namespace Aloha
             return component;
         }
 
+        /// <summary>
+        /// Remove all children
+        /// </summary>
+        /// <param name="transform"></param>
+        /// <returns>root</returns>
         public static Transform Clear(this Transform transform)
         {
             foreach (Transform child in transform)
@@ -208,6 +219,24 @@ namespace Aloha
                 GameObject.Destroy(child.gameObject);
             }
             return transform;
+        }
+
+        /// <summary>
+        /// Convert a duration in sec to string description (mm min ss sec)
+        /// </summary>
+        /// <param name="duration">float duration in seconds</param>
+        /// <returns>Description</returns>
+        public static string ConvertToMinSec(float duration)
+        {
+            string str = "";
+            int min = (int) (duration / 60);
+            int sec = (int) (duration % 60);
+            if (min > 0)
+            {
+                str += min + " min ";
+            }
+            str += sec + " sec";
+            return str;
         }
     }
 }
