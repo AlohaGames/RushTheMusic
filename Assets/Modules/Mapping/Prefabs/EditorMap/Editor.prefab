@@ -881,7 +881,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Number of Tiles
+  m_Text: Nombre de tuiles
 --- !u!1 &8990941128748850423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1993,7 +1993,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Duration
+  m_Text: "Dur\xE9e"
 --- !u!1 &8990941129406634476
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2349,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Export
+  m_Text: Exporter
 --- !u!1 &8990941129501884835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2428,7 +2428,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Map Name
+  m_Text: Nom
 --- !u!1 &8990941129535978269
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,7 +2777,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Name
+  m_Text: Nom
 --- !u!1 &8990941129706454656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3066,7 +3066,7 @@ GameObject:
   - component: {fileID: 8990941129790053656}
   - component: {fileID: 8990941129790053663}
   m_Layer: 5
-  m_Name: Inport
+  m_Name: Import
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3331,7 +3331,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Load Music
+  m_Text: Charger Audio
 --- !u!1 &8990941129861860666
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,7 +3892,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Import
+  m_Text: Importer
 --- !u!1 &8990941130042569281
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,7 +4803,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Path to Music
+  m_Text: Chemin
 --- !u!1 &8990941130506545553
 GameObject:
   m_ObjectHideFlags: 0
