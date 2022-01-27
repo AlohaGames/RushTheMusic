@@ -118,6 +118,34 @@ namespace Aloha.UI
             SetUIType(tileUI, type);
         }
 
+        public void CleanEnemy(LevelMapping levelMapping)
+        {
+            List<EnemyMapping> enemyMappings;
+            if (levelMapping.Enemies.ContainsKey(currentId))
+            {
+                enemyMappings = levelMapping.Enemies[currentId];
+                EnemyMapping found = null;
+                foreach (EnemyMapping enemyMapping in enemyMappings)
+                {
+                    if (enemyMapping.VerticalPosition == verticalPosition && enemyMapping.HorizontalPosition == horizontalPosition)
+                    {
+                        found = enemyMapping;
+                        break;
+                    }
+                }
+                if (found != null)
+                {
+                    enemyMappings.Remove(found);
+                }
+                levelMapping.Enemies.Add(currentId, enemyMappings);
+            }
+
+            GameObject ui = GetGameObjectFromPos(horizontalPosition, verticalPosition);
+            ui?.transform.Clear();
+            GameObject tileUI = GetTileGameObjectFromPos(horizontalPosition);
+            tileUI?.transform.Clear();
+        }
+
         private GameObject GetTileGameObjectFromPos(HorizontalPositionEnum h)
         {
             SelectTile tile = EditorManager.Instance.GetSelectTile(currentId);

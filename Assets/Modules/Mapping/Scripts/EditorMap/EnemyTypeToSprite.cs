@@ -18,6 +18,8 @@ namespace Aloha.UI
         public Sprite Bat;
         public Sprite DarkWizard;
 
+        public Sprite Delete;
+
         /// <summary>
         /// Get the corresponding Enemy Sprite based on EnemyType
         /// </summary>

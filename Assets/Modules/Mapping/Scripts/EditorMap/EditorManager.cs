@@ -65,8 +65,12 @@ namespace Aloha.UI
 
         public void AddEnemy(EnemyType type)
         {
-            Debug.Log("Add : " + type);
             SelectedTileUI.AddEnemy(type, levelMapping);
+        }
+
+        public void CleanEnemy()
+        {
+            SelectedTileUI.CleanEnemy(levelMapping);
         }
 
         public SelectTile GetSelectTile(int id)

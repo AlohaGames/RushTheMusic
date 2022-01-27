@@ -3,7 +3,18 @@ guid: 402f462bbdeb02e1a854ef77d45fe9ab
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Default: {fileID: 21300000, guid: 1af8b02dbfcea8a0390204e0b92e9271, type: 3}
+  - Lancer: {fileID: -650218062088358348, guid: 85801d0003ad5eb40a07f08bdb1a266b, type: 3}
+  - Wyrmling: {fileID: -5895799642641748844, guid: cf910e5deccb1af44937299cbaf83698, type: 3}
+  - Assassin: {fileID: 7216209594270603566, guid: 8ce92b2bc22e94341affec753dc02fc2, type: 3}
+  - Chest: {fileID: -6341029276875165808, guid: 6122a34bd530df4468573436288bf8c3, type: 3}
+  - Wall: {fileID: 1931772509911548677, guid: 5cfd5ff46b267ad499748a62a78e0b4d, type: 3}
+  - Spider: {instanceID: 0}
+  - Canon: {fileID: -1301063852752694408, guid: 01f3ff5eea96fa94e94e98686acdbcbc, type: 3}
+  - Bat: {fileID: 3727447608914176434, guid: 7de7721102ebc2840a4cf6dccf7eae93, type: 3}
+  - DarkWizard: {fileID: 94039783306638625, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
+  - Delete: {fileID: 21300000, guid: 1e6c36e9fe0cd9f3caafa2c3bdc6344e, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
