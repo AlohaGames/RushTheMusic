@@ -17,6 +17,7 @@ namespace Aloha
         public GameObject TrackSelectionMenu;
         public GameObject CharacterMenu;
         public GameObject SettingsMenu;
+        public GameObject ControlsMenu;
         public GameObject GameOverMenu;
         public GameObject PauseMenu;
         public GameObject EndGameMenu;
@@ -51,6 +52,7 @@ namespace Aloha
             TrackSelectionMenu.SetActive(false);
             CharacterMenu.SetActive(false);
             SettingsMenu.SetActive(false);
+            ControlsMenu.SetActive(false);
             GameOverMenu.SetActive(false);
             PauseMenu.SetActive(false);
             EndGameMenu.SetActive(false);
@@ -133,6 +135,21 @@ namespace Aloha
             this.HideEverything();
             SettingsMenu.SetActive(true);
             navigationHistory.Push(ShowOptionMenu);
+        }
+
+        /// <summary>
+        /// Show only controls menu and hide other components
+        /// <example> Example(s):
+        /// <code>
+        /// menuRoot.ShowControlsMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowControlsMenu()
+        {
+            this.HideEverything();
+            ControlsMenu.SetActive(true);
+            navigationHistory.Push(ShowControlsMenu);
         }
 
         /// <summary>
