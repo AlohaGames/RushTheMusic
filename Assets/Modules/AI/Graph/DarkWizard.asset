@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41d566fbaa3cb880da03fb12a582290d, type: 3}
-  m_Name: WarriorStats
+  m_Script: {fileID: 11500000, guid: 4b204f319c870f7499af887f54f26856, type: 3}
+  m_Name: DarkWizard
   m_EditorClassIdentifier: 
-  MaxHealth: 1000
-  Attack: 10
-  Defense: 10
-  Level: 1
-  XP: 0
-  MaxXP: 100
-  MaxRage: 100
+  Runner: {fileID: 0}
+  EntryNode: 0

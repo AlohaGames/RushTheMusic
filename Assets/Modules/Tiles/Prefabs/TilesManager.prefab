@@ -43,11 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe1454c2f8d9a74f8db39e4276a74d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefabs:
-  - {fileID: 7879650728313143345, guid: b6c6031e52d175c4f9501291b5573ffb, type: 3}
-  - {fileID: 7812419412414472052, guid: baabf2616203bb94cb74aa3ddcf5ffa7, type: 3}
-  - {fileID: 686639437003167491, guid: bd301d7578680e44cb6d19cc12ba1d1c, type: 3}
-  NumberOfTiles: 20
+  gameIsStarted: 0
+  NumberOfTiles: 50
   TileSpeed: 7
   TileSize: 5
-  GameIsStarted: 0
+  Running: 0

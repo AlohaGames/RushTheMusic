@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Aloha.Events;
+using System;
+using UnityEngine.EventSystems;
 
-namespace Aloha
+namespace Aloha.UI
 {
     /// <summary>
     /// Class for the hero invoker button
     /// </summary>
     [RequireComponent(typeof(Button))]
-    public class HeroSelectionMenu : MonoBehaviour
+    public class HeroSelectionMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
+        [SerializeField]
+        private HeroDescription heroDescription;
+
         public HeroType Type;
         public MenuRoot MenuRoot;
+        
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -38,6 +43,16 @@ namespace Aloha
             GameManager.Instance.StartLevel();
         }
 
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            heroDescription.Show(Type);
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            heroDescription.Hide();
+        }
+
         /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
@@ -45,5 +60,6 @@ namespace Aloha
         {
             GetComponent<Button>().onClick.RemoveListener(OnClick);
         }
+
     }
 }

@@ -19,6 +19,7 @@ namespace Aloha.Test
             // Instance managers
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
+            tilesManager.NumberOfTiles = 20;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
             levelManager.LevelMapping = new LevelMapping();
