@@ -47,8 +47,8 @@ namespace Aloha
         /// </summary>
         public void UpdateUIText()
         {
-            InGameScoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
-            InGameScoreInfiniText.text = "(Total: " + ScoreManager.Instance.InfiniteScore + ")";
+            InGameScoreText.text = "Score : " + ScoreManager.Instance.TotalScore;
+            InGameScoreInfiniText.text = "(Total : " + ScoreManager.Instance.InfiniteScore + ")";
         }
     }
 }
