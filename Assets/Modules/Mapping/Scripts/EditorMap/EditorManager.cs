@@ -44,6 +44,11 @@ namespace Aloha.UI
             levelMapping.TileCount = count;
         }
 
+        public void SetBiome(string biome)
+        {
+            levelMapping.BiomeName = biome;
+        }
+
         public void NeedUpdate()
         {
             needUpdate = true;
