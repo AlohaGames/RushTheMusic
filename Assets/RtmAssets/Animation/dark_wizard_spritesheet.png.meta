@@ -4,28 +4,28 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 94039783306638625
-    second: wizard_spritesheet_0
+    second: dark_wizard_spritesheet_0
   - first:
       213: -8506104162930576330
-    second: wizard_spritesheet_1
+    second: dark_wizard_spritesheet_1
   - first:
       213: 3615390417354316617
-    second: wizard_spritesheet_2
+    second: dark_wizard_spritesheet_2
   - first:
       213: 2814791460941491966
-    second: wizard_spritesheet_3
+    second: dark_wizard_spritesheet_3
   - first:
       213: 1668918824411877712
-    second: wizard_spritesheet_4
+    second: dark_wizard_spritesheet_4
   - first:
       213: -819979605029073593
-    second: wizard_spritesheet_5
+    second: dark_wizard_spritesheet_5
   - first:
       213: -38338129762249446
-    second: wizard_spritesheet_6
+    second: dark_wizard_spritesheet_6
   - first:
       213: -4951524470920460442
-    second: wizard_spritesheet_7
+    second: dark_wizard_spritesheet_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,7 +127,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wizard_spritesheet_0
+      name: dark_wizard_spritesheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -135,7 +135,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -148,7 +148,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_1
+      name: dark_wizard_spritesheet_1
       rect:
         serializedVersion: 2
         x: 512
@@ -156,7 +156,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_2
+      name: dark_wizard_spritesheet_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -177,7 +177,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -190,7 +190,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_3
+      name: dark_wizard_spritesheet_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -198,7 +198,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -211,7 +211,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_4
+      name: dark_wizard_spritesheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -219,7 +219,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -232,7 +232,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_5
+      name: dark_wizard_spritesheet_5
       rect:
         serializedVersion: 2
         x: 512
@@ -240,7 +240,7 @@ TextureImporter:
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,15 +253,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_6
+      name: dark_wizard_spritesheet_6
       rect:
         serializedVersion: 2
         x: 1024
-        y: 0
+        y: 3
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -274,15 +274,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wizard_spritesheet_7
+      name: dark_wizard_spritesheet_7
       rect:
         serializedVersion: 2
         x: 1536
-        y: 0
+        y: 3
         width: 512
         height: 512
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

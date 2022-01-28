@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: wizard_fire_attack_anim
+  m_Name: dark_wizard_ice_attack_anim
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -38338129762249446, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
+      value: {fileID: 1668918824411877712, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
     - time: 0.33333334
-      value: {fileID: -4951524470920460442, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
+      value: {fileID: -819979605029073593, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -38338129762249446, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
-    - {fileID: -4951524470920460442, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
+    - {fileID: 1668918824411877712, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
+    - {fileID: -819979605029073593, guid: cb8c842e162f31f488d5c0e1c18bd84a, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

@@ -50,19 +50,21 @@ namespace Aloha.UI
         {
             this.transform.Clear();
             float numTiles = ((this.duration * this.tileSpeed) / this.titleSize);
+            (this.transform as RectTransform).sizeDelta = new Vector2(260 * (numTiles + 1), 630);
             tileNumber.text = ((int) numTiles + 1).ToString();
             EditorManager.Instance.SetTilesCount((int) numTiles + 1);
             for (int i = 0; i < numTiles; i++)
             {
                 GameObject p = Instantiate(panel);
                 p.transform.SetParent(this.transform);
+                p.transform.localScale = Vector3.one;
                 Text text = Instantiate(panelNum);
                 text.text = i.ToString();
                 p.GetComponent<SelectTile>().SetId(i);
                 text.transform.SetParent(this.transform);
+                text.transform.localScale = Vector3.one;
             }
 
-            (this.transform as RectTransform).sizeDelta = new Vector2((270 * numTiles), 630);
             EditorManager.Instance.NeedUpdate();
         }
     }
