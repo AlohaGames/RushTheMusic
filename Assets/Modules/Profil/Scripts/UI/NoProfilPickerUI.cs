@@ -21,6 +21,7 @@ namespace Aloha
         private void onCreate()
         {
             CPM.transform.GetChild(CPM.transform.childCount - 1).gameObject.SetActive(true);
+            CPM.transform.GetChild(CPM.transform.childCount - 1)?.Find("form/Name")?.GetComponent<InputField>()?.Select();
         }
 
     }
