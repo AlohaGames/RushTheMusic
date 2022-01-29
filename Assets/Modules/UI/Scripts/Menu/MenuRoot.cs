@@ -21,6 +21,7 @@ namespace Aloha
         public GameObject GameOverMenu;
         public GameObject PauseMenu;
         public GameObject EndGameMenu;
+        public GameObject Credits;
 
         private Stack<Action> navigationHistory = new Stack<Action>();
 
@@ -56,6 +57,7 @@ namespace Aloha
             GameOverMenu.SetActive(false);
             PauseMenu.SetActive(false);
             EndGameMenu.SetActive(false);
+            Credits.SetActive(false);
         }
 
         /// <summary>
@@ -209,6 +211,21 @@ namespace Aloha
             EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués" + "\t\t" + ScoreManager.Instance.EnemyKilledScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
+        }
+
+        /// <summary>
+        /// Show only credits and hide other components
+        /// <example> Example(s):
+        /// <code>
+        /// menuRoot.ShowCredits()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowCredits()
+        {
+            this.HideEverything();
+            this.Credits.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
