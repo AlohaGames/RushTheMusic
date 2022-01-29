@@ -13,9 +13,9 @@ namespace Aloha
         /// </summary>
         public void Scale(int level)
         {
-            this.Attack = this.Attack + (level * 2);
-            this.Defense = this.Defense + (level * 2);
-            this.MaxHealth = this.MaxHealth + (level * 2);
+            this.Attack = this.Attack + (level * 3);
+            this.Defense = this.Defense + (level * 3);
+            this.MaxHealth = this.MaxHealth + (level * 3);
             this.Level = level;
         }
     }
