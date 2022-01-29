@@ -611,8 +611,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 630, y: 0}
+  m_SizeDelta: {x: 1260, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5784773189703105200
 CanvasRenderer:
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "D\xE9velopp\xE9 avec amour par les \xE9quipes d'<b>AlohaGames</b>\n\xC9dit\xE9
+  m_text: "D\xE9velopp\xE9 avec amour par l'\xE9quipe d'<b>AlohaGames</b>\n\xC9dit\xE9
     pour la prosp\xE9rit\xE9 par <b>G.L-Divertissement</b>"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1150,8 +1150,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652172935669216989, guid: 8096151d8271e4f49b187a87c22c0352, type: 3}
       propertyPath: m_text
-      value: "Nous remercions, tout particuli\xE8rement, nous comp\xE8res et support
-        de tout temps. Nous pensons notamment \xE0 nos mais, \xE0 nos famille.\nMention
+      value: "Nous remercions, tout particuli\xE8rement, nos comp\xE8res et supports
+        de tout temps. Nous pensons notamment \xE0 nos amis, \xE0 nos familles.\nMention
         particuli\xE8re pour K\xE9vin Plestan, consultant design, testeur et plus... "
       objectReference: {fileID: 0}
     - target: {fileID: 4948933695120009048, guid: 8096151d8271e4f49b187a87c22c0352, type: 3}
@@ -1314,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2652172935669216989, guid: 8096151d8271e4f49b187a87c22c0352, type: 3}
       propertyPath: m_text
-      value: "\u2022 MAZE Gurvan\n\u2022 \"Nini\"\n\u2022 PLESTAN K\xE9vin"
+      value: "\u2022 MAZ\xC9 Gurvan\n\u2022 \"Nini\"\n\u2022 PLESTAN K\xE9vin"
       objectReference: {fileID: 0}
     - target: {fileID: 4948933695120009048, guid: 8096151d8271e4f49b187a87c22c0352, type: 3}
       propertyPath: m_AnchorMax.y
