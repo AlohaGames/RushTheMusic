@@ -75,5 +75,13 @@ namespace Aloha
             if (isTilesStopped) runAndStopTiles();
             base.Die();
         }
+
+        /// <summary>
+        /// Security if the game is loose when the game is stopped
+        /// </summary>
+        private void OnDestroy()
+        {
+            if (isTilesStopped) runAndStopTiles();
+        }
     }
 }
