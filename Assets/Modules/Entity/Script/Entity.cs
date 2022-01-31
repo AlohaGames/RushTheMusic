@@ -144,7 +144,7 @@ namespace Aloha
         IEnumerator SwitchColor()
         {
             isHitted = true;
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            SpriteRenderer sprite = GetComponentsInChildren<SpriteRenderer>()[0];
             if (sprite)
             {
                 sprite.color = new Color(1f, 0.5f, 0.5f);

@@ -18,7 +18,6 @@ namespace Aloha
         [SerializeField]
         private Laser fireLaserPrefab;
 
-        [HideInInspector]
         public Animator Anim;
         
         [HideInInspector]
@@ -29,7 +28,6 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            Anim = GetComponent<Animator>();
             IsAttacking = false;
         }
 

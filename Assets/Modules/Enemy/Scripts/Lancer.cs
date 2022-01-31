@@ -14,14 +14,6 @@ namespace Aloha
         public Animator Anim;
 
         /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
-        /// </summary>
-        void Start()
-        {
-            Anim = GetComponent<Animator>();
-        }
-
-        /// <summary>
         /// Function to bump the lancer
         /// </summary>
         /// <param name="direction"></param>

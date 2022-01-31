@@ -86,8 +86,6 @@ GameObject:
   - component: {fileID: 4457010433802779566}
   - component: {fileID: 7750575686592323064}
   - component: {fileID: 6644847808761919312}
-  - component: {fileID: 8541597814038498436}
-  - component: {fileID: 802737036461523027}
   - component: {fileID: 8603854836395003011}
   m_Layer: 0
   m_Name: Bat
@@ -108,6 +106,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 338131154614144822}
+  - {fileID: 8019958331511327953}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -139,13 +138,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.98999184, y: 0.6347829, z: 2}
   m_Center: {x: 0.0059985816, y: -0.0034826398, z: 0}
---- !u!212 &8541597814038498436
-SpriteRenderer:
+--- !u!114 &8603854836395003011
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4457010433802779557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b453f31f2bd8a641a2055e51c207d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: a0883f9f94aeee74ea09666f29fb17d9, type: 2}
+  TakeDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealth: 0
+  Hero: {fileID: 0}
+  NearHeroTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  Anim: {fileID: 4893188361261188756}
+--- !u!1 &6294292276999856248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8019958331511327953}
+  - component: {fileID: 9106581154498306203}
+  - component: {fileID: 4893188361261188756}
+  m_Layer: 0
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8019958331511327953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294292276999856248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4457010433802779566}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &9106581154498306203
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6294292276999856248}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -190,14 +243,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &802737036461523027
+--- !u!95 &4893188361261188756
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4457010433802779557}
+  m_GameObject: {fileID: 6294292276999856248}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 5ff0cc8e5b7ecd842bbad3c72aff81ae, type: 2}
@@ -209,25 +262,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8603854836395003011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4457010433802779557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b453f31f2bd8a641a2055e51c207d79, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: a0883f9f94aeee74ea09666f29fb17d9, type: 2}
-  TakeDamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  CurrentHealth: 0
-  Hero: {fileID: 0}
-  NearHeroTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  Anim: {fileID: 802737036461523027}

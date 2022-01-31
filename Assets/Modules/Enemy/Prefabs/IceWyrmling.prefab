@@ -13,13 +13,67 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.56, y: 2.56, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!212 &963574978048165803
-SpriteRenderer:
+--- !u!114 &9012551013757772475
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450965787927714688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c238f4ea3d78ac241bed5ef56d33d08a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 1c2a1c290285f8645843a7b377996063, type: 2}
+  TakeDamageEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  CurrentHealth: 0
+  Hero: {fileID: 0}
+  NearHeroTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  fireballPrefab: {fileID: 1023215018960411582, guid: 495e712906aa2d044bdfe4cc2a17fef1, type: 3}
+--- !u!1 &2605350057828432221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8711601060986977263}
+  - component: {fileID: 3298704605483641960}
+  - component: {fileID: 5937857777465646992}
+  m_Layer: 0
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8711601060986977263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605350057828432221}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1450965787927714699}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &3298704605483641960
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605350057828432221}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -64,14 +118,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8139538029084035964
+--- !u!95 &5937857777465646992
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450965787927714688}
+  m_GameObject: {fileID: 2605350057828432221}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 90dbd16e28b94d148a6c99508bea4abf, type: 2}
@@ -83,27 +137,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9012551013757772475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1450965787927714688}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c238f4ea3d78ac241bed5ef56d33d08a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: 1c2a1c290285f8645843a7b377996063, type: 2}
-  TakeDamageEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  CurrentHealth: 0
-  NearHeroTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  fireballPrefab: {fileID: 1023215018960411582, guid: 495e712906aa2d044bdfe4cc2a17fef1, type: 3}
 --- !u!1001 &425315954119216296
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,5 +213,10 @@ PrefabInstance:
 --- !u!1 &1450965787927714688 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
+  m_PrefabInstance: {fileID: 425315954119216296}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1450965787927714699 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1280670638334809891, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
   m_PrefabInstance: {fileID: 425315954119216296}
   m_PrefabAsset: {fileID: 0}
