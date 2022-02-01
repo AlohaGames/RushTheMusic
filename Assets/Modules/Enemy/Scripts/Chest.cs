@@ -39,9 +39,40 @@ namespace Aloha
         public void Init(ChestStats stats)
         {
             base.Init(stats);
-            this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
-            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
             anim = GetComponent<Animator>();
+        }
+
+        public void AddItem(string itemType)
+        {
+            if (item != null)
+            {
+                Destroy(item.gameObject);
+            }
+            ItemType type = ItemType.healPotion;
+            switch (itemType)
+            {
+                case "Soin":
+                    type = ItemType.healPotion;
+                    break;
+                case "Secondaire":
+                    Hero hero = GameManager.Instance.GetHero();
+                    if (hero is Wizard)
+                    {
+                        type = ItemType.manaPotion;
+                    }
+                    else if (hero is Warrior)
+                    {
+                        type = ItemType.ragePotion;
+                    }
+                    break;
+                case "Expérience":
+                    type = ItemType.experiencePotion;
+                    break;
+                default:
+                    return;
+            }
+            this.item = Instantiate(this.ItemListPrefab[(int) type]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
         }
 
         /// <summary>
@@ -57,12 +88,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Bump the entity in a specific direction and with a speed
-        /// <example> Example(s):
-        /// <code>
-        ///     StartCoroutine(wall.GetBump(new Vector3(0, 0, 2), 2));
-        /// </code>
-        /// </example>
+        /// Bump the entity in a specific direction and with a speed (a chest did not bump)
         /// </summary>
         /// <param name="direction">The direction of enemy bumping</param>
         /// <param name="speed">The speed of enemy bumping</param>
