@@ -21,9 +21,9 @@ namespace Aloha
             // Each level need 20% more XP
             this.MaxXP = (int)(this.MaxXP * 1.20f);
 
-            this.Attack = this.Attack + (Level * 3);
-            this.Defense = this.Defense + (Level * 3);
-            this.MaxHealth = this.MaxHealth + (Level * 3);
+            this.Attack = this.Attack + (Level * 2);
+            this.Defense = this.Defense + (Level * 2);
+            this.MaxHealth = this.MaxHealth + (Level * 2);
         }
     }
 }
