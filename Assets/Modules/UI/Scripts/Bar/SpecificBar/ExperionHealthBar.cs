@@ -9,7 +9,7 @@ namespace Aloha
     /// <summary>
     /// Class for the secondary bar
     /// </summary>
-    public class ExperionHealthBar : VerticalBar
+    public class ExperionHealthBar : HorizontalBar
     {
 
         /// <summary>

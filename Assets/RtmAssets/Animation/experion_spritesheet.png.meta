@@ -26,6 +26,54 @@ TextureImporter:
   - first:
       213: 3701965603204758267
     second: experion_spritesheet_7
+  - first:
+      213: -1144258448277039933
+    second: experion_spritesheet_8
+  - first:
+      213: -6453606557231925187
+    second: experion_spritesheet_9
+  - first:
+      213: -7711125413647046028
+    second: experion_spritesheet_10
+  - first:
+      213: 5956164985331507806
+    second: experion_spritesheet_11
+  - first:
+      213: -3063136085255759282
+    second: experion_spritesheet_12
+  - first:
+      213: 6506903455934625818
+    second: experion_spritesheet_13
+  - first:
+      213: -4798555573780748486
+    second: experion_spritesheet_14
+  - first:
+      213: -5879386693355853150
+    second: experion_spritesheet_15
+  - first:
+      213: -7531767703783189664
+    second: experion_spritesheet_16
+  - first:
+      213: 4526119123136461027
+    second: experion_spritesheet_17
+  - first:
+      213: 4761398059087696353
+    second: experion_spritesheet_18
+  - first:
+      213: -6481068339067613643
+    second: experion_spritesheet_19
+  - first:
+      213: -4778858193005037762
+    second: experion_spritesheet_20
+  - first:
+      213: 4911287573598398593
+    second: experion_spritesheet_21
+  - first:
+      213: 4868992387352565537
+    second: experion_spritesheet_22
+  - first:
+      213: 3455164570328545777
+    second: experion_spritesheet_23
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -56,7 +104,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -131,7 +179,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -152,7 +200,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 122
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -173,7 +221,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 244
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -194,7 +242,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 366
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -215,7 +263,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 488
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -236,7 +284,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 610
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -257,7 +305,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 732
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -278,7 +326,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 854
-        y: 0
+        y: 220
         width: 122
         height: 110
       alignment: 0
@@ -290,6 +338,342 @@ TextureImporter:
       bones: []
       spriteID: bfafbbd2a16006330800000000000000
       internalID: 3701965603204758267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c4153bf007ce10f0800000000000000
+      internalID: -1144258448277039933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d383f04670f2076a0800000000000000
+      internalID: -6453606557231925187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47aa415aa449cf490800000000000000
+      internalID: -7711125413647046028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52ed4e3f7c88a250800000000000000
+      internalID: 5956164985331507806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a56aba5fd8d75d0800000000000000
+      internalID: -3063136085255759282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18beb6d73a2d4a50800000000000000
+      internalID: 6506903455934625818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37e3d5212b186db0800000000000000
+      internalID: -4798555573780748486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 110
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aaad55e3f8386ea0800000000000000
+      internalID: -5879386693355853150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0635e3dad29c97790800000000000000
+      internalID: -7531767703783189664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8b6a1bc5100de30800000000000000
+      internalID: 4526119123136461027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e1182ace42e31240800000000000000
+      internalID: 4761398059087696353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e08dc0fae9e06a0800000000000000
+      internalID: -6481068339067613643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3738fdfac51eadb0800000000000000
+      internalID: -4778858193005037762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1886f1ee606682440800000000000000
+      internalID: 4911287573598398593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1271b3e77c2229340800000000000000
+      internalID: 4868992387352565537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: experion_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 0
+        width: 122
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9b2f6ded533ff20800000000000000
+      internalID: 3455164570328545777
       vertices: []
       indices: 
       edges: []
