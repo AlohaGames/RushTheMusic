@@ -39,7 +39,6 @@ namespace Aloha.AI
             {
                 experion.Anim.ResetTrigger("TeleportBack");
                 experion.Anim.SetTrigger("Teleport");
-                Debug.Log(experion.Anim.GetCurrentAnimatorStateInfo(0).ToString());
                 yield return new WaitForSeconds(0.5f);
                 Vector3 newPosition = experion.transform.position;
                 Vector3 add = experion.transform.forward * Utils.RandomFloat(5, 10);

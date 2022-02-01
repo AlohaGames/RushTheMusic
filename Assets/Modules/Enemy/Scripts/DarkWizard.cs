@@ -9,14 +9,14 @@ namespace Aloha
     /// </summary>
     public class DarkWizard : Enemy<DarkWizardStats>
     {
-        private Laser laserBeam;
+        private DarkWizardLaser laserBeam;
 
         [Header("Lasers Prefabs")]
         [SerializeField]
-        private Laser iceLaserPrefab;
+        private DarkWizardLaser iceLaserPrefab;
 
         [SerializeField]
-        private Laser fireLaserPrefab;
+        private DarkWizardLaser fireLaserPrefab;
 
         public Animator Anim;
         

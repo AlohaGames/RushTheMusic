@@ -25,7 +25,8 @@ namespace Aloha.AI
             Node TamponNearHero = new BasicNode(this);
             ExperionMove MoveLeft = new ExperionMove(this);
             ExperionMove MoveRight = new ExperionMove(this);
-            Node Attack = new WyrmlingAttack(this);
+            Node IceLaser = new ExperionIceAttack(this);
+            Node FireLaser = new ExperionFireAttack(this);
             Node GetBump = new BasicNode(this, 1);
 
             // Add Link to MoveForward
@@ -46,20 +47,26 @@ namespace Aloha.AI
 
             // Add Link to MoveLeft
             MoveLeft.IsLeft = true;
-            MoveLeft.AddAutomaticLink(MoveRight, 0.50f);
-            MoveLeft.AddAutomaticLink(MoveLeft, 0.50f);
-            //MoveLeft.AddAutomaticLink(Attack, 0.20f);
+            MoveLeft.AddAutomaticLink(MoveRight, 0.35f);
+            MoveLeft.AddAutomaticLink(MoveLeft, 0.35f);
+            MoveLeft.AddAutomaticLink(IceLaser, 0.15f);
+            MoveLeft.AddAutomaticLink(FireLaser, 0.15f);
             MoveLeft.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to MoveRight
-            MoveRight.AddAutomaticLink(MoveLeft, 0.50f);
-            MoveRight.AddAutomaticLink(MoveRight, 0.50f);
-            //MoveRight.AddAutomaticLink(Attack, 0.20f);
+            MoveRight.AddAutomaticLink(MoveLeft, 0.35f);
+            MoveRight.AddAutomaticLink(MoveRight, 0.35f);
+            MoveRight.AddAutomaticLink(IceLaser, 0.15f);
+            MoveRight.AddAutomaticLink(FireLaser, 0.15f);
             MoveRight.AddEventLink(GetBump, experion.TakeDamageEvent);
 
-            // Add Link to Attack
-            Attack.AddAutomaticLink(TamponNearHero, 1.0f);
-            Attack.AddEventLink(GetBump, experion.TakeDamageEvent);
+            // Add Link to Ice Laser
+            IceLaser.AddAutomaticLink(TamponNearHero, 1.0f);
+            IceLaser.AddEventLink(GetBump, experion.TakeDamageEvent);
+
+            // Add Link to Fire Laser
+            FireLaser.AddAutomaticLink(TamponNearHero, 1.0f);
+            FireLaser.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to GetBump
             GetBump.AddAutomaticLink(MoveForward, 1.0f);
@@ -71,7 +78,8 @@ namespace Aloha.AI
             Nodes.Add(TamponNearHero);
             Nodes.Add(MoveLeft);
             Nodes.Add(MoveRight);
-            Nodes.Add(Attack);
+            Nodes.Add(IceLaser);
+            Nodes.Add(FireLaser);
             Nodes.Add(GetBump);
         }
     }

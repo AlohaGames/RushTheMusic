@@ -7,7 +7,7 @@ namespace Aloha
     /// <summary>
     /// Class for the dark wizard's laser
     /// </summary>
-    public class Laser : MonoBehaviour
+    public class ExperionLaser : MonoBehaviour
     {
         private float currentSize;
         private bool canDamage;
@@ -16,7 +16,7 @@ namespace Aloha
         private Vector3 end;
         private float speed;
         private float duration;
-        public DarkWizard AssociatedEnemy;
+        public Experion AssociatedEnemy;
         public ParticleSystem Particles;
 
         /// <summary>
