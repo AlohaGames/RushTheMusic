@@ -27,8 +27,15 @@ namespace Aloha.UI
         {
             foreach (ItemType type in (ItemType[]) Enum.GetValues(typeof(ItemType)))
             {
+                if (type == ItemType.manaPotion) continue;
                 dropdown.AddOptions(new List<TMP_Dropdown.OptionData>() { GetOption(type) });
             }
+        }
+
+        public void SubmitValue()
+        {
+            EnemyMapping enemyMapping = EditorManager.Instance.SelectedTileUI.GetCurrentEnemy(EditorManager.Instance.GetLevelMapping());
+            enemyMapping?.AddParameters("Item", dropdown.options[dropdown.value].text);
         }
 
         private TMP_Dropdown.OptionData GetOption(ItemType type)

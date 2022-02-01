@@ -74,6 +74,19 @@ namespace Aloha.UI
             downRight.transform.Clear();
         }
 
+        public EnemyMapping GetCurrentEnemy(LevelMapping levelMapping)
+        {
+            List<EnemyMapping> enemyMappings = levelMapping.Enemies[currentId];
+            foreach (EnemyMapping enemyMapping in enemyMappings)
+            {
+                if (enemyMapping.VerticalPosition == verticalPosition && enemyMapping.HorizontalPosition == horizontalPosition)
+                {
+                    return enemyMapping;
+                }
+            }
+            return null;
+        }
+
         public void AddEnemy(EnemyType type, LevelMapping levelMapping)
         {
             List<EnemyMapping> enemyMappings;
@@ -205,6 +218,7 @@ namespace Aloha.UI
             image.AddGetComponent<Image>().sprite = EnemyTypeToSprite.Instance.GetEnemySprite(type);
             image.transform.SetParent(uiPos?.transform);
             image.transform.localPosition = new Vector3(0, 0, 0);
+            image.transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }

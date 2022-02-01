@@ -24,7 +24,7 @@ namespace Aloha
         public VerticalPositionEnum VerticalPosition;
         public HorizontalPositionEnum HorizontalPosition;
 
-        public List<string> Parameters;
+        public List<string> Parameters = new List<string>();
 
         /// <summary>
         /// Default constructor of enemyMapping
@@ -49,7 +49,7 @@ namespace Aloha
             this.EnemyType = enemyType;
             this.VerticalPosition = verticalPosition;
             this.HorizontalPosition = horizontalPosition;
-            this.Parameters = parameters;
+            this.Parameters = parameters ?? new List<string>();
         }
 
         /// <summary>
@@ -96,6 +96,20 @@ namespace Aloha
             }
 
             return new Vector3(x, y + 1, z);
+        }
+
+        public void AddParameters(string type, string parameter)
+        {
+            Debug.Log(Parameters);
+            string p = this.Parameters.Find((s) =>
+            {
+                return s.StartsWith(type);
+            });
+            if (p != null)
+            {
+                Parameters.Remove(p);
+            }
+            this.Parameters.Add(type + " : " + parameter);
         }
     }
 }

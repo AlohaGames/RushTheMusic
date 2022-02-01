@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
   m_Name: RedBiome
   m_EditorClassIdentifier: 
-  BiomeName: automn
+  BiomeName: Automne
   SideEnvironmentPrefabs:
   - {fileID: 2368247788164874689, guid: 836d65fc537c36849aa4325062c69504, type: 3}
   - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
