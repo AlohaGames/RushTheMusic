@@ -88,10 +88,6 @@ namespace Aloha
         /// </summary>
         protected virtual void Awake()
         {
-            // If hero is not set manually, get it from manager
-            // Usefull for debug scenes
-            
-
             this.dieEvent.AddListener(Disappear);
         }
 
@@ -143,6 +139,7 @@ namespace Aloha
         /// </summary>
         public void Disappear()
         {
+            Debug.Log("Enemy >> Disappear");
             Destroy(this.gameObject, 0.5f);
         }
 
