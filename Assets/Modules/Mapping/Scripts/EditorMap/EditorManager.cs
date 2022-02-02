@@ -12,6 +12,7 @@ namespace Aloha.UI
         public int? SelectedTilesId = null;
         [SerializeField]
         private LevelMapping levelMapping = null;
+        private Biome biome = null;
 
         public CurrentTile SelectedTileUI;
         private int currentTileId;
@@ -46,6 +47,7 @@ namespace Aloha.UI
 
         public void SetBiome(Biome biome)
         {
+            this.biome = biome;
             levelMapping.BiomeName = biome.BiomeName;
             foreach (SelectTile tile in selectTiles)
             {
@@ -62,6 +64,12 @@ namespace Aloha.UI
         public void UpdateSelectTiles()
         {
             selectTiles = GetComponentsInChildren<SelectTile>().ToList();
+            if (biome) SetBiome(biome);
+            for (int i = 0; i < selectTiles.Count; i++)
+            {
+                UpdateSelectedTile(i);
+            }
+            UpdateSelectedTile(0);
         }
 
         public void UpdateSelectedTile(int id)
