@@ -64,7 +64,6 @@ namespace Aloha
         /// </summary>
         public void IceLaser()
         {
-            Debug.Log("Experion > IceLaser()");
             IsAttacking = true;
             Anim.SetBool("isIceAttacking", true);
             Vector3 initial = transform.position;
@@ -88,7 +87,6 @@ namespace Aloha
         /// </summary>
         public void FireLaser()
         {
-            Debug.Log("Experion > FireLaser()");
             IsAttacking = true;
             Anim.SetBool("isFireAttacking", true);
             Vector3 initial = transform.position;
