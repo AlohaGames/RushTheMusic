@@ -15,8 +15,6 @@ namespace Aloha
         public bool IsPlaying = false;
         public bool IsInfinite = false;
 
-        [SerializeField]
-        private string defaultLevel = "";
         private Hero hero;
         public RtmConfig Config = new RtmConfig();
 

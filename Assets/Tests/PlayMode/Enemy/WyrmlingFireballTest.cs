@@ -25,7 +25,7 @@ namespace Aloha.Test
             // Instance wizard stats
             WizardStats wizardStats = (WizardStats)ScriptableObject.CreateInstance("WizardStats");
             wizardStats.MaxMana = 100;
-            wizardStats.MaxHealth = 100;
+            wizardStats.MaxHealth = 1000;
             wizardStats.Attack = 10;
             wizardStats.Defense = 10;
             wizardStats.XP = 10;
