@@ -17,6 +17,9 @@ namespace Aloha.UI
         private MapContent content;
         private Text durationText;
 
+        [SerializeField]
+        private GameObject loadingScreen;
+
         private void Awake()
         {
             pathText = Root.PathToMusic;
@@ -45,6 +48,7 @@ namespace Aloha.UI
         private void Load(string MusicUrl)
         {
             LevelMetadata metadata = new LevelMetadata();
+            loadingScreen.SetActive(true);
             StartCoroutine(LevelManager.Instance.LoadMusic(MusicUrl, FinishLoad)); ;
         }
 
@@ -56,10 +60,6 @@ namespace Aloha.UI
             // Title: "Load File", Submit button text: "Load"
             yield return FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, true, null, null, "Load Files and Folders", "Load");
 
-            // Dialog is closed
-            // Print whether the user has selected some files/folders or cancelled the operation (FileBrowser.Success)
-            Debug.Log(FileBrowser.Success);
-
             if (FileBrowser.Success)
             {
                 // Print paths of the selected files (FileBrowser.Result) (null, if FileBrowser.Success is false)
@@ -67,12 +67,13 @@ namespace Aloha.UI
                 {
                     pathText.text = FileBrowser.Result[i];
                 }
+                Load("file://" + pathText.text);
             }
-            Load("file://" + pathText.text);
         }
 
         private void FinishLoad()
         {
+            loadingScreen.SetActive(false);
             AudioClip clip = LevelManager.Instance.LevelMusic;
             content.SetDuration(clip.length);
             durationText.text = Utils.ConvertToMinSec(clip.length);

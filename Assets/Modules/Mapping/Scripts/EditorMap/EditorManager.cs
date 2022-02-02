@@ -69,7 +69,7 @@ namespace Aloha.UI
             {
                 UpdateSelectedTile(i);
             }
-            UpdateSelectedTile(0);
+            if (selectTiles.Count > 0) UpdateSelectedTile(0);
         }
 
         public void UpdateSelectedTile(int id)
