@@ -22,8 +22,9 @@ namespace Aloha
         /// <summary>
         /// Default Awake function
         /// </summary>
-        void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             SoundEffectManager.Instance.Play(
                 SoundEffectManager.Instance.Sounds.bat_idle, this.gameObject, loop: true
             );

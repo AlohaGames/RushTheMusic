@@ -14,8 +14,12 @@ namespace Aloha
 
         private WyrmlingFireball fireball;
 
-        void Awake()
+        /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
         {
+            base.Awake();
             SoundEffectManager.Instance.Play(
                 SoundEffectManager.Instance.Sounds.wyrmling_idle, this.gameObject, loop: true
             );

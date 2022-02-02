@@ -31,10 +31,10 @@ namespace Aloha
 
         /// <summary>
         /// Default Awake function
-        /// </example>
         /// </summary>
-        void Awake()
+        protected override void Awake()
         {
+            base.Awake();
             SoundEffectManager.Instance.Play(
                 SoundEffectManager.Instance.Sounds.canon_idle, this.gameObject, loop: true
             );

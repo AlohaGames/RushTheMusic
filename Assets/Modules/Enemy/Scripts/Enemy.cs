@@ -86,7 +86,7 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        void Awake()
+        protected virtual void Awake()
         {
             // If hero is not set manually, get it from manager
             // Usefull for debug scenes
