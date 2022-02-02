@@ -50,6 +50,7 @@ namespace Aloha
         /// <param name="speed"></param>
         public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
+            ReleaseAttack();
             yield return base.GetBump(direction, speed);
         }
 
