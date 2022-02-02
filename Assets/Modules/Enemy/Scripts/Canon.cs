@@ -94,7 +94,7 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, canonball.gameObject);
 
             // Launch canonball to the hero
-            canonball.Launch(Hero.transform.position);
+            canonball.Launch(this.Hero.transform.position);
 
             // Charge a new canonball
             StartCoroutine(WaitForAttackAvailable());

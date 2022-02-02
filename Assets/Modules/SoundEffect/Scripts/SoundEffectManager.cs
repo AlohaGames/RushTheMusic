@@ -12,6 +12,10 @@ namespace Aloha
 
         void Awake()
         {
+            if (Sounds == null)
+            {
+                Sounds = ScriptableObject.CreateInstance<Sounds>();
+            }
             sources = new List<AudioSource>();
 
             GlobalEvent.Pause.AddListener(Pause);

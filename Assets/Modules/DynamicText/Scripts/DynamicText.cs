@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// Class reprensting a dynamic text that pop up above and entity
+    /// Class representing a dynamic text that pop up above and entity
     /// and disapear after few secondes going up
     /// </summary>
     public class DynamicText : MonoBehaviour
@@ -56,6 +56,11 @@ namespace Aloha
             yield return null;
 
             Destroy(gameObject);
+        }
+
+        private void OnDestroy()
+        {
+            StopAllCoroutines();
         }
     }
 }
