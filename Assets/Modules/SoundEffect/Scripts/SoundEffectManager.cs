@@ -7,16 +7,18 @@ namespace Aloha
     public class SoundEffectManager : Singleton<SoundEffectManager>
     {
         public Sounds Sounds;
+        public List<AudioSource> Sources;
 
-        public List<AudioSource> sources;
-
+        /// <summary>
+        /// Basic Awake function
+        /// </summary>
         void Awake()
         {
             if (Sounds == null)
             {
                 Sounds = ScriptableObject.CreateInstance<Sounds>();
             }
-            sources = new List<AudioSource>();
+            Sources = new List<AudioSource>();
 
             GlobalEvent.Pause.AddListener(Pause);
             GlobalEvent.Resume.AddListener(Resume);
@@ -24,31 +26,57 @@ namespace Aloha
             GlobalEvent.GameOver.AddListener(PlayDefeat);
         }
 
+        /// <summary>
+        /// Called when the game is paused
+        /// <example> Example(s):
+        /// <code>
+        ///     entity.Pause();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Pause()
         {
-            sources.RemoveAll((source) => { return (source == null); });
-            foreach (AudioSource source in sources)
+            Sources.RemoveAll((source) => { return (source == null); });
+            foreach (AudioSource source in Sources)
             {
                 if (source.isPlaying == false)
                 {
                     DestroyImmediate(source.gameObject);
                 }
             }
-            sources.RemoveAll((source) => { return (source == null); });
-            foreach (AudioSource source in sources)
+            Sources.RemoveAll((source) => { return (source == null); });
+            foreach (AudioSource source in Sources)
             {
                 source.Pause();
             }
         }
 
+        /// <summary>
+        /// Called when the game is resumed
+        /// <example> Example(s):
+        /// <code>
+        ///     entity.Resume();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Resume()
         {
-            foreach (AudioSource source in sources)
+            foreach (AudioSource source in Sources)
             {
                 source.UnPause();
             }
         }
 
+        /// <summary>
+        /// Call to play a sound
+        /// <example> Example(s):
+        /// <code>
+        ///     entity.Play(SoundEffectManager.Instance.Sounds.canon_attack, this.gameObject);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="clip"></param>
+        /// <param name="gameObject"></param>
         public void Play(AudioClip clip, GameObject gameObject = null, float delay = -1, bool loop = false)
         {
             GameObject audioSourceGO = new GameObject();
@@ -82,19 +110,38 @@ namespace Aloha
                 audioSource.PlayDelayed(delay);
             }
 
-            sources.Add(audioSource);
+            Sources.Add(audioSource);
         }
 
+        /// <summary>
+        /// Play the victory sound at the end of the game
+        /// <example> Example(s):
+        /// <code>
+        ///     entity.PlayVictory();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void PlayVictory()
         {
             Play(Sounds.victory, this.gameObject);
         }
 
+        /// <summary>
+        /// Play the defeat sound at the end of the game
+        /// <example> Example(s):
+        /// <code>
+        ///     entity.PlayVictory();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void PlayDefeat()
         {
             Play(Sounds.loose, this.gameObject);
         }
 
+        /// <summary>
+        /// Called when the object is destroyed
+        /// </summary>
         void OnDestroy()
         {
             GlobalEvent.Pause.RemoveListener(Pause);

@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Scriptable object to define the sound design
+    /// </summary>
     [CreateAssetMenu(fileName = "Sounds", menuName = "Sounds", order = 1)]
     public class Sounds : ScriptableObject
     {
