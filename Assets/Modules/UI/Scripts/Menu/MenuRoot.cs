@@ -17,9 +17,11 @@ namespace Aloha
         public GameObject TrackSelectionMenu;
         public GameObject CharacterMenu;
         public GameObject SettingsMenu;
+        public GameObject ControlsMenu;
         public GameObject GameOverMenu;
         public GameObject PauseMenu;
         public GameObject EndGameMenu;
+        public GameObject Credits;
 
         private Stack<Action> navigationHistory = new Stack<Action>();
 
@@ -51,9 +53,11 @@ namespace Aloha
             TrackSelectionMenu.SetActive(false);
             CharacterMenu.SetActive(false);
             SettingsMenu.SetActive(false);
+            ControlsMenu.SetActive(false);
             GameOverMenu.SetActive(false);
             PauseMenu.SetActive(false);
             EndGameMenu.SetActive(false);
+            Credits.SetActive(false);
         }
 
         /// <summary>
@@ -117,7 +121,7 @@ namespace Aloha
         {
             this.HideEverything();
             CharacterMenu.SetActive(true);
-            navigationHistory.Push(ShowCharacterMenu);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -136,6 +140,21 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Show only controls menu and hide other components
+        /// <example> Example(s):
+        /// <code>
+        /// menuRoot.ShowControlsMenu()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowControlsMenu()
+        {
+            this.HideEverything();
+            ControlsMenu.SetActive(true);
+            navigationHistory.Push(ShowControlsMenu);
+        }
+
+        /// <summary>
         /// Stop the game, show the menu and stop the music
         /// <example> Example(s):
         /// <code>
@@ -147,7 +166,7 @@ namespace Aloha
         {
             this.HideEverything();
             GameOverMenu.SetActive(true);
-            navigationHistory.Push(ShowGameOverMenu);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>
@@ -177,12 +196,36 @@ namespace Aloha
         {
             this.HideEverything();
             EndGameMenu.SetActive(true);
-            navigationHistory.Push(ShowEndGameMenu);
+            navigationHistory.Push(ShowMainMenu);
+
+            if (!GameManager.Instance.IsInfinite)
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(false);
+            }
+            else
+            {
+                EndGameMenu.transform.Find("ContinuerButton").gameObject.SetActive(true);
+            }
 
             EndGameMenu.transform.Find("TotalScore").GetComponent<Text>().text = "Score total" + "\t\t" + ScoreManager.Instance.TotalScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("DistanceScore").GetComponent<Text>().text = "Distance" + "\t\t\t\t" + ScoreManager.Instance.DistanceScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("KillScore").GetComponent<Text>().text = "Ennemis tués" + "\t\t" + ScoreManager.Instance.EnemyKilledScore;
             EndGameMenu.transform.Find("ScoreDetail").Find("HitScore").GetComponent<Text>().text = "Coups reçus" + "\t\t\t" + "-" + ScoreManager.Instance.HitScore;
+        }
+
+        /// <summary>
+        /// Show only credits and hide other components
+        /// <example> Example(s):
+        /// <code>
+        /// menuRoot.ShowCredits()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void ShowCredits()
+        {
+            this.HideEverything();
+            this.Credits.SetActive(true);
+            navigationHistory.Push(ShowMainMenu);
         }
 
         /// <summary>

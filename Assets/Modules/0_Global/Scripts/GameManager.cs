@@ -10,16 +10,15 @@ namespace Aloha
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
-        private bool isGamePaused = false;
-        private Hero hero;
         private bool isGameFinished = false;
+        private bool isGamePaused = false;
+        public bool IsPlaying = false;
+        public bool IsInfinite = false;
 
         [SerializeField]
         private string defaultLevel = "";
-
-        public bool IsPlaying = false;
+        private Hero hero;
         public RtmConfig Config = new RtmConfig();
-        public bool isInfinite = false;
 
         void Awake()
         {
@@ -27,36 +26,6 @@ namespace Aloha
             GlobalEvent.Victory.AddListener(FinishLevel);
             GlobalEvent.Resume.AddListener(UnFreeze);
             GlobalEvent.Pause.AddListener(Freeze);
-        }
-
-        #region Events
-        /// <summary>
-        /// Will ask to load the request <paramref name="level"/>
-        /// <example> Example(s):
-        /// <code>
-        ///     GameManager.Instance.LoadLevel(monlevel);
-        ///     GameManager.Instance.LoadLevel(monautrelevel, true);
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="level">Level Name with .rtm extension</param>
-        /// <param name="isTuto">Is the level a tutorial (locate in StreamingAssets)</param>
-        public void LoadLevel(string level, bool isTuto = false)
-        {
-            GlobalEvent.LoadLevel.Invoke(level, isTuto);
-        }
-
-        /// <summary>
-        /// Will ask to load the default level.
-        /// <example> Example(s):
-        /// <code>
-        ///     GameManager.Instance.LoadLevel();
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void LoadLevel()
-        {
-            LoadLevel(defaultLevel);
         }
 
         /// <summary>
@@ -89,6 +58,7 @@ namespace Aloha
             FinishLevel();
             GlobalEvent.GameStop.Invoke();
             IsPlaying = false;
+            IsInfinite = false;
             ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
             if (hero != null)
             {
@@ -215,8 +185,6 @@ namespace Aloha
         {
             Application.Quit();
         }
-
-        #endregion
 
         /// <summary>
         /// Set the new current Hero and Destroy the old Hero if needed.

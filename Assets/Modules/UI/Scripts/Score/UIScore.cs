@@ -10,6 +10,7 @@ namespace Aloha
     {
         public GameObject InGameScore;
         public Text InGameScoreText;
+        public Text InGameScoreInfiniText;
 
         /// <summary>
         /// Method to show UI score elements in game
@@ -22,6 +23,17 @@ namespace Aloha
         public void ShowInGameUIScoreElements()
         {
             InGameScore.SetActive(true);
+
+            // Show total score if inifinite mode is ON
+            if (GameManager.Instance.IsInfinite)
+            {
+                InGameScoreInfiniText.gameObject.SetActive(true);
+            }
+            else
+            {
+                InGameScoreInfiniText.gameObject.SetActive(false);
+            }
+
             UpdateUIText();
         }
 
@@ -35,7 +47,8 @@ namespace Aloha
         /// </summary>
         public void UpdateUIText()
         {
-            InGameScoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
+            InGameScoreText.text = "Score : " + ScoreManager.Instance.TotalScore;
+            InGameScoreInfiniText.text = "(Total : " + ScoreManager.Instance.InfiniteScore + ")";
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Aloha
             anim = GetComponent<Animator>();
             lastTileSpeed = 0;
             isTilesStopped = false;
-            this.NearHeroTrigger.AddListener(runAndStopTiles);
+            this.NearHeroTrigger.AddListener(RunAndStopTiles);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void runAndStopTiles()
+        private void RunAndStopTiles()
         {
             if (!isTilesStopped)
             {
@@ -81,8 +81,16 @@ namespace Aloha
         public override void Die()
         {
             anim.SetTrigger("isDead");
-            if (isTilesStopped) runAndStopTiles();
+            if (isTilesStopped) RunAndStopTiles();
             base.Die();
+        }
+
+        /// <summary>
+        /// Security if the game is loose when the game is stopped
+        /// </summary>
+        private void OnDestroy()
+        {
+            if (isTilesStopped) RunAndStopTiles();
         }
     }
 }

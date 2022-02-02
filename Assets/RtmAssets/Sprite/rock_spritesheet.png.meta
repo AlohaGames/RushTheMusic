@@ -4,31 +4,31 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 4699062507891441953
-    second: rock_spritesheet_0
+    second: rock_spritesheet_forest_0
   - first:
       213: 4085196911494784215
-    second: rock_spritesheet_1
+    second: rock_spritesheet_forest_1
   - first:
       213: -5103960262004443950
-    second: rock_spritesheet_2
+    second: rock_spritesheet_forest_2
   - first:
       213: 2180427326100245224
-    second: rock_spritesheet_3
+    second: rock_spritesheet_fall_0
   - first:
       213: 6650121109357635932
-    second: rock_spritesheet_4
+    second: rock_spritesheet_fall_1
   - first:
       213: -5548540143647178870
-    second: rock_spritesheet_5
+    second: rock_spritesheet_fall_2
   - first:
       213: -7240665791441622493
-    second: rock_spritesheet_6
+    second: rock_spritesheet_frost_0
   - first:
       213: -2400430842921496241
-    second: rock_spritesheet_7
+    second: rock_spritesheet_frost_1
   - first:
       213: 5770589798565384561
-    second: rock_spritesheet_8
+    second: rock_spritesheet_frost_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -114,27 +114,15 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rock_spritesheet_0
+      name: rock_spritesheet_forest_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 513
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -151,11 +139,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_1
+      name: rock_spritesheet_forest_1
       rect:
         serializedVersion: 2
         x: 256
-        y: 513
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -172,11 +160,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_2
+      name: rock_spritesheet_forest_2
       rect:
         serializedVersion: 2
         x: 512
-        y: 513
+        y: 512
         width: 256
         height: 256
       alignment: 0
@@ -193,11 +181,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_3
+      name: rock_spritesheet_fall_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 257
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -214,11 +202,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_4
+      name: rock_spritesheet_fall_1
       rect:
         serializedVersion: 2
         x: 256
-        y: 257
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -235,11 +223,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_5
+      name: rock_spritesheet_fall_2
       rect:
         serializedVersion: 2
         x: 512
-        y: 257
+        y: 256
         width: 256
         height: 256
       alignment: 0
@@ -256,11 +244,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_6
+      name: rock_spritesheet_frost_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1
+        y: 0
         width: 256
         height: 256
       alignment: 0
@@ -277,11 +265,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_7
+      name: rock_spritesheet_frost_1
       rect:
         serializedVersion: 2
         x: 256
-        y: 1
+        y: 0
         width: 256
         height: 256
       alignment: 0
@@ -298,11 +286,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: rock_spritesheet_8
+      name: rock_spritesheet_frost_2
       rect:
         serializedVersion: 2
         x: 512
-        y: 1
+        y: 0
         width: 256
         height: 256
       alignment: 0
@@ -321,7 +309,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 12afac4660e67cf42a8a9264dd2c1940
+    spriteID: a64613185d9b7fc44a9521712d578017
     internalID: 0
     vertices: []
     indices: 
