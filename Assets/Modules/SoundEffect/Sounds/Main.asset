@@ -27,8 +27,16 @@ MonoBehaviour:
   canon_idle: {fileID: 0}
   canon_hurt: {fileID: 8300000, guid: b1376613f7b2cb143a4d23d3d54c781a, type: 3}
   canon_attack: {fileID: 8300000, guid: 635c2425283da4a41bafdbb53e1cb42a, type: 3}
+  dark_wizard_idle: {fileID: 0}
+  dark_wizard_hurt: {fileID: 8300000, guid: be3a895c2fe87eb459a4878a63eee930, type: 3}
+  dark_wizard_ice_laser: {fileID: 8300000, guid: 46f0564b98f5f8b49b4e1bb6fec2ca75, type: 3}
+  dark_wizard_fire_laser: {fileID: 8300000, guid: be736d1144481724186d2cb02bfade97, type: 3}
   wall_hurt: {fileID: 8300000, guid: 35206f82d110d614386a4427476fe156, type: 3}
   chest_open: {fileID: 8300000, guid: 2bfd89fcdc15ef0409cb51f7e72de14d, type: 3}
+  experion_idle: {fileID: 0}
+  experion_hurt: {fileID: 8300000, guid: 6160129070b09a0418774d4e07b800d1, type: 3}
+  experion_ice_laser: {fileID: 8300000, guid: 46f0564b98f5f8b49b4e1bb6fec2ca75, type: 3}
+  experion_fire_laser: {fileID: 8300000, guid: be736d1144481724186d2cb02bfade97, type: 3}
   hero_drink: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
   hero_take_damage: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
   hero_level_up: {fileID: 8300000, guid: 07f02d03eec4c834d91a691b1054274e, type: 3}

@@ -21,8 +21,18 @@ namespace Aloha
         public AudioClip canon_idle;
         public AudioClip canon_hurt;
         public AudioClip canon_attack;
+        public AudioClip dark_wizard_idle;
+        public AudioClip dark_wizard_hurt;
+        public AudioClip dark_wizard_ice_laser;
+        public AudioClip dark_wizard_fire_laser;
         public AudioClip wall_hurt;
         public AudioClip chest_open;
+
+        [Header("BOSS")]
+        public AudioClip experion_idle;
+        public AudioClip experion_hurt;
+        public AudioClip experion_ice_laser;
+        public AudioClip experion_fire_laser;
 
         [Header("HERO")]
         public AudioClip hero_drink;

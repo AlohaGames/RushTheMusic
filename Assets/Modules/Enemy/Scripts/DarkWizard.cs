@@ -65,6 +65,10 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
+
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_ice_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>
@@ -89,6 +93,9 @@ namespace Aloha
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_fire_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>
