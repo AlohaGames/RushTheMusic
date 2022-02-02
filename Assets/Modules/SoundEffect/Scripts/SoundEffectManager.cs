@@ -68,6 +68,25 @@ namespace Aloha
         }
 
         /// <summary>
+        ///     Update volume of sound effect sources
+        /// <example> Example(s):
+        /// <code>
+        ///     GlobalEvent.UpdateVolume(0.8f);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="volume">value between 0 and 1</param>
+        public void UpdateVolume(float volume)
+        {
+            GameManager.Instance.Config.GameSoundEffectsVolume = volume;
+            foreach (AudioSource source in Sources)
+            {
+                source.volume = volume;
+            }
+            Debug.Log($"New sound effect volume : {volume * 100}%");
+        }
+
+        /// <summary>
         /// Call to play a sound
         /// <example> Example(s):
         /// <code>
@@ -91,7 +110,7 @@ namespace Aloha
             }
 
             AudioSource audioSource = audioSourceGO.AddComponent<AudioSource>();
-            audioSource.volume = GameManager.Instance.Config.GameVolume / 2;
+            audioSource.volume = GameManager.Instance.Config.GameSoundEffectsVolume;
             audioSource.clip = clip;
             audioSource.loop = loop;
 
