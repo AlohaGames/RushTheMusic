@@ -10,16 +10,6 @@ namespace Aloha
 
         public List<AudioSource> sources;
 
-        // TODO: Sons trop forts
-        // TODO: Pouvoir clean proprement un loop:true
-        // TODO: Supprimer les effets une fois terminés
-
-        // TODO: Lancer idle
-        // TODO: Assassin idle
-        // TODO: Bat idle
-        // TODO: Canon idle
-
-
         void Awake()
         {
             sources = new List<AudioSource>();
@@ -46,17 +36,29 @@ namespace Aloha
             }
         }
 
-        public void Play(AudioClip clip, GameObject gameObject, float delay = -1, bool loop = false)
+        public void Play(AudioClip clip, GameObject gameObject = null, float delay = -1, bool loop = false)
         {
-            GameObject audioSourceGO = new GameObject(gameObject.GetInstanceID().ToString());
-            audioSourceGO.transform.position = gameObject.transform.position;
-            ContainerManager.Instance.AddToContainer(ContainerTypes.Audio, audioSourceGO);
+            GameObject audioSourceGO = new GameObject();
+
+            if (gameObject == null)
+            {
+                ContainerManager.Instance.AddToContainer(ContainerTypes.Audio, audioSourceGO);
+            }
+            else
+            {
+                audioSourceGO.transform.SetParent(gameObject.transform);
+            }
 
             AudioSource audioSource = audioSourceGO.AddComponent<AudioSource>();
-            audioSource.volume = GameManager.Instance.Config.GameVolume;
+            audioSource.volume = GameManager.Instance.Config.GameVolume / 2;
             audioSource.clip = clip;
             audioSource.loop = loop;
+
             audioSource.spatialize = true;
+            audioSource.spatialBlend = 1;
+            audioSource.minDistance = 0;
+            audioSource.maxDistance = 30;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
 
             if (delay < 0)
             {

@@ -26,7 +26,7 @@ namespace Aloha
         void OnClick()
         {
             SoundEffectManager.Instance.Play(
-                SoundEffectManager.Instance.Sounds.back, this.gameObject
+                SoundEffectManager.Instance.Sounds.back
             );
         }
 

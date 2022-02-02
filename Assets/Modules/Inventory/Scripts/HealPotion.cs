@@ -37,10 +37,10 @@ namespace Aloha
         public override void Effect()
         {
             SoundEffectManager.Instance.Play(
-                SoundEffectManager.Instance.Sounds.hero_drink, this.gameObject
+                SoundEffectManager.Instance.Sounds.hero_drink
             );
             SoundEffectManager.Instance.Play(
-                SoundEffectManager.Instance.Sounds.health_potion_effect, this.gameObject, SoundEffectManager.Instance.Sounds.hero_drink.length
+                SoundEffectManager.Instance.Sounds.health_potion_effect, null, SoundEffectManager.Instance.Sounds.hero_drink.length
             );
 
             Hero hero = GameManager.Instance.GetHero();

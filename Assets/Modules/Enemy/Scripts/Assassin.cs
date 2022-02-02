@@ -21,6 +21,13 @@ namespace Aloha
             Anim = GetComponent<Animator>();
         }
 
+        void Awake()
+        {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.assassin_idle, this.gameObject, loop: true
+            );
+        }
+
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);

@@ -29,6 +29,13 @@ namespace Aloha
             StartCoroutine(WaitForAttackAvailable());
         }
 
+        void Awake()
+        {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.canon_idle, this.gameObject, loop: true
+            );
+        }
+
         /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
