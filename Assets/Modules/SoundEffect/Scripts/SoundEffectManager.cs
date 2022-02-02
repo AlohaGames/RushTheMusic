@@ -22,6 +22,15 @@ namespace Aloha
 
         public void Pause()
         {
+            sources.RemoveAll((source) => { return (source == null); });
+            foreach (AudioSource source in sources)
+            {
+                if (source.isPlaying == false)
+                {
+                    DestroyImmediate(source.gameObject);
+                }
+            }
+            sources.RemoveAll((source) => { return (source == null); });
             foreach (AudioSource source in sources)
             {
                 source.Pause();
