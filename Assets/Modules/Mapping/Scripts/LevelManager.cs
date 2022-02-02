@@ -32,16 +32,8 @@ namespace Aloha
         /// <param name="level"></param>
         /// <param name="filename"></param>
         /// <param name="isTuto"></param>
-        public void Save(LevelMapping level, string filename, LevelMetadata metadata, String musicURI, bool isTuto = false)
+        public void Save(LevelMapping level, string filename, LevelMetadata metadata, String musicURI, bool isTuto = false, ConfirmWindow confirm = null)
         {
-            /*string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
-
-            XmlSerializer serializer = new XmlSerializer(typeof(LevelMapping));
-            using (FileStream stream = new FileStream($"{basePath}/{filename}", FileMode.Create))
-            {
-                serializer.Serialize(stream, level);
-            }*/
-
             string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
             string workingPath = Application.temporaryCachePath;
 
@@ -69,7 +61,6 @@ namespace Aloha
             {
                 Debug.Log(copyError.Message);
             }
-            metadata.MusicFilePath = "music.mp3";
 
 
             // Create metadata file
@@ -83,7 +74,19 @@ namespace Aloha
 
             // Create zip file
             Debug.Log($"Create level from {g}");
-            ZipFile.CreateFromDirectory($"{workingPath}/{g}", $"{basePath}/{filename}");
+            if (File.Exists($"{basePath}/{filename}") && confirm != null)
+            {
+                confirm.gameObject.SetActive(true);
+                confirm.SetCallback(() =>
+                {
+                    File.Delete($"{basePath}/{filename}");
+                    ZipFile.CreateFromDirectory($"{workingPath}/{g}", $"{basePath}/{filename}");
+                });
+            }
+            else
+            {
+                ZipFile.CreateFromDirectory($"{workingPath}/{g}", $"{basePath}/{filename}");
+            }
         }
 
         /// <summary>

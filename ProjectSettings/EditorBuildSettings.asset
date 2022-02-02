@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Modules/0_Global/Scenes/TheGame.unity
     guid: f4a443e08bd2556438dbcad819c137f6
   - enabled: 0
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Modules/0_Global/Scenes/Old_game.unity
     guid: 94e007d2dfab6ffb3b8949c3702ba142
+  - enabled: 1
+    path: Assets/Modules/Mapping/Scenes/MapEditor.unity
+    guid: 99a5c303a66e60405a597df0a327d8f1
   m_configObjects: {}

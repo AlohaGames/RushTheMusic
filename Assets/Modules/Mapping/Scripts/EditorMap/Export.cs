@@ -13,6 +13,9 @@ namespace Aloha.UI
         private InputField mapName;
         private InputField description;
 
+        [SerializeField]
+        private GameObject confirmOverride;
+
         private void Awake()
         {
             pathText = Root.PathToMusic;
@@ -35,7 +38,7 @@ namespace Aloha.UI
             metadata.LevelName = mapName.text;
             metadata.Description = description.text;
 
-            LevelManager.Instance.Save(levelMapping, mapName.text + ".rtm", metadata, pathText.text, true);
+            LevelManager.Instance.Save(levelMapping, mapName.text + ".rtm", metadata, pathText.text, true, confirmOverride.GetComponent<ConfirmWindow>());
         }
 
         private void OnDestroy()
