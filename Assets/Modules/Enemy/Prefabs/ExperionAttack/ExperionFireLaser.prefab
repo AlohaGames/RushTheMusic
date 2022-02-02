@@ -4823,6 +4823,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExperionFireLaser
       objectReference: {fileID: 0}
+    - target: {fileID: 3511686556560137360, guid: 689b595b64f666c4c84626f4a6107d01, type: 3}
+      propertyPath: m_TagString
+      value: BossAttack
+      objectReference: {fileID: 0}
     - target: {fileID: 3511686556560137373, guid: 689b595b64f666c4c84626f4a6107d01, type: 3}
       propertyPath: m_RootOrder
       value: 0

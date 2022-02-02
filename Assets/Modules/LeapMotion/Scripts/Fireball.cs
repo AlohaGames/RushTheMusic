@@ -36,7 +36,7 @@ namespace Aloha
         /// </summary>
         public void OnTriggerEnter(Collider collider)
         {
-            if (isAutonomous && collider.tag == "Enemy")
+            if (isAutonomous && (collider.tag == "Enemy" || collider.tag == "Boss"))
             {
                 collider.gameObject.GetComponent<Entity>().TakeDamage(this.Power);
                 Wizard.BumpEntity(collider.GetComponent<Entity>());

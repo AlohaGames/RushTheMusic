@@ -67,21 +67,18 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        IEnumerator Wink()
+        IEnumerator Wink(int duration, float min=0.25f, float max=0.75f)
         {
             Warrior.CanDefend = false;
 
-            changeOpacity(0.75f);
-            yield return new WaitForSeconds(0.25f);
+            bool on = true;
 
-            changeOpacity(0.25f);
-            yield return new WaitForSeconds(0.25f);
-
-            changeOpacity(0.75f);
-            yield return new WaitForSeconds(0.25f);
-
-            changeOpacity(0.25f);
-            yield return new WaitForSeconds(0.25f);
+            for(int i = 0; i < (duration / 0.25f); i++)
+            {
+                changeOpacity(on ? max : min);
+                on = !on;
+                yield return new WaitForSeconds(0.25f);
+            }
 
             changeOpacity(1.0f);
             Warrior.CanDefend = true;
@@ -107,10 +104,22 @@ namespace Aloha
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
                 Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
 
-                StartCoroutine(Wink());
+                StartCoroutine(Wink(1));
+            } else if (collider.tag == "Boss" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
+            {
+                // Change minimum speed if actual speed is to low
+                if (Speed < 1.5) Speed = 1.5f;
+                collider.gameObject.GetComponent<Entity>().TakeDamage(0);
+                Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
+
+                StartCoroutine(Wink(2));
             } else if (collider.tag == "EnemyAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
-                StartCoroutine(Wink());
+                StartCoroutine(Wink(1));
+                Destroy(collider.gameObject);
+            } else if (collider.tag == "BossAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
+            {
+                StartCoroutine(Wink(2));
                 Destroy(collider.gameObject);
             }
         }

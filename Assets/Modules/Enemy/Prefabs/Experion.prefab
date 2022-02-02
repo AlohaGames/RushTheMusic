@@ -152,6 +152,8 @@ MonoBehaviour:
   NearHeroTrigger:
     m_PersistentCalls:
       m_Calls: []
+  fireballPrefab: {fileID: 22300566038610246, guid: f4684e79eec35a148b07259ef68a2186, type: 3}
+  iceballPrefab: {fileID: -5467685000157353772, guid: 70552ef76c3751a42bd39b40fb1c99a0, type: 3}
   iceLaserPrefab: {fileID: 639096195357446146, guid: 6d4a191b2561e2447b46b15f2a6368aa, type: 3}
   fireLaserPrefab: {fileID: 8156808645859252512, guid: 73572498155d07b498c6c0680944a4ec, type: 3}
   Anim: {fileID: 6743842595660410832}
@@ -471,6 +473,10 @@ PrefabInstance:
     - target: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
       propertyPath: m_Name
       value: Experion
+      objectReference: {fileID: 0}
+    - target: {fileID: 1280670638334809896, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
+      propertyPath: m_TagString
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5156678528214987125, guid: 55812b33f985dd0a7b2d915496b855c1, type: 3}
       propertyPath: BGraph

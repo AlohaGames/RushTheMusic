@@ -12,6 +12,13 @@ namespace Aloha
     /// </summary>
     public class Experion : Enemy<ExperionStats>
     {
+        [SerializeField]
+        private ExperionFireball fireballPrefab;
+
+        [SerializeField]
+        private ExperionFireball iceballPrefab;
+
+        private ExperionFireball fireball;
         private ExperionLaser laserBeam;
 
         [Header("Lasers Prefabs")]
@@ -107,6 +114,66 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Instantiate a fireball in front of experion
+        /// <example> Example(s):
+        /// <code>
+        ///     this.InstantiateFireball()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void InstantiateFireball()
+        {
+            Vector3 fireballPos = transform.position;
+            fireballPos.x += gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX ? -0.75f : 0.75f;
+            fireballPos.y += 1.1f;
+
+            // Spawn fireball
+            this.fireball = Instantiate(fireballPrefab, fireballPos, Quaternion.identity);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, fireball.gameObject);
+            this.fireball.AssociatedEnemy = this;
+        }
+
+        /// <summary>
+        /// Instantiate an iceball in front of experion
+        /// <example> Example(s):
+        /// <code>
+        ///     this.InstantiateFireball()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void InstantiateIceball()
+        {
+            Vector3 fireballPos = transform.position;
+            fireballPos.x += gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX ? 1.2f : -1.2f;
+            fireballPos.y += 0.15f;
+
+            // Spawn fireball
+            this.fireball = Instantiate(iceballPrefab, fireballPos, Quaternion.identity);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, fireball.gameObject);
+            this.fireball.AssociatedEnemy = this;
+        }
+
+        /// <summary>
+        /// Launch the associated fireball on the hero
+        /// <example> Example(s):
+        /// <code>
+        ///     this.LaunchFireball(3)
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="fireballSpeed"></param>
+        public void LaunchFireball(float fireballSpeed)
+        {
+            if (this.fireball)
+            {
+                Vector3 dir = Hero.transform.position - this.fireball.transform.position;
+                dir.Normalize();
+                this.fireball.GetComponent<Rigidbody>().AddForce(dir * fireballSpeed, ForceMode.Impulse);
+                this.fireball = null;
+            }
+        }
+
+        /// <summary>
         /// Release everything when release attack
         /// <example> Example(s):
         /// <code>
@@ -119,6 +186,10 @@ namespace Aloha
             if (laserBeam != null)
             {
                 Destroy(laserBeam.gameObject);
+            }
+            if (this.fireball != null)
+            {
+                Destroy(this.fireball.gameObject);
             }
             IsAttacking = false;
             Anim.SetBool("isIceAttacking", false);

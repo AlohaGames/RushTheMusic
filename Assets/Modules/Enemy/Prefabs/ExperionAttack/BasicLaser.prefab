@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1491264776711887543}
   m_Layer: 0
   m_Name: BasicLaser
-  m_TagString: EnemyAttack
+  m_TagString: BossAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
