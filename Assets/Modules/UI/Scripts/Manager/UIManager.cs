@@ -28,6 +28,13 @@ namespace Aloha
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
         }
 
+        public void HideForBoss()
+        {
+            LevelProgressBar.gameObject.SetActive(false);
+            ExpBar.gameObject.SetActive(false);
+            UIScore.Hide();
+        }
+
         /// <summary>
         /// This function show the UI element in game.
         /// <example> Example(s):

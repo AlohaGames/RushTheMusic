@@ -120,5 +120,11 @@ namespace Aloha
             Anim.SetBool("isIceAttacking", false);
             Anim.SetBool("isFireAttacking", false);
         }
+
+        override public void Die()
+        {
+            GlobalEvent.Victory.Invoke();
+            base.Die();
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace Aloha
         private bool isGamePaused = false;
         public bool IsPlaying = false;
         public bool IsInfinite = false;
+        public bool IsBoss = false;
 
         [SerializeField]
         private string defaultLevel = "";
@@ -24,6 +25,7 @@ namespace Aloha
         {
             GlobalEvent.GameOver.AddListener(FinishGame);
             GlobalEvent.Victory.AddListener(FinishLevel);
+            GlobalEvent.Boss.AddListener(Boss);
             GlobalEvent.Resume.AddListener(UnFreeze);
             GlobalEvent.Pause.AddListener(Freeze);
         }
@@ -39,6 +41,7 @@ namespace Aloha
         public void StartLevel()
         {
             UnFreeze();
+            IsBoss = false;
             IsPlaying = true;
             isGamePaused = false;
             isGameFinished = false;
@@ -82,6 +85,32 @@ namespace Aloha
                 new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
             );
             GlobalEvent.LevelStop.Invoke();
+        }
+
+        public void Boss()
+        {
+            IsBoss = true;
+
+            // Clear some things
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Environment, ContainerTypes.Tile }
+            );
+            AudioManager.Instance.StopMusic();
+
+            // Change env to dark
+            SideEnvironmentManager.Instance.LoadBiome("boss");
+            TilesManager.Instance.ResetTiles();
+            TilesManager.Instance.OnLevelStart();
+
+            // Spawn boss
+            GameObject boss = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.experion);
+            boss.transform.position = new Vector3(0, 1, 50);
+
+            // Hide UI
+            UIManager.Instance.HideForBoss();
+
+            // Start Music
+            AudioManager.Instance.StartBossMusic();
         }
 
         /// <summary>
