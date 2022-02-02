@@ -29,6 +29,10 @@ namespace Aloha
             StartCoroutine(WaitForAttackAvailable());
         }
 
+        /// <summary>
+        /// Default Awake function
+        /// </example>
+        /// </summary>
         void Awake()
         {
             SoundEffectManager.Instance.Play(
@@ -48,6 +52,15 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     canon.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);

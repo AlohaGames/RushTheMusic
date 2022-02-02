@@ -53,6 +53,15 @@ namespace Aloha
             yield return base.GetBump(direction, speed);
         }
 
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     wyrmling.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);

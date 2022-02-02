@@ -20,7 +20,9 @@ namespace Aloha
         {
             Anim = GetComponent<Animator>();
         }
-
+        /// <summary>
+        /// Default Awake function
+        /// </summary>
         void Awake()
         {
             SoundEffectManager.Instance.Play(
@@ -28,6 +30,15 @@ namespace Aloha
             );
         }
 
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     assassin.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);
