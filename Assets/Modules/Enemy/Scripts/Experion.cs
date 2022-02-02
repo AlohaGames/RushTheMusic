@@ -50,7 +50,6 @@ namespace Aloha
         /// <param name="speed"></param>
         public override IEnumerator GetBump(Vector3 direction, float speed = 2)
         {
-            //Anim.SetBool("isAttacking", false);
             yield return base.GetBump(direction, speed);
         }
 

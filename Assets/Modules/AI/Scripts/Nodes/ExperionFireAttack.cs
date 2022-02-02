@@ -38,8 +38,6 @@ namespace Aloha.AI
         {
             IsRunning = true;
 
-            Debug.Log("Experion > ExperionFireAttack");
-
             // Create a fire laser
             experion.FireLaser();
 

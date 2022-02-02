@@ -38,8 +38,6 @@ namespace Aloha.AI
         {
             IsRunning = true;
 
-            Debug.Log("Experion > ExperionIceAttack");
-
             // Create an ice laser
             experion.IceLaser();
 
