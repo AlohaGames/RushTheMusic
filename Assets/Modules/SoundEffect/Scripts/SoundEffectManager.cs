@@ -4,6 +4,9 @@ using Aloha.Events;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Singleton that manage the sound effects in game
+    /// </summary>
     public class SoundEffectManager : Singleton<SoundEffectManager>
     {
         public Sounds Sounds;
