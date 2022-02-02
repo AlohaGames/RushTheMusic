@@ -13,36 +13,36 @@ MonoBehaviour:
   m_Name: Main
   m_EditorClassIdentifier: 
   lancer_idle: {fileID: 0}
-  lancer_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  lancer_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  lancer_hurt: {fileID: 8300000, guid: 8516a6c44a1be5545895f2e084fb3eda, type: 3}
+  lancer_attack: {fileID: 8300000, guid: 7256a87c601493d45a73c0ae9f7d4a15, type: 3}
   assassin_idle: {fileID: 0}
-  assassin_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  assassin_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  assassin_hurt: {fileID: 8300000, guid: 78c5bf71de04b45479cf05c30678d83b, type: 3}
+  assassin_attack: {fileID: 8300000, guid: 9a97ec53182168c4fb5c0beffcfd8890, type: 3}
   wyrmling_idle: {fileID: 8300000, guid: 81ce4e02615fec447b9c9c1286806530, type: 3}
-  wyrmling_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  wyrmling_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  wyrmling_hurt: {fileID: 8300000, guid: 857912972cafcb54e91efe12f689eebf, type: 3}
+  wyrmling_attack: {fileID: 8300000, guid: 383195e5e3843ca4fb83e42e0e7ebafb, type: 3}
   bat_idle: {fileID: 0}
-  bat_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  bat_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  bat_hurt: {fileID: 8300000, guid: ea20a55d392a1ee4285b71e24a5ceadf, type: 3}
+  bat_attack: {fileID: 8300000, guid: c502929af94ac604f8f3f93142cc0916, type: 3}
   canon_idle: {fileID: 0}
-  canon_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  canon_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
-  wall_hurt: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  chest_open: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  hero_drink: {fileID: 8300000, guid: 62f8aaacaa074a047aa393b759128ac0, type: 3}
-  hero_take_damage: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
-  hero_level_up: {fileID: 8300000, guid: fed8d7c3040b9ac4dbb591f5d574fc46, type: 3}
-  wizard_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  canon_hurt: {fileID: 8300000, guid: b1376613f7b2cb143a4d23d3d54c781a, type: 3}
+  canon_attack: {fileID: 8300000, guid: 635c2425283da4a41bafdbb53e1cb42a, type: 3}
+  wall_hurt: {fileID: 8300000, guid: 35206f82d110d614386a4427476fe156, type: 3}
+  chest_open: {fileID: 8300000, guid: 2bfd89fcdc15ef0409cb51f7e72de14d, type: 3}
+  hero_drink: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
+  hero_take_damage: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
+  hero_level_up: {fileID: 8300000, guid: 07f02d03eec4c834d91a691b1054274e, type: 3}
+  wizard_attack: {fileID: 8300000, guid: 7cf3443aafda49240b59ca461850f143, type: 3}
   wizard_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}
-  wizard_no_mana: {fileID: 8300000, guid: 754ec75f3d586054192a7b71fb57931b, type: 3}
-  warrior_attack: {fileID: 8300000, guid: 967dbc2c16f2f43468fcb43728bb5355, type: 3}
+  wizard_no_mana: {fileID: 8300000, guid: ede2c94c3d88355459657f7e05e7c4d4, type: 3}
+  warrior_attack: {fileID: 8300000, guid: 2279278638eea3c4485e214d99b1779d, type: 3}
   warrior_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}
   warrior_rage: {fileID: 8300000, guid: fa381a510f66ab743b0666ee794f20a2, type: 3}
   health_potion_effect: {fileID: 0}
   xp_potion_effect: {fileID: 0}
   mana_potion_effect: {fileID: 0}
   rage_potion_effect: {fileID: 0}
-  victory: {fileID: 8300000, guid: 1647a7e6b6eae1e43940a98e66068080, type: 3}
-  loose: {fileID: 8300000, guid: 64fee0b3a5a12b74894422c2ffe4be55, type: 3}
+  victory: {fileID: 8300000, guid: f08cc18858b6ffe43ab74caca6c1175a, type: 3}
+  loose: {fileID: 8300000, guid: fd6597a30b41340499cc19e5a43ad072, type: 3}
   click: {fileID: 8300000, guid: eb614c557e04d3646b31df19693f81ec, type: 3}
   back: {fileID: 8300000, guid: 2cb7dd17807dc82479d4556e6f5366c9, type: 3}
