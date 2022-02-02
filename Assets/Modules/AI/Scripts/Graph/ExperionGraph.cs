@@ -4,7 +4,7 @@ using Aloha;
 namespace Aloha.AI
 {
     /// <summary>
-    /// Graph use by Wyrmling
+    /// Graph use by Experion
     /// </summary>
     [CreateAssetMenu(fileName = "Experion", menuName = "AI/Boss/Experion", order = 0)]
     public class ExperionGraph : Graph
@@ -16,7 +16,7 @@ namespace Aloha.AI
         /// </summary>
         public override void Start()
         {
-            // Get wyrmling Object
+            // Get experion Object
             experion = Runner.GetComponent<Experion>();
 
             // Create Nodes

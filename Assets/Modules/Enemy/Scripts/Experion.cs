@@ -8,7 +8,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// Class for the default lancer
+    /// Class for experion
     /// </summary>
     public class Experion : Enemy<ExperionStats>
     {
@@ -37,6 +37,11 @@ namespace Aloha
             OnHealthUpdate.Invoke(this.CurrentHealth, this.GetStats().MaxHealth);
         }
 
+
+        /// <summary>
+        /// Function for experion to take damage
+        /// </summary>
+        /// <param name="damage"></param>
         public override void TakeDamage(int damage)
         {
             base.TakeDamage(damage);

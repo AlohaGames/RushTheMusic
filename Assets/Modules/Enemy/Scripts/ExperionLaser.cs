@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha
 {
     /// <summary>
-    /// Class for the dark wizard's laser
+    /// Class for experion's laser
     /// </summary>
     public class ExperionLaser : MonoBehaviour
     {

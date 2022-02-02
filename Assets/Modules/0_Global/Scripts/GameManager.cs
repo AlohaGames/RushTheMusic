@@ -87,6 +87,14 @@ namespace Aloha
             GlobalEvent.LevelStop.Invoke();
         }
 
+        /// <summary>
+        /// Prepare the game for the boss
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.Boss();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Boss()
         {
             IsBoss = true;
@@ -275,18 +283,37 @@ namespace Aloha
         }
         #endregion
 
+        /// <summary>
+        /// Freeze the game
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.Freeze();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Freeze()
         {
             Cursor.visible = true;
             Time.timeScale = 0f;
         }
 
+        /// <summary>
+        /// Unfreeze the game
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.UnFreeze();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void UnFreeze()
         {
             Cursor.visible = false;
             Time.timeScale = 1f;
         }
 
+        /// <summary>
+        /// Called when the gameobject is destroyed
+        /// </summary>
         void OnDestroy()
         {
             GlobalEvent.GameOver.RemoveListener(FinishGame);

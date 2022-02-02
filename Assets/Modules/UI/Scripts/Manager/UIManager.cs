@@ -28,6 +28,14 @@ namespace Aloha
             GlobalEvent.LevelStart.AddListener(ShowInGameUIElements);
         }
 
+        /// <summary>
+        /// This function hide the UI elements for the boss fight.
+        /// <example> Example(s):
+        /// <code>
+        ///     HideForBoss()
+        /// </code>
+        /// </example>
+        /// </summary>
         public void HideForBoss()
         {
             LevelProgressBar.gameObject.SetActive(false);

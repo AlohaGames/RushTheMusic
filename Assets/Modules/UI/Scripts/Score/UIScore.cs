@@ -12,6 +12,14 @@ namespace Aloha
         public Text InGameScoreText;
         public Text InGameScoreInfiniText;
 
+        /// <summary>
+        /// Method to hide score UI
+        /// <example> Example(s):
+        /// <code>
+        ///     UIScore.Hide();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Hide()
         {
             InGameScore.SetActive(false); ;

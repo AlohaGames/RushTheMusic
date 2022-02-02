@@ -7,7 +7,7 @@ using Aloha.Events;
 namespace Aloha
 {
     /// <summary>
-    /// Class for the secondary bar
+    /// Class for the experion's bar
     /// </summary>
     public class ExperionHealthBar : HorizontalBar
     {

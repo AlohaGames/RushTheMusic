@@ -5,7 +5,7 @@ using UnityEngine;
 namespace Aloha.AI
 {
     /// <summary>
-    /// Node that move the wyrmling to the left or the right in a curve movement
+    /// Node that move experion to the left or the right in a curve movement
     /// </summary>
     public class ExperionMove : GONode
     {
@@ -45,7 +45,7 @@ namespace Aloha.AI
             Vector3 posFinal = posInit;
             posFinal.x = IsLeft ? (posFinal.x + DistToMove).Clamp(-2.5f, 2.5f) : (posFinal.x - DistToMove).Clamp(-2.5f, 2.5f);
 
-            // Change the rotation of the wyrmling according to its direction
+            // Change the rotation of experion according to its direction
             if (IsLeft)
             {
                 gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX = true;
@@ -55,7 +55,7 @@ namespace Aloha.AI
                 gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX = false;
             }
 
-            // Move the wyrmling
+            // Move the experion
             while (time < ActionTime)
             {
                 time += Speed * Time.deltaTime;

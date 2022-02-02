@@ -6,14 +6,14 @@ using Aloha;
 namespace Aloha.AI
 {
     /// <summary>
-    /// A Node that make the dark wizard (gameObject) Attack the Hero with an fire laser
+    /// A Node that make experion (gameObject) Attack the Hero with an fire laser
     /// </summary>
     public class ExperionFireAttack : GONode
     {
         private Experion experion;
 
         /// <summary>
-        /// DarkWizardFireAttack Node Constructor
+        /// ExperionFireAttack Node Constructor
         /// </summary>
         /// <param name="graph">Graph containing the node</param>
         public ExperionFireAttack(Graph graph) : base(graph)
@@ -31,7 +31,7 @@ namespace Aloha.AI
         }
 
         /// <summary>
-        /// Make the dark wizard fire laser Attack
+        /// Make the experion fire laser Attack
         /// </summary>
         /// <returns></returns>
         public override IEnumerator Action()
