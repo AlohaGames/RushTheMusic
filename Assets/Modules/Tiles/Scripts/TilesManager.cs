@@ -91,7 +91,7 @@ namespace Aloha
 
             if (!GameManager.Instance.IsBoss && (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount))
             {
-                if (GameManager.Instance.IsInfinite && Utils.RandomFloat() < 1)
+                if (GameManager.Instance.IsInfinite && Utils.RandomFloat() < 0.5f)
                 {
                     GlobalEvent.Boss.Invoke();
                 }
