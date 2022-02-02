@@ -101,6 +101,9 @@ namespace Aloha
             SideEnvironmentManager.Instance.LoadBiome("boss");
             TilesManager.Instance.ResetTiles();
             TilesManager.Instance.OnLevelStart();
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Environment }
+            );
 
             // Spawn boss
             GameObject boss = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.experion);
