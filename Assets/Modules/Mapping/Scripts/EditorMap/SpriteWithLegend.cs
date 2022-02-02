@@ -15,7 +15,9 @@ namespace Aloha.UI
         [SerializeField]
         private Image image;
 
-        private Action<String> cb;
+        private Biome biome;
+
+        private Action<Biome> cb;
 
         private void Awake()
         {
@@ -27,22 +29,18 @@ namespace Aloha.UI
         {
             if (cb != null)
             {
-                cb(this.text.text);
+                cb(biome);
             }
         }
 
-
-        public void SetText(string text)
+        public void SetBiome(Biome biome)
         {
-            this.text.text = text;
+            this.biome = biome;
+            this.text.text = biome.BiomeName;
+            this.image.sprite = biome.SidePanelSprites[0];
         }
 
-        public void SetImage(Sprite sprite)
-        {
-            this.image.sprite = sprite;
-        }
-
-        public void SetOnClick(Action<String> cb)
+        public void SetOnClick(Action<Biome> cb)
         {
             this.cb = cb;
         }

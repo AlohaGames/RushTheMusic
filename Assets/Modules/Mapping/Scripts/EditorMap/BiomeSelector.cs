@@ -25,23 +25,22 @@ namespace Aloha.UI
 
         void Awake()
         {
-            foreach(Biome biome in biomesList)
+            foreach (Biome biome in biomesList)
             {
                 Debug.Log(biome.BiomeName);
                 SpriteWithLegend containerGO = Instantiate(container);
-                containerGO.SetText(biome.BiomeName);
-                containerGO.SetImage(biome.SidePanelSprites[0]);
+                containerGO.SetBiome(biome);
                 containerGO.SetOnClick(SelectBiome);
                 containerGO.transform.SetParent(content.transform);
                 containerGO.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
         }
 
-        void SelectBiome(string biome)
+        void SelectBiome(Biome biome)
         {
-            Debug.Log("Selected biome : "+biome);
+            Debug.Log("Selected biome : " + biome.BiomeName);
             EditorManager.Instance.SetBiome(biome);
-            buttonText.text = biome;
+            buttonText.text = biome.BiomeName;
             contextWindow.SetActive(false);
         }
     }

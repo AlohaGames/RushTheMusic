@@ -27,3 +27,4 @@ MonoBehaviour:
   BackgroundColor: {r: 0.8207547, g: 0.39798862, b: 0.39798862, a: 0}
   TilePrefabs:
   - {fileID: 6072665795481323789, guid: 5575aca4f80a0c54ea9d4eb54e1866ec, type: 3}
+  TileSprite: {fileID: 21300000, guid: 31784e4bce70462eaac02d5f03f0917d, type: 3}

@@ -218,7 +218,7 @@ namespace Aloha.UI
             image.AddGetComponent<Image>().sprite = EnemyTypeToSprite.Instance.GetEnemySprite(type);
             image.transform.SetParent(uiPos?.transform);
             image.transform.localPosition = new Vector3(0, 0, 0);
-            image.transform.localScale = new Vector3(1, 1, 1);
+            image.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
     }
 }

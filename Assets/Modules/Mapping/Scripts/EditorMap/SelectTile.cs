@@ -12,19 +12,26 @@ namespace Aloha.UI
         static Color unselectedColor;
         [SerializeField]
         private int id;
+        private Image image;
 
         public HorizontalTilePos[] Positions;
+
 
         private void Awake()
         {
             selectedColor = EditorManager.Instance.SelectedColor;
             unselectedColor = EditorManager.Instance.UnselectedColor;
+            image = GetComponent<Image>();
             GetComponent<Button>().onClick.AddListener(OnClick);
             Unselect();
 
             Positions = GetComponentsInChildren<HorizontalTilePos>();
         }
 
+        public void SetImage(Sprite sprite)
+        {
+            image.sprite = sprite;
+        }
         private void OnClick()
         {
             EditorManager.Instance.UpdateSelectedTile(id);
@@ -37,12 +44,12 @@ namespace Aloha.UI
 
         public void Select()
         {
-            this.GetComponent<Image>().color = Color.green;
+            this.GetComponent<Image>().color = selectedColor;
         }
 
         public void Unselect()
         {
-            this.GetComponent<Image>().color = Color.gray;
+            this.GetComponent<Image>().color = unselectedColor;
         }
 
         private void OnDestroy()

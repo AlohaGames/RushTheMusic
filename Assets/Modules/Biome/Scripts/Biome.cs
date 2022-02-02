@@ -16,5 +16,6 @@ namespace Aloha
         public GameObject CastleHill;
         public Color BackgroundColor;
         public GameObject[] TilePrefabs;
+        public Sprite TileSprite;
     }
 }

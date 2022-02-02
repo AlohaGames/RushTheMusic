@@ -32,12 +32,12 @@ namespace Aloha.UI
 
         public void Select()
         {
-            this.GetComponent<Image>().color = Color.green;
+            this.GetComponent<Image>().color = selectedColor;
         }
 
         public void Unselect()
         {
-            this.GetComponent<Image>().color = Color.gray;
+            this.GetComponent<Image>().color = unselectedColor;
         }
 
         private void OnDestroy()
