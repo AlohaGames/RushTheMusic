@@ -108,7 +108,7 @@ namespace Aloha
             } else if (collider.tag == "Boss" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
                 // Change minimum speed if actual speed is to low
-                if (Speed < 1.5) Speed = 1.5f;
+                if (Speed < 1.5) Speed = 2f;
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
                 Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
 

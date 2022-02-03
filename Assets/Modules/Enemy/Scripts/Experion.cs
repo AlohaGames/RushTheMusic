@@ -194,6 +194,9 @@ namespace Aloha
             IsAttacking = false;
             Anim.SetBool("isIceAttacking", false);
             Anim.SetBool("isFireAttacking", false);
+            Anim.SetBool("isDashing", false);
+            Anim.ResetTrigger("Teleport");
+            Anim.ResetTrigger("TeleportBack");
         }
 
         override public void Die()

@@ -10,6 +10,7 @@ namespace Aloha.AI
     /// </summary>
     public class ExperionTeleportation : GONode
     {
+        private float maxX = 2.5f;
         private Experion experion;
 
         /// <summary>
@@ -48,13 +49,15 @@ namespace Aloha.AI
                 {
                     newPosition.z = 6;
                 }
-                newPosition.x = Utils.RandomFloat(-3, 3);
+                newPosition.x = Utils.RandomFloat(-maxX, maxX);
 
                 gameObject.transform.Translate(-(newPosition - experion.transform.position));
 
                 experion.Anim.ResetTrigger("Teleport");
                 experion.Anim.SetTrigger("TeleportBack");
                 yield return new WaitForSeconds(0.5f);
+
+                experion.Anim.ResetTrigger("TeleportBack");
             }
 
             yield return null;
