@@ -29,6 +29,21 @@ namespace Aloha
         }
 
         /// <summary>
+        /// This function hide the UI elements for the boss fight.
+        /// <example> Example(s):
+        /// <code>
+        ///     HideForBoss()
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void HideForBoss()
+        {
+            LevelProgressBar.gameObject.SetActive(false);
+            ExpBar.gameObject.SetActive(false);
+            UIScore.Hide();
+        }
+
+        /// <summary>
         /// This function show the UI element in game.
         /// <example> Example(s):
         /// <code>

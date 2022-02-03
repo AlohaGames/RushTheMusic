@@ -23,8 +23,6 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            Anim = GetComponent<Animator>();
-
             // Charge a canonball
             StartCoroutine(WaitForAttackAvailable());
         }

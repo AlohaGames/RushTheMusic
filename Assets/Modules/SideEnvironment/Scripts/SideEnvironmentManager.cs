@@ -100,13 +100,16 @@ namespace Aloha
             Camera.main.backgroundColor = currentBiome.BackgroundColor;
 
             // Set castle in background of biome
-            GameObject castleHillGo = Instantiate(currentBiome.CastleHill);
-            Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
-            bgPos.y = 20f;
-            castleHillGo.transform.position = bgPos;
+            if (currentBiome.CastleHill != null)
+            {
+                GameObject castleHillGo = Instantiate(currentBiome.CastleHill);
+                Vector3 bgPos = TilesManager.Instance.getEndTilesPosition();
+                bgPos.y = 20f;
+                castleHillGo.transform.position = bgPos;
 
-            // Add castle to env
-            ContainerManager.Instance.AddToContainer(ContainerTypes.Environment, castleHillGo);
+                // Add castle to env
+                ContainerManager.Instance.AddToContainer(ContainerTypes.Environment, castleHillGo);
+            }
         }
 
         /// <summary>
@@ -119,12 +122,17 @@ namespace Aloha
             //Generate random chance to spawning side environment
             float spawningChance = Utils.RandomFloat(0, 1);
 
-            if(spawningChance >= 0.2f)
+            if (spawningChance >= 0.2f)
             {
                 // Generate random index
                 int index = Utils.RandomInt(0, currentBiome.SideEnvironmentPrefabs.Length);
 
                 // Instantiate object + position
+                if (currentBiome.SideEnvironmentPrefabs[index] == null)
+                {
+                    return;
+                }
+
                 SideEnvironment sideEnvInstR = Instantiate(currentBiome.SideEnvironmentPrefabs[index]);
                 sideEnvInstR.Initialize();
 

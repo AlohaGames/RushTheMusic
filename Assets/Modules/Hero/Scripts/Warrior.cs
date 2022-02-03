@@ -99,9 +99,11 @@ namespace Aloha
                     SoundEffectManager.Instance.Sounds.warrior_rage, this.gameObject
                 );
                 GlobalEvent.HudEffect.Invoke(0.8f, 1.0f, HUDEffectType.rage);
-                Stats entityStats = entity.GetStats();
-                damage = entityStats.MaxHealth;
-                entity.TakeDamage(damage);
+
+                // The rage multiply by 5 the power
+                damage = heroStats.Attack;
+                entity.TakeDamage(damage*3);
+
                 CurrentRage = 0;
             }
             else

@@ -14,6 +14,7 @@ namespace Aloha
         private GameObject audioSourceGO;
         private AudioSource audioSource;
         private bool shouldBePlaying = false;
+        public AudioClip BossFight;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -31,12 +32,13 @@ namespace Aloha
             GlobalEvent.Pause.AddListener(PauseMusic);
             GlobalEvent.Resume.AddListener(ResumeMusic);
             GlobalEvent.LevelStop.AddListener(StopMusic);
+            GlobalEvent.Boss.AddListener(delegate { this.shouldBePlaying = false; });
             GlobalEvent.Victory.AddListener(delegate { this.shouldBePlaying = false; });
         }
 
         public void Update()
         {
-            // End of music
+            // End of music if not in boss and music ended
             if (shouldBePlaying && !audioSource.isPlaying)
             {
                 GlobalEvent.GameOver.Invoke();
@@ -58,6 +60,13 @@ namespace Aloha
             audioSource.Play();
             shouldBePlaying = true;
             Debug.Log($"Play music {LevelManager.Instance.LevelMusic}");
+        }
+
+        public void StartBossMusic()
+        {
+            audioSource.clip = BossFight;
+            audioSource.loop = true;
+            audioSource.Play();
         }
 
         /// <summary>

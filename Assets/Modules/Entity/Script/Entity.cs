@@ -124,7 +124,7 @@ namespace Aloha
                         Die();
                     }
                 }
-                else
+                else if (this is Enemy)
                 {
                     StartCoroutine(SwitchColor());
                 }
@@ -143,15 +143,19 @@ namespace Aloha
         /// <returns> IEnumerator </returns>
         IEnumerator SwitchColor()
         {
-            isHitted = true;
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-            if (sprite)
+            SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
+            if (sprites.Length != 0)
             {
-                sprite.color = new Color(1f, 0.5f, 0.5f);
-                yield return new WaitForSeconds(0.5f);
-                sprite.color = Color.white;
+                isHitted = true;
+                SpriteRenderer sprite = GetComponentsInChildren<SpriteRenderer>()[0];
+                if (sprite)
+                {
+                    sprite.color = new Color(1f, 0.5f, 0.5f);
+                    yield return new WaitForSeconds(0.5f);
+                    sprite.color = Color.white;
+                    isHitted = false;
+                }
             }
-            isHitted = false;
         }
 
         /// <summary>

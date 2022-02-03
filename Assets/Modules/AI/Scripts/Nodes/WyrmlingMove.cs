@@ -48,11 +48,11 @@ namespace Aloha.AI
             // Change the rotation of the wyrmling according to its direction
             if (IsLeft)
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX = false;
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX = true;
             }
 
             // Move the wyrmling

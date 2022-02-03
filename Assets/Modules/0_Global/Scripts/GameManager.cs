@@ -14,6 +14,7 @@ namespace Aloha
         private bool isGamePaused = false;
         public bool IsPlaying = false;
         public bool IsInfinite = false;
+        public bool IsBoss = false;
 
         private Hero hero;
         public RtmConfig Config = new RtmConfig();
@@ -22,6 +23,7 @@ namespace Aloha
         {
             GlobalEvent.GameOver.AddListener(FinishGame);
             GlobalEvent.Victory.AddListener(FinishLevel);
+            GlobalEvent.Boss.AddListener(Boss);
             GlobalEvent.Resume.AddListener(UnFreeze);
             GlobalEvent.Pause.AddListener(Freeze);
         }
@@ -37,6 +39,7 @@ namespace Aloha
         public void StartLevel()
         {
             UnFreeze();
+            IsBoss = false;
             IsPlaying = true;
             isGamePaused = false;
             isGameFinished = false;
@@ -80,6 +83,43 @@ namespace Aloha
                 new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Text }
             );
             GlobalEvent.LevelStop.Invoke();
+        }
+
+        /// <summary>
+        /// Prepare the game for the boss
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.Boss();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Boss()
+        {
+            IsBoss = true;
+
+            // Clear some things
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Environment, ContainerTypes.Tile }
+            );
+            AudioManager.Instance.StopMusic();
+
+            // Change env to dark
+            SideEnvironmentManager.Instance.LoadBiome("boss");
+            TilesManager.Instance.ResetTiles();
+            TilesManager.Instance.OnLevelStart();
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Environment }
+            );
+
+            // Spawn boss
+            GameObject boss = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.experion);
+            boss.transform.position = new Vector3(0, 1, 50);
+
+            // Hide UI
+            UIManager.Instance.HideForBoss();
+
+            // Start Music
+            AudioManager.Instance.StartBossMusic();
         }
 
         /// <summary>
@@ -241,18 +281,37 @@ namespace Aloha
         }
         #endregion
 
+        /// <summary>
+        /// Freeze the game
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.Freeze();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void Freeze()
         {
             Cursor.visible = true;
             Time.timeScale = 0f;
         }
 
+        /// <summary>
+        /// Unfreeze the game
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.UnFreeze();
+        /// </code>
+        /// </example>
+        /// </summary>
         public void UnFreeze()
         {
             Cursor.visible = false;
             Time.timeScale = 1f;
         }
 
+        /// <summary>
+        /// Called when the gameobject is destroyed
+        /// </summary>
         void OnDestroy()
         {
             GlobalEvent.GameOver.RemoveListener(FinishGame);

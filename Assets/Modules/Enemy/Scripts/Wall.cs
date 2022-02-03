@@ -11,16 +11,15 @@ namespace Aloha
     /// </summary>
     public class Wall : Enemy<WallStats>
     {
-        private Animator anim;
         private bool isTilesStopped;
         private float lastTileSpeed;
+        public Animator Anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {
-            anim = GetComponent<Animator>();
             lastTileSpeed = 0;
             isTilesStopped = false;
             this.NearHeroTrigger.AddListener(RunAndStopTiles);
@@ -89,7 +88,7 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
-            anim.SetTrigger("isDead");
+            Anim.SetTrigger("isDead");
             if (isTilesStopped) RunAndStopTiles();
             base.Die();
         }

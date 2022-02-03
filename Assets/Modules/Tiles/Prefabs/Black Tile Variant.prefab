@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7f0d189e43418784cb32f45fc6ad4289, type: 2}
     - target: {fileID: 4672000999976058457, guid: fe11f12abcffa79409e2fe9fb474271a, type: 3}
       propertyPath: m_Name
-      value: BlueTile Variant
+      value: Black Tile Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4914564627355941677, guid: fe11f12abcffa79409e2fe9fb474271a, type: 3}
       propertyPath: m_RootOrder

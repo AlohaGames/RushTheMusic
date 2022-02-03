@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
+  m_Name: BossBiome
+  m_EditorClassIdentifier: 
+  BiomeName: boss
+  SideEnvironmentPrefabs:
+  - {fileID: 0}
+  SidePanelSprites:
+  - {fileID: 21300000, guid: d013f7061810d964ca85b3319f684faa, type: 3}
+  CastleHill: {fileID: 5979782378925957397, guid: 75c34a110858e5f43acfdc022f18716e, type: 3}
+  BackgroundColor: {r: 0.1509434, g: 0.14154504, b: 0.14154504, a: 1}
+  TilePrefabs:
+  - {fileID: 7879650728313143345, guid: b6c6031e52d175c4f9501291b5573ffb, type: 3}

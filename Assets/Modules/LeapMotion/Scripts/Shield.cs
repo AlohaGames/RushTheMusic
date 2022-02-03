@@ -67,21 +67,18 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        IEnumerator Wink()
+        IEnumerator Wink(int duration, float min=0.25f, float max=0.75f)
         {
             Warrior.CanDefend = false;
 
-            changeOpacity(0.75f);
-            yield return new WaitForSeconds(0.25f);
+            bool on = true;
 
-            changeOpacity(0.25f);
-            yield return new WaitForSeconds(0.25f);
-
-            changeOpacity(0.75f);
-            yield return new WaitForSeconds(0.25f);
-
-            changeOpacity(0.25f);
-            yield return new WaitForSeconds(0.25f);
+            for(int i = 0; i < (duration / 0.25f); i++)
+            {
+                changeOpacity(on ? max : min);
+                on = !on;
+                yield return new WaitForSeconds(0.25f);
+            }
 
             changeOpacity(1.0f);
             Warrior.CanDefend = true;
@@ -100,29 +97,52 @@ namespace Aloha
         /// <param name="collider"></param>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
+            if (Warrior.CanDefend && (Warrior.IsDefending || (GameManager.Instance.Config.LeapMode && Speed > minimumSpeedToProtect)))
             {
+                if (collider.tag == "Enemy")
+                {
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                    );
 
-                SoundEffectManager.Instance.Play(
-                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
-                );
+                    // Change minimum speed if actual speed is to low
+                    if (Speed < 1.5) Speed = 1.5f;
+                    collider.gameObject.GetComponent<Entity>().TakeDamage(0);
+                    Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
 
-                // Change minimum speed if actual speed is to low
-                if (Speed < 1.5) Speed = 1.5f;
-                collider.gameObject.GetComponent<Entity>().TakeDamage(0);
-                Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
+                    StartCoroutine(Wink(1));
+                }
+                else if (collider.tag == "Boss")
+                {
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                    );
 
-                StartCoroutine(Wink());
-            }
-            else if (collider.tag == "EnemyAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
-            {
+                    // Change minimum speed if actual speed is to low
+                    if (Speed < 1.5) Speed = 2f;
+                    collider.gameObject.GetComponent<Entity>().TakeDamage(0);
+                    Warrior.BumpEntity(collider.GetComponent<Entity>(), Speed);
 
-                SoundEffectManager.Instance.Play(
-                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
-                );
+                    StartCoroutine(Wink(2));
+                }
+                else if (collider.tag == "EnemyAttack")
+                {
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                    );
 
-                StartCoroutine(Wink());
-                Destroy(collider.gameObject);
+                    StartCoroutine(Wink(1));
+                    Destroy(collider.gameObject);
+                }
+                else if (collider.tag == "BossAttack")
+                {
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                    );
+
+                    StartCoroutine(Wink(2));
+                    Destroy(collider.gameObject);
+                }
             }
         }
     }

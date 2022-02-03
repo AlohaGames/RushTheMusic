@@ -89,9 +89,16 @@ namespace Aloha
             GlobalEvent.TileCount.Invoke(tile);
             GlobalEvent.OnProgressionUpdate.Invoke(EnemySpawner.Instance.TilesCounter - NumberOfTiles, LevelManager.Instance.LevelMapping.TileCount);
 
-            if (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount)
+            if (!GameManager.Instance.IsBoss && (EnemySpawner.Instance.TilesCounter - NumberOfTiles >= LevelManager.Instance.LevelMapping.TileCount))
             {
-                GlobalEvent.Victory.Invoke();
+                if (GameManager.Instance.IsInfinite && Utils.RandomFloat() < 0.5f)
+                {
+                    GlobalEvent.Boss.Invoke();
+                }
+                else
+                {
+                    GlobalEvent.Victory.Invoke();
+                }
             }
         }
 
@@ -179,6 +186,11 @@ namespace Aloha
         public void Reset()
         {
             Running = false;
+            ResetTiles();
+        }
+
+        public void ResetTiles()
+        {
             activeTiles.Clear();
             ContainerManager.Instance.ClearContainer(ContainerTypes.Tile);
         }

@@ -269,6 +269,12 @@ namespace Aloha.Test
 
             yield return null;
 
+            //Passing many tiles before the score can increment
+            for (int i = 0; i < TilesManager.Instance.NumberOfTiles; i++)
+            {
+                instanceScoreManager.TilesCount(tile);
+            }
+
             //Passing a tile
             instanceScoreManager.TilesCount(tile);
             Assert.AreEqual(60, instanceScoreManager.DistanceScore);

@@ -155,7 +155,7 @@ namespace Aloha
             int maxTiles = LevelManager.Instance.LevelMapping != null ? LevelManager.Instance.LevelMapping.TileCount : 0;
             if (maxTiles > 0)
             {
-                int tiles = TilesCounter.Clamp(0, maxTiles);
+                int tiles = (TilesCounter - TilesManager.Instance.NumberOfTiles).Clamp(0, maxTiles);
                 DistanceScore = (int)CalculateScore(MAX_SCORE, DISTANCE_PERCENT, (float)maxTiles, tiles);
             }
             else if (maxTiles == 0)

@@ -38,6 +38,13 @@ MonoBehaviour:
   experion_teleportation: {fileID: 8300000, guid: 006b452ea73825746a6392e7348555bc, type: 3}
   experion_ice_laser: {fileID: 8300000, guid: 46f0564b98f5f8b49b4e1bb6fec2ca75, type: 3}
   experion_fire_laser: {fileID: 8300000, guid: be736d1144481724186d2cb02bfade97, type: 3}
+  experion_fireball: {fileID: 8300000, guid: 383195e5e3843ca4fb83e42e0e7ebafb, type: 3}
+  experion_iceball: {fileID: 8300000, guid: 383195e5e3843ca4fb83e42e0e7ebafb, type: 3}
+  experion_dash: {fileID: 8300000, guid: 7256a87c601493d45a73c0ae9f7d4a15, type: 3}
+  experion_quotes:
+  - {fileID: 8300000, guid: d888d0d5de392fa4a8c9ee31178e7d84, type: 3}
+  - {fileID: 8300000, guid: 3cf742460617d214385ba75d2c275b5b, type: 3}
+  - {fileID: 8300000, guid: 1ff097dbfad51ca4b8b6347a3c4eb770, type: 3}
   hero_drink: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
   hero_take_damage: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
   hero_level_up: {fileID: 8300000, guid: 07f02d03eec4c834d91a691b1054274e, type: 3}
