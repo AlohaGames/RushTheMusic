@@ -8,7 +8,7 @@ namespace Aloha
     /// </summary>
     public class Shield : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private float minimumSpeedToProtect = 0.1f;
 
         [SerializeField]
@@ -99,6 +99,11 @@ namespace Aloha
         {
             if (collider.tag == "Enemy" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
+
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                );
+
                 // Change minimum speed if actual speed is to low
                 if (Speed < 1.5) Speed = 1.5f;
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
@@ -107,6 +112,10 @@ namespace Aloha
                 StartCoroutine(Wink(1));
             } else if (collider.tag == "Boss" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                );
+
                 // Change minimum speed if actual speed is to low
                 if (Speed < 1.5) Speed = 2f;
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
@@ -115,10 +124,18 @@ namespace Aloha
                 StartCoroutine(Wink(2));
             } else if (collider.tag == "EnemyAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                );
+                
                 StartCoroutine(Wink(1));
                 Destroy(collider.gameObject);
             } else if (collider.tag == "BossAttack" && Warrior.CanDefend && (Warrior.IsDefending || Speed > minimumSpeedToProtect))
             {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_block, this.gameObject
+                );
+
                 StartCoroutine(Wink(2));
                 Destroy(collider.gameObject);
             }

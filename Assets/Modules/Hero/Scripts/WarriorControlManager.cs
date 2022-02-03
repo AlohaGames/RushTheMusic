@@ -35,6 +35,10 @@ namespace Aloha
         {
             warrior.IsAttacking = true;
             rightHandAnimator.SetTrigger("Attack");
+
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.warrior_attack, this.gameObject
+            );
         }
 
         /// <summary>

@@ -115,7 +115,7 @@ namespace Aloha
             {
                 audioSource.volume = volume;
             }
-            Debug.Log($"New volume : {volume * 100}%");
+            Debug.Log($"New global volume : {volume * 100}%");
         }
 
         /// <summary>

@@ -15,6 +15,17 @@ namespace Aloha
         private WyrmlingFireball fireball;
 
         /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wyrmling_idle, this.gameObject, loop: true
+            );
+        }
+
+        /// <summary>
         /// Get the wyrmling's fireball
         /// <example> Example(s):
         /// <code>
@@ -44,6 +55,23 @@ namespace Aloha
         {
             if (this.fireball) Destroy(this.fireball.gameObject);
             yield return base.GetBump(direction, speed);
+        }
+
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     wyrmling.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wyrmling_hurt, this.gameObject
+            );
         }
 
         /// <summary>
@@ -78,7 +106,7 @@ namespace Aloha
         {
             if (this.fireball)
             {
-                Vector3 dir = Hero.transform.position - this.fireball.transform.position;
+                Vector3 dir = this.Hero.transform.position - this.fireball.transform.position;
                 dir.Normalize();
                 this.fireball.GetComponent<Rigidbody>().AddForce(dir * fireballSpeed, ForceMode.Impulse);
                 this.fireball = null;

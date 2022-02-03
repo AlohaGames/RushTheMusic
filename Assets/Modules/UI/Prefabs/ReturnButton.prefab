@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4140312910773186653}
   - component: {fileID: 4140312910773186652}
   - component: {fileID: 4140312910773186655}
+  - component: {fileID: 6400884719545161242}
   m_Layer: 5
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -168,3 +169,15 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+--- !u!114 &6400884719545161242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4140312910773186649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe35737773e70248ac1813af230006e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

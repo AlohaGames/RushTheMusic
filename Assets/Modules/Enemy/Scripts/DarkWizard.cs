@@ -32,6 +32,17 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_idle, this.gameObject, loop: true
+            );
+        }
+
+        /// <summary>
         /// Function to bump the lancer
         /// </summary>
         /// <param name="direction"></param>
@@ -40,6 +51,23 @@ namespace Aloha
         {
             ReleaseAttack();
             yield return base.GetBump(direction, speed);
+        }
+
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     darkWizard.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_hurt, this.gameObject
+            );
         }
 
         /// <summary>
@@ -63,6 +91,10 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
+
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_ice_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>
@@ -87,6 +119,9 @@ namespace Aloha
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_fire_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>

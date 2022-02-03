@@ -41,6 +41,23 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     wall.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wall_hurt, this.gameObject
+            );
+        }
+
+        /// <summary>
         /// Stop or run tiles according to current state
         /// <example> Example(s):
         /// <code>
@@ -58,7 +75,8 @@ namespace Aloha
                     TilesManager.Instance.ChangeTileSpeed(0);
                     isTilesStopped = true;
                 }
-            } else 
+            }
+            else
             {
                 TilesManager.Instance.ChangeTileSpeed(lastTileSpeed);
                 isTilesStopped = false;

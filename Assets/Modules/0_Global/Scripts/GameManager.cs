@@ -16,8 +16,6 @@ namespace Aloha
         public bool IsInfinite = false;
         public bool IsBoss = false;
 
-        [SerializeField]
-        private string defaultLevel = "";
         private Hero hero;
         public RtmConfig Config = new RtmConfig();
 
@@ -82,7 +80,7 @@ namespace Aloha
             Freeze();
             isGameFinished = true;
             ContainerManager.Instance.ClearContainers(
-                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile }
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Text }
             );
             GlobalEvent.LevelStop.Invoke();
         }

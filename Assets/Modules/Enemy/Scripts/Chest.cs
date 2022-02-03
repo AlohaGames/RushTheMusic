@@ -77,6 +77,9 @@ namespace Aloha
         {
             Anim.SetBool("isOpen", true);
             InventoryManager.Instance.AddItem(this.item);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.chest_open, this.gameObject
+            );
             base.Die();
         }
     }

@@ -1,0 +1,41 @@
+fileFormatVersion: 2
+guid: 536c77e92e81f8f45aabaefb40b6aa50
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - lancer_idle: {instanceID: 0}
+  - lancer_hurt: {instanceID: 0}
+  - lancer_attack: {instanceID: 0}
+  - assassin_idle: {instanceID: 0}
+  - assassin_hurt: {instanceID: 0}
+  - assassin_attack: {instanceID: 0}
+  - wyrmling_idle: {instanceID: 0}
+  - wyrmling_hurt: {instanceID: 0}
+  - wyrmling_attack: {instanceID: 0}
+  - bat_idle: {instanceID: 0}
+  - bat_hurt: {instanceID: 0}
+  - bat_attack: {instanceID: 0}
+  - canon_idle: {instanceID: 0}
+  - canon_hurt: {instanceID: 0}
+  - canon_attack: {instanceID: 0}
+  - wall_hurt: {instanceID: 0}
+  - chest_open: {instanceID: 0}
+  - hero_drink: {instanceID: 0}
+  - hero_take_damage: {instanceID: 0}
+  - hero_level_up: {instanceID: 0}
+  - wizard_attack: {instanceID: 0}
+  - wizard_block: {instanceID: 0}
+  - wizard_no_mana: {instanceID: 0}
+  - warrior_attack: {instanceID: 0}
+  - warrior_block: {instanceID: 0}
+  - warrior_rage: {instanceID: 0}
+  - health_potion_effect: {instanceID: 0}
+  - xp_potion_effect: {instanceID: 0}
+  - victory: {instanceID: 0}
+  - loose: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

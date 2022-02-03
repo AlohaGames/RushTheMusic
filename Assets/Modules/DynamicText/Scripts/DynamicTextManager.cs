@@ -76,6 +76,8 @@ namespace Aloha
             DynamicText dt = Instantiate(dynamicTextPrefab);
             dt.transform.position = gameObject.transform.position;
 
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Text, dt.gameObject);
+
             // Init queue of does not exists 
             if (!queues.ContainsKey(key))
             {
