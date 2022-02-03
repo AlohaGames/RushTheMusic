@@ -102,7 +102,7 @@ namespace Aloha
 
                 // The rage multiply by 5 the power
                 damage = heroStats.Attack;
-                entity.TakeDamage(damage*5);
+                entity.TakeDamage(damage*3);
 
                 CurrentRage = 0;
             }

@@ -18,9 +18,7 @@ namespace Aloha
         public new void Awake()
         {
             base.Awake();
-
             Experion experion = GetComponentInParent<Experion>();
-
             experion.OnHealthUpdate.AddListener(UpdateBar);
         }
     }
