@@ -30,11 +30,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   CurrentHealth: 0
-  Hero: {fileID: 0}
+  hero: {fileID: 0}
   NearHeroTrigger:
     m_PersistentCalls:
       m_Calls: []
-  fireballPrefab: {fileID: 1023215018960411582, guid: 495e712906aa2d044bdfe4cc2a17fef1, type: 3}
+  fireballPrefab: {fileID: 1023215018960411582, guid: 3412ca7df72d4e34c96c4f388f5cb644, type: 3}
 --- !u!1 &2605350057828432221
 GameObject:
   m_ObjectHideFlags: 0
