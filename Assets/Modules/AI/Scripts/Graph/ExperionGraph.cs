@@ -51,9 +51,9 @@ namespace Aloha.AI
 
             // Add Link to MoveLeft
             MoveLeft.IsLeft = true;
-            MoveLeft.AddAutomaticLink(MoveRight, 0.30f);
-            MoveLeft.AddAutomaticLink(MoveLeft, 0.30f);
-            MoveLeft.AddAutomaticLink(TeleportRightLeft, 0.10f);
+            MoveLeft.AddAutomaticLink(MoveRight, 0.25f);
+            MoveLeft.AddAutomaticLink(MoveLeft, 0.25f);
+            MoveLeft.AddAutomaticLink(TeleportRightLeft, 0.20f);
             MoveLeft.AddAutomaticLink(IceLaser, 0.06f);
             MoveLeft.AddAutomaticLink(FireLaser, 0.06f);
             MoveLeft.AddAutomaticLink(FireballAttack, 0.06f);
@@ -62,9 +62,9 @@ namespace Aloha.AI
             MoveLeft.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to MoveRight
-            MoveRight.AddAutomaticLink(MoveRight, 0.30f);
-            MoveRight.AddAutomaticLink(MoveLeft, 0.30f);
-            MoveRight.AddAutomaticLink(TeleportRightLeft, 0.10f);
+            MoveRight.AddAutomaticLink(MoveRight, 0.25f);
+            MoveRight.AddAutomaticLink(MoveLeft, 0.25f);
+            MoveRight.AddAutomaticLink(TeleportRightLeft, 0.20f);
             MoveRight.AddAutomaticLink(IceLaser, 0.06f);
             MoveRight.AddAutomaticLink(FireLaser, 0.06f);
             MoveRight.AddAutomaticLink(FireballAttack, 0.06f);
@@ -74,14 +74,12 @@ namespace Aloha.AI
 
             // Add Link to TeleportRightLeft
             TeleportRightLeft.Teleport = true;
-            TeleportRightLeft.AddAutomaticLink(MoveRight, 0.30f);
-            TeleportRightLeft.AddAutomaticLink(MoveLeft, 0.30f);
             TeleportRightLeft.AddAutomaticLink(TeleportRightLeft, 0.10f);
-            TeleportRightLeft.AddAutomaticLink(IceLaser, 0.06f);
-            TeleportRightLeft.AddAutomaticLink(FireLaser, 0.06f);
-            TeleportRightLeft.AddAutomaticLink(FireballAttack, 0.06f);
-            TeleportRightLeft.AddAutomaticLink(IceballAttack, 0.06f);
-            TeleportRightLeft.AddAutomaticLink(DashAttack, 0.06f);
+            TeleportRightLeft.AddAutomaticLink(IceLaser, 0.18f);
+            TeleportRightLeft.AddAutomaticLink(FireLaser, 0.18f);
+            TeleportRightLeft.AddAutomaticLink(FireballAttack, 0.18f);
+            TeleportRightLeft.AddAutomaticLink(IceballAttack, 0.18f);
+            TeleportRightLeft.AddAutomaticLink(DashAttack, 0.18f);
             TeleportRightLeft.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to Ice Laser
@@ -106,7 +104,8 @@ namespace Aloha.AI
             DashAttack.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to GetBump
-            GetBump.AddAutomaticLink(MoveForward, 1.0f);
+            GetBump.AddAutomaticLink(MoveForward, 0.3f);
+            GetBump.AddAutomaticLink(ExperionTeleportation, 0.7f);
             //GetBump.AddAutomaticLink(Attack, 0.2f);
 
             // Register Node in Graph

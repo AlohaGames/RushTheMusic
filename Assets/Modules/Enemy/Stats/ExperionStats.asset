@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c972277872fb9478a9b3b7cfe43f10, type: 3}
   m_Name: ExperionStats
   m_EditorClassIdentifier: 
-  MaxHealth: 1000
+  MaxHealth: 250
   Attack: 40
-  Defense: 30
+  Defense: 20
   Level: 0
