@@ -79,6 +79,9 @@ namespace Aloha.AI
             {
                 experion.Anim.ResetTrigger("TeleportBack");
                 experion.Anim.SetTrigger("Teleport");
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.experion_teleportation, experion.gameObject
+                );
                 yield return new WaitForSeconds(0.5f);
 
                 Vector3 newPosition = experion.transform.position;

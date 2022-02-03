@@ -44,6 +44,16 @@ namespace Aloha
             OnHealthUpdate.Invoke(this.CurrentHealth, this.GetStats().MaxHealth);
         }
 
+        /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.experion_idle, this.gameObject, loop: true
+            );
+        }
 
         /// <summary>
         /// Function for experion to take damage
@@ -53,6 +63,9 @@ namespace Aloha
         {
             base.TakeDamage(damage);
             OnHealthUpdate.Invoke(this.CurrentHealth, this.GetStats().MaxHealth);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.experion_hurt, this.gameObject
+            );
         }
 
         /// <summary>
@@ -87,6 +100,10 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
+
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.experion_ice_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>
@@ -111,6 +128,9 @@ namespace Aloha
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.experion_fire_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>

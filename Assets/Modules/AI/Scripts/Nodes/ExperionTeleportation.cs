@@ -40,7 +40,11 @@ namespace Aloha.AI
             {
                 experion.Anim.ResetTrigger("TeleportBack");
                 experion.Anim.SetTrigger("Teleport");
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.experion_teleportation, experion.gameObject
+                );
                 yield return new WaitForSeconds(0.5f);
+
                 Vector3 newPosition = experion.transform.position;
                 Vector3 add = experion.transform.forward * Utils.RandomFloat(5, 10);
                 newPosition += add;
