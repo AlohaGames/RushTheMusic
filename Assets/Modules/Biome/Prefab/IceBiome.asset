@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BiomeName: ice
   SideEnvironmentPrefabs:
+  - {fileID: 5409041702710565245, guid: 8545b21b16c396841b82bb869ad57ac5, type: 3}
+  - {fileID: 8227395143591920512, guid: d7d0ad1f338cbe141ab2e7acdec5b845, type: 3}
   - {fileID: 5574797529966370831, guid: 1930144a66103454496ca10aefca75c2, type: 3}
+  - {fileID: 2448800197143962981, guid: c7b1005b810770342ab88132f7a02aea, type: 3}
   - {fileID: 5409041702710565245, guid: 8545b21b16c396841b82bb869ad57ac5, type: 3}
   - {fileID: 8227395143591920512, guid: d7d0ad1f338cbe141ab2e7acdec5b845, type: 3}
   - {fileID: 5409041702710565245, guid: 8545b21b16c396841b82bb869ad57ac5, type: 3}

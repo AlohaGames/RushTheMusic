@@ -1,13 +1,13 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Aloha
 {
     /// <summary>
-    /// Class for animals
+    /// Class for a panel sign
     /// </summary>
-    public class Animal : SideEnvironment
+    public class Panel : SideEnvironment
     {
-
         /// <summary>
         /// Initialize animal
         /// <example> Example(s):
@@ -22,11 +22,11 @@ namespace Aloha
             int index = Utils.RandomInt(0, Sprite.Length);
 
             // Attribute sprite to prefab
-            this.gameObject.GetComponent<SpriteRenderer>().sprite = Sprite[index];
+            this.gameObject.GetComponentInChildren<Image>().sprite = Sprite[index];
 
-            //Set the size of animal
-            Height = 1;
-            Width = 1;
+            //Set the size of Panel
+            Height = 0.7f;
+            Width = 0.7f;
         }
     }
 }

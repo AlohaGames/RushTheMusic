@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BiomeName: red
   SideEnvironmentPrefabs:
+  - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
+  - {fileID: 4202955451727471546, guid: 5843b45e3b4892b4a8a1df4c966f350d, type: 3}
   - {fileID: 2368247788164874689, guid: 836d65fc537c36849aa4325062c69504, type: 3}
+  - {fileID: 1373990029915173552, guid: c5864bcdaa901cb4796edcb4a51a22c9, type: 3}
   - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
   - {fileID: 4202955451727471546, guid: 5843b45e3b4892b4a8a1df4c966f350d, type: 3}
   - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
