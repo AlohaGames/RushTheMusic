@@ -162,7 +162,10 @@ namespace Aloha
         /// </summary>
         private void OnDestroy()
         {
-            AssociatedEnemy.ReleaseAttack();
+            if (AssociatedEnemy != null)
+            {
+                AssociatedEnemy.ReleaseAttack();
+            }
             StopAllCoroutines();
         }
     }
