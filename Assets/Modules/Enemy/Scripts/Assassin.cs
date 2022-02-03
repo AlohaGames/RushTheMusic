@@ -14,13 +14,6 @@ namespace Aloha
         public Animator Anim;
 
         /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
-        /// </summary>
-        void Start()
-        {
-            Anim = GetComponent<Animator>();
-        }
-        /// <summary>
         /// Default Awake function
         /// </summary>
         protected override void Awake()
