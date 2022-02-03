@@ -37,6 +37,10 @@ namespace Aloha
         public AudioClip experion_teleportation;
         public AudioClip experion_ice_laser;
         public AudioClip experion_fire_laser;
+        public AudioClip experion_fireball;
+        public AudioClip experion_iceball;
+        public AudioClip experion_dash;
+        public AudioClip[] experion_quotes;
 
         [Header("HERO")]
         public AudioClip hero_drink;

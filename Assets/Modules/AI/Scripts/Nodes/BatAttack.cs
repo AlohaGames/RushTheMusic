@@ -47,10 +47,6 @@ namespace Aloha.AI
             yield return bat.GetBump(new Vector3(0, 0, 0.5f), 2f);
             yield return new WaitForSeconds(0.2f);
 
-            SoundEffectManager.Instance.Play(
-                SoundEffectManager.Instance.Sounds.bat_attack, this.gameObject
-            );
-
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = new Vector3(0, 1, 0);
@@ -61,6 +57,10 @@ namespace Aloha.AI
                 yield return null;
             }
             gameObject.transform.position = posFinal;
+
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.bat_attack, this.gameObject
+            );
 
             bat.Attack(bat.Hero);
             bat.Anim.SetBool("isAttacking", false);

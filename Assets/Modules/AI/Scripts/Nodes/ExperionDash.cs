@@ -58,6 +58,10 @@ namespace Aloha.AI
             }
             gameObject.transform.position = posFinal;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.experion_dash, this.gameObject
+            );
+
             experion.Attack(experion.Hero);
             experion.Anim.SetBool("isDashing", false);
 
