@@ -56,7 +56,7 @@ namespace Aloha.AI
             yield return new WaitForSeconds(1f);
 
             // Launch the fireball on the hero
-            experion.LaunchFireball(3);
+            experion.LaunchFireball(6);
 
             yield return null;
 

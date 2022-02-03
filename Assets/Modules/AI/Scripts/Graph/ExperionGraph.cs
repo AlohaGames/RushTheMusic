@@ -29,6 +29,7 @@ namespace Aloha.AI
             Node FireLaser = new ExperionFireAttack(this);
             ExperionFireball FireballAttack = new ExperionFireball(this);
             ExperionFireball IceballAttack = new ExperionFireball(this);
+            Node DashAttack = new ExperionDash(this);
             Node GetBump = new BasicNode(this, 1);
 
             // Add Link to MoveForward
@@ -51,18 +52,21 @@ namespace Aloha.AI
             MoveLeft.IsLeft = true;
             MoveLeft.AddAutomaticLink(MoveRight, 0.35f);
             MoveLeft.AddAutomaticLink(MoveLeft, 0.35f);
-            MoveLeft.AddAutomaticLink(IceLaser, 0.10f);
-            MoveLeft.AddAutomaticLink(FireLaser, 0.10f);
-            MoveLeft.AddAutomaticLink(FireballAttack, 0.10f);
+            MoveLeft.AddAutomaticLink(IceLaser, 0.06f);
+            MoveLeft.AddAutomaticLink(FireLaser, 0.06f);
+            MoveLeft.AddAutomaticLink(FireballAttack, 0.06f);
+            MoveLeft.AddAutomaticLink(IceballAttack, 0.06f);
+            MoveLeft.AddAutomaticLink(DashAttack, 0.06f);
             MoveLeft.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to MoveRight
             MoveRight.AddAutomaticLink(MoveLeft, 0.35f);
             MoveRight.AddAutomaticLink(MoveRight, 0.35f);
-            MoveRight.AddAutomaticLink(IceLaser, 0.075f);
-            MoveRight.AddAutomaticLink(FireLaser, 0.075f);
-            MoveRight.AddAutomaticLink(FireballAttack, 0.075f);
-            MoveRight.AddAutomaticLink(IceballAttack, 0.075f);
+            MoveRight.AddAutomaticLink(IceLaser, 0.06f);
+            MoveRight.AddAutomaticLink(FireLaser, 0.06f);
+            MoveRight.AddAutomaticLink(FireballAttack, 0.06f);
+            MoveRight.AddAutomaticLink(IceballAttack, 0.06f);
+            MoveRight.AddAutomaticLink(DashAttack, 0.06f);
             MoveRight.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to Ice Laser
@@ -77,10 +81,14 @@ namespace Aloha.AI
             FireballAttack.AddAutomaticLink(TamponNearHero, 1.0f);
             FireballAttack.AddEventLink(GetBump, experion.TakeDamageEvent);
 
-            // Add Link to Fireball
+            // Add Link to Iceball
             FireballAttack.IsIce = true;
             IceballAttack.AddAutomaticLink(TamponNearHero, 1.0f);
             IceballAttack.AddEventLink(GetBump, experion.TakeDamageEvent);
+
+            // Add Link to Dash
+            DashAttack.AddAutomaticLink(TamponNearHero, 1.0f);
+            DashAttack.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to GetBump
             GetBump.AddAutomaticLink(MoveForward, 1.0f);
@@ -95,6 +103,8 @@ namespace Aloha.AI
             Nodes.Add(IceLaser);
             Nodes.Add(FireLaser);
             Nodes.Add(FireballAttack);
+            Nodes.Add(IceballAttack);
+            Nodes.Add(DashAttack);
             Nodes.Add(GetBump);
         }
     }
