@@ -30,6 +30,17 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.canon_idle, this.gameObject, loop: true
+            );
+        }
+
+        /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled.
         /// </summary>
         void Update()
@@ -39,6 +50,23 @@ namespace Aloha
             {
                 Destroy(this.gameObject);
             }
+        }
+
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     canon.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.canon_hurt, this.gameObject
+            );
         }
 
         /// <summary>
@@ -79,7 +107,7 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, canonball.gameObject);
 
             // Launch canonball to the hero
-            canonball.Launch(Hero.transform.position);
+            canonball.Launch(this.Hero.transform.position);
 
             // Charge a new canonball
             StartCoroutine(WaitForAttackAvailable());

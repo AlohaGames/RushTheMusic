@@ -22,6 +22,32 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.lancer_idle, this.gameObject, loop: true
+            );
+        }
+
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     lancer.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(SoundEffectManager.Instance.Sounds.lancer_hurt, this.gameObject);
+        }
+
+        /// <summary>
         /// Function to bump the lancer
         /// </summary>
         /// <param name="direction"></param>

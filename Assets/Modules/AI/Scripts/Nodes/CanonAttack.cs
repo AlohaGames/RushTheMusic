@@ -43,6 +43,10 @@ namespace Aloha.AI
 
             canon.Fire();
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.canon_attack, this.gameObject
+            );
+
             yield return null;
 
             if (!AutomaticLinks.IsEmpty())

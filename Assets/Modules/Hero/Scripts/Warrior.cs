@@ -95,6 +95,9 @@ namespace Aloha
             int damage;
             if (this.CurrentRage == heroStats.MaxRage)
             {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_rage, this.gameObject
+                );
                 GlobalEvent.HudEffect.Invoke(0.8f, 1.0f, HUDEffectType.rage);
                 Stats entityStats = entity.GetStats();
                 damage = entityStats.MaxHealth;
@@ -121,7 +124,7 @@ namespace Aloha
         /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
         public override void RegenerateSecondary(float secondaryRegen)
         {
-            int newRage = (int) (this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
+            int newRage = (int)(this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
             this.CurrentRage = newRage.Clamp(0, this.heroStats.MaxRage);
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }

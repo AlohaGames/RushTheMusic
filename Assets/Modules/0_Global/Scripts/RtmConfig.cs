@@ -15,6 +15,7 @@ namespace Aloha
         public bool AllowDynamicTexts; // true : Allowed
         public float MouseSensibility;
         public float GameVolume;
+        public float GameSoundEffectsVolume;
 
         /// <summary>
         /// Default constructor
@@ -27,6 +28,7 @@ namespace Aloha
             this.AllowDynamicTexts = true;
             this.MouseSensibility = 1.0f;
             this.GameVolume = 1.0f;
+            this.GameSoundEffectsVolume = 0.5f;
         }
     }
 }

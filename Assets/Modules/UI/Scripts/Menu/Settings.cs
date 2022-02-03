@@ -11,6 +11,7 @@ namespace Aloha.UI
     public class Settings : MonoBehaviour
     {
         public Slider volumeSlider;
+        public Slider secondaryVolumeSlider;
         public Slider sensibilitySlider;
 
         /// <summary>
@@ -24,6 +25,19 @@ namespace Aloha.UI
         public void UpdateVolume()
         {
             AudioManager.Instance.UpdateVolume(volumeSlider.value / 100);
+        }
+
+        /// <summary>
+        /// Update sound effects volume in audio manager
+        /// <example> Example(s):
+        /// <code>
+        ///     settings.UpdateSoundEffectsVolume();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void UpdateSoundEffectsVolume()
+        {
+            SoundEffectManager.Instance.UpdateVolume(secondaryVolumeSlider.value / 100);
         }
 
         /// <summary>

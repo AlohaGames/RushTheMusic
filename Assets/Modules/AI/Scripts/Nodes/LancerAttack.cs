@@ -47,6 +47,10 @@ namespace Aloha.AI
             yield return lancer.GetBump(new Vector3(0, 0, 1f), 3f);
             yield return new WaitForSeconds(0.2f);
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.lancer_attack, this.gameObject
+            );
+
             float temps = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;

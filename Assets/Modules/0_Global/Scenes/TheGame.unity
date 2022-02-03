@@ -2102,6 +2102,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025863805903542339, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: lancer_hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 55c2ea3bfc4d76a4092f9dd75161f18f, type: 3}
     - target: {fileID: 1120948839712050281, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
