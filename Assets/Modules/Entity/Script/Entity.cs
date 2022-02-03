@@ -124,7 +124,7 @@ namespace Aloha
                         Die();
                     }
                 }
-                else
+                else if (this is Enemy)
                 {
                     StartCoroutine(SwitchColor());
                 }
