@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
   m_Name: ForestBiome
   m_EditorClassIdentifier: 
-  BiomeName: base
+  BiomeName: forest
+  Label: "For\xEAt"
   SideEnvironmentPrefabs:
   - {fileID: 3525451122986483848, guid: b4b34e619a90b594da90ae4a13ec8b74, type: 3}
   - {fileID: 7431554564362571214, guid: 4d7035db905b0094ab165bffc3675033, type: 3}

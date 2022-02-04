@@ -38,9 +38,9 @@ namespace Aloha.UI
 
         void SelectBiome(Biome biome)
         {
-            Debug.Log("Selected biome : " + biome.BiomeName);
+            Debug.Log("Selected biome : " + biome.Label);
             EditorManager.Instance.SetBiome(biome);
-            buttonText.text = biome.BiomeName;
+            buttonText.text = biome.Label;
             contextWindow.SetActive(false);
         }
     }

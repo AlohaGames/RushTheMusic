@@ -36,7 +36,7 @@ namespace Aloha.UI
         public void SetBiome(Biome biome)
         {
             this.biome = biome;
-            this.text.text = biome.BiomeName;
+            this.text.text = biome.Label;
             this.image.sprite = biome.SidePanelSprites[0];
         }
 

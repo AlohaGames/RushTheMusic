@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
   m_Name: FrostBiome
   m_EditorClassIdentifier: 
-  BiomeName: ice
+  BiomeName: winter
+  Label: "For\xEAt Gel\xE9e"
   SideEnvironmentPrefabs:
   - {fileID: 5574797529966370831, guid: 1930144a66103454496ca10aefca75c2, type: 3}
   - {fileID: 5409041702710565245, guid: 8545b21b16c396841b82bb869ad57ac5, type: 3}

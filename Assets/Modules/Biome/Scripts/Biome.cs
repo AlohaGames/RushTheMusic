@@ -11,6 +11,8 @@ namespace Aloha
     public class Biome : ScriptableObject
     {
         public string BiomeName;
+
+        public string Label;
         public SideEnvironment[] SideEnvironmentPrefabs;
         public Sprite[] SidePanelSprites;
         public GameObject CastleHill;
