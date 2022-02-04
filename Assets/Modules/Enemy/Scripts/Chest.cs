@@ -39,9 +39,9 @@ namespace Aloha
         public void Init(ChestStats stats)
         {
             base.Init(stats);
-            this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
+            this.item = Instantiate(this.ItemListPrefab[(int) stats.Item]);
             ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
-            anim = GetComponent<Animator>();
+            if (!Anim) Anim = GetComponent<Animator>();
         }
 
         public void AddItem(string itemType)

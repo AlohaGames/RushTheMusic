@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Aloha.Events;
 
 namespace Aloha.UI
@@ -105,5 +106,12 @@ namespace Aloha.UI
             this.levelMapping = levelMapping;
         }
 
+        /// <summary>
+        /// Return to MainMenu
+        /// </summary>
+        public void ReturnToMenu()
+        {
+            SceneManager.LoadScene(0); // Load scene with index 0 (TheGame)
+        }
     }
 }
