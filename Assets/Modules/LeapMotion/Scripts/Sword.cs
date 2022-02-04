@@ -46,7 +46,7 @@ namespace Aloha
         public void OnTriggerEnter(Collider other)
         {
             bool leapActivated = GameManager.Instance ? GameManager.Instance.Config.LeapMode : true;
-            if (other.tag == "Enemy" && ((!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
+            if ((other.tag == "Enemy" || other.tag == "Boss") && ((!leapActivated && Warrior.IsAttacking) || (leapActivated && Speed > minimumSpeedToKill)))
             {
                 if (!leapActivated) Speed = 2;
                 Warrior.IsAttacking = false;

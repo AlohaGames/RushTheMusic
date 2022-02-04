@@ -51,6 +51,10 @@ namespace Aloha.AI
             // Launch the fireball on the hero
             wyrmling.LaunchFireball(3);
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wyrmling_attack, this.gameObject
+            );
+
             yield return null;
 
             if (!AutomaticLinks.IsEmpty())

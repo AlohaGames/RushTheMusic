@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2142,6 +2142,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1025863805903542339, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: lancer_hurt
+      value: 
+      objectReference: {fileID: 8300000, guid: 55c2ea3bfc4d76a4092f9dd75161f18f, type: 3}
     - target: {fileID: 1120948839712050281, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2762,6 +2766,14 @@ PrefabInstance:
       propertyPath: backgroundColor.r
       value: 0.9528302
       objectReference: {fileID: 0}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: biomes.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
+      propertyPath: biomes.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 549f14a760270954289f6cb240d91ede, type: 2}
     - target: {fileID: 4052463005377598705, guid: beb08a16a330fd58b99485317896e360, type: 3}
       propertyPath: tilePrefabs.Array.size
       value: 1

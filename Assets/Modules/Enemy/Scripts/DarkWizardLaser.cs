@@ -7,7 +7,7 @@ namespace Aloha
     /// <summary>
     /// Class for the dark wizard's laser
     /// </summary>
-    public class Laser : MonoBehaviour
+    public class DarkWizardLaser : MonoBehaviour
     {
         private float currentSize;
         private bool canDamage;

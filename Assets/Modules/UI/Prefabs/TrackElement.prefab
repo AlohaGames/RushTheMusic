@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 4019627884377184745}
   - component: {fileID: 4380435146866615481}
   - component: {fileID: 1224871619578870860}
+  - component: {fileID: 973669093984399156}
   m_Layer: 5
   m_Name: TrackElement
   m_TagString: Untagged
@@ -649,6 +650,18 @@ MonoBehaviour:
   IsTuto: 0
   Level: 
   MenuRoot: {fileID: 0}
+--- !u!114 &973669093984399156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6047770129175443618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fa55e6998006dd4f99c6d75fb1d5230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7353162142341652560
 GameObject:
   m_ObjectHideFlags: 0

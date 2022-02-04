@@ -70,6 +70,10 @@ namespace Aloha
             // LEVEL UP !
             if (this.GetStats().XP >= this.GetStats().MaxXP)
             {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.hero_level_up, this.gameObject
+                );
+
                 this.GetStats().XP -= this.GetStats().MaxXP;
                 this.GetStats().Scale();
             }
@@ -89,6 +93,10 @@ namespace Aloha
         /// <param name="damage"></param>
         public override void TakeDamage(int damage)
         {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.hero_take_damage, this.gameObject
+            );
+
             float damageReduction = CalculateDamageReduction();
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);

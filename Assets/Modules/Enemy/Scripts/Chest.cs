@@ -11,7 +11,7 @@ namespace Aloha
     public class Chest : Enemy<ChestStats>
     {
         private Item item;
-        private Animator anim;
+        public Animator Anim;
         public List<Item> ItemListPrefab;
 
         /// <summary>
@@ -39,6 +39,8 @@ namespace Aloha
         public void Init(ChestStats stats)
         {
             base.Init(stats);
+            this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
             anim = GetComponent<Animator>();
         }
 
@@ -102,8 +104,11 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
-            anim.SetBool("isOpen", true);
+            Anim.SetBool("isOpen", true);
             InventoryManager.Instance.AddItem(this.item);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.chest_open, this.gameObject
+            );
             base.Die();
         }
     }

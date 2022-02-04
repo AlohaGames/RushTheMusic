@@ -94,6 +94,11 @@ namespace Aloha.Events
         public static UnityEvent LevelStart = new UnityEvent();
 
         /// <summary>
+        /// Event called when the boss start
+        /// </summary>
+        public static UnityEvent Boss = new UnityEvent();
+
+        /// <summary>
         /// Trigger when the next level is reached
         /// </summary>
         public static UnityEvent NextLevel = new UnityEvent();

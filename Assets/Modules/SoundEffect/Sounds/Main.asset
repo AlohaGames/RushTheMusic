@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 536c77e92e81f8f45aabaefb40b6aa50, type: 3}
+  m_Name: Main
+  m_EditorClassIdentifier: 
+  lancer_idle: {fileID: 0}
+  lancer_hurt: {fileID: 8300000, guid: 8516a6c44a1be5545895f2e084fb3eda, type: 3}
+  lancer_attack: {fileID: 8300000, guid: 7256a87c601493d45a73c0ae9f7d4a15, type: 3}
+  assassin_idle: {fileID: 0}
+  assassin_hurt: {fileID: 8300000, guid: 78c5bf71de04b45479cf05c30678d83b, type: 3}
+  assassin_attack: {fileID: 8300000, guid: 9a97ec53182168c4fb5c0beffcfd8890, type: 3}
+  wyrmling_idle: {fileID: 8300000, guid: 81ce4e02615fec447b9c9c1286806530, type: 3}
+  wyrmling_hurt: {fileID: 8300000, guid: 857912972cafcb54e91efe12f689eebf, type: 3}
+  wyrmling_attack: {fileID: 8300000, guid: 383195e5e3843ca4fb83e42e0e7ebafb, type: 3}
+  bat_idle: {fileID: 0}
+  bat_hurt: {fileID: 8300000, guid: ea20a55d392a1ee4285b71e24a5ceadf, type: 3}
+  bat_attack: {fileID: 8300000, guid: c502929af94ac604f8f3f93142cc0916, type: 3}
+  canon_idle: {fileID: 0}
+  canon_hurt: {fileID: 8300000, guid: b1376613f7b2cb143a4d23d3d54c781a, type: 3}
+  canon_attack: {fileID: 8300000, guid: 635c2425283da4a41bafdbb53e1cb42a, type: 3}
+  dark_wizard_idle: {fileID: 0}
+  dark_wizard_hurt: {fileID: 8300000, guid: be3a895c2fe87eb459a4878a63eee930, type: 3}
+  dark_wizard_ice_laser: {fileID: 8300000, guid: 46f0564b98f5f8b49b4e1bb6fec2ca75, type: 3}
+  dark_wizard_fire_laser: {fileID: 8300000, guid: be736d1144481724186d2cb02bfade97, type: 3}
+  wall_hurt: {fileID: 8300000, guid: 35206f82d110d614386a4427476fe156, type: 3}
+  chest_open: {fileID: 8300000, guid: 2bfd89fcdc15ef0409cb51f7e72de14d, type: 3}
+  experion_idle: {fileID: 0}
+  experion_hurt: {fileID: 8300000, guid: 6160129070b09a0418774d4e07b800d1, type: 3}
+  experion_teleportation: {fileID: 8300000, guid: 006b452ea73825746a6392e7348555bc, type: 3}
+  experion_ice_laser: {fileID: 8300000, guid: 46f0564b98f5f8b49b4e1bb6fec2ca75, type: 3}
+  experion_fire_laser: {fileID: 8300000, guid: be736d1144481724186d2cb02bfade97, type: 3}
+  experion_fireball: {fileID: 8300000, guid: 383195e5e3843ca4fb83e42e0e7ebafb, type: 3}
+  experion_iceball: {fileID: 8300000, guid: 383195e5e3843ca4fb83e42e0e7ebafb, type: 3}
+  experion_dash: {fileID: 8300000, guid: 7256a87c601493d45a73c0ae9f7d4a15, type: 3}
+  experion_quotes:
+  - {fileID: 8300000, guid: d888d0d5de392fa4a8c9ee31178e7d84, type: 3}
+  - {fileID: 8300000, guid: 3cf742460617d214385ba75d2c275b5b, type: 3}
+  - {fileID: 8300000, guid: 1ff097dbfad51ca4b8b6347a3c4eb770, type: 3}
+  hero_drink: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
+  hero_take_damage: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
+  hero_level_up: {fileID: 8300000, guid: 07f02d03eec4c834d91a691b1054274e, type: 3}
+  wizard_attack: {fileID: 8300000, guid: 7cf3443aafda49240b59ca461850f143, type: 3}
+  wizard_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}
+  wizard_no_mana: {fileID: 8300000, guid: ede2c94c3d88355459657f7e05e7c4d4, type: 3}
+  warrior_attack: {fileID: 8300000, guid: 2279278638eea3c4485e214d99b1779d, type: 3}
+  warrior_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}
+  warrior_rage: {fileID: 8300000, guid: fa381a510f66ab743b0666ee794f20a2, type: 3}
+  health_potion_effect: {fileID: 0}
+  xp_potion_effect: {fileID: 0}
+  mana_potion_effect: {fileID: 0}
+  rage_potion_effect: {fileID: 0}
+  victory: {fileID: 8300000, guid: f08cc18858b6ffe43ab74caca6c1175a, type: 3}
+  loose: {fileID: 8300000, guid: fd6597a30b41340499cc19e5a43ad072, type: 3}
+  click: {fileID: 8300000, guid: eb614c557e04d3646b31df19693f81ec, type: 3}
+  back: {fileID: 8300000, guid: 2cb7dd17807dc82479d4556e6f5366c9, type: 3}

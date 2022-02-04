@@ -9,16 +9,15 @@ namespace Aloha
     /// </summary>
     public class DarkWizard : Enemy<DarkWizardStats>
     {
-        private Laser laserBeam;
+        private DarkWizardLaser laserBeam;
 
         [Header("Lasers Prefabs")]
         [SerializeField]
-        private Laser iceLaserPrefab;
+        private DarkWizardLaser iceLaserPrefab;
 
         [SerializeField]
-        private Laser fireLaserPrefab;
+        private DarkWizardLaser fireLaserPrefab;
 
-        [HideInInspector]
         public Animator Anim;
         
         [HideInInspector]
@@ -29,8 +28,18 @@ namespace Aloha
         /// </summary>
         void Start()
         {
-            Anim = GetComponent<Animator>();
             IsAttacking = false;
+        }
+
+        /// <summary>
+        /// Default Awake function
+        /// </summary>
+        protected override void Awake()
+        {
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_idle, this.gameObject, loop: true
+            );
         }
 
         /// <summary>
@@ -42,6 +51,23 @@ namespace Aloha
         {
             ReleaseAttack();
             yield return base.GetBump(direction, speed);
+        }
+
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     darkWizard.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_hurt, this.gameObject
+            );
         }
 
         /// <summary>
@@ -65,6 +91,10 @@ namespace Aloha
             ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, laserBeam.gameObject);
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
+
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_ice_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>
@@ -89,6 +119,9 @@ namespace Aloha
             laserBeam.ThrowLaser(initial, target, 15.0f, 2.0f, 0.8f);
             laserBeam.AssociatedEnemy = this;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.dark_wizard_fire_laser, this.laserBeam.gameObject, 0.8f, true
+            );
         }
 
         /// <summary>

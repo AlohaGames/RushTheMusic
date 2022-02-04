@@ -144,5 +144,10 @@ namespace Aloha
         /// DarkWizard
         /// </summary>
         darkWizard = 12,
+
+        /// <summary>
+        /// Boss : Experion
+        /// </summary>
+        experion = 13,
     }
 }

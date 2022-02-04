@@ -45,7 +45,23 @@ namespace Aloha
 
         protected bool AIActivated = false;
 
-        public Hero Hero;
+        [SerializeField]
+        Hero hero;
+        public Hero Hero
+        {
+            get
+            {
+                if (!hero)
+                {
+                    hero = GameManager.Instance.GetHero();
+                }
+                return hero;
+            }
+            set
+            {
+                hero = value;
+            }
+        }
 
         [HideInInspector]
         public UnityEvent NearHeroTrigger = new UnityEvent();
@@ -70,15 +86,8 @@ namespace Aloha
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>
-        void Awake()
+        protected virtual void Awake()
         {
-            // If hero is not set manually, get it from manager
-            // Usefull for debug scenes
-            if (!this.Hero)
-            {
-                this.Hero = GameManager.Instance.GetHero();
-            }
-
             this.dieEvent.AddListener(Disappear);
         }
 
@@ -96,7 +105,7 @@ namespace Aloha
             int xpGain = 25;
 
             // Hero get xp for each ennemy killed
-            hero.GainXp(xpGain);
+            Hero.GainXp(xpGain);
 
             // Show XP Text
             DynamicTextManager.Instance.Show(gameObject, "+" + xpGain + " XP", Color.cyan);
@@ -112,10 +121,9 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
-            Hero hero = GameManager.Instance.GetHero();
-            if (hero)
+            if (Hero)
             {
-                gainHeroXp(hero);
+                gainHeroXp(Hero);
             }
             base.Die();
         }
@@ -131,6 +139,7 @@ namespace Aloha
         /// </summary>
         public void Disappear()
         {
+            Debug.Log("Enemy >> Disappear");
             Destroy(this.gameObject, 0.5f);
         }
 

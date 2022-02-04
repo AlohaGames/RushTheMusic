@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Aloha 
+namespace Aloha
 {
     /// <summary>
     /// Class for the fireball spawner attached to the wizard's arm
@@ -42,7 +42,7 @@ namespace Aloha
             if (this.currentFireball)
             {
                 CheckLaser();
-            } 
+            }
             else
             {
                 // Remove the laser
@@ -77,7 +77,7 @@ namespace Aloha
                     // Define size of the fireball
                     if (fireballPower != Wizard.GetStats().Attack)
                     {
-                        float size = (float) fireballPower / Wizard.GetStats().Attack;
+                        float size = (float)fireballPower / Wizard.GetStats().Attack;
                         Vector3 defaultScale = fireball.transform.localScale;
                         fireball.transform.localScale = new Vector3(defaultScale.x * size, defaultScale.y * size, defaultScale.z * size);
                     }
@@ -86,6 +86,13 @@ namespace Aloha
                     fireball.Wizard = this.Wizard;
                     fireball.Power = fireballPower;
                     this.currentFireball = fireball;
+                }
+                else
+                {
+                    // No mana
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.wizard_no_mana, this.gameObject
+                    );
                 }
             }
         }
@@ -100,6 +107,9 @@ namespace Aloha
         /// </summary>
         public void SendFireball()
         {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wizard_attack, this.gameObject
+            );
             if (this.currentFireball)
             {
                 this.currentFireball.Launch();

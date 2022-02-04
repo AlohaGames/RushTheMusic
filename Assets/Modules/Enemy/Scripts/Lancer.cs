@@ -14,11 +14,29 @@ namespace Aloha
         public Animator Anim;
 
         /// <summary>
-        /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
+        /// Default Awake function
         /// </summary>
-        void Start()
+        protected override void Awake()
         {
-            Anim = GetComponent<Animator>();
+            base.Awake();
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.lancer_idle, this.gameObject, loop: true
+            );
+        }
+
+        /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     lancer.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(SoundEffectManager.Instance.Sounds.lancer_hurt, this.gameObject);
         }
 
         /// <summary>

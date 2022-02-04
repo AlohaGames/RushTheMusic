@@ -58,6 +58,10 @@ namespace Aloha.AI
             }
             gameObject.transform.position = posFinal;
 
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.bat_attack, this.gameObject
+            );
+
             bat.Attack(bat.Hero);
             bat.Anim.SetBool("isAttacking", false);
 
