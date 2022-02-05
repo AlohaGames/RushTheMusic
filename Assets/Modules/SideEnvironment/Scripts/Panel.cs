@@ -9,10 +9,10 @@ namespace Aloha
     public class Panel : SideEnvironment
     {
         /// <summary>
-        /// Initialize animal
+        /// Initialize panel
         /// <example> Example(s):
         /// <code>
-        ///     sideEnvInstR.Initialize();
+        ///     panel.Initialize();
         /// </code>
         /// </example>
         /// </summary>
