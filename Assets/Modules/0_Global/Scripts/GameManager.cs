@@ -310,6 +310,19 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Call Victory event with a specific delay
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.VictoryWithDelay(2.0f);
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void VictoryWithDelay(float delay)
+        {
+            StartCoroutine(GlobalEvent.VictoryWithDelayCouroutine(delay));
+        }
+
+        /// <summary>
         /// Called when the gameobject is destroyed
         /// </summary>
         void OnDestroy()
