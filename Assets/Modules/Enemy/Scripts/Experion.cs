@@ -63,9 +63,17 @@ namespace Aloha
         {
             base.TakeDamage(damage);
             OnHealthUpdate.Invoke(this.CurrentHealth, this.GetStats().MaxHealth);
-            SoundEffectManager.Instance.Play(
-                SoundEffectManager.Instance.Sounds.experion_hurt, this.gameObject
-            );
+            if (this.CurrentHealth > 0)
+            {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.experion_hurt, this.gameObject
+                );
+            } else
+            {
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.experion_dying, this.gameObject
+                );
+            }
         }
 
         /// <summary>
@@ -221,7 +229,8 @@ namespace Aloha
 
         override public void Die()
         {
-            GlobalEvent.Victory.Invoke();
+            this.Anim.SetTrigger("Dying");
+            GameManager.Instance.VictoryWithDelay(2);
             base.Die();
         }
     }

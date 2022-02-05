@@ -47,43 +47,44 @@ namespace Aloha.AI
             ExperionTeleportation.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to TamponNearHero
-            TamponNearHero.AddAutomaticLink(MoveLeft, 0.475f);
-            TamponNearHero.AddAutomaticLink(MoveRight, 0.475f);
-            TamponNearHero.AddAutomaticLink(Quote, 0.05f);
+            TamponNearHero.AddAutomaticLink(MoveLeft, 0.40f);
+            TamponNearHero.AddAutomaticLink(MoveRight, 0.40f);
+            TamponNearHero.AddAutomaticLink(TeleportRightLeft, 0.20f);
 
             // Add Link to MoveLeft
             MoveLeft.IsLeft = true;
-            MoveLeft.AddAutomaticLink(MoveRight, 0.225f);
-            MoveLeft.AddAutomaticLink(MoveLeft, 0.225f);
+            MoveLeft.AddAutomaticLink(MoveRight, 0.15f);
+            MoveLeft.AddAutomaticLink(MoveLeft, 0.15f);
             MoveLeft.AddAutomaticLink(TeleportRightLeft, 0.20f);
             MoveLeft.AddAutomaticLink(IceLaser, 0.06f);
             MoveLeft.AddAutomaticLink(FireLaser, 0.06f);
             MoveLeft.AddAutomaticLink(FireballAttack, 0.06f);
             MoveLeft.AddAutomaticLink(IceballAttack, 0.06f);
             MoveLeft.AddAutomaticLink(DashAttack, 0.06f);
-            MoveLeft.AddAutomaticLink(Quote, 0.05f);
+            MoveLeft.AddAutomaticLink(Quote, 0.20f);
             MoveLeft.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to MoveRight
-            MoveRight.AddAutomaticLink(MoveRight, 0.225f);
-            MoveRight.AddAutomaticLink(MoveLeft, 0.225f);
+            MoveRight.AddAutomaticLink(MoveRight, 0.15f);
+            MoveRight.AddAutomaticLink(MoveLeft, 0.15f);
             MoveRight.AddAutomaticLink(TeleportRightLeft, 0.20f);
             MoveRight.AddAutomaticLink(IceLaser, 0.06f);
             MoveRight.AddAutomaticLink(FireLaser, 0.06f);
             MoveRight.AddAutomaticLink(FireballAttack, 0.06f);
             MoveRight.AddAutomaticLink(IceballAttack, 0.06f);
             MoveRight.AddAutomaticLink(DashAttack, 0.06f);
-            MoveRight.AddAutomaticLink(Quote, 0.05f);
+            MoveRight.AddAutomaticLink(Quote, 0.20f);
             MoveRight.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to TeleportRightLeft
             TeleportRightLeft.Teleport = true;
-            TeleportRightLeft.AddAutomaticLink(TeleportRightLeft, 0.10f);
-            TeleportRightLeft.AddAutomaticLink(IceLaser, 0.18f);
-            TeleportRightLeft.AddAutomaticLink(FireLaser, 0.18f);
-            TeleportRightLeft.AddAutomaticLink(FireballAttack, 0.18f);
-            TeleportRightLeft.AddAutomaticLink(IceballAttack, 0.18f);
-            TeleportRightLeft.AddAutomaticLink(DashAttack, 0.18f);
+            TeleportRightLeft.AddAutomaticLink(TeleportRightLeft, 0.15f);
+            TeleportRightLeft.AddAutomaticLink(IceLaser, 0.16f);
+            TeleportRightLeft.AddAutomaticLink(FireLaser, 0.16f);
+            TeleportRightLeft.AddAutomaticLink(FireballAttack, 0.16f);
+            TeleportRightLeft.AddAutomaticLink(IceballAttack, 0.16f);
+            TeleportRightLeft.AddAutomaticLink(DashAttack, 0.16f);
+            TeleportRightLeft.AddAutomaticLink(Quote, 0.05f);
             TeleportRightLeft.AddEventLink(GetBump, experion.TakeDamageEvent);
 
             // Add Link to Ice Laser

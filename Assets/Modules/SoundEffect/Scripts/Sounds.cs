@@ -34,6 +34,7 @@ namespace Aloha
         [Header("BOSS")]
         public AudioClip experion_idle;
         public AudioClip experion_hurt;
+        public AudioClip experion_dying;
         public AudioClip experion_teleportation;
         public AudioClip experion_ice_laser;
         public AudioClip experion_fire_laser;
@@ -41,6 +42,7 @@ namespace Aloha
         public AudioClip experion_iceball;
         public AudioClip experion_dash;
         public AudioClip[] experion_quotes;
+        public AudioClip[] experion_quotes_low_hp;
 
         [Header("HERO")]
         public AudioClip hero_drink;

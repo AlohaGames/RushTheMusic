@@ -15,6 +15,8 @@ MonoBehaviour:
   BiomeName: frostForest
   Label: "For\xEAt Gel\xE9e"
   SideEnvironmentPrefabs:
+  - {fileID: 5409041702710565245, guid: 8545b21b16c396841b82bb869ad57ac5, type: 3}
+  - {fileID: 8227395143591920512, guid: d7d0ad1f338cbe141ab2e7acdec5b845, type: 3}
   - {fileID: 5574797529966370831, guid: 1930144a66103454496ca10aefca75c2, type: 3}
   - {fileID: 5409041702710565245, guid: 8545b21b16c396841b82bb869ad57ac5, type: 3}
   - {fileID: 8227395143591920512, guid: d7d0ad1f338cbe141ab2e7acdec5b845, type: 3}
