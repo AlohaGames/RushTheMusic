@@ -34,7 +34,7 @@ namespace Aloha.UI
         private void ExportMap(LevelMapping levelMapping)
         {
             LevelMetadata metadata = new LevelMetadata();
-            // TODO metadata.Author = Profil
+            metadata.Author = ProfilManager.Instance.CurrentProfil?.Name;
             metadata.LevelName = mapName.text;
             metadata.Description = description.text;
 

@@ -25,6 +25,7 @@ namespace Aloha.UI
 
         void Awake()
         {
+            SelectBiome(biomesList[0]);
             foreach (Biome biome in biomesList)
             {
                 Debug.Log(biome.BiomeName);
@@ -33,6 +34,18 @@ namespace Aloha.UI
                 containerGO.SetOnClick(SelectBiome);
                 containerGO.transform.SetParent(content.transform);
                 containerGO.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            }
+        }
+
+        public void SelectBiome(string biomeName)
+        {
+            foreach (Biome biome in biomesList)
+            {
+                if (biome.BiomeName == biomeName)
+                {
+                    SelectBiome(biome);
+                    break;
+                }
             }
         }
 

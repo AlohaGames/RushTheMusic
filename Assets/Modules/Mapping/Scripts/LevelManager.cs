@@ -18,6 +18,7 @@ namespace Aloha
         private string filename = "";
 
         public LevelMapping LevelMapping;
+        public LevelMetadata LevelMetadata;
         public AudioClip LevelMusic;
         public bool IsLoaded = false;
 
@@ -114,7 +115,7 @@ namespace Aloha
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="isTutp"></param>
-        public void Load(string filename, Action cb, bool isTuto = false)
+        public void Load(string filename, Action cb, bool isTuto = false, bool isFromEditor = false)
         {
             if (cb == null)
             {
@@ -123,7 +124,17 @@ namespace Aloha
 
             Debug.Log($"Load level {filename}");
 
-            string basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
+            string basePath;
+
+            if (isFromEditor)
+            {
+                basePath = Path.GetDirectoryName(filename);
+                filename = Path.GetFileName(filename); ;
+            }
+            else
+            {
+                basePath = isTuto ? Application.streamingAssetsPath + "/Levels" : Application.persistentDataPath;
+            }
             string workingPath = Application.temporaryCachePath;
 
             // Extract zip file
@@ -142,6 +153,8 @@ namespace Aloha
                 metadata = (LevelMetadata) metadataSerializer.Deserialize(stream);
             }
 
+            LevelMetadata = metadata;
+
             // Read mapping file
             Debug.Log($"Read {metadata.MappingFilePath}");
             XmlSerializer mappingSerializer = new XmlSerializer(typeof(LevelMapping));
@@ -149,7 +162,10 @@ namespace Aloha
             using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Open))
             {
                 this.LevelMapping = (LevelMapping) mappingSerializer.Deserialize(stream);
-                SideEnvironmentManager.Instance.LoadBiome(LevelMapping.BiomeName);
+                if (!isFromEditor)
+                {
+                    SideEnvironmentManager.Instance.LoadBiome(LevelMapping.BiomeName);
+                }
             }
 
             // Load AudioClip from mp3 file

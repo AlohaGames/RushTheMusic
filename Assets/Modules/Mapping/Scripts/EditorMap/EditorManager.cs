@@ -21,6 +21,9 @@ namespace Aloha.UI
         [SerializeField]
         private List<SelectTile> selectTiles;
 
+        [SerializeField]
+        private BiomeSelector biomeSelector;
+
         public Color SelectedColor;
         public Color UnselectedColor;
 
@@ -104,6 +107,10 @@ namespace Aloha.UI
         public void SetLevelMapping(LevelMapping levelMapping)
         {
             this.levelMapping = levelMapping;
+            biomeSelector.transform.parent.gameObject.SetActive(true);
+            biomeSelector.SelectBiome(this.levelMapping.BiomeName);
+            biomeSelector.transform.parent.gameObject.SetActive(false);
+            //SetBiome(levelMapping.Biome);
         }
 
         /// <summary>

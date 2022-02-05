@@ -27,6 +27,10 @@ namespace Aloha.UI
             durationText = Root.Duration;
 
             GetComponent<Button>().onClick.AddListener(OnClick);
+        }
+
+        private void OnClick()
+        {
 
             // Set filters (optional)
             // It is sufficient to set the filters just once (instead of each time before showing the file browser dialog), 
@@ -37,10 +41,6 @@ namespace Aloha.UI
             // Returns true if the default filter is set successfully
             // In this case, set Images filter as the default filter
             FileBrowser.SetDefaultFilter(".mp3");
-        }
-
-        private void OnClick()
-        {
             LevelMapping levelMapping = EditorManager.Instance.GetLevelMapping();
             StartCoroutine(ShowLoadDialogCoroutine());
         }

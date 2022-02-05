@@ -29,6 +29,9 @@ namespace Aloha.UI
         [SerializeField]
         private float titleSize = 5;
 
+        [SerializeField]
+        private Sprite lockSprite;
+
 
         private void Awake()
         {
@@ -50,22 +53,46 @@ namespace Aloha.UI
         {
             this.transform.Clear();
             float numTiles = ((this.duration * this.tileSpeed) / this.titleSize);
-            (this.transform as RectTransform).sizeDelta = new Vector2(260 * (numTiles + 1), 630);
-            tileNumber.text = ((int) numTiles + 1).ToString();
-            EditorManager.Instance.SetTilesCount((int) numTiles + 1);
-            for (int i = 0; i < numTiles; i++)
+            if (numTiles > 0)
             {
-                GameObject p = Instantiate(panel);
-                p.transform.SetParent(this.transform);
-                p.transform.localScale = Vector3.one;
-                Text text = Instantiate(panelNum);
-                text.text = i.ToString();
-                p.GetComponent<SelectTile>().SetId(i);
-                text.transform.SetParent(this.transform);
-                text.transform.localScale = Vector3.one;
+                (this.transform as RectTransform).sizeDelta = new Vector2(260 * (numTiles + 10), 630);
+                tileNumber.text = ((int) numTiles + 1).ToString();
+                EditorManager.Instance.SetTilesCount((int) numTiles + 10);
+                for (int i = 0; i < numTiles + 10; i++)
+                {
+                    GameObject p = Instantiate(panel);
+                    p.transform.SetParent(this.transform);
+                    p.transform.localScale = Vector3.one;
+                    if (i < 4 || i > numTiles)
+                    {
+                        AddLock(p);
+                    }
+                    Text text = Instantiate(panelNum);
+                    text.text = i.ToString();
+                    p.GetComponent<SelectTile>().SetId(i);
+                    text.transform.SetParent(this.transform);
+                    text.transform.localScale = Vector3.one;
+                }
             }
 
             EditorManager.Instance.NeedUpdate();
+        }
+
+        void AddLock(GameObject panel)
+        {
+            panel.GetComponent<Button>().enabled = false;
+            panel?.transform.Clear();
+            GameObject preimage = new GameObject("image_empty");
+            GameObject image = new GameObject("image_lock");
+            GameObject postimage = new GameObject("image_empty");
+            preimage.AddGetComponent<Image>();
+            image.AddGetComponent<Image>().sprite = lockSprite;
+            postimage.AddGetComponent<Image>();
+            preimage.transform.SetParent(panel?.transform);
+            image.transform.SetParent(panel?.transform);
+            postimage.transform.SetParent(panel?.transform);
+            image.transform.localPosition = new Vector3(0, 0, 0);
+            image.transform.localScale = new Vector3(1f, 1f, 1f);
         }
     }
 }
