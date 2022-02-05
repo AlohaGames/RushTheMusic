@@ -58,7 +58,7 @@ namespace Aloha.UI
             // Load file/folder: both, Allow multiple selection: true
             // Initial path: default (Documents), Initial filename: empty
             // Title: "Load File", Submit button text: "Load"
-            yield return FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.FilesAndFolders, true, null, null, "Load Files and Folders", "Load");
+            yield return FileBrowser.WaitForLoadDialog(FileBrowser.PickMode.Files, true, null, null, "Load Files and Folders", "Load");
 
             if (FileBrowser.Success)
             {
