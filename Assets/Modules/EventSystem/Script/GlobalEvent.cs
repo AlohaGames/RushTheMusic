@@ -1,4 +1,6 @@
 using UnityEngine.Events;
+using UnityEngine;
+using System.Collections;
 
 namespace Aloha.Events
 {
@@ -106,6 +108,11 @@ namespace Aloha.Events
         public static UnityEvent GameOver = new UnityEvent();
 
         public static UnityEvent Victory = new UnityEvent();
+        public static IEnumerator VictoryWithDelayCouroutine(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            GlobalEvent.Victory.Invoke();
+        }
 
         /// <summary>
         /// Event called when the hero is loaded

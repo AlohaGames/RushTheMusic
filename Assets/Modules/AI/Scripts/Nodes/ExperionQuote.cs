@@ -37,13 +37,24 @@ namespace Aloha.AI
         public override IEnumerator Action()
         {
             IsRunning = true;
-
-            if (SoundEffectManager.Instance.Sounds.experion_quotes.Length != 0)
+            if (experion.CurrentHealth > experion.GetStats().MaxHealth / 2)
             {
-                SoundEffectManager.Instance.Play(
-                    SoundEffectManager.Instance.Sounds.experion_quotes[Utils.RandomInt(0, SoundEffectManager.Instance.Sounds.experion_quotes.Length)], 
-                    this.gameObject
-                );
+                if (SoundEffectManager.Instance.Sounds.experion_quotes.Length != 0)
+                {
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.experion_quotes[Utils.RandomInt(0, SoundEffectManager.Instance.Sounds.experion_quotes.Length)],
+                        this.gameObject
+                    );
+                }
+            } else
+            {
+                if (SoundEffectManager.Instance.Sounds.experion_quotes_low_hp.Length != 0)
+                {
+                    SoundEffectManager.Instance.Play(
+                        SoundEffectManager.Instance.Sounds.experion_quotes_low_hp[Utils.RandomInt(0, SoundEffectManager.Instance.Sounds.experion_quotes_low_hp.Length)],
+                        this.gameObject
+                    );
+                }
             }
 
             yield return null;

@@ -110,7 +110,10 @@ namespace Aloha
             if (!isHitted)
             {
                 CurrentHealth = CurrentHealth - damage;
-                DynamicTextManager.Instance.Show(gameObject, "-" + damage + " HP", Color.red, 1);
+                if (this is Enemy)
+                {
+                    DynamicTextManager.Instance.Show(gameObject, "-" + damage + " HP", Color.red, 1);
+                }
             }
 
             if (damage > 0)
