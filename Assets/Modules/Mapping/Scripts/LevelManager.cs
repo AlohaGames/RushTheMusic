@@ -162,6 +162,7 @@ namespace Aloha
             using (FileStream stream = new FileStream($"{workingPath}/{g}/{metadata.MappingFilePath}", FileMode.Open))
             {
                 this.LevelMapping = (LevelMapping) mappingSerializer.Deserialize(stream);
+                Debug.Log(LevelMapping.BiomeName);
                 if (!isFromEditor)
                 {
                     SideEnvironmentManager.Instance.LoadBiome(LevelMapping.BiomeName);

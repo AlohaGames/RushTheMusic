@@ -9,7 +9,11 @@ namespace Aloha.UI
     {
         public Sprite Default;
         public Sprite Lancer;
+        public Sprite IceLancer;
+        public Sprite FireLancer;
         public Sprite Wyrmling;
+        public Sprite FireWyrmling;
+        public Sprite IceWyrmling;
         public Sprite Assassin;
         public Sprite Chest;
         public Sprite Wall;
@@ -44,10 +48,16 @@ namespace Aloha.UI
                     return Canon;
                 case EnemyType.bat:
                     return Bat;
-                // case EnemyType.spider:
-                // return Spider;
                 case EnemyType.darkWizard:
                     return DarkWizard;
+                case EnemyType.iceLancer:
+                    return IceLancer;
+                case EnemyType.fireLancer:
+                    return FireLancer;
+                case EnemyType.fireWyrmling:
+                    return FireWyrmling;
+                case EnemyType.iceWyrmling:
+                    return IceWyrmling;
                 default:
                     return Default;
             }

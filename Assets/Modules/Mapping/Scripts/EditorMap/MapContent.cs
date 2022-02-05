@@ -55,15 +55,15 @@ namespace Aloha.UI
             float numTiles = ((this.duration * this.tileSpeed) / this.titleSize);
             if (numTiles > 0)
             {
-                (this.transform as RectTransform).sizeDelta = new Vector2(260 * (numTiles + 10), 630);
+                (this.transform as RectTransform).sizeDelta = new Vector2(260 * (numTiles), 630);
                 tileNumber.text = ((int) numTiles + 1).ToString();
-                EditorManager.Instance.SetTilesCount((int) numTiles + 10);
-                for (int i = 0; i < numTiles + 10; i++)
+                EditorManager.Instance.SetTilesCount((int) numTiles);
+                for (int i = 0; i < numTiles; i++)
                 {
                     GameObject p = Instantiate(panel);
                     p.transform.SetParent(this.transform);
                     p.transform.localScale = Vector3.one;
-                    if (i < 4 || i > numTiles)
+                    if (i < 4 || i > numTiles - 10)
                     {
                         AddLock(p);
                     }

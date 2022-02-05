@@ -25,16 +25,16 @@ namespace Aloha.UI
 
         void Awake()
         {
-            SelectBiome(biomesList[0]);
+            //SelectBiome(biomesList[0]);
             foreach (Biome biome in biomesList)
             {
-                Debug.Log(biome.BiomeName);
                 SpriteWithLegend containerGO = Instantiate(container);
                 containerGO.SetBiome(biome);
                 containerGO.SetOnClick(SelectBiome);
                 containerGO.transform.SetParent(content.transform);
                 containerGO.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
+            //transform.parent.gameObject.SetActive(false);
         }
 
         public void SelectBiome(string biomeName)
@@ -44,9 +44,10 @@ namespace Aloha.UI
                 if (biome.BiomeName == biomeName)
                 {
                     SelectBiome(biome);
-                    break;
+                    return;
                 }
             }
+            SelectBiome(biomesList[0]);
         }
 
         void SelectBiome(Biome biome)

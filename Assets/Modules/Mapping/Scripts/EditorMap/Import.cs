@@ -71,12 +71,12 @@ namespace Aloha.UI
         private void FinishLoad()
         {
             loadingScreen.SetActive(false);
-            EditorManager.Instance.SetLevelMapping(LevelManager.Instance.LevelMapping);
             AudioClip clip = LevelManager.Instance.LevelMusic;
             Root.EditorRoot.Content.SetDuration(clip.length);
             Root.Duration.text = Utils.ConvertToMinSec(clip.length);
             Root.MapName.text = LevelManager.Instance.LevelMetadata.LevelName;
             Root.Description.text = LevelManager.Instance.LevelMetadata.Description;
+            EditorManager.Instance.SetLevelMapping(LevelManager.Instance.LevelMapping);
         }
 
         private void OnDestroy()

@@ -73,7 +73,7 @@ namespace Aloha.UI
             {
                 UpdateSelectedTile(i);
             }
-            if (selectTiles.Count > 0) UpdateSelectedTile(0);
+            if (selectTiles.Count > 15) UpdateSelectedTile(4);
         }
 
         public void UpdateSelectedTile(int id)
@@ -108,7 +108,8 @@ namespace Aloha.UI
         {
             this.levelMapping = levelMapping;
             biomeSelector.transform.parent.gameObject.SetActive(true);
-            biomeSelector.SelectBiome(this.levelMapping.BiomeName);
+            Debug.Log(levelMapping.BiomeName);
+            biomeSelector.SelectBiome(levelMapping.BiomeName);
             biomeSelector.transform.parent.gameObject.SetActive(false);
             //SetBiome(levelMapping.Biome);
         }
