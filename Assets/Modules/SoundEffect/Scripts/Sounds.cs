@@ -34,6 +34,7 @@ namespace Aloha
         [Header("BOSS")]
         public AudioClip experion_idle;
         public AudioClip experion_hurt;
+        public AudioClip experion_dying;
         public AudioClip experion_teleportation;
         public AudioClip experion_ice_laser;
         public AudioClip experion_fire_laser;

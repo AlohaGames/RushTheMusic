@@ -35,6 +35,7 @@ MonoBehaviour:
   chest_open: {fileID: 8300000, guid: 2bfd89fcdc15ef0409cb51f7e72de14d, type: 3}
   experion_idle: {fileID: 0}
   experion_hurt: {fileID: 8300000, guid: 6160129070b09a0418774d4e07b800d1, type: 3}
+  experion_dying: {fileID: 8300000, guid: 51e2bd4648ce29340bd88e7169cd3306, type: 3}
   experion_teleportation: {fileID: 8300000, guid: 006b452ea73825746a6392e7348555bc, type: 3}
   experion_ice_laser: {fileID: 8300000, guid: 46f0564b98f5f8b49b4e1bb6fec2ca75, type: 3}
   experion_fire_laser: {fileID: 8300000, guid: be736d1144481724186d2cb02bfade97, type: 3}
@@ -45,6 +46,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d888d0d5de392fa4a8c9ee31178e7d84, type: 3}
   - {fileID: 8300000, guid: 3cf742460617d214385ba75d2c275b5b, type: 3}
   - {fileID: 8300000, guid: 1ff097dbfad51ca4b8b6347a3c4eb770, type: 3}
+  - {fileID: 8300000, guid: b031e16112902294ca4b8ca3552d8de7, type: 3}
   hero_drink: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
   hero_take_damage: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
   hero_level_up: {fileID: 8300000, guid: 07f02d03eec4c834d91a691b1054274e, type: 3}
