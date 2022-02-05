@@ -9,7 +9,7 @@ namespace Aloha
     {
 
         /// <summary>
-        /// Initialize bush
+        /// Initialize animal
         /// <example> Example(s):
         /// <code>
         ///     sideEnvInstR.Initialize();
