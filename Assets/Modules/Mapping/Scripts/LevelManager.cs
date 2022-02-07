@@ -22,6 +22,8 @@ namespace Aloha
         public AudioClip LevelMusic;
         public bool IsLoaded = false;
 
+        public string URLToLoad = "";
+
         /// <summary>
         /// Save a map with parameters
         /// <example> Example(s):
@@ -115,7 +117,7 @@ namespace Aloha
         /// </summary>
         /// <param name="filename"></param>
         /// <param name="isTutp"></param>
-        public void Load(string filename, Action cb, bool isTuto = false, bool isFromEditor = false)
+        public void Load(string filename, Action<string> cb, bool isTuto = false, bool isFromEditor = false)
         {
             if (cb == null)
             {
@@ -171,18 +173,18 @@ namespace Aloha
 
             // Load AudioClip from mp3 file
             string musicFilePath = $"file://{workingPath}/{g}/{metadata.MusicFilePath}";
-            StartCoroutine(LoadMusic(musicFilePath, cb));
+            StartCoroutine(LoadMusic(musicFilePath, cb, $"{workingPath}/{g}"));
         }
 
         /// <summary>
         /// Load a random tutorial level
         /// </summary>
-        public void LoadRandomLevel(Action cb)
+        public void LoadRandomLevel(Action<string> cb)
         {
             List<string> levels = GetAllAvailableMusics();
             if (levels.Count > 0)
             {
-                var rand = new System.Random().Next(0, levels.Count - 1);
+                var rand = Utils.RandomInt(0, levels.Count);
                 string level = levels[rand];
                 Load(level, cb, true);
             }
@@ -229,7 +231,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        void FinishLoad()
+        void FinishLoad(string tempFolder)
         {
             this.IsLoaded = true;
             Debug.Log($"Load level finished");
@@ -246,7 +248,7 @@ namespace Aloha
         /// </summary>
         /// <param name="musicFileURI">URI to music file</param>
         /// <param name="cb">Callback function</param>
-        public IEnumerator LoadMusic(string musicFileURI, Action cb)
+        public IEnumerator LoadMusic(string musicFileURI, Action<string> cb, string tempPath = "")
         {
             Debug.Log($"Loading music {musicFileURI}");
             using (UnityWebRequest web = UnityWebRequestMultimedia.GetAudioClip(musicFileURI, AudioType.MPEG))
@@ -259,7 +261,7 @@ namespace Aloha
                     Debug.Log("AudioClip loaded !");
                 }
             }
-            cb();
+            cb(tempPath);
         }
     }
 }

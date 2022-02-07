@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Aloha;
 
 namespace Aloha.UI
@@ -24,11 +25,7 @@ namespace Aloha.UI
 
         private void OnClick()
         {
-            GameObject editor = Instantiate(EditorPrefab);
-            EditorManager.Instance.SetLevelMapping(LevelManager.Instance.LevelMapping);
-            AudioClip clip = LevelManager.Instance.LevelMusic;
-            content.SetDuration(clip.length);
-            durationText.text = Utils.ConvertToMinSec(clip.length);
+            SceneManager.LoadScene(1);
         }
 
         private void OnDestroy()

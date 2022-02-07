@@ -33,9 +33,9 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Callback when level is finish loading
+        /// Callback when level is finish loading   
         /// </summary>
-        public void onFinishLoad()
+        public void onFinishLoad(string tempFolder)
         {
             GameManager.Instance.StartLevel();
             MenuRoot.HideEverything();

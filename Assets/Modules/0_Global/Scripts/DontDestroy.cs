@@ -6,6 +6,7 @@ namespace Aloha
 {
     public class DontDestroy : MonoBehaviour
     {
+        [HideInInspector]
         public string ObjectID;
 
         private void Awake()

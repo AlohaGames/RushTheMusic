@@ -33,6 +33,11 @@ namespace Aloha.UI
         {
             levelMapping = new LevelMapping();
             selectTiles = GetComponentsInChildren<SelectTile>().ToList();
+
+            if (LevelManager.Instance.URLToLoad != "")
+            {
+                EditorRoot.Information.Import.GetComponent<Import>().Load(LevelManager.Instance.URLToLoad);
+            }
         }
 
         private void Update()

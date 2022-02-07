@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Aloha.UI
 {
-    public class EditorRoot : MonoBehaviour
+    public class EditorRoot : Singleton<EditorRoot>
     {
         public MapContent Content;
         public CurrentTile CurrentTile;

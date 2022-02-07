@@ -650,6 +650,8 @@ MonoBehaviour:
   IsTuto: 0
   Level: 
   MenuRoot: {fileID: 0}
+  Edit: {fileID: 313644350180533788}
+  Delete: {fileID: 3987102506520594221}
 --- !u!114 &973669093984399156
 MonoBehaviour:
   m_ObjectHideFlags: 0

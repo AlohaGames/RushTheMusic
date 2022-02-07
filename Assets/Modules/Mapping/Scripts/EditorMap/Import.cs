@@ -16,6 +16,8 @@ namespace Aloha.UI
         [SerializeField]
         private GameObject loadingScreen;
 
+        private string currentPath = "";
+
         private void Awake()
         {
             GetComponent<Button>().onClick.AddListener(OnClick);
@@ -37,7 +39,7 @@ namespace Aloha.UI
             StartCoroutine(ShowLoadDialogCoroutine());
         }
 
-        private void Load(string rtm)
+        public void Load(string rtm)
         {
             LevelMetadata metadata = new LevelMetadata();
             loadingScreen.SetActive(true);
@@ -62,16 +64,18 @@ namespace Aloha.UI
                 }
                 if (path != "")
                 {
-                    Root.PathToMusic.text = path;
+                    currentPath = path;
                     Load(path);
                 }
             }
         }
 
-        private void FinishLoad()
+        private void FinishLoad(string tempFolder)
         {
             loadingScreen.SetActive(false);
             AudioClip clip = LevelManager.Instance.LevelMusic;
+            Debug.Log(tempFolder);
+            Root.PathToMusic.text = tempFolder + "/" + LevelManager.Instance.LevelMetadata.MusicFilePath; //TODO ça marche pas
             Root.EditorRoot.Content.SetDuration(clip.length);
             Root.Duration.text = Utils.ConvertToMinSec(clip.length);
             Root.MapName.text = LevelManager.Instance.LevelMetadata.LevelName;

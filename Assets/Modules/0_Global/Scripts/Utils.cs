@@ -47,7 +47,7 @@ namespace Aloha
         /// <param name="min">min value (default is 0)</param>
         /// <param name="max">max value (default is 1)</param>
         /// <returns>
-        /// A random int value between min and max.
+        /// A random int value between min(include) and max(exclude).
         /// </returns>
         public static int RandomInt(int min = 0, int max = 1)
         {

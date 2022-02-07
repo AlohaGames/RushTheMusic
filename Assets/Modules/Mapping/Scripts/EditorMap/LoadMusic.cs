@@ -71,7 +71,7 @@ namespace Aloha.UI
             }
         }
 
-        private void FinishLoad()
+        private void FinishLoad(string tempFolder)
         {
             loadingScreen.SetActive(false);
             AudioClip clip = LevelManager.Instance.LevelMusic;
