@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.TestTools;
 using Aloha;
 
-//TODO: explain your F****** TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
+//TODO: explain your TEST (like @Youen in Tests/PlayMode/Enemy/ActionZoneTest)
 
 namespace Aloha.Test
 {
