@@ -8,6 +8,9 @@ using Aloha;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Import Button class
+    /// </summary>
     [RequireComponent(typeof(Button))]
     public class Import : MonoBehaviour
     {
@@ -23,6 +26,9 @@ namespace Aloha.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
 
@@ -39,6 +45,10 @@ namespace Aloha.UI
             StartCoroutine(ShowLoadDialogCoroutine());
         }
 
+        /// <summary>
+        /// Load .rtm file
+        /// </summary>
+        /// <param name="rtm">Complete URL to .rtm file</param>
         public void Load(string rtm)
         {
             LevelMetadata metadata = new LevelMetadata();
@@ -46,6 +56,9 @@ namespace Aloha.UI
             LevelManager.Instance.Load(rtm, FinishLoad, isFromEditor: true);
         }
 
+        /// <summary>
+        /// Show Load Dialog Coroutine
+        /// </summary>
         IEnumerator ShowLoadDialogCoroutine()
         {
             // Show a load file dialog and wait for a response from user
@@ -70,12 +83,16 @@ namespace Aloha.UI
             }
         }
 
+        /// <summary>
+        /// CallBack finish Loading
+        /// </summary>
+        /// <param name="tempFolder">tempFolder where .rtm was unzip</param>
         private void FinishLoad(string tempFolder)
         {
             loadingScreen.SetActive(false);
             AudioClip clip = LevelManager.Instance.LevelMusic;
             Debug.Log(tempFolder);
-            Root.PathToMusic.text = tempFolder + "/" + LevelManager.Instance.LevelMetadata.MusicFilePath; //TODO ça marche pas
+            Root.PathToMusic.text = tempFolder + "/" + LevelManager.Instance.LevelMetadata.MusicFilePath;
             Root.EditorRoot.Content.SetDuration(clip.length);
             Root.Duration.text = Utils.ConvertToMinSec(clip.length);
             Root.MapName.text = LevelManager.Instance.LevelMetadata.LevelName;

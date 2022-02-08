@@ -91,21 +91,21 @@ namespace Aloha
                 ZipFile.CreateFromDirectory($"{workingPath}/{g}", $"{basePath}/{filename}");
             }
         }
-
-        /// <summary>
-        /// Save a map 
-        /// <example> Example(s):
-        /// <code>
-        /// LevelManager.Instance.Save();
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void Save()
-        {
-            // TODO 
-            throw new NotImplementedException("TODO later");
-            //this.Save(this.LevelMapping, this.filename);
-        }
+        /*
+                /// <summary>
+                /// Save a map 
+                /// <example> Example(s):
+                /// <code>
+                /// LevelManager.Instance.Save();
+                /// </code>
+                /// </example>
+                /// </summary>
+                public void Save()
+                {
+                    // TODO 
+                    throw new NotImplementedException("TODO later");
+                    //this.Save(this.LevelMapping, this.filename);
+                }*/
 
         /// <summary>
         /// Load a map with parameters

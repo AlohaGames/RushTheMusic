@@ -7,7 +7,10 @@ using Aloha;
 
 namespace Aloha.UI
 {
-    [RequireComponent(typeof(UnityEngine.UI.Button))]
+    /// <summary>
+    /// Edit Current Track Button
+    /// </summary>
+    [RequireComponent(typeof(Button))]
     public class EditTrack : MonoBehaviour
     {
         [SerializeField]
@@ -23,6 +26,9 @@ namespace Aloha.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
             SceneManager.LoadScene(1);

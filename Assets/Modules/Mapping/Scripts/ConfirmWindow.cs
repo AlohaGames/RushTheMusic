@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 namespace Aloha
 {
+    /// <summary>
+    /// Confirm Window class
+    /// </summary>
     public class ConfirmWindow : MonoBehaviour
     {
         [SerializeField]
@@ -19,6 +22,11 @@ namespace Aloha
             confirm.onClick.AddListener(() => { this.gameObject.SetActive(false); });
             cancel.onClick.AddListener(() => { this.gameObject.SetActive(false); });
         }
+
+        /// <summary>
+        /// Define confirm callback
+        /// </summary>
+        /// <param name="cb">Action to call when confirm</param>
         public void SetCallback(Action cb)
         {
             confirm.onClick.AddListener(() => { cb(); });

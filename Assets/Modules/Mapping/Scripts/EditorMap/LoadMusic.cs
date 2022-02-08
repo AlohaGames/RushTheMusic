@@ -8,7 +8,10 @@ using Aloha;
 
 namespace Aloha.UI
 {
-    [RequireComponent(typeof(UnityEngine.UI.Button))]
+    /// <summary>
+    /// Load Music Button
+    /// </summary>
+    [RequireComponent(typeof(Button))]
     public class LoadMusic : MonoBehaviour
     {
         public InformationRoot Root;
@@ -29,6 +32,9 @@ namespace Aloha.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
 
@@ -45,6 +51,10 @@ namespace Aloha.UI
             StartCoroutine(ShowLoadDialogCoroutine());
         }
 
+        /// <summary>
+        /// Load Music
+        /// </summary>
+        /// <param name="MusicUrl">Path to Music file (with file://) before</param>
         private void Load(string MusicUrl)
         {
             LevelMetadata metadata = new LevelMetadata();
@@ -52,6 +62,9 @@ namespace Aloha.UI
             StartCoroutine(LevelManager.Instance.LoadMusic(MusicUrl, FinishLoad)); ;
         }
 
+        /// <summary>
+        /// Show Load Dialog Coroutine
+        /// </summary>
         IEnumerator ShowLoadDialogCoroutine()
         {
             // Show a load file dialog and wait for a response from user
@@ -71,6 +84,10 @@ namespace Aloha.UI
             }
         }
 
+        /// <summary>
+        /// CallBack finish Loading
+        /// </summary>
+        /// <param name="tempFolder">tempFolder where .rtm was unzip</param>
         private void FinishLoad(string tempFolder)
         {
             loadingScreen.SetActive(false);

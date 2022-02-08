@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
-    [RequireComponent(typeof(UnityEngine.UI.Button))]
+    /// <summary>
+    /// Select Position class
+    /// </summary>
+    [RequireComponent(typeof(Button))]
     public class SelectPos : MonoBehaviour
     {
         CurrentTile tile;
@@ -25,16 +28,25 @@ namespace Aloha.UI
             Unselect();
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
             tile.UpdateSelected(horizontal, vertical, this);
         }
 
+        /// <summary>
+        /// Select position
+        /// </summary>
         public void Select()
         {
             this.GetComponent<Image>().color = selectedColor;
         }
 
+        /// <summary>
+        /// Unselect position
+        /// </summary>
         public void Unselect()
         {
             this.GetComponent<Image>().color = unselectedColor;

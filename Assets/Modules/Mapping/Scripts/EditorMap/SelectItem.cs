@@ -7,6 +7,9 @@ using TMPro;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Select Chest Item Dropdown
+    /// </summary>
     [RequireComponent(typeof(TMPro.TMP_Dropdown))]
     public class SelectItem : MonoBehaviour
     {
@@ -23,6 +26,9 @@ namespace Aloha.UI
             PopulateDropdown();
         }
 
+        /// <summary>
+        /// Populate Dropdown
+        /// </summary>
         private void PopulateDropdown()
         {
             foreach (ItemType type in (ItemType[]) Enum.GetValues(typeof(ItemType)))
@@ -32,12 +38,20 @@ namespace Aloha.UI
             }
         }
 
+        /// <summary>
+        /// Valid Value
+        /// </summary>
         public void SubmitValue()
         {
             EnemyMapping enemyMapping = EditorManager.Instance.SelectedTileUI.GetCurrentEnemy(EditorManager.Instance.GetLevelMapping());
             enemyMapping?.AddParameters("Item", dropdown.options[dropdown.value].text);
         }
 
+        /// <summary>
+        /// GetOption based on ItemType
+        /// </summary>
+        /// <param name="type">ItemType</param>
+        /// <returns>OptionData (Sprite and description)</returns>
         private TMP_Dropdown.OptionData GetOption(ItemType type)
         {
             switch (type)

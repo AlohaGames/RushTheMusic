@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
-    [RequireComponent(typeof(UnityEngine.UI.Button))]
+    /// <summary>
+    /// Export Button class
+    /// </summary>
+    [RequireComponent(typeof(Button))]
     public class Export : MonoBehaviour
     {
         public InformationRoot Root;
@@ -25,12 +28,19 @@ namespace Aloha.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
             LevelMapping levelMapping = EditorManager.Instance.GetLevelMapping();
             ExportMap(levelMapping);
         }
 
+        /// <summary>
+        /// Export the levelMapping into .rtm file
+        /// </summary>
+        /// <param name="levelMapping">LevelMapping to save</param>
         private void ExportMap(LevelMapping levelMapping)
         {
             LevelMetadata metadata = new LevelMetadata();

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Select Map Biome
+    /// </summary>
     public class BiomeSelector : MonoBehaviour
     {
 
@@ -25,7 +28,6 @@ namespace Aloha.UI
 
         void Awake()
         {
-            //SelectBiome(biomesList[0]);
             foreach (Biome biome in biomesList)
             {
                 SpriteWithLegend containerGO = Instantiate(container);
@@ -34,9 +36,12 @@ namespace Aloha.UI
                 containerGO.transform.SetParent(content.transform);
                 containerGO.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
             }
-            //transform.parent.gameObject.SetActive(false);
         }
 
+        /// <summary>
+        /// Select Biome based on name
+        /// </summary>
+        /// <param name="biomeName">BiomeName parameter in Biome</param>
         public void SelectBiome(string biomeName)
         {
             foreach (Biome biome in biomesList)
@@ -50,7 +55,11 @@ namespace Aloha.UI
             SelectBiome(biomesList[0]);
         }
 
-        void SelectBiome(Biome biome)
+        /// <summary>
+        /// Select Biome based on Biome
+        /// </summary>
+        /// <param name="biome">Biome to select</param>
+        private void SelectBiome(Biome biome)
         {
             Debug.Log("Selected biome : " + biome.Label);
             EditorManager.Instance.SetBiome(biome);

@@ -7,6 +7,9 @@ using Aloha.Events;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Main Manager of the MapEditor
+    /// </summary>
     public class EditorManager : Singleton<EditorManager>
     {
         public EditorRoot EditorRoot;
@@ -49,11 +52,19 @@ namespace Aloha.UI
             }
         }
 
+        /// <summary>
+        /// Set Tile Count
+        /// </summary>
+        /// <param name="count"></param>
         public void SetTilesCount(int count)
         {
             levelMapping.TileCount = count;
         }
 
+        /// <summary>
+        /// Define the current Biome
+        /// </summary>
+        /// <param name="biome">New Biome</param>
         public void SetBiome(Biome biome)
         {
             this.biome = biome;
@@ -64,12 +75,19 @@ namespace Aloha.UI
             }
         }
 
+        /// <summary>
+        /// Editor need to update the map element
+        /// </summary>
         public void NeedUpdate()
         {
             needUpdate = true;
             selectTiles = new List<SelectTile>();
             selectTiles.TrimExcess();
         }
+
+        /// <summary>
+        /// Update SelectTiles list
+        /// </summary>
         public void UpdateSelectTiles()
         {
             selectTiles = GetComponentsInChildren<SelectTile>().ToList();
@@ -81,6 +99,10 @@ namespace Aloha.UI
             if (selectTiles.Count > 15) UpdateSelectedTile(4);
         }
 
+        /// <summary>
+        /// Update Current Selected Tile
+        /// </summary>
+        /// <param name="id">id of the tile</param>
         public void UpdateSelectedTile(int id)
         {
             selectTiles[currentTileId].Unselect();
@@ -89,26 +111,46 @@ namespace Aloha.UI
             SelectedTileUI.LoadTile(id, levelMapping);
         }
 
+        /// <summary>
+        /// Add Enemy based on Type
+        /// </summary>
+        /// <param name="type">Type of the enemy</param>
         public void AddEnemy(EnemyType type)
         {
             SelectedTileUI.AddEnemy(type, levelMapping);
         }
 
+        /// <summary>
+        /// Clean Enemy
+        /// </summary>
         public void CleanEnemy()
         {
             SelectedTileUI.CleanEnemy(levelMapping);
         }
 
+        /// <summary>
+        /// Get SelectTile based on id
+        /// </summary>
+        /// <param name="id">id of the tile</param>
+        /// <returns>SelectTile</returns>
         public SelectTile GetSelectTile(int id)
         {
             return selectTiles[id];
         }
 
+        /// <summary>
+        /// Getter of levelMapping
+        /// </summary>
+        /// <returns>levelMapping</returns>
         public LevelMapping GetLevelMapping()
         {
             return levelMapping;
         }
 
+        /// <summary>
+        /// Setter of levelMapping
+        /// </summary>
+        /// <param name="levelMapping">New LevelMapping</param>
         public void SetLevelMapping(LevelMapping levelMapping)
         {
             this.levelMapping = levelMapping;
@@ -116,7 +158,6 @@ namespace Aloha.UI
             Debug.Log(levelMapping.BiomeName);
             biomeSelector.SelectBiome(levelMapping.BiomeName);
             biomeSelector.transform.parent.gameObject.SetActive(false);
-            //SetBiome(levelMapping.Biome);
         }
 
         /// <summary>

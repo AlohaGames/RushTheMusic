@@ -7,6 +7,9 @@ using TMPro;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Sprite With Legend class
+    /// </summary>
     public class SpriteWithLegend : MonoBehaviour
     {
         [SerializeField]
@@ -25,6 +28,9 @@ namespace Aloha.UI
             image.GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
             if (cb != null)
@@ -33,6 +39,10 @@ namespace Aloha.UI
             }
         }
 
+        /// <summary>
+        /// Define shown biome
+        /// </summary>
+        /// <param name="biome">Biome to show</param>
         public void SetBiome(Biome biome)
         {
             this.biome = biome;
@@ -40,6 +50,10 @@ namespace Aloha.UI
             this.image.sprite = biome.SidePanelSprites[0];
         }
 
+        /// <summary>
+        /// Define OnClick Callback
+        /// </summary>
+        /// <param name="cb">A Callback with Biome parameter</param>
         public void SetOnClick(Action<Biome> cb)
         {
             this.cb = cb;

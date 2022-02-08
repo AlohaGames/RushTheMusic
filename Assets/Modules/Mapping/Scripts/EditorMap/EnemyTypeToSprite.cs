@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Enemy Type to Sprite
+    /// </summary>
     public class EnemyTypeToSprite : Singleton<EnemyTypeToSprite>
     {
         public Sprite Default;
@@ -28,7 +31,7 @@ namespace Aloha.UI
         /// Get the corresponding Enemy Sprite based on EnemyType
         /// </summary>
         /// <param name="enemyType"></param>
-        /// <returns></returns>
+        /// <returns>Corresponding Sprite if EnemyType is define, default otherwise</returns>
 
         public Sprite GetEnemySprite(EnemyType enemyType)
         {

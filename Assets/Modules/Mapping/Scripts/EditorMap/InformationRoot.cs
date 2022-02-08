@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Information Root UI
+    /// </summary>
     public class InformationRoot : MonoBehaviour
     {
         public EditorRoot EditorRoot;

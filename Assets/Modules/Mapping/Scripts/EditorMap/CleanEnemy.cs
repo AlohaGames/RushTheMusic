@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
-    [RequireComponent(typeof(UnityEngine.UI.Button))]
+    /// <summary>
+    /// Clean Enemy from current select position
+    /// </summary>
+    [RequireComponent(typeof(Button))]
     public class CleanEnemy : MonoBehaviour
     {
         private Sprite sprite;
@@ -17,6 +20,9 @@ namespace Aloha.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
             EditorManager.Instance.CleanEnemy();

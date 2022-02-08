@@ -5,7 +5,10 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
-    [RequireComponent(typeof(UnityEngine.UI.Button))]
+    /// <summary>
+    /// Add Enemy Button
+    /// </summary>
+    [RequireComponent(typeof(Button))]
     public class AddEnemy : MonoBehaviour
     {
         public EnemyType type;
@@ -18,6 +21,9 @@ namespace Aloha.UI
             GetComponent<Button>().onClick.AddListener(OnClick);
         }
 
+        /// <summary>
+        /// OnClick Action
+        /// </summary>
         private void OnClick()
         {
             EditorManager.Instance.AddEnemy(type);

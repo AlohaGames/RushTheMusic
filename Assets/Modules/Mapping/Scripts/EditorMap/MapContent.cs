@@ -6,6 +6,9 @@ using Aloha;
 
 namespace Aloha.UI
 {
+    /// <summary>
+    /// Map Content class
+    /// </summary>
     public class MapContent : MonoBehaviour
     {
         public EditorRoot Root;
@@ -43,12 +46,19 @@ namespace Aloha.UI
             UpdateNumTiles();
         }
 
+        /// <summary>
+        /// Define Duration
+        /// </summary>
+        /// <param name="duration">Duration in float</param>
         public void SetDuration(float duration)
         {
             this.duration = duration;
             UpdateNumTiles();
         }
 
+        /// <summary>
+        /// Update Number of Tiles
+        /// </summary>
         void UpdateNumTiles()
         {
             this.transform.Clear();
@@ -78,6 +88,10 @@ namespace Aloha.UI
             EditorManager.Instance.NeedUpdate();
         }
 
+        /// <summary>
+        /// Lock the panel (disable Button)
+        /// </summary>
+        /// <param name="panel">Panel to lock</param>
         void AddLock(GameObject panel)
         {
             panel.GetComponent<Button>().enabled = false;
