@@ -46,6 +46,13 @@ namespace Aloha.UI
 
         private void Update()
         {
+            foreach (var select in selectTiles)
+            {
+                if(select == null) {
+                    needUpdate = true;
+                    break;
+                }
+            }
             if (needUpdate)
             {
                 needUpdate = false;
