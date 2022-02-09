@@ -52,10 +52,16 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d3/db4/class_aloha_1_1_entity.html#a9f2540e85d105883c1a6826250b5053c",
-"d7/d02/class_aloha_1_1_level_metadata.html#a6db4193b3652918bdb961c7dcc9c1b7c",
-"db/d1f/class_aloha_1_1_test_1_1_canon_ball_test.html#a53db10e64d15eb65de4184c3aa42d512",
-"df/d29/class_aloha_1_1_a_i_1_1_wyrmling_attack.html#aa4050aac81087730438a2a0ba7616d54"
+"d1/daa/class_aloha_1_1_test_1_1_wall_test.html",
+"d3/d34/class_aloha_1_1_canon_ball.html",
+"d4/d61/class_aloha_1_1_u_i_1_1_editor_manager.html#aacf9e344fa04df5f6b84515aa1d436ae",
+"d5/d4a/class_aloha_1_1_example_1_1_debug_dead_entity.html#a5ccd4da24a5d69febb684bb5ad9a485a",
+"d6/dfc/class_aloha_1_1_sounds.html#a286aa5735e9f490cad75504540a8755b",
+"d7/dd9/class_aloha_1_1_experience_potion.html",
+"d9/d90/_rtm_config_8cs.html",
+"db/d71/class_aloha_1_1_chest.html#a8311349aa4b7f9ab2a1013da7bd9c009",
+"dd/d86/class_aloha_1_1_u_i_1_1_settings.html#ab4a38b35121b1cb4ce4f3339f24d905a",
+"df/dbb/class_aloha_1_1_test_1_1_chest_test.html#a0a9576e0e711a686959ff2cabac10785"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

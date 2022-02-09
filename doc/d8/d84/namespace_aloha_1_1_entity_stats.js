@@ -4,6 +4,8 @@ var namespace_aloha_1_1_entity_stats =
     [ "BatStats", "d6/d85/class_aloha_1_1_entity_stats_1_1_bat_stats.html", null ],
     [ "CanonStats", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats.html", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats" ],
     [ "ChestStats", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats.html", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats" ],
+    [ "DarkWizardStats", "de/d9d/class_aloha_1_1_entity_stats_1_1_dark_wizard_stats.html", null ],
+    [ "ExperionStats", "d1/dac/class_aloha_1_1_entity_stats_1_1_experion_stats.html", null ],
     [ "FireLancerStats", "d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html", null ],
     [ "FireWyrmlingStats", "d5/d53/class_aloha_1_1_entity_stats_1_1_fire_wyrmling_stats.html", null ],
     [ "IceLancerStats", "dd/d67/class_aloha_1_1_entity_stats_1_1_ice_lancer_stats.html", null ],

@@ -13,6 +13,7 @@ var dir_4ccc5b52993714aac59c0cefb11f5e52 =
     [ "Mapping", "dir_f37353f3af68a6d6e40471fb1d86cfb9.html", "dir_f37353f3af68a6d6e40471fb1d86cfb9" ],
     [ "Profil", "dir_aee6ebaa915bb3a99cb4fcd29d964425.html", "dir_aee6ebaa915bb3a99cb4fcd29d964425" ],
     [ "SideEnvironment", "dir_82d29cec39e2b272979a657e18a86abb.html", "dir_82d29cec39e2b272979a657e18a86abb" ],
+    [ "SoundEffect", "dir_41177cef2664ae46e6e334a6687a345a.html", "dir_41177cef2664ae46e6e334a6687a345a" ],
     [ "Tiles", "dir_558b8b74ebf8ad56a25f344ed1fc6dd1.html", "dir_558b8b74ebf8ad56a25f344ed1fc6dd1" ],
     [ "UI", "dir_7df70ba1cd4f5a06d36c34c0aaddc287.html", "dir_7df70ba1cd4f5a06d36c34c0aaddc287" ]
 ];

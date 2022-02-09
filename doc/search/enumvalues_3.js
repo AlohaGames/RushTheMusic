@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['experiencepotion_1588',['experiencePotion',['../de/d9b/namespace_aloha.html#afcc76bb47435d012a5c32f1c0d435e89ad1732d540dd007ab63bba46722ea671c',1,'Aloha']]]
+  ['darkwizard_0',['darkWizard',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa09af3e33dbbe50ac75a14c5d54ae872e',1,'Aloha']]]
 ];

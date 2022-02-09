@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['icelancer_1595',['iceLancer',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aac3899ed00668679c0bea3d5ea7c57555',1,'Aloha']]],
-  ['icewyrmling_1596',['iceWyrmling',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aac19c2b6ccd4e643db16d6ba97cdee63b',1,'Aloha']]]
+  ['heal_0',['heal',['../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea214d940b5313897d9e25b3a2b3533770',1,'Aloha']]],
+  ['healpotion_1',['healPotion',['../de/d9b/namespace_aloha.html#afcc76bb47435d012a5c32f1c0d435e89af7da92b4c48a2e2b7203c70b7088b8a3',1,'Aloha']]]
 ];

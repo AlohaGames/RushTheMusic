@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['generic_1591',['Generic',['../de/d9b/namespace_aloha.html#a5e478af85f2b5f0bff187b7190115aada8045a0a6c688b0635e3caccc408a1446',1,'Aloha']]],
-  ['generic_1592',['generic',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa3d517f8924ac7fd03699a29d97dc52d9',1,'Aloha']]]
+  ['firelancer_0',['fireLancer',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa3833adc8ab777f3e8498d852053105bb',1,'Aloha']]],
+  ['firewyrmling_1',['fireWyrmling',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa7672e2c33102c8cd42253df7b28748fb',1,'Aloha']]]
 ];

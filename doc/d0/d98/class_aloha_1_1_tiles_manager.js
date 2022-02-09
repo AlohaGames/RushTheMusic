@@ -5,6 +5,7 @@ var class_aloha_1_1_tiles_manager =
     [ "getEndTilesPosition", "d0/d98/class_aloha_1_1_tiles_manager.html#ab17a5a213a3370f0975785366e21731c", null ],
     [ "OnLevelStart", "d0/d98/class_aloha_1_1_tiles_manager.html#a5f5a59bbd51ea178738fe380d4364598", null ],
     [ "Reset", "d0/d98/class_aloha_1_1_tiles_manager.html#a0780f5460f88600428d6e30cdab67e32", null ],
+    [ "ResetTiles", "d0/d98/class_aloha_1_1_tiles_manager.html#aa2bffde456fc64c3321a91987df07e90", null ],
     [ "SpawnTileAt", "d0/d98/class_aloha_1_1_tiles_manager.html#a07f4b5ed9ffac262119c9e4a87a5651b", null ],
     [ "SpawnTileToQueue", "d0/d98/class_aloha_1_1_tiles_manager.html#af82ed6c540c5fd77901e0fceffa02ff0", null ],
     [ "gameIsStarted", "d0/d98/class_aloha_1_1_tiles_manager.html#af20f4625bd27be12e1106faa89571dc5", null ],

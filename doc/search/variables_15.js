@@ -1,6 +1,19 @@
 var searchData=
 [
-  ['warrior_1570',['Warrior',['../df/dd6/class_aloha_1_1_shield.html#a5da86eb9ca7213a2ec806258a6bf0c46',1,'Aloha.Shield.Warrior()'],['../d8/d29/class_aloha_1_1_sword.html#a45514317b2c55aba15c2ece0c65322e2',1,'Aloha.Sword.Warrior()']]],
-  ['wastriggered_1571',['WasTriggered',['../d0/d17/class_aloha_1_1_action_zone.html#a77801afbc42dff3ad4c745b50a9ac593',1,'Aloha::ActionZone']]],
-  ['wizard_1572',['Wizard',['../dd/d86/class_aloha_1_1_fireball.html#aeb7f7de59033898936d99d9541f27e92',1,'Aloha.Fireball.Wizard()'],['../d5/de7/class_aloha_1_1_fireball_spawner.html#af4abf1ea7bce44936f44a0f553e30cea',1,'Aloha.FireballSpawner.Wizard()'],['../d5/dd0/class_aloha_1_1_portal_spawner.html#ae5dfc9505dc009ba12889938e5de3ae8',1,'Aloha.PortalSpawner.Wizard()'],['../da/d70/class_aloha_1_1_vortex.html#ae4190068607a0ae74a4999bd8b734679',1,'Aloha.Vortex.Wizard()']]]
+  ['wall_0',['Wall',['../d4/d78/class_aloha_1_1_u_i_1_1_enemy_type_to_sprite.html#a5dc44ba70e38d2da10c862cef9089971',1,'Aloha::UI::EnemyTypeToSprite']]],
+  ['wall_5fhurt_1',['wall_hurt',['../d6/dfc/class_aloha_1_1_sounds.html#af8c004a068a49e04f86dff928063ae95',1,'Aloha::Sounds']]],
+  ['warrior_2',['Warrior',['../df/dd6/class_aloha_1_1_shield.html#a5da86eb9ca7213a2ec806258a6bf0c46',1,'Aloha.Shield.Warrior()'],['../d8/d29/class_aloha_1_1_sword.html#a45514317b2c55aba15c2ece0c65322e2',1,'Aloha.Sword.Warrior()']]],
+  ['warrior_5fattack_3',['warrior_attack',['../d6/dfc/class_aloha_1_1_sounds.html#a2f2909c7b52559acc670463b89b5496d',1,'Aloha::Sounds']]],
+  ['warrior_5fblock_4',['warrior_block',['../d6/dfc/class_aloha_1_1_sounds.html#a1bb2b3fcee778486a14852d9b1b556f8',1,'Aloha::Sounds']]],
+  ['warrior_5frage_5',['warrior_rage',['../d6/dfc/class_aloha_1_1_sounds.html#a286aa5735e9f490cad75504540a8755b',1,'Aloha::Sounds']]],
+  ['wastriggered_6',['WasTriggered',['../d0/d17/class_aloha_1_1_action_zone.html#a77801afbc42dff3ad4c745b50a9ac593',1,'Aloha::ActionZone']]],
+  ['width_7',['Width',['../db/dc7/class_aloha_1_1_side_environment.html#accb9119056d85d7b1683c6a0dd3660d9',1,'Aloha::SideEnvironment']]],
+  ['wizard_8',['Wizard',['../d5/de7/class_aloha_1_1_fireball_spawner.html#af4abf1ea7bce44936f44a0f553e30cea',1,'Aloha.FireballSpawner.Wizard()'],['../da/d70/class_aloha_1_1_vortex.html#ae4190068607a0ae74a4999bd8b734679',1,'Aloha.Vortex.Wizard()'],['../d5/dd0/class_aloha_1_1_portal_spawner.html#ae5dfc9505dc009ba12889938e5de3ae8',1,'Aloha.PortalSpawner.Wizard()'],['../dd/d86/class_aloha_1_1_fireball.html#aeb7f7de59033898936d99d9541f27e92',1,'Aloha.Fireball.Wizard()']]],
+  ['wizard_5fattack_9',['wizard_attack',['../d6/dfc/class_aloha_1_1_sounds.html#a60fb761fd4cfaeb139a6a7ec30d42785',1,'Aloha::Sounds']]],
+  ['wizard_5fblock_10',['wizard_block',['../d6/dfc/class_aloha_1_1_sounds.html#a7ca223e9b946d711930a47d6698b572b',1,'Aloha::Sounds']]],
+  ['wizard_5fno_5fmana_11',['wizard_no_mana',['../d6/dfc/class_aloha_1_1_sounds.html#a93e1ee6d6c5308801219f2585e51a7cc',1,'Aloha::Sounds']]],
+  ['wyrmling_12',['Wyrmling',['../d4/d78/class_aloha_1_1_u_i_1_1_enemy_type_to_sprite.html#acaff151c623069f3ec2bb1a222e12e18',1,'Aloha::UI::EnemyTypeToSprite']]],
+  ['wyrmling_5fattack_13',['wyrmling_attack',['../d6/dfc/class_aloha_1_1_sounds.html#a4a8c8e1881de55bbca8eaec067f363c3',1,'Aloha::Sounds']]],
+  ['wyrmling_5fhurt_14',['wyrmling_hurt',['../d6/dfc/class_aloha_1_1_sounds.html#a09ecb953a0bd4a17952de2ed8e0ffdc1',1,'Aloha::Sounds']]],
+  ['wyrmling_5fidle_15',['wyrmling_idle',['../d6/dfc/class_aloha_1_1_sounds.html#a4d384e24a54a95a504eddecfa97a655e',1,'Aloha::Sounds']]]
 ];

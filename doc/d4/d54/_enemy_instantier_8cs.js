@@ -1,6 +1,6 @@
 var _enemy_instantier_8cs =
 [
-    [ "EnemyInstantier", "db/d49/class_aloha_1_1_enemy_instantier.html", "db/d49/class_aloha_1_1_enemy_instantier" ],
+    [ "Aloha.EnemyInstantier", "db/d49/class_aloha_1_1_enemy_instantier.html", "db/d49/class_aloha_1_1_enemy_instantier" ],
     [ "EnemyType", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923a", [
       [ "generic", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa3d517f8924ac7fd03699a29d97dc52d9", null ],
       [ "lancer", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aab81a9dfa2a3ea350de88cac98594e40d", null ],
@@ -13,6 +13,8 @@ var _enemy_instantier_8cs =
       [ "fireWyrmling", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa7672e2c33102c8cd42253df7b28748fb", null ],
       [ "iceWyrmling", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aac19c2b6ccd4e643db16d6ba97cdee63b", null ],
       [ "canon", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa6638070bc99321b316adbd95e6951f5b", null ],
-      [ "bat", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa5f3f4681121b460e3304a1887f42f1c3", null ]
+      [ "bat", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa5f3f4681121b460e3304a1887f42f1c3", null ],
+      [ "darkWizard", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aa09af3e33dbbe50ac75a14c5d54ae872e", null ],
+      [ "experion", "d4/d54/_enemy_instantier_8cs.html#a37f2e3c7d7eed4c7f62041369885923aad23c37e45821305247e4bfdc9435ad41", null ]
     ] ]
 ];

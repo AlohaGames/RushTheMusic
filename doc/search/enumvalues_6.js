@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['heal_1593',['heal',['../de/d9b/namespace_aloha.html#a0febe2a4aa972b39cdbd035b93b560aea214d940b5313897d9e25b3a2b3533770',1,'Aloha']]],
-  ['healpotion_1594',['healPotion',['../de/d9b/namespace_aloha.html#afcc76bb47435d012a5c32f1c0d435e89af7da92b4c48a2e2b7203c70b7088b8a3',1,'Aloha']]]
+  ['generic_0',['Generic',['../de/d9b/namespace_aloha.html#a5e478af85f2b5f0bff187b7190115aada8045a0a6c688b0635e3caccc408a1446',1,'Aloha']]],
+  ['generic_1',['generic',['../de/d9b/namespace_aloha.html#a37f2e3c7d7eed4c7f62041369885923aa3d517f8924ac7fd03699a29d97dc52d9',1,'Aloha']]]
 ];

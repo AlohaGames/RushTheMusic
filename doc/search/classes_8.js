@@ -1,14 +1,21 @@
 var searchData=
 [
-  ['icelancerstats_870',['IceLancerStats',['../dd/d67/class_aloha_1_1_entity_stats_1_1_ice_lancer_stats.html',1,'Aloha::EntityStats']]],
-  ['icewyrmlingstats_871',['IceWyrmlingStats',['../d3/d24/class_aloha_1_1_entity_stats_1_1_ice_wyrmling_stats.html',1,'Aloha::EntityStats']]],
-  ['inputbinding_872',['InputBinding',['../d8/d06/class_aloha_1_1_input_binding.html',1,'Aloha']]],
-  ['intintevent_873',['IntIntEvent',['../dc/d48/class_aloha_1_1_events_1_1_int_int_event.html',1,'Aloha::Events']]],
-  ['intintintevent_874',['IntIntIntEvent',['../da/d35/class_aloha_1_1_events_1_1_int_int_int_event.html',1,'Aloha::Events']]],
-  ['inventorymanager_875',['InventoryManager',['../d8/dcc/class_aloha_1_1_inventory_manager.html',1,'Aloha']]],
-  ['inventorytest_876',['InventoryTest',['../da/dc1/class_aloha_1_1_test_1_1_inventory_test.html',1,'Aloha::Test']]],
-  ['inventoryuitest_877',['InventoryUITest',['../d0/d7d/class_aloha_1_1_test_1_1_inventory_u_i_test.html',1,'Aloha::Test']]],
-  ['item_878',['Item',['../d7/d1c/class_aloha_1_1_item.html',1,'Aloha']]],
-  ['itemcontainer_879',['ItemContainer',['../de/de0/class_aloha_1_1_item_container.html',1,'Aloha']]],
-  ['itemuser_880',['ItemUser',['../de/d8b/class_aloha_1_1_item_user.html',1,'Aloha']]]
+  ['ibiscusbutton_0',['IbiscusButton',['../d8/d6d/class_aloha_1_1_u_i_1_1_ibiscus_button.html',1,'Aloha::UI']]],
+  ['icelancerstats_1',['IceLancerStats',['../dd/d67/class_aloha_1_1_entity_stats_1_1_ice_lancer_stats.html',1,'Aloha::EntityStats']]],
+  ['icewyrmlingstats_2',['IceWyrmlingStats',['../d3/d24/class_aloha_1_1_entity_stats_1_1_ice_wyrmling_stats.html',1,'Aloha::EntityStats']]],
+  ['imageanimation_3',['ImageAnimation',['../d9/da1/class_aloha_1_1_u_i_1_1_image_animation.html',1,'Aloha::UI']]],
+  ['import_4',['Import',['../d4/d2d/class_aloha_1_1_u_i_1_1_import.html',1,'Aloha::UI']]],
+  ['infinitemodebutton_5',['InfiniteModeButton',['../de/de4/class_aloha_1_1_infinite_mode_button.html',1,'Aloha']]],
+  ['infinitemodenextlevelbutton_6',['InfiniteModeNextLevelButton',['../d0/d71/class_aloha_1_1_infinite_mode_next_level_button.html',1,'Aloha']]],
+  ['informationroot_7',['InformationRoot',['../d1/dc4/class_aloha_1_1_u_i_1_1_information_root.html',1,'Aloha::UI']]],
+  ['inputbinding_8',['InputBinding',['../d8/d06/class_aloha_1_1_input_binding.html',1,'Aloha']]],
+  ['intevent_9',['IntEvent',['../d7/d01/class_aloha_1_1_events_1_1_int_event.html',1,'Aloha::Events']]],
+  ['intintevent_10',['IntIntEvent',['../dc/d48/class_aloha_1_1_events_1_1_int_int_event.html',1,'Aloha::Events']]],
+  ['intintintevent_11',['IntIntIntEvent',['../da/d35/class_aloha_1_1_events_1_1_int_int_int_event.html',1,'Aloha::Events']]],
+  ['inventorymanager_12',['InventoryManager',['../d8/dcc/class_aloha_1_1_inventory_manager.html',1,'Aloha']]],
+  ['inventorytest_13',['InventoryTest',['../da/dc1/class_aloha_1_1_test_1_1_inventory_test.html',1,'Aloha::Test']]],
+  ['inventoryuitest_14',['InventoryUITest',['../d0/d7d/class_aloha_1_1_test_1_1_inventory_u_i_test.html',1,'Aloha::Test']]],
+  ['item_15',['Item',['../d7/d1c/class_aloha_1_1_item.html',1,'Aloha']]],
+  ['itemcontainer_16',['ItemContainer',['../de/de0/class_aloha_1_1_item_container.html',1,'Aloha']]],
+  ['itemuser_17',['ItemUser',['../de/d8b/class_aloha_1_1_item_user.html',1,'Aloha']]]
 ];

@@ -5,5 +5,6 @@ var class_aloha_1_1_container_types =
     [ "Environment", "da/d9d/class_aloha_1_1_container_types.html#addefeb51d7b574600dc3b17fad39398d", null ],
     [ "Item", "da/d9d/class_aloha_1_1_container_types.html#a4d208aa9f2c0f2df2f276ed389066022", null ],
     [ "Projectile", "da/d9d/class_aloha_1_1_container_types.html#a5d07fdf8d1905ab1274fc5f12509f740", null ],
+    [ "Text", "da/d9d/class_aloha_1_1_container_types.html#aed4b589df75a962d1d77320c4c7f16d3", null ],
     [ "Tile", "da/d9d/class_aloha_1_1_container_types.html#a611aaba76e142d2636186e13504b44e4", null ]
 ];

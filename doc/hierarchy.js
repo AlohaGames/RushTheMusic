@@ -22,6 +22,12 @@ var hierarchy =
     [ "Aloha.Test.HeroTest", "d3/d94/class_aloha_1_1_test_1_1_hero_test.html", null ],
     [ "Aloha.Test.InventoryTest", "da/dc1/class_aloha_1_1_test_1_1_inventory_test.html", null ],
     [ "Aloha.Test.InventoryUITest", "d0/d7d/class_aloha_1_1_test_1_1_inventory_u_i_test.html", null ],
+    [ "IPointerEnterHandler", null, [
+      [ "Aloha.UI.HeroSelectionMenu", "db/d3b/class_aloha_1_1_u_i_1_1_hero_selection_menu.html", null ]
+    ] ],
+    [ "IPointerExitHandler", null, [
+      [ "Aloha.UI.HeroSelectionMenu", "db/d3b/class_aloha_1_1_u_i_1_1_hero_selection_menu.html", null ]
+    ] ],
     [ "Aloha.Test.LancerTest", "d1/dc8/class_aloha_1_1_test_1_1_lancer_test.html", null ],
     [ "Aloha.Test.LeapMotionWarriorTest", "d6/d5d/class_aloha_1_1_test_1_1_leap_motion_warrior_test.html", null ],
     [ "Aloha.LevelMapping", "dc/dcd/class_aloha_1_1_level_mapping.html", null ],
@@ -37,6 +43,7 @@ var hierarchy =
       [ "Aloha.Bar", "d4/d37/class_aloha_1_1_bar.html", [
         [ "Aloha.HorizontalBar", "d9/dee/class_aloha_1_1_horizontal_bar.html", [
           [ "Aloha.ExpBar", "de/d46/class_aloha_1_1_exp_bar.html", null ],
+          [ "Aloha.ExperionHealthBar", "d5/df7/class_aloha_1_1_experion_health_bar.html", null ],
           [ "Aloha.HealthBar", "dc/d65/class_aloha_1_1_health_bar.html", null ],
           [ "Aloha.SecondaryBar", "d1/ded/class_aloha_1_1_secondary_bar.html", null ]
         ] ],
@@ -46,52 +53,63 @@ var hierarchy =
       ] ],
       [ "Aloha.BasicTile", "da/d25/class_aloha_1_1_basic_tile.html", null ],
       [ "Aloha.CanonBall", "d3/d34/class_aloha_1_1_canon_ball.html", null ],
+      [ "Aloha.ConfirmWindow", "dd/d0b/class_aloha_1_1_confirm_window.html", null ],
       [ "Aloha.ContinueButton", "de/dca/class_aloha_1_1_continue_button.html", null ],
       [ "Aloha.ControlManager", "d7/d52/class_aloha_1_1_control_manager.html", [
         [ "Aloha.WarriorControlManager", "d3/d3b/class_aloha_1_1_warrior_control_manager.html", null ],
         [ "Aloha.WizardControlManager", "d6/d28/class_aloha_1_1_wizard_control_manager.html", null ]
       ] ],
       [ "Aloha.ControlSelector", "dd/da8/class_aloha_1_1_control_selector.html", null ],
-      [ "Aloha.CreateLevelMapping", "df/d7b/class_aloha_1_1_create_level_mapping.html", null ],
       [ "Aloha.CreateProfileButton", "d5/db7/class_aloha_1_1_create_profile_button.html", null ],
+      [ "Aloha.DarkWizardLaser", "d1/d93/class_aloha_1_1_dark_wizard_laser.html", null ],
+      [ "Aloha.DontDestroy", "d3/df6/class_aloha_1_1_dont_destroy.html", null ],
       [ "Aloha.DynamicText", "de/d5d/class_aloha_1_1_dynamic_text.html", null ],
       [ "Aloha.Entity", "d3/db4/class_aloha_1_1_entity.html", [
-        [ "Aloha.Enemy< LancerStats >", "d3/d34/class_aloha_1_1_enemy.html", [
-          [ "Aloha.Lancer", "dd/db7/class_aloha_1_1_lancer.html", null ]
-        ] ],
         [ "Aloha.Enemy< AssassinStats >", "d3/d34/class_aloha_1_1_enemy.html", [
           [ "Aloha.Assassin", "d3/d4f/class_aloha_1_1_assassin.html", null ]
-        ] ],
-        [ "Aloha.Enemy< WyrmlingStats >", "d3/d34/class_aloha_1_1_enemy.html", [
-          [ "Aloha.Wyrmling", "d8/d23/class_aloha_1_1_wyrmling.html", null ]
-        ] ],
-        [ "Aloha.Enemy< WallStats >", "d3/d34/class_aloha_1_1_enemy.html", [
-          [ "Aloha.Wall", "d2/d86/class_aloha_1_1_wall.html", null ]
         ] ],
         [ "Aloha.Enemy< BatStats >", "d3/d34/class_aloha_1_1_enemy.html", [
           [ "Aloha.Bat", "d8/dae/class_aloha_1_1_bat.html", null ]
         ] ],
-        [ "Aloha.Enemy< ChestStats >", "d3/d34/class_aloha_1_1_enemy.html", [
-          [ "Aloha.Chest", "db/d71/class_aloha_1_1_chest.html", null ]
-        ] ],
         [ "Aloha.Enemy< CanonStats >", "d3/d34/class_aloha_1_1_enemy.html", [
           [ "Aloha.Canon", "d2/d4d/class_aloha_1_1_canon.html", null ]
         ] ],
-        [ "Aloha.Hero< WizardStats >", "d5/d2a/class_aloha_1_1_hero.html", [
-          [ "Aloha.Wizard", "db/dd9/class_aloha_1_1_wizard.html", null ]
+        [ "Aloha.Enemy< ChestStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.Chest", "db/d71/class_aloha_1_1_chest.html", null ]
+        ] ],
+        [ "Aloha.Enemy< DarkWizardStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.DarkWizard", "d3/d55/class_aloha_1_1_dark_wizard.html", null ]
+        ] ],
+        [ "Aloha.Enemy< ExperionStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.Experion", "d8/dd7/class_aloha_1_1_experion.html", null ]
+        ] ],
+        [ "Aloha.Enemy< LancerStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.Lancer", "dd/db7/class_aloha_1_1_lancer.html", null ]
+        ] ],
+        [ "Aloha.Enemy< WallStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.Wall", "d2/d86/class_aloha_1_1_wall.html", null ]
+        ] ],
+        [ "Aloha.Enemy< WyrmlingStats >", "d3/d34/class_aloha_1_1_enemy.html", [
+          [ "Aloha.Wyrmling", "d8/d23/class_aloha_1_1_wyrmling.html", null ]
         ] ],
         [ "Aloha.Hero< WarriorStats >", "d5/d2a/class_aloha_1_1_hero.html", [
           [ "Aloha.Warrior", "d7/d50/class_aloha_1_1_warrior.html", null ]
+        ] ],
+        [ "Aloha.Hero< WizardStats >", "d5/d2a/class_aloha_1_1_hero.html", [
+          [ "Aloha.Wizard", "db/dd9/class_aloha_1_1_wizard.html", null ]
         ] ],
         [ "Aloha.Enemy< T >", "d3/d34/class_aloha_1_1_enemy.html", null ],
         [ "Aloha.Hero< T >", "d5/d2a/class_aloha_1_1_hero.html", null ]
       ] ],
       [ "Aloha.Example.DebugDeadEntity", "d5/d4a/class_aloha_1_1_example_1_1_debug_dead_entity.html", null ],
       [ "Aloha.Example.TestBar", "da/d18/class_aloha_1_1_example_1_1_test_bar.html", null ],
+      [ "Aloha.ExperionFireball", "d5/d22/class_aloha_1_1_experion_fireball.html", null ],
+      [ "Aloha.ExperionLaser", "d4/dbe/class_aloha_1_1_experion_laser.html", null ],
       [ "Aloha.Fireball", "dd/d86/class_aloha_1_1_fireball.html", null ],
       [ "Aloha.FireballSpawner", "d5/de7/class_aloha_1_1_fireball_spawner.html", null ],
       [ "Aloha.HUDEffect", "d4/d39/class_aloha_1_1_h_u_d_effect.html", null ],
-      [ "Aloha.HeroSelectionMenu", "d4/d14/class_aloha_1_1_hero_selection_menu.html", null ],
+      [ "Aloha.InfiniteModeButton", "de/de4/class_aloha_1_1_infinite_mode_button.html", null ],
+      [ "Aloha.InfiniteModeNextLevelButton", "d0/d71/class_aloha_1_1_infinite_mode_next_level_button.html", null ],
       [ "Aloha.Item", "d7/d1c/class_aloha_1_1_item.html", [
         [ "Aloha.ExperiencePotion", "d7/dd9/class_aloha_1_1_experience_potion.html", null ],
         [ "Aloha.HealPotion", "dd/dc6/class_aloha_1_1_heal_potion.html", null ],
@@ -108,14 +126,37 @@ var hierarchy =
       [ "Aloha.PortalSpawner", "d5/dd0/class_aloha_1_1_portal_spawner.html", null ],
       [ "Aloha.ProfilPickerUI", "de/de1/class_aloha_1_1_profil_picker_u_i.html", null ],
       [ "Aloha.QuitButton", "d6/dfb/class_aloha_1_1_quit_button.html", null ],
+      [ "Aloha.ReturnButton", "d5/df5/class_aloha_1_1_return_button.html", null ],
       [ "Aloha.Shield", "df/dd6/class_aloha_1_1_shield.html", null ],
       [ "Aloha.SideEnvironment", "db/dc7/class_aloha_1_1_side_environment.html", [
-        [ "Aloha.Rock", "d3/de9/class_aloha_1_1_rock.html", null ],
-        [ "Aloha.Tree", "d1/de3/class_aloha_1_1_tree.html", null ]
+        [ "Aloha.Animal", "d0/d2c/class_aloha_1_1_animal.html", null ],
+        [ "Aloha.Bush", "d9/df5/class_aloha_1_1_bush.html", null ],
+        [ "Aloha.Panel", "db/db7/class_aloha_1_1_panel.html", null ],
+        [ "Aloha.Rock", "d3/de9/class_aloha_1_1_rock.html", null ]
       ] ],
       [ "Aloha.Sword", "d8/d29/class_aloha_1_1_sword.html", null ],
+      [ "Aloha.UI.AddEnemy", "d8/deb/class_aloha_1_1_u_i_1_1_add_enemy.html", null ],
+      [ "Aloha.UI.BiomeSelector", "d4/d7c/class_aloha_1_1_u_i_1_1_biome_selector.html", null ],
+      [ "Aloha.UI.CleanEnemy", "db/d31/class_aloha_1_1_u_i_1_1_clean_enemy.html", null ],
+      [ "Aloha.UI.CurrentTile", "d6/d86/class_aloha_1_1_u_i_1_1_current_tile.html", null ],
+      [ "Aloha.UI.EditTrack", "d4/deb/class_aloha_1_1_u_i_1_1_edit_track.html", null ],
+      [ "Aloha.UI.Export", "db/d8a/class_aloha_1_1_u_i_1_1_export.html", null ],
+      [ "Aloha.UI.FormInput", "d3/d98/class_aloha_1_1_u_i_1_1_form_input.html", null ],
+      [ "Aloha.UI.HeroDescription", "d1/d6e/class_aloha_1_1_u_i_1_1_hero_description.html", null ],
+      [ "Aloha.UI.HeroSelectionMenu", "db/d3b/class_aloha_1_1_u_i_1_1_hero_selection_menu.html", null ],
+      [ "Aloha.UI.HorizontalTilePos", "df/dd0/class_aloha_1_1_u_i_1_1_horizontal_tile_pos.html", null ],
+      [ "Aloha.UI.IbiscusButton", "d8/d6d/class_aloha_1_1_u_i_1_1_ibiscus_button.html", null ],
+      [ "Aloha.UI.ImageAnimation", "d9/da1/class_aloha_1_1_u_i_1_1_image_animation.html", null ],
+      [ "Aloha.UI.Import", "d4/d2d/class_aloha_1_1_u_i_1_1_import.html", null ],
+      [ "Aloha.UI.InformationRoot", "d1/dc4/class_aloha_1_1_u_i_1_1_information_root.html", null ],
+      [ "Aloha.UI.LoadMusic", "de/d8f/class_aloha_1_1_u_i_1_1_load_music.html", null ],
+      [ "Aloha.UI.MapContent", "df/d00/class_aloha_1_1_u_i_1_1_map_content.html", null ],
+      [ "Aloha.UI.SelectItem", "d8/d37/class_aloha_1_1_u_i_1_1_select_item.html", null ],
+      [ "Aloha.UI.SelectPos", "d2/dc2/class_aloha_1_1_u_i_1_1_select_pos.html", null ],
+      [ "Aloha.UI.SelectTile", "d4/d79/class_aloha_1_1_u_i_1_1_select_tile.html", null ],
       [ "Aloha.UI.Settings", "dd/d86/class_aloha_1_1_u_i_1_1_settings.html", null ],
       [ "Aloha.UI.SliderValueToText", "d7/dc8/class_aloha_1_1_u_i_1_1_slider_value_to_text.html", null ],
+      [ "Aloha.UI.SpriteWithLegend", "d0/df3/class_aloha_1_1_u_i_1_1_sprite_with_legend.html", null ],
       [ "Aloha.UI.VersionText", "db/dd3/class_aloha_1_1_u_i_1_1_version_text.html", null ],
       [ "Aloha.UIInventory", "db/da9/class_aloha_1_1_u_i_inventory.html", null ],
       [ "Aloha.UIScore", "d5/dbf/class_aloha_1_1_u_i_score.html", null ],
@@ -133,6 +174,15 @@ var hierarchy =
         [ "Aloha.AI.BatEscape", "d9/d50/class_aloha_1_1_a_i_1_1_bat_escape.html", null ],
         [ "Aloha.AI.BatMove", "d1/de4/class_aloha_1_1_a_i_1_1_bat_move.html", null ],
         [ "Aloha.AI.CanonAttack", "df/d12/class_aloha_1_1_a_i_1_1_canon_attack.html", null ],
+        [ "Aloha.AI.DarkWizardFireAttack", "db/d88/class_aloha_1_1_a_i_1_1_dark_wizard_fire_attack.html", null ],
+        [ "Aloha.AI.DarkWizardIceAttack", "d3/dfe/class_aloha_1_1_a_i_1_1_dark_wizard_ice_attack.html", null ],
+        [ "Aloha.AI.ExperionDash", "d3/d2b/class_aloha_1_1_a_i_1_1_experion_dash.html", null ],
+        [ "Aloha.AI.ExperionFireAttack", "d3/dde/class_aloha_1_1_a_i_1_1_experion_fire_attack.html", null ],
+        [ "Aloha.AI.ExperionFireball", "d0/d8c/class_aloha_1_1_a_i_1_1_experion_fireball.html", null ],
+        [ "Aloha.AI.ExperionIceAttack", "da/d0e/class_aloha_1_1_a_i_1_1_experion_ice_attack.html", null ],
+        [ "Aloha.AI.ExperionMove", "d8/dd6/class_aloha_1_1_a_i_1_1_experion_move.html", null ],
+        [ "Aloha.AI.ExperionQuote", "de/d5e/class_aloha_1_1_a_i_1_1_experion_quote.html", null ],
+        [ "Aloha.AI.ExperionTeleportation", "da/d28/class_aloha_1_1_a_i_1_1_experion_teleportation.html", null ],
         [ "Aloha.AI.LancerAttack", "d1/d81/class_aloha_1_1_a_i_1_1_lancer_attack.html", null ],
         [ "Aloha.AI.Move", "d5/dad/class_aloha_1_1_a_i_1_1_move.html", null ],
         [ "Aloha.AI.MoveForward", "d6/d07/class_aloha_1_1_a_i_1_1_move_forward.html", null ],
@@ -149,18 +199,23 @@ var hierarchy =
         [ "Aloha.AI.BatGraph", "d7/d7a/class_aloha_1_1_a_i_1_1_bat_graph.html", null ],
         [ "Aloha.AI.CanonGraph", "db/d6a/class_aloha_1_1_a_i_1_1_canon_graph.html", null ],
         [ "Aloha.AI.ChestGraph", "db/df0/class_aloha_1_1_a_i_1_1_chest_graph.html", null ],
+        [ "Aloha.AI.DarkWizardGraph", "d7/d68/class_aloha_1_1_a_i_1_1_dark_wizard_graph.html", null ],
         [ "Aloha.AI.EmptyGraph", "d7/d53/class_aloha_1_1_a_i_1_1_empty_graph.html", null ],
+        [ "Aloha.AI.ExperionGraph", "d2/df7/class_aloha_1_1_a_i_1_1_experion_graph.html", null ],
         [ "Aloha.AI.LancerGraph", "d1/d7e/class_aloha_1_1_a_i_1_1_lancer_graph.html", null ],
         [ "Aloha.AI.WallGraph", "db/d8f/class_aloha_1_1_a_i_1_1_wall_graph.html", null ],
         [ "Aloha.AI.WyrmlingGraph", "d9/dd4/class_aloha_1_1_a_i_1_1_wyrmling_graph.html", null ]
       ] ],
       [ "Aloha.Biome", "d4/dbb/class_aloha_1_1_biome.html", null ],
+      [ "Aloha.Sounds", "d6/dfc/class_aloha_1_1_sounds.html", null ],
       [ "Aloha.Stats", "df/d5f/class_aloha_1_1_stats.html", [
         [ "Aloha.EnemyStats", "d9/dcf/class_aloha_1_1_enemy_stats.html", [
           [ "Aloha.EntityStats.AssassinStats", "d4/dd6/class_aloha_1_1_entity_stats_1_1_assassin_stats.html", null ],
           [ "Aloha.EntityStats.BatStats", "d6/d85/class_aloha_1_1_entity_stats_1_1_bat_stats.html", null ],
           [ "Aloha.EntityStats.CanonStats", "d0/dc8/class_aloha_1_1_entity_stats_1_1_canon_stats.html", null ],
           [ "Aloha.EntityStats.ChestStats", "d7/d02/class_aloha_1_1_entity_stats_1_1_chest_stats.html", null ],
+          [ "Aloha.EntityStats.DarkWizardStats", "de/d9d/class_aloha_1_1_entity_stats_1_1_dark_wizard_stats.html", null ],
+          [ "Aloha.EntityStats.ExperionStats", "d1/dac/class_aloha_1_1_entity_stats_1_1_experion_stats.html", null ],
           [ "Aloha.EntityStats.LancerStats", "d7/d50/class_aloha_1_1_entity_stats_1_1_lancer_stats.html", [
             [ "Aloha.EntityStats.FireLancerStats", "d0/d92/class_aloha_1_1_entity_stats_1_1_fire_lancer_stats.html", null ],
             [ "Aloha.EntityStats.IceLancerStats", "dd/d67/class_aloha_1_1_entity_stats_1_1_ice_lancer_stats.html", null ]
@@ -190,11 +245,20 @@ var hierarchy =
     [ "Singleton< DynamicTextManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.DynamicTextManager", "d1/ddd/class_aloha_1_1_dynamic_text_manager.html", null ]
     ] ],
+    [ "Singleton< EditorManager >", "d3/dbc/class_singleton.html", [
+      [ "Aloha.UI.EditorManager", "d4/d61/class_aloha_1_1_u_i_1_1_editor_manager.html", null ]
+    ] ],
+    [ "Singleton< EditorRoot >", "d3/dbc/class_singleton.html", [
+      [ "Aloha.UI.EditorRoot", "d8/d04/class_aloha_1_1_u_i_1_1_editor_root.html", null ]
+    ] ],
     [ "Singleton< EnemyInstantier >", "d3/dbc/class_singleton.html", [
       [ "Aloha.EnemyInstantier", "db/d49/class_aloha_1_1_enemy_instantier.html", null ]
     ] ],
     [ "Singleton< EnemySpawner >", "d3/dbc/class_singleton.html", [
       [ "Aloha.EnemySpawner", "d9/d5c/class_aloha_1_1_enemy_spawner.html", null ]
+    ] ],
+    [ "Singleton< EnemyTypeToSprite >", "d3/dbc/class_singleton.html", [
+      [ "Aloha.UI.EnemyTypeToSprite", "d4/d78/class_aloha_1_1_u_i_1_1_enemy_type_to_sprite.html", null ]
     ] ],
     [ "Singleton< GameManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.GameManager", "da/d6b/class_aloha_1_1_game_manager.html", null ]
@@ -220,6 +284,9 @@ var hierarchy =
     [ "Singleton< SideEnvironmentManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.SideEnvironmentManager", "d0/d9d/class_aloha_1_1_side_environment_manager.html", null ]
     ] ],
+    [ "Singleton< SoundEffectManager >", "d3/dbc/class_singleton.html", [
+      [ "Aloha.SoundEffectManager", "d4/d76/class_aloha_1_1_sound_effect_manager.html", null ]
+    ] ],
     [ "Singleton< TilesManager >", "d3/dbc/class_singleton.html", [
       [ "Aloha.TilesManager", "d0/d98/class_aloha_1_1_tiles_manager.html", null ]
     ] ],
@@ -235,6 +302,7 @@ var hierarchy =
       [ "Aloha.Events.GameObjectEvent", "d0/d73/class_aloha_1_1_events_1_1_game_object_event.html", null ],
       [ "Aloha.Events.HUDEffectEvent", "dc/de1/class_aloha_1_1_events_1_1_h_u_d_effect_event.html", null ],
       [ "Aloha.Events.HeroTypeEvent", "df/dee/class_aloha_1_1_events_1_1_hero_type_event.html", null ],
+      [ "Aloha.Events.IntEvent", "d7/d01/class_aloha_1_1_events_1_1_int_event.html", null ],
       [ "Aloha.Events.IntIntEvent", "dc/d48/class_aloha_1_1_events_1_1_int_int_event.html", null ],
       [ "Aloha.Events.IntIntIntEvent", "da/d35/class_aloha_1_1_events_1_1_int_int_int_event.html", null ],
       [ "Aloha.Events.StringBoolEvent", "dc/de9/class_aloha_1_1_events_1_1_string_bool_event.html", null ],

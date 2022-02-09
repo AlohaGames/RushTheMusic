@@ -1,5 +1,6 @@
 var class_aloha_1_1_u_i_manager =
 [
+    [ "HideForBoss", "d1/d41/class_aloha_1_1_u_i_manager.html#a2eefa061cdfa1e99ab33f7fbf5367401", null ],
     [ "ExpBar", "d1/d41/class_aloha_1_1_u_i_manager.html#a6686a76d0397e503efc30bc55088bcc6", null ],
     [ "HealthBar", "d1/d41/class_aloha_1_1_u_i_manager.html#a2d2583c51ad6beb1c533c879c3b7b3b9", null ],
     [ "HUDEffect", "d1/d41/class_aloha_1_1_u_i_manager.html#a7a17b0b2c371b831fc5d003a5621473e", null ],
