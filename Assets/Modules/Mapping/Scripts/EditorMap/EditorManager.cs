@@ -40,6 +40,7 @@ namespace Aloha.UI
             if (LevelManager.Instance.URLToLoad != "")
             {
                 EditorRoot.Information.Import.GetComponent<Import>().Load(LevelManager.Instance.URLToLoad);
+                NeedUpdate();
             }
         }
 

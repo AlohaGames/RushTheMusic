@@ -47,12 +47,12 @@ namespace Aloha
 
 
             // Rotate hands on x axis if it's in the camera angle
-            if ((transform.rotation.x > -0.25f && ry > 0) || (transform.rotation.x < 0.1f && ry < 0))
+            //if ((transform.rotation.x > -0.25f && ry > 0) || (transform.rotation.x < 0.1f && ry < 0))
             {
                 transform.parent.Rotate(Vector3.right * (-ry), Space.Self);
             }
             // Rotate hands on y axis if it's in the camera angle
-            if ((transform.rotation.y > -0.5f && rx < 0) || (transform.rotation.y < 0.5f && rx > 0))
+            //if ((transform.rotation.y > -0.5f && rx < 0) || (transform.rotation.y < 0.5f && rx > 0))
             {
                 transform.parent.Rotate(Vector3.up * (rx), Space.World);
             }
