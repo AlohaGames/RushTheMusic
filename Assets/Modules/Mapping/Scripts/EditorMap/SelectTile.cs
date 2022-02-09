@@ -24,8 +24,8 @@ namespace Aloha.UI
 
         private void Awake()
         {
-            if (!selectedColor) selectedColor = EditorManager.Instance.SelectedColor;
-            if (!unselectedColor) unselectedColor = EditorManager.Instance.UnselectedColor;
+            selectedColor = EditorManager.Instance.SelectedColor;
+            unselectedColor = EditorManager.Instance.UnselectedColor;
             image = GetComponent<Image>();
             GetComponent<Button>().onClick.AddListener(OnClick);
             Unselect();

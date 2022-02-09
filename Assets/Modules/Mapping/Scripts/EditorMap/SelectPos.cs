@@ -11,9 +11,9 @@ namespace Aloha.UI
     [RequireComponent(typeof(Button))]
     public class SelectPos : MonoBehaviour
     {
-        CurrentTile tile;
-        static Color selectedColor;
-        static Color unselectedColor;
+        private CurrentTile tile;
+        private static Color selectedColor;
+        private static Color unselectedColor;
 
         [SerializeField]
         private HorizontalPositionEnum horizontal;
