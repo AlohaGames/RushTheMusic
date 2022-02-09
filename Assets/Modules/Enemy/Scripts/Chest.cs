@@ -11,7 +11,7 @@ namespace Aloha
     public class Chest : Enemy<ChestStats>
     {
         private Item item;
-        private Animator anim;
+        public Animator Anim;
         public List<Item> ItemListPrefab;
 
         /// <summary>
@@ -39,8 +39,46 @@ namespace Aloha
         public void Init(ChestStats stats)
         {
             base.Init(stats);
-            this.item = Instantiate(this.ItemListPrefab[(int)stats.Item]);
-            anim = GetComponent<Animator>();
+            this.item = Instantiate(this.ItemListPrefab[(int) stats.Item]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
+            if (!Anim) Anim = GetComponent<Animator>();
+        }
+
+        /// <summary>
+        /// Add an Item based on type
+        /// </summary>
+        /// <param name="itemType">Soin, Secondaire or Expérience</param>
+        public void AddItem(string itemType)
+        {
+            if (item != null)
+            {
+                Destroy(item.gameObject);
+            }
+            ItemType type = ItemType.healPotion;
+            switch (itemType)
+            {
+                case "Soin":
+                    type = ItemType.healPotion;
+                    break;
+                case "Secondaire":
+                    Hero hero = GameManager.Instance.GetHero();
+                    if (hero is Wizard)
+                    {
+                        type = ItemType.manaPotion;
+                    }
+                    else if (hero is Warrior)
+                    {
+                        type = ItemType.ragePotion;
+                    }
+                    break;
+                case "Expérience":
+                    type = ItemType.experiencePotion;
+                    break;
+                default:
+                    return;
+            }
+            this.item = Instantiate(this.ItemListPrefab[(int) type]);
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Item, this.item.gameObject);
         }
 
         /// <summary>
@@ -56,12 +94,7 @@ namespace Aloha
         }
 
         /// <summary>
-        /// Bump the entity in a specific direction and with a speed
-        /// <example> Example(s):
-        /// <code>
-        ///     StartCoroutine(wall.GetBump(new Vector3(0, 0, 2), 2));
-        /// </code>
-        /// </example>
+        /// Bump the entity in a specific direction and with a speed (a chest did not bump)
         /// </summary>
         /// <param name="direction">The direction of enemy bumping</param>
         /// <param name="speed">The speed of enemy bumping</param>
@@ -75,8 +108,11 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
-            anim.SetBool("isOpen", true);
+            Anim.SetBool("isOpen", true);
             InventoryManager.Instance.AddItem(this.item);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.chest_open, this.gameObject
+            );
             base.Die();
         }
     }

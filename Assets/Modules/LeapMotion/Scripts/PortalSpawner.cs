@@ -9,10 +9,10 @@ namespace Aloha
     /// </summary>
     public class PortalSpawner : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private Vortex vortexPrefab;
 
-        [SerializeField] 
+        [SerializeField]
         private Material raycastMaterial;
 
         private LineRenderer targetPreview;
@@ -76,17 +76,23 @@ namespace Aloha
                 if (manaUsed != 0)
                 {
                     // Set vortex position
-                    Vector3 vortexPos = (Vector3)endPoint;
+                    Vector3 vortexPos = (Vector3) endPoint;
                     vortexPos.y = 1;
 
                     // Instantiate the vortex
                     Vortex vortex = Instantiate(vortexPrefab, vortexPos, Quaternion.identity);
                     vortex.Wizard = this.Wizard;
                     vortex.Power = manaUsed;
+
+                    ContainerManager.Instance.AddToContainer(ContainerTypes.Projectile, vortex.gameObject);
                 }
-            } else
+            }
+            else
             {
                 // TODO Add behavior if not enough mana to spawn a new portal
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.wizard_no_mana, this.gameObject
+                );
             }
 
             // Reset variables
@@ -109,7 +115,7 @@ namespace Aloha
             endPoint = origin + this.transform.forward * 9f;
 
             // Find direction of laser
-            Vector3 dir = (Vector3)endPoint - origin;
+            Vector3 dir = (Vector3) endPoint - origin;
             dir.Normalize();
 
             // Get laser collision
@@ -120,11 +126,12 @@ namespace Aloha
 
                 // Set origin and end point of the laser
                 targetPreview.SetPosition(0, origin);
-                targetPreview.SetPosition(1, (Vector3)endPoint);
+                targetPreview.SetPosition(1, (Vector3) endPoint);
 
                 // Draw the laser
                 targetPreview.enabled = true;
-            } else
+            }
+            else
             {
                 endPoint = null;
                 targetPreview.enabled = false;

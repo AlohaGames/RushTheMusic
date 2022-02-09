@@ -19,20 +19,19 @@ namespace Aloha.Test
             // Instance managers
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
+            tilesManager.NumberOfTiles = 20;
             EnemySpawner enemySpawner = EnemySpawner.Instance;
             LevelManager levelManager = LevelManager.Instance;
             levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
-            // Start the game
-            tilesManager.StartGame();
+            tilesManager.OnLevelStart();
             yield return null;
 
             // Check if 19 tiles spawn
             Assert.AreEqual(19, enemySpawner.TilesCounter);
 
-            // Stop the game
-            tilesManager.StopGame();
+            tilesManager.Reset();
             yield return null;
 
             // Clear the scene
@@ -44,7 +43,7 @@ namespace Aloha.Test
         /// Check if tiles counter successfully reset
         /// </summary>
         [UnityTest]
-        public IEnumerator EnemySpawnerRestCountTileTest()
+        public IEnumerator EnemySpawnerResetCountTileTest()
         {
             GameObject manager = MonoBehaviour.Instantiate(Resources.Load<GameObject>("Prefabs/GameManager"));
             TilesManager tilesManager = TilesManager.Instance;
@@ -53,16 +52,14 @@ namespace Aloha.Test
             levelManager.LevelMapping = new LevelMapping();
             yield return null;
 
-            // Start the game
-            tilesManager.StartGame();
+            tilesManager.OnLevelStart();
             yield return null;
 
             // Check if tiles counter successfully reset
             Assert.AreNotEqual(0, enemySpawner.TilesCounter);
             yield return null;
 
-            // Stop the game
-            tilesManager.StopGame();
+            enemySpawner.Reset();
             yield return null;
 
             // Check if tiles counter successfully reset

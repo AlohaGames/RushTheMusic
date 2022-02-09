@@ -58,7 +58,7 @@ namespace Aloha
         /// This function is called when a hero level up.
         /// <example> Example(s):
         /// <code>
-        ///     warrior.LevelUp(2000);
+        ///     warrior.GainXp(2000);
         /// </code>
         /// </example>
         /// </summary>
@@ -70,11 +70,12 @@ namespace Aloha
             // LEVEL UP !
             if (this.GetStats().XP >= this.GetStats().MaxXP)
             {
-                this.GetStats().Level += 1;
-                this.GetStats().XP -= this.GetStats().MaxXP;
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.hero_level_up, this.gameObject
+                );
 
-                // Each level need 20% more XP
-                this.GetStats().MaxXP = (int)(this.GetStats().MaxXP * 1.20f);
+                this.GetStats().XP -= this.GetStats().MaxXP;
+                this.GetStats().Scale();
             }
 
             // Update UI XP bar
@@ -92,11 +93,16 @@ namespace Aloha
         /// <param name="damage"></param>
         public override void TakeDamage(int damage)
         {
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.hero_take_damage, this.gameObject
+            );
+
             float damageReduction = CalculateDamageReduction();
             int realDamage = (int)(damage * (1 - damageReduction));
             base.TakeDamage(realDamage);
             GlobalEvent.HeroTakeDamage.Invoke();
             GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
+            GlobalEvent.HudEffect.Invoke(0.5f, 0.25f, HUDEffectType.blood);
 
             if (this.CurrentHealth <= 0)
             {
@@ -116,6 +122,7 @@ namespace Aloha
         {
             base.RegenerateHP(hpGain);
             GlobalEvent.OnHealthUpdate.Invoke(this.CurrentHealth, this.stats.MaxHealth);
+            GlobalEvent.HudEffect.Invoke(0.8f, 1.0f, HUDEffectType.heal);
         }
 
         /// <summary>

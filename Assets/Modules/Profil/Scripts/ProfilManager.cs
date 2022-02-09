@@ -12,45 +12,60 @@ namespace Aloha
         private List<Profil> profils;
         public Profil CurrentProfil;
 
+        /// <summary>
+        /// Manager of user profils
+        /// </summary>
         public ProfilManager()
         {
             this.profils = new List<Profil>();
         }
 
-        private string getProfilDir()
+        /// <summary>
+        /// Return the directory where profils are stored on local computer
+        /// </summary>
+        private string GetProfilDir()
         {
+            // Linux : ~/.config/unity3d/AlohaGames/RushTheMusic/profils/
             return $"{Application.persistentDataPath}/profils";
         }
 
-        // Save current profile to disk
+        /// <summary>
+        /// Save current profile to disk
+        /// </summary>
         public void SaveCurrentProfil()
         {
             SaveProfil(CurrentProfil);
         }
 
-        // Create a new profile
+        /// <summary>
+        /// Create a new profile
+        /// </summary>
         public void CreateProfil(Profil profil)
         {
             this.CurrentProfil = profil;
             SaveCurrentProfil();
         }
 
-        // Save a profile to disk
+        /// <summary>
+        /// Save a profile to disk
+        /// </summary>
         public void SaveProfil(Profil profil)
         {
             string profilFileName = $"{profil.Name}.xml";
             XmlSerializer serializer = new XmlSerializer(typeof(Profil));
-            using (FileStream stream = new FileStream($"{getProfilDir()}/{profilFileName}", FileMode.Create))
+            using (FileStream stream = new FileStream($"{GetProfilDir()}/{profilFileName}", FileMode.Create))
             {
                 serializer.Serialize(stream, profil);
             }
         }
 
-        // Delete a profile
+        /// <summary>
+        /// Delete a profile
+        /// </summary>
         public void DeleteProfil(Profil profil)
         {
             string profilFileName = $"{profil.Name}.xml";
-            string filePath = $"{getProfilDir()}/{profilFileName}";
+            string filePath = $"{GetProfilDir()}/{profilFileName}";
 
             // check if file exists
             if (!File.Exists(filePath))
@@ -64,7 +79,9 @@ namespace Aloha
 
         }
 
-        // Load profile from disk
+        /// <summary>
+        /// Load profile from disk
+        /// </summary>
         public Profil LoadProfilFile(string filepath)
         {
             Profil profil;
@@ -77,29 +94,37 @@ namespace Aloha
             return profil;
         }
 
-        // Load all profiles from disk
+        /// <summary>
+        /// Load all profiles from disk
+        /// </summary>
         public void LoadProfiles()
         {
             // Clear list of profiles before load them
             this.profils = new List<Profil>();
 
             // Create profile dir if not exists
-            Directory.CreateDirectory(getProfilDir());
+            Directory.CreateDirectory(GetProfilDir());
 
             // Read each profile files
-            Debug.Log($"Loading files from {getProfilDir()}");
-            foreach (string file in Directory.EnumerateFiles(getProfilDir(), "*.xml"))
+            Debug.Log($"Loading files from {GetProfilDir()}");
+            foreach (string file in Directory.EnumerateFiles(GetProfilDir(), "*.xml"))
             {
                 Profil profil = LoadProfilFile(file);
                 this.profils.Add(profil);
             }
         }
 
+        /// <summary>
+        /// Get current profil
+        /// </summary>
         public Profil GetCurrentProfil()
         {
             return CurrentProfil;
         }
 
+        /// <summary>
+        /// Get all profils as a list
+        /// </summary>
         public List<Profil> GetAllProfils()
         {
             return profils;

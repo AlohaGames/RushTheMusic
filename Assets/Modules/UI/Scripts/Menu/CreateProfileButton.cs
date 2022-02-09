@@ -31,7 +31,7 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        public void OnClick()
+        void OnClick()
         {
             if (ProfilManager.Instance)
             {

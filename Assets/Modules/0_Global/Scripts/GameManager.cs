@@ -10,43 +10,22 @@ namespace Aloha
     /// </summary>
     public class GameManager : Singleton<GameManager>
     {
+        private bool isGameFinished = false;
         private bool isGamePaused = false;
-        private Hero hero;
-
-        [SerializeField]
-        private string defaultLevel = "";
-
         public bool IsPlaying = false;
-        public bool LeapMode = false; // leap : true, mouse : false
+        public bool IsInfinite = false;
+        public bool IsBoss = false;
 
-        #region Events
-        /// <summary>
-        /// Will ask to load the request <paramref name="level"/>
-        /// <example> Example(s):
-        /// <code>
-        ///     GameManager.Instance.LoadLevel(monlevel);
-        ///     GameManager.Instance.LoadLevel(monautrelevel, true);
-        /// </code>
-        /// </example>
-        /// </summary>
-        /// <param name="level">Level Name with .rtm extension</param>
-        /// <param name="isTuto">Is the level a tutorial (locate in StreamingAssets)</param>
-        public void LoadLevel(string level, bool isTuto = false)
-        {
-            GlobalEvent.LoadLevel.Invoke(level, isTuto);
-        }
+        private Hero hero;
+        public RtmConfig Config = new RtmConfig();
 
-        /// <summary>
-        /// Will ask to load the default level.
-        /// <example> Example(s):
-        /// <code>
-        ///     GameManager.Instance.LoadLevel();
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void LoadLevel()
+        void Awake()
         {
-            LoadLevel(defaultLevel);
+            GlobalEvent.GameOver.AddListener(FinishGame);
+            GlobalEvent.Victory.AddListener(FinishLevel);
+            GlobalEvent.Boss.AddListener(Boss);
+            GlobalEvent.Resume.AddListener(UnFreeze);
+            GlobalEvent.Pause.AddListener(Freeze);
         }
 
         /// <summary>
@@ -59,24 +38,97 @@ namespace Aloha
         /// </summary>
         public void StartLevel()
         {
+            UnFreeze();
+            IsBoss = false;
             IsPlaying = true;
-            Cursor.visible = false;
+            isGamePaused = false;
+            isGameFinished = false;
             GlobalEvent.LevelStart.Invoke();
+        }
+
+        /// <summary>
+        /// Stop the game.
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.FinishGame();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void FinishGame()
+        {
+            FinishLevel();
+            GlobalEvent.GameStop.Invoke();
+            IsPlaying = false;
+            IsInfinite = false;
+            ContainerManager.Instance.ClearContainer(ContainerTypes.Item);
+            if (hero != null)
+            {
+                GameObject.Destroy(hero.gameObject);
+            }
         }
 
         /// <summary>
         /// Will stop the current level.
         /// <example> Example(s):
         /// <code>
-        ///     GameManager.Instance.StopLevel();
+        ///     GameManager.Instance.FinishLevel();
         /// </code>
         /// </example>
         /// </summary>
-        public void StopLevel()
+        public void FinishLevel()
         {
-            IsPlaying = false;
-            Cursor.visible = true;
+            Freeze();
+            isGameFinished = true;
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Text }
+            );
             GlobalEvent.LevelStop.Invoke();
+        }
+
+        /// <summary>
+        /// Prepare the game for the boss
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.Boss();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Boss()
+        {
+            IsBoss = true;
+
+            // Clear some things
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Enemy, ContainerTypes.Projectile, ContainerTypes.Environment, ContainerTypes.Tile }
+            );
+            AudioManager.Instance.StopMusic();
+
+            // Change env to dark
+            SideEnvironmentManager.Instance.LoadBiome("boss");
+            TilesManager.Instance.ResetTiles();
+            TilesManager.Instance.OnLevelStart();
+            ContainerManager.Instance.ClearContainers(
+                new[] { ContainerTypes.Environment }
+            );
+
+            // Spawn boss
+            GameObject boss = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.experion);
+
+            // Scale boss level
+            Hero hero = GameManager.Instance.GetHero();
+            int heroLevel = hero.GetStats().Level;
+            Enemy bossEnemy = boss.GetComponent<Enemy>();
+            EnemyStats stats = Instantiate(bossEnemy.GetStats() as EnemyStats);
+            stats.Scale(heroLevel);
+            bossEnemy.Init(stats);
+
+            boss.transform.position = new Vector3(0, 1, 50);
+
+            // Hide UI
+            UIManager.Instance.HideForBoss();
+
+            // Start Music
+            AudioManager.Instance.StartBossMusic();
         }
 
         /// <summary>
@@ -111,6 +163,22 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Will return if the game is finished or not
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.IsGameFinished()
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <returns>
+        /// a boolean if the game is finished or not
+        /// </returns>
+        public bool IsGameFinished()
+        {
+            return this.isGameFinished;
+        }
+
+        /// <summary>
         /// Will set if leap mode is activated in the game
         /// <example> Example(s):
         /// <code>
@@ -121,7 +189,7 @@ namespace Aloha
         /// <param bool="leapMode">The new value of LeapMode</param>
         public void SetLeapMode(bool leapMode)
         {
-            this.LeapMode = leapMode;
+            this.Config.LeapMode = leapMode;
         }
 
         /// <summary>
@@ -165,8 +233,6 @@ namespace Aloha
             Application.Quit();
         }
 
-        #endregion
-
         /// <summary>
         /// Set the new current Hero and Destroy the old Hero if needed.
         /// <example> Example(s):
@@ -180,7 +246,7 @@ namespace Aloha
         {
             if (this.hero != null)
             {
-                Destroy(this.hero.gameObject);
+                GameObject.Destroy(hero.gameObject);
             }
             this.hero = hero;
         }
@@ -202,7 +268,6 @@ namespace Aloha
         }
 
         #region KeyEvents
-
         /// <summary>
         /// Is called every frame, if the MonoBehaviour is enabled. Called other method based on Key Input.
         /// </summary>
@@ -210,7 +275,7 @@ namespace Aloha
         {
             if (Input.GetKeyDown(InputBinding.Instance.Pause))
             {
-                if (IsPlaying)
+                if (IsPlaying && !isGameFinished)
                 {
                     if (isGamePaused)
                         ResumeGame();
@@ -224,5 +289,57 @@ namespace Aloha
             }
         }
         #endregion
+
+        /// <summary>
+        /// Freeze the game
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.Freeze();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Freeze()
+        {
+            Cursor.visible = true;
+            Time.timeScale = 0f;
+        }
+
+        /// <summary>
+        /// Unfreeze the game
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.UnFreeze();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void UnFreeze()
+        {
+            Cursor.visible = false;
+            Time.timeScale = 1f;
+        }
+
+        /// <summary>
+        /// Call Victory event with a specific delay
+        /// <example> Example(s):
+        /// <code>
+        ///     GameManager.Instance.VictoryWithDelay(2.0f);
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void VictoryWithDelay(float delay)
+        {
+            StartCoroutine(GlobalEvent.VictoryWithDelayCouroutine(delay));
+        }
+
+        /// <summary>
+        /// Called when the gameobject is destroyed
+        /// </summary>
+        void OnDestroy()
+        {
+            GlobalEvent.GameOver.RemoveListener(FinishGame);
+            GlobalEvent.Victory.RemoveListener(FinishLevel);
+            GlobalEvent.Resume.RemoveListener(UnFreeze);
+            GlobalEvent.Pause.RemoveListener(Freeze);
+        }
     }
 }

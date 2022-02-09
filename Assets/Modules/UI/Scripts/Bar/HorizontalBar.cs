@@ -22,6 +22,9 @@ namespace Aloha
             RectTransform barTransform = bar.GetComponent<RectTransform>();
             float width = ((RectTransform)this.transform).rect.width;
             barTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, width * (float)current / (float)max);
+
+            text.gameObject.SetActive(isValueDesplayed);
+            text.text = $"{current}/{max}";
         }
     }
 }

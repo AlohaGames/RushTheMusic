@@ -22,7 +22,7 @@ namespace Aloha
         /// </summary>
         private void Start()
         {
-            this.actualMode = !GameManager.Instance.LeapMode;
+            this.actualMode = !GameManager.Instance.Config.LeapMode;
         }
 
         /// <summary>
@@ -31,9 +31,9 @@ namespace Aloha
         void Update()
         {
             // if leap mode changes, update right hands to active
-            if (GameManager.Instance.LeapMode != this.actualMode)
+            if (GameManager.Instance.Config.LeapMode != this.actualMode)
             {
-                this.actualMode = GameManager.Instance.LeapMode;
+                this.actualMode = GameManager.Instance.Config.LeapMode;
                 ActivateLeapHands(this.actualMode);
             }
         }

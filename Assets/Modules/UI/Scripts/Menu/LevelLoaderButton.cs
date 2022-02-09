@@ -15,6 +15,8 @@ namespace Aloha
         public bool IsTuto = false;
         public string Level;
         public MenuRoot MenuRoot;
+        public Button Edit;
+        public Button Delete;
 
         /// <summary>
         /// Is called when the script instance is being loaded.
@@ -35,7 +37,7 @@ namespace Aloha
         public void OnClick()
         {
             MenuRoot.ShowCharacterMenu();
-            GameManager.Instance.LoadLevel(Level, IsTuto);
+            LevelManager.Instance.Load(Level, null, IsTuto);
         }
 
         /// <summary>

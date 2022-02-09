@@ -9619,9 +9619,10 @@ GameObject:
   - component: {fileID: 7846314397830727211}
   - component: {fileID: 6936466502191951434}
   - component: {fileID: 1023215018960411582}
+  - component: {fileID: 598057943312119293}
   m_Layer: 0
   m_Name: WyrmlingFireball
-  m_TagString: Untagged
+  m_TagString: EnemyAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9671,7 +9672,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabb004affbe33a46a7a775124d80ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  associatedEnemy: {fileID: 0}
+  AssociatedEnemy: {fileID: 0}
+--- !u!135 &598057943312119293
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5283719364131407686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5481640108851689180
 GameObject:
   m_ObjectHideFlags: 0
@@ -9683,7 +9697,6 @@ GameObject:
   - component: {fileID: 7212974636702687014}
   - component: {fileID: 132142644576949720}
   - component: {fileID: 6812291745008513927}
-  - component: {fileID: 2256929266611257586}
   m_Layer: 0
   m_Name: ball
   m_TagString: Untagged
@@ -9754,16 +9767,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2256929266611257586
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5481640108851689180}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}

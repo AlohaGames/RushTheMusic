@@ -70,11 +70,13 @@ namespace Aloha
         /// </summary>
         public void Show(GameObject gameObject, string message, Color color, int priority = 2)
         {
-            if (dynamicTextPrefab == null) return;
+            if (dynamicTextPrefab == null || !GameManager.Instance.Config.AllowDynamicTexts) return;
 
             string key = gameObject.GetInstanceID().ToString();
             DynamicText dt = Instantiate(dynamicTextPrefab);
             dt.transform.position = gameObject.transform.position;
+
+            ContainerManager.Instance.AddToContainer(ContainerTypes.Text, dt.gameObject);
 
             // Init queue of does not exists 
             if (!queues.ContainsKey(key))

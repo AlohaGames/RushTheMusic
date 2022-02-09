@@ -17,11 +17,21 @@ namespace Aloha
         /// </summary>
         public void OnTriggerEnter(Collider collider)
         {
-            if (collider.tag == "Enemy")
+            if (collider.tag == "Enemy" || collider.tag == "Boss")
             {
+                // Affect entity
                 collider.gameObject.GetComponent<Entity>().TakeDamage(0);
                 Wizard.BumpEntity(collider.GetComponent<Entity>());
 
+                // Auto destroy
+                Wizard.RegenerateSecondary((float)this.Power / (float)Wizard.GetStats().MaxMana);
+                Destroy(gameObject);
+            } else if (collider.tag == "EnemyAttack" || collider.tag == "BossAttack")
+            {
+                // Affect entity attack
+                Destroy(collider.gameObject);
+
+                // Auto destroy
                 Wizard.RegenerateSecondary((float)this.Power / (float)Wizard.GetStats().MaxMana);
                 Destroy(gameObject);
             }

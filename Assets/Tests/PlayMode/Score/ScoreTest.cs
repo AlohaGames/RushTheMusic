@@ -19,15 +19,8 @@ namespace Aloha.Test
         /// </summary>
         LevelMapping[] GetLevelMapping()
         {
-            //Create enemy stats for the enemy mapping
-            Stats enemyStats = ScriptableObject.CreateInstance<Stats>();
-            enemyStats.Attack = 1;
-            enemyStats.Defense = 0;
-            enemyStats.MaxHealth = 1;
-            enemyStats.Level = 1;
-
             //Create the level mapping 0 (with 4 enemies)
-            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, enemyStats, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER);
+            EnemyMapping genericEnemy = new EnemyMapping(EnemyType.generic, VerticalPositionEnum.BOT, HorizontalPositionEnum.CENTER, null);
             List<EnemyMapping> tile2enemies = new List<EnemyMapping>();
             tile2enemies.Add(genericEnemy);
             tile2enemies.Add(genericEnemy);
@@ -268,6 +261,12 @@ namespace Aloha.Test
             LevelManager.Instance.LevelMapping = levelMapping;
 
             yield return null;
+
+            //Passing many tiles before the score can increment
+            for (int i = 0; i < TilesManager.Instance.NumberOfTiles; i++)
+            {
+                instanceScoreManager.TilesCount(tile);
+            }
 
             //Passing a tile
             instanceScoreManager.TilesCount(tile);

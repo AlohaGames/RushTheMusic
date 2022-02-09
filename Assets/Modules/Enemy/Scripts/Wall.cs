@@ -11,19 +11,18 @@ namespace Aloha
     /// </summary>
     public class Wall : Enemy<WallStats>
     {
-        private Animator anim;
         private bool isTilesStopped;
         private float lastTileSpeed;
+        public Animator Anim;
 
         /// <summary>
         /// Is called on the frame when a script is enabled just before any of the Update methods are called the first time.
         /// </summary>
         void Start()
         {
-            anim = GetComponent<Animator>();
             lastTileSpeed = 0;
             isTilesStopped = false;
-            this.NearHeroTrigger.AddListener(runAndStopTiles);
+            this.NearHeroTrigger.AddListener(RunAndStopTiles);
         }
 
         /// <summary>
@@ -42,6 +41,23 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Override take damages function
+        /// <example> Example(s):
+        /// <code>
+        ///     wall.TakeDamage(20);
+        /// </code>
+        /// </example>
+        /// </summary>
+        /// <param name="damage"></param>
+        public override void TakeDamage(int damage)
+        {
+            base.TakeDamage(damage);
+            SoundEffectManager.Instance.Play(
+                SoundEffectManager.Instance.Sounds.wall_hurt, this.gameObject
+            );
+        }
+
+        /// <summary>
         /// Stop or run tiles according to current state
         /// <example> Example(s):
         /// <code>
@@ -49,14 +65,18 @@ namespace Aloha
         /// </code>
         /// </example>
         /// </summary>
-        private void runAndStopTiles()
+        private void RunAndStopTiles()
         {
             if (!isTilesStopped)
             {
-                lastTileSpeed = TilesManager.Instance.TileSpeed;
-                TilesManager.Instance.ChangeTileSpeed(0);
-                isTilesStopped = true;
-            } else
+                if (this.CurrentHealth > 0) // Security to avoid this case if the wall is in death animation
+                {
+                    lastTileSpeed = TilesManager.Instance.TileSpeed;
+                    TilesManager.Instance.ChangeTileSpeed(0);
+                    isTilesStopped = true;
+                }
+            }
+            else
             {
                 TilesManager.Instance.ChangeTileSpeed(lastTileSpeed);
                 isTilesStopped = false;
@@ -68,8 +88,17 @@ namespace Aloha
         /// </summary>
         public override void Die()
         {
-            if (isTilesStopped) runAndStopTiles();
+            Anim.SetTrigger("isDead");
+            if (isTilesStopped) RunAndStopTiles();
             base.Die();
+        }
+
+        /// <summary>
+        /// Security if the game is loose when the game is stopped
+        /// </summary>
+        private void OnDestroy()
+        {
+            if (isTilesStopped) RunAndStopTiles();
         }
     }
 }

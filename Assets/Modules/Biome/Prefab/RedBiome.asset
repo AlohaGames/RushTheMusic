@@ -12,13 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e042ed84095344860a1232fbd422a, type: 3}
   m_Name: RedBiome
   m_EditorClassIdentifier: 
-  BiomeName: red
+  BiomeName: automn
+  Label: Automne
   SideEnvironmentPrefabs:
-  - {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-  - {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-  - {fileID: 2301198476239697737, guid: 517cd2a77dc0c5b47873fa82f41206ca, type: 3}
-  - {fileID: 3956575534912789157, guid: 5b0f3c2a02f86f24d8e23927b72db722, type: 3}
+  - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
+  - {fileID: 4202955451727471546, guid: 5843b45e3b4892b4a8a1df4c966f350d, type: 3}
+  - {fileID: 2368247788164874689, guid: 836d65fc537c36849aa4325062c69504, type: 3}
+  - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
+  - {fileID: 4202955451727471546, guid: 5843b45e3b4892b4a8a1df4c966f350d, type: 3}
+  - {fileID: 738982015727864007, guid: 3da0da80d16d2a847b333a88a132db4f, type: 3}
+  - {fileID: 4202955451727471546, guid: 5843b45e3b4892b4a8a1df4c966f350d, type: 3}
+  SidePanelSprites:
+  - {fileID: 21300000, guid: 3779ba37a30c018499496ebad80ff2d9, type: 3}
+  - {fileID: 21300000, guid: dfdbe0fadae3e574caf57c3d27807859, type: 3}
+  - {fileID: 21300000, guid: 4827c159b9af2fa4db16e2f31fd87b40, type: 3}
   CastleHill: {fileID: 3339530331628144020, guid: 3127d24477bd15842b883c3b2262ef66, type: 3}
   BackgroundColor: {r: 0.8207547, g: 0.39798862, b: 0.39798862, a: 0}
   TilePrefabs:
   - {fileID: 6072665795481323789, guid: 5575aca4f80a0c54ea9d4eb54e1866ec, type: 3}
+  TileSprite: {fileID: 21300000, guid: 31784e4bce70462eaac02d5f03f0917d, type: 3}

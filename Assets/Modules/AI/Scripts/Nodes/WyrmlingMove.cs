@@ -43,16 +43,16 @@ namespace Aloha.AI
             float time = 0;
             Vector3 posInit = gameObject.transform.position;
             Vector3 posFinal = posInit;
-            posFinal.x = IsLeft ? posFinal.x + DistToMove : posFinal.x - DistToMove;
+            posFinal.x = IsLeft ? (posFinal.x + DistToMove).Clamp(-3, 3) : (posFinal.x - DistToMove).Clamp(-3, 3);
 
             // Change the rotation of the wyrmling according to its direction
             if (IsLeft)
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX = false;
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                gameObject.GetComponentsInChildren<SpriteRenderer>()[0].flipX = true;
             }
 
             // Move the wyrmling

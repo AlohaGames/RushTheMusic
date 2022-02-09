@@ -8,14 +8,22 @@ namespace Aloha
     /// </summary>
     public class UIScore : MonoBehaviour
     {
-        public GameObject EndGameScore;
-        public GameObject ScoreDetail;
         public GameObject InGameScore;
         public Text InGameScoreText;
-        public Text TotalScoreText;
-        public Text DistanceScoreText;
-        public Text KillScoreText;
-        public Text HitScoreText;
+        public Text InGameScoreInfiniText;
+
+        /// <summary>
+        /// Method to hide score UI
+        /// <example> Example(s):
+        /// <code>
+        ///     UIScore.Hide();
+        /// </code>
+        /// </example>
+        /// </summary>
+        public void Hide()
+        {
+            InGameScore.SetActive(false); ;
+        }
 
         /// <summary>
         /// Method to show UI score elements in game
@@ -28,6 +36,17 @@ namespace Aloha
         public void ShowInGameUIScoreElements()
         {
             InGameScore.SetActive(true);
+
+            // Show total score if inifinite mode is ON
+            if (GameManager.Instance.IsInfinite)
+            {
+                InGameScoreInfiniText.gameObject.SetActive(true);
+            }
+            else
+            {
+                InGameScoreInfiniText.gameObject.SetActive(false);
+            }
+
             UpdateUIText();
         }
 
@@ -41,25 +60,8 @@ namespace Aloha
         /// </summary>
         public void UpdateUIText()
         {
-            InGameScoreText.text = "Score: " + ScoreManager.Instance.TotalScore;
-        }
-
-        /// <summary>
-        /// Show UI score elements when game's end
-        /// <example> Example(s):
-        /// <code>
-        ///     UIScore.ShowEndGameUIScoreElements();
-        /// </code>
-        /// </example>
-        /// </summary>
-        public void ShowEndGameUIScoreElements()
-        {
-            EndGameScore.SetActive(true);
-            TotalScoreText.text = "Score total: " + ScoreManager.Instance.TotalScore;
-            DistanceScoreText.text = "Distance\t" + ScoreManager.Instance.DistanceScore;
-            KillScoreText.text = "Ennemis tués\t" + ScoreManager.Instance.EnemyKilledScore;
-            HitScoreText.text = "Coups reçus\t-" + ScoreManager.Instance.HitScore;
-            GameManager.Instance.IsPlaying = false;
+            InGameScoreText.text = "Score : " + ScoreManager.Instance.TotalScore;
+            InGameScoreInfiniText.text = "(Total : " + ScoreManager.Instance.InfiniteScore + ")";
         }
     }
 }

@@ -12,6 +12,7 @@ namespace Aloha
         public int CurrentRage;
         public bool IsAttacking;
         public bool IsDefending;
+        public bool CanDefend;
 
         /// <summary>
         /// Initialize the warrior
@@ -25,6 +26,7 @@ namespace Aloha
         {
             this.Init(this.heroStats);
             this.IsDefending = false;
+            this.CanDefend = true;
         }
 
         /// <summary>
@@ -93,9 +95,15 @@ namespace Aloha
             int damage;
             if (this.CurrentRage == heroStats.MaxRage)
             {
-                Stats entityStats = entity.GetStats();
-                damage = entityStats.MaxHealth;
-                entity.TakeDamage(damage);
+                SoundEffectManager.Instance.Play(
+                    SoundEffectManager.Instance.Sounds.warrior_rage, this.gameObject
+                );
+                GlobalEvent.HudEffect.Invoke(0.8f, 1.0f, HUDEffectType.rage);
+
+                // The rage multiply by 5 the power
+                damage = heroStats.Attack;
+                entity.TakeDamage(damage*3);
+
                 CurrentRage = 0;
             }
             else
@@ -103,8 +111,8 @@ namespace Aloha
                 damage = heroStats.Attack;
                 entity.TakeDamage(damage);
                 CurrentRage = CurrentRage + (int)(heroStats.MaxRage * REGENERATION_POURCENT);
-                GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
             }
+            GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }
 
         /// <summary>
@@ -118,7 +126,7 @@ namespace Aloha
         /// <param name="secondaryRegen">A percentage of regeneration of the secondary bar</param>
         public override void RegenerateSecondary(float secondaryRegen)
         {
-            int newRage = (int) (this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
+            int newRage = (int)(this.CurrentRage + this.heroStats.MaxRage * Mathf.Abs(secondaryRegen));
             this.CurrentRage = newRage.Clamp(0, this.heroStats.MaxRage);
             GlobalEvent.OnSecondaryUpdate.Invoke(this.CurrentRage, this.heroStats.MaxRage);
         }

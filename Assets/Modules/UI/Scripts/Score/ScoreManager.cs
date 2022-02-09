@@ -17,6 +17,8 @@ namespace Aloha
         public int DistanceScore;
         public int EnemyKilledScore;
         public int HitScore;
+        public int InfiniteScore;
+        public int PreviousScore;
         public int TakeHitCounter
         {
             get;
@@ -34,6 +36,7 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.AddListener(CountHeroHit);
             GlobalEvent.EntityDied.AddListener(DeathCount);
             GlobalEvent.TileCount.AddListener(TilesCount);
+            GlobalEvent.GameStop.AddListener(FinishGameReset);
         }
 
         /// <summary>
@@ -89,6 +92,7 @@ namespace Aloha
         public void CalculateTotalScore()
         {
             TotalScore = (DistanceScore + EnemyKilledScore - HitScore);
+            InfiniteScore = PreviousScore + TotalScore;
             ScoreUI?.UpdateUIText();
         }
 
@@ -151,7 +155,7 @@ namespace Aloha
             int maxTiles = LevelManager.Instance.LevelMapping != null ? LevelManager.Instance.LevelMapping.TileCount : 0;
             if (maxTiles > 0)
             {
-                int tiles = TilesCounter.Clamp(0, maxTiles);
+                int tiles = (TilesCounter - TilesManager.Instance.NumberOfTiles).Clamp(0, maxTiles);
                 DistanceScore = (int)CalculateScore(MAX_SCORE, DISTANCE_PERCENT, (float)maxTiles, tiles);
             }
             else if (maxTiles == 0)
@@ -184,6 +188,30 @@ namespace Aloha
         }
 
         /// <summary>
+        /// Reset the score
+        /// </summary>
+        public void FinishLevelReset()
+        {
+            PreviousScore = InfiniteScore;
+            TotalScore = 0;
+            DistanceScore = 0;
+            EnemyKilledScore = 0;
+            HitScore = 0;
+            TakeHitCounter = 0;
+            KillCounter = 0;
+            TilesCounter = 0;
+        }
+
+        /// <summary>
+        /// Reset the score at the end of the game
+        /// </summary>
+        public void FinishGameReset()
+        {
+            FinishLevelReset();
+            PreviousScore = 0;
+        }
+
+        /// <summary>
         /// Is called when a Scene or game ends.
         /// </summary>
         void OnDestroy()
@@ -191,6 +219,7 @@ namespace Aloha
             GlobalEvent.HeroTakeDamage.RemoveListener(CountHeroHit);
             GlobalEvent.EntityDied.RemoveListener(DeathCount);
             GlobalEvent.TileCount.RemoveListener(TilesCount);
+            GlobalEvent.GameStop.RemoveListener(FinishGameReset);
         }
     }
 }
