@@ -158,7 +158,7 @@ jobs:
         with:
           name: RushTheMusic
           path: build/StandaloneWindows64
-buildLinux:
+  buildLinux:
     needs: testRunner
     name: Build for Linux 🐧
     runs-on: ubuntu-latest
