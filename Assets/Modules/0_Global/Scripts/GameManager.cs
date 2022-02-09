@@ -113,6 +113,15 @@ namespace Aloha
 
             // Spawn boss
             GameObject boss = EnemyInstantier.Instance.InstantiateEnemy(EnemyType.experion);
+
+            // Scale boss level
+            Hero hero = GameManager.Instance.GetHero();
+            int heroLevel = hero.GetStats().Level;
+            Enemy bossEnemy = boss.GetComponent<Enemy>();
+            EnemyStats stats = Instantiate(bossEnemy.GetStats() as EnemyStats);
+            stats.Scale(heroLevel);
+            bossEnemy.Init(stats);
+
             boss.transform.position = new Vector3(0, 1, 50);
 
             // Hide UI
