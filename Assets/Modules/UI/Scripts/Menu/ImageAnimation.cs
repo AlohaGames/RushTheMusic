@@ -5,45 +5,55 @@ using UnityEngine.UI;
 
 namespace Aloha.UI
 {
-	/// <summary>
-	/// Class to animate an image
-	/// </summary>
-	public class ImageAnimation : MonoBehaviour
-	{
-		private int index = 0;
-		private Image image;
+    /// <summary>
+    /// Class to animate an image
+    /// </summary>
+    public class ImageAnimation : MonoBehaviour
+    {
+        private int index = 0;
+        private Image image;
 
-		public Sprite[] Sprites;
-		public float Delay = 1.0f;
-		public int spritePerFrame = 6;
-		public bool Loop = true;
-		public bool DestroyOnEnd = false;
+        public Sprite[] Sprites;
+        public float Delay = 1.0f;
+        public int spritePerFrame = 6;
+        public bool Loop = true;
+        public bool DestroyOnEnd = false;
 
-		/// <summary>
-		/// Is called when the script instance is being loaded.
-		/// </summary>
-		void Awake()
-		{
-			image = GetComponent<Image>();
-			StartCoroutine(Animate(this.Delay));
-		}
+        /// <summary>
+        /// Is called when the script instance is being loaded.
+        /// </summary>
+        void Awake()
+        {
+            image = GetComponent<Image>();
+            // StartAnimation();
+        }
 
-		/// <summary>
-		/// Coroutine to animate the image
-		/// </summary>
-		private IEnumerator Animate(float delay)
-		{
-			while (true)
+        private void OnEnable()
+        {
+            StartAnimation();
+        }
+
+        public void StartAnimation()
+        {
+            StartCoroutine(Animate(this.Delay));
+        }
+
+        /// <summary>
+        /// Coroutine to animate the image
+        /// </summary>
+        private IEnumerator Animate(float delay)
+        {
+            while (true)
             {
-				image.sprite = Sprites[index];
-				index++;
-				if (index >= Sprites.Length)
-				{
-					if (Loop) index = 0;
-					if (DestroyOnEnd) Destroy(gameObject);
-				}
-				yield return new WaitForSeconds(delay);
-			}
-		}
-	}
+                image.sprite = Sprites[index];
+                index++;
+                if (index >= Sprites.Length)
+                {
+                    if (Loop) index = 0;
+                    if (DestroyOnEnd) Destroy(gameObject);
+                }
+                yield return new WaitForSeconds(delay);
+            }
+        }
+    }
 }

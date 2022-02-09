@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Aloha
+namespace Aloha.UI
 {
     /// <summary>
     /// Manage the continue button in Game Over Menu

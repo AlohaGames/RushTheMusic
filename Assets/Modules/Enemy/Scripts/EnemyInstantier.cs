@@ -20,7 +20,7 @@ namespace Aloha
         /// A GameObject instance of enemy prefab
         /// </returns>
         GameObject InstantiateEnemy(int id)
-        {       
+        {
             GameObject instance = Instantiate(enemyPrefabs[id]);
             ContainerManager.Instance.AddToContainer(ContainerTypes.Enemy, instance);
             Entity enemy = instance.GetComponent<Entity>();
@@ -40,9 +40,36 @@ namespace Aloha
         /// <returns>
         /// Instantiated ennemy
         /// </returns>
-        public GameObject InstantiateEnemy(EnemyType type)
+        public GameObject InstantiateEnemy(EnemyType type, List<string> parameters = null)
         {
-            return InstantiateEnemy((int) type);
+            GameObject enemy = InstantiateEnemy((int) type);
+            if (parameters != null)
+            {
+                ComputeParameters(enemy, parameters);
+            }
+            return enemy;
+        }
+
+        /// <summary>
+        /// Compute Parameters 
+        /// </summary>
+        /// <param name="enemy">Enemy GameObject reference</param>
+        /// <param name="parameters">List of parameters to compute</param>
+        private void ComputeParameters(GameObject enemy, List<string> parameters)
+        {
+            foreach (string param in parameters)
+            {
+                string type = param.Split(':')?[0].Trim();
+                string p = param.Split(':')?[1].Trim();
+                switch (type)
+                {
+                    case "Item":
+                        enemy.GetComponent<Chest>().AddItem(p);
+                        break;
+                    default:
+                        break;
+                }
+            }
         }
 
         /// <summary>

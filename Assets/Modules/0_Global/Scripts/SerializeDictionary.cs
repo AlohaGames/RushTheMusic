@@ -104,5 +104,31 @@ namespace Aloha
             }
             return this.DictionaryValue[index];
         }
+
+        public void SetValue(TKey searchKey, TValue value)
+        {
+            int index = this.DictionaryKey.FindIndex(key => key.Equals(searchKey));
+            if (index < 0)
+            {
+                this.Add(searchKey, value);
+            }
+            this.DictionaryValue[index] = value;
+        }
+
+        public TValue this[TKey key]
+        {
+            get => GetValue(key);
+            set => SetValue(key, value);
+        }
+
+        public bool ContainsKey(TKey searchKey)
+        {
+            int index = this.DictionaryKey.FindIndex(key => key.Equals(searchKey));
+            if (index < 0)
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

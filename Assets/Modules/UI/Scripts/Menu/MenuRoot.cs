@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Aloha.Events;
 using System.Collections.Generic;
 
@@ -252,6 +253,14 @@ namespace Aloha
                     LastMenuAction();
                 }
             }
+        }
+
+        /// <summary>
+        /// Load Editor
+        /// </summary>
+        public void LoadEditor()
+        {
+            SceneManager.LoadScene(1); // Load scene with index 1 (MapEditor)
         }
 
         /// <summary>

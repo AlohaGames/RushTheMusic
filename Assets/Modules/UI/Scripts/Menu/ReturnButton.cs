@@ -11,7 +11,6 @@ namespace Aloha
     [RequireComponent(typeof(Button))]
     public class ReturnButton : MonoBehaviour
     {
-
         /// <summary>
         /// Is called when the script instance is being loaded.
         /// </summary>

@@ -26,7 +26,6 @@ namespace Aloha
         /// </summary>
         void OnClick()
         {
-            //TODO : add if(infinite or select track state)
             MenuRoot.ShowTrackSelectionMenu();
         }
 

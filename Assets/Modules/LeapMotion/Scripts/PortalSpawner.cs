@@ -76,7 +76,7 @@ namespace Aloha
                 if (manaUsed != 0)
                 {
                     // Set vortex position
-                    Vector3 vortexPos = (Vector3)endPoint;
+                    Vector3 vortexPos = (Vector3) endPoint;
                     vortexPos.y = 1;
 
                     // Instantiate the vortex
@@ -115,7 +115,7 @@ namespace Aloha
             endPoint = origin + this.transform.forward * 9f;
 
             // Find direction of laser
-            Vector3 dir = (Vector3)endPoint - origin;
+            Vector3 dir = (Vector3) endPoint - origin;
             dir.Normalize();
 
             // Get laser collision
@@ -126,7 +126,7 @@ namespace Aloha
 
                 // Set origin and end point of the laser
                 targetPreview.SetPosition(0, origin);
-                targetPreview.SetPosition(1, (Vector3)endPoint);
+                targetPreview.SetPosition(1, (Vector3) endPoint);
 
                 // Draw the laser
                 targetPreview.enabled = true;

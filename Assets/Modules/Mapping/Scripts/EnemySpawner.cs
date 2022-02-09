@@ -62,11 +62,11 @@ namespace Aloha
                 Debug.Log($"{enemyNumber} enemiesMapping found on tile {TilesCounter}");
                 foreach (EnemyMapping enemyMapping in enemiesMapping)
                 {
-                    GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.EnemyType);
+                    GameObject enemy = EnemyInstantier.Instance.InstantiateEnemy(enemyMapping.EnemyType, enemyMapping.Parameters);
 
                     // Define enemy stats from mapping
                     Entity entity = enemy.GetComponent<Entity>();
-                    EnemyStats stats = Instantiate(entity.GetStats() as EnemyStats);
+                    // EnemyStats stats = Instantiate(entity.GetStats() as EnemyStats);
 
                     // If we don't know the level of the hero, check for it
                     if (heroLevel == -1)
@@ -75,8 +75,8 @@ namespace Aloha
                     }
 
                     // Stats scale based on hero level and current map number
-                    stats.Scale(heroLevel);
-                    entity.Init(stats);
+                    (entity.GetStats() as EnemyStats).Scale(heroLevel);
+                    // entity.Init(stats);
 
                     enemy.transform.position = enemyMapping.GetPosition(tile.transform.position.z);
                 }

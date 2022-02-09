@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BossBiome
   m_EditorClassIdentifier: 
   BiomeName: boss
+  Label: Boss
   SideEnvironmentPrefabs:
   - {fileID: 0}
   SidePanelSprites:
@@ -21,3 +22,4 @@ MonoBehaviour:
   BackgroundColor: {r: 0.1509434, g: 0.14154504, b: 0.14154504, a: 1}
   TilePrefabs:
   - {fileID: 7879650728313143345, guid: b6c6031e52d175c4f9501291b5573ffb, type: 3}
+  TileSprite: {fileID: 0}

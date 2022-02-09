@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: cb87844d3cf11654faeba16efcd0060a, type: 3}
   - {fileID: 8300000, guid: 98cb54abd62fb5c4fbe2e26ae77c164d, type: 3}
   hero_drink: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
-  hero_take_damage: {fileID: 8300000, guid: 716f90e40c5623641961219e0de5912e, type: 3}
+  hero_take_damage: {fileID: 8300000, guid: 9e5df37b64fd44c4589c6b647f2c6192, type: 3}
   hero_level_up: {fileID: 8300000, guid: 07f02d03eec4c834d91a691b1054274e, type: 3}
   wizard_attack: {fileID: 8300000, guid: 7cf3443aafda49240b59ca461850f143, type: 3}
   wizard_block: {fileID: 8300000, guid: 13adb302460aa704d816bd25204b9bfe, type: 3}

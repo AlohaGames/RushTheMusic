@@ -19,7 +19,8 @@ namespace Aloha
         public GameObject TrackSelectionUI;
         public MenuRoot MenuRoot;
 
-        void Awake() {
+        void Awake()
+        {
             ShowTrackList();
         }
 
@@ -42,8 +43,6 @@ namespace Aloha
         {
             string workingPath = Application.temporaryCachePath;
 
-            FileInfo[] files = GetTracksInDir();
-
             // Extract zip file
             Guid g = Guid.NewGuid();
 
@@ -57,7 +56,7 @@ namespace Aloha
 
             using (FileStream stream = new FileStream($"{workingPath}/{g}/metadata.xml", FileMode.Open))
             {
-                metadata = (LevelMetadata)metadataSerializer.Deserialize(stream);
+                metadata = (LevelMetadata) metadataSerializer.Deserialize(stream);
             }
             return metadata;
         }
@@ -74,8 +73,8 @@ namespace Aloha
         {
             FileInfo[] files = GetTracksInDir();
             int trackNumber = files.Length;
-            
-            foreach(FileInfo dir in files)
+
+            foreach (FileInfo dir in files)
             {
                 // Get track info from metadata
                 LevelMetadata metadata = GetTrackInfo(dir);
@@ -94,7 +93,29 @@ namespace Aloha
                 button.Level = dir.Name;
                 button.IsTuto = true;
                 button.MenuRoot = MenuRoot;
+
+                // Edit Button
+                Button buttonEdit = button.Edit;
+                buttonEdit?.onClick.AddListener(() =>
+                {
+                    LevelManager.Instance.URLToLoad = "" + dir;
+                });
+                Button buttonDelete = button.Delete;
+                buttonDelete?.onClick.AddListener(() =>
+                {
+                    Delete("" + dir);
+                    button.gameObject.SetActive(false);
+                });
             }
+        }
+
+        /// <summary>
+        /// Delete Track
+        /// </summary>
+        /// <param name="url">path to track</param>
+        public void Delete(string url)
+        {
+            File.Delete(url);
         }
     }
 }
