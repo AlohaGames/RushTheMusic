@@ -12,6 +12,7 @@ namespace Aloha.UI
     public class MapContent : MonoBehaviour
     {
         public EditorRoot Root;
+
         [SerializeField]
         private GameObject panel;
 
@@ -49,7 +50,7 @@ namespace Aloha.UI
         /// <summary>
         /// Define Duration
         /// </summary>
-        /// <param name="duration">Duration in float</param>
+        /// <param name="duration">Duration in seconds</param>
         public void SetDuration(float duration)
         {
             this.duration = duration;
@@ -84,7 +85,6 @@ namespace Aloha.UI
                     text.transform.localScale = Vector3.one;
                 }
             }
-
             EditorManager.Instance.NeedUpdate();
         }
 

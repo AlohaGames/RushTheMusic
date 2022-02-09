@@ -50,6 +50,11 @@ namespace Aloha
             return enemy;
         }
 
+        /// <summary>
+        /// Compute Parameters 
+        /// </summary>
+        /// <param name="enemy">Enemy GameObject reference</param>
+        /// <param name="parameters">List of parameters to compute</param>
         private void ComputeParameters(GameObject enemy, List<string> parameters)
         {
             foreach (string param in parameters)

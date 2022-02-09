@@ -17,8 +17,8 @@ namespace Aloha.UI
         public Sprite SecondaryPotion;
         public Sprite ExperiencePotion;
 
+        private TMP_Dropdown dropdown;
 
-        TMP_Dropdown dropdown;
         private void Awake()
         {
             dropdown = GetComponent<TMP_Dropdown>();
@@ -39,7 +39,7 @@ namespace Aloha.UI
         }
 
         /// <summary>
-        /// Valid Value
+        /// Confirm Value
         /// </summary>
         public void SubmitValue()
         {

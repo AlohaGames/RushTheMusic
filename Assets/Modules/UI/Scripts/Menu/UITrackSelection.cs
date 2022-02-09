@@ -109,6 +109,10 @@ namespace Aloha
             }
         }
 
+        /// <summary>
+        /// Delete Track
+        /// </summary>
+        /// <param name="url">path to track</param>
         public void Delete(string url)
         {
             File.Delete(url);

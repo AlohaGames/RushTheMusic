@@ -11,19 +11,21 @@ namespace Aloha.UI
     [RequireComponent(typeof(Button))]
     public class SelectTile : MonoBehaviour
     {
-        static Color selectedColor;
-        static Color unselectedColor;
+        public HorizontalTilePos[] Positions;
+
+        private static Color selectedColor;
+        private static Color unselectedColor;
 
         [SerializeField]
         private int id;
+
         private Image image;
 
-        public HorizontalTilePos[] Positions;
 
         private void Awake()
         {
-            selectedColor = EditorManager.Instance.SelectedColor;
-            unselectedColor = EditorManager.Instance.UnselectedColor;
+            if (!selectedColor) selectedColor = EditorManager.Instance.SelectedColor;
+            if (!unselectedColor) unselectedColor = EditorManager.Instance.UnselectedColor;
             image = GetComponent<Image>();
             GetComponent<Button>().onClick.AddListener(OnClick);
             Unselect();

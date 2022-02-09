@@ -98,9 +98,13 @@ namespace Aloha
             return new Vector3(x, y + 1, z);
         }
 
+        /// <summary>
+        /// Add Parameters to an EnemyMapping, only one value for one type
+        /// </summary>
+        /// <param name="type">Type of parameters (Item for Chest)</param>
+        /// <param name="parameter">Value of the parameters</param>
         public void AddParameters(string type, string parameter)
         {
-            Debug.Log(Parameters);
             string p = this.Parameters.Find((s) =>
             {
                 return s.StartsWith(type);

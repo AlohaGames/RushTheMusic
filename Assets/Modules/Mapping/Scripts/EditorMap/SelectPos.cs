@@ -14,8 +14,10 @@ namespace Aloha.UI
         CurrentTile tile;
         static Color selectedColor;
         static Color unselectedColor;
+
         [SerializeField]
         private HorizontalPositionEnum horizontal;
+
         [SerializeField]
         private VerticalPositionEnum vertical;
 

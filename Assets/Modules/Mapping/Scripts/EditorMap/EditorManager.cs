@@ -13,7 +13,10 @@ namespace Aloha.UI
     public class EditorManager : Singleton<EditorManager>
     {
         public EditorRoot EditorRoot;
+        public Color SelectedColor;
+        public Color UnselectedColor;
         public int? SelectedTilesId = null;
+
         [SerializeField]
         private LevelMapping levelMapping = null;
         private Biome biome = null;
@@ -26,9 +29,6 @@ namespace Aloha.UI
 
         [SerializeField]
         private BiomeSelector biomeSelector;
-
-        public Color SelectedColor;
-        public Color UnselectedColor;
 
         private bool needUpdate = false;
 

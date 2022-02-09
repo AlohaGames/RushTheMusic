@@ -13,22 +13,31 @@ namespace Aloha.UI
     public class CurrentTile : MonoBehaviour
     {
         public EditorRoot Root;
+
         [SerializeField]
         private GameObject upLeft;
+
         [SerializeField]
         private GameObject upCenter;
+
         [SerializeField]
         private GameObject upRight;
+
         [SerializeField]
         private GameObject middleLeft;
+
         [SerializeField]
         private GameObject middleCenter;
+
         [SerializeField]
         private GameObject middleRight;
+
         [SerializeField]
         private GameObject downLeft;
+
         [SerializeField]
         private GameObject downCenter;
+
         [SerializeField]
         private GameObject downRight;
 
@@ -37,7 +46,7 @@ namespace Aloha.UI
 
         private int currentId;
 
-        private SelectPos currentSelect;
+        private SelectPos currentPos;
 
         /// <summary>
         /// Load data for a tile based on id and levelMapping
@@ -68,9 +77,9 @@ namespace Aloha.UI
         /// <param name="selectPos">New Selected Position</param>
         public void UpdateSelected(HorizontalPositionEnum h, VerticalPositionEnum v, SelectPos selectPos)
         {
-            currentSelect?.Unselect();
-            currentSelect = selectPos;
-            currentSelect.Select();
+            currentPos?.Unselect();
+            currentPos = selectPos;
+            currentPos.Select();
             horizontalPosition = h;
             verticalPosition = v;
         }

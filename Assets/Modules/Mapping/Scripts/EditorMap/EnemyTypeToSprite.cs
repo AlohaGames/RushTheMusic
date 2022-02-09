@@ -11,6 +11,7 @@ namespace Aloha.UI
     public class EnemyTypeToSprite : Singleton<EnemyTypeToSprite>
     {
         public Sprite Default;
+
         public Sprite Lancer;
         public Sprite IceLancer;
         public Sprite FireLancer;
@@ -32,7 +33,6 @@ namespace Aloha.UI
         /// </summary>
         /// <param name="enemyType"></param>
         /// <returns>Corresponding Sprite if EnemyType is define, default otherwise</returns>
-
         public Sprite GetEnemySprite(EnemyType enemyType)
         {
             switch (enemyType)

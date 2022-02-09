@@ -24,7 +24,6 @@ namespace Aloha.UI
 
         private void Awake()
         {
-
             image.GetComponent<Button>().onClick.AddListener(OnClick);
         }
 

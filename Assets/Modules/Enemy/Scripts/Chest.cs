@@ -44,6 +44,10 @@ namespace Aloha
             if (!Anim) Anim = GetComponent<Animator>();
         }
 
+        /// <summary>
+        /// Add an Item based on type
+        /// </summary>
+        /// <param name="itemType">Soin, Secondaire or Expérience</param>
         public void AddItem(string itemType)
         {
             if (item != null)

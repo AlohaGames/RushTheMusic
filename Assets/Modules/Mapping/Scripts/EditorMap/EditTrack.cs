@@ -16,7 +16,6 @@ namespace Aloha.UI
         [SerializeField]
         private GameObject EditorPrefab;
 
-
         private InputField pathText;
         private MapContent content;
         private Text durationText;
